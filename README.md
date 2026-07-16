@@ -4,7 +4,9 @@ Kompletter Neuaufbau von pixel56.de (aktuell Webflow). Prozess: statische HTML-M
 
 ## Stand
 
-Alle 13 Seiten sind als Mockup in der finalen Formsprache fertig ("Freier Entwurf", Stand Juli 2026):
+**Technischer Aufbau läuft:** Alle 14 Mockup-Seiten sind als Next.js-App unter `web/` portiert (Stand Juli 2026). Details siehe Abschnitt "Technischer Aufbau" unten.
+
+Alle 14 Seiten als Mockup in der finalen Formsprache ("Freier Entwurf", Stand Juli 2026):
 
 | Seite | Datei | Artifact-URL |
 |---|---|---|
@@ -33,10 +35,21 @@ Alle 13 Seiten sind als Mockup in der finalen Formsprache fertig ("Freier Entwur
 - Wiederkehrende "lebendige" Komponenten: Status-Panel (blinkende Warnsignale), Live-Metrik-Karte (Count-up + Balken), WhatsApp-Chat-Mockup, Such-/Feed-/Reel-/Upload-Mockups je nach Thema
 - Vollflächige Farb-Verläufe pro Sektion (rot/amber/violett), alternierende Split-Layouts
 
-## Offene Punkte (für den technischen Aufbau)
+## Technischer Aufbau (`web/`)
 
+Next.js 16 (App Router, TypeScript, kein Tailwind — das Design-System der Mockups ist 1:1 als globales CSS portiert). Aufbau:
+
+- `app/` — alle Routen: `/`, `/leistungen/<slug>` (7 Seiten), `/ueber-uns`, `/projekte`, `/blog`, `/karriere`, `/standorte/[slug]` (aktuell Koblenz), `/ressourcen/[slug]` (3 Freebies), Rechtsseiten-Stubs
+- `components/` — SiteNav, SiteFooter, Reveal (Scroll-Reveal + Count-up), `ui.tsx` (Status-Panel, Metrik-Karte, WhatsApp-Mock, Browser-Mock, Stepper, Reviews, FAQ, Close-CTA …), `mocks.tsx` (Such-/Feed-/Reel-/Upload-/Vergleichs-/Funnel-Mockups)
+- `lib/` — zentrale Inhalts-Schicht (`site.ts`, `standorte.ts`, `ressourcen.ts`). **Das ist der Andockpunkt für Sanity:** sobald CMS-Zugänge da sind, werden diese Dateien durch Queries ersetzt, die Komponenten bleiben unverändert.
+
+Lokal: `cd web && npm install && npm run dev`. Produktion: `npm run build` (20 statische Seiten, kein horizontaler Overflow 320–1920px verifiziert).
+
+## Offene Punkte
+
+- Sanity-CMS anbinden (Zugänge fehlen noch) und Vercel-Deployment aufsetzen
+- Kontakt-/Freebie-Formulare funktional machen (E-Mail-Anbindung; aktuell Platzhalter)
 - Echte Bilder einsetzen (Koblenz/Deutsches Eck im Hero, Team-Fotos, Projekt-Screenshots)
 - Google-Bewertungen live anbinden (Places API), Platzhalter 4.9/27 ersetzen
-- Freebie-Seiten für KI-Agenten-Checkliste und Tagesplaner aus der Vorlage ableiten (Struktur steht, nur Inhalte tauschen)
-- 166 Standortseiten als CMS-Template (Achtung: Thin-Content-Risiko der Altseiten beheben; Slug-Inkonsistenz `zuerich`/`zurich-meta-ads` bei Migration/Redirects beachten)
-- Finale SEO-/Copy-Optimierung als eigener Durchgang vor Livegang
+- 166 Standortseiten über `lib/standorte.ts`/CMS ausrollen (Achtung: Thin-Content-Risiko der Altseiten beheben; Slug-Inkonsistenz `zuerich`/`zurich-meta-ads` bei Migration/Redirects beachten)
+- Finale SEO-/Copy-Optimierung als eigener Durchgang vor Livegang (gemeinsamer Review aller 14 Seiten)
