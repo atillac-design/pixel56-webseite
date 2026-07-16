@@ -1,4 +1,10 @@
-# Netlify-Konfiguration: Die Next.js-App liegt im Unterordner web/.
-# Build-Befehl und Next.js-Runtime erkennt Netlify automatisch.
+# Netlify-Konfiguration — überstimmt die Einstellungen in der Netlify-UI.
+# Die Next.js-App liegt im Unterordner web/; das Next.js-Runtime-Plugin
+# übernimmt Serverfunktionen (API-Route, Revalidierung) automatisch.
 [build]
   base = "web"
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
