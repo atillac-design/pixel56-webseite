@@ -9,6 +9,7 @@ import {
   CloseCta,
   Reviews,
 } from "@/components/ui";
+import { fallstudien } from "@/lib/projekte";
 
 export const metadata: Metadata = {
   title: "Projekte",
@@ -16,33 +17,34 @@ export const metadata: Metadata = {
     "Echte Projekte, echte Ergebnisse — vom Dachdecker-Karriereportal bis zur Spendengala. Ausgewählte Arbeiten von Pixel56 aus Bendorf bei Koblenz.",
 };
 
-type Projekt = {
-  variant: string;
-  barWidth: number;
-  cat: string;
-  title: string;
-  text: string;
-  tags: string;
-  year: string;
-  /** Echter Projekt-Screenshot (Pfad unter public/) — ersetzt das abstrakte Browser-Mockup. */
-  img?: string;
-};
-
-const projekte: Projekt[] = [
-  { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-stark-ins-neue.webp", cat: "Stark ins Neue gGmbH", title: "Vertrauen und Wirkung für eine Bildungsinitiative", text: "Kompletter Website-Relaunch für eine gemeinnützige Organisation im Bereich mentale Gesundheit — SEO-optimiert, DSGVO-konform, mit klarer Nutzerführung zur Kursanmeldung. Ergebnis: deutlich mehr Kursanmeldungen und Newsletter-Abos.", tags: "Webdesign · SEO · Funnel", year: "2025" },
-  { variant: "ic-1", barWidth: 52, cat: "GM-Dachdecker Meisterbetrieb", title: "Handwerkskunst digital erlebbar gemacht", text: "Neue Website inklusive Karriereportal — Bewerber laden ihre Unterlagen direkt hoch, ohne E-Mail-Programm. Ergebnis: höhere Sichtbarkeit und spürbar leichtere Mitarbeitergewinnung.", tags: "Webdesign · Karriereportal · Recruiting", year: "2023" },
-  { variant: "ic-4", barWidth: 65, img: "/bilder/projekt-van-den-berg.webp", cat: "Van den Berg Gruppe", title: "56 % Wachstum durch gezielte Facebook Ads", text: "Kontinuierlicher Kampagnenaufbau mit konsequenter Budget-Steuerung nach Datenlage statt Bauchgefühl — auch bei reduziertem Budget hielt der Anfrage-Effekt an.", tags: "Meta Ads · Landingpage · Betreuung", year: "laufend" },
-  { variant: "ic-2", barWidth: 70, img: "/bilder/projekt-ma-transporte.webp", cat: "MA-Transporte", title: "Dienstleistungsqualität digital sichtbar gemacht", text: "Neue, repräsentative Website plus laufende Social-Media-Betreuung für ein Transportunternehmen — gestärkte Markenwahrnehmung und mehr Kundenengagement.", tags: "Webdesign · Social Media", year: "seit 2019" },
-  { variant: "ic-7", barWidth: 55, cat: "Oktay Cömertler", title: "Full-Service für Abbruch, Tief- & Kanalbau", text: "Maßgeschneidertes Branding und Webdesign, entwickelt aus umfassender Markt- und Unternehmensanalyse — für Desktop und mobil gleichermaßen durchdacht.", tags: "Branding · Webdesign", year: "seit 2022" },
-  { variant: "ic-6", barWidth: 48, img: "/bilder/projekt-cass.webp", cat: "CASS Schulungen", title: "Bildung und Sicherheit digital vereint", text: "Branding und Webdesign für Luftsicherheitsschulungen — seriöser Auftritt für ein Thema, bei dem Vertrauen alles ist.", tags: "Branding · Webdesign · Social Media", year: "2023" },
-  { variant: "ic-5", barWidth: 62, img: "/bilder/projekt-kinderherzen.webp", cat: "Sportler für Kinderherzen", title: "Marketing & Branding für eine Spendengala", text: "Komplette Kampagne zugunsten krebskranker Kinder — Sichtbarkeit für den guten Zweck, von der Marke bis zur Bewerbung des Events.", tags: "Branding · Event · Kampagne", year: "2022" },
-  { variant: "ic-8", barWidth: 58, cat: "Burgerfabrik", title: "Reels direkt aus dem echten Betrieb", text: "Kurzvideos aus dem laufenden Ladenalltag statt gestellter Werbeaufnahmen — Content, der zeigt, wie es dort tatsächlich zugeht.", tags: "Reels · Social Content", year: "laufend" },
-];
-
 const reviews = [
   { text: "Von der ersten Idee bis zum Livegang alles aus einer Hand — schnell, unkompliziert, top Ergebnis.", who: "GM-Dachdecker" },
   { text: "56 % Wachstum, und wir wissen genau, woher es kommt. Absolute Empfehlung.", who: "Van den Berg Gruppe" },
   { text: "Die neue Website hat sich in wenigen Wochen ausgezahlt. Klare Empfehlung.", who: "Stark ins Neue gGmbH" },
+];
+
+// Kundenstimmen mit Gesicht — aus den Fallstudien, ergänzt um Colak GmbH.
+const stimmen = [
+  ...fallstudien
+    .filter((f) => f.stimme?.img)
+    .map((f) => ({
+      text: f.stimme!.text,
+      name: f.stimme!.name,
+      rolle: f.stimme!.rolle,
+      img: f.stimme!.img,
+      logo: f.logo,
+      geloest: f.loesung.punkte[0],
+      slug: f.slug,
+    })),
+  {
+    text: "Messbare Ergebnisse statt leerer Versprechen — und auch Jahre später noch derselbe Ansprechpartner.",
+    name: "Nalan Colak",
+    rolle: "Colak GmbH",
+    img: "/bilder/person-nalan-colak.webp",
+    logo: "/bilder/kunde-colak.png",
+    geloest: "Webdesign und laufende digitale Betreuung",
+    slug: undefined as string | undefined,
+  },
 ];
 
 export default function ProjektePage() {
@@ -52,7 +54,7 @@ export default function ProjektePage() {
         <SiteNav crumb={{ section: "Unternehmen", page: "Projekte" }} />
 
         <header className="hero">
-          <PulseField label1="// 8 PROJEKTE AUSGEWÄHLT" label2="// SEIT 2019 IM EINSATZ" />
+          <PulseField label1={`// ${fallstudien.length} PROJEKTE AUSGEWÄHLT`} label2="// SEIT 2019 IM EINSATZ" />
           <div className="hero-eyebrow">UNTERNEHMEN · PROJEKTE</div>
           <h1>
             <span className="in"><span>Echte Projekte.</span></span>
@@ -93,16 +95,17 @@ export default function ProjektePage() {
               </h2>
             </div>
             <p className="band-note">
-              Acht Projekte aus Handwerk, Bildung, Transport, Gastronomie und
-              Non-Profit — Bildmaterial folgt im echten Aufbau.
+              {fallstudien.length} Projekte aus Handwerk, Bildung, Transport,
+              Immobilien, E-Commerce und Non-Profit — jede Karte führt zur
+              ausführlichen Fallstudie.
             </p>
           </div>
           <div className="proj-grid reveal">
-            {projekte.map((p) => (
-              <div className="proj-card" key={p.cat}>
-                {p.img ? (
+            {fallstudien.map((p) => (
+              <Link className="proj-card" href={`/projekte/${p.slug}`} key={p.slug}>
+                {p.bild ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
-                  <img className="pc-img" src={p.img} alt={`Projekt: ${p.cat}`} />
+                  <img className="pc-img" src={p.bild} alt={`Projekt: ${p.kunde}`} />
                 ) : (
                   <>
                     <div className="ic-chrome">
@@ -113,21 +116,21 @@ export default function ProjektePage() {
                     <div className={`ic-body ${p.variant}`}>
                       <div className="ic-bar ic-bar-lg" />
                       <div className="ic-bar ic-bar-sm" />
-                      <div className="ic-bar ic-bar-sm" style={{ width: `${p.barWidth}%` }} />
+                      <div className="ic-bar ic-bar-sm" style={{ width: "60%" }} />
                       <div className="ic-btn" />
                     </div>
                   </>
                 )}
                 <div className="pc-body">
-                  <span className="rc-cat">{p.cat}</span>
-                  <h4>{p.title}</h4>
-                  <p>{p.text}</p>
+                  <span className="rc-cat">{p.kunde}</span>
+                  <h4>{p.titel}</h4>
+                  <p>{p.teaser}</p>
                   <div className="rc-tag">
-                    <span>{p.tags}</span>
-                    <span>{p.year}</span>
+                    <span>{p.tags.join(" · ")}</span>
+                    <span>{p.jahr}</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
@@ -156,10 +159,57 @@ export default function ProjektePage() {
           </div>
         </section>
 
-        <section className="band">
+        <section className="band tint-violet" id="stimmen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">03 — Bewertungen</span>
+              <span className="band-tag">03 — Kundenstimmen</span>
+              <h2 className="band-title">
+                Echte Gesichter, <em>echte Ergebnisse</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Die Menschen hinter den Projekten — und was wir für sie gelöst
+              haben.
+            </p>
+          </div>
+          <div className="voice-grid reveal">
+            {stimmen.map((s) => (
+              <div className="voice-card" key={s.name}>
+                <blockquote>„{s.text}“</blockquote>
+                <div className="voice-person">
+                  {s.img ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={s.img} alt={s.name} />
+                  ) : (
+                    <div className="vp-fallback">{s.name.slice(0, 1)}</div>
+                  )}
+                  <div>
+                    <b>{s.name}</b>
+                    <span>{s.rolle}</span>
+                  </div>
+                  {s.logo && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img className="case-logo" src={s.logo} alt="" style={{ marginLeft: "auto" }} />
+                  )}
+                </div>
+                <div className="voice-solved">
+                  <b>Was wir gelöst haben</b>
+                  {s.geloest}
+                </div>
+                {s.slug && (
+                  <Link className="voice-link" href={`/projekte/${s.slug}`}>
+                    Zur Fallstudie <ArrowIcon />
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="band" id="bewertungen">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">04 — Google-Bewertungen</span>
               <h2 className="band-title">
                 Das sagen <em>Kunden über uns</em>
               </h2>

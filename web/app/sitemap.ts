@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site, services } from "@/lib/site";
 import { standorte } from "@/lib/standorte";
 import { ressourcen } from "@/lib/ressourcen";
+import { fallstudien } from "@/lib/projekte";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -32,5 +33,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...statisch, ...leistungen, ...orte, ...freebies];
+  const projekte = fallstudien.map((f) => ({
+    url: `${site.url}/projekte/${f.slug}`,
+    lastModified,
+    priority: 0.6,
+  }));
+
+  return [...statisch, ...leistungen, ...orte, ...freebies, ...projekte];
 }

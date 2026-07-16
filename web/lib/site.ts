@@ -20,9 +20,17 @@ export const clients = [
   "GM-Dachdecker",
   "Oktay Cömertler",
   "CASS Schulungen",
-  "MA-Transporte",
+  "M&A Transporte",
   "Colak GmbH",
   "Van den Berg Gruppe",
+  "MDU Bedachungen",
+  "Lernforum Obertshausen",
+  "CurlyAnn Atelier",
+  "Cavar Home",
+  "DiscountHaus Holding",
+  "Schlüsselfertig-Immobilien",
+  "DEMA Bedachungen",
+  "Burgerfabrik",
 ];
 
 export type Service = {

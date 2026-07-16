@@ -538,3 +538,31 @@ input.form-field:focus { border-color: var(--accent); }
 .grab-mockup img { max-width: 100%; max-height: 320px; object-fit: contain; filter: drop-shadow(0 30px 50px rgba(0,0,0,0.5)); }
 
 .rl-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ============ FALLSTUDIEN ============ */
+.case-img { width: 100%; border-radius: 18px; border: 1px solid var(--line); display: block; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); }
+.case-galerie { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; }
+@media (max-width: 720px) { .case-galerie { grid-template-columns: 1fr; } }
+.case-galerie img { width: 100%; border-radius: 16px; border: 1px solid var(--line); display: block; }
+.case-logo { max-height: 46px; width: auto; opacity: 0.9; }
+
+.voice-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 26px; }
+@media (max-width: 860px) { .voice-grid { grid-template-columns: 1fr; } }
+.voice-card { background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; padding: 30px; display: flex; flex-direction: column; gap: 18px; transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1), border-color 0.3s ease; }
+.voice-card:hover { transform: translateY(-4px); border-color: var(--line-strong); }
+.voice-card blockquote { margin: 0; font-family: var(--serif); font-style: italic; font-size: 17px; line-height: 1.65; color: var(--ink); }
+.voice-person { display: flex; align-items: center; gap: 14px; }
+.voice-person img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.voice-person .vp-fallback { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(155deg, var(--accent), #7a1626); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; color: #fff; flex-shrink: 0; }
+.voice-person b { display: block; font-size: 14.5px; }
+.voice-person span { display: block; font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 3px; }
+.voice-solved { border-top: 1px dashed var(--line-strong); padding-top: 14px; font-size: 13px; line-height: 1.6; color: var(--ink-dim); }
+.voice-solved b { color: var(--accent-2); font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 6px; }
+.voice-link { font-size: 13.5px; font-weight: 700; color: var(--ink); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.voice-link:hover { color: var(--accent); }
+
+.proj-card { text-decoration: none; color: inherit; display: block; }
+
+/* Fallstudien-Hero: kleinere Headline für lange Projekt-Titel */
+.hero-case h1 { font-size: clamp(30px, 4.4vw, 62px); max-width: 22ch; }
+.voice-link svg { width: 14px; height: 14px; flex-shrink: 0; }
