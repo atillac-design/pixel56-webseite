@@ -21,6 +21,7 @@ Alle 13 Seiten sind als Mockup in der finalen Formsprache fertig ("Freier Entwur
 | Blog | `mockups/blog.html` | https://claude.ai/code/artifact/02c55f02-7608-4d1f-a0a4-91e949ec4f4c |
 | Karriere | `mockups/karriere.html` | https://claude.ai/code/artifact/605814db-aec4-4f3c-86a6-71fe6ee2f83d |
 | Standort-Vorlage (Koblenz) | `mockups/standort-vorlage-koblenz.html` | https://claude.ai/code/artifact/48fcc1d2-e051-438c-9d24-c8d2c80a131d |
+| Freebie-Vorlage (SEO-Checkliste) | `mockups/freebie-vorlage-seo-checkliste.html` | https://claude.ai/code/artifact/cc4316a4-aa4e-4fe7-aac1-a7a7515f04cb |
 
 `mockups/archiv/` enthält die früheren, verworfenen Design-Iterationen.
 
@@ -36,6 +37,6 @@ Alle 13 Seiten sind als Mockup in der finalen Formsprache fertig ("Freier Entwur
 
 - Echte Bilder einsetzen (Koblenz/Deutsches Eck im Hero, Team-Fotos, Projekt-Screenshots)
 - Google-Bewertungen live anbinden (Places API), Platzhalter 4.9/27 ersetzen
-- Freebie-Detailseiten (SEO-Checkliste, KI-Agenten-Checkliste, Tagesplaner)
+- Freebie-Seiten für KI-Agenten-Checkliste und Tagesplaner aus der Vorlage ableiten (Struktur steht, nur Inhalte tauschen)
 - 166 Standortseiten als CMS-Template (Achtung: Thin-Content-Risiko der Altseiten beheben; Slug-Inkonsistenz `zuerich`/`zurich-meta-ads` bei Migration/Redirects beachten)
 - Finale SEO-/Copy-Optimierung als eigener Durchgang vor Livegang
