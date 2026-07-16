@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaqList } from "@/components/ui";
+import FreebieForm from "@/components/FreebieForm";
 import { ressourcen, getRessource } from "@/lib/ressourcen";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -58,7 +59,7 @@ export default async function RessourcePage({ params }: Props) {
               ))}
             </ul>
           </div>
-          <div className="grab-card reveal in">
+          <div className="grab-card reveal in" id="download">
             <div className="doc-mock">
               <span className="doc-pages">{res.docPages}</span>
               <span className="dm-tag">{res.docTag}</span>
@@ -70,13 +71,10 @@ export default async function RessourcePage({ params }: Props) {
                 </div>
               ))}
             </div>
-            <div className="form-label">Wohin dürfen wir {res.docTag === "Vorlage" ? "die Vorlage" : "die Checkliste"} schicken?</div>
-            {/* Platzhalter — wird im echten Aufbau ein Formular mit E-Mail-Anbindung */}
-            <div className="form-field">deine@email.de</div>
-            <a className="btn-primary" href="#">
-              Kostenlos herunterladen <DownloadIcon />
-            </a>
-            <div className="form-privacy">Kein Spam. Abmeldung jederzeit mit einem Klick. Datenschutz gilt.</div>
+            <FreebieForm
+              quelle={res.slug}
+              label={res.docTag === "Vorlage" ? "die Vorlage" : "die Checkliste"}
+            />
           </div>
         </header>
       </div>
@@ -122,7 +120,7 @@ export default async function RessourcePage({ params }: Props) {
             {res.ctaStart}
             <em>{res.ctaEm}</em>
           </h2>
-          <a className="btn-primary" href="#">
+          <a className="btn-primary" href="#download">
             Kostenlos herunterladen <DownloadIcon />
           </a>
         </section>

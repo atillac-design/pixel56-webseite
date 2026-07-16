@@ -3,6 +3,7 @@ import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { ArrowIcon, PulseField, WaMock, FaqList } from "@/components/ui";
+import { getStellen } from "@/lib/sanity";
 
 export const metadata: Metadata = {
   title: "Karriere",
@@ -16,8 +17,8 @@ const gruende = [
   { fl: "Grund 3", title: "Lernen am echten Fall", text: "SEO, Ads, Design, Content — bei uns arbeitest du über Disziplinen hinweg statt in einer einzigen Nische zu versauern." },
 ];
 
-// Platzhalter — die Stellenliste wird später aus dem CMS (Sanity) gepflegt.
-const stellen = [
+// Fallback-Stellen, solange kein CMS verbunden ist.
+const stellenFallback = [
   { title: "Webdesigner / Webentwickler (m/w/d)", meta: "Vollzeit oder Teilzeit · Bendorf / Remote" },
   { title: "Content Creator — Foto & Video (m/w/d)", meta: "Teilzeit oder Freelance · Region Koblenz" },
   { title: "Werkstudent Performance Marketing (m/w/d)", meta: "Werkstudent · Bendorf / Remote" },
@@ -30,7 +31,11 @@ const faqs = [
   { q: "Nehmt ihr auch Quereinsteiger?", a: "Wenn die Arbeitsproben überzeugen, ja. Was du kannst, zählt mehr als wo du es gelernt hast." },
 ];
 
-export default function KarrierePage() {
+export default async function KarrierePage() {
+  const cmsStellen = await getStellen();
+  const stellen =
+    cmsStellen?.map((s) => ({ title: s.titel, meta: s.pensum })) ?? stellenFallback;
+
   return (
     <>
       <div className="sheet">

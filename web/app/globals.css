@@ -505,3 +505,13 @@ footer.site-footer { border-top: 1px solid var(--line); padding: 70px 0 0; }
 .footer-slim { border-top: 1px solid var(--line); padding: 40px 0; display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); flex-wrap: wrap; gap: 14px; }
 .footer-slim a { color: var(--ink-faint); text-decoration: none; margin-left: 20px; }
 .footer-slim a:hover { color: var(--ink-dim); }
+
+/* ============ FREEBIE-FORMULAR (interaktiv) ============ */
+input.form-field { display: block; width: 100%; font-family: var(--sans); color: var(--ink); outline: none; }
+input.form-field::placeholder { color: var(--ink-faint); }
+input.form-field:focus { border-color: var(--accent); }
+.grab-card .btn-primary { border: none; cursor: pointer; }
+.grab-card .btn-primary:disabled { opacity: 0.6; cursor: wait; transform: none; }
+.form-success { border: 1px solid rgba(61,220,132,0.4); background: rgba(61,220,132,0.08); border-radius: 14px; padding: 20px 22px; font-size: 14.5px; line-height: 1.7; color: var(--ink-dim); }
+.form-success b { color: var(--ink); }
+.form-error { margin-top: 12px; font-size: 13px; line-height: 1.6; color: var(--accent); }

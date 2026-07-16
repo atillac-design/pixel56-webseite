@@ -3,6 +3,7 @@ import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PulseField, CloseCta } from "@/components/ui";
+import { getBlogBeitraege } from "@/lib/sanity";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -10,8 +11,8 @@ export const metadata: Metadata = {
     "Wissen, das wirklich weiterhilft — Antworten auf die Fragen, die uns Kunden tatsächlich stellen. Website, SEO, Ads und Google Business.",
 };
 
-// Platzhalter-Artikel — kommen später aus dem CMS (Sanity).
-const artikel = [
+// Fallback-Artikel, solange kein CMS verbunden ist.
+const artikelFallback = [
   { cover: "c1", tag: "Website", title: "Website-Kosten für Handwerksbetriebe: Was ist realistisch?", text: "Was eine professionelle Website wirklich kostet — und warum die billigste Lösung oft teurer wird.", meta: "Website · 6 Min. Lesezeit" },
   { cover: "c2", tag: "Google Business", title: "Google Business Profil optimieren", text: "Kostenlos, aber oft vernachlässigt: der wirksamste Hebel für mehr lokale Anfragen.", meta: "Lokal · 5 Min. Lesezeit" },
   { cover: "c5", tag: "Performance", title: "Warum eine langsame Website Kunden kostet", text: "Jede Sekunde Ladezeit kostet Besucher und Google-Ranking — die Zahlen dahinter.", meta: "Technik · 4 Min. Lesezeit" },
@@ -26,7 +27,17 @@ const freebies = [
   { fl: "Vorlage · PDF", title: "Tagesplaner", text: "Die Planungs-Vorlage, mit der wir selbst arbeiten — für fokussierte Tage statt Zettelwirtschaft.", href: "/ressourcen/tagesplaner" },
 ];
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const beitraege = await getBlogBeitraege();
+  const artikel =
+    beitraege?.map((b) => ({
+      cover: b.coverFarbe,
+      tag: b.kategorie,
+      title: b.titel,
+      text: b.teaser,
+      meta: `${b.kategorie} · ${b.lesezeit} Min. Lesezeit`,
+    })) ?? artikelFallback;
+
   return (
     <>
       <div className="sheet">
