@@ -43,12 +43,17 @@ Next.js 16 (App Router, TypeScript, kein Tailwind — das Design-System der Mock
 - `components/` — SiteNav, SiteFooter, Reveal (Scroll-Reveal + Count-up), `ui.tsx` (Status-Panel, Metrik-Karte, WhatsApp-Mock, Browser-Mock, Stepper, Reviews, FAQ, Close-CTA …), `mocks.tsx` (Such-/Feed-/Reel-/Upload-/Vergleichs-/Funnel-Mockups)
 - `lib/` — zentrale Inhalts-Schicht (`site.ts`, `standorte.ts`, `ressourcen.ts`). **Das ist der Andockpunkt für Sanity:** sobald CMS-Zugänge da sind, werden diese Dateien durch Queries ersetzt, die Komponenten bleiben unverändert.
 
-Lokal: `cd web && npm install && npm run dev`. Produktion: `npm run build` (20 statische Seiten, kein horizontaler Overflow 320–1920px verifiziert).
+Lokal: `cd web && npm install && npm run dev`. Produktion: `npm run build`. Umgebungsvariablen siehe `web/.env.example`.
+
+**CMS (Sanity):** Schemas (Blog-Beitrag, Offene Stelle, Standortseite) und eingebettetes Studio unter `/studio` sind fertig. Es fehlt nur noch das Sanity-Projekt: unter sanity.io anlegen, Projekt-ID als `NEXT_PUBLIC_SANITY_PROJECT_ID` setzen — Blog und Karriere ziehen dann automatisch aus dem CMS (bis dahin statische Fallbacks).
+
+**Freebie-Formulare (MailerLite):** `/api/lead` legt Kontakte per MailerLite-API an (Feld `quelle` = Freebie-Slug für Automationen). Es fehlt nur `MAILERLITE_API_KEY` (optional `MAILERLITE_GROUP_ID`).
 
 ## Offene Punkte
 
-- Sanity-CMS anbinden (Zugänge fehlen noch) und Vercel-Deployment aufsetzen
-- Kontakt-/Freebie-Formulare funktional machen (E-Mail-Anbindung; aktuell Platzhalter)
+- Sanity-Projekt anlegen + Projekt-ID eintragen (Code ist fertig, s. o.)
+- Vercel-Deployment aufsetzen (Account kommt von Atilla) + Env-Variablen setzen
+- MailerLite-API-Key eintragen + PDF-Versand-Automationen je Freebie anlegen
 - Echte Bilder einsetzen (Koblenz/Deutsches Eck im Hero, Team-Fotos, Projekt-Screenshots)
 - Google-Bewertungen live anbinden (Places API), Platzhalter 4.9/27 ersetzen
 - 166 Standortseiten über `lib/standorte.ts`/CMS ausrollen (Achtung: Thin-Content-Risiko der Altseiten beheben; Slug-Inkonsistenz `zuerich`/`zurich-meta-ads` bei Migration/Redirects beachten)
