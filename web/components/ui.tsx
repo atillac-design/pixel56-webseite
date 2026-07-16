@@ -64,7 +64,7 @@ export type MetricRow = { label: string; value: string; countTo?: string; suffix
 
 const BAR_HEIGHTS = [38, 52, 44, 68, 60, 82, 100];
 
-export function MetricMock({ head, rows }: { head: string; rows: MetricRow[] }) {
+export function MetricMock({ head, rows, bars = BAR_HEIGHTS }: { head: string; rows: MetricRow[]; bars?: number[] }) {
   return (
     <div className="metric-mock">
       <div className="mm-head">
@@ -84,8 +84,8 @@ export function MetricMock({ head, rows }: { head: string; rows: MetricRow[] }) 
         </div>
       ))}
       <div className="metric-bars" aria-hidden="true">
-        {BAR_HEIGHTS.map((h, i) => (
-          <i key={h} style={{ height: `${h}%`, animationDelay: `${0.5 + i * 0.1}s` }} />
+        {bars.map((h, i) => (
+          <i key={`${i}-${h}`} style={{ height: `${h}%`, animationDelay: `${0.5 + i * 0.1}s` }} />
         ))}
       </div>
     </div>
@@ -121,7 +121,7 @@ export function WaMock({ name, messages, footer }: { name: string; messages: WaM
   );
 }
 
-export function BrowserMock({ variant, barWidth = 60 }: { variant: string; barWidth?: number }) {
+export function BrowserMock({ variant, barWidth = 60, noBtn = false }: { variant: string; barWidth?: number; noBtn?: boolean }) {
   return (
     <div className="ic-browser">
       <div className="ic-chrome">
@@ -133,7 +133,7 @@ export function BrowserMock({ variant, barWidth = 60 }: { variant: string; barWi
         <div className="ic-bar ic-bar-lg" />
         <div className="ic-bar ic-bar-sm" />
         <div className="ic-bar ic-bar-sm" style={{ width: `${barWidth}%` }} />
-        <div className="ic-btn" />
+        {!noBtn && <div className="ic-btn" />}
       </div>
     </div>
   );
@@ -168,6 +168,39 @@ export function FaqList({ items }: { items: Faq[] }) {
           </summary>
           <p>{f.a}</p>
         </details>
+      ))}
+    </div>
+  );
+}
+
+export type RefItem = { variant: string; barWidth?: number; cat: string; title: string; text: string; tag: string };
+
+export function RefCard({ item }: { item: RefItem }) {
+  return (
+    <div className="ref-card">
+      <BrowserMock variant={item.variant} barWidth={item.barWidth ?? 60} />
+      <div className="rc-cat">{item.cat}</div>
+      <h4>{item.title}</h4>
+      <p>{item.text}</p>
+      <span className="rc-tag">{item.tag}</span>
+    </div>
+  );
+}
+
+export type Step = { nr: string; tag: string; title: string; text: string };
+
+export function Stepper({ steps, six = false }: { steps: Step[]; six?: boolean }) {
+  return (
+    <div className={`${six ? "stepper-6" : "stepper"} reveal`}>
+      {steps.map((s) => (
+        <div className="step" key={s.nr}>
+          <div className="sdot">{s.nr}</div>
+          <div className="step-body">
+            <span className="stag">{s.tag}</span>
+            <h4>{s.title}</h4>
+            <p>{s.text}</p>
+          </div>
+        </div>
       ))}
     </div>
   );

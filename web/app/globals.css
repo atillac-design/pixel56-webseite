@@ -318,3 +318,83 @@ footer.site-footer { border-top: 1px solid var(--line); padding: 70px 0 0; }
 .footer-bottom a { color: var(--ink-faint); text-decoration: none; margin-left: 20px; }
 .footer-bottom a:hover { color: var(--ink-dim); }
 @media (max-width: 640px) { .footer-bottom { flex-direction: column; text-align: center; } .footer-bottom a { margin: 0 10px; } }
+
+/* ============ SEARCH MOCK (SEO) ============ */
+.search-mock { background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; padding: 22px; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); }
+.search-bar { display: flex; align-items: center; gap: 10px; background: rgba(245,244,242,0.05); border: 1px solid var(--line-strong); border-radius: 100px; padding: 13px 18px; }
+.search-bar svg { width: 15px; height: 15px; color: var(--ink-faint); flex-shrink: 0; }
+.typed-text { font-family: var(--sans); font-size: 14.5px; color: var(--ink); display: inline-block; overflow: hidden; white-space: nowrap; width: 0; border-right: 2px solid var(--accent); animation: type 2.2s steps(20) 0.6s forwards, caret-blink 0.8s step-end 0.6s infinite; }
+@keyframes type { to { width: 20ch; } }
+@keyframes caret-blink { 50% { border-color: transparent; } }
+.search-results { margin-top: 16px; display: flex; flex-direction: column; gap: 1px; }
+.sres { padding: 14px 16px; border-radius: 10px; font-size: 13.5px; opacity: 0; animation: fade-up 0.6s cubic-bezier(0.16,0.8,0.2,1) forwards; }
+.sres.you { background: rgba(255,57,81,0.1); border: 1px solid rgba(255,57,81,0.35); display: flex; align-items: center; justify-content: space-between; gap: 10px; animation-delay: 2.9s; color: var(--ink); font-weight: 600; }
+.sres.you .tag { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.06em; color: var(--accent-2); border: 1px solid rgba(255,194,38,0.4); border-radius: 100px; padding: 3px 9px; text-transform: uppercase; flex-shrink: 0; }
+.sres.other { color: var(--ink-faint); animation-delay: 3.1s; }
+.sres.other:nth-of-type(3) { animation-delay: 3.25s; }
+
+/* ============ CALLOUT ============ */
+.callout2 { margin-top: 8px; padding: 28px 30px; border-left: 2px solid var(--accent-2); background: rgba(255,194,38,0.05); border-radius: 0 14px 14px 0; }
+.callout2 p { margin: 0; font-size: 15.5px; line-height: 1.75; color: var(--ink); max-width: 68ch; }
+.callout2 p b { color: var(--accent-2); }
+
+/* ============ FEED MOCK (Meta / Instagram) ============ */
+.feed-mock { background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); max-width: 340px; margin: 0 auto; }
+.fm-head { display: flex; align-items: center; gap: 10px; padding: 14px 16px; }
+.fm-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(155deg, var(--accent), var(--violet)); flex-shrink: 0; }
+.fm-who b { display: block; font-size: 13px; font-weight: 700; }
+.fm-who span { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em; }
+.fm-image { height: 210px; background: linear-gradient(155deg, rgba(255,57,81,0.3), rgba(106,53,255,0.22)); position: relative; }
+.fm-image::after { content: "Jetzt entdecken"; position: absolute; bottom: 16px; left: 18px; font-family: var(--sans); font-weight: 700; font-size: 15px; color: #fff; }
+.fm-actions { display: flex; gap: 16px; padding: 12px 16px 2px; }
+.fm-actions svg { width: 20px; height: 20px; color: var(--ink-dim); stroke: currentColor; }
+.fm-caption { padding: 8px 16px 16px; font-size: 12.5px; color: var(--ink-dim); }
+.fm-caption b { color: var(--ink); }
+
+/* ============ REEL MOCK (vertikales Video) ============ */
+.reel-mock { display: flex; justify-content: center; }
+.rl-frame { position: relative; width: 220px; height: 390px; border-radius: 22px; overflow: hidden; border: 1px solid var(--line-strong); box-shadow: 0 40px 80px -35px rgba(0,0,0,0.7); }
+.rl-video { position: absolute; inset: 0; background: linear-gradient(165deg, rgba(255,57,81,0.35), rgba(106,53,255,0.28) 55%, rgba(63,128,253,0.22)); }
+.rl-play { position: absolute; top: 50%; left: 50%; width: 46px; height: 46px; transform: translate(-50%,-50%); border-radius: 50%; background: rgba(7,7,12,0.45); border: 1px solid rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: center; }
+.rl-play::before { content: ""; border-style: solid; border-width: 9px 0 9px 14px; border-color: transparent transparent transparent #fff; margin-left: 3px; }
+.rl-side { position: absolute; right: 12px; bottom: 76px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.rl-ic { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.rl-ic svg { width: 22px; height: 22px; color: #fff; stroke: currentColor; }
+.rl-ic span { font-family: var(--mono); font-size: 10px; color: rgba(255,255,255,0.85); }
+.rl-cap { position: absolute; left: 14px; right: 54px; bottom: 16px; }
+.rl-cap b { display: block; font-size: 12.5px; color: #fff; }
+.rl-cap span { display: block; font-size: 11px; color: rgba(255,255,255,0.8); margin-top: 3px; }
+
+/* ============ JOB MOCK (Karriereseite / Upload) ============ */
+.job-mock { background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; padding: 26px; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); }
+.jm-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--accent-2); border: 1px solid rgba(255,194,38,0.35); background: rgba(255,194,38,0.08); border-radius: 100px; padding: 4px 12px; text-transform: uppercase; margin-bottom: 16px; }
+.jm-title { font-size: 19px; font-weight: 700; margin-bottom: 12px; }
+.jm-line { height: 8px; border-radius: 4px; background: rgba(255,255,255,0.12); margin-bottom: 8px; width: 92%; }
+.jm-line.short { width: 55%; margin-bottom: 20px; }
+.jm-upload { display: flex; align-items: center; gap: 10px; border: 1.5px dashed var(--line-strong); border-radius: 12px; padding: 16px 18px; font-size: 13px; color: var(--ink-dim); margin-bottom: 16px; }
+.jm-upload svg { width: 18px; height: 18px; color: var(--ink-faint); flex-shrink: 0; }
+.jm-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-size: 13.5px; font-weight: 700; padding: 12px 22px; border-radius: 100px; }
+
+/* ============ COMPARE MOCK (vorher/nachher) ============ */
+.compare-mock { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.cm-row { width: 100%; max-width: 340px; }
+.cm-row .ic-browser { width: 100%; }
+.cm-label { display: block; text-align: center; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin-top: 10px; }
+.cm-arrow { color: var(--ink-faint); font-size: 18px; margin: 4px 0; }
+
+/* ============ FUNNEL (Landingpages) ============ */
+.funnel2 { display: flex; align-items: stretch; gap: 0; margin-top: 8px; }
+.fn2-node { flex: 1; background: #0d0d14; border: 1px solid var(--line); border-radius: 14px; padding: 28px 24px; text-align: center; transition: transform 0.3s ease, border-color 0.3s ease; min-width: 0; }
+.fn2-node:hover { transform: translateY(-4px); }
+.fn2-node.hot { border-color: var(--accent); background: linear-gradient(155deg, rgba(255,57,81,0.12), #0d0d14 70%); }
+.fn2-tag { display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin-bottom: 10px; }
+.fn2-node.hot .fn2-tag { color: var(--accent-2); }
+.fn2-node b { font-size: 16px; font-weight: 700; }
+.fn2-arrow { display: flex; align-items: center; justify-content: center; padding: 0 18px; color: var(--ink-faint); font-size: 20px; flex-shrink: 0; }
+@media (max-width: 720px) { .funnel2 { flex-direction: column; } .fn2-arrow { transform: rotate(90deg); padding: 10px 0; } }
+
+/* ============ REF SOLO ============ */
+.ref-solo { max-width: 640px; }
+.ref-solo .ic-browser { margin-bottom: 18px; }
+.ref-solo h4 { margin: 16px 0 4px; font-size: 20px; font-weight: 700; }
+.ref-solo .rc-cat { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--accent-2); text-transform: uppercase; }
