@@ -1,0 +1,414 @@
+<title>Pixel56 — Karriere</title>
+<style>
+  :root {
+    --ground: #07070c;
+    --ink: #f5f4f2;
+    --ink-dim: #a19dae;
+    --ink-faint: #5c5870;
+    --line: rgba(245, 244, 242, 0.08);
+    --line-strong: rgba(245, 244, 242, 0.16);
+    --accent: #ff3951;
+    --accent-2: #ffc226;
+    --blue: #3f80fd;
+    --violet: #6a35ff;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--ground); }
+  body { margin: 0; color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; background: var(--ground); }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: inherit; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+
+  .sheet { max-width: 1320px; margin: 0 auto; padding: 0 56px; position: relative; z-index: 1; }
+  @media (max-width: 720px) { .sheet { padding: 0 22px; } }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16,0.8,0.2,1), transform 0.8s cubic-bezier(0.16,0.8,0.2,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ============ NAV ============ */
+  nav { position: relative; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 30px 0; }
+  .mark { display: flex; align-items: center; gap: 9px; font-family: var(--sans); font-weight: 700; font-size: 16px; letter-spacing: -0.01em; }
+  .mark .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 12px 2px rgba(255,57,81,0.6); }
+  .crumb { font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); letter-spacing: 0.04em; }
+  .crumb b { color: var(--ink-dim); font-weight: 500; }
+  @media (max-width: 720px) { .crumb { display: none; } }
+  .nav-cta { font-size: 13.5px; font-weight: 600; color: var(--ink); text-decoration: none; padding: 11px 22px; border-radius: 100px; background: rgba(245,244,242,0.06); border: 1px solid var(--line-strong); transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease; }
+  .nav-cta:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+
+  /* ============ HERO ============ */
+  .hero { position: relative; min-height: 88vh; display: flex; flex-direction: column; justify-content: center; padding: 40px 0 90px; overflow: hidden; }
+  .pulse-field { position: absolute; top: 50%; right: -8%; width: 900px; height: 900px; transform: translateY(-50%); pointer-events: none; z-index: 0; }
+  @media (max-width: 1100px) { .pulse-field { right: -30%; opacity: 0.6; } }
+  .pulse-ring { position: absolute; top: 50%; left: 50%; border: 1px solid rgba(255,57,81,0.35); border-radius: 50%; transform: translate(-50%,-50%); animation: pulse-out 5.5s cubic-bezier(0.2,0.6,0.3,1) infinite; }
+  .pulse-ring:nth-child(1) { width: 120px; height: 120px; animation-delay: 0s; }
+  .pulse-ring:nth-child(2) { width: 120px; height: 120px; animation-delay: 1.4s; }
+  .pulse-ring:nth-child(3) { width: 120px; height: 120px; animation-delay: 2.8s; }
+  .pulse-ring:nth-child(4) { width: 120px; height: 120px; animation-delay: 4.2s; }
+  .pulse-core { position: absolute; top: 50%; left: 50%; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); transform: translate(-50%,-50%); box-shadow: 0 0 40px 8px rgba(255,57,81,0.55); }
+  .pulse-core::before { content: ""; position: absolute; inset: -30px; border-radius: 50%; background: radial-gradient(circle, rgba(255,57,81,0.25), transparent 70%); }
+  @keyframes pulse-out { 0% { width: 20px; height: 20px; opacity: 0.9; border-color: rgba(255,57,81,0.7); } 100% { width: 780px; height: 780px; opacity: 0; border-color: rgba(255,57,81,0); } }
+  .pulse-label { position: absolute; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; color: var(--ink-faint); white-space: nowrap; }
+  .pulse-label.pl1 { top: calc(50% - 210px); left: calc(50% + 80px); }
+  .pulse-label.pl2 { top: calc(50% + 160px); left: calc(50% - 260px); }
+  @media (max-width: 720px) { .pulse-label { display: none; } }
+  .hero-eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; color: var(--accent-2); margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
+  .hero-eyebrow::before { content: ""; width: 30px; height: 1px; background: var(--accent-2); }
+  .hero h1 { font-family: var(--sans); font-weight: 800; letter-spacing: -0.03em; line-height: 0.97; margin: 0; font-size: clamp(42px, 6vw, 92px); max-width: 15.5ch; text-wrap: balance; }
+  .hero h1 .in { display: block; overflow: hidden; }
+  .hero h1 .in span { display: block; transform: translateY(105%); animation: rise-in 0.9s cubic-bezier(0.16,0.8,0.2,1) forwards; }
+  .hero h1 .in:nth-child(1) span { animation-delay: 0.1s; }
+  .hero h1 .in:nth-child(2) span { animation-delay: 0.22s; color: var(--accent); }
+  .hero h1 .in:nth-child(3) span { animation-delay: 0.34s; }
+  @keyframes rise-in { to { transform: translateY(0); } }
+  .hero-sub { font-family: var(--serif); font-style: italic; font-size: clamp(19px, 2vw, 24px); line-height: 1.5; color: var(--ink-dim); max-width: 36ch; margin: 40px 0 0; opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,0.8,0.2,1) 0.65s forwards; }
+  @keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-actions { display: flex; align-items: center; gap: 30px; margin-top: 48px; opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,0.8,0.2,1) 0.8s forwards; }
+  .btn-primary { font-size: 15.5px; font-weight: 700; color: #fff; text-decoration: none; background: var(--accent); padding: 18px 32px; border-radius: 100px; display: inline-flex; align-items: center; gap: 12px; box-shadow: 0 20px 50px -18px rgba(255,57,81,0.65); transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.3s ease; }
+  .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 26px 60px -16px rgba(255,57,81,0.75); }
+  .btn-primary svg { width: 15px; height: 15px; transition: transform 0.3s ease; }
+  .btn-primary:hover svg { transform: translateX(5px); }
+  .btn-text { font-size: 14.5px; font-weight: 600; color: var(--ink-dim); text-decoration: none; border-bottom: 1px solid var(--line-strong); padding-bottom: 3px; transition: color 0.2s ease, border-color 0.2s ease; }
+  .btn-text:hover { color: var(--ink); border-color: var(--ink); }
+  .hero-foot { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 90px; padding-top: 36px; border-top: 1px solid var(--line); opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,0.8,0.2,1) 1s forwards; }
+  .hf-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin-right: 4px; }
+  .hf-chip { font-size: 13px; font-weight: 600; color: var(--ink-dim); border: 1px solid var(--line-strong); border-radius: 100px; padding: 8px 16px; transition: border-color 0.25s ease, color 0.25s ease; }
+  .hf-chip:hover { border-color: var(--accent); color: var(--ink); }
+  @media (max-width: 640px) { .hero-foot { gap: 10px; } .hf-label { width: 100%; margin-bottom: 4px; } }
+
+  /* ============ SECTION SHELL ============ */
+  .band { position: relative; padding: 120px 0; }
+  .band.tint-amber, .band.tint-violet { isolation: isolate; }
+  .band.tint-amber::before, .band.tint-violet::before { content: ""; position: absolute; top: 0; left: 50%; width: 100vw; height: 100%; transform: translateX(-50%); z-index: -1; pointer-events: none; }
+  .band.tint-amber::before { background: linear-gradient(180deg, transparent, rgba(255,194,38,0.09) 35%, rgba(255,194,38,0.09) 65%, transparent); }
+  .band.tint-violet::before { background: linear-gradient(180deg, transparent, rgba(106,53,255,0.09) 35%, rgba(106,53,255,0.09) 65%, transparent); }
+  .band-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 64px; flex-wrap: wrap; }
+  .band-tag { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: block; }
+  .band-title { font-family: var(--sans); font-weight: 800; letter-spacing: -0.025em; font-size: clamp(32px, 4.2vw, 58px); line-height: 1.03; margin: 0; max-width: 16ch; text-wrap: balance; }
+  .band-title em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  .band-note { font-size: 15.5px; line-height: 1.7; color: var(--ink-dim); max-width: 34ch; }
+
+  /* ============ SPLIT SHELL ============ */
+  .split2 { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+  .split2.reverse > :first-child { order: 2; }
+  .split2.reverse > :last-child { order: 1; }
+  @media (max-width: 900px) { .split2 { grid-template-columns: 1fr; gap: 44px; } .split2.reverse > :first-child, .split2.reverse > :last-child { order: initial; } }
+  .split2 .lead { font-size: 17px; line-height: 1.75; color: var(--ink-dim); margin: 22px 0 0; max-width: 42ch; }
+  .split2 .lines { margin: 26px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .split2 .lines li { font-size: 14.5px; color: var(--ink-dim); padding-left: 22px; position: relative; }
+  .split2 .lines li::before { content: ""; position: absolute; left: 0; top: 8px; width: 10px; height: 1px; background: var(--accent); }
+
+  /* ============ JOB LIST ============ */
+  .job-list { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .job-row { background: #0d0d14; padding: 26px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; transition: background 0.25s ease; text-decoration: none; }
+  .job-row:hover { background: #100d13; }
+  .job-row .jr-info b { display: block; font-size: 16.5px; font-weight: 700; }
+  .job-row .jr-info span { display: block; font-family: var(--mono); font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 5px; }
+  .job-row .jr-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: var(--ink); border: 1px solid var(--line-strong); border-radius: 100px; padding: 10px 20px; transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease; flex-shrink: 0; }
+  .job-row:hover .jr-btn { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .job-open-note { margin-top: 28px; font-size: 15px; line-height: 1.7; color: var(--ink-dim); max-width: 60ch; }
+  .job-open-note b { color: var(--ink); }
+
+  /* ============ JOB MOCK (upload) ============ */
+  .job-mock { background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; padding: 26px; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); }
+  .jm-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--accent-2); border: 1px solid rgba(255,194,38,0.35); background: rgba(255,194,38,0.08); border-radius: 100px; padding: 4px 12px; text-transform: uppercase; margin-bottom: 16px; }
+  .jm-title { font-size: 19px; font-weight: 700; margin-bottom: 12px; }
+  .jm-line { height: 8px; border-radius: 4px; background: rgba(255,255,255,0.12); margin-bottom: 8px; width: 92%; }
+  .jm-line.short { width: 55%; margin-bottom: 20px; }
+  .jm-upload { display: flex; align-items: center; gap: 10px; border: 1.5px dashed var(--line-strong); border-radius: 12px; padding: 16px 18px; font-size: 13px; color: var(--ink-dim); margin-bottom: 16px; }
+  .jm-upload svg { width: 18px; height: 18px; color: var(--ink-faint); flex-shrink: 0; }
+  .jm-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; font-size: 13.5px; font-weight: 700; padding: 12px 22px; border-radius: 100px; }
+
+  /* ============ FACT GRID (Warum bei uns) ============ */
+  .fact-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-top: 8px; }
+  @media (max-width: 780px) { .fact-grid { grid-template-columns: 1fr; } }
+  .fact-cell { background: #0d0d14; padding: 32px 28px; display: flex; flex-direction: column; gap: 12px; transition: background 0.25s ease; }
+  .fact-cell:hover { background: #100d13; }
+  .fact-cell .fl { font-family: var(--mono); font-size: 10.5px; color: var(--accent-2); letter-spacing: 0.08em; text-transform: uppercase; }
+  .fact-cell h4 { margin: 0; font-size: 18px; font-weight: 700; }
+  .fact-cell p { margin: 0; font-size: 13.5px; line-height: 1.65; color: var(--ink-dim); }
+
+  /* ============ WhatsApp mock ============ */
+  .wa-mock { background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; padding: 20px; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); }
+  .wa-head { display: flex; align-items: center; gap: 10px; padding-bottom: 16px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+  .wa-avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(155deg, var(--accent), #7a1626); display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-weight: 800; font-size: 12px; color: #fff; flex-shrink: 0; }
+  .wa-id b { display: block; font-size: 13.5px; font-weight: 700; }
+  .wa-id .wa-status { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 10.5px; color: #3ddc84; margin-top: 2px; }
+  .wa-status .wdot { width: 6px; height: 6px; border-radius: 50%; background: #3ddc84; position: relative; }
+  .wa-status .wdot::before { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1px solid #3ddc84; animation: wa-pulse 2.2s ease-out infinite; }
+  @keyframes wa-pulse { 0% { transform: scale(0.4); opacity: 0.8; } 100% { transform: scale(2.4); opacity: 0; } }
+  .wa-thread { display: flex; flex-direction: column; gap: 10px; }
+  .wa-bub { max-width: 78%; padding: 11px 15px; border-radius: 14px; font-size: 13.5px; line-height: 1.5; opacity: 0; animation: fade-up 0.6s cubic-bezier(0.16,0.8,0.2,1) forwards; }
+  .wa-bub.in-msg { background: rgba(245,244,242,0.06); border-bottom-left-radius: 4px; align-self: flex-start; color: var(--ink-dim); animation-delay: 0.3s; }
+  .wa-bub.out-msg { background: rgba(255,57,81,0.16); border: 1px solid rgba(255,57,81,0.3); border-bottom-right-radius: 4px; align-self: flex-end; color: var(--ink); animation-delay: 0.9s; }
+  .wa-bub.in-msg2 { background: rgba(245,244,242,0.06); border-bottom-left-radius: 4px; align-self: flex-start; color: var(--ink-dim); animation-delay: 1.5s; }
+  .wa-time { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); text-align: center; margin-top: 4px; }
+
+  /* ============ FAQ ACCORDION ============ */
+  .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .faq-item { background: #0d0d14; }
+  .faq-item summary { list-style: none; cursor: pointer; padding: 24px 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: 15.5px; font-weight: 600; -webkit-tap-highlight-color: transparent; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary .fplus { width: 20px; height: 20px; position: relative; flex-shrink: 0; }
+  .faq-item summary .fplus::before, .faq-item summary .fplus::after { content: ""; position: absolute; background: var(--ink-dim); transition: opacity 0.25s ease, transform 0.25s ease; }
+  .faq-item summary .fplus::before { top: 9px; left: 2px; right: 2px; height: 1.5px; }
+  .faq-item summary .fplus::after { left: 9px; top: 2px; bottom: 2px; width: 1.5px; }
+  .faq-item[open] summary .fplus::after { opacity: 0; transform: rotate(90deg); }
+  .faq-item[open] summary { color: var(--accent); }
+  .faq-item p { margin: 0; padding: 0 28px 24px; font-size: 14.5px; line-height: 1.7; color: var(--ink-dim); max-width: 60ch; }
+
+  /* ============ CLOSING CTA ============ */
+  .close-cta { position: relative; padding: 150px 0; text-align: center; overflow: hidden; }
+  .close-cta h2 { font-family: var(--sans); font-weight: 800; letter-spacing: -0.03em; font-size: clamp(40px, 7vw, 96px); line-height: 0.98; margin: 0 auto; max-width: 16ch; text-wrap: balance; }
+  .close-cta h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  .close-cta .btn-primary { margin-top: 48px; }
+  .close-glow { position: absolute; top: 50%; left: 50%; width: 800px; height: 400px; transform: translate(-50%,-50%); background: radial-gradient(ellipse, rgba(255,57,81,0.18), transparent 70%); pointer-events: none; }
+
+  /* ============ FOOTER ============ */
+  footer { border-top: 1px solid var(--line); padding: 70px 0 0; }
+  .footer-grid { display: grid; grid-template-columns: minmax(0,1.3fr) repeat(4, minmax(0,1fr)); gap: 32px; padding-bottom: 50px; }
+  @media (max-width: 980px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+  .footer-brand .mark { margin-bottom: 16px; }
+  .footer-brand p { font-size: 13.5px; line-height: 1.65; color: var(--ink-dim); max-width: 30ch; margin: 0; }
+  .footer-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin: 0 0 18px; }
+  .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+  .footer-col a { color: var(--ink-dim); text-decoration: none; font-size: 13.5px; transition: color 0.2s ease; }
+  .footer-col a:hover { color: var(--ink); }
+  .footer-bottom { border-top: 1px solid var(--line); padding: 22px 0 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); }
+  .footer-bottom a { color: var(--ink-faint); text-decoration: none; margin-left: 20px; }
+  .footer-bottom a:hover { color: var(--ink-dim); }
+  @media (max-width: 640px) { .footer-bottom { flex-direction: column; text-align: center; } .footer-bottom a { margin: 0 10px; } }
+
+  .note { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 30; font-family: var(--mono); font-size: 11px; color: var(--ink-faint); background: rgba(7,7,12,0.8); backdrop-filter: blur(6px); border: 1px solid var(--line-strong); border-radius: 100px; padding: 9px 18px; white-space: nowrap; }
+  @media (max-width: 640px) { .note { font-size: 9.5px; white-space: normal; text-align: center; width: 86%; } }
+</style>
+
+<div class="sheet">
+  <nav>
+    <div class="mark"><span class="dot"></span>PIXEL56</div>
+    <div class="crumb">Unternehmen <b>/</b> <b>Karriere</b></div>
+    <a class="nav-cta" href="#kontakt">Kontakt</a>
+  </nav>
+
+  <header class="hero">
+    <div class="pulse-field" aria-hidden="true">
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-core"></div>
+      <div class="pulse-label pl1">// BENDORF & REMOTE</div>
+      <div class="pulse-label pl2">// BEWERBUNG OHNE UMWEGE</div>
+    </div>
+    <div class="hero-eyebrow">UNTERNEHMEN · KARRIERE</div>
+    <h1>
+      <span class="in"><span>Arbeite an Dingen,</span></span>
+      <span class="in"><span>die live gehen.</span></span>
+      <span class="in"><span>Nicht in Schubladen.</span></span>
+    </h1>
+    <p class="hero-sub">Bei Pixel56 landet deine Arbeit nicht im Konzept-Ordner — sie geht online, wird gemessen und macht für echte Betriebe einen Unterschied.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#stellen">Offene Stellen ansehen <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8"/></svg></a>
+      <a class="btn-text" href="#warum">Warum Pixel56? ↓</a>
+    </div>
+    <div class="hero-foot">
+      <span class="hf-label">Wie wir arbeiten:</span>
+      <div class="hf-chip">Bendorf & Remote</div>
+      <div class="hf-chip">Kurze Wege</div>
+      <div class="hf-chip">Echte Projekte</div>
+    </div>
+  </header>
+</div>
+
+<div class="sheet">
+  <section class="band tint-amber" id="warum" style="padding-top: 60px;">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">01 — Warum Pixel56</span>
+        <h2 class="band-title">Klein genug für Freiheit, <em>groß genug für Wirkung</em></h2>
+      </div>
+      <p class="band-note">Keine Konzern-Floskeln — drei Dinge, die den Arbeitsalltag hier tatsächlich ausmachen.</p>
+    </div>
+    <div class="fact-grid reveal">
+      <div class="fact-cell"><span class="fl">Grund 1</span><h4>Deine Arbeit geht live</h4><p>Websites, Kampagnen und Content für echte Kunden — was du baust, wird veröffentlicht und an echten Zahlen gemessen.</p></div>
+      <div class="fact-cell"><span class="fl">Grund 2</span><h4>Kurze Wege, echte Verantwortung</h4><p>Keine fünf Hierarchie-Ebenen. Wer eine gute Idee hat, setzt sie um — und sieht das Ergebnis direkt beim Kunden.</p></div>
+      <div class="fact-cell"><span class="fl">Grund 3</span><h4>Lernen am echten Fall</h4><p>SEO, Ads, Design, Content — bei uns arbeitest du über Disziplinen hinweg statt in einer einzigen Nische zu versauern.</p></div>
+    </div>
+  </section>
+
+  <section class="band" id="stellen">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">02 — Offene Stellen</span>
+        <h2 class="band-title">Wen wir gerade <em>suchen</em></h2>
+      </div>
+      <p class="band-note">Die Stellen hier sind Platzhalter für den Entwurf — im echten Aufbau wird diese Liste aus dem CMS gepflegt.</p>
+    </div>
+    <div class="job-list reveal">
+      <a class="job-row" href="#bewerben">
+        <div class="jr-info"><b>Webdesigner / Webentwickler (m/w/d)</b><span>Vollzeit oder Teilzeit · Bendorf / Remote</span></div>
+        <span class="jr-btn">Jetzt bewerben →</span>
+      </a>
+      <a class="job-row" href="#bewerben">
+        <div class="jr-info"><b>Content Creator — Foto &amp; Video (m/w/d)</b><span>Teilzeit oder Freelance · Region Koblenz</span></div>
+        <span class="jr-btn">Jetzt bewerben →</span>
+      </a>
+      <a class="job-row" href="#bewerben">
+        <div class="jr-info"><b>Werkstudent Performance Marketing (m/w/d)</b><span>Werkstudent · Bendorf / Remote</span></div>
+        <span class="jr-btn">Jetzt bewerben →</span>
+      </a>
+    </div>
+    <p class="job-open-note reveal"><b>Nichts Passendes dabei?</b> Initiativbewerbungen sind ausdrücklich willkommen — wenn du gut bist in dem, was du tust, finden wir heraus, ob es passt.</p>
+  </section>
+
+  <section class="band" id="bewerben">
+    <div class="split2 reverse">
+      <div class="reveal">
+        <span class="band-tag">03 — So bewirbst du dich</span>
+        <h2 class="band-title">Bewerbung <em>ohne Umwege</em></h2>
+        <p class="lead">Wir bauen Bewerbungswege ohne Hürden für unsere Kunden — natürlich gilt das auch für uns selbst. Kein Anschreiben-Roman, kein Bewerbungsportal mit zwölf Pflichtfeldern.</p>
+        <ul class="lines">
+          <li>Unterlagen direkt hochladen — ohne E-Mail-Programm.</li>
+          <li>Kurzes Formular: wer du bist, was du kannst, was du willst.</li>
+          <li>Antwort innerhalb weniger Tage, nicht Wochen.</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="job-mock">
+          <span class="jm-tag">Deine Bewerbung</span>
+          <div class="jm-title">In 2 Minuten abgeschickt</div>
+          <div class="jm-line"></div>
+          <div class="jm-line short"></div>
+          <div class="jm-upload">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 16V4M12 4l-4 4M12 4l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            Lebenslauf &amp; Arbeitsproben hochladen
+          </div>
+          <div class="jm-btn">Bewerbung absenden →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint-violet">
+    <div class="split2">
+      <div class="reveal">
+        <span class="band-tag">04 — Kennenlernen</span>
+        <h2 class="band-title">Erst reden, <em>dann Papierkram</em></h2>
+        <p class="lead">Nach deiner Bewerbung folgt ein lockeres Gespräch — per Video-Call oder vor Ort in Bendorf. Kein Assessment-Center, keine Fangfragen. Wir wollen wissen, wie du denkst und arbeitest, nicht wie gut du Bewerbungsratgeber auswendig lernst.</p>
+      </div>
+      <div class="reveal">
+        <div class="wa-mock">
+          <div class="wa-head">
+            <div class="wa-avatar">P56</div>
+            <div class="wa-id"><b>Pixel56 — Atilla</b><span class="wa-status"><span class="wdot"></span>Online</span></div>
+          </div>
+          <div class="wa-thread">
+            <div class="wa-bub in-msg">Hi! Ich habe gerade meine Bewerbung abgeschickt 🙂</div>
+            <div class="wa-bub out-msg">Super, schaue ich mir heute an. Hast du diese Woche Zeit für einen kurzen Call?</div>
+            <div class="wa-bub in-msg2">Ja, Donnerstag würde passen!</div>
+          </div>
+          <div class="wa-time">So schnell kann Kennenlernen gehen</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">05 — Häufige Fragen</span>
+        <h2 class="band-title">Was Bewerber <em>wissen wollen</em></h2>
+      </div>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>Kann ich komplett remote arbeiten?<span class="fplus"></span></summary>
+        <p>Je nach Rolle ja — Content-Produktion braucht Vor-Ort-Termine in der Region, Entwicklung und Kampagnen-Arbeit funktionieren auch komplett remote.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Brauche ich ein klassisches Anschreiben?<span class="fplus"></span></summary>
+        <p>Nein. Lebenslauf plus Arbeitsproben sagen mehr als jede Floskel-Seite. Wenn du uns etwas mitgeben willst, reichen drei ehrliche Sätze.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Wie schnell bekomme ich eine Antwort?<span class="fplus"></span></summary>
+        <p>Innerhalb weniger Tage — wir wissen selbst am besten, wie sehr langsame Antworten gute Kandidaten kosten.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Nehmt ihr auch Quereinsteiger?<span class="fplus"></span></summary>
+        <p>Wenn die Arbeitsproben überzeugen, ja. Was du kannst, zählt mehr als wo du es gelernt hast.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="close-cta reveal" id="kontakt">
+    <div class="close-glow"></div>
+    <h2>Klingt nach <em>dir?</em></h2>
+    <a class="btn-primary" href="#stellen">Jetzt bewerben <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8"/></svg></a>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="mark"><span class="dot"></span>PIXEL56</div>
+        <p>Hüttenstraße 100, 56170 Bendorf bei Koblenz. Digitale Auftritte für KMUs, Coaches, Shops und lokale Betriebe.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Leistungen</h5>
+        <ul>
+          <li><a href="#">Webdesign</a></li>
+          <li><a href="#">SEO</a></li>
+          <li><a href="#">Google Ads</a></li>
+          <li><a href="#">Meta Ads</a></li>
+          <li><a href="#">Landingpages &amp; Funnels</a></li>
+          <li><a href="#">Content-Produktion</a></li>
+          <li><a href="#">Mitarbeitergewinnung</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Unternehmen</h5>
+        <ul>
+          <li><a href="#">Über uns</a></li>
+          <li><a href="#">Projekte</a></li>
+          <li><a href="#">Bewertungen</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Karriere</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kostenlose Ressourcen</h5>
+        <ul>
+          <li><a href="#">SEO-Checkliste</a></li>
+          <li><a href="#">KI-Agenten-Checkliste</a></li>
+          <li><a href="#">Tagesplaner PDF</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="mailto:info@pixel56.de">info@pixel56.de</a></li>
+          <li><a href="tel:+4926229898654">02622 9898654</a></li>
+          <li><a href="https://wa.me/491785282464" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© Pixel56 — Freier Entwurf, nicht live</div>
+      <div><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
+    </div>
+  </footer>
+</div>
+
+<div class="note">Freier Entwurf — neue Formsprache, zur Diskussion</div>
+
+<script>
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else { revealEls.forEach(function (el) { el.classList.add('in'); }); }
+</script>

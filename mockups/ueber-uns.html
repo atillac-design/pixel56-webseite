@@ -1,0 +1,508 @@
+<title>Pixel56 — Über uns</title>
+<style>
+  :root {
+    --ground: #07070c;
+    --ink: #f5f4f2;
+    --ink-dim: #a19dae;
+    --ink-faint: #5c5870;
+    --line: rgba(245, 244, 242, 0.08);
+    --line-strong: rgba(245, 244, 242, 0.16);
+    --accent: #ff3951;
+    --accent-2: #ffc226;
+    --blue: #3f80fd;
+    --violet: #6a35ff;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--ground); }
+  body { margin: 0; color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; background: var(--ground); }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: inherit; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+
+  .sheet { max-width: 1320px; margin: 0 auto; padding: 0 56px; position: relative; z-index: 1; }
+  @media (max-width: 720px) { .sheet { padding: 0 22px; } }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16,0.8,0.2,1), transform 0.8s cubic-bezier(0.16,0.8,0.2,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ============ NAV ============ */
+  nav { position: relative; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 30px 0; }
+  .mark { display: flex; align-items: center; gap: 9px; font-family: var(--sans); font-weight: 700; font-size: 16px; letter-spacing: -0.01em; }
+  .mark .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 12px 2px rgba(255,57,81,0.6); }
+  .crumb { font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); letter-spacing: 0.04em; }
+  .crumb b { color: var(--ink-dim); font-weight: 500; }
+  @media (max-width: 720px) { .crumb { display: none; } }
+  .nav-cta { font-size: 13.5px; font-weight: 600; color: var(--ink); text-decoration: none; padding: 11px 22px; border-radius: 100px; background: rgba(245,244,242,0.06); border: 1px solid var(--line-strong); transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease; }
+  .nav-cta:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+
+  /* ============ HERO — signal / pulse motif ============ */
+  .hero { position: relative; min-height: 92vh; display: flex; flex-direction: column; justify-content: center; padding: 40px 0 100px; overflow: hidden; }
+  .pulse-field { position: absolute; top: 50%; right: -8%; width: 900px; height: 900px; transform: translateY(-50%); pointer-events: none; z-index: 0; }
+  @media (max-width: 1100px) { .pulse-field { right: -30%; opacity: 0.6; } }
+  .pulse-ring { position: absolute; top: 50%; left: 50%; border: 1px solid rgba(255,57,81,0.35); border-radius: 50%; transform: translate(-50%,-50%); animation: pulse-out 5.5s cubic-bezier(0.2,0.6,0.3,1) infinite; }
+  .pulse-ring:nth-child(1) { width: 120px; height: 120px; animation-delay: 0s; }
+  .pulse-ring:nth-child(2) { width: 120px; height: 120px; animation-delay: 1.4s; }
+  .pulse-ring:nth-child(3) { width: 120px; height: 120px; animation-delay: 2.8s; }
+  .pulse-ring:nth-child(4) { width: 120px; height: 120px; animation-delay: 4.2s; }
+  .pulse-core { position: absolute; top: 50%; left: 50%; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); transform: translate(-50%,-50%); box-shadow: 0 0 40px 8px rgba(255,57,81,0.55); }
+  .pulse-core::before { content: ""; position: absolute; inset: -30px; border-radius: 50%; background: radial-gradient(circle, rgba(255,57,81,0.25), transparent 70%); }
+  @keyframes pulse-out { 0% { width: 20px; height: 20px; opacity: 0.9; border-color: rgba(255,57,81,0.7); } 100% { width: 780px; height: 780px; opacity: 0; border-color: rgba(255,57,81,0); } }
+  .pulse-label { position: absolute; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; color: var(--ink-faint); white-space: nowrap; }
+  .pulse-label.pl1 { top: calc(50% - 210px); left: calc(50% + 80px); }
+  .pulse-label.pl2 { top: calc(50% + 160px); left: calc(50% - 260px); }
+  @media (max-width: 720px) { .pulse-label { display: none; } }
+
+  .hero-eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; color: var(--accent-2); margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
+  .hero-eyebrow::before { content: ""; width: 30px; height: 1px; background: var(--accent-2); }
+  .hero h1 { font-family: var(--sans); font-weight: 800; letter-spacing: -0.03em; line-height: 0.97; margin: 0; font-size: clamp(42px, 6vw, 92px); max-width: 15.5ch; text-wrap: balance; }
+  .hero h1 .in { display: block; overflow: hidden; }
+  .hero h1 .in span { display: block; transform: translateY(105%); animation: rise-in 0.9s cubic-bezier(0.16,0.8,0.2,1) forwards; }
+  .hero h1 .in:nth-child(1) span { animation-delay: 0.1s; }
+  .hero h1 .in:nth-child(2) span { animation-delay: 0.22s; color: var(--accent); }
+  .hero h1 .in:nth-child(3) span { animation-delay: 0.34s; }
+  @keyframes rise-in { to { transform: translateY(0); } }
+  .hero-sub { font-family: var(--serif); font-style: italic; font-size: clamp(19px, 2vw, 24px); line-height: 1.5; color: var(--ink-dim); max-width: 36ch; margin: 40px 0 0; opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,0.8,0.2,1) 0.65s forwards; }
+  @keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-actions { display: flex; align-items: center; gap: 30px; margin-top: 48px; opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,0.8,0.2,1) 0.8s forwards; }
+  .btn-primary { font-size: 15.5px; font-weight: 700; color: #fff; text-decoration: none; background: var(--accent); padding: 18px 32px; border-radius: 100px; display: inline-flex; align-items: center; gap: 12px; box-shadow: 0 20px 50px -18px rgba(255,57,81,0.65); transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.3s ease; }
+  .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 26px 60px -16px rgba(255,57,81,0.75); }
+  .btn-primary svg { width: 15px; height: 15px; transition: transform 0.3s ease; }
+  .btn-primary:hover svg { transform: translateX(5px); }
+  .btn-text { font-size: 14.5px; font-weight: 600; color: var(--ink-dim); text-decoration: none; border-bottom: 1px solid var(--line-strong); padding-bottom: 3px; transition: color 0.2s ease, border-color 0.2s ease; }
+  .btn-text:hover { color: var(--ink); border-color: var(--ink); }
+
+  .hero-foot { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 100px; padding-top: 36px; border-top: 1px solid var(--line); opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,0.8,0.2,1) 1s forwards; }
+  .hf-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin-right: 4px; }
+  .hf-chip { font-size: 13px; font-weight: 600; color: var(--ink-dim); border: 1px solid var(--line-strong); border-radius: 100px; padding: 8px 16px; transition: border-color 0.25s ease, color 0.25s ease; }
+  .hf-chip:hover { border-color: var(--accent); color: var(--ink); }
+  @media (max-width: 640px) { .hero-foot { gap: 10px; } .hf-label { width: 100%; margin-bottom: 4px; } }
+
+  /* ============ SECTION SHELL ============ */
+  .band { position: relative; padding: 130px 0; }
+  .band.tint, .band.tint-amber, .band.tint-violet { isolation: isolate; }
+  .band.tint::before, .band.tint-amber::before, .band.tint-violet::before { content: ""; position: absolute; top: 0; left: 50%; width: 100vw; height: 100%; transform: translateX(-50%); z-index: -1; pointer-events: none; }
+  .band.tint::before { background: linear-gradient(180deg, transparent, rgba(255,57,81,0.07) 35%, rgba(255,57,81,0.07) 65%, transparent); }
+  .band.tint-amber::before { background: linear-gradient(180deg, transparent, rgba(255,194,38,0.09) 35%, rgba(255,194,38,0.09) 65%, transparent); }
+  .band.tint-violet::before { background: linear-gradient(180deg, transparent, rgba(106,53,255,0.09) 35%, rgba(106,53,255,0.09) 65%, transparent); }
+  .band-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 64px; flex-wrap: wrap; }
+  .band-tag { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: block; }
+  .band-title { font-family: var(--sans); font-weight: 800; letter-spacing: -0.025em; font-size: clamp(32px, 4.2vw, 58px); line-height: 1.03; margin: 0; max-width: 16ch; text-wrap: balance; }
+  .band-title em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  .band-note { font-size: 15.5px; line-height: 1.7; color: var(--ink-dim); max-width: 34ch; }
+
+  /* ============ MARQUEE ============ */
+  .marquee-wrap { overflow: hidden; padding: 34px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent); mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent); }
+  .marquee-track { display: flex; gap: 60px; width: max-content; animation: mq 30s linear infinite; }
+  @keyframes mq { to { transform: translateX(-50%); } }
+  .marquee-track span { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--ink-faint); white-space: nowrap; }
+
+  /* ============ SPLIT SHELL ============ */
+  .split2 { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+  .split2.reverse > :first-child { order: 2; }
+  .split2.reverse > :last-child { order: 1; }
+  @media (max-width: 900px) { .split2 { grid-template-columns: 1fr; gap: 44px; } .split2.reverse > :first-child, .split2.reverse > :last-child { order: initial; } }
+  .split2 .lead { font-size: 17px; line-height: 1.75; color: var(--ink-dim); margin: 22px 0 0; max-width: 42ch; }
+  .split2 .lines { margin: 26px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .split2 .lines li { font-size: 14.5px; color: var(--ink-dim); padding-left: 22px; position: relative; }
+  .split2 .lines li::before { content: ""; position: absolute; left: 0; top: 8px; width: 10px; height: 1px; background: var(--accent); }
+
+  /* ============ PROFILE MOCK ============ */
+  .profile-mock { background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; padding: 30px; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); max-width: 380px; margin: 0 auto; }
+  .pm-top { display: flex; align-items: center; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); margin-bottom: 6px; }
+  .pm-avatar { width: 58px; height: 58px; border-radius: 50%; background: linear-gradient(155deg, var(--accent), #7a1626); display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-weight: 800; font-size: 19px; color: #fff; flex-shrink: 0; }
+  .pm-id b { display: block; font-size: 16.5px; font-weight: 700; }
+  .pm-id span { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; color: #3ddc84; margin-top: 4px; }
+  .pm-id .wdot { width: 6px; height: 6px; border-radius: 50%; background: #3ddc84; position: relative; }
+  .pm-id .wdot::before { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1px solid #3ddc84; animation: wa-pulse 2.2s ease-out infinite; }
+  @keyframes wa-pulse { 0% { transform: scale(0.4); opacity: 0.8; } 100% { transform: scale(2.4); opacity: 0; } }
+  .pm-row { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--line); }
+  .pm-row:last-child { border-bottom: none; }
+  .pm-row span { font-size: 13.5px; color: var(--ink-dim); }
+  .pm-row b { font-size: 13.5px; font-weight: 600; color: var(--ink); text-align: right; }
+
+  /* ============ MAP MOCK ============ */
+  .map-mock { position: relative; background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; height: 320px; overflow: hidden; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); }
+  .map-mock::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(245,244,242,0.09) 1px, transparent 1px); background-size: 26px 26px; }
+  .mm-ring { position: absolute; top: 50%; left: 50%; border: 1px solid rgba(255,57,81,0.3); border-radius: 50%; transform: translate(-50%,-50%); animation: pulse-out 4.5s cubic-bezier(0.2,0.6,0.3,1) infinite; }
+  .mm-ring:nth-child(1) { animation-delay: 0s; }
+  .mm-ring:nth-child(2) { animation-delay: 1.5s; }
+  .mm-ring:nth-child(3) { animation-delay: 3s; }
+  .mm-pin { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-100%); z-index: 2; }
+  .mm-pin svg { width: 38px; height: 38px; color: var(--accent); filter: drop-shadow(0 6px 16px rgba(255,57,81,0.5)); }
+  .mm-label { position: absolute; left: 50%; top: calc(50% + 22px); transform: translateX(-50%); font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--ink-dim); background: rgba(7,7,12,0.75); border: 1px solid var(--line-strong); border-radius: 100px; padding: 7px 15px; white-space: nowrap; z-index: 2; }
+  .mm-coords { position: absolute; top: 16px; right: 18px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--ink-faint); }
+
+  /* ============ FACT GRID (Werte) ============ */
+  .fact-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-top: 8px; }
+  @media (max-width: 780px) { .fact-grid { grid-template-columns: 1fr; } }
+  .fact-cell { background: #0d0d14; padding: 32px 28px; display: flex; flex-direction: column; gap: 12px; transition: background 0.25s ease; }
+  .fact-cell:hover { background: #100d13; }
+  .fact-cell .fl { font-family: var(--mono); font-size: 10.5px; color: var(--accent-2); letter-spacing: 0.08em; text-transform: uppercase; }
+  .fact-cell h4 { margin: 0; font-size: 18px; font-weight: 700; }
+  .fact-cell p { margin: 0; font-size: 13.5px; line-height: 1.65; color: var(--ink-dim); }
+
+  /* ============ GIANT STAT ============ */
+  .stat-block { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+  @media (max-width: 900px) { .stat-block { grid-template-columns: 1fr; gap: 40px; } }
+  .stat-num { font-family: var(--sans); font-weight: 800; letter-spacing: -0.04em; font-size: clamp(90px, 13vw, 220px); line-height: 0.85; color: var(--ink); position: relative; }
+  .stat-num small { font-size: 0.4em; color: var(--accent-2); vertical-align: super; }
+  .stat-num::after { content: "WACHSTUM"; position: absolute; bottom: -6px; left: 4px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em; color: var(--ink-faint); }
+  .stat-copy p { font-size: 17px; line-height: 1.75; color: var(--ink-dim); }
+  .stat-copy .quote { font-family: var(--serif); font-style: italic; font-size: 22px; line-height: 1.5; color: var(--ink); margin: 0 0 24px; }
+  .stat-copy cite { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--accent-2); font-style: normal; }
+
+  /* ============ WhatsApp mock ============ */
+  .wa-mock { background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; padding: 20px; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); }
+  .wa-head { display: flex; align-items: center; gap: 10px; padding-bottom: 16px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+  .wa-avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(155deg, var(--accent), #7a1626); display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-weight: 800; font-size: 12px; color: #fff; flex-shrink: 0; }
+  .wa-id b { display: block; font-size: 13.5px; font-weight: 700; }
+  .wa-id .wa-status { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 10.5px; color: #3ddc84; margin-top: 2px; }
+  .wa-status .wdot { width: 6px; height: 6px; border-radius: 50%; background: #3ddc84; position: relative; }
+  .wa-status .wdot::before { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1px solid #3ddc84; animation: wa-pulse 2.2s ease-out infinite; }
+  .wa-thread { display: flex; flex-direction: column; gap: 10px; }
+  .wa-bub { max-width: 78%; padding: 11px 15px; border-radius: 14px; font-size: 13.5px; line-height: 1.5; opacity: 0; animation: fade-up 0.6s cubic-bezier(0.16,0.8,0.2,1) forwards; }
+  .wa-bub.in-msg { background: rgba(245,244,242,0.06); border-bottom-left-radius: 4px; align-self: flex-start; color: var(--ink-dim); animation-delay: 0.3s; }
+  .wa-bub.out-msg { background: rgba(255,57,81,0.16); border: 1px solid rgba(255,57,81,0.3); border-bottom-right-radius: 4px; align-self: flex-end; color: var(--ink); animation-delay: 0.9s; }
+  .wa-bub.in-msg2 { background: rgba(245,244,242,0.06); border-bottom-left-radius: 4px; align-self: flex-start; color: var(--ink-dim); animation-delay: 1.5s; }
+  .wa-time { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); text-align: center; margin-top: 4px; }
+
+  /* ============ GOOGLE-BEWERTUNGEN ============ */
+  .reviews-wrap { display: grid; grid-template-columns: 220px 1fr; gap: 50px; align-items: center; }
+  @media (max-width: 900px) { .reviews-wrap { grid-template-columns: 1fr; gap: 32px; } }
+  .reviews-score { text-align: center; padding: 32px 20px; border: 1px solid var(--line); border-radius: 16px; background: #0d0d14; }
+  .rs-num { font-family: var(--sans); font-weight: 800; font-size: 52px; letter-spacing: -0.03em; }
+  .rs-stars { color: var(--accent-2); font-size: 17px; letter-spacing: 3px; margin-top: 8px; }
+  .rs-meta { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); margin-top: 12px; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.6; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+  @media (max-width: 900px) { .reviews-grid { grid-template-columns: 1fr; } }
+  .review-card { background: #0d0d14; border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+  .rc-stars { color: var(--accent-2); font-size: 13px; letter-spacing: 2px; margin-bottom: 12px; }
+  .review-card p { margin: 0 0 16px; font-size: 13.5px; line-height: 1.65; color: var(--ink-dim); }
+  .rc-who { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* ============ FAQ ACCORDION ============ */
+  .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .faq-item { background: #0d0d14; }
+  .faq-item summary { list-style: none; cursor: pointer; padding: 24px 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: 15.5px; font-weight: 600; -webkit-tap-highlight-color: transparent; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary .fplus { width: 20px; height: 20px; position: relative; flex-shrink: 0; }
+  .faq-item summary .fplus::before, .faq-item summary .fplus::after { content: ""; position: absolute; background: var(--ink-dim); transition: opacity 0.25s ease, transform 0.25s ease; }
+  .faq-item summary .fplus::before { top: 9px; left: 2px; right: 2px; height: 1.5px; }
+  .faq-item summary .fplus::after { left: 9px; top: 2px; bottom: 2px; width: 1.5px; }
+  .faq-item[open] summary .fplus::after { opacity: 0; transform: rotate(90deg); }
+  .faq-item[open] summary { color: var(--accent); }
+  .faq-item p { margin: 0; padding: 0 28px 24px; font-size: 14.5px; line-height: 1.7; color: var(--ink-dim); max-width: 60ch; }
+
+  /* ============ CLOSING CTA ============ */
+  .close-cta { position: relative; padding: 160px 0; text-align: center; overflow: hidden; }
+  .close-cta h2 { font-family: var(--sans); font-weight: 800; letter-spacing: -0.03em; font-size: clamp(40px, 7vw, 96px); line-height: 0.98; margin: 0 auto; max-width: 16ch; text-wrap: balance; }
+  .close-cta h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  .close-cta .btn-primary { margin-top: 48px; }
+  .close-glow { position: absolute; top: 50%; left: 50%; width: 800px; height: 400px; transform: translate(-50%,-50%); background: radial-gradient(ellipse, rgba(255,57,81,0.18), transparent 70%); pointer-events: none; }
+
+  /* ============ FOOTER ============ */
+  footer { border-top: 1px solid var(--line); padding: 70px 0 0; }
+  .footer-grid { display: grid; grid-template-columns: minmax(0,1.3fr) repeat(4, minmax(0,1fr)); gap: 32px; padding-bottom: 50px; }
+  @media (max-width: 980px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+  .footer-brand .mark { margin-bottom: 16px; }
+  .footer-brand p { font-size: 13.5px; line-height: 1.65; color: var(--ink-dim); max-width: 30ch; margin: 0; }
+  .footer-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin: 0 0 18px; }
+  .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+  .footer-col a { color: var(--ink-dim); text-decoration: none; font-size: 13.5px; transition: color 0.2s ease; }
+  .footer-col a:hover { color: var(--ink); }
+  .footer-bottom { border-top: 1px solid var(--line); padding: 22px 0 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); }
+  .footer-bottom a { color: var(--ink-faint); text-decoration: none; margin-left: 20px; }
+  .footer-bottom a:hover { color: var(--ink-dim); }
+  @media (max-width: 640px) { .footer-bottom { flex-direction: column; text-align: center; } .footer-bottom a { margin: 0 10px; } }
+
+  .note { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 30; font-family: var(--mono); font-size: 11px; color: var(--ink-faint); background: rgba(7,7,12,0.8); backdrop-filter: blur(6px); border: 1px solid var(--line-strong); border-radius: 100px; padding: 9px 18px; white-space: nowrap; }
+  @media (max-width: 640px) { .note { font-size: 9.5px; white-space: normal; text-align: center; width: 86%; } }
+</style>
+
+<div class="sheet">
+  <nav>
+    <div class="mark"><span class="dot"></span>PIXEL56</div>
+    <div class="crumb">Unternehmen <b>/</b> <b>Über uns</b></div>
+    <a class="nav-cta" href="#kontakt">Gespräch anfragen</a>
+  </nav>
+
+  <header class="hero">
+    <div class="pulse-field" aria-hidden="true">
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-core"></div>
+      <div class="pulse-label pl1">// BENDORF BEI KOBLENZ</div>
+      <div class="pulse-label pl2">// PERSÖNLICH ERREICHBAR</div>
+    </div>
+    <div class="hero-eyebrow">UNTERNEHMEN · ÜBER UNS</div>
+    <h1>
+      <span class="in"><span>Kein anonymes</span></span>
+      <span class="in"><span>Team.</span></span>
+      <span class="in"><span>Ein Ansprechpartner.</span></span>
+    </h1>
+    <p class="hero-sub">Hinter jeder Anfrage bei Pixel56 steht jemand, den du beim Namen kennst und der ans Telefon geht — kein Callcenter, kein Ticket-System.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#kontakt">Kostenloses Erstgespräch <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8"/></svg></a>
+      <a class="btn-text" href="#wer">Wer dahinter steht ↓</a>
+    </div>
+    <div class="hero-foot">
+      <span class="hf-label">Was uns ausmacht:</span>
+      <div class="hf-chip">Persönlich</div>
+      <div class="hf-chip">Regional verwurzelt</div>
+      <div class="hf-chip">Alles aus einer Hand</div>
+    </div>
+  </header>
+</div>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Stark ins Neue</span><span>GM-Dachdecker</span><span>Oktay Cömertler</span><span>MA-Transporte</span><span>Van den Berg Gruppe</span><span>CASS Schulungen</span><span>Colak GmbH</span>
+    <span aria-hidden="true">Stark ins Neue</span><span aria-hidden="true">GM-Dachdecker</span><span aria-hidden="true">Oktay Cömertler</span><span aria-hidden="true">MA-Transporte</span><span aria-hidden="true">Van den Berg Gruppe</span><span aria-hidden="true">CASS Schulungen</span><span aria-hidden="true">Colak GmbH</span>
+  </div>
+</div>
+
+<div class="sheet">
+  <section class="band tint-amber" id="wer">
+    <div class="split2 reverse">
+      <div class="reveal">
+        <span class="band-tag">01 — Wer dahinter steht</span>
+        <h2 class="band-title">Ein Name, <em>kein Callcenter</em></h2>
+        <p class="lead">Pixel56 wurde aus dem Anspruch gegründet, dass digitale Arbeit für kleine und mittlere Unternehmen genauso professionell sein kann wie für Konzerne — nur persönlicher. Wer anruft, spricht nicht mit einer Hotline, sondern mit dem Menschen, der das Projekt tatsächlich umsetzt.</p>
+        <ul class="lines">
+          <li>Direkter Kontakt zum Umsetzer, keine Übergaben zwischen Abteilungen.</li>
+          <li>Ehrliche Einschätzungen — auch wenn die Antwort mal „braucht ihr nicht" lautet.</li>
+          <li>Kurze Wege: WhatsApp, Telefon oder vor Ort in Bendorf.</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="profile-mock">
+          <div class="pm-top">
+            <div class="pm-avatar">AC</div>
+            <div class="pm-id"><b>Atilla Ciftcioglu</b><span><span class="wdot"></span>Erreichbar</span></div>
+          </div>
+          <div class="pm-row"><span>Rolle</span><b>Gründer &amp; Ansprechpartner</b></div>
+          <div class="pm-row"><span>Standort</span><b>Bendorf bei Koblenz</b></div>
+          <div class="pm-row"><span>Kanal</span><b>WhatsApp · Telefon · vor Ort</b></div>
+          <div class="pm-row"><span>Antwortzeit</span><b>meist unter 1 Stunde</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">02 — Woran wir glauben</span>
+        <h2 class="band-title">Drei Prinzipien, <em>keine Floskeln</em></h2>
+      </div>
+      <p class="band-note">Keine Poster-Werte fürs Büro, sondern Regeln, die jede Zusammenarbeit tatsächlich prägen.</p>
+    </div>
+    <div class="fact-grid reveal">
+      <div class="fact-cell"><span class="fl">Prinzip 1</span><h4>Ehrlichkeit vor Verkauf</h4><p>Das Erstgespräch ist kostenlos und ergebnisoffen. Wenn eine Leistung nichts bringt, sagen wir das — bevor sie beauftragt wird, nicht danach.</p></div>
+      <div class="fact-cell"><span class="fl">Prinzip 2</span><h4>Ergebnisse vor Ästhetik</h4><p>Schön ist Pflicht, wirksam ist das Ziel. Jede Website und jede Kampagne wird an echten Zahlen gemessen, nicht an Bauchgefühl.</p></div>
+      <div class="fact-cell"><span class="fl">Prinzip 3</span><h4>Dranbleiben vor Abliefern</h4><p>Der Launch ist der Anfang, nicht das Ende. Betreuung ist Teil der Zusammenarbeit — kein Zusatzverkauf danach.</p></div>
+    </div>
+  </section>
+
+  <section class="band tint" id="beweis">
+    <div class="band-tag reveal" style="margin-bottom: 44px;">03 — Der Beweis</div>
+    <div class="stat-block reveal">
+      <div class="stat-num">+56<small>%</small></div>
+      <div class="stat-copy">
+        <p class="quote">„Wir haben nicht mehr Budget verbrannt. Wir haben konstant gearbeitet — und das hat gereicht."</p>
+        <p>Van den Berg Gruppe, laufende Betreuung. Reale Kampagnendaten, kein Schätzwert — so arbeiten wir mit jedem Kunden: konstant, messbar, ohne leere Versprechen.</p>
+        <cite>// VAN DEN BERG GRUPPE, LAUFENDE BETREUUNG</cite>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="split2">
+      <div class="reveal">
+        <span class="band-tag">04 — Der Standort</span>
+        <h2 class="band-title">Zuhause in Bendorf. <em>Zuhause im Digitalen.</em></h2>
+        <p class="lead">Hüttenstraße 100, 56170 Bendorf bei Koblenz — hier sitzen wir wirklich, hier kann man vorbeikommen. Die Zusammenarbeit selbst läuft aber ortsunabhängig: per Video-Call, Telefon und WhatsApp betreuen wir Kunden aus der ganzen Region und darüber hinaus.</p>
+        <ul class="lines">
+          <li>Lokale Betriebe aus der Region Koblenz sind uns besonders vertraut.</li>
+          <li>Vor-Ort-Termine für Content-Produktion und Kennenlernen.</li>
+          <li>Ortsunabhängige Betreuung für alle anderen Projekte.</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="map-mock">
+          <div class="mm-ring"></div>
+          <div class="mm-ring"></div>
+          <div class="mm-ring"></div>
+          <div class="mm-pin">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 3c-5.8 0-10 4.4-10 9.8C6 19.8 16 29 16 29s10-9.2 10-16.2C26 7.4 21.8 3 16 3z" stroke="currentColor" stroke-width="2" fill="rgba(255,57,81,0.15)"/><circle cx="16" cy="12.5" r="3.2" fill="currentColor"/></svg>
+          </div>
+          <div class="mm-label">Hüttenstraße 100 · 56170 Bendorf</div>
+          <div class="mm-coords">50.4297° N, 7.5703° O</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band tint-violet">
+    <div class="split2">
+      <div class="reveal">
+        <span class="band-tag">05 — Zusammenarbeit</span>
+        <h2 class="band-title">Ein Ansprechpartner. <em>Ein Kanal.</em></h2>
+        <p class="lead">Kein Ticket-System, kein Callcenter, keine Rückrufbitte. Während der Zusammenarbeit erreichst du deinen festen Ansprechpartner direkt per WhatsApp — für schnelle Fragen genauso wie für große Entscheidungen.</p>
+      </div>
+      <div class="reveal">
+        <div class="wa-mock">
+          <div class="wa-head">
+            <div class="wa-avatar">P56</div>
+            <div class="wa-id"><b>Pixel56 — Ihr Ansprechpartner</b><span class="wa-status"><span class="wdot"></span>Online</span></div>
+          </div>
+          <div class="wa-thread">
+            <div class="wa-bub in-msg">Hast du kurz Zeit für eine Frage zum Projekt?</div>
+            <div class="wa-bub out-msg">Klar, ruf einfach durch — bin am Platz.</div>
+            <div class="wa-bub in-msg2">👍 Super, mach ich.</div>
+          </div>
+          <div class="wa-time">Antwortzeit während der Zusammenarbeit: meist unter 1 Stunde</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">06 — Bewertungen</span>
+        <h2 class="band-title">Das sagen <em>Kunden über uns</em></h2>
+      </div>
+    </div>
+    <div class="reviews-wrap reveal">
+      <div class="reviews-score">
+        <div class="rs-num">4.9</div>
+        <div class="rs-stars">★★★★★</div>
+        <div class="rs-meta">27 Google Bewertungen<br>Pixel56 · Bendorf</div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="rc-stars">★★★★★</div>
+          <p>„Man merkt sofort: Hier spricht man mit dem, der die Arbeit auch macht. Keine Übergaben, kein Stille-Post-Effekt."</p>
+          <div class="rc-who">CASS Schulungen</div>
+        </div>
+        <div class="review-card">
+          <div class="rc-stars">★★★★★</div>
+          <p>„Ehrliche Beratung von Anfang an — uns wurde sogar von einer Leistung abgeraten, die wir nicht gebraucht hätten."</p>
+          <div class="rc-who">Colak GmbH</div>
+        </div>
+        <div class="review-card">
+          <div class="rc-stars">★★★★★</div>
+          <p>„Seit Jahren derselbe Ansprechpartner, immer erreichbar. Das findet man selten."</p>
+          <div class="rc-who">MA-Transporte</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">07 — Häufige Fragen</span>
+        <h2 class="band-title">Was du vorher <em>wissen willst</em></h2>
+      </div>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>Wer ist mein Ansprechpartner während des Projekts?<span class="fplus"></span></summary>
+        <p>Immer dieselbe Person — von der ersten Anfrage bis zur laufenden Betreuung. Keine wechselnden Projektmanager, kein Neu-Erklären.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Arbeitet ihr nur regional in Bendorf und Koblenz?<span class="fplus"></span></summary>
+        <p>Der Sitz ist in Bendorf, lokale Betriebe sind uns besonders vertraut. Die Zusammenarbeit läuft aber ortsunabhängig — daher betreuen wir auch Kunden außerhalb der Region.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Kann ich auch persönlich vorbeikommen?<span class="fplus"></span></summary>
+        <p>Ja, gerne nach Terminabsprache — Hüttenstraße 100 in Bendorf. Für Content-Produktionen kommen wir umgekehrt auch zu dir in den Betrieb.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Was kostet das Erstgespräch?<span class="fplus"></span></summary>
+        <p>Nichts. Es dient dazu, deine Situation ehrlich einzuschätzen — erst danach gibt es ein konkretes, auf dich zugeschnittenes Angebot.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Übernehmt ihr auch nur Teilleistungen?<span class="fplus"></span></summary>
+        <p>Ja. Alles aus einer Hand ist ein Angebot, kein Zwang — wer nur SEO, nur Ads oder nur Content braucht, bekommt genau das.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="close-cta reveal" id="kontakt">
+    <div class="close-glow"></div>
+    <h2>Lern uns <em>kennen.</em></h2>
+    <a class="btn-primary" href="#">Kostenloses Erstgespräch <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8"/></svg></a>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="mark"><span class="dot"></span>PIXEL56</div>
+        <p>Hüttenstraße 100, 56170 Bendorf bei Koblenz. Digitale Auftritte für KMUs, Coaches, Shops und lokale Betriebe.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Leistungen</h5>
+        <ul>
+          <li><a href="#">Webdesign</a></li>
+          <li><a href="#">SEO</a></li>
+          <li><a href="#">Google Ads</a></li>
+          <li><a href="#">Meta Ads</a></li>
+          <li><a href="#">Landingpages &amp; Funnels</a></li>
+          <li><a href="#">Content-Produktion</a></li>
+          <li><a href="#">Mitarbeitergewinnung</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Unternehmen</h5>
+        <ul>
+          <li><a href="#">Über uns</a></li>
+          <li><a href="#">Projekte</a></li>
+          <li><a href="#">Bewertungen</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Karriere</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kostenlose Ressourcen</h5>
+        <ul>
+          <li><a href="#">SEO-Checkliste</a></li>
+          <li><a href="#">KI-Agenten-Checkliste</a></li>
+          <li><a href="#">Tagesplaner PDF</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="mailto:info@pixel56.de">info@pixel56.de</a></li>
+          <li><a href="tel:+4926229898654">02622 9898654</a></li>
+          <li><a href="https://wa.me/491785282464" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© Pixel56 — Freier Entwurf, nicht live</div>
+      <div><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
+    </div>
+  </footer>
+</div>
+
+<div class="note">Freier Entwurf — neue Formsprache, zur Diskussion</div>
+
+<script>
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else { revealEls.forEach(function (el) { el.classList.add('in'); }); }
+</script>

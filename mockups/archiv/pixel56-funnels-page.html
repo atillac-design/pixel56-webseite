@@ -1,0 +1,494 @@
+<title>Pixel56 — Landingpages &amp; Funnels (Entwurf Leistungsseite)</title>
+<style>
+  :root {
+    --ground: #0a0a12;
+    --ink: #f3f2f0;
+    --ink-dim: #9c98ac;
+    --ink-faint: #625f74;
+    --line: rgba(243, 242, 240, 0.09);
+    --line-strong: rgba(243, 242, 240, 0.17);
+    --accent: #ff3951;
+    --accent-2: #ffc226;
+    --blue: #3f80fd;
+    --violet: #6a35ff;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --radius-sm: 8px;
+    --radius: 10px;
+    --radius-lg: 14px;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--ground); }
+  body {
+    margin: 0; color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    background:
+      radial-gradient(ellipse 60% 40% at 15% 0%, rgba(106, 53, 255, 0.16), transparent 55%),
+      linear-gradient(180deg,
+        var(--ground) 0%,
+        color-mix(in srgb, var(--ground) 87%, var(--violet)) 9%,
+        var(--ground) 17%,
+        var(--ground) 21%,
+        color-mix(in srgb, var(--ground) 88%, var(--accent)) 29%,
+        var(--ground) 37%,
+        var(--ground) 41%,
+        color-mix(in srgb, var(--ground) 87%, var(--accent-2)) 49%,
+        var(--ground) 57%,
+        var(--ground) 62%,
+        color-mix(in srgb, var(--ground) 86%, var(--blue)) 70%,
+        var(--ground) 78%,
+        var(--ground) 83%,
+        color-mix(in srgb, var(--ground) 84%, var(--violet)) 91%,
+        var(--ground) 100%
+      );
+  }
+  ::selection { background: var(--accent); color: #0a0a12; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+  a { color: inherit; }
+
+  .grid-field { position: fixed; inset: -10% -10%; z-index: 0; background-image: radial-gradient(circle, var(--line-strong) 1.4px, transparent 1.4px); background-size: 42px 42px; opacity: 0.55; pointer-events: none; }
+  .grid-field .lit-pixel { position: absolute; width: 3px; height: 3px; background: var(--accent); box-shadow: 0 0 8px 1px rgba(255,57,81,0.7); animation: pixel-glow 4.5s ease-in-out infinite; }
+  @keyframes pixel-glow { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+
+  .sheet { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 0 64px; }
+  @media (max-width: 720px) { .sheet { padding: 0 22px; } }
+
+  nav { position: relative; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding-top: 34px; }
+  .mark { display: flex; align-items: baseline; gap: 10px; font-family: var(--mono); font-weight: 500; font-size: 15px; }
+  .mark .dot { width: 7px; height: 7px; background: var(--accent); display: inline-block; flex-shrink: 0; }
+  .mark b { font-weight: 600; }
+  .mark span.tag { color: var(--ink-faint); font-size: 12px; }
+  @media (max-width: 480px) { .mark span.tag { display: none; } }
+  .crumb { font-family: var(--mono); font-size: 12.5px; color: var(--ink-faint); display: flex; gap: 8px; align-items: center; }
+  .crumb a { text-decoration: none; color: var(--ink-dim); }
+  .crumb a:hover { color: var(--ink); }
+  @media (max-width: 860px) { .crumb { display: none; } }
+
+  .btn-primary, .btn-outline {
+    font-family: var(--sans); font-size: 15px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; padding: 15px 24px 15px 26px;
+    display: inline-flex; align-items: center; gap: 10px; border-radius: var(--radius-sm); position: relative; overflow: hidden; isolation: isolate;
+  }
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset, 0 12px 26px -14px rgba(255,57,81,0.55); transition: transform 0.25s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.25s ease; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 18px 36px -14px rgba(255,57,81,0.65); }
+  .btn-primary::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%); transform: translateX(-130%); transition: transform 0.7s cubic-bezier(0.2,0.7,0.2,1); }
+  .btn-primary:hover::before { transform: translateX(130%); }
+  .btn-primary svg { width: 14px; height: 14px; transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); }
+  .btn-primary:hover svg { transform: translateX(4px); }
+  .btn-outline { border: 1px solid rgba(255,57,81,0.35); color: var(--ink); background: rgba(255,57,81,0.09); transition: border-color 0.25s ease, background 0.25s ease; }
+  .btn-outline::before { content: ""; position: absolute; inset: 0; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); z-index: -1; }
+  .btn-outline:hover { color: #fff; border-color: var(--accent); }
+  .btn-outline:hover::before { transform: scaleX(1); }
+  .nav-cta {
+    font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: -0.005em;
+    border-radius: var(--radius-sm); padding: 10px 20px; text-decoration: none; color: #fff; background: var(--accent);
+    white-space: nowrap; flex-shrink: 0;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset, 0 10px 22px -12px rgba(255,57,81,0.55);
+    transition: transform 0.25s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.25s ease;
+  }
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 16px 30px -12px rgba(255,57,81,0.65); }
+  @media (max-width: 480px) { .nav-cta { font-size: 12.5px; padding: 8px 13px; } }
+
+  .hero { position: relative; padding: 96px 0 66px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 40px; align-items: center; }
+  @media (max-width: 980px) { .hero { grid-template-columns: 1fr; } }
+  .eyebrow { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.14em; color: var(--accent); display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+  .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent); }
+  h1.headline { font-size: clamp(34px, 4.8vw, 64px); line-height: 1.03; letter-spacing: -0.02em; font-weight: 600; margin: 0 0 24px; text-wrap: balance; max-width: 15ch; }
+  h1.headline em { color: var(--accent); font-style: normal; }
+  .hero-sub { font-size: 17px; line-height: 1.65; color: var(--ink-dim); max-width: 50ch; margin: 0 0 34px; }
+  .hero-actions { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+  .btn-ghost { font-family: var(--mono); font-size: 13.5px; color: var(--ink-dim); text-decoration: none; }
+  .btn-ghost:hover { color: var(--ink); }
+
+  /* hero visual: funnel stages */
+  .hero-visual { position: relative; height: 360px; perspective: 1400px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+  @media (max-width: 980px) { .hero-visual { height: auto; margin-top: 16px; padding: 20px 0; } }
+  .fv-stage { display: flex; align-items: center; gap: 14px; }
+  .fv-bar { min-height: 46px; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: linear-gradient(165deg, #171727, #0d0d17); display: flex; align-items: center; padding: 10px 18px; font-family: var(--mono); font-size: 12px; color: var(--ink-dim); white-space: nowrap; box-shadow: 0 16px 34px -18px rgba(0,0,0,0.55); }
+  .fv-stage:nth-child(1) .fv-bar { width: 92%; }
+  .fv-stage:nth-child(2) .fv-bar { width: 68%; border-color: rgba(255,57,81,0.35); background: linear-gradient(165deg, rgba(255,57,81,0.14), #0d0d17); color: var(--ink); }
+  .fv-stage:nth-child(3) .fv-bar { width: 52%; border-color: rgba(255,194,38,0.4); background: linear-gradient(165deg, rgba(255,194,38,0.14), #0d0d17); color: var(--ink); }
+  .fv-stage .fv-n { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); width: 18px; flex-shrink: 0; }
+  @media (max-width: 640px) { .fv-stage:nth-child(1) .fv-bar { width: 100%; } .fv-stage:nth-child(2) .fv-bar { width: 85%; } .fv-stage:nth-child(3) .fv-bar { width: 68%; } .fv-bar { font-size: 11px; padding: 10px 12px; white-space: normal; } }
+
+  section { position: relative; padding: 84px 0; border-top: 1px solid var(--line); }
+  section::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; margin-left: -50vw; z-index: -1; background: rgba(255,255,255,0.014); opacity: 0; }
+  section:nth-of-type(even)::before { opacity: 1; }
+  .section-head { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
+  .section-index {
+    font-family: var(--mono); font-size: 11.5px; color: var(--accent); letter-spacing: 0.08em;
+    display: inline-flex; align-items: center; gap: 8px; width: fit-content;
+    border: 1px solid rgba(255,57,81,0.3); background: rgba(255,57,81,0.08);
+    padding: 6px 12px; border-radius: var(--radius-sm);
+  }
+  .section-title { font-size: clamp(25px, 2.8vw, 38px); font-weight: 600; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+  .section-title em { color: var(--accent); font-style: normal; }
+  .lede { max-width: 62ch; font-size: 16.5px; line-height: 1.75; color: var(--ink-dim); margin: 0 0 40px; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,0.8,0.2,1), transform 0.7s cubic-bezier(0.16,0.8,0.2,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  .inline-cta { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 44px; padding: 24px 30px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: linear-gradient(120deg, rgba(255,57,81,0.07), transparent 70%); flex-wrap: wrap; }
+  .inline-cta p { margin: 0; font-size: 14.5px; color: var(--ink-dim); max-width: 46ch; }
+  .inline-cta p b { color: var(--ink); font-weight: 600; }
+
+  .pain-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .pain-row { display: flex; flex-direction: column; gap: 18px; padding: 28px 26px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,0.02); transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease; }
+  .pain-row:hover { border-color: var(--line-strong); background: rgba(255,255,255,0.04); transform: translateY(-3px); }
+  .pain-mark { width: 48px; height: 48px; flex-shrink: 0; border-radius: 12px; background: rgba(255,57,81,0.1); border: 1px solid rgba(255,57,81,0.3); display: flex; align-items: center; justify-content: center; }
+  .pain-mark svg { width: 24px; height: 24px; }
+  .pain-mark line, .pain-mark circle, .pain-mark path, .pain-mark rect { stroke: var(--accent); stroke-width: 1.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .pain-copy h4 { margin: 0 0 8px; font-size: 17px; font-weight: 600; }
+  .pain-copy p { margin: 0; font-size: 14px; line-height: 1.6; color: var(--ink-dim); }
+  @media (max-width: 720px) { .pain-list { grid-template-columns: 1fr; } }
+
+  .funnel { display: flex; align-items: center; gap: 0; margin: 44px 0 12px; flex-wrap: wrap; }
+  .fn-node { text-align: center; padding: 26px 24px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: rgba(255,255,255,0.02); min-width: 156px; display: flex; flex-direction: column; align-items: center; gap: 12px; transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease; }
+  .fn-node:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .fn-node .ic { width: 38px; height: 38px; border-radius: 10px; background: rgba(255,57,81,0.1); border: 1px solid rgba(255,57,81,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .fn-node .ic svg { width: 19px; height: 19px; stroke: var(--accent); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .fn-node .big { display: block; font-family: var(--sans); font-size: 16px; font-weight: 600; color: var(--ink); }
+  .fn-node .lbl { font-family: var(--mono); font-size: 11.5px; color: var(--ink-dim); }
+  .fn-node.hot { border-color: var(--accent); background: rgba(255,57,81,0.08); }
+  .fn-node.hot .ic { background: rgba(255,57,81,0.18); }
+  .fn-arrow { color: var(--ink-faint); flex-shrink: 0; padding: 0 16px; }
+  .fn-arrow svg { width: 20px; height: 20px; stroke: var(--ink-faint); fill: none; stroke-width: 1.6; }
+  @media (max-width: 720px) { .funnel { flex-direction: column; align-items: stretch; } .fn-arrow { transform: rotate(90deg); align-self: center; padding: 10px 0; } }
+
+  .triptych { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .tri { position: relative; background: rgba(255,255,255,0.02); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px 28px; min-width: 0; overflow: hidden; transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease; }
+  .tri::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); }
+  .tri:hover { border-color: var(--line-strong); background: rgba(255,255,255,0.04); transform: translateY(-3px); }
+  .tri .tt { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--accent-2); text-transform: uppercase; margin-bottom: 14px; }
+  .tri h4 { margin: 0 0 10px; font-size: 18px; font-weight: 600; }
+  .tri p { margin: 0; font-size: 14px; line-height: 1.65; color: var(--ink-dim); }
+  @media (max-width: 780px) { .triptych { grid-template-columns: 1fr; } }
+
+  .audience-wrap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  @media (max-width: 860px) { .audience-wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .audience-wrap { grid-template-columns: 1fr; } }
+  .chip {
+    font-family: var(--sans); font-size: 14.5px; font-weight: 500; color: var(--ink);
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    padding: 20px 20px 20px 54px; position: relative; min-width: 0;
+    background: rgba(255,255,255,0.02);
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+  }
+  .chip::before {
+    content: ""; position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
+    width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--accent);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.2l3.3 3.3L13 4.5' fill='none' stroke='%23ff3951' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: center; background-size: 11px;
+  }
+  .chip:hover { border-color: var(--accent); background: rgba(255,57,81,0.06); transform: translateY(-2px); }
+
+  .timeline { position: relative; padding-left: 40px; }
+  .timeline::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 1px; background: linear-gradient(var(--accent), var(--line-strong)); }
+  .tl-step { position: relative; padding-bottom: 42px; }
+  .tl-step:last-child { padding-bottom: 0; }
+  .tl-step::before { content: ""; position: absolute; left: -40px; top: 4px; width: 15px; height: 15px; border-radius: 50%; background: var(--ground); border: 1.5px solid var(--accent); }
+  .tl-chip { display: inline-block; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--accent-2); border: 1px solid var(--line-strong); padding: 4px 10px; margin-bottom: 12px; text-transform: uppercase; border-radius: var(--radius-sm); }
+  .tl-step h4 { margin: 0 0 10px; font-size: 20px; font-weight: 600; }
+  .tl-step p { margin: 0; color: var(--ink-dim); font-size: 14.5px; line-height: 1.7; max-width: 58ch; }
+
+  .callout { margin-top: 40px; padding: 26px 30px; border-left: 2px solid var(--accent-2); border-radius: 0 var(--radius) var(--radius) 0; background: rgba(255,194,38,0.05); }
+  .callout p { margin: 0; font-size: 15px; line-height: 1.7; color: var(--ink); max-width: 62ch; }
+  .callout p b { color: var(--accent-2); }
+
+  .scope-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin-top: 8px; }
+  .scope { background: var(--ground); padding: 30px 26px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .scope .sl { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.06em; }
+  .scope h4 { margin: 0; font-size: 18px; font-weight: 600; }
+  .scope p { margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--ink-dim); }
+  @media (max-width: 860px) { .scope-grid { grid-template-columns: 1fr; } }
+
+  .ref-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin-top: 8px; }
+  .ref { background: var(--ground); padding: 36px 34px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .img-slot { aspect-ratio: 16/10; border: 1.5px dashed var(--line-strong); border-radius: var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(255,255,255,0.025) 8px, rgba(255,255,255,0.025) 16px); }
+  .img-slot .ic { font-size: 20px; opacity: 0.45; }
+  .img-slot .lb { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; color: var(--ink-faint); text-transform: uppercase; text-align: center; padding: 0 12px; }
+  .ref .rl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--accent-2); text-transform: uppercase; }
+  .ref h4 { margin: 0; font-size: 19px; font-weight: 600; }
+  .ref p { margin: 0; font-size: 14.5px; line-height: 1.65; color: var(--ink-dim); }
+  .ref .tag { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); border-top: 1px dashed var(--line-strong); padding-top: 14px; margin-top: 4px; }
+  @media (max-width: 780px) { .ref-grid { grid-template-columns: 1fr; } }
+
+  .faq-acc { border-top: 1px solid var(--line); margin-top: 8px; }
+  .faq-acc details { border-bottom: 1px solid var(--line); padding: 24px 0; }
+  .faq-acc summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: 17.5px; font-weight: 600; color: var(--ink); transition: color 0.2s ease; }
+  .faq-acc summary::-webkit-details-marker { display: none; }
+  .faq-acc summary .plus { font-family: var(--mono); font-size: 22px; color: var(--accent); transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); flex-shrink: 0; }
+  .faq-acc details[open] summary .plus { transform: rotate(45deg); }
+  .faq-acc details[open] summary { color: var(--accent); }
+  .faq-acc .a { padding-top: 14px; font-size: 15px; line-height: 1.7; color: var(--ink-dim); max-width: 64ch; }
+
+  .cta-block { text-align: left; padding: 104px 0 90px; }
+  .cta-title { font-size: clamp(28px, 4vw, 50px); font-weight: 600; letter-spacing: -0.02em; max-width: 16ch; text-wrap: balance; margin: 0 0 34px; }
+  .cta-title em { color: var(--accent); font-style: normal; }
+
+  /* ---------- footer ---------- */
+  footer { border-top: 1px solid var(--line); padding: 76px 0 0; }
+  .footer-grid { display: grid; grid-template-columns: minmax(0,1.3fr) repeat(4, minmax(0,1fr)); gap: 32px; padding-bottom: 56px; }
+  @media (max-width: 980px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+  .footer-brand .mark { margin-bottom: 16px; }
+  .footer-brand p { font-size: 14px; line-height: 1.65; color: var(--ink-dim); max-width: 32ch; margin: 0; }
+  .footer-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin: 0 0 18px; }
+  .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .footer-col a { color: var(--ink-dim); text-decoration: none; font-size: 14px; transition: color 0.2s ease; }
+  .footer-col a:hover { color: var(--ink); }
+  .footer-bottom {
+    border-top: 1px solid var(--line);
+    padding: 24px 0 32px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); letter-spacing: 0.03em;
+  }
+  .footer-bottom .legal { display: flex; gap: 22px; }
+  .footer-bottom a { color: var(--ink-faint); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--ink-dim); }
+  @media (max-width: 640px) { .footer-bottom { flex-direction: column; text-align: center; } }
+  .note { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 20; font-family: var(--mono); font-size: 11px; color: var(--ink-faint); background: rgba(10,10,18,0.75); backdrop-filter: blur(6px); border: 1px solid var(--line-strong); border-radius: var(--radius-sm); padding: 8px 16px; white-space: nowrap; }
+  @media (max-width: 640px) { .note { font-size: 9.5px; padding: 7px 10px; white-space: normal; text-align: center; width: 88%; } }
+</style>
+
+<div class="grid-field">
+  <span class="lit-pixel" style="top:12%; left:28%; animation-delay:0s;"></span>
+  <span class="lit-pixel" style="top:46%; left:86%; animation-delay:1.2s;"></span>
+  <span class="lit-pixel" style="top:76%; left:20%; animation-delay:2.4s;"></span>
+  <span class="lit-pixel" style="top:90%; left:68%; animation-delay:0.7s;"></span>
+  <span class="lit-pixel" style="top:60%; left:98%; animation-delay:3s;"></span>
+</div>
+
+<div class="sheet">
+  <nav>
+    <div class="mark"><span class="dot"></span><b>PIXEL56</b><span class="tag">/ digitalagentur</span></div>
+    <div class="crumb"><a href="#">Startseite</a><span>/</span><span>Leistungen</span><span>/</span><span style="color:var(--ink);">Landingpages &amp; Funnels</span></div>
+    <a class="nav-cta" href="#kontakt">Gespräch anfragen →</a>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow">LEISTUNG · LANDINGPAGES &amp; FUNNELS</div>
+      <h1 class="headline">Von der Anzeige <em>bis zur Anfrage</em>, jede Station gezielt.</h1>
+      <p class="hero-sub">Eine gute Anzeige verliert die Hälfte ihrer Wirkung, wenn der Klick auf einer Seite ohne klares Ziel landet. Ein Funnel führt jede Station bewusst — von der ersten Berührung bis zur ausgefüllten Anfrage.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#kontakt">Kostenloses Erstgespräch <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <a class="btn-ghost" href="#schmerzpunkte">Kennst du das? ↓</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="fv-stage"><span class="fv-n">01</span><div class="fv-bar">Anzeige oder Klick — volle Reichweite</div></div>
+      <div class="fv-stage"><span class="fv-n">02</span><div class="fv-bar">Landingpage — ein Angebot, ein Ziel</div></div>
+      <div class="fv-stage"><span class="fv-n">03</span><div class="fv-bar">Anfrage — qualifiziert</div></div>
+    </div>
+  </header>
+
+  <section id="schmerzpunkte">
+    <div class="section-head reveal">
+      <div class="section-index">01 / KENNST DU DAS?</div>
+      <h2 class="section-title">Sechs Gründe, warum <em>Traffic verpufft</em></h2>
+    </div>
+    <p class="lede reveal">Besucher sind da, aber die Anfrage bleibt aus. Fast immer liegt es nicht an zu wenig Traffic, sondern an dem, was mit ihm passiert, sobald er ankommt.</p>
+    <div class="pain-list reveal">
+      <div class="pain-row"><div class="pain-mark"><svg viewBox="0 0 44 44"><line x1="10" y1="22" x2="34" y2="22"/><line x1="34" y1="22" x2="26" y2="14"/><line x1="34" y1="22" x2="26" y2="30"/></svg></div><div class="pain-copy"><h4>Ganzer Traffic landet auf der Startseite</h4><p>Egal ob Ads, Post oder E-Mail — alle Klicks enden am selben, allgemeinen Ort statt bei einem passenden Angebot.</p></div></div>
+      <div class="pain-row"><div class="pain-mark"><svg viewBox="0 0 44 44"><circle cx="14" cy="14" r="4"/><circle cx="30" cy="14" r="4"/><circle cx="14" cy="30" r="4"/><circle cx="30" cy="30" r="4"/></svg></div><div class="pain-copy"><h4>Zu viele Wege, zu viele Ablenkungen</h4><p>Navigation, mehrere Buttons, drei verschiedene Angebote auf einer Seite — niemand weiß, wohin er als Nächstes klicken soll.</p></div></div>
+      <div class="pain-row"><div class="pain-mark"><svg viewBox="0 0 44 44"><line x1="10" y1="14" x2="34" y2="14"/><line x1="10" y1="22" x2="34" y2="22"/><line x1="10" y1="30" x2="24" y2="30"/></svg></div><div class="pain-copy"><h4>Formular mit zehn Feldern</h4><p>Jedes zusätzliche Feld kostet Abschlüsse — die meisten Interessenten brechen ab, bevor sie fertig sind.</p></div></div>
+      <div class="pain-row"><div class="pain-mark"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="14"/><line x1="22" y1="14" x2="22" y2="22"/><line x1="22" y1="22" x2="28" y2="26"/></svg></div><div class="pain-copy"><h4>Kein Follow-up nach dem Opt-in</h4><p>Jemand trägt sich ein — und danach passiert wochenlang nichts, während das Interesse längst wieder abgekühlt ist.</p></div></div>
+      <div class="pain-row"><div class="pain-mark"><svg viewBox="0 0 44 44"><rect x="9" y="9" width="26" height="26"/><line x1="9" y1="9" x2="35" y2="35"/></svg></div><div class="pain-copy"><h4>Eine Seite für jede Zielgruppe</h4><p>Ein Handwerksbetrieb-Kunde und ein Coaching-Interessent bekommen dieselbe Botschaft — passt für beide nur mittelmäßig.</p></div></div>
+      <div class="pain-row"><div class="pain-mark"><svg viewBox="0 0 44 44"><path d="M10 30c4-14 20-14 24 0"/><line x1="22" y1="8" x2="22" y2="14"/></svg></div><div class="pain-copy"><h4>Keine Ahnung, wo Besucher abspringen</h4><p>Ohne Auswertung der einzelnen Schritte bleibt unklar, an welcher Stelle im Funnel eigentlich das Interesse verloren geht.</p></div></div>
+    </div>
+    <div class="inline-cta reveal">
+      <p>Wisst ihr, wo genau in eurem aktuellen Funnel Interessenten abspringen?</p>
+      <a class="btn-outline" href="#kontakt">Kostenlosen Check anfragen →</a>
+    </div>
+  </section>
+
+  <section id="warum">
+    <div class="section-head reveal">
+      <div class="section-index">02 / WARUM EIN FUNNEL</div>
+      <h2 class="section-title">Eine Seite, <em>ein einziges Ziel</em></h2>
+    </div>
+    <p class="lede reveal">Eine normale Website muss vielen Besuchern viele Wege anbieten. Eine Landingpage darf genau das Gegenteil tun — und wird dadurch spürbar wirksamer.</p>
+    <div class="funnel reveal">
+      <div class="fn-node"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12h8M8 16h5"/></svg></div><span class="big">Anzeige</span><span class="lbl">Google / Meta / Post</span></div>
+      <div class="fn-arrow"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fn-node hot"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/><line x1="4" y1="9" x2="20" y2="9"/></svg></div><span class="big">Landingpage</span><span class="lbl">Ein Angebot, ein Ziel</span></div>
+      <div class="fn-arrow"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fn-node"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12l4.5 4.5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="big">Anfrage</span><span class="lbl">Lead oder Termin</span></div>
+    </div>
+    <div class="inline-cta reveal">
+      <p>Passt euer aktuelles Angebot zu einer fokussierten Landingpage?</p>
+      <a class="btn-outline" href="#kontakt">Gemeinsam einordnen →</a>
+    </div>
+  </section>
+
+  <section id="arten">
+    <div class="section-head reveal">
+      <div class="section-index">03 / ARTEN VON FUNNELS</div>
+      <h2 class="section-title">Nicht jeder Funnel <em>hat dasselbe Ziel</em></h2>
+    </div>
+    <p class="lede reveal">Ein Erstgespräch verkauft sich anders als ein digitales Produkt, und ein Newsletter-Eintrag verlangt eine andere Führung als ein Beratungstermin. Wir wählen die passende Struktur für euer konkretes Angebot.</p>
+    <div class="triptych reveal">
+      <div class="tri"><div class="tt">Lead-Funnel</div><h4>Kontakt statt sofortigem Verkauf</h4><p>Für Angebote, die vor dem Kauf ein Gespräch brauchen — Name und Kontakt gegen ein klares Versprechen.</p></div>
+      <div class="tri"><div class="tt">Terminbuchungs-Funnel</div><h4>Direkt in den Kalender</h4><p>Vom Klick direkt zur Terminauswahl — ideal für Erstgespräche, Beratungen oder Behandlungstermine.</p></div>
+      <div class="tri"><div class="tt">Verkaufs-Funnel</div><h4>Vom Interesse zum Abschluss</h4><p>Für digitale Produkte oder klar bepreiste Angebote, die ohne Zwischengespräch direkt gekauft werden können.</p></div>
+    </div>
+  </section>
+
+  <section id="fuerwen">
+    <div class="section-head reveal">
+      <div class="section-index">04 / FÜR WEN LOHNT SICH DAS</div>
+      <h2 class="section-title">Passt das <em>zu deiner Situation?</em></h2>
+    </div>
+    <div class="audience-wrap reveal">
+      <span class="chip">Werbekampagne geplant</span>
+      <span class="chip">Ein klares Angebot, das verkauft werden soll</span>
+      <span class="chip">Website vorhanden, aber kein Funnel</span>
+      <span class="chip">Newsletter oder Freebie soll wachsen</span>
+      <span class="chip">Terminbuchung soll einfacher werden</span>
+      <span class="chip">Traffic da, Anfragen bleiben aus</span>
+    </div>
+  </section>
+
+  <section id="ablauf">
+    <div class="section-head reveal">
+      <div class="section-index">05 / SO LÄUFT DIE ZUSAMMENARBEIT</div>
+      <h2 class="section-title">Fünf Phasen, <em>ein klarer Weg</em></h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-step"><div class="tl-chip">Phase 01</div><h4>Ziel &amp; Angebot klären</h4><p>Was genau soll am Ende passieren — Anfrage, Termin oder Kauf? Davon hängt die gesamte Struktur ab.</p></div>
+      <div class="tl-step"><div class="tl-chip">Phase 02</div><h4>Struktur &amp; Text</h4><p>Eine Seite, ein Argument-Aufbau, ein Call-to-Action — kein Wettbewerb mehrerer Angebote auf derselben Fläche.</p></div>
+      <div class="tl-step"><div class="tl-chip">Phase 03</div><h4>Design &amp; Formular</h4><p>So wenig Reibung wie möglich — kurze Formulare, klare Führung, keine unnötigen Zwischenschritte.</p></div>
+      <div class="tl-step"><div class="tl-chip">Phase 04</div><h4>Tracking &amp; Anbindung</h4><p>Jeder Schritt im Funnel wird messbar, und Leads landen automatisch dort, wo sie weiterverarbeitet werden.</p></div>
+      <div class="tl-step"><div class="tl-chip">Phase 05</div><h4>Auswertung &amp; Optimierung</h4><p>Nach dem Launch schauen wir, wo Interessenten abspringen, und passen gezielt genau diese Stelle an.</p></div>
+    </div>
+  </section>
+
+  <section id="kosten">
+    <div class="section-head reveal">
+      <div class="section-index">06 / WAS ES KOSTET</div>
+      <h2 class="section-title">Auch hier: <em>kommt auf den Funnel an</em></h2>
+    </div>
+    <p class="lede reveal">Eine einzelne Landingpage braucht weniger Aufwand als ein mehrstufiger Funnel mit Terminbuchung und automatisiertem Follow-up. Pauschale Zahlen würden für euer Vorhaben ohnehin nicht stimmen — deshalb klären wir den Umfang im kostenlosen Erstgespräch.</p>
+    <div class="scope-grid reveal">
+      <div class="scope"><div class="sl">UMFANG A</div><h4>Eine Landingpage</h4><p>Für eine einzelne Kampagne oder ein einzelnes Angebot — schnell umsetzbar, klar fokussiert.</p></div>
+      <div class="scope"><div class="sl">UMFANG B</div><h4>Funnel mit Terminbuchung</h4><p>Landingpage plus direkte Kalenderanbindung — vom Klick bis zum gebuchten Termin.</p></div>
+      <div class="scope"><div class="sl">UMFANG C</div><h4>Mehrstufiger Funnel</h4><p>Mehrere Seiten, automatisiertes Follow-up und Tracking über den gesamten Weg hinweg.</p></div>
+    </div>
+    <div class="inline-cta reveal">
+      <p>Willst du wissen, welcher Umfang zu <b>eurem</b> Angebot passt?</p>
+      <a class="btn-outline" href="#kontakt">Unverbindlich einschätzen lassen →</a>
+    </div>
+  </section>
+
+  <section id="referenzen">
+    <div class="section-head reveal">
+      <div class="section-index">07 / REFERENZEN</div>
+      <h2 class="section-title">Aus der <em>echten Arbeit</em></h2>
+    </div>
+    <div class="ref-grid reveal">
+      <div class="ref"><div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: Stark ins Neue<br>Kursanmeldung-Funnel</span></div><div class="rl">Stark ins Neue gGmbH</div><h4>Klare Nutzerführung zur Kursanmeldung</h4><p>Kompletter Website-Relaunch mit fokussierter Anmeldestrecke für eine Bildungsinitiative im Bereich mentale Gesundheit — DSGVO-konform und ohne unnötige Zwischenschritte.</p><div class="tag">Landingpage · Anmeldefunnel · 2025</div></div>
+      <div class="ref"><div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: Van den Berg Gruppe<br>Ads-zu-Landingpage-Funnel</span></div><div class="rl">Van den Berg Gruppe</div><h4>Anzeige direkt auf ein Angebot geführt</h4><p>Facebook-Ads-Kampagnen mit passender Zielseite statt allgemeiner Startseite — Teil des Ergebnisses war ein Wachstum von 56 % bei den Anfragen.</p><div class="tag">Meta Ads · Landingpage</div></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="section-head reveal">
+      <div class="section-index">08 / HÄUFIGE FRAGEN</div>
+      <h2 class="section-title">Was du vorher <em>wissen willst</em></h2>
+    </div>
+    <div class="faq-acc reveal">
+      <details>
+        <summary>Was ist der Unterschied zu einer normalen Website-Seite?<span class="plus">+</span></summary>
+        <div class="a">Eine normale Seite bietet meist mehrere Wege an — Navigation, verschiedene Leistungen, mehrere Kontaktmöglichkeiten. Eine Landingpage verzichtet bewusst darauf und führt zu genau einem Ziel, ohne Ablenkung.</div>
+      </details>
+      <details>
+        <summary>Brauche ich dafür schon eine Werbekampagne?<span class="plus">+</span></summary>
+        <div class="a">Nein. Eine Landingpage funktioniert auch für organischen Traffic, E-Mail-Verteiler oder Social-Media-Bio-Links — überall dort, wo ein einzelnes Angebot im Mittelpunkt stehen soll.</div>
+      </details>
+      <details>
+        <summary>Wie kurz sollte das Formular wirklich sein?<span class="plus">+</span></summary>
+        <div class="a">So kurz wie möglich für das jeweilige Ziel — oft reichen Name, Kontakt und eine einzige qualifizierende Frage. Jedes zusätzliche Feld senkt die Abschlussquote messbar.</div>
+      </details>
+      <details>
+        <summary>Kann ich mehrere Funnels gleichzeitig haben?<span class="plus">+</span></summary>
+        <div class="a">Ja, das ist sogar sinnvoll, wenn ihr unterschiedliche Angebote oder Zielgruppen habt. Jeder Funnel bleibt dabei auf ein einziges Ziel fokussiert.</div>
+      </details>
+    </div>
+  </section>
+
+  <section id="kontakt" style="border-bottom: 1px solid var(--line);">
+    <div class="cta-block reveal">
+      <div class="eyebrow" style="opacity:1;">BEREIT FÜR EINEN FUNNEL, DER FÜHRT?</div>
+      <h2 class="cta-title">Lass uns über euren <em>Funnel sprechen.</em></h2>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#">Kostenloses Erstgespräch <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <a class="btn-ghost" href="#schmerzpunkte">Nochmal ansehen ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="mark"><span class="dot"></span><b>PIXEL56</b><span class="tag">/ digitalagentur</span></div>
+        <p>Hüttenstraße 100, 56170 Bendorf bei Koblenz. Digitale Auftritte für KMUs, Coaches, Shops und lokale Betriebe.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Leistungen</h5>
+        <ul>
+          <li><a href="#">Webdesign</a></li>
+          <li><a href="#">SEO</a></li>
+          <li><a href="#">Google Ads</a></li>
+          <li><a href="#">Meta Ads</a></li>
+          <li><a href="#">Landingpages &amp; Funnels</a></li>
+          <li><a href="#">Content-Produktion</a></li>
+          <li><a href="#">Mitarbeitergewinnung</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Unternehmen</h5>
+        <ul>
+          <li><a href="#">Über uns</a></li>
+          <li><a href="#">Projekte</a></li>
+          <li><a href="#">Bewertungen</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Karriere</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kostenlose Ressourcen</h5>
+        <ul>
+          <li><a href="#">SEO-Checkliste</a></li>
+          <li><a href="#">KI-Agenten-Checkliste</a></li>
+          <li><a href="#">Tagesplaner PDF</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="mailto:info@pixel56.de">info@pixel56.de</a></li>
+          <li><a href="tel:+4926229898654">02622 9898654</a></li>
+          <li><a href="https://wa.me/491785282464" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© Pixel56 — Stilentwurf, nicht live</div>
+      <div class="legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div class="note">Stilentwurf — noch keine finale Website</div>
+
+<script>
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else { revealEls.forEach(function (el) { el.classList.add('in'); }); }
+</script>

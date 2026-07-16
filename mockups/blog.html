@@ -1,0 +1,314 @@
+<title>Pixel56 — Blog</title>
+<style>
+  :root {
+    --ground: #07070c;
+    --ink: #f5f4f2;
+    --ink-dim: #a19dae;
+    --ink-faint: #5c5870;
+    --line: rgba(245, 244, 242, 0.08);
+    --line-strong: rgba(245, 244, 242, 0.16);
+    --accent: #ff3951;
+    --accent-2: #ffc226;
+    --blue: #3f80fd;
+    --violet: #6a35ff;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--ground); }
+  body { margin: 0; color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; background: var(--ground); }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: inherit; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+
+  .sheet { max-width: 1320px; margin: 0 auto; padding: 0 56px; position: relative; z-index: 1; }
+  @media (max-width: 720px) { .sheet { padding: 0 22px; } }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16,0.8,0.2,1), transform 0.8s cubic-bezier(0.16,0.8,0.2,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ============ NAV ============ */
+  nav { position: relative; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 30px 0; }
+  .mark { display: flex; align-items: center; gap: 9px; font-family: var(--sans); font-weight: 700; font-size: 16px; letter-spacing: -0.01em; }
+  .mark .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 12px 2px rgba(255,57,81,0.6); }
+  .crumb { font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); letter-spacing: 0.04em; }
+  .crumb b { color: var(--ink-dim); font-weight: 500; }
+  @media (max-width: 720px) { .crumb { display: none; } }
+  .nav-cta { font-size: 13.5px; font-weight: 600; color: var(--ink); text-decoration: none; padding: 11px 22px; border-radius: 100px; background: rgba(245,244,242,0.06); border: 1px solid var(--line-strong); transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease; }
+  .nav-cta:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+
+  /* ============ HERO ============ */
+  .hero { position: relative; min-height: 74vh; display: flex; flex-direction: column; justify-content: center; padding: 40px 0 80px; overflow: hidden; }
+  .pulse-field { position: absolute; top: 50%; right: -8%; width: 900px; height: 900px; transform: translateY(-50%); pointer-events: none; z-index: 0; }
+  @media (max-width: 1100px) { .pulse-field { right: -30%; opacity: 0.6; } }
+  .pulse-ring { position: absolute; top: 50%; left: 50%; border: 1px solid rgba(255,57,81,0.35); border-radius: 50%; transform: translate(-50%,-50%); animation: pulse-out 5.5s cubic-bezier(0.2,0.6,0.3,1) infinite; }
+  .pulse-ring:nth-child(1) { width: 120px; height: 120px; animation-delay: 0s; }
+  .pulse-ring:nth-child(2) { width: 120px; height: 120px; animation-delay: 1.4s; }
+  .pulse-ring:nth-child(3) { width: 120px; height: 120px; animation-delay: 2.8s; }
+  .pulse-ring:nth-child(4) { width: 120px; height: 120px; animation-delay: 4.2s; }
+  .pulse-core { position: absolute; top: 50%; left: 50%; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); transform: translate(-50%,-50%); box-shadow: 0 0 40px 8px rgba(255,57,81,0.55); }
+  .pulse-core::before { content: ""; position: absolute; inset: -30px; border-radius: 50%; background: radial-gradient(circle, rgba(255,57,81,0.25), transparent 70%); }
+  @keyframes pulse-out { 0% { width: 20px; height: 20px; opacity: 0.9; border-color: rgba(255,57,81,0.7); } 100% { width: 780px; height: 780px; opacity: 0; border-color: rgba(255,57,81,0); } }
+  .hero-eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; color: var(--accent-2); margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
+  .hero-eyebrow::before { content: ""; width: 30px; height: 1px; background: var(--accent-2); }
+  .hero h1 { font-family: var(--sans); font-weight: 800; letter-spacing: -0.03em; line-height: 0.97; margin: 0; font-size: clamp(42px, 6vw, 92px); max-width: 15.5ch; text-wrap: balance; }
+  .hero h1 .in { display: block; overflow: hidden; }
+  .hero h1 .in span { display: block; transform: translateY(105%); animation: rise-in 0.9s cubic-bezier(0.16,0.8,0.2,1) forwards; }
+  .hero h1 .in:nth-child(1) span { animation-delay: 0.1s; }
+  .hero h1 .in:nth-child(2) span { animation-delay: 0.22s; color: var(--accent); }
+  @keyframes rise-in { to { transform: translateY(0); } }
+  .hero-sub { font-family: var(--serif); font-style: italic; font-size: clamp(19px, 2vw, 24px); line-height: 1.5; color: var(--ink-dim); max-width: 36ch; margin: 40px 0 0; opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,0.8,0.2,1) 0.65s forwards; }
+  @keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-foot { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 70px; padding-top: 36px; border-top: 1px solid var(--line); opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,0.8,0.2,1) 0.9s forwards; }
+  .hf-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin-right: 4px; }
+  .hf-chip { font-size: 13px; font-weight: 600; color: var(--ink-dim); border: 1px solid var(--line-strong); border-radius: 100px; padding: 8px 16px; transition: border-color 0.25s ease, color 0.25s ease; }
+  .hf-chip:hover { border-color: var(--accent); color: var(--ink); }
+  @media (max-width: 640px) { .hero-foot { gap: 10px; } .hf-label { width: 100%; margin-bottom: 4px; } }
+
+  /* ============ SECTION SHELL ============ */
+  .band { position: relative; padding: 120px 0; }
+  .band.tint-violet { isolation: isolate; }
+  .band.tint-violet::before { content: ""; position: absolute; top: 0; left: 50%; width: 100vw; height: 100%; transform: translateX(-50%); z-index: -1; pointer-events: none; background: linear-gradient(180deg, transparent, rgba(106,53,255,0.09) 35%, rgba(106,53,255,0.09) 65%, transparent); }
+  .band-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 64px; flex-wrap: wrap; }
+  .band-tag { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: block; }
+  .band-title { font-family: var(--sans); font-weight: 800; letter-spacing: -0.025em; font-size: clamp(32px, 4.2vw, 58px); line-height: 1.03; margin: 0; max-width: 16ch; text-wrap: balance; }
+  .band-title em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  .band-note { font-size: 15.5px; line-height: 1.7; color: var(--ink-dim); max-width: 34ch; }
+
+  /* ============ BLOG GRID ============ */
+  .blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 28px; }
+  @media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  @media (max-width: 560px) { .blog-grid { grid-template-columns: 1fr; } }
+  .blog-card { display: flex; flex-direction: column; text-decoration: none; transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); }
+  .blog-card:hover { transform: translateY(-4px); }
+  .blog-cover { aspect-ratio: 16/10; margin-bottom: 18px; position: relative; overflow: hidden; border: 1px solid var(--line-strong); border-radius: 16px; }
+  .blog-cover::before { content: attr(data-tag); position: absolute; top: 14px; left: 14px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: rgba(255,255,255,0.9); text-transform: uppercase; background: rgba(7,7,12,0.5); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 5px 12px; }
+  .blog-cover.c1 { background: linear-gradient(135deg, #2a0f18, #ff3951 160%); }
+  .blog-cover.c2 { background: linear-gradient(135deg, #10131f, #3f80fd 170%); }
+  .blog-cover.c3 { background: linear-gradient(135deg, #241a05, #ffc226 180%); }
+  .blog-cover.c4 { background: linear-gradient(135deg, #170f2c, #6a35ff 170%); }
+  .blog-cover.c5 { background: linear-gradient(135deg, #051f22, #3fcffd 180%); }
+  .blog-cover.c6 { background: linear-gradient(135deg, #2a0f18, #ff8139 170%); }
+  .blog-card h4 { font-size: 17px; font-weight: 700; margin: 0 0 8px; line-height: 1.35; }
+  .blog-card p { font-size: 13.5px; line-height: 1.6; color: var(--ink-dim); margin: 0; flex: 1; }
+  .blog-card .bc-meta { font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); margin-top: 14px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* ============ FREEBIE STRIP ============ */
+  .freebie-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  @media (max-width: 780px) { .freebie-grid { grid-template-columns: 1fr; } }
+  .freebie { background: #0d0d14; padding: 32px 28px; display: flex; flex-direction: column; gap: 12px; transition: background 0.25s ease; }
+  .freebie:hover { background: #100d13; }
+  .freebie .fl { font-family: var(--mono); font-size: 10.5px; color: var(--accent-2); letter-spacing: 0.08em; text-transform: uppercase; }
+  .freebie h4 { margin: 0; font-size: 17.5px; font-weight: 700; }
+  .freebie p { margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--ink-dim); flex: 1; }
+  .freebie .fbtn { display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; font-size: 13.5px; font-weight: 700; color: var(--ink); border: 1px solid var(--line-strong); border-radius: 100px; padding: 10px 20px; width: fit-content; text-decoration: none; transition: background 0.25s ease, border-color 0.25s ease; }
+  .freebie .fbtn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* ============ CLOSING CTA ============ */
+  .close-cta { position: relative; padding: 150px 0; text-align: center; overflow: hidden; }
+  .close-cta h2 { font-family: var(--sans); font-weight: 800; letter-spacing: -0.03em; font-size: clamp(40px, 7vw, 96px); line-height: 0.98; margin: 0 auto; max-width: 16ch; text-wrap: balance; }
+  .close-cta h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  .btn-primary { font-size: 15.5px; font-weight: 700; color: #fff; text-decoration: none; background: var(--accent); padding: 18px 32px; border-radius: 100px; display: inline-flex; align-items: center; gap: 12px; box-shadow: 0 20px 50px -18px rgba(255,57,81,0.65); transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.3s ease; margin-top: 48px; }
+  .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 26px 60px -16px rgba(255,57,81,0.75); }
+  .btn-primary svg { width: 15px; height: 15px; }
+  .close-glow { position: absolute; top: 50%; left: 50%; width: 800px; height: 400px; transform: translate(-50%,-50%); background: radial-gradient(ellipse, rgba(255,57,81,0.18), transparent 70%); pointer-events: none; }
+
+  /* ============ FOOTER ============ */
+  footer { border-top: 1px solid var(--line); padding: 70px 0 0; }
+  .footer-grid { display: grid; grid-template-columns: minmax(0,1.3fr) repeat(4, minmax(0,1fr)); gap: 32px; padding-bottom: 50px; }
+  @media (max-width: 980px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+  .footer-brand .mark { margin-bottom: 16px; }
+  .footer-brand p { font-size: 13.5px; line-height: 1.65; color: var(--ink-dim); max-width: 30ch; margin: 0; }
+  .footer-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin: 0 0 18px; }
+  .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+  .footer-col a { color: var(--ink-dim); text-decoration: none; font-size: 13.5px; transition: color 0.2s ease; }
+  .footer-col a:hover { color: var(--ink); }
+  .footer-bottom { border-top: 1px solid var(--line); padding: 22px 0 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); }
+  .footer-bottom a { color: var(--ink-faint); text-decoration: none; margin-left: 20px; }
+  .footer-bottom a:hover { color: var(--ink-dim); }
+  @media (max-width: 640px) { .footer-bottom { flex-direction: column; text-align: center; } .footer-bottom a { margin: 0 10px; } }
+
+  .note { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 30; font-family: var(--mono); font-size: 11px; color: var(--ink-faint); background: rgba(7,7,12,0.8); backdrop-filter: blur(6px); border: 1px solid var(--line-strong); border-radius: 100px; padding: 9px 18px; white-space: nowrap; }
+  @media (max-width: 640px) { .note { font-size: 9.5px; white-space: normal; text-align: center; width: 86%; } }
+</style>
+
+<div class="sheet">
+  <nav>
+    <div class="mark"><span class="dot"></span>PIXEL56</div>
+    <div class="crumb">Unternehmen <b>/</b> <b>Blog</b></div>
+    <a class="nav-cta" href="#kontakt">Gespräch anfragen</a>
+  </nav>
+
+  <header class="hero">
+    <div class="pulse-field" aria-hidden="true">
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-core"></div>
+    </div>
+    <div class="hero-eyebrow">UNTERNEHMEN · BLOG</div>
+    <h1>
+      <span class="in"><span>Wissen, das</span></span>
+      <span class="in"><span>wirklich weiterhilft.</span></span>
+    </h1>
+    <p class="hero-sub">Keine Marketing-Floskeln, sondern Antworten auf die Fragen, die uns Kunden tatsächlich stellen — ehrlich und umsetzbar.</p>
+    <div class="hero-foot">
+      <span class="hf-label">Themen:</span>
+      <div class="hf-chip">Website</div>
+      <div class="hf-chip">SEO</div>
+      <div class="hf-chip">Ads</div>
+      <div class="hf-chip">Google Business</div>
+    </div>
+  </header>
+</div>
+
+<div class="sheet">
+  <section class="band" id="artikel" style="padding-top: 40px;">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">01 — Aktuelle Artikel</span>
+        <h2 class="band-title">Fragen, die uns <em>oft erreichen</em></h2>
+      </div>
+    </div>
+    <div class="blog-grid reveal">
+      <a class="blog-card" href="#">
+        <div class="blog-cover c1" data-tag="Website"></div>
+        <h4>Website-Kosten für Handwerksbetriebe: Was ist realistisch?</h4>
+        <p>Was eine professionelle Website wirklich kostet — und warum die billigste Lösung oft teurer wird.</p>
+        <span class="bc-meta">Website · 6 Min. Lesezeit</span>
+      </a>
+      <a class="blog-card" href="#">
+        <div class="blog-cover c2" data-tag="Google Business"></div>
+        <h4>Google Business Profil optimieren</h4>
+        <p>Kostenlos, aber oft vernachlässigt: der wirksamste Hebel für mehr lokale Anfragen.</p>
+        <span class="bc-meta">Lokal · 5 Min. Lesezeit</span>
+      </a>
+      <a class="blog-card" href="#">
+        <div class="blog-cover c5" data-tag="Performance"></div>
+        <h4>Warum eine langsame Website Kunden kostet</h4>
+        <p>Jede Sekunde Ladezeit kostet Besucher und Google-Ranking — die Zahlen dahinter.</p>
+        <span class="bc-meta">Technik · 4 Min. Lesezeit</span>
+      </a>
+      <a class="blog-card" href="#">
+        <div class="blog-cover c3" data-tag="Bewertungen"></div>
+        <h4>Mehr Google-Rezensionen bekommen</h4>
+        <p>Warum Bewertungen mehr Kunden bringen als Werbung — und wie man systematisch mehr bekommt.</p>
+        <span class="bc-meta">Lokal · 5 Min. Lesezeit</span>
+      </a>
+      <a class="blog-card" href="#">
+        <div class="blog-cover c4" data-tag="Ads"></div>
+        <h4>Meta Ads Budget: Was realistisch einplanen?</h4>
+        <p>Warum Konstanz bei Meta Ads wichtiger ist als die Höhe des Budgets.</p>
+        <span class="bc-meta">Kampagnen · 6 Min. Lesezeit</span>
+      </a>
+      <a class="blog-card" href="#">
+        <div class="blog-cover c6" data-tag="SEO"></div>
+        <h4>SEO: Wie lange dauert es wirklich bis zu Ergebnissen?</h4>
+        <p>Realistische Zeiträume — und warum die meisten zu früh aufgeben.</p>
+        <span class="bc-meta">SEO · 7 Min. Lesezeit</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="band tint-violet" id="ressourcen">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">02 — Kostenlose Ressourcen</span>
+        <h2 class="band-title">Zum Mitnehmen, <em>ohne Haken</em></h2>
+      </div>
+      <p class="band-note">Drei Downloads, die sofort weiterhelfen — kostenlos gegen deine E-Mail-Adresse.</p>
+    </div>
+    <div class="freebie-grid reveal">
+      <div class="freebie">
+        <span class="fl">Checkliste · PDF</span>
+        <h4>SEO-Checkliste</h4>
+        <p>Die wichtigsten Punkte, die jede Website erfüllen sollte, um bei Google gefunden zu werden — zum Selbst-Abhaken.</p>
+        <a class="fbtn" href="#">Kostenlos laden ↓</a>
+      </div>
+      <div class="freebie">
+        <span class="fl">Checkliste · PDF</span>
+        <h4>KI-Agenten-Checkliste</h4>
+        <p>Wo KI im Betriebsalltag tatsächlich Zeit spart — und wo sie nur Spielerei ist. Ehrlich eingeordnet.</p>
+        <a class="fbtn" href="#">Kostenlos laden ↓</a>
+      </div>
+      <div class="freebie">
+        <span class="fl">Vorlage · PDF</span>
+        <h4>Tagesplaner</h4>
+        <p>Die Planungs-Vorlage, mit der wir selbst arbeiten — für fokussierte Tage statt Zettelwirtschaft.</p>
+        <a class="fbtn" href="#">Kostenlos laden ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="close-cta reveal" id="kontakt">
+    <div class="close-glow"></div>
+    <h2>Lieber direkt <em>fragen?</em></h2>
+    <a class="btn-primary" href="#">Kostenloses Erstgespräch <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8"/></svg></a>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="mark"><span class="dot"></span>PIXEL56</div>
+        <p>Hüttenstraße 100, 56170 Bendorf bei Koblenz. Digitale Auftritte für KMUs, Coaches, Shops und lokale Betriebe.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Leistungen</h5>
+        <ul>
+          <li><a href="#">Webdesign</a></li>
+          <li><a href="#">SEO</a></li>
+          <li><a href="#">Google Ads</a></li>
+          <li><a href="#">Meta Ads</a></li>
+          <li><a href="#">Landingpages &amp; Funnels</a></li>
+          <li><a href="#">Content-Produktion</a></li>
+          <li><a href="#">Mitarbeitergewinnung</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Unternehmen</h5>
+        <ul>
+          <li><a href="#">Über uns</a></li>
+          <li><a href="#">Projekte</a></li>
+          <li><a href="#">Bewertungen</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Karriere</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kostenlose Ressourcen</h5>
+        <ul>
+          <li><a href="#">SEO-Checkliste</a></li>
+          <li><a href="#">KI-Agenten-Checkliste</a></li>
+          <li><a href="#">Tagesplaner PDF</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="mailto:info@pixel56.de">info@pixel56.de</a></li>
+          <li><a href="tel:+4926229898654">02622 9898654</a></li>
+          <li><a href="https://wa.me/491785282464" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© Pixel56 — Freier Entwurf, nicht live</div>
+      <div><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
+    </div>
+  </footer>
+</div>
+
+<div class="note">Freier Entwurf — neue Formsprache, zur Diskussion</div>
+
+<script>
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else { revealEls.forEach(function (el) { el.classList.add('in'); }); }
+</script>

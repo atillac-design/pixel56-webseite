@@ -1,0 +1,611 @@
+<title>Pixel56 — Webdesign in Koblenz (Entwurf Standortseite)</title>
+<style>
+  :root {
+    --ground: #0a0a12;
+    --ink: #f3f2f0;
+    --ink-dim: #9c98ac;
+    --ink-faint: #625f74;
+    --line: rgba(243, 242, 240, 0.09);
+    --line-strong: rgba(243, 242, 240, 0.17);
+    --accent: #ff3951;
+    --accent-2: #ffc226;
+    --blue: #3f80fd;
+    --violet: #6a35ff;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --radius-sm: 8px;
+    --radius: 10px;
+    --radius-lg: 14px;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--ground); }
+  body {
+    margin: 0; color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    background:
+      radial-gradient(ellipse 60% 40% at 15% 0%, rgba(255, 57, 81, 0.16), transparent 55%),
+      linear-gradient(180deg,
+        var(--ground) 0%,
+        color-mix(in srgb, var(--ground) 87%, var(--blue)) 9%,
+        var(--ground) 17%,
+        var(--ground) 21%,
+        color-mix(in srgb, var(--ground) 88%, var(--accent-2)) 29%,
+        var(--ground) 37%,
+        var(--ground) 41%,
+        color-mix(in srgb, var(--ground) 87%, var(--violet)) 49%,
+        var(--ground) 57%,
+        var(--ground) 62%,
+        color-mix(in srgb, var(--ground) 86%, var(--blue)) 70%,
+        var(--ground) 78%,
+        var(--ground) 83%,
+        color-mix(in srgb, var(--ground) 84%, var(--accent)) 91%,
+        var(--ground) 100%
+      );
+  }
+  ::selection { background: var(--accent); color: #0a0a12; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+  a { color: inherit; }
+
+  .grid-field { position: fixed; inset: -10% -10%; z-index: 0; background-image: radial-gradient(circle, var(--line-strong) 1.4px, transparent 1.4px); background-size: 42px 42px; opacity: 0.55; pointer-events: none; }
+  .grid-field .lit-pixel { position: absolute; width: 3px; height: 3px; background: var(--accent); box-shadow: 0 0 8px 1px rgba(255,57,81,0.7); animation: pixel-glow 4.5s ease-in-out infinite; }
+  @keyframes pixel-glow { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+
+  .sheet { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 0 64px; }
+  @media (max-width: 720px) { .sheet { padding: 0 22px; } }
+
+  nav { position: relative; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding-top: 34px; }
+  .mark { display: flex; align-items: baseline; gap: 10px; font-family: var(--mono); font-weight: 500; font-size: 15px; }
+  .mark .dot { width: 7px; height: 7px; background: var(--accent); display: inline-block; flex-shrink: 0; }
+  .mark b { font-weight: 600; }
+  .mark span.tag { color: var(--ink-faint); font-size: 12px; }
+  @media (max-width: 480px) { .mark span.tag { display: none; } }
+  .crumb { font-family: var(--mono); font-size: 12.5px; color: var(--ink-faint); display: flex; gap: 8px; align-items: center; }
+  .crumb a { text-decoration: none; color: var(--ink-dim); }
+  .crumb a:hover { color: var(--ink); }
+  @media (max-width: 860px) { .crumb { display: none; } }
+
+  /* ---------- premium buttons ---------- */
+  .btn-primary, .btn-outline {
+    font-family: var(--sans); font-size: 15px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; padding: 15px 24px 15px 26px;
+    display: inline-flex; align-items: center; gap: 10px; border-radius: var(--radius-sm); position: relative; overflow: hidden;
+    isolation: isolate;
+  }
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset, 0 12px 26px -14px rgba(255,57,81,0.55); transition: transform 0.25s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.25s ease; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 18px 36px -14px rgba(255,57,81,0.65); }
+  .btn-primary::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%); transform: translateX(-130%); transition: transform 0.7s cubic-bezier(0.2,0.7,0.2,1); }
+  .btn-primary:hover::before { transform: translateX(130%); }
+  .btn-primary svg { width: 14px; height: 14px; transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); }
+  .btn-primary:hover svg { transform: translateX(4px); }
+
+  .btn-outline { border: 1px solid rgba(255,57,81,0.35); color: var(--ink); background: rgba(255,57,81,0.09); transition: border-color 0.25s ease, background 0.25s ease; }
+  .btn-outline::before { content: ""; position: absolute; inset: 0; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); z-index: -1; }
+  .btn-outline:hover { color: #fff; border-color: var(--accent); }
+  .btn-outline:hover::before { transform: scaleX(1); }
+
+  .nav-cta {
+    font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: -0.005em;
+    border-radius: var(--radius-sm); padding: 10px 20px; text-decoration: none; color: #fff; background: var(--accent);
+    white-space: nowrap; flex-shrink: 0;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset, 0 10px 22px -12px rgba(255,57,81,0.55);
+    transition: transform 0.25s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.25s ease;
+  }
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 16px 30px -12px rgba(255,57,81,0.65); }
+  @media (max-width: 480px) { .nav-cta { font-size: 12.5px; padding: 8px 13px; } }
+
+  /* ---------- hero ---------- */
+  .hero { position: relative; padding: 96px 0 66px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 40px; align-items: center; }
+  @media (max-width: 980px) { .hero { grid-template-columns: 1fr; } }
+  .eyebrow { font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.14em; color: var(--accent); display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+  .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent); }
+  h1.headline { font-size: clamp(34px, 4.8vw, 64px); line-height: 1.03; letter-spacing: -0.02em; font-weight: 600; margin: 0 0 24px; text-wrap: balance; max-width: 15ch; }
+  h1.headline em { color: var(--accent); font-style: normal; }
+  .hero-sub { font-size: 17px; line-height: 1.65; color: var(--ink-dim); max-width: 50ch; margin: 0 0 34px; }
+  .hero-actions { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+  .btn-ghost { font-family: var(--mono); font-size: 13.5px; color: var(--ink-dim); text-decoration: none; }
+  .btn-ghost:hover { color: var(--ink); }
+
+  .hero-visual { position: relative; height: 360px; perspective: 1400px; }
+  @media (max-width: 980px) { .hero-visual { height: 290px; margin-top: 16px; } }
+  .hv-layer { position: absolute; }
+  .hv-desktop { width: 330px; height: 214px; top: 18px; left: 8px; background: linear-gradient(165deg, #171727, #0d0d17); border: 1px solid var(--line-strong); border-radius: var(--radius); overflow: hidden; box-shadow: 0 40px 80px -30px rgba(0,0,0,0.6); transform: rotateX(8deg) rotateY(-16deg); }
+  .hv-desktop .bar { height: 22px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 5px; padding: 0 10px; }
+  .hv-desktop .bar i { width: 6px; height: 6px; border-radius: 50%; background: var(--line-strong); display: inline-block; }
+  .hv-desktop .body { padding: 16px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .hv-desktop .hero-block { grid-column: 1 / -1; height: 44px; background: linear-gradient(120deg, rgba(255,57,81,0.35), rgba(255,57,81,0.05)); border: 1px solid rgba(255,57,81,0.35); }
+  .hv-desktop .card { height: 38px; border: 1px solid var(--line-strong); background: rgba(255,255,255,0.02); }
+  .hv-mobile { width: 104px; height: 202px; top: 146px; left: 244px; background: linear-gradient(165deg, #1a1a2c, #0d0d17); border: 1px solid var(--line-strong); border-radius: var(--radius-lg); box-shadow: 0 30px 60px -20px rgba(0,0,0,0.65); transform: rotateX(6deg) rotateY(-16deg) translateZ(40px); padding: 12px 10px; }
+  .hv-mobile .nub { width: 30px; height: 4px; background: var(--line-strong); border-radius: 4px; margin: 0 auto 12px; }
+  .hv-mobile .ln { height: 8px; background: var(--line-strong); margin-bottom: 8px; border-radius: 2px; }
+  .hv-mobile .ln.short { width: 60%; }
+  .hv-mobile .blk { height: 32px; border: 1px solid var(--line-strong); margin-top: 10px; background: rgba(63,128,253,0.12); border-color: rgba(63,128,253,0.35); }
+  .hv-spec { width: 160px; top: 0; right: 0; padding: 16px 18px 14px; background: linear-gradient(160deg, #1a1a2c, #131320); border: 1px solid var(--line-strong); border-radius: var(--radius); font-family: var(--mono); font-size: 10.5px; color: var(--ink-dim); transform: rotateX(6deg) rotateY(-16deg) translateZ(70px); box-shadow: 0 30px 60px -24px rgba(0,0,0,0.65); }
+  .hv-spec .cap { font-size: 9.5px; letter-spacing: 0.1em; color: var(--ink-faint); margin-bottom: 10px; }
+  .hv-spec .row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dashed var(--line); }
+  .hv-spec .row:last-child { border-bottom: none; }
+  .hv-spec .row b { color: var(--accent-2); font-weight: 500; }
+  @media (max-width: 640px) { .hv-desktop { width: 250px; height: 164px; left: 0; } .hv-mobile { width: 80px; height: 156px; left: 182px; top: 106px; } .hv-spec { display: none; } }
+
+  /* ---------- section shell ---------- */
+  section { position: relative; padding: 84px 0; border-top: 1px solid var(--line); }
+  section::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; margin-left: -50vw; z-index: -1; background: rgba(255,255,255,0.014); opacity: 0; }
+  section:nth-of-type(even)::before { opacity: 1; }
+  .section-head { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
+  .section-index {
+    font-family: var(--mono); font-size: 11.5px; color: var(--accent); letter-spacing: 0.08em;
+    display: inline-flex; align-items: center; gap: 8px; width: fit-content;
+    border: 1px solid rgba(255,57,81,0.3); background: rgba(255,57,81,0.08);
+    padding: 6px 12px; border-radius: var(--radius-sm);
+  }
+  .section-title { font-size: clamp(25px, 2.8vw, 38px); font-weight: 600; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+  .section-title em { color: var(--accent); font-style: normal; }
+  .lede { max-width: 62ch; font-size: 16.5px; line-height: 1.75; color: var(--ink-dim); margin: 0 0 40px; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.16,0.8,0.2,1), transform 0.7s cubic-bezier(0.16,0.8,0.2,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ---------- inline CTA band ---------- */
+  .inline-cta { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 44px; padding: 24px 30px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: linear-gradient(120deg, rgba(255,57,81,0.07), transparent 70%); flex-wrap: wrap; }
+  .inline-cta p { margin: 0; font-size: 14.5px; color: var(--ink-dim); max-width: 46ch; }
+  .inline-cta p b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- split image/text layout (matches homepage) ---------- */
+  .split { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; align-items: center; }
+  .split.reverse { grid-template-columns: 1.15fr 0.85fr; }
+  .split.reverse .split-img { order: 2; }
+  .split-img .img-slot { border-radius: var(--radius-lg); aspect-ratio: 4/5; }
+  @media (max-width: 860px) { .split, .split.reverse { grid-template-columns: 1fr; } .split.reverse .split-img { order: 0; } .split-img .img-slot { aspect-ratio: 16/9; } }
+
+  /* ---------- trust triptych (section 04) ---------- */
+  .triptych { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  .tri { position: relative; min-width: 0; background: var(--ground); padding: 34px 30px; overflow: hidden; transition: background 0.25s ease; }
+  .tri:hover { background: rgba(255,194,38,0.04); }
+  .tri .tt { position: relative; font-family: var(--sans); font-size: 12.5px; font-weight: 700; letter-spacing: 0.04em; color: var(--accent-2); text-transform: uppercase; margin-bottom: 40px; }
+  .tri h4 { position: relative; margin: 0 0 12px; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; }
+  .tri p { position: relative; margin: 0; font-size: 15px; line-height: 1.7; color: var(--ink-dim); }
+  @media (max-width: 780px) { .triptych { grid-template-columns: 1fr; } }
+
+  /* ---------- funnel diagram (section 03) ---------- */
+  .funnel { position: relative; display: flex; align-items: stretch; gap: 0; margin: 44px 0 12px; flex-wrap: wrap; padding: 44px 40px; border-radius: var(--radius); background: linear-gradient(120deg, rgba(255,57,81,0.06), transparent 60%), rgba(255,255,255,0.015); border: 1px solid var(--line); }
+  .fn-node { text-align: left; padding: 26px 0 0; border-top: 2px solid var(--line-strong); flex: 1; min-width: 156px; transition: border-color 0.25s ease; }
+  .fn-node .big { display: block; font-family: var(--sans); font-size: 21px; font-weight: 700; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.01em; }
+  .fn-node .lbl { font-family: var(--sans); font-size: 14.5px; color: var(--ink-dim); }
+  .fn-node.hot { border-top-color: var(--accent); }
+  .fn-node.hot .big { color: var(--accent); }
+  .fn-arrow { display: flex; align-items: flex-start; color: var(--ink-faint); flex-shrink: 0; padding: 26px 24px 0; }
+  .fn-arrow svg { width: 20px; height: 20px; stroke: var(--ink-faint); fill: none; stroke-width: 1.6; }
+  @media (max-width: 720px) { .funnel { flex-direction: column; align-items: stretch; gap: 4px; padding: 32px 28px; } .fn-arrow { display: none; } .fn-node { border-top: none; border-left: 2px solid var(--line-strong); padding: 4px 0 20px 20px; } .fn-node.hot { border-left-color: var(--accent); } }
+
+  /* ---------- audience chips ---------- */
+  .audience-wrap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  @media (max-width: 860px) { .audience-wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .audience-wrap { grid-template-columns: 1fr; } }
+  .chip {
+    font-family: var(--sans); font-size: 16px; font-weight: 600; color: var(--ink);
+    background: var(--ground);
+    padding: 30px 26px; min-width: 0;
+    display: flex; align-items: flex-start;
+    border-left: 2px solid transparent;
+    transition: background 0.25s ease, border-color 0.25s ease;
+  }
+  .chip:hover { background: rgba(255,57,81,0.045); border-left-color: var(--accent); }
+
+  /* ---------- timeline ---------- */
+  .timeline { position: relative; padding-left: 40px; }
+  .timeline::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 1px; background: linear-gradient(var(--accent), var(--line-strong)); }
+  .tl-step { position: relative; padding-bottom: 42px; }
+  .tl-step:last-child { padding-bottom: 0; }
+  .tl-step::before { content: ""; position: absolute; left: -40px; top: 4px; width: 15px; height: 15px; border-radius: 50%; background: var(--ground); border: 1.5px solid var(--accent); }
+  .tl-chip { display: inline-block; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--accent-2); border: 1px solid var(--line-strong); padding: 4px 10px; margin-bottom: 12px; text-transform: uppercase; }
+  .tl-step h4 { margin: 0 0 10px; font-size: 20px; font-weight: 600; }
+  .tl-step p { margin: 0; color: var(--ink-dim); font-size: 14.5px; line-height: 1.7; max-width: 58ch; }
+
+  .callout { margin-top: 40px; padding: 26px 30px; border-left: 2px solid var(--accent-2); border-radius: 0 var(--radius) var(--radius) 0; background: rgba(255,194,38,0.05); }
+  .callout p { margin: 0; font-size: 15px; line-height: 1.7; color: var(--ink); max-width: 62ch; }
+  .callout p b { color: var(--accent-2); }
+
+  /* ---------- scope cards (pricing philosophy) ---------- */
+  .scope-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin-top: 8px; }
+  .scope { background: var(--ground); padding: 30px 26px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .scope .sl { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.06em; }
+  .scope h4 { margin: 0; font-size: 18px; font-weight: 600; }
+  .scope p { margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--ink-dim); }
+  @media (max-width: 860px) { .scope-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- reference cards ---------- */
+  .ref-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin-top: 8px; }
+  .ref { background: var(--ground); padding: 36px 34px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .img-slot { aspect-ratio: 16/10; border: 1.5px dashed var(--line-strong); border-radius: var(--radius); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(255,255,255,0.025) 8px, rgba(255,255,255,0.025) 16px); }
+  .img-slot .ic { font-size: 20px; opacity: 0.45; }
+  .img-slot .lb { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; color: var(--ink-faint); text-transform: uppercase; text-align: center; padding: 0 12px; }
+  .ref .rl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--accent-2); text-transform: uppercase; }
+  .ref h4 { margin: 0; font-size: 19px; font-weight: 600; }
+  .ref p { margin: 0; font-size: 14.5px; line-height: 1.65; color: var(--ink-dim); }
+  .ref .tag { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); border-top: 1px dashed var(--line-strong); padding-top: 14px; margin-top: 4px; }
+  @media (max-width: 780px) { .ref-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- faq ---------- */
+  .faq-acc { border-top: 1px solid var(--line); margin-top: 8px; }
+  .faq-acc details { border-bottom: 1px solid var(--line); padding: 24px 0; }
+  .faq-acc summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: 17.5px; font-weight: 600; color: var(--ink); transition: color 0.2s ease; }
+  .faq-acc summary::-webkit-details-marker { display: none; }
+  .faq-acc summary .plus { font-family: var(--mono); font-size: 22px; color: var(--accent); transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); flex-shrink: 0; }
+  .faq-acc details[open] summary .plus { transform: rotate(45deg); }
+  .faq-acc details[open] summary { color: var(--accent); }
+  .faq-acc .a { padding-top: 14px; font-size: 15px; line-height: 1.7; color: var(--ink-dim); max-width: 64ch; }
+
+  /* ---------- pain list (reused) ---------- */
+  .pain-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  .pain-row:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .pain-row:last-child:nth-child(odd) .pain-copy p { max-width: 62ch; }
+  .pain-row { position: relative; background: var(--ground); padding: 34px 32px; min-width: 0; overflow: hidden; transition: background 0.25s ease; }
+  .pain-row:hover { background: rgba(255,57,81,0.045); }
+  .pain-num { position: absolute; top: 8px; right: 20px; font-family: var(--sans); font-size: 64px; font-weight: 800; color: var(--accent); opacity: 0.09; line-height: 1; pointer-events: none; }
+  .pain-copy { position: relative; }
+  .pain-copy h4 { margin: 0 0 10px; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; max-width: 22ch; }
+  .pain-copy p { margin: 0; font-size: 15px; line-height: 1.7; color: var(--ink-dim); max-width: 40ch; }
+  @media (max-width: 720px) { .pain-list { grid-template-columns: 1fr; } }
+
+  .cta-block { text-align: left; padding: 104px 0 90px; }
+  .cta-title { font-size: clamp(28px, 4vw, 50px); font-weight: 600; letter-spacing: -0.02em; max-width: 16ch; text-wrap: balance; margin: 0 0 34px; }
+  .cta-title em { color: var(--accent); font-style: normal; }
+
+  /* ---------- footer ---------- */
+  footer { border-top: 1px solid var(--line); padding: 76px 0 0; }
+  .footer-grid { display: grid; grid-template-columns: minmax(0,1.3fr) repeat(4, minmax(0,1fr)); gap: 32px; padding-bottom: 56px; }
+  @media (max-width: 980px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+  .footer-brand .mark { margin-bottom: 16px; }
+  .footer-brand p { font-size: 14px; line-height: 1.65; color: var(--ink-dim); max-width: 32ch; margin: 0; }
+  .footer-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin: 0 0 18px; }
+  .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .footer-col a { color: var(--ink-dim); text-decoration: none; font-size: 14px; transition: color 0.2s ease; }
+  .footer-col a:hover { color: var(--ink); }
+  .footer-bottom {
+    border-top: 1px solid var(--line);
+    padding: 24px 0 32px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); letter-spacing: 0.03em;
+  }
+  .footer-bottom .legal { display: flex; gap: 22px; }
+  .footer-bottom a { color: var(--ink-faint); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--ink-dim); }
+  @media (max-width: 640px) { .footer-bottom { flex-direction: column; text-align: center; } }
+  .note { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 20; font-family: var(--mono); font-size: 11px; color: var(--ink-faint); background: rgba(10,10,18,0.75); backdrop-filter: blur(6px); border: 1px solid var(--line-strong); border-radius: var(--radius-sm); padding: 8px 16px; white-space: nowrap; }
+  @media (max-width: 640px) { .note { font-size: 9.5px; padding: 7px 10px; white-space: normal; text-align: center; width: 88%; } }
+
+  /* ---------- dynamic-field marker (this page only: shows which text is per-city in the real CMS template) ---------- */
+  .dyn { border-bottom: 1.5px dashed var(--accent-2); cursor: help; }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "serviceType": "Webdesign",
+      "name": "Webdesign Koblenz | Pixel56 – Agentur für KMU",
+      "description": "Moderne Websites für Handwerk & KMU in Koblenz. Schnelle Ladezeiten, mobile Optimierung, mehr Anfragen. Jetzt beraten lassen.",
+      "areaServed": { "@type": "Place", "name": "Koblenz" },
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Pixel56",
+        "address": { "@type": "PostalAddress", "streetAddress": "Hüttenstraße 100", "postalCode": "56170", "addressLocality": "Bendorf", "addressCountry": "DE" },
+        "telephone": "+4926229898654",
+        "email": "info@pixel56.de"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Wie lange dauert die Erstellung einer Website?", "acceptedAnswer": { "@type": "Answer", "text": "Liegen Logo, Bildmaterial und eine klare Richtung schon vor, kann es sogar innerhalb einer Woche fertig sein." } },
+        { "@type": "Question", "name": "Arbeitet ihr nur remote oder auch vor Ort in Koblenz?", "acceptedAnswer": { "@type": "Answer", "text": "Der Sitz ist in Bendorf bei Koblenz, ein persönliches Treffen ist möglich. Die Zusammenarbeit läuft meist per Call, vor Ort geht aber, wenn gewünscht." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<div class="grid-field">
+  <span class="lit-pixel" style="top:16%; left:20%; animation-delay:0s;"></span>
+  <span class="lit-pixel" style="top:40%; left:80%; animation-delay:1.2s;"></span>
+  <span class="lit-pixel" style="top:70%; left:14%; animation-delay:2.4s;"></span>
+  <span class="lit-pixel" style="top:84%; left:62%; animation-delay:0.7s;"></span>
+  <span class="lit-pixel" style="top:54%; left:92%; animation-delay:3s;"></span>
+</div>
+
+<div class="sheet">
+  <nav>
+    <div class="mark"><span class="dot"></span><b>PIXEL56</b><span class="tag">/ digitalagentur</span></div>
+    <div class="crumb"><a href="#">Startseite</a><span>/</span><span>Standorte</span><span>/</span><span style="color:var(--ink);">Webdesign Koblenz</span></div>
+    <a class="nav-cta" href="#kontakt">Gespräch anfragen →</a>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow" title="Pro Stadt/Leistung dynamisch aus dem CMS">STANDORTSEITE · WEBDESIGN IN KOBLENZ</div>
+      <h1 class="headline" title="Feld: keyword + ort">Webdesign in <em>Koblenz</em> — mehr Sichtbarkeit, mehr Anfragen.</h1>
+      <p class="hero-sub" title="Statischer Teil + Feld: lokaler-content kombiniert">Wir bauen Websites für Handwerksbetriebe, Dienstleister und lokale Unternehmen in Koblenz — schnell, mobil optimiert und so aufgebaut, dass aus Besuchern tatsächlich Anfragen werden. Koblenz am Zusammenfluss von Rhein und Mosel ist geprägt von Mittelstand und Tourismus — genau das Umfeld, in dem eine überzeugende Website den Unterschied macht.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#kontakt">Kostenloses Erstgespräch <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <a class="btn-ghost" href="#schmerzpunkte">Kennst du das? ↓</a>
+      </div>
+    </div>
+    <div class="hero-visual" id="heroVisual">
+      <div class="hv-layer hv-desktop">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <div class="body"><div class="hero-block"></div><div class="card"></div><div class="card"></div><div class="card"></div></div>
+      </div>
+      <div class="hv-layer hv-mobile"><div class="nub"></div><div class="ln"></div><div class="ln short"></div><div class="blk"></div></div>
+      <div class="hv-layer hv-spec">
+        <div class="cap">// LIVE-STANDARD</div>
+        <div class="row"><span>Ladezeit</span><b>&lt;1.0s</b></div>
+        <div class="row"><span>Mobil</span><b>100%</b></div>
+        <div class="row"><span>SEO</span><b>inklusive</b></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="schmerzpunkte">
+    <div class="section-head reveal">
+      <div class="section-index">01 / KENNST DU DAS?</div>
+      <h2 class="section-title">Sieben Zeichen, dass die Website <em>gegen dich arbeitet</em></h2>
+    </div>
+    <p class="lede reveal">Egal ob eure Seite seit Jahren unangetastet ist oder es noch gar keine gibt — beides kostet euch heute Kunden, jeden einzelnen Tag.</p>
+    <div class="pain-list reveal">
+      <div class="pain-row"><div class="pain-num">01</div><div class="pain-copy"><h4>Unsichtbar bei Google</h4><p>Bei der Suche nach genau euren Leistungen taucht ihr nicht auf — der Wettbewerb schon.</p></div></div>
+      <div class="pain-row"><div class="pain-num">02</div><div class="pain-copy"><h4>Noch gar keine Website</h4><p>Kunden googeln trotzdem — und landen zwangsläufig beim nächsten Betrieb, der einen Auftritt hat.</p></div></div>
+      <div class="pain-row"><div class="pain-num">03</div><div class="pain-copy"><h4>Veraltet und unglaubwürdig</h4><p>Design von vor zehn Jahren kostet Vertrauen, bevor überhaupt ein Wort gelesen wird.</p></div></div>
+      <div class="pain-row"><div class="pain-num">04</div><div class="pain-copy"><h4>Auf dem Handy unbrauchbar</h4><p>Die Mehrheit der Besucher kommt mobil — und springt sofort wieder ab, wenn nichts passt.</p></div></div>
+      <div class="pain-row"><div class="pain-num">05</div><div class="pain-copy"><h4>Besucher ohne Anfrage</h4><p>Traffic ist da, aber niemand findet den Weg zum Kontaktformular.</p></div></div>
+      <div class="pain-row"><div class="pain-num">06</div><div class="pain-copy"><h4>Jede Änderung dauert Tage</h4><p>Der alte Webmaster antwortet nicht, und die Seite bleibt einfach veraltet stehen.</p></div></div>
+      <div class="pain-row"><div class="pain-num">07</div><div class="pain-copy"><h4>Keine Zahlen, keine Klarheit</h4><p>Ohne Auswertung bleibt unklar, was eigentlich wirkt und was reine Vermutung ist.</p></div></div>
+    </div>
+  </section>
+
+  <section id="warum">
+    <div class="section-head reveal">
+      <div class="section-index">02 / WARUM REGIONAL ZÄHLT</div>
+      <h2 class="section-title">Ein Ansprechpartner, <em>der die Region kennt</em></h2>
+    </div>
+    <div class="split reveal">
+      <div class="split-img"><div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: Atilla Ciftcioglu<br>Portrait / Büro Bendorf</span></div></div>
+      <div>
+        <p class="lede dyn" title="Feld: warum-titel/warum-text 1–3 — pro Leistung fest, nicht pro Stadt erfunden" style="margin-bottom:28px;">Wir sitzen selbst in Bendorf bei Koblenz — kein anonymes Callcenter, sondern ein Ansprechpartner, der die Region und ihre Betriebe versteht.</p>
+        <div style="display:flex; flex-direction:column; gap:22px;">
+          <div><h4 style="margin:0 0 6px; font-size:17px; font-weight:600;">Regionale Nähe</h4><p style="margin:0; font-size:15px; line-height:1.65; color:var(--ink-dim);">Ein persönliches Treffen ist möglich, nicht nur ein Video-Call mit einer anonymen Agentur irgendwo im Land.</p></div>
+          <div><h4 style="margin:0 0 6px; font-size:17px; font-weight:600;">Marktkenntnis</h4><p style="margin:0; font-size:15px; line-height:1.65; color:var(--ink-dim);">Wer in der Region tätig ist, weiß, wogegen eure Website online tatsächlich antreten muss.</p></div>
+          <div><h4 style="margin:0 0 6px; font-size:17px; font-weight:600;">Persönlich</h4><p style="margin:0; font-size:15px; line-height:1.65; color:var(--ink-dim);">Fragen gehen direkt an die Person, die auch tatsächlich an eurer Website arbeitet.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="inline-cta reveal">
+      <p>Willst du wissen, wie eure aktuelle Website auf neue Besucher wirkt?</p>
+      <a class="btn-outline" href="#kontakt">Kostenlose Einschätzung →</a>
+    </div>
+  </section>
+
+  <section id="fuer-wen-lokal">
+    <div class="section-head reveal">
+      <div class="section-index">03 / FÜR BETRIEBE IN DER REGION</div>
+      <h2 class="section-title">Für wen sich <em>lokales Webdesign lohnt</em></h2>
+    </div>
+    <p class="lede reveal">Egal ob Handwerksbetrieb, Dienstleister oder lokales Geschäft — wer online gefunden werden will, statt auf Zufall zu hoffen, ist hier richtig.</p>
+    <div class="funnel reveal">
+      <div class="fn-node"><span class="big">Suche</span><span class="lbl">„Webdesign Koblenz"</span></div>
+      <div class="fn-arrow"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fn-node hot"><span class="big">Website</span><span class="lbl">Klar, schnell, überzeugend</span></div>
+      <div class="fn-arrow"><svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="fn-node"><span class="big">Anfrage</span><span class="lbl">Aus der eigenen Region</span></div>
+    </div>
+    <p class="lede reveal" style="margin-top:36px; margin-bottom:0;">Gerade lokal entscheidet oft die Website darüber, ob eine Anfrage bei euch oder beim Nachbarbetrieb landet — der erste Eindruck fällt fast immer online.</p>
+    <div class="inline-cta reveal">
+      <p>Willst du wissen, wie eure Website im Vergleich zur lokalen Konkurrenz wirkt?</p>
+      <a class="btn-outline" href="#kontakt">Kostenlos vergleichen lassen →</a>
+    </div>
+  </section>
+
+  <section id="sichtbarkeit">
+    <div class="section-head reveal">
+      <div class="section-index">04 / SICHTBARKEIT HÄLT NICHT VON ALLEIN</div>
+      <h2 class="section-title">Sichtbarkeit ist kein Zustand, <em>sondern ein Prozess</em></h2>
+    </div>
+    <p class="lede reveal">Eine Website, die einmal gebaut und danach nie wieder angefasst wird, verliert mit der Zeit an Sichtbarkeit — während aktive Wettbewerber vorbeiziehen. Google bevorzugt Seiten, die technisch sauber sind <b style="color:var(--ink);">und</b> sichtbar gepflegt werden.</p>
+    <div class="triptych reveal">
+      <div class="tri"><div class="tt">Fundament</div><h4>Technisches SEO von Tag eins</h4><p>Struktur, Ladezeit und Seitenaufbau werden von Anfang an so angelegt, dass Google sie versteht — nicht nachträglich draufgesetzt.</p></div>
+      <div class="tri"><div class="tt">Kontinuität</div><h4>Aktuelle Inhalte statt Stillstand</h4><p>Regelmäßige Beiträge und Aktualisierungen signalisieren Relevanz — genau das, was eine eingefrorene Website nicht kann.</p></div>
+      <div class="tri"><div class="tt">Ergebnis</div><h4>Sichtbarkeit, die wächst statt stagniert</h4><p>Wer dranbleibt, verbessert seine Position kontinuierlich, statt einmalig zu starten und dann zu stagnieren.</p></div>
+    </div>
+    <div class="inline-cta reveal">
+      <p>Neugierig, wo eure Website technisch aktuell steht?</p>
+      <a class="btn-outline" href="#kontakt">Kostenlosen Check anfragen →</a>
+    </div>
+  </section>
+
+  <section id="fuerwen">
+    <div class="section-head reveal">
+      <div class="section-index">05 / FÜR WEN LOHNT SICH DAS</div>
+      <h2 class="section-title">Passt das <em>zu deiner Situation?</em></h2>
+    </div>
+    <div class="audience-wrap reveal">
+      <span class="chip">Noch keine Website</span>
+      <span class="chip">Website veraltet</span>
+      <span class="chip">Nur eine Landingpage nötig</span>
+      <span class="chip">Werbekampagne geplant</span>
+      <span class="chip">Mehrseitiger Auftritt mit Funktionen</span>
+      <span class="chip">Relaunch überfällig</span>
+    </div>
+  </section>
+
+  <section id="ablauf">
+    <div class="section-head reveal">
+      <div class="section-index">06 / SO LÄUFT DIE ZUSAMMENARBEIT</div>
+      <h2 class="section-title">Fünf Phasen, <em>ein klares Ergebnis</em></h2>
+    </div>
+    <div class="split reverse reveal">
+      <div class="split-img"><div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: Team bei der Arbeit<br>Büro Bendorf</span></div></div>
+      <div class="timeline">
+        <div class="tl-step"><div class="tl-chip">Phase 01</div><h4>Analyse</h4><p>Wir schauen uns die aktuelle Seite, den Wettbewerb und deine Zielgruppe an, bevor wir irgendetwas entwerfen.</p></div>
+        <div class="tl-step"><div class="tl-chip">Phase 02</div><h4>Struktur &amp; Text</h4><p>Wir legen fest, welche Seite welches Ziel hat, und schreiben Texte, die tatsächlich zur Anfrage führen — kein Textbaustein von der Stange.</p></div>
+        <div class="tl-step"><div class="tl-chip">Phase 03</div><h4>Design</h4><p>Ein Design, das zu deiner Marke passt und Vertrauen aufbaut, statt nur „hübsch" zu sein.</p></div>
+        <div class="tl-step"><div class="tl-chip">Phase 04</div><h4>Technik &amp; SEO</h4><p>Schnelle Ladezeiten, saubere mobile Darstellung und technisches SEO von Anfang an mitgedacht.</p></div>
+        <div class="tl-step"><div class="tl-chip">Phase 05</div><h4>Launch &amp; Betreuung</h4><p>Nach dem Livegang bleiben wir dran — Auswertung, Anpassungen, kontinuierliche Weiterentwicklung.</p></div>
+      </div>
+    </div>
+    <div class="callout reveal">
+      <p><b>Wie schnell geht das?</b> Liegen zu Beginn alle nötigen Unterlagen vor — Logo, Bildmaterial, klare Richtung — kann eine fokussierte Website sogar innerhalb einer Woche stehen. Fehlt diese Vorbereitung, dauert die Abstimmung entsprechend länger. Der Zeitrahmen hängt also vor allem von der Vorbereitung ab, nicht von uns.</p>
+    </div>
+  </section>
+
+  <section id="kosten">
+    <div class="section-head reveal">
+      <div class="section-index">07 / WAS ES KOSTET</div>
+      <h2 class="section-title">Individuell kalkuliert, <em>nicht pauschal</em></h2>
+    </div>
+    <p class="lede reveal">Eine fokussierte Landingpage braucht weniger Aufwand als ein mehrseitiger Auftritt mit eigener Logik dahinter. Pauschale Zahlen würden für deinen konkreten Fall ohnehin nicht stimmen — deshalb klären wir den Umfang im kostenlosen Erstgespräch, bevor irgendein Preis genannt wird.</p>
+    <div class="scope-grid reveal">
+      <div class="scope"><div class="sl">UMFANG A</div><h4>Eine Landingpage</h4><p>Für eine Kampagne oder ein einzelnes Angebot — ein klares Ziel, keine Ablenkung.</p></div>
+      <div class="scope"><div class="sl">UMFANG B</div><h4>Eine mehrseitige Website</h4><p>Leistungen, Über uns, Referenzen, Kontakt — die digitale Basis für den Alltag.</p></div>
+      <div class="scope"><div class="sl">UMFANG C</div><h4>Website mit Funktionen</h4><p>Buchung, Bewerbermanagement, Mitgliederbereich — für Betriebe mit mehr Bedarf dahinter.</p></div>
+    </div>
+    <div class="inline-cta reveal">
+      <p>Willst du wissen, welcher Umfang zu <b>deinem</b> Vorhaben passt?</p>
+      <a class="btn-outline" href="#kontakt">Unverbindlich einschätzen lassen →</a>
+    </div>
+  </section>
+
+  <section id="referenzen">
+    <div class="section-head reveal">
+      <div class="section-index">08 / REFERENZEN</div>
+      <h2 class="section-title">Beispiele <em>aus der echten Arbeit</em></h2>
+    </div>
+    <div class="ref-grid reveal">
+      <div class="ref"><div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: GM-Dachdecker<br>Website-Mockup (bereits vorhanden)</span></div><div class="rl">GM-Dachdecker Meisterbetrieb</div><h4>Handwerkskunst digital erlebbar gemacht</h4><p>Neue Website inklusive Karriereportal — Bewerber laden Unterlagen direkt hoch, ohne E-Mail. Ergebnis: höhere Sichtbarkeit und spürbar leichtere Mitarbeitergewinnung.</p><div class="tag">Webdesign · Karriereportal · 2023</div></div>
+      <div class="ref"><div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: Stark ins Neue<br>Website-Screenshot</span></div><div class="rl">Stark ins Neue gGmbH</div><h4>Vertrauen und Wirkung für eine Bildungsinitiative</h4><p>Kompletter Website-Relaunch für eine gemeinnützige Organisation im Bereich mentale Gesundheit — SEO-optimiert, DSGVO-konform, mit klarer Nutzerführung zur Kursanmeldung.</p><div class="tag">Webdesign · SEO · 2025</div></div>
+      <div class="ref"><div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: Oktay Cömertler<br>Branding/Website</span></div><div class="rl">Oktay Cömertler</div><h4>Full-Service für Abbruch, Tiefbau &amp; Kanalbau</h4><p>Maßgeschneidertes Branding und Webdesign, entwickelt aus umfassender Markt- und Unternehmensanalyse — für Desktop und mobil gleichermaßen durchdacht.</p><div class="tag">Branding · Webdesign · 2022–</div></div>
+      <div class="ref"><div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: MA-Transporte<br>Website-Screenshot</span></div><div class="rl">MA-Transporte</div><h4>Dienstleistungsqualität digital sichtbar gemacht</h4><p>Neue, repräsentative Website plus laufende Social-Media-Betreuung für ein Transportunternehmen — Ergebnis: gestärkte Markenwahrnehmung und mehr Kundenengagement.</p><div class="tag">Webdesign · Social Media · seit 2019</div></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="section-head reveal">
+      <div class="section-index">09 / HÄUFIGE FRAGEN</div>
+      <h2 class="section-title">Was du vorher <em>wissen willst</em></h2>
+    </div>
+    <div class="faq-acc reveal">
+      <details>
+        <summary>Wie lange dauert die Erstellung einer Website?<span class="plus">+</span></summary>
+        <div class="a">Liegen Logo, Bildmaterial und eine klare Richtung schon vor, kann es sogar innerhalb einer Woche fertig sein. Ohne diese Vorbereitung dauert die Abstimmung entsprechend länger — der Zeitrahmen hängt vor allem von euch ab, nicht von uns.</div>
+      </details>
+      <details>
+        <summary>Was kostet eine professionelle Website?<span class="plus">+</span></summary>
+        <div class="a">Das hängt vollständig vom Umfang ab — eine fokussierte Landingpage braucht weniger als ein mehrseitiger Auftritt mit Funktionen wie Buchung oder Bewerbermanagement. Im kostenlosen Erstgespräch bekommst du eine realistische, ehrliche Einschätzung für genau deinen Fall.</div>
+      </details>
+      <details>
+        <summary>Brauche ich eine ganze Website oder reicht eine Landingpage?<span class="plus">+</span></summary>
+        <div class="a">Für eine einzelne Werbekampagne reicht oft eine fokussierte Landingpage. Für den dauerhaften Auftritt mit mehreren Leistungen empfiehlt sich eine vollständige Website — wir ordnen das gemeinsam ein.</div>
+      </details>
+      <details>
+        <summary>Kann ich die Inhalte später selbst ändern?<span class="plus">+</span></summary>
+        <div class="a">Ja. Du bekommst Zugriff auf ein Redaktionssystem, mit dem sich Texte und Bilder ohne Programmierkenntnisse aktualisieren lassen.</div>
+      </details>
+      <details>
+        <summary>Wird die Website auch bei Google gefunden?<span class="plus">+</span></summary>
+        <div class="a">Technisches SEO ist von Anfang an Teil des Aufbaus — Struktur, Ladezeit und Inhalte werden so angelegt, dass Google die Seite versteht und dauerhaft einordnen kann.</div>
+      </details>
+      <details>
+        <summary>Arbeitet ihr nur remote oder auch vor Ort in Koblenz?<span class="plus">+</span></summary>
+        <div class="a">Der Sitz ist in Bendorf bei Koblenz, ein persönliches Treffen ist also möglich. Die eigentliche Zusammenarbeit läuft meist per Call, weil das für beide Seiten einfacher zu planen ist — vor Ort geht aber, wenn gewünscht.</div>
+      </details>
+    </div>
+  </section>
+
+  <section id="kontakt" style="border-bottom: 1px solid var(--line);">
+    <div class="cta-block reveal">
+      <div class="eyebrow" style="opacity:1;">BEREIT FÜR EINE WEBSITE, DIE IN <span class="dyn" title="Feld: ort">KOBLENZ</span> ARBEITET?</div>
+      <h2 class="cta-title">Lass uns über deine Website <em>sprechen.</em></h2>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#">Kostenloses Erstgespräch <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <a class="btn-ghost" href="#schmerzpunkte">Nochmal ansehen ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="mark"><span class="dot"></span><b>PIXEL56</b><span class="tag">/ digitalagentur</span></div>
+        <p>Hüttenstraße 100, 56170 Bendorf bei Koblenz. Digitale Auftritte für KMUs, Coaches, Shops und lokale Betriebe.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Leistungen</h5>
+        <ul>
+          <li><a href="#">Webdesign</a></li>
+          <li><a href="#">SEO</a></li>
+          <li><a href="#">Google Ads</a></li>
+          <li><a href="#">Meta Ads</a></li>
+          <li><a href="#">Landingpages &amp; Funnels</a></li>
+          <li><a href="#">Content-Produktion</a></li>
+          <li><a href="#">Mitarbeitergewinnung</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Unternehmen</h5>
+        <ul>
+          <li><a href="#">Über uns</a></li>
+          <li><a href="#">Projekte</a></li>
+          <li><a href="#">Bewertungen</a></li>
+          <li><a href="#">Standorte</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Karriere</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kostenlose Ressourcen</h5>
+        <ul>
+          <li><a href="#">SEO-Checkliste</a></li>
+          <li><a href="#">KI-Agenten-Checkliste</a></li>
+          <li><a href="#">Tagesplaner PDF</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="mailto:info@pixel56.de">info@pixel56.de</a></li>
+          <li><a href="tel:+4926229898654">02622 9898654</a></li>
+          <li><a href="https://wa.me/491785282464" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© Pixel56 — Stilentwurf, nicht live</div>
+      <div class="legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div class="note">Stilentwurf — noch keine finale Website</div>
+
+<script>
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var heroVisual = document.getElementById('heroVisual');
+  if (heroVisual && !reduced) {
+    heroVisual.addEventListener('mousemove', function (e) {
+      var r = heroVisual.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      heroVisual.querySelector('.hv-desktop').style.transform = 'rotateX(' + (8 - y * 10) + 'deg) rotateY(' + (-16 + x * 14) + 'deg)';
+      heroVisual.querySelector('.hv-mobile').style.transform = 'rotateX(' + (6 - y * 10) + 'deg) rotateY(' + (-16 + x * 14) + 'deg) translateZ(40px)';
+      heroVisual.querySelector('.hv-spec').style.transform = 'rotateX(' + (6 - y * 10) + 'deg) rotateY(' + (-16 + x * 14) + 'deg) translateZ(70px)';
+    }, { passive: true });
+  }
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else { revealEls.forEach(function (el) { el.classList.add('in'); }); }
+</script>

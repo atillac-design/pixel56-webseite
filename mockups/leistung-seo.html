@@ -1,0 +1,657 @@
+<title>Pixel56 — SEO (Leistungsseite)</title>
+<style>
+  :root {
+    --ground: #07070c;
+    --ink: #f5f4f2;
+    --ink-dim: #a19dae;
+    --ink-faint: #5c5870;
+    --line: rgba(245, 244, 242, 0.08);
+    --line-strong: rgba(245, 244, 242, 0.16);
+    --accent: #ff3951;
+    --accent-2: #ffc226;
+    --blue: #3f80fd;
+    --violet: #6a35ff;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--ground); }
+  body { margin: 0; color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; background: var(--ground); }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: inherit; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+
+  .sheet { max-width: 1320px; margin: 0 auto; padding: 0 56px; position: relative; z-index: 1; }
+  @media (max-width: 720px) { .sheet { padding: 0 22px; } }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16,0.8,0.2,1), transform 0.8s cubic-bezier(0.16,0.8,0.2,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ============ NAV ============ */
+  nav { position: relative; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 30px 0; }
+  .mark { display: flex; align-items: center; gap: 9px; font-family: var(--sans); font-weight: 700; font-size: 16px; letter-spacing: -0.01em; }
+  .mark .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 12px 2px rgba(255,57,81,0.6); }
+  .crumb { font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); letter-spacing: 0.04em; }
+  .crumb b { color: var(--ink-dim); font-weight: 500; }
+  @media (max-width: 720px) { .crumb { display: none; } }
+  .nav-cta { font-size: 13.5px; font-weight: 600; color: var(--ink); text-decoration: none; padding: 11px 22px; border-radius: 100px; background: rgba(245,244,242,0.06); border: 1px solid var(--line-strong); transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease; }
+  .nav-cta:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+
+  /* ============ HERO — signal / pulse motif ============ */
+  .hero { position: relative; min-height: 92vh; display: flex; flex-direction: column; justify-content: center; padding: 40px 0 100px; overflow: hidden; }
+  .pulse-field { position: absolute; top: 50%; right: -8%; width: 900px; height: 900px; transform: translateY(-50%); pointer-events: none; z-index: 0; }
+  @media (max-width: 1100px) { .pulse-field { right: -30%; opacity: 0.6; } }
+  .pulse-ring { position: absolute; top: 50%; left: 50%; border: 1px solid rgba(255,57,81,0.35); border-radius: 50%; transform: translate(-50%,-50%); animation: pulse-out 5.5s cubic-bezier(0.2,0.6,0.3,1) infinite; }
+  .pulse-ring:nth-child(1) { width: 120px; height: 120px; animation-delay: 0s; }
+  .pulse-ring:nth-child(2) { width: 120px; height: 120px; animation-delay: 1.4s; }
+  .pulse-ring:nth-child(3) { width: 120px; height: 120px; animation-delay: 2.8s; }
+  .pulse-ring:nth-child(4) { width: 120px; height: 120px; animation-delay: 4.2s; }
+  .pulse-core { position: absolute; top: 50%; left: 50%; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); transform: translate(-50%,-50%); box-shadow: 0 0 40px 8px rgba(255,57,81,0.55); }
+  .pulse-core::before { content: ""; position: absolute; inset: -30px; border-radius: 50%; background: radial-gradient(circle, rgba(255,57,81,0.25), transparent 70%); }
+  @keyframes pulse-out { 0% { width: 20px; height: 20px; opacity: 0.9; border-color: rgba(255,57,81,0.7); } 100% { width: 780px; height: 780px; opacity: 0; border-color: rgba(255,57,81,0); } }
+  .pulse-label { position: absolute; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; color: var(--ink-faint); white-space: nowrap; }
+  .pulse-label.pl1 { top: calc(50% - 210px); left: calc(50% + 80px); }
+  .pulse-label.pl2 { top: calc(50% + 160px); left: calc(50% - 260px); }
+  @media (max-width: 720px) { .pulse-label { display: none; } }
+
+  .hero-eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; color: var(--accent-2); margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
+  .hero-eyebrow::before { content: ""; width: 30px; height: 1px; background: var(--accent-2); }
+  .hero h1 { font-family: var(--sans); font-weight: 800; letter-spacing: -0.03em; line-height: 0.97; margin: 0; font-size: clamp(42px, 6vw, 92px); max-width: 15.5ch; text-wrap: balance; }
+  .hero h1 .in { display: block; overflow: hidden; }
+  .hero h1 .in span { display: block; transform: translateY(105%); animation: rise-in 0.9s cubic-bezier(0.16,0.8,0.2,1) forwards; }
+  .hero h1 .in:nth-child(1) span { animation-delay: 0.1s; }
+  .hero h1 .in:nth-child(2) span { animation-delay: 0.22s; color: var(--accent); }
+  .hero h1 .in:nth-child(3) span { animation-delay: 0.34s; }
+  @keyframes rise-in { to { transform: translateY(0); } }
+  .hero-sub { font-family: var(--serif); font-style: italic; font-size: clamp(19px, 2vw, 24px); line-height: 1.5; color: var(--ink-dim); max-width: 34ch; margin: 40px 0 0; opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,0.8,0.2,1) 0.65s forwards; }
+  @keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-actions { display: flex; align-items: center; gap: 30px; margin-top: 48px; opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,0.8,0.2,1) 0.8s forwards; }
+  .btn-primary { font-size: 15.5px; font-weight: 700; color: #fff; text-decoration: none; background: var(--accent); padding: 18px 32px; border-radius: 100px; display: inline-flex; align-items: center; gap: 12px; box-shadow: 0 20px 50px -18px rgba(255,57,81,0.65); transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.3s ease; }
+  .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 26px 60px -16px rgba(255,57,81,0.75); }
+  .btn-primary svg { width: 15px; height: 15px; transition: transform 0.3s ease; }
+  .btn-primary:hover svg { transform: translateX(5px); }
+  .btn-text { font-size: 14.5px; font-weight: 600; color: var(--ink-dim); text-decoration: none; border-bottom: 1px solid var(--line-strong); padding-bottom: 3px; transition: color 0.2s ease, border-color 0.2s ease; }
+  .btn-text:hover { color: var(--ink); border-color: var(--ink); }
+
+  .hero-foot { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 100px; padding-top: 36px; border-top: 1px solid var(--line); opacity: 0; animation: fade-up 0.9s cubic-bezier(0.16,0.8,0.2,1) 1s forwards; }
+  .hf-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin-right: 4px; }
+  .hf-chip { font-size: 13px; font-weight: 600; color: var(--ink-dim); border: 1px solid var(--line-strong); border-radius: 100px; padding: 8px 16px; transition: border-color 0.25s ease, color 0.25s ease; }
+  .hf-chip:hover { border-color: var(--accent); color: var(--ink); }
+  @media (max-width: 640px) { .hero-foot { gap: 10px; } .hf-label { width: 100%; margin-bottom: 4px; } }
+
+  /* ============ SECTION SHELL ============ */
+  .band { position: relative; padding: 130px 0; }
+  .band.tint, .band.tint-amber, .band.tint-violet { isolation: isolate; }
+  .band.tint::before, .band.tint-amber::before, .band.tint-violet::before { content: ""; position: absolute; top: 0; left: 50%; width: 100vw; height: 100%; transform: translateX(-50%); z-index: -1; pointer-events: none; }
+  .band.tint::before { background: linear-gradient(180deg, transparent, rgba(255,57,81,0.07) 35%, rgba(255,57,81,0.07) 65%, transparent); }
+  .band.tint-amber::before { background: linear-gradient(180deg, transparent, rgba(255,194,38,0.09) 35%, rgba(255,194,38,0.09) 65%, transparent); }
+  .band.tint-violet::before { background: linear-gradient(180deg, transparent, rgba(106,53,255,0.09) 35%, rgba(106,53,255,0.09) 65%, transparent); }
+  .band-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 64px; flex-wrap: wrap; }
+  .band-tag { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: block; }
+  .band-title { font-family: var(--sans); font-weight: 800; letter-spacing: -0.025em; font-size: clamp(32px, 4.2vw, 58px); line-height: 1.03; margin: 0; max-width: 16ch; text-wrap: balance; }
+  .band-title em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  .band-note { font-size: 15.5px; line-height: 1.7; color: var(--ink-dim); max-width: 34ch; }
+
+  /* ============ MARQUEE ============ */
+  .marquee-wrap { overflow: hidden; padding: 34px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent); mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent); }
+  .marquee-track { display: flex; gap: 60px; width: max-content; animation: mq 30s linear infinite; }
+  @keyframes mq { to { transform: translateX(-50%); } }
+  .marquee-track span { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--ink-faint); white-space: nowrap; }
+
+  /* ============ STATUS PANEL ============ */
+  .status-panel { background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; padding: 24px 26px; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); }
+  .sp-head { display: flex; align-items: center; gap: 9px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; padding-bottom: 16px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+  .sp-head .wdot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); position: relative; flex-shrink: 0; }
+  .sp-head .wdot::before { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1px solid var(--accent); animation: wa-pulse 2.2s ease-out infinite; }
+  .sp-row { display: flex; align-items: center; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--line); transition: padding-left 0.25s ease; }
+  .sp-row:last-child { border-bottom: none; }
+  .sp-row:hover { padding-left: 6px; }
+  .sp-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px 1px rgba(255,57,81,0.6); flex-shrink: 0; animation: sp-blink 2.4s ease-in-out infinite; }
+  .sp-row:nth-child(3n+1) .sp-dot { animation-delay: 0s; }
+  .sp-row:nth-child(3n+2) .sp-dot { animation-delay: 0.6s; }
+  .sp-row:nth-child(3n+3) .sp-dot { animation-delay: 1.2s; }
+  @keyframes sp-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+  .sp-row b { flex: 1; font-size: 14.5px; font-weight: 600; color: var(--ink); }
+  .sp-row span { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; color: var(--ink-faint); text-transform: uppercase; flex-shrink: 0; }
+
+  /* ============ SPLIT SHELL ============ */
+  .split2 { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+  .split2.reverse > :first-child { order: 2; }
+  .split2.reverse > :last-child { order: 1; }
+  @media (max-width: 900px) { .split2 { grid-template-columns: 1fr; gap: 44px; } .split2.reverse > :first-child, .split2.reverse > :last-child { order: initial; } }
+  .split2 .lead { font-size: 17px; line-height: 1.75; color: var(--ink-dim); margin: 22px 0 0; max-width: 42ch; }
+  .split2 .lines { margin: 26px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .split2 .lines li { font-size: 14.5px; color: var(--ink-dim); padding-left: 22px; position: relative; }
+  .split2 .lines li::before { content: ""; position: absolute; left: 0; top: 8px; width: 10px; height: 1px; background: var(--accent); }
+
+  /* ============ COMPARE MOCK ============ */
+  .compare-mock { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .cm-row { width: 100%; max-width: 340px; }
+  .cm-row .ic-browser { width: 100%; }
+  .cm-label { display: block; text-align: center; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin-top: 10px; }
+  .cm-arrow { color: var(--ink-faint); font-size: 18px; margin: 4px 0; }
+
+  /* ============ BROWSER MOCK PRIMITIVE ============ */
+  .ic-browser { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 30px 60px -35px rgba(0,0,0,0.65); }
+  .ic-chrome { display: flex; gap: 5px; padding: 10px 12px; background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .ic-chrome span { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.18); }
+  .ic-body { padding: 24px 20px 28px; display: flex; flex-direction: column; gap: 9px; min-height: 150px; justify-content: center; }
+  .ic-bar { height: 8px; border-radius: 4px; background: rgba(255,255,255,0.14); }
+  .ic-bar-lg { height: 13px; width: 78%; background: rgba(255,255,255,0.92); }
+  .ic-bar-sm { width: 92%; }
+  .ic-btn { margin-top: 9px; width: 86px; height: 22px; border-radius: 100px; }
+  .ic-body.ic-1 { background: linear-gradient(155deg, #3a2210, #14100a 72%); } .ic-body.ic-1 .ic-btn { background: #d97b3f; }
+  .ic-body.ic-mute { background: linear-gradient(155deg, #17171f, #0d0d14 72%); } .ic-body.ic-mute .ic-bar-lg { background: rgba(255,255,255,0.35); }
+
+  /* ============ SEARCH MOCK ============ */
+  .search-mock { background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; padding: 22px; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); }
+  .search-bar { display: flex; align-items: center; gap: 10px; background: rgba(245,244,242,0.05); border: 1px solid var(--line-strong); border-radius: 100px; padding: 13px 18px; }
+  .search-bar svg { width: 15px; height: 15px; color: var(--ink-faint); flex-shrink: 0; }
+  .typed-text { font-family: var(--sans); font-size: 14.5px; color: var(--ink); display: inline-block; overflow: hidden; white-space: nowrap; width: 0; border-right: 2px solid var(--accent); animation: type 2.2s steps(20) 0.6s forwards, caret-blink 0.8s step-end 0.6s infinite; }
+  @keyframes type { to { width: 20ch; } }
+  @keyframes caret-blink { 50% { border-color: transparent; } }
+  .search-results { margin-top: 16px; display: flex; flex-direction: column; gap: 1px; }
+  .sres { padding: 14px 16px; border-radius: 10px; font-size: 13.5px; opacity: 0; animation: fade-up 0.6s cubic-bezier(0.16,0.8,0.2,1) forwards; }
+  .sres.you { background: rgba(255,57,81,0.1); border: 1px solid rgba(255,57,81,0.35); display: flex; align-items: center; justify-content: space-between; gap: 10px; animation-delay: 2.9s; color: var(--ink); font-weight: 600; }
+  .sres.you .tag { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.06em; color: var(--accent-2); border: 1px solid rgba(255,194,38,0.4); border-radius: 100px; padding: 3px 9px; text-transform: uppercase; flex-shrink: 0; }
+  .sres.other { color: var(--ink-faint); animation-delay: 3.1s; }
+  .sres.other:nth-of-type(3) { animation-delay: 3.25s; }
+
+  /* ============ CALLOUT ============ */
+  .callout2 { margin-top: 8px; padding: 28px 30px; border-left: 2px solid var(--accent-2); background: rgba(255,194,38,0.05); border-radius: 0 14px 14px 0; }
+  .callout2 p { margin: 0; font-size: 15.5px; line-height: 1.75; color: var(--ink); max-width: 68ch; }
+  .callout2 p b { color: var(--accent-2); }
+
+  /* ============ PROCESS STEPPER ============ */
+  .stepper { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 0; position: relative; }
+  .stepper::before { content: ""; position: absolute; top: 27px; left: 10%; right: 10%; height: 1px; background: var(--line-strong); }
+  .stepper::after { content: ""; position: absolute; top: 27px; left: 10%; width: 0; height: 1px; background: var(--accent); transition: width 1.7s cubic-bezier(0.16,0.8,0.2,1) 0.25s; }
+  .stepper.in::after { width: 80%; }
+  .step { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 14px; transition: transform 0.3s ease; }
+  .step:hover { transform: translateY(-3px); }
+  .step .sdot { width: 54px; height: 54px; border-radius: 50%; background: var(--ground); border: 1px solid var(--line-strong); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-weight: 700; font-size: 15px; color: var(--ink-dim); margin-bottom: 22px; position: relative; z-index: 2; transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease; }
+  .step:hover .sdot { border-color: var(--accent); background: var(--accent); color: #fff; }
+  .step .stag { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--ink-faint); text-transform: uppercase; margin-bottom: 6px; }
+  .step h4 { margin: 0 0 8px; font-size: 16.5px; font-weight: 700; }
+  .step p { margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--ink-dim); max-width: 24ch; }
+  @media (max-width: 900px) { .stepper { grid-template-columns: 1fr; gap: 36px; } .stepper::before, .stepper::after { display: none; } .step { flex-direction: row; text-align: left; align-items: flex-start; gap: 18px; padding: 0; } .step .sdot { margin-bottom: 0; flex-shrink: 0; } .step-body { min-width: 0; } .step p { max-width: none; } }
+
+  /* ============ WhatsApp mock ============ */
+  .wa-mock { background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; padding: 20px; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); }
+  .wa-head { display: flex; align-items: center; gap: 10px; padding-bottom: 16px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+  .wa-avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(155deg, var(--accent), #7a1626); display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-weight: 800; font-size: 12px; color: #fff; flex-shrink: 0; }
+  .wa-id b { display: block; font-size: 13.5px; font-weight: 700; }
+  .wa-id .wa-status { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 10.5px; color: #3ddc84; margin-top: 2px; }
+  .wa-status .wdot { width: 6px; height: 6px; border-radius: 50%; background: #3ddc84; position: relative; }
+  .wa-status .wdot::before { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1px solid #3ddc84; animation: wa-pulse 2.2s ease-out infinite; }
+  @keyframes wa-pulse { 0% { transform: scale(0.4); opacity: 0.8; } 100% { transform: scale(2.4); opacity: 0; } }
+  .wa-thread { display: flex; flex-direction: column; gap: 10px; }
+  .wa-bub { max-width: 78%; padding: 11px 15px; border-radius: 14px; font-size: 13.5px; line-height: 1.5; opacity: 0; animation: fade-up 0.6s cubic-bezier(0.16,0.8,0.2,1) forwards; }
+  .wa-bub.in-msg { background: rgba(245,244,242,0.06); border-bottom-left-radius: 4px; align-self: flex-start; color: var(--ink-dim); animation-delay: 0.3s; }
+  .wa-bub.out-msg { background: rgba(255,57,81,0.16); border: 1px solid rgba(255,57,81,0.3); border-bottom-right-radius: 4px; align-self: flex-end; color: var(--ink); animation-delay: 0.9s; }
+  .wa-bub.in-msg2 { background: rgba(245,244,242,0.06); border-bottom-left-radius: 4px; align-self: flex-start; color: var(--ink-dim); animation-delay: 1.5s; }
+  .wa-time { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); text-align: center; margin-top: 4px; }
+
+  /* ============ live metric mock ============ */
+  .metric-mock { background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; padding: 26px; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); }
+  .mm-head { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+  .mm-head .wdot { width: 6px; height: 6px; border-radius: 50%; background: #3ddc84; position: relative; flex-shrink: 0; }
+  .mm-head .wdot::before { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1px solid #3ddc84; animation: wa-pulse 2.2s ease-out infinite; }
+  .metric-row { display: flex; justify-content: space-between; align-items: baseline; padding: 15px 0; border-top: 1px solid var(--line); }
+  .metric-row:first-of-type { border-top: none; padding-top: 0; }
+  .metric-row span { font-size: 13.5px; color: var(--ink-dim); }
+  .metric-row b { font-family: var(--sans); font-weight: 800; font-size: 23px; letter-spacing: -0.02em; color: var(--ink); }
+  .metric-bars { display: flex; align-items: flex-end; gap: 6px; height: 56px; margin-top: 20px; }
+  .metric-bars i { flex: 1; background: linear-gradient(180deg, var(--accent), rgba(255,57,81,0.2)); border-radius: 4px 4px 0 0; transform: scaleY(0); transform-origin: bottom; animation: bar-grow 1s cubic-bezier(0.16,0.8,0.2,1) forwards; animation-delay: 0.4s; }
+  @keyframes bar-grow { to { transform: scaleY(1); } }
+
+  /* ============ REFERENZEN ============ */
+  .ref-solo { max-width: 640px; }
+  .ref-solo .ic-browser { margin-bottom: 18px; }
+  .ref-solo h4 { margin: 16px 0 4px; font-size: 20px; font-weight: 700; }
+  .ref-solo .rc-cat { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--accent-2); text-transform: uppercase; }
+  .ref-solo p { margin: 8px 0 0; font-size: 15px; line-height: 1.7; color: var(--ink-dim); max-width: 60ch; }
+  .ref-solo .rc-tag { display: block; margin-top: 16px; font-family: var(--mono); font-size: 11px; color: var(--ink-faint); border-top: 1px dashed var(--line-strong); padding-top: 12px; }
+
+  /* ============ GOOGLE-BEWERTUNGEN ============ */
+  .reviews-wrap { display: grid; grid-template-columns: 220px 1fr; gap: 50px; align-items: center; }
+  @media (max-width: 900px) { .reviews-wrap { grid-template-columns: 1fr; gap: 32px; } }
+  .reviews-score { text-align: center; padding: 32px 20px; border: 1px solid var(--line); border-radius: 16px; background: #0d0d14; }
+  .rs-num { font-family: var(--sans); font-weight: 800; font-size: 52px; letter-spacing: -0.03em; }
+  .rs-stars { color: var(--accent-2); font-size: 17px; letter-spacing: 3px; margin-top: 8px; }
+  .rs-meta { font-family: var(--mono); font-size: 10px; color: var(--ink-faint); margin-top: 12px; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.6; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+  @media (max-width: 900px) { .reviews-grid { grid-template-columns: 1fr; } }
+  .review-card { background: #0d0d14; border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+  .rc-stars { color: var(--accent-2); font-size: 13px; letter-spacing: 2px; margin-bottom: 12px; }
+  .review-card p { margin: 0 0 16px; font-size: 13.5px; line-height: 1.65; color: var(--ink-dim); }
+  .rc-who { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* ============ FAQ ACCORDION ============ */
+  .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .faq-item { background: #0d0d14; }
+  .faq-item summary { list-style: none; cursor: pointer; padding: 24px 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: 15.5px; font-weight: 600; -webkit-tap-highlight-color: transparent; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary .fplus { width: 20px; height: 20px; position: relative; flex-shrink: 0; }
+  .faq-item summary .fplus::before, .faq-item summary .fplus::after { content: ""; position: absolute; background: var(--ink-dim); transition: opacity 0.25s ease, transform 0.25s ease; }
+  .faq-item summary .fplus::before { top: 9px; left: 2px; right: 2px; height: 1.5px; }
+  .faq-item summary .fplus::after { left: 9px; top: 2px; bottom: 2px; width: 1.5px; }
+  .faq-item[open] summary .fplus::after { opacity: 0; transform: rotate(90deg); }
+  .faq-item[open] summary { color: var(--accent); }
+  .faq-item p { margin: 0; padding: 0 28px 24px; font-size: 14.5px; line-height: 1.7; color: var(--ink-dim); max-width: 60ch; }
+
+  /* ============ CLOSING CTA ============ */
+  .close-cta { position: relative; padding: 160px 0; text-align: center; overflow: hidden; }
+  .close-cta h2 { font-family: var(--sans); font-weight: 800; letter-spacing: -0.03em; font-size: clamp(40px, 7vw, 96px); line-height: 0.98; margin: 0 auto; max-width: 16ch; text-wrap: balance; }
+  .close-cta h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  .close-cta .btn-primary { margin-top: 48px; }
+  .close-glow { position: absolute; top: 50%; left: 50%; width: 800px; height: 400px; transform: translate(-50%,-50%); background: radial-gradient(ellipse, rgba(255,57,81,0.18), transparent 70%); pointer-events: none; }
+
+  /* ============ FOOTER ============ */
+  footer { border-top: 1px solid var(--line); padding: 70px 0 0; }
+  .footer-grid { display: grid; grid-template-columns: minmax(0,1.3fr) repeat(4, minmax(0,1fr)); gap: 32px; padding-bottom: 50px; }
+  @media (max-width: 980px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+  .footer-brand .mark { margin-bottom: 16px; }
+  .footer-brand p { font-size: 13.5px; line-height: 1.65; color: var(--ink-dim); max-width: 30ch; margin: 0; }
+  .footer-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin: 0 0 18px; }
+  .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+  .footer-col a { color: var(--ink-dim); text-decoration: none; font-size: 13.5px; transition: color 0.2s ease; }
+  .footer-col a:hover { color: var(--ink); }
+  .footer-bottom { border-top: 1px solid var(--line); padding: 22px 0 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); }
+  .footer-bottom a { color: var(--ink-faint); text-decoration: none; margin-left: 20px; }
+  .footer-bottom a:hover { color: var(--ink-dim); }
+  @media (max-width: 640px) { .footer-bottom { flex-direction: column; text-align: center; } .footer-bottom a { margin: 0 10px; } }
+
+  .note { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 30; font-family: var(--mono); font-size: 11px; color: var(--ink-faint); background: rgba(7,7,12,0.8); backdrop-filter: blur(6px); border: 1px solid var(--line-strong); border-radius: 100px; padding: 9px 18px; white-space: nowrap; }
+  @media (max-width: 640px) { .note { font-size: 9.5px; white-space: normal; text-align: center; width: 86%; } }
+</style>
+
+<div class="sheet">
+  <nav>
+    <div class="mark"><span class="dot"></span>PIXEL56</div>
+    <div class="crumb">Leistungen <b>/</b> <b>SEO</b></div>
+    <a class="nav-cta" href="#kontakt">Gespräch anfragen</a>
+  </nav>
+
+  <header class="hero">
+    <div class="pulse-field" aria-hidden="true">
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-core"></div>
+      <div class="pulse-label pl1">// RANKING AKTIV</div>
+      <div class="pulse-label pl2">// ORGANISCH, NICHT GEMIETET</div>
+    </div>
+    <div class="hero-eyebrow">LEISTUNG · SUCHMASCHINENOPTIMIERUNG</div>
+    <h1>
+      <span class="in"><span>Gefunden werden,</span></span>
+      <span class="in"><span>wenn es zählt.</span></span>
+      <span class="in"><span>Ohne Mietgebühr.</span></span>
+    </h1>
+    <p class="hero-sub">Sichtbarkeit bei Google, die nicht von Werbebudget abhängt — technisches Fundament plus laufende Betreuung, damit Rankings nicht nur entstehen, sondern bleiben.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#kontakt">Kostenloses Erstgespräch <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8"/></svg></a>
+      <a class="btn-text" href="#status">Kennst du das? ↓</a>
+    </div>
+    <div class="hero-foot">
+      <span class="hf-label">Wir optimieren:</span>
+      <div class="hf-chip">Technik</div>
+      <div class="hf-chip">Lokal</div>
+      <div class="hf-chip">Inhalte</div>
+    </div>
+  </header>
+</div>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Stark ins Neue</span><span>GM-Dachdecker</span><span>Oktay Cömertler</span><span>MA-Transporte</span><span>Van den Berg Gruppe</span><span>CASS Schulungen</span><span>Colak GmbH</span>
+    <span aria-hidden="true">Stark ins Neue</span><span aria-hidden="true">GM-Dachdecker</span><span aria-hidden="true">Oktay Cömertler</span><span aria-hidden="true">MA-Transporte</span><span aria-hidden="true">Van den Berg Gruppe</span><span aria-hidden="true">CASS Schulungen</span><span aria-hidden="true">Colak GmbH</span>
+  </div>
+</div>
+
+<div class="sheet">
+  <section class="band tint-amber" id="status">
+    <div class="split2 reverse">
+      <div class="reveal">
+        <span class="band-tag">01 — Der Status quo</span>
+        <h2 class="band-title">Sechs Zeichen, dass Google <em>euch übersieht</em></h2>
+        <p class="lead">Die Leistung stimmt, aber wer danach sucht, landet zuerst bei der Konkurrenz. Meist steckt einer dieser Gründe dahinter.</p>
+      </div>
+      <div class="reveal">
+        <div class="status-panel">
+          <div class="sp-head"><span class="wdot"></span>6 von 6 Warnsignalen aktiv</div>
+          <div class="sp-row"><span class="sp-dot"></span><b>Auf Google unauffindbar</b><span>Sichtbarkeit</span></div>
+          <div class="sp-row"><span class="sp-dot"></span><b>Nur auf Ads angewiesen</b><span>Abhängigkeit</span></div>
+          <div class="sp-row"><span class="sp-dot"></span><b>Lokale Konkurrenz liegt vorn</b><span>Ranking</span></div>
+          <div class="sp-row"><span class="sp-dot"></span><b>Einmal gemacht, nie gepflegt</b><span>Pflege</span></div>
+          <div class="sp-row"><span class="sp-dot"></span><b>Keine Ahnung, was wirkt</b><span>Auswertung</span></div>
+          <div class="sp-row"><span class="sp-dot"></span><b>Ungeduld nach wenigen Wochen</b><span>Geduld</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="split2">
+      <div class="reveal">
+        <span class="band-tag">02 — Warum es zählt</span>
+        <h2 class="band-title">Sichtbarkeit, die <em>nicht gemietet ist</em></h2>
+        <p class="lead">Bei Google Ads kauft man sich Sichtbarkeit — sobald das Budget stoppt, ist sie weg. SEO baut etwas auf, das bleibt, auch wenn kein Cent mehr fließt.</p>
+        <ul class="lines">
+          <li>Jede Anfrage über Ads kostet dauerhaft Klickpreis.</li>
+          <li>Ohne Pflege verlieren Rankings mit der Zeit an Boden.</li>
+          <li>Laufendes SEO baut auf jedem Monat davor auf.</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="compare-mock">
+          <div class="cm-row">
+            <div class="ic-browser"><div class="ic-chrome"><span></span><span></span><span></span></div>
+              <div class="ic-body ic-mute"><div class="ic-bar ic-bar-lg"></div><div class="ic-bar ic-bar-sm"></div><div class="ic-bar ic-bar-sm" style="width:35%"></div></div>
+            </div>
+            <span class="cm-label">Nur Ads — Budget pausiert, Sichtbarkeit weg</span>
+          </div>
+          <div class="cm-arrow">↓</div>
+          <div class="cm-row">
+            <div class="ic-browser"><div class="ic-chrome"><span></span><span></span><span></span></div>
+              <div class="ic-body ic-1"><div class="ic-bar ic-bar-lg"></div><div class="ic-bar ic-bar-sm"></div><div class="ic-bar ic-bar-sm" style="width:65%"></div><div class="ic-btn"></div></div>
+            </div>
+            <span class="cm-label">SEO — wächst weiter, auch in der Pause</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="split2 reverse">
+      <div class="reveal">
+        <span class="band-tag">03 — Lokales SEO</span>
+        <h2 class="band-title">Der am meisten <em>unterschätzte Hebel</em></h2>
+        <p class="lead">Für die meisten unserer Kunden entscheidet nicht das bundesweite Ranking, sondern die drei Treffer in der lokalen Kartenansicht — genau da, wo „Handwerker in der Nähe" gesucht wird.</p>
+        <ul class="lines">
+          <li>Google Business Profil vollständig gepflegt — kostenlos, aber der wirksamste Hebel.</li>
+          <li>Name, Adresse, Telefonnummer überall identisch — Verzeichnisse, Website, Social Media.</li>
+          <li>Menge und Aktualität von Bewertungen fließen direkt in die Platzierung ein.</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="search-mock">
+          <div class="search-bar">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <span class="typed-text">handwerker in der nähe</span>
+          </div>
+          <div class="search-results">
+            <div class="sres you"><span>Ihr Unternehmen</span><span class="tag">Platz 1</span></div>
+            <div class="sres other">Mitbewerber A · 4,3 ★</div>
+            <div class="sres other">Mitbewerber B · 3,8 ★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">04 — Wie lange es dauert</span>
+        <h2 class="band-title">Ehrlich: <em>SEO ist kein Sprint</em></h2>
+      </div>
+      <p class="band-note">In den ersten vier bis sechs Wochen passiert meist noch wenig Sichtbares. Erste Bewegungen ab Monat zwei bis vier, spürbare Effekte bei wichtigen Begriffen meist ab Monat sechs bis zwölf.</p>
+    </div>
+    <div class="callout2 reveal">
+      <p><b>Der häufigste Fehler:</b> SEO wird nach zwei, drei Monaten als gescheitert bewertet — genau in der Phase, in der sich die Grundlagen erst festigen. Wer die Zeit mit Google Ads überbrückt, merkt den Übergang meist gar nicht scharf, weil ein Kanal langsam übernimmt.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="split2 reverse">
+      <div class="reveal">
+        <span class="band-tag">05 — Warum wir</span>
+        <h2 class="band-title">Technisches SEO von <em>Tag eins.</em></h2>
+        <p class="lead">Vier Gründe, warum SEO bei uns kein nachträglich draufgesetztes Extra ist.</p>
+        <ul class="lines">
+          <li>Technisches SEO ist Teil jedes Website-Projekts, kein optionaler Zusatz.</li>
+          <li>Lokale Optimierung inklusive — Google Business Profil, Adressdaten.</li>
+          <li>Ergebnisse mit echten Zahlen belegt, nicht mit Bauchgefühl.</li>
+          <li>Bleibt nach dem Launch dran — Rankings brauchen Pflege.</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="metric-mock">
+          <div class="mm-head"><span class="wdot"></span>Live-Auswertung · Stark ins Neue</div>
+          <div class="metric-row"><span>Organische Klicks / Monat</span><b class="count" data-target="210">0</b></div>
+          <div class="metric-row"><span>Sichtbarkeitsindex</span><b class="count" data-target="8.4">0</b></div>
+          <div class="metric-row"><span>Ladezeit</span><b>0.8s</b></div>
+          <div class="metric-bars" aria-hidden="true">
+            <i style="height:28%; animation-delay:0.5s;"></i><i style="height:36%; animation-delay:0.6s;"></i><i style="height:48%; animation-delay:0.7s;"></i><i style="height:58%; animation-delay:0.8s;"></i><i style="height:70%; animation-delay:0.9s;"></i><i style="height:86%; animation-delay:1.0s;"></i><i style="height:100%; animation-delay:1.1s;"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">06 — Der Weg dahin</span>
+        <h2 class="band-title">Fünf Phasen, <em>ein wachsendes Ergebnis</em></h2>
+      </div>
+    </div>
+    <div class="stepper reveal">
+      <div class="step"><div class="sdot">01</div><div class="step-body"><span class="stag">Phase 1</span><h4>Analyse</h4><p>Technischer Check, Keyword-Recherche, Blick auf die lokale Konkurrenz.</p></div></div>
+      <div class="step"><div class="sdot">02</div><div class="step-body"><span class="stag">Phase 2</span><h4>Technisches Fundament</h4><p>Ladezeit, Struktur, mobile Darstellung — die Basis für alles Weitere.</p></div></div>
+      <div class="step"><div class="sdot">03</div><div class="step-body"><span class="stag">Phase 3</span><h4>Lokale Optimierung</h4><p>Google Business Profil, einheitliche Adressdaten, lokale Keywords.</p></div></div>
+      <div class="step"><div class="sdot">04</div><div class="step-body"><span class="stag">Phase 4</span><h4>Inhalte &amp; Sichtbarkeit</h4><p>Laufende Inhalte, die Relevanz signalisieren.</p></div></div>
+      <div class="step"><div class="sdot">05</div><div class="step-body"><span class="stag">Phase 5</span><h4>Auswertung &amp; Anpassung</h4><p>Regelmäßiger Blick auf Rankings und Traffic, Kurskorrektur wo nötig.</p></div></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">07 — Referenz</span>
+        <h2 class="band-title">Von unauffindbar <em>zu gut platziert</em></h2>
+      </div>
+    </div>
+    <div class="ref-solo reveal">
+      <div class="ic-browser"><div class="ic-chrome"><span></span><span></span><span></span></div>
+        <div class="ic-body ic-1"><div class="ic-bar ic-bar-lg"></div><div class="ic-bar ic-bar-sm"></div><div class="ic-bar ic-bar-sm" style="width:60%"></div><div class="ic-btn"></div></div>
+      </div>
+      <div class="rc-cat">Stark ins Neue gGmbH</div>
+      <h4>Kompletter Relaunch mit SEO von Grund auf</h4>
+      <p>Technisches und inhaltliches SEO — Keywords, Meta-Daten, semantische Struktur, alles von Anfang an mitgedacht statt nachträglich draufgesetzt. Ergebnis: bessere Google-Rankings und deutlich mehr Kursanmeldungen.</p>
+      <span class="rc-tag">Webdesign · SEO · 2025</span>
+    </div>
+  </section>
+
+  <section class="band tint-violet">
+    <div class="split2">
+      <div class="reveal">
+        <span class="band-tag">08 — Zusammenarbeit</span>
+        <h2 class="band-title">Ein Ansprechpartner. <em>Ein Kanal.</em></h2>
+        <p class="lead">Kein Ticket-System, kein Callcenter, keine Rückrufbitte. Während der Zusammenarbeit erreichst du einen festen Ansprechpartner direkt per WhatsApp.</p>
+      </div>
+      <div class="reveal">
+        <div class="wa-mock">
+          <div class="wa-head">
+            <div class="wa-avatar">P56</div>
+            <div class="wa-id"><b>Pixel56 — Ihr Ansprechpartner</b><span class="wa-status"><span class="wdot"></span>Online</span></div>
+          </div>
+          <div class="wa-thread">
+            <div class="wa-bub in-msg">Wie sieht das Ranking für "Dachdecker Koblenz" diesen Monat aus?</div>
+            <div class="wa-bub out-msg">Platz 3, letzten Monat noch Platz 7 — schick dir gleich die Auswertung.</div>
+            <div class="wa-bub in-msg2">👍 Perfekt, danke dir.</div>
+          </div>
+          <div class="wa-time">Antwortzeit während der Zusammenarbeit: meist unter 1 Stunde</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">09 — Bewertungen</span>
+        <h2 class="band-title">Das sagen <em>Kunden über uns</em></h2>
+      </div>
+    </div>
+    <div class="reviews-wrap reveal">
+      <div class="reviews-score">
+        <div class="rs-num">4.9</div>
+        <div class="rs-stars">★★★★★</div>
+        <div class="rs-meta">Google Bewertungen<br>Pixel56 · Bendorf</div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="rc-stars">★★★★★</div>
+          <p>„Endlich zeigen sich unsere Kurse auch bei Google. Man merkt den Unterschied deutlich."</p>
+          <div class="rc-who">Stark ins Neue gGmbH</div>
+        </div>
+        <div class="review-card">
+          <div class="rc-stars">★★★★★</div>
+          <p>„Mehr Anfragen, ohne dass wir mehr Werbebudget ausgegeben haben."</p>
+          <div class="rc-who">CASS Schulungen</div>
+        </div>
+        <div class="review-card">
+          <div class="rc-stars">★★★★★</div>
+          <p>„Ehrliche Einschätzung von Anfang an, keine leeren Versprechen."</p>
+          <div class="rc-who">GM-Dachdecker</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">10 — Häufige Fragen</span>
+        <h2 class="band-title">Was du vorher <em>wissen willst</em></h2>
+      </div>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>Wie lange dauert es, bis SEO wirkt?<span class="fplus"></span></summary>
+        <p>Erste Bewegungen oft ab Monat zwei bis vier bei weniger umkämpften Begriffen, spürbare Effekte bei wichtigen Suchbegriffen meist ab Monat sechs bis zwölf — abhängig von Branche und lokaler Konkurrenz.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Brauche ich SEO, wenn ich schon Google Ads schalte?<span class="fplus"></span></summary>
+        <p>Ja — Ads bringen sofortige, aber gemietete Sichtbarkeit. SEO baut etwas auf, das bleibt, auch wenn das Werbebudget mal pausiert.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Was ist lokales SEO genau?<span class="fplus"></span></summary>
+        <p>Die Optimierung dafür, bei Suchen mit Ortsbezug gefunden zu werden — vor allem über das Google Business Profil und einheitliche Adressdaten.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Was kostet SEO?<span class="fplus"></span></summary>
+        <p>Ein einmaliger technischer Grundcheck ist etwas anderes als laufende, monatliche Betreuung mit Content-Aufbau. Den passenden Umfang klären wir im kostenlosen Erstgespräch.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Kann ich SEO nicht einfach selbst machen?<span class="fplus"></span></summary>
+        <p>Kleinere Dinge durchaus — aber die Kombination aus technischem Fundament, laufendem Content und Auswertung braucht Zeit, die im Tagesgeschäft meist fehlt.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Bleibst du auch danach erreichbar?<span class="fplus"></span></summary>
+        <p>Ja — per WhatsApp über einen festen Ansprechpartner, siehe oben. Betreuung ist Teil der Zusammenarbeit, kein Zusatzverkauf danach.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="close-cta reveal" id="kontakt">
+    <div class="close-glow"></div>
+    <h2>Lass uns über eure <em>Sichtbarkeit</em> sprechen.</h2>
+    <a class="btn-primary" href="#">Kostenloses Erstgespräch <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8"/></svg></a>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="mark"><span class="dot"></span>PIXEL56</div>
+        <p>Hüttenstraße 100, 56170 Bendorf bei Koblenz. Digitale Auftritte für KMUs, Coaches, Shops und lokale Betriebe.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Leistungen</h5>
+        <ul>
+          <li><a href="#">Webdesign</a></li>
+          <li><a href="#">SEO</a></li>
+          <li><a href="#">Google Ads</a></li>
+          <li><a href="#">Meta Ads</a></li>
+          <li><a href="#">Landingpages &amp; Funnels</a></li>
+          <li><a href="#">Content-Produktion</a></li>
+          <li><a href="#">Mitarbeitergewinnung</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Unternehmen</h5>
+        <ul>
+          <li><a href="#">Über uns</a></li>
+          <li><a href="#">Projekte</a></li>
+          <li><a href="#">Bewertungen</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Karriere</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kostenlose Ressourcen</h5>
+        <ul>
+          <li><a href="#">SEO-Checkliste</a></li>
+          <li><a href="#">KI-Agenten-Checkliste</a></li>
+          <li><a href="#">Tagesplaner PDF</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="mailto:info@pixel56.de">info@pixel56.de</a></li>
+          <li><a href="tel:+4926229898654">02622 9898654</a></li>
+          <li><a href="https://wa.me/491785282464" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© Pixel56 — Freier Entwurf, nicht live</div>
+      <div><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
+    </div>
+  </footer>
+</div>
+
+<div class="note">Freier Entwurf — neue Formsprache, zur Diskussion</div>
+
+<script>
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else { revealEls.forEach(function (el) { el.classList.add('in'); }); }
+
+  function animateCount(el) {
+    var target = parseFloat(el.getAttribute('data-target'));
+    var suffix = el.getAttribute('data-suffix') || '';
+    var decimals = (el.getAttribute('data-target').split('.')[1] || '').length;
+    var start = null; var dur = 1400;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min(1, (ts - start) / dur);
+      el.textContent = (target * p).toFixed(decimals) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var metricMocks = document.querySelectorAll('.metric-mock');
+  if ('IntersectionObserver' in window && metricMocks.length) {
+    var mio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.count').forEach(animateCount);
+          mio.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    metricMocks.forEach(function (el) { mio.observe(el); });
+  }
+</script>

@@ -1,0 +1,1302 @@
+<title>Pixel56 — Entwurf Neugestaltung</title>
+<style>
+  :root {
+    --ground: #0a0a12;
+    --ground-raised: #131320;
+    --ground-raised-2: #1a1a2c;
+    --line: rgba(243, 242, 240, 0.09);
+    --line-strong: rgba(243, 242, 240, 0.16);
+    --ink: #f3f2f0;
+    --ink-dim: #9c98ac;
+    --ink-faint: #625f74;
+    --accent: #ff3951;
+    --accent-dim: #ff3951cc;
+    --accent-2: #ffc226;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --radius-sm: 8px;
+    --radius: 10px;
+    --radius-lg: 14px;
+  }
+
+  * { box-sizing: border-box; }
+  html { background: var(--ground); }
+
+  body {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 0%, rgba(255, 57, 81, 0.16), transparent 55%),
+      linear-gradient(180deg,
+        var(--ground) 0%,
+        var(--ground) 8%,
+        color-mix(in srgb, var(--ground) 87%, var(--accent)) 15%,
+        var(--ground) 22%,
+        var(--ground) 27%,
+        color-mix(in srgb, var(--ground) 87%, #3f80fd) 34%,
+        var(--ground) 41%,
+        var(--ground) 46%,
+        color-mix(in srgb, var(--ground) 88%, var(--accent-2)) 53%,
+        var(--ground) 60%,
+        var(--ground) 65%,
+        color-mix(in srgb, var(--ground) 87%, #6a35ff) 72%,
+        var(--ground) 79%,
+        var(--ground) 85%,
+        color-mix(in srgb, var(--ground) 85%, var(--accent)) 93%,
+        var(--ground) 100%
+      );
+  }
+
+  ::selection { background: var(--accent); color: #0a0a12; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  }
+
+  a { color: inherit; }
+
+  /* ---------- pixel-dot background (nod to "Pixel56") ---------- */
+  .grid-field {
+    position: fixed;
+    inset: -10% -10%;
+    z-index: 0;
+    background-image: radial-gradient(circle, var(--line-strong) 1.4px, transparent 1.4px);
+    background-size: 42px 42px;
+    opacity: 0.55;
+    transition: transform 0.4s cubic-bezier(0.2, 0.6, 0.2, 1);
+    pointer-events: none;
+  }
+  .grid-field .lit-pixel {
+    position: absolute;
+    width: 3px; height: 3px;
+    background: var(--accent);
+    box-shadow: 0 0 8px 1px rgba(255,57,81,0.7);
+    border-radius: 1px;
+    animation: pixel-glow 4.5s ease-in-out infinite;
+  }
+  @keyframes pixel-glow { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+
+  /* ---------- shell ---------- */
+  .sheet {
+    position: relative;
+    z-index: 1;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 64px;
+  }
+
+  @media (max-width: 720px) {
+    .sheet { padding: 0 22px; }
+  }
+
+  /* ---------- nav ---------- */
+  nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 34px;
+  }
+
+  .mark {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+  }
+  .mark .dot { width: 7px; height: 7px; background: var(--accent); display: inline-block; flex-shrink: 0; }
+  .mark b { font-weight: 600; }
+  .mark span.tag { color: var(--ink-faint); font-size: 12px; }
+  @media (max-width: 480px) { .mark span.tag { display: none; } }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    font-size: 13.5px;
+    font-family: var(--mono);
+    letter-spacing: 0.03em;
+    color: var(--ink-dim);
+  }
+  .nav-links a { text-decoration: none; position: relative; padding-bottom: 3px; }
+  .nav-links a::after {
+    content: "";
+    position: absolute; left: 0; right: 0; bottom: 0;
+    height: 1px; background: var(--accent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  @media (max-width: 860px) { .nav-links { display: none; } }
+
+  .nav-cta {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    border-radius: var(--radius-sm);
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background: var(--accent);
+    white-space: nowrap;
+    flex-shrink: 0;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset, 0 10px 22px -12px rgba(255,57,81,0.55);
+    transition: transform 0.25s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.25s ease;
+  }
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 16px 30px -12px rgba(255,57,81,0.65); }
+  @media (max-width: 480px) { .nav-cta { font-size: 12.5px; padding: 8px 13px; } }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    padding: 118px 0 90px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 980px) { .hero { grid-template-columns: 1fr; padding-top: 96px; } }
+  .hero-img { position: relative; aspect-ratio: 4/5; }
+  .hero-img .img-slot { height: 100%; aspect-ratio: auto; border-radius: var(--radius-lg); }
+  @media (max-width: 980px) { .hero-img { aspect-ratio: 16/9; order: -1; } }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 26px;
+    opacity: 0;
+    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.1, 1) 0.15s forwards;
+  }
+  .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent); }
+
+  h1.headline {
+    font-size: clamp(42px, 6.4vw, 92px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    font-weight: 600;
+    margin: 0 0 30px;
+    text-wrap: balance;
+    max-width: 15ch;
+  }
+  h1.headline .line { display: block; overflow: hidden; }
+  h1.headline .line span {
+    display: inline-block;
+    transform: translateY(115%);
+    animation: reveal-line 0.85s cubic-bezier(0.16, 0.9, 0.15, 1) forwards;
+  }
+  h1.headline .line:nth-child(1) span { animation-delay: 0.05s; }
+  h1.headline .line:nth-child(2) span { animation-delay: 0.16s; }
+  h1.headline .line:nth-child(3) span { animation-delay: 0.27s; color: var(--accent); }
+
+  @keyframes reveal-line { to { transform: translateY(0); } }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  .hero-sub {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink-dim);
+    max-width: 46ch;
+    margin: 0 0 44px;
+    opacity: 0;
+    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.1, 1) 0.55s forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    opacity: 0;
+    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.1, 1) 0.7s forwards;
+  }
+
+  .btn-primary, .btn-outline {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    text-decoration: none;
+    padding: 15px 24px 15px 26px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: var(--radius-sm);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset, 0 12px 26px -14px rgba(255, 57, 81, 0.55);
+    transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.25s ease;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255,255,255,0.25) inset, 0 18px 36px -14px rgba(255, 57, 81, 0.65); }
+  .btn-primary::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
+    transform: translateX(-130%);
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .btn-primary:hover::before { transform: translateX(130%); }
+  .btn-primary svg { width: 14px; height: 14px; transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); }
+  .btn-primary:hover svg { transform: translateX(4px); }
+
+  .btn-outline { border: 1px solid rgba(255,57,81,0.35); color: var(--ink); background: rgba(255,57,81,0.09); transition: border-color 0.25s ease, background 0.25s ease; }
+  .btn-outline::before { content: ""; position: absolute; inset: 0; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); z-index: -1; }
+  .btn-outline:hover { color: #fff; border-color: var(--accent); }
+  .btn-outline:hover::before { transform: scaleX(1); }
+
+  .btn-ghost {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink-dim);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s ease;
+  }
+  .btn-ghost:hover { color: var(--ink); }
+
+  /* ---------- inline CTA band ---------- */
+  .inline-cta { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 48px; padding: 24px 30px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: linear-gradient(120deg, rgba(255,57,81,0.07), transparent 70%); flex-wrap: wrap; }
+  .inline-cta p { margin: 0; font-size: 14.5px; color: var(--ink-dim); max-width: 48ch; }
+  .inline-cta p b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- pain list ---------- */
+  .pain-list { display: flex; flex-direction: column; }
+  .pain-row { display: grid; grid-template-columns: 44px 1fr; gap: 22px; padding: 24px 0; border-top: 1px solid var(--line); align-items: flex-start; transition: padding-left 0.3s ease; }
+  .pain-list .pain-row:last-child { border-bottom: 1px solid var(--line); }
+  .pain-row:hover { padding-left: 10px; }
+  .pain-mark { width: 44px; height: 44px; flex-shrink: 0; }
+  .pain-mark svg { width: 100%; height: 100%; }
+  .pain-mark line, .pain-mark circle, .pain-mark path, .pain-mark rect { stroke: var(--accent); stroke-width: 1.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .pain-copy h4 { margin: 0 0 6px; font-size: 17.5px; font-weight: 600; }
+  .pain-copy p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink-dim); max-width: 60ch; }
+  .lede { max-width: 62ch; font-size: 16.5px; line-height: 1.75; color: var(--ink-dim); margin: 0 0 40px; }
+
+  /* floating spec card, overlapping the hero image */
+  .spec-float {
+    position: absolute;
+    bottom: -22px;
+    left: -22px;
+    width: 220px;
+    padding: 20px 20px 18px;
+    background: linear-gradient(160deg, var(--ground-raised-2), var(--ground-raised));
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    box-shadow: 0 24px 50px -20px rgba(0,0,0,0.55);
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-dim);
+    transform-style: preserve-3d;
+    transform: perspective(800px) rotateX(4deg) rotateY(-6deg);
+    transition: transform 0.15s ease-out;
+    opacity: 0;
+    animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.1, 1) 0.85s forwards;
+  }
+  @media (max-width: 640px) { .spec-float { left: 14px; bottom: -18px; width: 190px; } }
+  .spec-float .row { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px dashed var(--line); }
+  .spec-float .row:last-child { border-bottom: none; }
+  .spec-float .row b { color: var(--accent-2); font-weight: 500; }
+  .spec-float .cap { font-size: 10px; letter-spacing: 0.12em; color: var(--ink-faint); margin-bottom: 10px; }
+
+  /* ---------- section shell ---------- */
+  section { position: relative; padding: 100px 0; border-top: 1px solid var(--line); }
+  section::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    z-index: -1;
+    background: rgba(255,255,255,0.014);
+    opacity: 0;
+  }
+  section:nth-of-type(even)::before { opacity: 1; }
+
+  .section-head {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 56px;
+  }
+  .section-index {
+    font-family: var(--mono); font-size: 11.5px; color: var(--accent); letter-spacing: 0.08em;
+    display: inline-flex; align-items: center; gap: 8px; width: fit-content;
+    border: 1px solid rgba(255,57,81,0.3); background: rgba(255,57,81,0.08);
+    padding: 6px 12px; border-radius: var(--radius-sm);
+  }
+  .section-title { font-size: clamp(28px, 3.4vw, 42px); font-weight: 600; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+  .section-title em { color: var(--accent); font-style: normal; }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16,0.8,0.2,1), transform 0.7s cubic-bezier(0.16,0.8,0.2,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ---------- spec strip ---------- */
+  .strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .strip .cell {
+    padding: 30px 28px;
+    border-left: 1px solid var(--line);
+    min-width: 0;
+  }
+  .strip .cell:first-child { border-left: none; }
+  .strip .cell .num { font-family: var(--mono); font-size: 38px; font-weight: 500; color: var(--ink); }
+  .strip .cell .num small { font-size: 19px; color: var(--accent-2); font-family: var(--mono); }
+  .strip .cell .label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--ink-faint); margin-top: 8px; text-transform: uppercase; }
+
+  @media (max-width: 720px) {
+    .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .strip .cell:nth-child(3) { border-left: none; }
+    .strip .cell { padding: 22px 18px; }
+  }
+  @media (max-width: 480px) {
+    .strip.platforms { grid-template-columns: minmax(0, 1fr); }
+    .strip.platforms .cell { border-left: none; border-top: 1px solid var(--line); }
+    .strip.platforms .cell:first-child { border-top: none; }
+  }
+
+  .strip.platforms .cell { display: flex; align-items: center; gap: 16px; min-width: 0; }
+  .strip.platforms .cell svg { flex-shrink: 0; width: 30px; height: 30px; }
+  .strip.platforms .cell svg * { stroke: var(--accent); stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .strip.platforms .cell > div { min-width: 0; }
+  .strip.platforms .cell .p-name { font-size: 15px; font-weight: 600; color: var(--ink); }
+  .strip.platforms .cell .p-desc { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin-top: 3px; }
+
+  /* ---------- services ---------- */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .service {
+    background: var(--ground-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 30px 28px 26px;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .service::before {
+    content: "";
+    position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+    background: var(--accent);
+    transform: scaleY(0); transform-origin: top;
+    transition: transform 0.35s cubic-bezier(0.2,0.7,0.2,1);
+  }
+  .service:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+  .service:hover::before { transform: scaleY(1); }
+  .service .si { font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); margin-bottom: 22px; }
+  .service h3 { font-size: 19px; margin: 0 0 10px; font-weight: 600; letter-spacing: -0.005em; }
+  .service p { font-size: 15px; line-height: 1.6; color: var(--ink-dim); margin: 0; }
+
+  @media (max-width: 860px) { .services { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .services { grid-template-columns: 1fr; } }
+
+  /* ---------- proof / how we work ---------- */
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 40px;
+  }
+  .case {
+    background: var(--ground);
+    padding: 38px 36px 34px;
+  }
+  .case .cl {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--accent-2);
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+  .case p {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--ink-dim);
+    margin: 0 0 18px;
+  }
+  .case .takeaway {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--ink);
+    border-top: 1px dashed var(--line-strong);
+    padding-top: 16px;
+    line-height: 1.6;
+  }
+  .case .takeaway b { color: var(--accent); font-weight: 500; }
+
+  @media (max-width: 780px) { .case-grid { grid-template-columns: 1fr; } }
+
+  .principle-line {
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 62ch;
+    margin: 0;
+  }
+  .principle-line b { color: var(--accent); font-weight: 600; }
+
+  /* ---------- logo marquee ---------- */
+  .marquee-wrap {
+    overflow: hidden; position: relative; padding: 40px 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+  }
+  .marquee-track { display: flex; gap: 64px; width: max-content; animation: marquee-scroll 32s linear infinite; }
+  .marquee-track span { font-family: var(--mono); font-size: 15px; letter-spacing: 0.03em; color: var(--ink-faint); white-space: nowrap; opacity: 0.75; transition: opacity 0.25s ease, color 0.25s ease; }
+  .marquee-track span:hover { opacity: 1; color: var(--ink); }
+  @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+  /* ---------- FAQ accordion ---------- */
+  .faq-acc { border-top: 1px solid var(--line); }
+  .faq-acc details { border-bottom: 1px solid var(--line); padding: 24px 0; }
+  .faq-acc summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: 17.5px; font-weight: 600; color: var(--ink); transition: color 0.2s ease; }
+  .faq-acc summary::-webkit-details-marker { display: none; }
+  .faq-acc summary .plus { font-family: var(--mono); font-size: 22px; color: var(--accent); transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); flex-shrink: 0; }
+  .faq-acc details[open] summary .plus { transform: rotate(45deg); }
+  .faq-acc details[open] summary { color: var(--accent); }
+  .faq-acc .a { padding-top: 14px; font-size: 15px; line-height: 1.7; color: var(--ink-dim); max-width: 64ch; }
+
+  /* ---------- image/text split ---------- */
+  .split { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; align-items: center; }
+  .split.reverse { grid-template-columns: 1.15fr 0.85fr; }
+  .split.reverse .split-img { order: 2; }
+  .split-img .img-slot { border-radius: var(--radius-lg); aspect-ratio: 4/5; }
+  @media (max-width: 860px) { .split, .split.reverse { grid-template-columns: 1fr; } .split.reverse .split-img { order: 0; } .split-img .img-slot { aspect-ratio: 16/9; } }
+
+  /* ---------- fact strip (data section) ---------- */
+  .fact-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 20px;
+  }
+  .fact-strip .cell {
+    padding: 32px 30px;
+    border-left: 1px solid var(--line);
+  }
+  .fact-strip .cell:first-child { border-left: none; }
+  .fact-strip .cell .num { font-family: var(--mono); font-size: 52px; font-weight: 500; color: var(--ink); line-height: 1; }
+  .fact-strip .cell .num small { font-size: 24px; color: var(--accent-2); }
+  .fact-strip .cell p { font-size: 14px; line-height: 1.55; color: var(--ink-dim); margin: 14px 0 0; }
+  .footnote { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.02em; }
+
+  @media (max-width: 780px) {
+    .fact-strip { grid-template-columns: 1fr; }
+    .fact-strip .cell { border-left: none; border-top: 1px solid var(--line); }
+    .fact-strip .cell:first-child { border-top: none; }
+  }
+
+  /* ---------- differentiators (reuses case card language) ---------- */
+  .diff-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .diff {
+    background: var(--ground-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 30px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  .diff:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+  .diff .dl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; }
+  .diff h4 { margin: 0; font-size: 18.5px; font-weight: 600; }
+  .diff p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink-dim); }
+
+  @media (max-width: 780px) { .diff-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- reviews ---------- */
+  .review-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 46px 48px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    background: linear-gradient(160deg, var(--ground-raised-2), var(--ground));
+  }
+  .review-stars { font-size: 30px; letter-spacing: 5px; color: var(--accent-2); }
+  .review-count { font-family: var(--mono); font-size: 42px; font-weight: 500; }
+  .review-count[data-count] { font-variant-numeric: tabular-nums; }
+  .review-note { font-size: 14.5px; line-height: 1.65; color: var(--ink-dim); max-width: 56ch; margin: 0; }
+  .review-note b { color: var(--ink); font-weight: 500; }
+  @media (max-width: 480px) {
+    .review-hero { padding: 34px 26px; }
+    .review-count { font-size: 30px; }
+  }
+
+  /* ---------- projects ---------- */
+  .proj-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .proj {
+    background: var(--ground-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+  }
+
+  /* ---------- image placeholder slot ---------- */
+  .img-slot {
+    aspect-ratio: 16/10;
+    border: 1.5px dashed var(--line-strong);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(255,255,255,0.025) 8px, rgba(255,255,255,0.025) 16px);
+    margin-bottom: 4px;
+  }
+  .img-slot .ic { font-size: 20px; opacity: 0.45; }
+  .img-slot .lb { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; color: var(--ink-faint); text-transform: uppercase; text-align: center; padding: 0 12px; }
+  .proj .img-slot { margin: -22px -22px 4px; width: calc(100% + 44px); border-left: none; border-right: none; border-top: none; }
+  .proj:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+  .proj .pl { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.05em; color: var(--accent); text-transform: uppercase; }
+  .proj p { font-size: 14.5px; line-height: 1.6; color: var(--ink-dim); margin: 0; flex: 1; }
+  .proj-meta { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; color: var(--ink-faint); border-top: 1px dashed var(--line); padding-top: 12px; }
+
+  @media (max-width: 860px) { .proj-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .proj-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- blog ---------- */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .blog-card { display: flex; flex-direction: column; }
+  .blog-cover {
+    aspect-ratio: 16/10;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+  }
+  .blog-cover::before {
+    content: attr(data-tag);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 14px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.82);
+    text-transform: uppercase;
+  }
+  .blog-cover.c1 { background: linear-gradient(135deg, #2a0f18, #ff3951 140%); }
+  .blog-cover.c2 { background: linear-gradient(135deg, #1a1a2c, #3f80fd 150%); }
+  .blog-cover.c3 { background: linear-gradient(135deg, #241a05, #ffc226 160%); }
+  .blog-cover.c4 { background: linear-gradient(135deg, #170f2c, #6a35ff 150%); }
+  .blog-cover.c5 { background: linear-gradient(135deg, #051f22, #3fcffd 160%); }
+  .blog-cover.c6 { background: linear-gradient(135deg, #2a0f18, #ff8139 150%); }
+  .blog-card h4 { font-size: 16.5px; font-weight: 600; margin: 0 0 8px; line-height: 1.35; }
+  .blog-card p { font-size: 13.5px; line-height: 1.6; color: var(--ink-dim); margin: 0; }
+
+  @media (max-width: 860px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .blog-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- process ---------- */
+  .process { display: flex; flex-direction: column; }
+  .step {
+    display: grid;
+    grid-template-columns: 90px 1fr 1.4fr;
+    gap: 32px;
+    padding: 34px 0;
+    border-top: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .process .step:last-child { border-bottom: 1px solid var(--line); }
+  .step .sn { font-family: var(--mono); font-size: 13px; color: var(--accent); }
+  .step h4 { font-size: 20px; margin: 0; font-weight: 600; }
+  .step p { margin: 0; color: var(--ink-dim); font-size: 14.5px; line-height: 1.65; max-width: 52ch; }
+
+  @media (max-width: 720px) {
+    .step { grid-template-columns: 1fr; gap: 10px; }
+  }
+
+  /* ---------- audience chips ---------- */
+  .audience-wrap { display: flex; flex-wrap: wrap; gap: 12px; }
+  .chip {
+    font-family: var(--mono);
+    font-size: 13.5px;
+    letter-spacing: 0.02em;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-sm);
+    padding: 11px 18px;
+    color: var(--ink-dim);
+    transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--ink); transform: translateY(-2px); }
+  .chip b { color: var(--accent-2); font-weight: 500; }
+
+  /* ---------- cta ---------- */
+  .cta-block {
+    text-align: left;
+    padding: 130px 0 110px;
+  }
+  .cta-title {
+    font-size: clamp(34px, 5vw, 64px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    max-width: 16ch;
+    text-wrap: balance;
+    margin: 0 0 36px;
+  }
+  .cta-title em { color: var(--accent); font-style: normal; }
+
+  /* ---------- footer ---------- */
+  footer { border-top: 1px solid var(--line); padding: 76px 0 0; }
+  .footer-grid { display: grid; grid-template-columns: 1.3fr repeat(4, 1fr); gap: 32px; padding-bottom: 56px; }
+  @media (max-width: 980px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
+  .footer-brand .mark { margin-bottom: 16px; }
+  .footer-brand p { font-size: 14px; line-height: 1.65; color: var(--ink-dim); max-width: 32ch; margin: 0; }
+  .footer-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin: 0 0 18px; }
+  .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .footer-col a { color: var(--ink-dim); text-decoration: none; font-size: 14px; transition: color 0.2s ease; }
+  .footer-col a:hover { color: var(--ink); }
+  .footer-bottom {
+    border-top: 1px solid var(--line);
+    padding: 24px 0 32px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); letter-spacing: 0.03em;
+  }
+  .footer-bottom .legal { display: flex; gap: 22px; }
+  .footer-bottom a { color: var(--ink-faint); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--ink-dim); }
+  @media (max-width: 640px) { .footer-bottom { flex-direction: column; text-align: center; } }
+
+  .note {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+    background: rgba(10,10,18,0.75);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-sm);
+    padding: 8px 16px;
+    white-space: nowrap;
+  }
+  @media (max-width: 640px) { .note { font-size: 9.5px; padding: 7px 10px; white-space: normal; text-align: center; width: 88%; } }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Pixel56",
+  "description": "Digitalagentur für Webdesign, SEO, Google & Meta Ads, Landingpages und Content-Produktion für KMUs, Coaches, Shops und lokale Betriebe.",
+  "address": { "@type": "PostalAddress", "streetAddress": "Hüttenstraße 100", "postalCode": "56170", "addressLocality": "Bendorf", "addressCountry": "DE" },
+  "telephone": "+4926229898654",
+  "email": "info@pixel56.de",
+  "areaServed": "DE",
+  "url": "https://www.pixel56.de",
+  "priceRange": "€€",
+  "aggregateRating": { "@type": "AggregateRating", "reviewCount": "27" }
+}
+</script>
+<div class="grid-field" id="gridField">
+  <span class="lit-pixel" style="top:14%; left:22%; animation-delay:0s;"></span>
+  <span class="lit-pixel" style="top:38%; left:78%; animation-delay:1.2s;"></span>
+  <span class="lit-pixel" style="top:68%; left:12%; animation-delay:2.4s;"></span>
+  <span class="lit-pixel" style="top:82%; left:60%; animation-delay:0.7s;"></span>
+  <span class="lit-pixel" style="top:52%; left:90%; animation-delay:3s;"></span>
+</div>
+
+<div class="sheet">
+  <nav>
+    <div class="mark"><span class="dot"></span><b>PIXEL56</b><span class="tag">/ digitalagentur</span></div>
+    <div class="nav-links">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#projekte">Projekte</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#blog">Blog</a>
+    </div>
+    <a class="nav-cta" href="#kontakt">Gespräch anfragen →</a>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow">ENTWURF · NEUGESTALTUNG PIXEL56.DE</div>
+      <h1 class="headline">
+        <span class="line"><span>Digitale Auftritte,</span></span>
+        <span class="line"><span>präzise geplant,</span></span>
+        <span class="line"><span>wirksam gebaut.</span></span>
+      </h1>
+      <p class="hero-sub">Websites, Kampagnen und Content für KMUs, Coaches, Shops und lokale Betriebe — entworfen wie eine technische Zeichnung: jede Linie hat einen Grund, jede Sekunde Ladezeit zählt.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#kontakt">Kostenloses Erstgespräch <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <a class="btn-ghost" href="#leistungen">Leistungen ansehen ↓</a>
+      </div>
+    </div>
+
+    <div class="hero-img">
+      <div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: Team/Arbeitsplatz-Foto<br>Pixel56 Bendorf</span></div>
+      <div class="spec-float" id="specFloat">
+        <div class="cap">// WAS WIR MACHEN</div>
+        <div class="row"><span>Webdesign</span><b>Entwicklung</b></div>
+        <div class="row"><span>Marketing</span><b>Google & Meta</b></div>
+        <div class="row"><span>Content</span><b>Social & Foto</b></div>
+        <div class="row"><span>SEO</span><b>Sichtbarkeit</b></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="prinzipien" style="padding-top:0; border-top:none;">
+    <div class="strip platforms reveal">
+      <div class="cell">
+        <svg viewBox="0 0 32 32"><circle cx="13" cy="13" r="8"/><line x1="19" y1="19" x2="27" y2="27"/></svg>
+        <div><div class="p-name">Google Ads</div><div class="p-desc">Suchnetzwerk</div></div>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 32 32"><circle cx="9" cy="9" r="3.2"/><circle cx="23" cy="9" r="3.2"/><circle cx="16" cy="23" r="3.2"/><line x1="9" y1="9" x2="16" y2="23"/><line x1="23" y1="9" x2="16" y2="23"/><line x1="9" y1="9" x2="23" y2="9"/></svg>
+        <div><div class="p-name">Meta Ads</div><div class="p-desc">Facebook & Instagram</div></div>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 32 32"><path d="M13 24V9l12-2.4V21"/><circle cx="10" cy="24" r="3.4"/><circle cx="22" cy="21" r="3.4"/></svg>
+        <div><div class="p-name">TikTok Ads</div><div class="p-desc">Short-Video-Kampagnen</div></div>
+      </div>
+      <div class="cell">
+        <svg viewBox="0 0 32 32"><path d="M16 5c-5.5 0-9.5 4.2-9.5 9.4C6.5 21 16 28 16 28s9.5-7 9.5-13.6C25.5 9.2 21.5 5 16 5z"/><circle cx="16" cy="14" r="3"/></svg>
+        <div><div class="p-name">Google Business</div><div class="p-desc">Lokale Sichtbarkeit</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schmerzpunkte">
+    <div class="section-head reveal">
+      <div class="section-index">01 / KENNST DU DAS?</div>
+      <h2 class="section-title">Sechs Zeichen, dass digital <em>ungenutztes Potenzial liegt</em></h2>
+    </div>
+    <p class="lede reveal">Das Handwerk, die Beratung, das Geschäft stimmt — aber online kommt davon zu wenig an. Meist liegt das an einem dieser sechs Punkte.</p>
+    <div class="pain-list reveal">
+      <div class="pain-row"><div class="pain-mark"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="14"/><line x1="18" y1="26" x2="26" y2="18"/></svg></div><div class="pain-copy"><h4>Sichtbarkeit hängt vom Zufall ab</h4><p>Mal kommt eine Anfrage, mal wochenlang nichts — ohne System lässt sich das nicht steuern.</p></div></div>
+      <div class="pain-row"><div class="pain-mark"><svg viewBox="0 0 44 44"><circle cx="14" cy="16" r="5"/><circle cx="30" cy="16" r="5"/><circle cx="22" cy="30" r="5"/></svg></div><div class="pain-copy"><h4>Drei Dienstleister, kein gemeinsamer Plan</h4><p>Website hier, Ads dort, Social Media nochmal woanders — nichts greift ineinander.</p></div></div>
+      <div class="pain-row"><div class="pain-mark"><svg viewBox="0 0 44 44"><line x1="8" y1="34" x2="8" y2="20"/><line x1="18" y1="34" x2="18" y2="10"/><line x1="28" y1="34" x2="28" y2="26"/><line x1="36" y1="10" x2="28" y2="18"/><line x1="36" y1="10" x2="28" y2="10"/><line x1="36" y1="10" x2="36" y2="18"/></svg></div><div class="pain-copy"><h4>Werbebudget ohne Strategie</h4><p>Anzeigen laufen, aber niemand kann sagen, was sie tatsächlich bringen.</p></div></div>
+      <div class="pain-row"><div class="pain-mark"><svg viewBox="0 0 44 44"><circle cx="22" cy="15" r="7"/><path d="M9 36c0-8 6-13 13-13s13 5 13 13"/></svg></div><div class="pain-copy"><h4>Keine Zeit für das Digitale nebenbei</h4><p>Das Tagesgeschäft frisst die Zeit, die eigentlich in Sichtbarkeit fließen müsste.</p></div></div>
+      <div class="pain-row"><div class="pain-mark"><svg viewBox="0 0 44 44"><rect x="8" y="10" width="10" height="10"/><rect x="24" y="10" width="10" height="24"/><rect x="8" y="26" width="10" height="8"/></svg></div><div class="pain-copy"><h4>Uneinheitlicher Auftritt</h4><p>Website, Visitenkarte und Social Media wirken, als kämen sie von drei verschiedenen Firmen.</p></div></div>
+      <div class="pain-row"><div class="pain-mark"><svg viewBox="0 0 44 44"><path d="M8 30c6 4 22 4 28 0"/><path d="M8 22c6 4 22 4 28 0"/><path d="M8 14c6 4 22 4 28 0"/></svg></div><div class="pain-copy"><h4>Wachstum stagniert trotz guter Arbeit</h4><p>Die Qualität stimmt, aber es kommen nicht genug neue Anfragen rein, um das auch zu spüren.</p></div></div>
+    </div>
+    <div class="inline-cta reveal">
+      <p>Welcher Punkt trifft bei euch am meisten zu? <b>Das finden wir im kostenlosen Erstgespräch gemeinsam heraus.</b></p>
+      <a class="btn-outline" href="#kontakt">Termin sichern →</a>
+    </div>
+  </section>
+
+  <section id="marken" style="padding: 0; border-top: none;">
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span>Stark ins Neue</span><span>Sportler für Kinderherzen</span><span>GM-Dachdecker</span><span>Oktay Cömertler</span><span>CASS Schulungen</span><span>MA-Transporte</span><span>Colak GmbH</span><span>Discounthaus Holding</span><span>Lernforum Obertshausen</span><span>Van den Berg Gruppe</span>
+        <span aria-hidden="true">Stark ins Neue</span><span aria-hidden="true">Sportler für Kinderherzen</span><span aria-hidden="true">GM-Dachdecker</span><span aria-hidden="true">Oktay Cömertler</span><span aria-hidden="true">CASS Schulungen</span><span aria-hidden="true">MA-Transporte</span><span aria-hidden="true">Colak GmbH</span><span aria-hidden="true">Discounthaus Holding</span><span aria-hidden="true">Lernforum Obertshausen</span><span aria-hidden="true">Van den Berg Gruppe</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="leistungen">
+    <div class="section-head reveal">
+      <div class="section-index">02 / LEISTUNGEN</div>
+      <h2 class="section-title">Alles aus einer Hand, <em>sauber verzahnt</em></h2>
+    </div>
+    <div class="services reveal">
+      <div class="service">
+        <div class="si">01</div>
+        <h3>Webdesign &amp; Onlinepräsenz</h3>
+        <p>Individuell gebaute Websites statt Baukasten — für Shops, Portfolios, Praxen oder lokale Betriebe.</p>
+      </div>
+      <div class="service">
+        <div class="si">02</div>
+        <h3>Suchmaschinenoptimierung</h3>
+        <p>Technisch fundiertes SEO, damit du gefunden wirst, wenn jemand konkret sucht.</p>
+      </div>
+      <div class="service">
+        <div class="si">03</div>
+        <h3>Google Ads</h3>
+        <p>Sichtbarkeit im Moment der Suchabsicht — genau dann, wenn aktiv nach eurer Leistung gesucht wird.</p>
+      </div>
+      <div class="service">
+        <div class="si">04</div>
+        <h3>Meta Ads</h3>
+        <p>Reichweite auf Facebook &amp; Instagram, bevor der Bedarf überhaupt entsteht.</p>
+      </div>
+      <div class="service">
+        <div class="si">05</div>
+        <h3>Landingpages &amp; Funnels</h3>
+        <p>Von der ersten Anzeige bis zur Anfrage — jede Station gezielt gebaut, nicht dem Zufall überlassen.</p>
+      </div>
+      <div class="service">
+        <div class="si">06</div>
+        <h3>Content-Produktion</h3>
+        <p>Reels, Fotos, Social-Content — von der Burgerbude bis zur Coaching-Marke, immer echt statt gestellt.</p>
+      </div>
+      <div class="service">
+        <div class="si">07</div>
+        <h3>Mitarbeitergewinnung</h3>
+        <p>Karriereseiten und Kampagnen, die nicht nur Kunden bringen, sondern auch offene Stellen füllen.</p>
+      </div>
+    </div>
+    <div class="inline-cta reveal">
+      <p>Nicht sicher, welche Leistung für euch den größten Hebel bringt?</p>
+      <a class="btn-outline" href="#kontakt">Gemeinsam einordnen →</a>
+    </div>
+  </section>
+
+  <section id="warum-es-wirkt">
+    <div class="section-head reveal">
+      <div class="section-index">03 / WARUM ES WIRKT</div>
+      <h2 class="section-title">Jede Fähigkeit hat <em>ein Ziel</em></h2>
+    </div>
+    <div class="split reveal">
+      <div class="split-img"><div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: Laptop/Screen-Nahaufnahme<br>mit Dashboard oder Website</span></div></div>
+      <div>
+        <p style="max-width: 60ch; font-size: 16.5px; line-height: 1.7; color: var(--ink-dim); margin: 0 0 36px;">
+          Landingpage, Website, SEO, Ads — für uns sind das keine getrennten Baustellen, sondern ein Werkzeugkasten mit einem Zweck: dich mit den Menschen zusammenzubringen, die dich brauchen. Warum das technisch so entscheidend ist, zeigen ein paar unabhängige Zahlen aus der Web-Performance-Forschung:
+        </p>
+        <div class="fact-strip">
+          <div class="cell">
+            <div class="num"><span class="cu" data-to="32">0</span><small>%</small></div>
+            <p>höhere Absprungrate, wenn die Ladezeit von 1 auf 3 Sekunden steigt.</p>
+          </div>
+          <div class="cell">
+            <div class="num"><span class="cu" data-to="75">0</span><small>%</small></div>
+            <p>der Nutzer beurteilen die Seriosität eines Unternehmens direkt anhand der Website.</p>
+          </div>
+          <div class="cell">
+            <div class="num"><span class="cu" data-to="53">0</span><small>%</small></div>
+            <p>der mobilen Besucher verlassen eine Seite, die länger als 3 Sekunden lädt.</p>
+          </div>
+        </div>
+        <div class="footnote">// Quellen: Google/SOASTA Research, Stanford Web Credibility Project — genau deshalb steht Performance bei uns an erster Stelle, nicht als Nachgedanke.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="was-uns-unterscheidet">
+    <div class="section-head reveal">
+      <div class="section-index">04 / WAS UNS UNTERSCHEIDET</div>
+      <h2 class="section-title">Kein Zufall, <em>sondern System</em></h2>
+    </div>
+    <div class="split reverse reveal">
+      <div>
+        <div class="diff-grid" style="grid-template-columns: 1fr;">
+          <div class="diff">
+            <div class="dl">01</div>
+            <h4>Ein Ansprechpartner statt drei Agenturen</h4>
+            <p>Website, SEO, Ads und Content aus einer Hand — kein Hin- und Herschieben zwischen Dienstleistern.</p>
+          </div>
+          <div class="diff">
+            <div class="dl">02</div>
+            <h4>Kostenloses Erstgespräch</h4>
+            <p>Unverbindlich klären, wo du stehst und was sich wirklich lohnt — bevor irgendetwas beauftragt wird.</p>
+          </div>
+          <div class="diff">
+            <div class="dl">03</div>
+            <h4>Direkter Draht</h4>
+            <p>WhatsApp oder Telefon statt anonymem Ticket-System — Rückfragen werden nicht zur Warteschlange.</p>
+          </div>
+          <div class="diff">
+            <div class="dl">04</div>
+            <h4>Regional verwurzelt</h4>
+            <p>Zuhause in Bendorf bei Koblenz — persönlich erreichbar, nicht irgendwo im anonymen Ausland.</p>
+          </div>
+        </div>
+      </div>
+      <div class="split-img"><div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: Atilla/Team<br>persönliches Portrait</span></div></div>
+    </div>
+    <div class="inline-cta reveal">
+      <p>Klingt nach dem Gegenteil eurer letzten Agentur-Erfahrung?</p>
+      <a class="btn-outline" href="#kontakt">Erstgespräch vereinbaren →</a>
+    </div>
+  </section>
+
+  <section id="wer-wir-sind">
+    <div class="section-head reveal">
+      <div class="section-index">05 / WER WIR SIND</div>
+      <h2 class="section-title">Eine Agentur, <em>ein Ansprechpartner</em></h2>
+    </div>
+    <div class="split reveal">
+      <div class="split-img"><div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: Atilla Ciftcioglu<br>Portrait / Büro Bendorf</span></div></div>
+      <div>
+        <p style="font-size: 16.5px; line-height: 1.75; color: var(--ink-dim); max-width: 56ch; margin: 0 0 20px;">Pixel56 ist kein anonymes Team irgendwo im Ausland — hinter jeder Anfrage steht jemand, den du beim Namen kennst und der ans Telefon geht. Gegründet aus dem Anspruch, dass digitale Arbeit für kleine und mittlere Unternehmen genauso professionell sein kann wie für Konzerne, nur persönlicher.</p>
+        <p style="font-size: 16.5px; line-height: 1.75; color: var(--ink-dim); max-width: 56ch; margin: 0;">Zuhause in Bendorf bei Koblenz, in der Zusammenarbeit aber ortsunabhängig — für Kunden aus der ganzen Region und darüber hinaus.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="bewertungen">
+    <div class="section-head reveal">
+      <div class="section-index">06 / BEWERTUNGEN</div>
+      <h2 class="section-title">27 Stimmen, <em>ein Ergebnis</em></h2>
+    </div>
+    <div class="review-hero reveal">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-count"><span class="cu" data-to="27">0</span> Bewertungen auf Google</div>
+      <p class="review-note">Live verknüpft mit dem <b>Google Unternehmensprofil</b> — jede neue Bewertung erscheint hier automatisch, ohne dass jemand sie manuell einträgt. Der Durchschnittswert wird direkt von Google übernommen.</p>
+    </div>
+  </section>
+
+  <section id="ergebnisse">
+    <div class="section-head reveal">
+      <div class="section-index">07 / ERGEBNISSE</div>
+      <h2 class="section-title">Nicht nur hübsch — <em>messbar wirksam</em></h2>
+    </div>
+    <div class="review-hero reveal" style="flex-direction:row; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:32px;">
+      <div>
+        <div class="review-count" style="font-size:60px;">+<span class="cu" data-to="56">0</span><small style="font-size:28px; color:var(--accent-2);">%</small></div>
+        <p class="review-note" style="margin-top:10px;">Wachstum durch gezielte Facebook-Werbekampagnen für die <b>Van den Berg Gruppe</b> — reale Kampagnendaten, kein Schätzwert.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px; font-family:var(--mono); font-size:13px; color:var(--ink-dim); max-width:34ch;">
+        <div>→ <b style="color:var(--ink);">GM-Dachdecker:</b> spürbar leichtere Mitarbeitergewinnung durch neues Karriereportal</div>
+        <div>→ <b style="color:var(--ink);">Stark ins Neue:</b> deutlich mehr Kursanmeldungen &amp; Newsletter-Abos nach Relaunch</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projekte">
+    <div class="section-head reveal">
+      <div class="section-index">08 / PROJEKTE</div>
+      <h2 class="section-title">Branchen, die wir <em>digital vorangebracht haben</em></h2>
+    </div>
+    <div class="proj-grid reveal">
+      <div class="proj">
+        <div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: Stark ins Neue<br>Website-Screenshot</span></div>
+        <div class="pl">Stark ins Neue gGmbH</div>
+        <p>SEO-optimierte, DSGVO-konforme Website mit Fokus auf Vertrauen &amp; Wirkung.</p>
+        <div class="proj-meta"><span>Webdesign · SEO</span><span>2025</span></div>
+      </div>
+      <div class="proj">
+        <div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: Sportler für<br>Kinderherzen Event/Branding</span></div>
+        <div class="pl">Sportler für Kinderherzen</div>
+        <p>Marketing &amp; Branding für eine Spendengala zugunsten krebskranker Kinder.</p>
+        <div class="proj-meta"><span>Branding · Event</span><span>2022</span></div>
+      </div>
+      <div class="proj">
+        <div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: GM-Dachdecker<br>Website-Mockup (bereits vorhanden)</span></div>
+        <div class="pl">GM-Dachdecker Meisterbetrieb</div>
+        <p>Webdesign und Karriereportal — Handwerkskunst digital erlebbar gemacht.</p>
+        <div class="proj-meta"><span>Webdesign · Karriere</span><span>2023</span></div>
+      </div>
+      <div class="proj">
+        <div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: Oktay Cömertler<br>Branding/Website</span></div>
+        <div class="pl">Oktay Cömertler</div>
+        <p>Branding und Webdesign für Abbruch, Tiefbau und Kanalbau, das KMUs transformiert.</p>
+        <div class="proj-meta"><span>Branding · Webdesign</span><span>2022–</span></div>
+      </div>
+      <div class="proj">
+        <div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: CASS Schulungen<br>Branding/Website</span></div>
+        <div class="pl">CASS Schulungen</div>
+        <p>Branding und Webdesign für Luftsicherheitsschulungen — Bildung und Sicherheit digital vereint.</p>
+        <div class="proj-meta"><span>Branding · Social Media</span><span>2023</span></div>
+      </div>
+      <div class="proj">
+        <div class="img-slot"><span class="ic">🖼</span><span class="lb">Bild: MA-Transporte<br>Website-Screenshot</span></div>
+        <div class="pl">MA-Transporte</div>
+        <p>Webdesign und Social-Media-Betreuung für ein Transportunternehmen.</p>
+        <div class="proj-meta"><span>Webdesign · Social Media</span><span>2019–</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prozess">
+    <div class="section-head reveal">
+      <div class="section-index">09 / PROZESS</div>
+      <h2 class="section-title">Von der ersten Nachricht <em>bis zum Ergebnis</em></h2>
+    </div>
+    <div class="process reveal">
+      <div class="step">
+        <div class="sn">01</div>
+        <h4>Kontaktanfrage</h4>
+        <p>Du meldest dich per Formular, WhatsApp oder Anruf — unverbindlich und ohne Verkaufsdruck.</p>
+      </div>
+      <div class="step">
+        <div class="sn">02</div>
+        <h4>Rückmeldung</h4>
+        <p>Wir antworten persönlich und zeitnah — keine automatisierte Warteschleife.</p>
+      </div>
+      <div class="step">
+        <div class="sn">03</div>
+        <h4>Analyse</h4>
+        <p>Wir schauen uns deinen aktuellen Stand an: Website, Sichtbarkeit, Wettbewerb.</p>
+      </div>
+      <div class="step">
+        <div class="sn">04</div>
+        <h4>Zieldefinition</h4>
+        <p>Gemeinsam legen wir fest, wohin es gehen soll und woran wir Erfolg später messen.</p>
+      </div>
+      <div class="step">
+        <div class="sn">05</div>
+        <h4>Plan &amp; Budget</h4>
+        <p>Ein roter Faden mit klaren Schritten — und ein Budget, das realistisch zum Ziel passt.</p>
+      </div>
+      <div class="step">
+        <div class="sn">06</div>
+        <h4>Umsetzung</h4>
+        <p>Wir setzen um und halten dich unterwegs auf dem Laufenden, nicht erst am Ende.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="zielgruppe">
+    <div class="section-head reveal">
+      <div class="section-index">10 / FÜR WEN</div>
+      <h2 class="section-title">Gebaut für <em>KMUs jeder Art</em></h2>
+    </div>
+    <div class="audience-wrap reveal">
+      <span class="chip">Coaches &amp; Berater</span>
+      <span class="chip">Online-Shops</span>
+      <span class="chip">Portfolioseiten</span>
+      <span class="chip">Immobilien</span>
+      <span class="chip">Gastronomie</span>
+      <span class="chip">Handwerksbetriebe</span>
+      <span class="chip">Praxen &amp; Dienstleister</span>
+      <span class="chip">Start-ups</span>
+      <span class="chip">Lokale Marken</span>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="section-head reveal">
+      <div class="section-index">11 / HÄUFIGE FRAGEN</div>
+      <h2 class="section-title">Fragen, die <em>oft kommen</em></h2>
+    </div>
+    <div class="faq-acc reveal">
+      <details>
+        <summary>Was, wenn ich noch gar nicht genau weiß, was ich brauche?<span class="plus">+</span></summary>
+        <div class="a">Völlig normal. Die meisten Gespräche starten nicht mit „ich brauche eine Website mit X, Y, Z", sondern mit einem Ziel: mehr Anfragen, mehr Sichtbarkeit, mehr Zeit. Wir sortieren gemeinsam, was davon technisch, was strategisch und was inhaltlich ist — und was zuerst dran sollte.</div>
+      </details>
+      <details>
+        <summary>Arbeitet ihr nur regional in Bendorf und Koblenz?<span class="plus">+</span></summary>
+        <div class="a">Der Sitz ist in Bendorf bei Koblenz, und lokale Betriebe aus der Region sind uns besonders vertraut. Die Zusammenarbeit selbst läuft aber ortsunabhängig — per Video-Call, Telefon und E-Mail — daher betreuen wir auch Kunden außerhalb der Region.</div>
+      </details>
+      <details>
+        <summary>Was kostet das Erstgespräch?<span class="plus">+</span></summary>
+        <div class="a">Nichts. Das Erstgespräch dient dazu, deine Situation zu verstehen und ehrlich einzuschätzen, ob und wie wir helfen können. Erst danach gibt es ein konkretes, auf dich zugeschnittenes Angebot.</div>
+      </details>
+      <details>
+        <summary>Wie schnell kann es losgehen?<span class="plus">+</span></summary>
+        <div class="a">Das hängt vom Umfang und davon ab, wie vorbereitet die Ausgangslage ist — Texte, Bildmaterial, Zugänge. Im Erstgespräch bekommst du dafür einen realistischen Zeitrahmen statt einer pauschalen Zusage.</div>
+      </details>
+      <details>
+        <summary>Was, wenn die Website nach dem Launch angepasst werden muss?<span class="plus">+</span></summary>
+        <div class="a">Das ist eingeplant. Eine Website ist selten am ersten Tag fertig im Sinne von „nie wieder anfassen" — kleinere Anpassungen nach dem Launch gehören zum normalen Prozess und werden im Gespräch geklärt.</div>
+      </details>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="section-head reveal">
+      <div class="section-index">12 / AUS DEM BLOG</div>
+      <h2 class="section-title">Wissen, das <em>wirklich weiterhilft</em></h2>
+    </div>
+    <div class="blog-grid reveal">
+      <div class="blog-card">
+        <div class="blog-cover c1" data-tag="Website"></div>
+        <h4>Website-Kosten für Handwerksbetriebe: Was ist realistisch?</h4>
+        <p>Was eine professionelle Website wirklich kostet — und warum die billigste Lösung oft teurer wird.</p>
+      </div>
+      <div class="blog-card">
+        <div class="blog-cover c2" data-tag="Google Business"></div>
+        <h4>Google Business Profil optimieren</h4>
+        <p>Kostenlos, aber oft vernachlässigt: der Hebel für mehr lokale Anfragen.</p>
+      </div>
+      <div class="blog-card">
+        <div class="blog-cover c5" data-tag="Performance"></div>
+        <h4>Warum eine langsame Website Kunden kostet</h4>
+        <p>Jede Sekunde Ladezeit kostet Besucher und Google-Ranking.</p>
+      </div>
+      <div class="blog-card">
+        <div class="blog-cover c3" data-tag="Bewertungen"></div>
+        <h4>Mehr Google-Rezensionen bekommen</h4>
+        <p>Warum Bewertungen mehr Kunden bringen als Werbung — und wie man systematisch mehr bekommt.</p>
+      </div>
+      <div class="blog-card">
+        <div class="blog-cover c4" data-tag="Ads"></div>
+        <h4>Meta Ads Budget: Was realistisch einplanen?</h4>
+        <p>Warum Konstanz bei Meta Ads wichtiger ist als die Höhe des Budgets.</p>
+      </div>
+      <div class="blog-card">
+        <div class="blog-cover c6" data-tag="SEO"></div>
+        <h4>SEO: Wie lange dauert es wirklich bis zu Ergebnissen?</h4>
+        <p>Realistische Zeiträume — und warum die meisten zu früh aufgeben.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" style="border-bottom: 1px solid var(--line);">
+    <div class="cta-block reveal">
+      <div class="eyebrow" style="animation:none; opacity:1;">BEREIT FÜR DEN ENTWURF?</div>
+      <h2 class="cta-title">Das ist die Richtung. <em>Sag, wohin wir sie schärfen.</em></h2>
+      <div class="hero-actions" style="animation:none; opacity:1;">
+        <a class="btn-primary" href="#">Feedback geben <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <a class="btn-ghost" href="#leistungen">Nochmal ansehen ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="mark"><span class="dot"></span><b>PIXEL56</b><span class="tag">/ digitalagentur</span></div>
+        <p>Hüttenstraße 100, 56170 Bendorf bei Koblenz. Digitale Auftritte für KMUs, Coaches, Shops und lokale Betriebe.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Leistungen</h5>
+        <ul>
+          <li><a href="#leistungen">Webdesign</a></li>
+          <li><a href="#leistungen">SEO</a></li>
+          <li><a href="#leistungen">Google Ads</a></li>
+          <li><a href="#leistungen">Meta Ads</a></li>
+          <li><a href="#leistungen">Landingpages &amp; Funnels</a></li>
+          <li><a href="#leistungen">Content-Produktion</a></li>
+          <li><a href="#leistungen">Mitarbeitergewinnung</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Unternehmen</h5>
+        <ul>
+          <li><a href="#was-uns-unterscheidet">Über uns</a></li>
+          <li><a href="#projekte">Projekte</a></li>
+          <li><a href="#bewertungen">Bewertungen</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#kontakt">Karriere</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kostenlose Ressourcen</h5>
+        <ul>
+          <li><a href="#">SEO-Checkliste</a></li>
+          <li><a href="#">KI-Agenten-Checkliste</a></li>
+          <li><a href="#">Tagesplaner PDF</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="mailto:info@pixel56.de">info@pixel56.de</a></li>
+          <li><a href="tel:+4926229898654">02622 9898654</a></li>
+          <li><a href="https://wa.me/491785282464" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© Pixel56 — Stilentwurf, nicht live</div>
+      <div class="legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div class="note">Stilentwurf — noch keine finale Website</div>
+
+<script>
+  // parallax grid on pointer move
+  var field = document.getElementById('gridField');
+  var floatCard = document.getElementById('specFloat');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduced) {
+    window.addEventListener('mousemove', function (e) {
+      var x = (e.clientX / window.innerWidth - 0.5);
+      var y = (e.clientY / window.innerHeight - 0.5);
+      field.style.transform = 'translate(' + (x * -18) + 'px,' + (y * -18) + 'px)';
+      if (floatCard) {
+        floatCard.style.transform = 'perspective(800px) rotateX(' + (6 - y * 10) + 'deg) rotateY(' + (-10 + x * 14) + 'deg)';
+      }
+    }, { passive: true });
+  }
+
+  // count-up numbers
+  var counters = document.querySelectorAll('.cu[data-to]');
+  if (counters.length) {
+    if (reduced) {
+      counters.forEach(function (el) { el.textContent = el.getAttribute('data-to'); });
+    } else if ('IntersectionObserver' in window) {
+      var cio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          var target = parseInt(el.getAttribute('data-to'), 10);
+          var start = performance.now();
+          var duration = 1100;
+          function tick(now) {
+            var p = Math.min((now - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(eased * target);
+            if (p < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+          cio.unobserve(el);
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(function (el) { cio.observe(el); });
+    } else {
+      counters.forEach(function (el) { el.textContent = el.getAttribute('data-to'); });
+    }
+  }
+
+  // scroll reveal
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+</script>
