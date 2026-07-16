@@ -20,7 +20,7 @@ export default function SiteNav({ crumb }: { crumb?: Crumb }) {
           <Link href="/#bewertungen">Bewertungen</Link>
         </div>
       )}
-      <Link className="nav-cta" href="/#kontakt">
+      <Link className="nav-cta" href="/kontakt">
         Gespräch anfragen
       </Link>
     </nav>

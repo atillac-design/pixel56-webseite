@@ -53,8 +53,8 @@ const steps = [
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-3", barWidth: 60, cat: "Van den Berg Gruppe", title: "56 % Wachstum durch gezielte Facebook Ads", text: "Kontinuierlicher Kampagnenaufbau mit konsequenter Budget-Steuerung nach Datenlage statt Bauchgefühl.", tag: "Meta Ads · laufende Betreuung" },
-  { variant: "ic-1", barWidth: 50, cat: "GM-Dachdecker Meisterbetrieb", title: "Kampagnen für Mitarbeitergewinnung", text: "Neben klassischer Kundengewinnung setzen wir Meta Ads gezielt zur Bewerbergewinnung ein — spürbar leichtere Mitarbeitersuche.", tag: "Meta Ads · Recruiting" },
+  { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-van-den-berg.webp", href: "/projekte/van-den-berg", cat: "Van den Berg Gruppe", title: "56 % Wachstum durch gezielte Facebook Ads", text: "Kontinuierlicher Kampagnenaufbau mit konsequenter Budget-Steuerung nach Datenlage statt Bauchgefühl.", tag: "Meta Ads · laufende Betreuung" },
+  { variant: "ic-1", barWidth: 50, img: "/bilder/ads-recruiting-kampagne.webp", href: "/projekte/gm-dachdecker", cat: "GM-Dachdecker Meisterbetrieb", title: "Kampagnen für Mitarbeitergewinnung", text: "Neben klassischer Kundengewinnung setzen wir Meta Ads gezielt zur Bewerbergewinnung ein — spürbar leichtere Mitarbeitersuche.", tag: "Meta Ads · Recruiting" },
 ];
 
 const faqs = [
@@ -94,7 +94,7 @@ export default function MetaAdsPage() {
             laufend optimiert, statt einmal eingerichtet und stehen gelassen.
           </p>
           <div className="hero-actions">
-            <Link className="btn-primary" href="#kontakt">
+            <Link className="btn-primary" href="/kontakt">
               Kostenloses Erstgespräch <ArrowIcon />
             </Link>
             <Link className="btn-text" href="#status">
@@ -150,7 +150,7 @@ export default function MetaAdsPage() {
               </ul>
             </div>
             <div className="reveal">
-              <FeedMock />
+              <FeedMock imgSrc="/bilder/ads-meta-beispiel.webp" />
             </div>
           </div>
         </section>

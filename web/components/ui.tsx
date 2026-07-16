@@ -100,7 +100,10 @@ export function WaMock({ name, messages, footer }: { name: string; messages: WaM
   return (
     <div className="wa-mock">
       <div className="wa-head">
-        <div className="wa-avatar">P56</div>
+        <div className="wa-avatar">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/bilder/team-atilla.webp" alt="Atilla Ciftcioglu" />
+        </div>
         <div className="wa-id">
           <b>{name}</b>
           <span className="wa-status">
@@ -139,7 +142,7 @@ export function BrowserMock({ variant, barWidth = 60, noBtn = false }: { variant
   );
 }
 
-export function CloseCta({ children, ctaHref = "/#kontakt", ctaLabel = "Kostenloses Erstgespräch" }: {
+export function CloseCta({ children, ctaHref = "/kontakt", ctaLabel = "Kostenloses Erstgespräch" }: {
   children: React.ReactNode;
   ctaHref?: string;
   ctaLabel?: string;
@@ -173,18 +176,31 @@ export function FaqList({ items }: { items: Faq[] }) {
   );
 }
 
-export type RefItem = { variant: string; barWidth?: number; cat: string; title: string; text: string; tag: string };
+export type RefItem = { variant: string; barWidth?: number; cat: string; title: string; text: string; tag: string; img?: string; href?: string };
 
 export function RefCard({ item }: { item: RefItem }) {
-  return (
-    <div className="ref-card">
-      <BrowserMock variant={item.variant} barWidth={item.barWidth ?? 60} />
+  const inner = (
+    <>
+      {item.img ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img className="rc-img" src={item.img} alt={`Projekt: ${item.cat}`} />
+      ) : (
+        <BrowserMock variant={item.variant} barWidth={item.barWidth ?? 60} />
+      )}
       <div className="rc-cat">{item.cat}</div>
       <h4>{item.title}</h4>
       <p>{item.text}</p>
       <span className="rc-tag">{item.tag}</span>
-    </div>
+    </>
   );
+  if (item.href) {
+    return (
+      <Link className="ref-card" href={item.href}>
+        {inner}
+      </Link>
+    );
+  }
+  return <div className="ref-card">{inner}</div>;
 }
 
 export type Step = { nr: string; tag: string; title: string; text: string };

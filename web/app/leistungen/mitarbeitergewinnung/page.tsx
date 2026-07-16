@@ -59,8 +59,8 @@ const steps = [
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-1", barWidth: 55, cat: "GM-Dachdecker Meisterbetrieb", title: "Karriereportal mit Direkt-Upload", text: "Bewerber laden ihre Unterlagen direkt hoch, ohne E-Mail-Programm.", tag: "Karriereportal · Webdesign · 2023" },
-  { variant: "ic-3", barWidth: 65, cat: "GM-Dachdecker Meisterbetrieb ", title: "Kampagnen zur Bewerbergewinnung", text: "Neben klassischer Kundengewinnung setzen wir Meta Ads gezielt zur Ansprache passender Kandidaten ein.", tag: "Meta Ads · Recruiting" },
+  { variant: "ic-1", barWidth: 55, href: "/projekte/gm-dachdecker", cat: "GM-Dachdecker Meisterbetrieb", title: "Karriereportal mit Direkt-Upload", text: "Bewerber laden ihre Unterlagen direkt hoch, ohne E-Mail-Programm.", tag: "Karriereportal · Webdesign · 2023" },
+  { variant: "ic-3", barWidth: 65, img: "/bilder/ads-recruiting-beispiel.webp", href: "/projekte/gm-dachdecker", cat: "GM-Dachdecker Meisterbetrieb ", title: "Kampagnen zur Bewerbergewinnung", text: "Neben klassischer Kundengewinnung setzen wir Meta Ads gezielt zur Ansprache passender Kandidaten ein.", tag: "Meta Ads · Recruiting" },
 ];
 
 const faqs = [
@@ -100,7 +100,7 @@ export default function RecruitingPage() {
             tatsächlich zu Ende gehen.
           </p>
           <div className="hero-actions">
-            <Link className="btn-primary" href="#kontakt">
+            <Link className="btn-primary" href="/kontakt">
               Kostenloses Erstgespräch <ArrowIcon />
             </Link>
             <Link className="btn-text" href="#status">

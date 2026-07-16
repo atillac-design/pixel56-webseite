@@ -59,8 +59,8 @@ const steps = [
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-4", barWidth: 55, cat: "Burgerfabrik", title: "Reels direkt aus dem echten Betrieb", text: "Kurzvideos aus dem laufenden Ladenalltag statt gestellter Werbeaufnahmen.", tag: "Reels · Social Content" },
-  { variant: "ic-2", barWidth: 65, cat: "MA-Transporte", title: "Laufende Social-Media-Betreuung", text: "Kontinuierliche Content-Produktion neben der neuen Website, seit 2019.", tag: "Social Media · seit 2019" },
+  { variant: "ic-4", barWidth: 55, href: "/projekte/burgerfabrik", cat: "Burgerfabrik", title: "Reels direkt aus dem echten Betrieb", text: "Kurzvideos aus dem laufenden Ladenalltag statt gestellter Werbeaufnahmen.", tag: "Reels · Social Content" },
+  { variant: "ic-2", barWidth: 65, img: "/bilder/projekt-ma-transporte.webp", href: "/projekte/ma-transporte", cat: "MA-Transporte", title: "Laufende Social-Media-Betreuung", text: "Kontinuierliche Content-Produktion neben der neuen Website, seit 2019.", tag: "Social Media · seit 2019" },
 ];
 
 const faqs = [
@@ -100,7 +100,7 @@ export default function ContentPage() {
             Aufnahmen, die tatsächlich zu euch gehören.
           </p>
           <div className="hero-actions">
-            <Link className="btn-primary" href="#kontakt">
+            <Link className="btn-primary" href="/kontakt">
               Kostenloses Erstgespräch <ArrowIcon />
             </Link>
             <Link className="btn-text" href="#status">

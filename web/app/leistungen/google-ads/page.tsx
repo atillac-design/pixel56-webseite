@@ -59,7 +59,7 @@ const steps = [
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-4", barWidth: 55, cat: "GM-Dachdecker Meisterbetrieb", title: "Digitale Sichtbarkeit als Gesamtpaket", text: "Neue Website und laufende Kampagnenarbeit Hand in Hand — Tracking und Landingpage stimmen von Anfang an aufeinander ab.", tag: "Website · Kampagnenbetreuung" },
+  { variant: "ic-4", barWidth: 55, href: "/projekte/gm-dachdecker", cat: "GM-Dachdecker Meisterbetrieb", title: "Digitale Sichtbarkeit als Gesamtpaket", text: "Neue Website und laufende Kampagnenarbeit Hand in Hand — Tracking und Landingpage stimmen von Anfang an aufeinander ab.", tag: "Website · Kampagnenbetreuung" },
   { variant: "ic-2", barWidth: 65, cat: "Unser eigener Anspruch", title: "Tracking ist nie ein Nachgedanke", text: "Jede Kampagne bekommt sauberes Conversion-Tracking, bevor sie live geht — keine Ausnahme, kein optionales Extra für später.", tag: "Grundprinzip · alle Projekte" },
 ];
 
@@ -100,7 +100,7 @@ export default function GoogleAdsPage() {
             statt Bauchgefühl.
           </p>
           <div className="hero-actions">
-            <Link className="btn-primary" href="#kontakt">
+            <Link className="btn-primary" href="/kontakt">
               Kostenloses Erstgespräch <ArrowIcon />
             </Link>
             <Link className="btn-text" href="#status">

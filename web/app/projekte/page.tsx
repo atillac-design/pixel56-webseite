@@ -66,7 +66,7 @@ export default function ProjektePage() {
             hier ist real, mit echten Kunden und nachvollziehbaren Ergebnissen.
           </p>
           <div className="hero-actions">
-            <Link className="btn-primary" href="#kontakt">
+            <Link className="btn-primary" href="/kontakt">
               Kostenloses Erstgespräch <ArrowIcon />
             </Link>
             <Link className="btn-text" href="#projekte">

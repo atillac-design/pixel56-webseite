@@ -88,7 +88,7 @@ export default function SeoPage() {
             nur entstehen, sondern bleiben.
           </p>
           <div className="hero-actions">
-            <Link className="btn-primary" href="#kontakt">
+            <Link className="btn-primary" href="/kontakt">
               Kostenloses Erstgespräch <ArrowIcon />
             </Link>
             <Link className="btn-text" href="#status">
@@ -261,7 +261,8 @@ export default function SeoPage() {
             </div>
           </div>
           <div className="ref-solo reveal">
-            <BrowserMock variant="ic-1" barWidth={60} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="rc-img" src="/bilder/projekt-stark-ins-neue-2.webp" alt="Projekt: Stark ins Neue" style={{ marginBottom: 18 }} />
             <div className="rc-cat">Stark ins Neue gGmbH</div>
             <h4>Kompletter Relaunch mit SEO von Grund auf</h4>
             <p>

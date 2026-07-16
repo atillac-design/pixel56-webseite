@@ -569,3 +569,47 @@ input.form-field:focus { border-color: var(--accent); }
 /* Fallstudien-Hero: kleinere Headline für lange Projekt-Titel */
 .hero-case h1 { font-size: clamp(30px, 4.4vw, 62px); max-width: 22ch; }
 .voice-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* ============ VISUELLER UMBAU ============ */
+/* Mobil: Hero-Bild als komponierter Hintergrund statt angehängtem Block */
+@media (max-width: 1100px) {
+  .hero-scenic { position: absolute; inset: 0; width: 100%; margin: 0; order: 0; aspect-ratio: auto; border-radius: 0; border: none; z-index: 0; }
+  .hero-scenic img { opacity: 0.5; }
+  .hero-scenic::after { background: linear-gradient(180deg, rgba(7,7,12,0.55), rgba(7,7,12,0.75) 55%, var(--ground)); }
+  .hero-scenic ~ *:not(.pulse-field) { position: relative; z-index: 1; }
+}
+
+/* Foto-Avatar im WhatsApp-Mock */
+.wa-avatar { overflow: hidden; }
+.wa-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Porträt-Karte im Über-uns-Hero */
+.hero-portrait { position: absolute; top: 54%; right: 48px; transform: translateY(-50%) rotate(2deg); width: min(24vw, 330px); border-radius: 24px; overflow: hidden; border: 1px solid var(--line-strong); box-shadow: 0 60px 120px -50px rgba(0,0,0,0.8); z-index: 0; }
+.hero-portrait img { width: 100%; display: block; }
+.hero-portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 65%, rgba(7,7,12,0.55)); }
+.hero-portrait .hp-tag { position: absolute; left: 18px; bottom: 16px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: rgba(255,255,255,0.92); text-transform: uppercase; background: rgba(7,7,12,0.6); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 6px 13px; z-index: 1; }
+@media (max-width: 1100px) { .hero-portrait { position: static; transform: rotate(0deg); width: 100%; max-width: 380px; margin-top: 40px; order: 99; } }
+
+/* RefCard mit echtem Screenshot */
+.ref-card { display: block; color: inherit; }
+.ref-card .rc-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; border-radius: 14px; border: 1px solid var(--line); display: block; background: #0d0d14; transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); }
+a.ref-card:hover .rc-img { transform: translateY(-4px); }
+
+/* Feed-Mock mit echtem Anzeigenbild */
+.fm-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.fm-image.has-img::after { display: none; }
+
+/* Kontaktseite */
+.kontakt-kanaele { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+@media (max-width: 780px) { .kontakt-kanaele { grid-template-columns: 1fr; } }
+.kanal { background: #0d0d14; padding: 30px 28px; display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; transition: background 0.25s ease; }
+.kanal:hover { background: #100d13; }
+.kanal .kl { font-family: var(--mono); font-size: 10.5px; color: var(--accent-2); letter-spacing: 0.08em; text-transform: uppercase; }
+.kanal b { font-size: 17px; font-weight: 700; }
+.kanal span { font-size: 13.5px; line-height: 1.6; color: var(--ink-dim); }
+.kontakt-form { background: #0d0d14; border: 1px solid var(--line); border-radius: 20px; padding: 30px; box-shadow: 0 50px 100px -50px rgba(0,0,0,0.7); }
+textarea.form-field { border-radius: 20px; min-height: 120px; resize: vertical; font-family: var(--sans); color: var(--ink); outline: none; width: 100%; display: block; }
+textarea.form-field::placeholder { color: var(--ink-faint); }
+textarea.form-field:focus { border-color: var(--accent); }
+.kontakt-form .btn-primary { border: none; cursor: pointer; width: 100%; justify-content: center; margin-top: 0; }
+.kontakt-form .btn-primary:disabled { opacity: 0.6; cursor: wait; transform: none; }

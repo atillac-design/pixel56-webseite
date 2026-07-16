@@ -59,8 +59,8 @@ const steps = [
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-3", barWidth: 55, cat: "Stark ins Neue gGmbH", title: "Klare Nutzerführung zur Kursanmeldung", text: "Fokussierte Anmeldestrecke für eine Bildungsinitiative — DSGVO-konform, ohne unnötige Zwischenschritte.", tag: "Landingpage · Anmeldefunnel · 2025" },
-  { variant: "ic-4", barWidth: 65, cat: "Van den Berg Gruppe", title: "Anzeige direkt auf ein Angebot geführt", text: "Facebook-Ads-Kampagnen mit passender Zielseite statt allgemeiner Startseite — Teil eines 56 % Wachstums.", tag: "Meta Ads · Landingpage" },
+  { variant: "ic-3", barWidth: 55, img: "/bilder/projekt-stark-ins-neue-3.webp", href: "/projekte/stark-ins-neue", cat: "Stark ins Neue gGmbH", title: "Klare Nutzerführung zur Kursanmeldung", text: "Fokussierte Anmeldestrecke für eine Bildungsinitiative — DSGVO-konform, ohne unnötige Zwischenschritte.", tag: "Landingpage · Anmeldefunnel · 2025" },
+  { variant: "ic-4", barWidth: 65, img: "/bilder/projekt-van-den-berg.webp", href: "/projekte/van-den-berg", cat: "Van den Berg Gruppe", title: "Anzeige direkt auf ein Angebot geführt", text: "Facebook-Ads-Kampagnen mit passender Zielseite statt allgemeiner Startseite — Teil eines 56 % Wachstums.", tag: "Meta Ads · Landingpage" },
 ];
 
 const faqs = [
@@ -101,7 +101,7 @@ export default function FunnelsPage() {
             Anfrage.
           </p>
           <div className="hero-actions">
-            <Link className="btn-primary" href="#kontakt">
+            <Link className="btn-primary" href="/kontakt">
               Kostenloses Erstgespräch <ArrowIcon />
             </Link>
             <Link className="btn-text" href="#status">

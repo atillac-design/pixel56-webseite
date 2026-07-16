@@ -54,10 +54,10 @@ const steps = [
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-4", barWidth: 55, cat: "GM-Dachdecker Meisterbetrieb", title: "Handwerkskunst digital erlebbar gemacht", text: "Neue Website inklusive Karriereportal — Bewerber laden Unterlagen direkt hoch, ohne E-Mail.", tag: "Webdesign · Karriereportal · 2023" },
-  { variant: "ic-3", barWidth: 60, cat: "Stark ins Neue gGmbH", title: "Vertrauen für eine Bildungsinitiative", text: "Kompletter Relaunch für eine gemeinnützige Organisation — SEO-optimiert, DSGVO-konform.", tag: "Webdesign · SEO · 2025" },
-  { variant: "ic-1", barWidth: 48, cat: "Oktay Cömertler", title: "Full-Service für Abbruch, Tief- & Kanalbau", text: "Maßgeschneidertes Branding und Webdesign aus umfassender Markt- und Unternehmensanalyse.", tag: "Branding · Webdesign · seit 2022" },
-  { variant: "ic-2", barWidth: 70, cat: "MA-Transporte", title: "Dienstleistungsqualität digital sichtbar gemacht", text: "Neue, repräsentative Website plus laufende Social-Media-Betreuung.", tag: "Webdesign · Social Media · seit 2019" },
+  { variant: "ic-4", barWidth: 55, href: "/projekte/gm-dachdecker", cat: "GM-Dachdecker Meisterbetrieb", title: "Handwerkskunst digital erlebbar gemacht", text: "Neue Website inklusive Karriereportal — Bewerber laden Unterlagen direkt hoch, ohne E-Mail.", tag: "Webdesign · Karriereportal · 2023" },
+  { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-stark-ins-neue-2.webp", href: "/projekte/stark-ins-neue", cat: "Stark ins Neue gGmbH", title: "Vertrauen für eine Bildungsinitiative", text: "Kompletter Relaunch für eine gemeinnützige Organisation — SEO-optimiert, DSGVO-konform.", tag: "Webdesign · SEO · 2025" },
+  { variant: "ic-1", barWidth: 48, href: "/projekte/oktay-coemertler", cat: "Oktay Cömertler", title: "Full-Service für Abbruch, Tief- & Kanalbau", text: "Maßgeschneidertes Branding und Webdesign aus umfassender Markt- und Unternehmensanalyse.", tag: "Branding · Webdesign · seit 2022" },
+  { variant: "ic-2", barWidth: 70, img: "/bilder/projekt-ma-transporte.webp", href: "/projekte/ma-transporte", cat: "MA-Transporte", title: "Dienstleistungsqualität digital sichtbar gemacht", text: "Neue, repräsentative Website plus laufende Social-Media-Betreuung.", tag: "Webdesign · Social Media · seit 2019" },
 ];
 
 const faqs = [
@@ -97,7 +97,7 @@ export default function WebdesignPage() {
             Anfrage finden.
           </p>
           <div className="hero-actions">
-            <Link className="btn-primary" href="#kontakt">
+            <Link className="btn-primary" href="/kontakt">
               Kostenloses Erstgespräch <ArrowIcon />
             </Link>
             <Link className="btn-text" href="#status">

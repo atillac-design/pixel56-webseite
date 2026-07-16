@@ -42,18 +42,21 @@ const ShareIcon = (
   </svg>
 );
 
-/** Instagram-/Meta-Feed-Post (gesponsert). */
-export function FeedMock() {
+/** Instagram-/Meta-Feed-Post (gesponsert) — optional mit echtem Anzeigenbild. */
+export function FeedMock({ imgSrc, wer = "Ihr Unternehmen" }: { imgSrc?: string; wer?: string }) {
   return (
     <div className="feed-mock">
       <div className="fm-head">
         <div className="fm-avatar" />
         <div className="fm-who">
-          <b>Ihr Unternehmen</b>
+          <b>{wer}</b>
           <span>Gesponsert</span>
         </div>
       </div>
-      <div className="fm-image" />
+      <div className={imgSrc ? "fm-image has-img" : "fm-image"}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        {imgSrc && <img src={imgSrc} alt="Beispiel-Anzeige" />}
+      </div>
       <div className="fm-actions">
         {HeartIcon}
         {CommentIcon}

@@ -117,7 +117,7 @@ export default async function StandortPage({ params }: Props) {
           </h1>
           <p className="hero-sub">{ort.heroSub}</p>
           <div className="hero-actions">
-            <Link className="btn-primary" href="#kontakt">
+            <Link className="btn-primary" href="/kontakt">
               Kostenloses Erstgespräch <ArrowIcon />
             </Link>
             <Link className="btn-text" href="#beweis">

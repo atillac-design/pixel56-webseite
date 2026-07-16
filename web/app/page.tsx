@@ -9,6 +9,7 @@ import {
   MetricMock,
   WaMock,
   BrowserMock,
+  RefCard,
   CloseCta,
   FaqList,
   Reviews,
@@ -54,12 +55,12 @@ const processSteps = [
 ];
 
 const referenzen = [
-  { variant: "ic-4", cat: "Stark ins Neue gGmbH", title: "SEO-optimierte, DSGVO-konforme Website", text: "Fokus auf Vertrauen & Wirkung für eine Bildungsinitiative.", tag: "Webdesign · SEO · 2025" },
-  { variant: "ic-5", cat: "Sportler für Kinderherzen", title: "Marketing & Branding für eine Spendengala", text: "Zugunsten krebskranker Kinder — Sichtbarkeit für den guten Zweck.", tag: "Branding · Event · 2022" },
-  { variant: "ic-1", cat: "GM-Dachdecker Meisterbetrieb", title: "Webdesign und Karriereportal", text: "Handwerkskunst digital erlebbar gemacht.", tag: "Webdesign · Karriere · 2023" },
-  { variant: "ic-2", cat: "Oktay Cömertler", title: "Branding und Webdesign", text: "Für Abbruch, Tiefbau und Kanalbau — KMU-Transformation.", tag: "Branding · Webdesign · seit 2022" },
-  { variant: "ic-3", cat: "CASS Schulungen", title: "Branding und Webdesign", text: "Für Luftsicherheitsschulungen — Bildung und Sicherheit digital vereint.", tag: "Branding · Social Media · 2023" },
-  { variant: "ic-6", cat: "MA-Transporte", title: "Webdesign und Social-Media-Betreuung", text: "Für ein Transportunternehmen — laufend seit 2019.", tag: "Webdesign · Social Media · seit 2019" },
+  { variant: "ic-4", img: "/bilder/projekt-stark-ins-neue.webp", href: "/projekte/stark-ins-neue", cat: "Stark ins Neue gGmbH", title: "Landingpage und Meta Ads für eine Bildungsinitiative", text: "Fokus auf Vertrauen & Wirkung — deutlich mehr Kursanmeldungen.", tag: "Meta Ads · Landingpage · 2025" },
+  { variant: "ic-5", img: "/bilder/projekt-kinderherzen.webp", href: "/projekte/sportler-fuer-kinderherzen", cat: "Sportler für Kinderherzen", title: "Marketing & Branding für eine Spendengala", text: "Zugunsten krebskranker Kinder — Sichtbarkeit für den guten Zweck.", tag: "Branding · Event · 2022" },
+  { variant: "ic-1", href: "/projekte/gm-dachdecker", cat: "GM-Dachdecker Meisterbetrieb", title: "Webdesign und Karriereportal", text: "Handwerkskunst digital erlebbar gemacht.", tag: "Webdesign · Karriere · 2023" },
+  { variant: "ic-2", href: "/projekte/oktay-coemertler", cat: "Oktay Cömertler", title: "Branding und Webdesign", text: "Für Abbruch, Tiefbau und Kanalbau — KMU-Transformation.", tag: "Branding · Webdesign · seit 2022" },
+  { variant: "ic-3", img: "/bilder/projekt-cass.webp", href: "/projekte/cass-schulungen", cat: "CASS Schulungen", title: "Branding und Webdesign", text: "Für Luftsicherheitsschulungen — Bildung und Sicherheit digital vereint.", tag: "Branding · Social Media · 2023" },
+  { variant: "ic-6", img: "/bilder/projekt-ma-transporte.webp", href: "/projekte/ma-transporte", cat: "M&A Transporte", title: "Webdesign und Social-Media-Betreuung", text: "Für ein Transportunternehmen — laufend seit 2019.", tag: "Webdesign · Social Media · seit 2019" },
 ];
 
 const branchen = [
@@ -109,7 +110,7 @@ export default function HomePage() {
             Betriebe — jede Leistung einzeln stark, gemeinsam noch stärker.
           </p>
           <div className="hero-actions">
-            <Link className="btn-primary" href="/#kontakt">
+            <Link className="btn-primary" href="/kontakt">
               Kostenloses Erstgespräch <ArrowIcon />
             </Link>
             <Link className="btn-text" href="/#status">
@@ -312,13 +313,7 @@ export default function HomePage() {
           </div>
           <div className="ref-grid-3 reveal">
             {referenzen.map((r) => (
-              <div className="ref-card" key={r.cat}>
-                <BrowserMock variant={r.variant} />
-                <div className="rc-cat">{r.cat}</div>
-                <h4>{r.title}</h4>
-                <p>{r.text}</p>
-                <span className="rc-tag">{r.tag}</span>
-              </div>
+              <RefCard item={r} key={r.cat} />
             ))}
           </div>
         </section>

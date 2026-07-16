@@ -58,6 +58,7 @@ export const footerNav = {
     { label: "Bewertungen", href: "/#bewertungen" },
     { label: "Blog", href: "/blog" },
     { label: "Karriere", href: "/karriere" },
+    { label: "Kontakt", href: "/kontakt" },
   ],
   ressourcen: [
     { label: "SEO-Checkliste", href: "/ressourcen/seo-checkliste" },

@@ -46,7 +46,11 @@ export default function UeberUnsPage() {
         <SiteNav crumb={{ section: "Unternehmen", page: "Über uns" }} />
 
         <header className="hero">
-          <PulseField label1="// BENDORF BEI KOBLENZ" label2="// PERSÖNLICH ERREICHBAR" />
+          <div className="hero-portrait">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/bilder/team-atilla-quadrat.webp" alt="Atilla Ciftcioglu, Gründer von Pixel56" />
+            <span className="hp-tag">Atilla Ciftcioglu · Gründer</span>
+          </div>
           <div className="hero-eyebrow">UNTERNEHMEN · ÜBER UNS</div>
           <h1>
             <span className="in"><span>Kein anonymes</span></span>
@@ -59,7 +63,7 @@ export default function UeberUnsPage() {
             Ticket-System.
           </p>
           <div className="hero-actions">
-            <Link className="btn-primary" href="#kontakt">
+            <Link className="btn-primary" href="/kontakt">
               Kostenloses Erstgespräch <ArrowIcon />
             </Link>
             <Link className="btn-text" href="#wer">
