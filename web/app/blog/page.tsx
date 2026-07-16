@@ -1,0 +1,113 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
+import { PulseField, CloseCta } from "@/components/ui";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Wissen, das wirklich weiterhilft — Antworten auf die Fragen, die uns Kunden tatsächlich stellen. Website, SEO, Ads und Google Business.",
+};
+
+// Platzhalter-Artikel — kommen später aus dem CMS (Sanity).
+const artikel = [
+  { cover: "c1", tag: "Website", title: "Website-Kosten für Handwerksbetriebe: Was ist realistisch?", text: "Was eine professionelle Website wirklich kostet — und warum die billigste Lösung oft teurer wird.", meta: "Website · 6 Min. Lesezeit" },
+  { cover: "c2", tag: "Google Business", title: "Google Business Profil optimieren", text: "Kostenlos, aber oft vernachlässigt: der wirksamste Hebel für mehr lokale Anfragen.", meta: "Lokal · 5 Min. Lesezeit" },
+  { cover: "c5", tag: "Performance", title: "Warum eine langsame Website Kunden kostet", text: "Jede Sekunde Ladezeit kostet Besucher und Google-Ranking — die Zahlen dahinter.", meta: "Technik · 4 Min. Lesezeit" },
+  { cover: "c3", tag: "Bewertungen", title: "Mehr Google-Rezensionen bekommen", text: "Warum Bewertungen mehr Kunden bringen als Werbung — und wie man systematisch mehr bekommt.", meta: "Lokal · 5 Min. Lesezeit" },
+  { cover: "c4", tag: "Ads", title: "Meta Ads Budget: Was realistisch einplanen?", text: "Warum Konstanz bei Meta Ads wichtiger ist als die Höhe des Budgets.", meta: "Kampagnen · 6 Min. Lesezeit" },
+  { cover: "c6", tag: "SEO", title: "SEO: Wie lange dauert es wirklich bis zu Ergebnissen?", text: "Realistische Zeiträume — und warum die meisten zu früh aufgeben.", meta: "SEO · 7 Min. Lesezeit" },
+];
+
+const freebies = [
+  { fl: "Checkliste · PDF", title: "SEO-Checkliste", text: "Die wichtigsten Punkte, die jede Website erfüllen sollte, um bei Google gefunden zu werden — zum Selbst-Abhaken.", href: "/ressourcen/seo-checkliste" },
+  { fl: "Checkliste · PDF", title: "KI-Agenten-Checkliste", text: "Wo KI im Betriebsalltag tatsächlich Zeit spart — und wo sie nur Spielerei ist. Ehrlich eingeordnet.", href: "/ressourcen/ki-agenten-checkliste" },
+  { fl: "Vorlage · PDF", title: "Tagesplaner", text: "Die Planungs-Vorlage, mit der wir selbst arbeiten — für fokussierte Tage statt Zettelwirtschaft.", href: "/ressourcen/tagesplaner" },
+];
+
+export default function BlogPage() {
+  return (
+    <>
+      <div className="sheet">
+        <SiteNav crumb={{ section: "Unternehmen", page: "Blog" }} />
+
+        <header className="hero">
+          <PulseField />
+          <div className="hero-eyebrow">UNTERNEHMEN · BLOG</div>
+          <h1>
+            <span className="in"><span>Wissen, das</span></span>
+            <span className="in"><span>wirklich weiterhilft.</span></span>
+          </h1>
+          <p className="hero-sub">
+            Keine Marketing-Floskeln, sondern Antworten auf die Fragen, die uns
+            Kunden tatsächlich stellen — ehrlich und umsetzbar.
+          </p>
+          <div className="hero-foot">
+            <span className="hf-label">Themen:</span>
+            <div className="hf-chip">Website</div>
+            <div className="hf-chip">SEO</div>
+            <div className="hf-chip">Ads</div>
+            <div className="hf-chip">Google Business</div>
+          </div>
+        </header>
+      </div>
+
+      <div className="sheet">
+        <section className="band" id="artikel" style={{ paddingTop: 40 }}>
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">01 — Aktuelle Artikel</span>
+              <h2 className="band-title">
+                Fragen, die uns <em>oft erreichen</em>
+              </h2>
+            </div>
+          </div>
+          <div className="blog-grid reveal">
+            {artikel.map((a) => (
+              <Link className="blog-card" href="/blog" key={a.title}>
+                <div className={`blog-cover ${a.cover}`} data-tag={a.tag} />
+                <h4>{a.title}</h4>
+                <p>{a.text}</p>
+                <span className="bc-meta">{a.meta}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="band tint-violet" id="ressourcen">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">02 — Kostenlose Ressourcen</span>
+              <h2 className="band-title">
+                Zum Mitnehmen, <em>ohne Haken</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Drei Downloads, die sofort weiterhelfen — kostenlos gegen deine
+              E-Mail-Adresse.
+            </p>
+          </div>
+          <div className="freebie-grid reveal">
+            {freebies.map((f) => (
+              <div className="freebie" key={f.title}>
+                <span className="fl">{f.fl}</span>
+                <h4>{f.title}</h4>
+                <p>{f.text}</p>
+                <Link className="fbtn" href={f.href}>
+                  Kostenlos laden ↓
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <CloseCta>
+          Lieber direkt <em>fragen?</em>
+        </CloseCta>
+
+        <SiteFooter />
+      </div>
+    </>
+  );
+}

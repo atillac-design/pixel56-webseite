@@ -398,3 +398,110 @@ footer.site-footer { border-top: 1px solid var(--line); padding: 70px 0 0; }
 .ref-solo .ic-browser { margin-bottom: 18px; }
 .ref-solo h4 { margin: 16px 0 4px; font-size: 20px; font-weight: 700; }
 .ref-solo .rc-cat { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--accent-2); text-transform: uppercase; }
+
+/* ============ PROFILE MOCK (Über uns) ============ */
+.profile-mock { background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; padding: 30px; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); max-width: 380px; margin: 0 auto; }
+.pm-top { display: flex; align-items: center; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); margin-bottom: 6px; }
+.pm-avatar { width: 58px; height: 58px; border-radius: 50%; background: linear-gradient(155deg, var(--accent), #7a1626); display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-weight: 800; font-size: 19px; color: #fff; flex-shrink: 0; }
+.pm-id b { display: block; font-size: 16.5px; font-weight: 700; }
+.pm-id span { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; color: #3ddc84; margin-top: 4px; }
+.pm-id .wdot { width: 6px; height: 6px; border-radius: 50%; background: #3ddc84; position: relative; }
+.pm-id .wdot::before { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1px solid #3ddc84; animation: wa-pulse 2.2s ease-out infinite; }
+.pm-row { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--line); }
+.pm-row:last-child { border-bottom: none; }
+.pm-row span { font-size: 13.5px; color: var(--ink-dim); }
+.pm-row b { font-size: 13.5px; font-weight: 600; color: var(--ink); text-align: right; }
+
+/* ============ MAP MOCK (Standort) ============ */
+.map-mock { position: relative; background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; height: 320px; overflow: hidden; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.6); }
+.map-mock::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(245,244,242,0.09) 1px, transparent 1px); background-size: 26px 26px; }
+.mm-ring { position: absolute; top: 50%; left: 50%; border: 1px solid rgba(255,57,81,0.3); border-radius: 50%; transform: translate(-50%,-50%); animation: pulse-out 4.5s cubic-bezier(0.2,0.6,0.3,1) infinite; }
+.mm-ring:nth-child(1) { animation-delay: 0s; }
+.mm-ring:nth-child(2) { animation-delay: 1.5s; }
+.mm-ring:nth-child(3) { animation-delay: 3s; }
+.mm-pin { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-100%); z-index: 2; }
+.mm-pin svg { width: 38px; height: 38px; color: var(--accent); filter: drop-shadow(0 6px 16px rgba(255,57,81,0.5)); }
+.mm-label { position: absolute; left: 50%; top: calc(50% + 22px); transform: translateX(-50%); font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; color: var(--ink-dim); background: rgba(7,7,12,0.75); border: 1px solid var(--line-strong); border-radius: 100px; padding: 7px 15px; white-space: nowrap; z-index: 2; }
+.mm-coords { position: absolute; top: 16px; right: 18px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--ink-faint); }
+
+/* ============ PROJECT GRID (Projekte) ============ */
+.proj-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 30px; }
+@media (max-width: 860px) { .proj-grid { grid-template-columns: 1fr; } }
+.proj-card { background: #0d0d14; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1), border-color 0.3s ease; }
+.proj-card:hover { transform: translateY(-4px); border-color: var(--line-strong); }
+.proj-card .pc-body { padding: 26px 28px 28px; }
+.proj-card .rc-cat { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--accent-2); text-transform: uppercase; }
+.proj-card h4 { margin: 8px 0 8px; font-size: 18px; font-weight: 700; }
+.proj-card p { margin: 0; font-size: 14px; line-height: 1.65; color: var(--ink-dim); }
+.proj-card .rc-tag { display: flex; justify-content: space-between; gap: 12px; margin-top: 16px; font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); border-top: 1px dashed var(--line-strong); padding-top: 12px; }
+.proj-card .ic-body { padding: 30px 24px 34px; min-height: 170px; }
+
+/* ============ BLOG GRID ============ */
+.blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 28px; }
+@media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 560px) { .blog-grid { grid-template-columns: 1fr; } }
+.blog-card { display: flex; flex-direction: column; text-decoration: none; transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); }
+.blog-card:hover { transform: translateY(-4px); }
+.blog-cover { aspect-ratio: 16/10; margin-bottom: 18px; position: relative; overflow: hidden; border: 1px solid var(--line-strong); border-radius: 16px; }
+.blog-cover::before { content: attr(data-tag); position: absolute; top: 14px; left: 14px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: rgba(255,255,255,0.9); text-transform: uppercase; background: rgba(7,7,12,0.5); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 5px 12px; }
+.blog-cover.c1 { background: linear-gradient(135deg, #2a0f18, #ff3951 160%); }
+.blog-cover.c2 { background: linear-gradient(135deg, #10131f, #3f80fd 170%); }
+.blog-cover.c3 { background: linear-gradient(135deg, #241a05, #ffc226 180%); }
+.blog-cover.c4 { background: linear-gradient(135deg, #170f2c, #6a35ff 170%); }
+.blog-cover.c5 { background: linear-gradient(135deg, #051f22, #3fcffd 180%); }
+.blog-cover.c6 { background: linear-gradient(135deg, #2a0f18, #ff8139 170%); }
+.blog-card h4 { font-size: 17px; font-weight: 700; margin: 0 0 8px; line-height: 1.35; }
+.blog-card p { font-size: 13.5px; line-height: 1.6; color: var(--ink-dim); margin: 0; flex: 1; }
+.blog-card .bc-meta { font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); margin-top: 14px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ============ FREEBIE STRIP ============ */
+.freebie-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+@media (max-width: 780px) { .freebie-grid { grid-template-columns: 1fr; } }
+.freebie { background: #0d0d14; padding: 32px 28px; display: flex; flex-direction: column; gap: 12px; transition: background 0.25s ease; }
+.freebie:hover { background: #100d13; }
+.freebie .fl { font-family: var(--mono); font-size: 10.5px; color: var(--accent-2); letter-spacing: 0.08em; text-transform: uppercase; }
+.freebie h4 { margin: 0; font-size: 17.5px; font-weight: 700; }
+.freebie p { margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--ink-dim); flex: 1; }
+.freebie .fbtn { display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; font-size: 13.5px; font-weight: 700; color: var(--ink); border: 1px solid var(--line-strong); border-radius: 100px; padding: 10px 20px; width: fit-content; text-decoration: none; transition: background 0.25s ease, border-color 0.25s ease; }
+.freebie .fbtn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* ============ JOB LIST (Karriere) ============ */
+.job-list { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.job-row { background: #0d0d14; padding: 26px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; transition: background 0.25s ease; text-decoration: none; }
+.job-row:hover { background: #100d13; }
+.job-row .jr-info b { display: block; font-size: 16.5px; font-weight: 700; }
+.job-row .jr-info span { display: block; font-family: var(--mono); font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 5px; }
+.job-row .jr-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: var(--ink); border: 1px solid var(--line-strong); border-radius: 100px; padding: 10px 20px; transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease; flex-shrink: 0; }
+.job-row:hover .jr-btn { background: var(--accent); border-color: var(--accent); color: #fff; }
+.job-open-note { margin-top: 28px; font-size: 15px; line-height: 1.7; color: var(--ink-dim); max-width: 60ch; }
+.job-open-note b { color: var(--ink); }
+
+/* ============ DOC MOCK + FORM (Freebie) ============ */
+.grab-card { background: #0d0d14; border: 1px solid var(--line); border-radius: 20px; padding: 30px; box-shadow: 0 50px 100px -50px rgba(0,0,0,0.7); }
+.doc-mock { position: relative; background: linear-gradient(165deg, #14100a, #0d0d14 75%); border: 1px solid rgba(255,194,38,0.25); border-radius: 14px; padding: 26px 24px; margin-bottom: 24px; }
+.doc-mock .dm-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--accent-2); border: 1px solid rgba(255,194,38,0.35); background: rgba(255,194,38,0.08); border-radius: 100px; padding: 4px 12px; text-transform: uppercase; margin-bottom: 16px; }
+.doc-mock h3 { margin: 0 0 16px; font-size: 19px; font-weight: 800; }
+.doc-row { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px dashed var(--line); font-size: 13px; color: var(--ink-dim); }
+.doc-row:last-of-type { border-bottom: none; }
+.doc-row .box { width: 15px; height: 15px; border: 1.5px solid var(--accent-2); border-radius: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--accent-2); }
+.doc-pages { position: absolute; top: 20px; right: 22px; font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.08em; }
+.form-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin-bottom: 12px; }
+.form-field { display: flex; align-items: center; gap: 10px; background: rgba(245,244,242,0.05); border: 1px solid var(--line-strong); border-radius: 100px; padding: 15px 20px; font-size: 14px; color: var(--ink-faint); margin-bottom: 14px; }
+.form-privacy { margin-top: 14px; font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); line-height: 1.6; text-align: center; }
+.grab-card .btn-primary { width: 100%; justify-content: center; margin-top: 0; }
+
+/* ============ HERO POINTS (Freebie) ============ */
+.hero-points { margin: 30px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.hero-points li { font-size: 14.5px; color: var(--ink-dim); padding-left: 24px; position: relative; }
+.hero-points li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--accent-2); font-weight: 700; }
+
+/* ============ FREEBIE-HERO (reduzierter Funnel-Kopf) ============ */
+.nav-note { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.06em; text-transform: uppercase; }
+.hero-grab { position: relative; min-height: 88vh; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 70px; align-items: center; padding: 40px 0 80px; }
+@media (max-width: 900px) { .hero-grab { grid-template-columns: 1fr; gap: 50px; min-height: 0; padding-top: 20px; } }
+.hero-grab h1 { font-family: var(--sans); font-weight: 800; letter-spacing: -0.03em; line-height: 0.99; margin: 0; font-size: clamp(38px, 5vw, 72px); max-width: 15ch; text-wrap: balance; }
+.hero-grab h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+.hero-grab .hero-sub { font-size: clamp(18px, 1.8vw, 22px); line-height: 1.55; max-width: 38ch; margin: 30px 0 0; }
+.footer-slim { border-top: 1px solid var(--line); padding: 40px 0; display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); flex-wrap: wrap; gap: 14px; }
+.footer-slim a { color: var(--ink-faint); text-decoration: none; margin-left: 20px; }
+.footer-slim a:hover { color: var(--ink-dim); }
