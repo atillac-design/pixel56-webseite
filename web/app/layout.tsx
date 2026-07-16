@@ -10,6 +10,17 @@ export const metadata: Metadata = {
   },
   description:
     "Digitalagentur für Webdesign, SEO, Google & Meta Ads, Landingpages und Content-Produktion für KMUs, Coaches, Shops und lokale Betriebe.",
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    siteName: "Pixel56",
+    title: "Pixel56 — Digitalagentur Bendorf bei Koblenz",
+    description:
+      "Digitalagentur für Webdesign, SEO, Google & Meta Ads, Landingpages und Content-Produktion für KMUs, Coaches, Shops und lokale Betriebe.",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
