@@ -1,0 +1,210 @@
+<title>Pixel56 — SEO-Checkliste (Freebie-Vorlage)</title>
+<style>
+  :root {
+    --ground: #07070c;
+    --ink: #f5f4f2;
+    --ink-dim: #a19dae;
+    --ink-faint: #5c5870;
+    --line: rgba(245, 244, 242, 0.08);
+    --line-strong: rgba(245, 244, 242, 0.16);
+    --accent: #ff3951;
+    --accent-2: #ffc226;
+    --blue: #3f80fd;
+    --violet: #6a35ff;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--ground); }
+  body { margin: 0; color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; background: var(--ground); }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: inherit; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+
+  .sheet { max-width: 1180px; margin: 0 auto; padding: 0 56px; position: relative; z-index: 1; }
+  @media (max-width: 720px) { .sheet { padding: 0 22px; } }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16,0.8,0.2,1), transform 0.8s cubic-bezier(0.16,0.8,0.2,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ============ NAV (reduziert — Funnel: keine Ablenkung) ============ */
+  nav { position: relative; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 30px 0; }
+  .mark { display: flex; align-items: center; gap: 9px; font-family: var(--sans); font-weight: 700; font-size: 16px; letter-spacing: -0.01em; }
+  .mark .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 12px 2px rgba(255,57,81,0.6); }
+  .nav-note { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* ============ HERO ============ */
+  .hero { position: relative; min-height: 88vh; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 70px; align-items: center; padding: 40px 0 80px; overflow: visible; }
+  @media (max-width: 900px) { .hero { grid-template-columns: 1fr; gap: 50px; min-height: 0; padding-top: 20px; } }
+  .hero-eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; color: var(--accent-2); margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
+  .hero-eyebrow::before { content: ""; width: 30px; height: 1px; background: var(--accent-2); }
+  .hero h1 { font-family: var(--sans); font-weight: 800; letter-spacing: -0.03em; line-height: 0.99; margin: 0; font-size: clamp(38px, 5vw, 72px); max-width: 15ch; text-wrap: balance; }
+  .hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  .hero-sub { font-family: var(--serif); font-style: italic; font-size: clamp(18px, 1.8vw, 22px); line-height: 1.55; color: var(--ink-dim); max-width: 38ch; margin: 30px 0 0; }
+  .hero-points { margin: 30px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .hero-points li { font-size: 14.5px; color: var(--ink-dim); padding-left: 24px; position: relative; }
+  .hero-points li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--accent-2); font-weight: 700; }
+
+  /* ============ DOC MOCK + FORM ============ */
+  .grab-card { background: #0d0d14; border: 1px solid var(--line); border-radius: 20px; padding: 30px; box-shadow: 0 50px 100px -50px rgba(0,0,0,0.7); }
+  .doc-mock { position: relative; background: linear-gradient(165deg, #14100a, #0d0d14 75%); border: 1px solid rgba(255,194,38,0.25); border-radius: 14px; padding: 26px 24px; margin-bottom: 24px; }
+  .doc-mock .dm-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--accent-2); border: 1px solid rgba(255,194,38,0.35); background: rgba(255,194,38,0.08); border-radius: 100px; padding: 4px 12px; text-transform: uppercase; margin-bottom: 16px; }
+  .doc-mock h3 { margin: 0 0 16px; font-size: 19px; font-weight: 800; }
+  .doc-row { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px dashed var(--line); font-size: 13px; color: var(--ink-dim); }
+  .doc-row:last-of-type { border-bottom: none; }
+  .doc-row .box { width: 15px; height: 15px; border: 1.5px solid var(--accent-2); border-radius: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--accent-2); }
+  .doc-pages { position: absolute; top: 20px; right: 22px; font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.08em; }
+  .form-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin-bottom: 12px; }
+  .form-field { display: flex; align-items: center; gap: 10px; background: rgba(245,244,242,0.05); border: 1px solid var(--line-strong); border-radius: 100px; padding: 15px 20px; font-size: 14px; color: var(--ink-faint); margin-bottom: 14px; }
+  .btn-primary { width: 100%; justify-content: center; font-size: 15.5px; font-weight: 700; color: #fff; text-decoration: none; background: var(--accent); padding: 17px 32px; border-radius: 100px; display: inline-flex; align-items: center; gap: 12px; box-shadow: 0 20px 50px -18px rgba(255,57,81,0.65); transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.3s ease; }
+  .btn-primary:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 26px 60px -16px rgba(255,57,81,0.75); }
+  .btn-primary svg { width: 15px; height: 15px; }
+  .form-privacy { margin-top: 14px; font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); line-height: 1.6; text-align: center; }
+
+  /* ============ SECTION SHELL ============ */
+  .band { position: relative; padding: 110px 0; }
+  .band.tint-amber { isolation: isolate; }
+  .band.tint-amber::before { content: ""; position: absolute; top: 0; left: 50%; width: 100vw; height: 100%; transform: translateX(-50%); z-index: -1; pointer-events: none; background: linear-gradient(180deg, transparent, rgba(255,194,38,0.09) 35%, rgba(255,194,38,0.09) 65%, transparent); }
+  .band-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-bottom: 60px; flex-wrap: wrap; }
+  .band-tag { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; margin-bottom: 20px; display: block; }
+  .band-title { font-family: var(--sans); font-weight: 800; letter-spacing: -0.025em; font-size: clamp(30px, 4vw, 52px); line-height: 1.03; margin: 0; max-width: 16ch; text-wrap: balance; }
+  .band-title em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  .band-note { font-size: 15.5px; line-height: 1.7; color: var(--ink-dim); max-width: 34ch; }
+
+  /* ============ FACT GRID (Inhalt) ============ */
+  .fact-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  @media (max-width: 780px) { .fact-grid { grid-template-columns: 1fr; } }
+  .fact-cell { background: #0d0d14; padding: 30px 26px; display: flex; flex-direction: column; gap: 11px; transition: background 0.25s ease; }
+  .fact-cell:hover { background: #100d13; }
+  .fact-cell .fl { font-family: var(--mono); font-size: 10.5px; color: var(--accent-2); letter-spacing: 0.08em; text-transform: uppercase; }
+  .fact-cell h4 { margin: 0; font-size: 17px; font-weight: 700; }
+  .fact-cell p { margin: 0; font-size: 13.5px; line-height: 1.6; color: var(--ink-dim); }
+
+  /* ============ FAQ ============ */
+  .faq-list { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .faq-item { background: #0d0d14; }
+  .faq-item summary { list-style: none; cursor: pointer; padding: 24px 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: 15.5px; font-weight: 600; -webkit-tap-highlight-color: transparent; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary .fplus { width: 20px; height: 20px; position: relative; flex-shrink: 0; }
+  .faq-item summary .fplus::before, .faq-item summary .fplus::after { content: ""; position: absolute; background: var(--ink-dim); transition: opacity 0.25s ease, transform 0.25s ease; }
+  .faq-item summary .fplus::before { top: 9px; left: 2px; right: 2px; height: 1.5px; }
+  .faq-item summary .fplus::after { left: 9px; top: 2px; bottom: 2px; width: 1.5px; }
+  .faq-item[open] summary .fplus::after { opacity: 0; transform: rotate(90deg); }
+  .faq-item[open] summary { color: var(--accent); }
+  .faq-item p { margin: 0; padding: 0 28px 24px; font-size: 14.5px; line-height: 1.7; color: var(--ink-dim); max-width: 60ch; }
+
+  /* ============ CLOSING CTA ============ */
+  .close-cta { position: relative; padding: 130px 0; text-align: center; overflow: hidden; }
+  .close-cta h2 { font-family: var(--sans); font-weight: 800; letter-spacing: -0.03em; font-size: clamp(36px, 6vw, 80px); line-height: 0.98; margin: 0 auto; max-width: 16ch; text-wrap: balance; }
+  .close-cta h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  .close-cta .btn-primary { width: auto; margin-top: 44px; }
+  .close-glow { position: absolute; top: 50%; left: 50%; width: 800px; height: 400px; transform: translate(-50%,-50%); background: radial-gradient(ellipse, rgba(255,57,81,0.18), transparent 70%); pointer-events: none; }
+
+  /* ============ FOOTER (reduziert — Funnel) ============ */
+  footer { border-top: 1px solid var(--line); padding: 40px 0; display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); flex-wrap: wrap; gap: 14px; }
+  footer a { color: var(--ink-faint); text-decoration: none; margin-left: 20px; }
+  footer a:hover { color: var(--ink-dim); }
+
+  .note { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 30; font-family: var(--mono); font-size: 11px; color: var(--ink-faint); background: rgba(7,7,12,0.8); backdrop-filter: blur(6px); border: 1px solid var(--line-strong); border-radius: 100px; padding: 9px 18px; white-space: nowrap; }
+  @media (max-width: 640px) { .note { font-size: 9.5px; white-space: normal; text-align: center; width: 86%; } }
+</style>
+
+<div class="sheet">
+  <nav>
+    <div class="mark"><span class="dot"></span>PIXEL56</div>
+    <span class="nav-note">Kostenlose Ressource</span>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <div class="hero-eyebrow">FREEBIE · SEO-CHECKLISTE</div>
+      <h1>Wird deine Website bei Google <em>gefunden?</em></h1>
+      <p class="hero-sub">Die SEO-Checkliste zum Selbst-Abhaken — dieselben Punkte, die wir bei jedem Kundenprojekt prüfen. Kostenlos als PDF.</p>
+      <ul class="hero-points">
+        <li>Alle technischen Grundlagen, die Google erwartet</li>
+        <li>Lokales SEO: Google Business Profil richtig nutzen</li>
+        <li>Sofort umsetzbar — ohne Vorkenntnisse, ohne Agentur</li>
+      </ul>
+    </div>
+    <div class="grab-card reveal in">
+      <div class="doc-mock">
+        <span class="doc-pages">12 SEITEN · PDF</span>
+        <span class="dm-tag">Checkliste</span>
+        <h3>SEO-Checkliste</h3>
+        <div class="doc-row"><span class="box">✓</span>Ladezeit unter 3 Sekunden</div>
+        <div class="doc-row"><span class="box">✓</span>Mobile Darstellung fehlerfrei</div>
+        <div class="doc-row"><span class="box"></span>Google Business Profil vollständig</div>
+        <div class="doc-row"><span class="box"></span>Meta-Titel &amp; Beschreibungen gesetzt</div>
+        <div class="doc-row"><span class="box"></span>…und 26 weitere Prüfpunkte</div>
+      </div>
+      <div class="form-label">Wohin dürfen wir die Checkliste schicken?</div>
+      <div class="form-field">deine@email.de</div>
+      <a class="btn-primary" href="#">Kostenlos herunterladen <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="form-privacy">Kein Spam. Abmeldung jederzeit mit einem Klick. Datenschutz gilt.</div>
+    </div>
+  </header>
+</div>
+
+<div class="sheet">
+  <section class="band tint-amber">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">01 — Was drin ist</span>
+        <h2 class="band-title">Drei Bereiche, <em>30 Prüfpunkte</em></h2>
+      </div>
+      <p class="band-note">Keine Theorie-Abhandlung — eine Liste zum Durchgehen, Punkt für Punkt.</p>
+    </div>
+    <div class="fact-grid reveal">
+      <div class="fact-cell"><span class="fl">Teil 1</span><h4>Technisches Fundament</h4><p>Ladezeit, mobile Darstellung, Struktur — die Basis, ohne die kein Ranking entsteht.</p></div>
+      <div class="fact-cell"><span class="fl">Teil 2</span><h4>Lokale Sichtbarkeit</h4><p>Google Business Profil, einheitliche Adressdaten, Bewertungen als Rankingfaktor.</p></div>
+      <div class="fact-cell"><span class="fl">Teil 3</span><h4>Inhalte &amp; Pflege</h4><p>Meta-Daten, Seitentitel und der Rhythmus, der Rankings hält statt verlieren lässt.</p></div>
+    </div>
+  </section>
+
+  <section class="band" style="padding-top: 0;">
+    <div class="band-head reveal">
+      <div>
+        <span class="band-tag">02 — Häufige Fragen</span>
+        <h2 class="band-title">Bevor du <em>lädst</em></h2>
+      </div>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>Was kostet die Checkliste?<span class="fplus"></span></summary>
+        <p>Nichts. Du bekommst sie kostenlos per E-Mail — im Gegenzug landest du auf unserem Verteiler, von dem du dich jederzeit mit einem Klick abmelden kannst.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Brauche ich Vorkenntnisse?<span class="fplus"></span></summary>
+        <p>Nein. Jeder Prüfpunkt ist so erklärt, dass du ihn ohne SEO-Wissen selbst checken kannst — inklusive kostenloser Tools, wo nötig.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Und wenn ich bei Punkten nicht weiterkomme?<span class="fplus"></span></summary>
+        <p>Dann kannst du uns jederzeit unverbindlich fragen — das kostenlose Erstgespräch gilt auch für Checklisten-Fragen. Aber es gibt keinerlei Verpflichtung.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="close-cta reveal">
+    <div class="close-glow"></div>
+    <h2>Hol dir die <em>Checkliste.</em></h2>
+    <a class="btn-primary" href="#">Kostenlos herunterladen <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </section>
+
+  <footer>
+    <div>© Pixel56 — Freier Entwurf, nicht live</div>
+    <div><a href="#">Impressum</a><a href="#">Datenschutz</a></div>
+  </footer>
+</div>
+
+<div class="note">Freebie-Vorlage — gilt auch für KI-Agenten-Checkliste &amp; Tagesplaner</div>
+
+<script>
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else { revealEls.forEach(function (el) { el.classList.add('in'); }); }
+</script>
