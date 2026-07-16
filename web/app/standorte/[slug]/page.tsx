@@ -102,6 +102,12 @@ export default async function StandortPage({ params }: Props) {
         <SiteNav crumb={{ section: "Standort", page: `Webdesign in ${ort.stadt}` }} />
 
         <header className="hero">
+          {ort.heroBild && (
+            <div className="hero-scenic" aria-hidden="true">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={ort.heroBild} alt="" />
+            </div>
+          )}
           <PulseField label1={ort.koordinaten} label2="// SICHTBARKEIT AKTIV" />
           <div className="hero-eyebrow">STANDORT {ort.stadt.toUpperCase()} · WEBDESIGN</div>
           <h1>

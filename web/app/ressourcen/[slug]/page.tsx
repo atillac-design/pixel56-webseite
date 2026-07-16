@@ -39,8 +39,8 @@ export default async function RessourcePage({ params }: Props) {
       <div className="sheet">
         <nav className="site-nav">
           <Link className="mark" href="/">
-            <span className="dot" />
-            PIXEL56
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/bilder/logo-pixel56.webp" alt="Pixel56" />
           </Link>
           <span className="nav-note">Kostenlose Ressource</span>
         </nav>
@@ -60,17 +60,24 @@ export default async function RessourcePage({ params }: Props) {
             </ul>
           </div>
           <div className="grab-card reveal in" id="download">
-            <div className="doc-mock">
-              <span className="doc-pages">{res.docPages}</span>
-              <span className="dm-tag">{res.docTag}</span>
-              <h3>{res.docTitle}</h3>
-              {res.docRows.map((row) => (
-                <div className="doc-row" key={row.text}>
-                  <span className="box">{row.checked ? "✓" : ""}</span>
-                  {row.text}
-                </div>
-              ))}
-            </div>
+            {res.mockupBild ? (
+              <div className="grab-mockup">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={res.mockupBild} alt={`${res.docTitle} — Vorschau`} />
+              </div>
+            ) : (
+              <div className="doc-mock">
+                <span className="doc-pages">{res.docPages}</span>
+                <span className="dm-tag">{res.docTag}</span>
+                <h3>{res.docTitle}</h3>
+                {res.docRows.map((row) => (
+                  <div className="doc-row" key={row.text}>
+                    <span className="box">{row.checked ? "✓" : ""}</span>
+                    {row.text}
+                  </div>
+                ))}
+              </div>
+            )}
             <FreebieForm
               quelle={res.slug}
               label={res.docTag === "Vorlage" ? "die Vorlage" : "die Checkliste"}

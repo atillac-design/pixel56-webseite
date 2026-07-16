@@ -35,7 +35,7 @@ const faqs = [
 
 const reviews = [
   { text: "Man merkt sofort: Hier spricht man mit dem, der die Arbeit auch macht. Keine Übergaben, kein Stille-Post-Effekt.", who: "CASS Schulungen" },
-  { text: "Ehrliche Beratung von Anfang an — uns wurde sogar von einer Leistung abgeraten, die wir nicht gebraucht hätten.", who: "Colak GmbH" },
+  { text: "Ehrliche Beratung von Anfang an — uns wurde sogar von einer Leistung abgeraten, die wir nicht gebraucht hätten.", who: "Colak GmbH", img: "/bilder/person-nalan-colak.webp" },
   { text: "Seit Jahren derselbe Ansprechpartner, immer erreichbar. Das findet man selten.", who: "MA-Transporte" },
 ];
 
@@ -101,7 +101,10 @@ export default function UeberUnsPage() {
             <div className="reveal">
               <div className="profile-mock">
                 <div className="pm-top">
-                  <div className="pm-avatar">AC</div>
+                  <div className="pm-avatar">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/bilder/team-atilla.webp" alt="Atilla Ciftcioglu" />
+                  </div>
                   <div className="pm-id">
                     <b>Atilla Ciftcioglu</b>
                     <span>

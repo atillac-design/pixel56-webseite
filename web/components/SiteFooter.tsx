@@ -7,8 +7,8 @@ export default function SiteFooter() {
       <div className="footer-grid">
         <div className="footer-brand">
           <Link className="mark" href="/">
-            <span className="dot" />
-            PIXEL56
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/bilder/logo-pixel56.webp" alt="Pixel56" />
           </Link>
           <p>
             {site.address}. Digitale Auftritte für KMUs, Coaches, Shops und

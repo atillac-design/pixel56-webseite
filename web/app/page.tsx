@@ -80,9 +80,9 @@ const faqs = [
 ];
 
 const reviews = [
-  { text: "Alles aus einer Hand — Website, Ads, Content. Kein Hin- und Herschieben zwischen Dienstleistern mehr.", who: "Oktay Cömertler" },
+  { text: "Alles aus einer Hand — Website, Ads, Content. Kein Hin- und Herschieben zwischen Dienstleistern mehr.", who: "Oktay Cömertler", img: "/bilder/person-oktay-coemertler.webp" },
   { text: "Persönlich erreichbar, schnelle Antworten, ehrliche Einschätzungen. Genau das haben wir gesucht.", who: "CASS Schulungen" },
-  { text: "Messbare Ergebnisse statt leerer Versprechen — und auch Jahre später noch derselbe Ansprechpartner.", who: "Colak GmbH" },
+  { text: "Messbare Ergebnisse statt leerer Versprechen — und auch Jahre später noch derselbe Ansprechpartner.", who: "Colak GmbH", img: "/bilder/person-nalan-colak.webp" },
 ];
 
 export default function HomePage() {

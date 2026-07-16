@@ -206,7 +206,7 @@ export function Stepper({ steps, six = false }: { steps: Step[]; six?: boolean }
   );
 }
 
-export type Review = { text: string; who: string };
+export type Review = { text: string; who: string; img?: string };
 
 export function Reviews({ reviews }: { reviews: Review[] }) {
   return (
@@ -225,7 +225,15 @@ export function Reviews({ reviews }: { reviews: Review[] }) {
           <div className="review-card" key={r.who}>
             <div className="rc-stars">★★★★★</div>
             <p>„{r.text}“</p>
-            <div className="rc-who">{r.who}</div>
+            {r.img ? (
+              <div className="rc-person">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={r.img} alt={r.who} />
+                <div className="rc-who">{r.who}</div>
+              </div>
+            ) : (
+              <div className="rc-who">{r.who}</div>
+            )}
           </div>
         ))}
       </div>

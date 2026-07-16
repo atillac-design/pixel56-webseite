@@ -19,6 +19,8 @@ export type Ressource = {
   docPages: string;
   docTitle: string;
   docRows: DocRow[];
+  /** Optionales Produkt-Mockup (Pfad unter public/) — ersetzt die abstrakte Dokument-Karte. */
+  mockupBild?: string;
   inhaltTag: string;
   inhaltTitle: string;
   inhaltTitleEm: string;
@@ -52,6 +54,7 @@ export const ressourcen: Ressource[] = [
       { checked: false, text: "Meta-Titel & Beschreibungen gesetzt" },
       { checked: false, text: "…und 26 weitere Prüfpunkte" },
     ],
+    mockupBild: "/bilder/freebie-seo-ebook-transparent.webp",
     inhaltTag: "01 — Was drin ist",
     inhaltTitle: "Drei Bereiche, ",
     inhaltTitleEm: "30 Prüfpunkte",
@@ -91,6 +94,7 @@ export const ressourcen: Ressource[] = [
       { checked: false, text: "Datenschutz-Rahmen geklärt" },
       { checked: false, text: "…und weitere Prüfpunkte" },
     ],
+    mockupBild: "/bilder/freebie-ki-ebook.webp",
     inhaltTag: "01 — Was drin ist",
     inhaltTitle: "Drei Bereiche, ",
     inhaltTitleEm: "ehrlich eingeordnet",

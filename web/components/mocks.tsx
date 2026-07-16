@@ -66,13 +66,15 @@ export function FeedMock() {
   );
 }
 
-/** Vertikales Kurzvideo (Reel). */
-export function ReelMock({ caption = "Ein Tag bei uns im Betrieb" }: { caption?: string }) {
+/** Vertikales Kurzvideo (Reel) — optional mit echtem Video statt Farbverlauf. */
+export function ReelMock({ caption = "Ein Tag bei uns im Betrieb", videoSrc }: { caption?: string; videoSrc?: string }) {
   return (
     <div className="reel-mock">
       <div className="rl-frame">
-        <div className="rl-video" />
-        <div className="rl-play" />
+        <div className="rl-video">
+          {videoSrc && <video src={videoSrc} autoPlay muted loop playsInline preload="metadata" />}
+        </div>
+        {!videoSrc && <div className="rl-play" />}
         <div className="rl-side">
           <div className="rl-ic">
             {HeartIcon}

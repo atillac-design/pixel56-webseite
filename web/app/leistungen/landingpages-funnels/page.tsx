@@ -75,7 +75,7 @@ const faqs = [
 const reviews = [
   { text: "Die Anmeldestrecke ist so viel klarer geworden. Deutlich mehr abgeschlossene Anmeldungen.", who: "Stark ins Neue gGmbH" },
   { text: "Endlich landet die Anzeige nicht mehr auf der Startseite. Der Unterschied ist sofort spürbar.", who: "Van den Berg Gruppe" },
-  { text: "Kurzes Formular, klare Führung — genau das, was wir gebraucht haben.", who: "Oktay Cömertler" },
+  { text: "Kurzes Formular, klare Führung — genau das, was wir gebraucht haben.", who: "Oktay Cömertler", img: "/bilder/person-oktay-coemertler.webp" },
 ];
 
 export default function FunnelsPage() {

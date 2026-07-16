@@ -70,9 +70,9 @@ const faqs = [
 ];
 
 const reviews = [
-  { text: "Maßgeschneidert, professionell, auf den Punkt — genau das haben wir gebraucht.", who: "Oktay Cömertler" },
+  { text: "Maßgeschneidert, professionell, auf den Punkt — genau das haben wir gebraucht.", who: "Oktay Cömertler", img: "/bilder/person-oktay-coemertler.webp" },
   { text: "Die neue Website hat sich in wenigen Wochen ausgezahlt. Klare Empfehlung.", who: "Stark ins Neue gGmbH" },
-  { text: "Schnell, zuverlässig, und auch nach dem Launch immer erreichbar.", who: "Colak GmbH" },
+  { text: "Schnell, zuverlässig, und auch nach dem Launch immer erreichbar.", who: "Colak GmbH", img: "/bilder/person-nalan-colak.webp" },
 ];
 
 export default function WebdesignPage() {

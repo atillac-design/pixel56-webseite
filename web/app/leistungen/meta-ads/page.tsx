@@ -69,7 +69,7 @@ const faqs = [
 const reviews = [
   { text: "56 % Wachstum, und wir wissen genau, woher es kommt. Absolute Empfehlung.", who: "Van den Berg Gruppe" },
   { text: "Auch für die Mitarbeitersuche über Meta Ads — hätten wir nicht erwartet, dass das so gut läuft.", who: "GM-Dachdecker" },
-  { text: "Konstante Betreuung statt einmal aufgesetzt und liegen gelassen.", who: "Colak GmbH" },
+  { text: "Konstante Betreuung statt einmal aufgesetzt und liegen gelassen.", who: "Colak GmbH", img: "/bilder/person-nalan-colak.webp" },
 ];
 
 export default function MetaAdsPage() {

@@ -156,7 +156,10 @@ export default function ContentPage() {
               </ul>
             </div>
             <div className="reveal">
-              <ReelMock />
+              <ReelMock
+                videoSrc="/videos/reel-handwerker-tipps.mp4"
+                caption="5 Tipps für mehr Kundenanfragen"
+              />
             </div>
           </div>
         </section>

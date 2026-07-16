@@ -24,16 +24,18 @@ type Projekt = {
   text: string;
   tags: string;
   year: string;
+  /** Echter Projekt-Screenshot (Pfad unter public/) — ersetzt das abstrakte Browser-Mockup. */
+  img?: string;
 };
 
 const projekte: Projekt[] = [
-  { variant: "ic-3", barWidth: 60, cat: "Stark ins Neue gGmbH", title: "Vertrauen und Wirkung für eine Bildungsinitiative", text: "Kompletter Website-Relaunch für eine gemeinnützige Organisation im Bereich mentale Gesundheit — SEO-optimiert, DSGVO-konform, mit klarer Nutzerführung zur Kursanmeldung. Ergebnis: deutlich mehr Kursanmeldungen und Newsletter-Abos.", tags: "Webdesign · SEO · Funnel", year: "2025" },
+  { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-stark-ins-neue.webp", cat: "Stark ins Neue gGmbH", title: "Vertrauen und Wirkung für eine Bildungsinitiative", text: "Kompletter Website-Relaunch für eine gemeinnützige Organisation im Bereich mentale Gesundheit — SEO-optimiert, DSGVO-konform, mit klarer Nutzerführung zur Kursanmeldung. Ergebnis: deutlich mehr Kursanmeldungen und Newsletter-Abos.", tags: "Webdesign · SEO · Funnel", year: "2025" },
   { variant: "ic-1", barWidth: 52, cat: "GM-Dachdecker Meisterbetrieb", title: "Handwerkskunst digital erlebbar gemacht", text: "Neue Website inklusive Karriereportal — Bewerber laden ihre Unterlagen direkt hoch, ohne E-Mail-Programm. Ergebnis: höhere Sichtbarkeit und spürbar leichtere Mitarbeitergewinnung.", tags: "Webdesign · Karriereportal · Recruiting", year: "2023" },
-  { variant: "ic-4", barWidth: 65, cat: "Van den Berg Gruppe", title: "56 % Wachstum durch gezielte Facebook Ads", text: "Kontinuierlicher Kampagnenaufbau mit konsequenter Budget-Steuerung nach Datenlage statt Bauchgefühl — auch bei reduziertem Budget hielt der Anfrage-Effekt an.", tags: "Meta Ads · Landingpage · Betreuung", year: "laufend" },
-  { variant: "ic-2", barWidth: 70, cat: "MA-Transporte", title: "Dienstleistungsqualität digital sichtbar gemacht", text: "Neue, repräsentative Website plus laufende Social-Media-Betreuung für ein Transportunternehmen — gestärkte Markenwahrnehmung und mehr Kundenengagement.", tags: "Webdesign · Social Media", year: "seit 2019" },
+  { variant: "ic-4", barWidth: 65, img: "/bilder/projekt-van-den-berg.webp", cat: "Van den Berg Gruppe", title: "56 % Wachstum durch gezielte Facebook Ads", text: "Kontinuierlicher Kampagnenaufbau mit konsequenter Budget-Steuerung nach Datenlage statt Bauchgefühl — auch bei reduziertem Budget hielt der Anfrage-Effekt an.", tags: "Meta Ads · Landingpage · Betreuung", year: "laufend" },
+  { variant: "ic-2", barWidth: 70, img: "/bilder/projekt-ma-transporte.webp", cat: "MA-Transporte", title: "Dienstleistungsqualität digital sichtbar gemacht", text: "Neue, repräsentative Website plus laufende Social-Media-Betreuung für ein Transportunternehmen — gestärkte Markenwahrnehmung und mehr Kundenengagement.", tags: "Webdesign · Social Media", year: "seit 2019" },
   { variant: "ic-7", barWidth: 55, cat: "Oktay Cömertler", title: "Full-Service für Abbruch, Tief- & Kanalbau", text: "Maßgeschneidertes Branding und Webdesign, entwickelt aus umfassender Markt- und Unternehmensanalyse — für Desktop und mobil gleichermaßen durchdacht.", tags: "Branding · Webdesign", year: "seit 2022" },
-  { variant: "ic-6", barWidth: 48, cat: "CASS Schulungen", title: "Bildung und Sicherheit digital vereint", text: "Branding und Webdesign für Luftsicherheitsschulungen — seriöser Auftritt für ein Thema, bei dem Vertrauen alles ist.", tags: "Branding · Webdesign · Social Media", year: "2023" },
-  { variant: "ic-5", barWidth: 62, cat: "Sportler für Kinderherzen", title: "Marketing & Branding für eine Spendengala", text: "Komplette Kampagne zugunsten krebskranker Kinder — Sichtbarkeit für den guten Zweck, von der Marke bis zur Bewerbung des Events.", tags: "Branding · Event · Kampagne", year: "2022" },
+  { variant: "ic-6", barWidth: 48, img: "/bilder/projekt-cass.webp", cat: "CASS Schulungen", title: "Bildung und Sicherheit digital vereint", text: "Branding und Webdesign für Luftsicherheitsschulungen — seriöser Auftritt für ein Thema, bei dem Vertrauen alles ist.", tags: "Branding · Webdesign · Social Media", year: "2023" },
+  { variant: "ic-5", barWidth: 62, img: "/bilder/projekt-kinderherzen.webp", cat: "Sportler für Kinderherzen", title: "Marketing & Branding für eine Spendengala", text: "Komplette Kampagne zugunsten krebskranker Kinder — Sichtbarkeit für den guten Zweck, von der Marke bis zur Bewerbung des Events.", tags: "Branding · Event · Kampagne", year: "2022" },
   { variant: "ic-8", barWidth: 58, cat: "Burgerfabrik", title: "Reels direkt aus dem echten Betrieb", text: "Kurzvideos aus dem laufenden Ladenalltag statt gestellter Werbeaufnahmen — Content, der zeigt, wie es dort tatsächlich zugeht.", tags: "Reels · Social Content", year: "laufend" },
 ];
 
@@ -98,17 +100,24 @@ export default function ProjektePage() {
           <div className="proj-grid reveal">
             {projekte.map((p) => (
               <div className="proj-card" key={p.cat}>
-                <div className="ic-chrome">
-                  <span />
-                  <span />
-                  <span />
-                </div>
-                <div className={`ic-body ${p.variant}`}>
-                  <div className="ic-bar ic-bar-lg" />
-                  <div className="ic-bar ic-bar-sm" />
-                  <div className="ic-bar ic-bar-sm" style={{ width: `${p.barWidth}%` }} />
-                  <div className="ic-btn" />
-                </div>
+                {p.img ? (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img className="pc-img" src={p.img} alt={`Projekt: ${p.cat}`} />
+                ) : (
+                  <>
+                    <div className="ic-chrome">
+                      <span />
+                      <span />
+                      <span />
+                    </div>
+                    <div className={`ic-body ${p.variant}`}>
+                      <div className="ic-bar ic-bar-lg" />
+                      <div className="ic-bar ic-bar-sm" />
+                      <div className="ic-bar ic-bar-sm" style={{ width: `${p.barWidth}%` }} />
+                      <div className="ic-btn" />
+                    </div>
+                  </>
+                )}
                 <div className="pc-body">
                   <span className="rc-cat">{p.cat}</span>
                   <h4>{p.title}</h4>

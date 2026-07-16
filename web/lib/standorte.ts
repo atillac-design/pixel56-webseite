@@ -12,6 +12,8 @@ export type Standort = {
   koordinaten: string;
   heroSub: string;
   warumJetztLead: string;
+  /** Optionales Stadtmotiv im Hero (Pfad unter public/). */
+  heroBild?: string;
 };
 
 export const standorte: Standort[] = [
@@ -23,6 +25,7 @@ export const standorte: Standort[] = [
       "Eine Website ist kein Prospekt. Sie ist der Moment, in dem jemand entscheidet, ob er anruft — oder weiterscrollt.",
     warumJetztLead:
       "Bevor ein Kunde in Koblenz anruft, sucht er zuerst online. Er vergleicht, urteilt in Sekunden und merkt sich niemanden zweimal. Eine Website, die das nicht mitdenkt, verliert nicht morgen — sie verliert heute, nur unbemerkt.",
+    heroBild: "/bilder/koblenz-rhein.webp",
   },
 ];
 

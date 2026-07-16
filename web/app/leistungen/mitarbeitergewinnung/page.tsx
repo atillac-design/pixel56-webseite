@@ -74,8 +74,8 @@ const faqs = [
 
 const reviews = [
   { text: "Endlich bekommen wir Bewerbungen, ohne dass Kandidaten unterwegs abspringen.", who: "GM-Dachdecker" },
-  { text: "Professionell, schnell umgesetzt — genau das, was wir gebraucht haben.", who: "Oktay Cömertler" },
-  { text: "Auch nach dem Launch immer erreichbar. Kann ich nur empfehlen.", who: "Colak GmbH" },
+  { text: "Professionell, schnell umgesetzt — genau das, was wir gebraucht haben.", who: "Oktay Cömertler", img: "/bilder/person-oktay-coemertler.webp" },
+  { text: "Auch nach dem Launch immer erreichbar. Kann ich nur empfehlen.", who: "Colak GmbH", img: "/bilder/person-nalan-colak.webp" },
 ];
 
 export default function RecruitingPage() {
