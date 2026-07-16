@@ -5,6 +5,9 @@ import SiteFooter from "@/components/SiteFooter";
 import { ArrowIcon, PulseField, WaMock, FaqList } from "@/components/ui";
 import { getStellen } from "@/lib/sanity";
 
+// CMS-Inhalte spätestens nach 5 Minuten übernehmen, ohne Neu-Deployment.
+export const revalidate = 300;
+
 export const metadata: Metadata = {
   title: "Karriere",
   description:
@@ -33,8 +36,11 @@ const faqs = [
 
 export default async function KarrierePage() {
   const cmsStellen = await getStellen();
+  // Solange das CMS leer ist, bleiben die Fallback-Stellen sichtbar.
   const stellen =
-    cmsStellen?.map((s) => ({ title: s.titel, meta: s.pensum })) ?? stellenFallback;
+    cmsStellen && cmsStellen.length > 0
+      ? cmsStellen.map((s) => ({ title: s.titel, meta: s.pensum }))
+      : stellenFallback;
 
   return (
     <>

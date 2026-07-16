@@ -5,6 +5,9 @@ import SiteFooter from "@/components/SiteFooter";
 import { PulseField, CloseCta } from "@/components/ui";
 import { getBlogBeitraege } from "@/lib/sanity";
 
+// CMS-Inhalte spätestens nach 5 Minuten übernehmen, ohne Neu-Deployment.
+export const revalidate = 300;
+
 export const metadata: Metadata = {
   title: "Blog",
   description:
@@ -29,14 +32,17 @@ const freebies = [
 
 export default async function BlogPage() {
   const beitraege = await getBlogBeitraege();
+  // Solange das CMS leer ist, bleiben die Fallback-Artikel sichtbar.
   const artikel =
-    beitraege?.map((b) => ({
-      cover: b.coverFarbe,
-      tag: b.kategorie,
-      title: b.titel,
-      text: b.teaser,
-      meta: `${b.kategorie} · ${b.lesezeit} Min. Lesezeit`,
-    })) ?? artikelFallback;
+    beitraege && beitraege.length > 0
+      ? beitraege.map((b) => ({
+          cover: b.coverFarbe,
+          tag: b.kategorie,
+          title: b.titel,
+          text: b.teaser,
+          meta: `${b.kategorie} · ${b.lesezeit} Min. Lesezeit`,
+        }))
+      : artikelFallback;
 
   return (
     <>
