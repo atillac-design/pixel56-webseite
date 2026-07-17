@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Reveal from "@/components/Reveal";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.pixel56.de"),
@@ -32,6 +33,7 @@ export default function RootLayout({
     <html lang="de">
       <body>
         {children}
+        <WhatsAppFloat />
         <Reveal />
       </body>
     </html>

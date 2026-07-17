@@ -117,9 +117,9 @@ export default async function StandortPage({ params }: Props) {
           </h1>
           <p className="hero-sub">{ort.heroSub}</p>
           <div className="hero-actions">
-            <Link className="btn-primary" href="/kontakt">
+            <a className="btn-primary" href="https://calendly.com/pixel56/15min" target="_blank" rel="noopener">
               Kostenloses Erstgespräch <ArrowIcon />
-            </Link>
+            </a>
             <Link className="btn-text" href="#beweis">
               Warum {ort.stadt} anders tickt ↓
             </Link>

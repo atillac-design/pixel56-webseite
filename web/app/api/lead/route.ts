@@ -32,7 +32,10 @@ export async function POST(request: Request) {
     );
   }
 
-  const groupId = process.env.MAILERLITE_GROUP_ID;
+  // Gruppen-Zuordnung je Freebie: MAILERLITE_GROUP_SEO_CHECKLISTE usw.,
+  // sonst die allgemeine MAILERLITE_GROUP_ID.
+  const envKey = `MAILERLITE_GROUP_${quelle.toUpperCase().replace(/-/g, "_")}`;
+  const groupId = process.env[envKey] ?? process.env.MAILERLITE_GROUP_ID;
   const payload: Record<string, unknown> = {
     email,
     fields: { quelle },

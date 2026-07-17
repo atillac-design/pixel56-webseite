@@ -36,7 +36,8 @@ export async function POST(request: Request) {
     email,
     fields: { name, phone: telefon, quelle: "kontaktanfrage" },
   };
-  if (process.env.MAILERLITE_GROUP_ID) payload.groups = [process.env.MAILERLITE_GROUP_ID];
+  const groupId = process.env.MAILERLITE_GROUP_KONTAKTANFRAGE ?? process.env.MAILERLITE_GROUP_ID;
+  if (groupId) payload.groups = [groupId];
 
   const res = await fetch("https://connect.mailerlite.com/api/subscribers", {
     method: "POST",

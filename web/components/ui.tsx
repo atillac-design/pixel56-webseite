@@ -142,7 +142,7 @@ export function BrowserMock({ variant, barWidth = 60, noBtn = false }: { variant
   );
 }
 
-export function CloseCta({ children, ctaHref = "/kontakt", ctaLabel = "Kostenloses Erstgespräch" }: {
+export function CloseCta({ children, ctaHref = "https://calendly.com/pixel56/15min", ctaLabel = "Kostenloses Erstgespräch" }: {
   children: React.ReactNode;
   ctaHref?: string;
   ctaLabel?: string;

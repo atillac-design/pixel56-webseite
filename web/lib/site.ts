@@ -10,7 +10,8 @@ export const site = {
   email: "info@pixel56.de",
   phone: "02622 9898654",
   phoneIntl: "+4926229898654",
-  whatsapp: "https://wa.me/491785282464",
+  whatsapp: "https://wa.me/491785282464?text=Hallo%20Pixel56%2C%20ich%20habe%20eine%20Frage%20zu%20euren%20Leistungen.",
+  calendly: "https://calendly.com/pixel56/15min",
   url: "https://www.pixel56.de",
 };
 

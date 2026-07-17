@@ -100,9 +100,9 @@ export default function ContentPage() {
             Aufnahmen, die tatsächlich zu euch gehören.
           </p>
           <div className="hero-actions">
-            <Link className="btn-primary" href="/kontakt">
+            <a className="btn-primary" href="https://calendly.com/pixel56/15min" target="_blank" rel="noopener">
               Kostenloses Erstgespräch <ArrowIcon />
-            </Link>
+            </a>
             <Link className="btn-text" href="#status">
               Kennst du das? ↓
             </Link>

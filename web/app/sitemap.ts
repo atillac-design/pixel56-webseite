@@ -7,7 +7,7 @@ import { fallstudien } from "@/lib/projekte";
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  const statisch = ["", "/ueber-uns", "/projekte", "/blog", "/karriere"].map(
+  const statisch = ["", "/ueber-uns", "/projekte", "/blog", "/karriere", "/kontakt", "/standorte"].map(
     (path) => ({
       url: `${site.url}${path}`,
       lastModified,
