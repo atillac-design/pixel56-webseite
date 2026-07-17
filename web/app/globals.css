@@ -618,3 +618,31 @@ textarea.form-field:focus { border-color: var(--accent); }
 .wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 90; width: 56px; height: 56px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.35); transition: transform 0.25s cubic-bezier(0.2,0.7,0.2,1); }
 .wa-float:hover { transform: scale(1.08); }
 .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+
+/* ============ RECHTSTEXTE / LANGTEXT ============ */
+.legal { max-width: 800px; }
+.legal h2 { font-family: var(--sans); font-weight: 800; letter-spacing: -0.02em; font-size: 24px; margin: 48px 0 16px; }
+.legal h3 { font-family: var(--sans); font-weight: 700; font-size: 17px; margin: 30px 0 10px; }
+.legal p, .legal li { font-size: 15px; line-height: 1.75; color: var(--ink-dim); max-width: 75ch; }
+.legal p { margin: 0 0 14px; }
+.legal a { color: var(--accent); text-decoration: none; }
+.legal a:hover { text-decoration: underline; }
+.legal ul { margin: 0 0 16px; padding-left: 22px; }
+.legal li { margin-bottom: 6px; }
+.legal b, .legal strong { color: var(--ink); }
+.legal .legal-meta { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); margin-top: 40px; }
+
+/* ============ COOKIE-CONSENT ============ */
+.consent { position: fixed; bottom: 20px; left: 20px; right: 20px; max-width: 440px; z-index: 100; background: #0d0d14; border: 1px solid var(--line-strong); border-radius: 16px; padding: 22px 24px; box-shadow: 0 30px 70px -30px rgba(0,0,0,0.8); }
+@media (min-width: 560px) { .consent { left: 24px; right: auto; } }
+.consent p { margin: 0 0 16px; font-size: 13px; line-height: 1.65; color: var(--ink-dim); }
+.consent p a { color: var(--accent); text-decoration: none; }
+.consent p a:hover { text-decoration: underline; }
+.consent-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.consent button { font-family: var(--sans); font-size: 13px; font-weight: 700; border-radius: 100px; padding: 11px 20px; cursor: pointer; border: 1px solid var(--line-strong); transition: transform 0.2s ease, background 0.2s ease; }
+.consent button:hover { transform: translateY(-1px); }
+.consent-decline { background: transparent; color: var(--ink-dim); }
+.consent-decline:hover { color: var(--ink); }
+.consent-accept { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 12px 30px -12px rgba(255,57,81,0.6); }
+/* WhatsApp-Button höher legen, wenn Consent offen — beide unten rechts vermeiden */
+@media (max-width: 559px) { .wa-float { bottom: 150px; } }

@@ -19,9 +19,9 @@ import { CompareMock, SearchMock } from "@/components/mocks";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Suchmaschinenoptimierung (SEO)",
+  title: "SEO & Suchmaschinenoptimierung",
   description:
-    "Sichtbarkeit bei Google, die nicht von Werbebudget abhängt — technisches Fundament plus laufende Betreuung. SEO aus Bendorf bei Koblenz.",
+    "Unsichtbar bei Google? Pixel56 bringt KMUs & Handwerker mit lokaler Suchmaschinenoptimierung nach oben — organische Sichtbarkeit, die bleibt. Kostenloses SEO-Erstgespräch anfragen.",
 };
 
 const jsonLd = {
@@ -280,12 +280,10 @@ export default function SeoPage() {
             <div className="reveal">
               <span className="band-tag">08 — Zusammenarbeit</span>
               <h2 className="band-title">
-                Ein Ansprechpartner. <em>Ein Kanal.</em>
+                Deine Rankings. <em>Ein Ansprechpartner.</em>
               </h2>
               <p className="lead">
-                Kein Ticket-System, kein Callcenter, keine Rückrufbitte. Während
-                der Zusammenarbeit erreichst du einen festen Ansprechpartner
-                direkt per WhatsApp.
+                Kein Support-Ticket, keine Warteschleife. Während der laufenden SEO-Betreuung fragst du Zwischenstände und Ideen einfach direkt per WhatsApp ab — schnell und ohne Umweg.
               </p>
             </div>
             <div className="reveal">
@@ -296,7 +294,7 @@ export default function SeoPage() {
                   { from: "out", text: "Platz 3, letzten Monat noch Platz 7 — schick dir gleich die Auswertung." },
                   { from: "in", text: "👍 Perfekt, danke dir." },
                 ]}
-                footer="Antwortzeit während der Zusammenarbeit: meist unter 1 Stunde"
+                footer="Rankings, Fragen, Ideen — Antwort meist am selben Tag"
               />
             </div>
           </div>

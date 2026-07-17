@@ -20,9 +20,9 @@ import { JobMock } from "@/components/mocks";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Mitarbeitergewinnung",
+  title: "Mitarbeitergewinnung & Recruiting",
   description:
-    "Karriereseiten und Recruiting-Kampagnen mit einem Bewerbungsweg, den Menschen tatsächlich zu Ende gehen. Aus Bendorf bei Koblenz.",
+    "Karriereseiten und Recruiting-Kampagnen mit einem Bewerbungsweg ohne Umwege. Endlich passende Bewerbungen für KMUs & Handwerker. Kostenlose Beratung bei Pixel56 anfragen.",
 };
 
 const jsonLd = {
@@ -274,12 +274,10 @@ export default function RecruitingPage() {
             <div className="reveal">
               <span className="band-tag">08 — Zusammenarbeit</span>
               <h2 className="band-title">
-                Ein Ansprechpartner. <em>Ein Kanal.</em>
+                Deine Stellen. <em>Ein Ansprechpartner.</em>
               </h2>
               <p className="lead">
-                Kein Ticket-System, kein Callcenter, keine Rückrufbitte. Während
-                der Zusammenarbeit erreichst du einen festen Ansprechpartner
-                direkt per WhatsApp.
+                Kein Callcenter, keine Rückrufbitte. Stellenanzeige anpassen oder Bewerberfluss besprechen — direkt per WhatsApp, ohne Umweg über Formulare.
               </p>
             </div>
             <div className="reveal">
@@ -290,7 +288,7 @@ export default function RecruitingPage() {
                   { from: "out", text: "Klar, schick mir den neuen Text — ist heute noch online." },
                   { from: "in", text: "👍 Super, danke dir!" },
                 ]}
-                footer="Antwortzeit während der Zusammenarbeit: meist unter 1 Stunde"
+                footer="Stellen anpassen? Antwort meist unter 1 Stunde"
               />
             </div>
           </div>

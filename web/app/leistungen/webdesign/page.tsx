@@ -20,9 +20,9 @@ import { CompareMock, Funnel2 } from "@/components/mocks";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Webdesign & Onlinepräsenz",
+  title: "Webdesign für KMUs & Handwerker",
   description:
-    "Website, Landingpage oder digitale Visitenkarte — individuell gebaut statt Baukasten von der Stange. Webdesign aus Bendorf bei Koblenz.",
+    "Individuelles Webdesign statt Baukasten: Websites, die Besucher zur Anfrage führen. Für KMUs, Handwerker & Selbstständige in Koblenz und deutschlandweit. Jetzt Erstgespräch buchen.",
 };
 
 const jsonLd = {
@@ -280,10 +280,7 @@ export default function WebdesignPage() {
                 Ein Ansprechpartner. <em>Ein Kanal.</em>
               </h2>
               <p className="lead">
-                Kein Ticket-System, kein Callcenter, keine Rückrufbitte. Während
-                des Projekts erreichst du einen festen Ansprechpartner direkt per
-                WhatsApp — für schnelle Fragen genauso wie für große
-                Entscheidungen.
+                Kein Ticket-System, kein Callcenter, keine Rückrufbitte. Während des Projekts erreichst du einen festen Ansprechpartner direkt per WhatsApp — für schnelle Fragen genauso wie für große Entscheidungen.
               </p>
             </div>
             <div className="reveal">

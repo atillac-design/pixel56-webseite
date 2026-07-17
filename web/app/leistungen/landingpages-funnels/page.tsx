@@ -20,9 +20,9 @@ import { Funnel2 } from "@/components/mocks";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Landingpages & Funnels",
+  title: "Landingpages & Funnels, die konvertieren",
   description:
-    "Landingpages und Funnels, die von der Anzeige bis zur Anfrage gezielt führen — ein Ziel, keine Ablenkung. Aus Bendorf bei Koblenz.",
+    "Landingpages und Funnels mit genau einem Ziel: von der Anzeige bis zur Anfrage gezielt geführt. Mehr aus deinem Werbebudget für KMUs & Selbstständige. Jetzt Erstgespräch buchen.",
 };
 
 const jsonLd = {
@@ -273,12 +273,10 @@ export default function FunnelsPage() {
             <div className="reveal">
               <span className="band-tag">08 — Zusammenarbeit</span>
               <h2 className="band-title">
-                Ein Ansprechpartner. <em>Ein Kanal.</em>
+                Dein Funnel. <em>Kurze Wege.</em>
               </h2>
               <p className="lead">
-                Kein Ticket-System, kein Callcenter, keine Rückrufbitte. Während
-                der Zusammenarbeit erreichst du einen festen Ansprechpartner
-                direkt per WhatsApp.
+                Kein Callcenter, keine Rückrufbitte. Ob Formularfeld kürzen oder Text anpassen — du schreibst direkt per WhatsApp, und es ist meist am selben Tag erledigt.
               </p>
             </div>
             <div className="reveal">
@@ -289,7 +287,7 @@ export default function FunnelsPage() {
                   { from: "out", text: "Klar, schon umgesetzt — testest du mal kurz?" },
                   { from: "in", text: "👍 Läuft super, danke!" },
                 ]}
-                footer="Antwortzeit während der Zusammenarbeit: meist unter 1 Stunde"
+                footer="Anpassungen? Oft am selben Tag umgesetzt"
               />
             </div>
           </div>

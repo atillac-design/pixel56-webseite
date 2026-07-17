@@ -14,9 +14,9 @@ import {
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Über uns",
+  title: "Über uns — Ein Ansprechpartner statt Callcenter",
   description:
-    "Kein anonymes Team, ein fester Ansprechpartner — Pixel56, Digitalagentur in Bendorf bei Koblenz. Persönlich, regional verwurzelt, alles aus einer Hand.",
+    "Pixel56: kein anonymes Team, ein fester Ansprechpartner in Bendorf bei Koblenz. Persönlich, regional verwurzelt, alles aus einer Hand — für KMUs, Handwerker & Selbstständige.",
 };
 
 const prinzipien = [

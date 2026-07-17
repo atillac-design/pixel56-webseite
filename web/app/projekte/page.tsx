@@ -12,9 +12,9 @@ import {
 import { fallstudien } from "@/lib/projekte";
 
 export const metadata: Metadata = {
-  title: "Projekte",
+  title: "Projekte & Kundenprojekte",
   description:
-    "Echte Projekte, echte Ergebnisse — vom Dachdecker-Karriereportal bis zur Spendengala. Ausgewählte Arbeiten von Pixel56 aus Bendorf bei Koblenz.",
+    "Echte Kundenprojekte von Pixel56: Webdesign, Branding, Meta Ads & Content für KMUs und Handwerker. 16 Fallstudien mit nachvollziehbaren Ergebnissen — vom Handwerk bis Non-Profit.",
 };
 
 const reviews = [

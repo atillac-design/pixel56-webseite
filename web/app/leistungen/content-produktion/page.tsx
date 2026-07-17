@@ -20,9 +20,9 @@ import { ReelMock } from "@/components/mocks";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Content-Produktion",
+  title: "Content-Produktion & Social Media",
   description:
-    "Reels, Fotos und Social-Content direkt aus eurem Alltag — echt statt gestellt, kein Stockmaterial. Content-Produktion aus Bendorf bei Koblenz.",
+    "Reels, Fotos & Social-Media-Content direkt aus deinem Alltag — echt statt gestellt. Für KMUs & Handwerker deutschlandweit. Mehr Reichweite & Vertrauen. Kostenlose Beratung buchen.",
 };
 
 const jsonLd = {
@@ -276,12 +276,10 @@ export default function ContentPage() {
             <div className="reveal">
               <span className="band-tag">08 — Zusammenarbeit</span>
               <h2 className="band-title">
-                Ein Ansprechpartner. <em>Ein Kanal.</em>
+                Dein Content. <em>Ein fester Draht.</em>
               </h2>
               <p className="lead">
-                Kein Ticket-System, kein Callcenter, keine Rückrufbitte. Während
-                der Zusammenarbeit erreichst du einen festen Ansprechpartner
-                direkt per WhatsApp.
+                Kein Ticket-System, keine Warteschleife. Dreh-Termine, Freigaben und spontane Ideen stimmst du direkt per WhatsApp mit deinem Ansprechpartner ab.
               </p>
             </div>
             <div className="reveal">
@@ -292,7 +290,7 @@ export default function ContentPage() {
                   { from: "out", text: "Ja, Dienstag 14 Uhr passt bei mir." },
                   { from: "in", text: "👍 Perfekt, bis dann!" },
                 ]}
-                footer="Antwortzeit während der Zusammenarbeit: meist unter 1 Stunde"
+                footer="Dreh-Termine & Freigaben — schnell abgestimmt"
               />
             </div>
           </div>

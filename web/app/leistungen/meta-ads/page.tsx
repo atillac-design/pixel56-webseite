@@ -20,9 +20,9 @@ import { FeedMock } from "@/components/mocks";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Meta Ads (Facebook & Instagram)",
+  title: "Meta Ads: Facebook & Instagram Werbung",
   description:
-    "Facebook- und Instagram-Kampagnen, die Reichweite aufbauen, bevor der Bedarf entsteht — gezielt ausgesteuert und laufend optimiert. Aus Bendorf bei Koblenz.",
+    "Erfolgreiche Meta Ads für KMUs, Handwerker & Selbstständige: zielgerichtete Facebook- & Instagram-Werbung, mehr Leads & Anfragen. Kostenlose Beratung bei Pixel56 buchen.",
 };
 
 const jsonLd = {
@@ -242,12 +242,10 @@ export default function MetaAdsPage() {
             <div className="reveal">
               <span className="band-tag">07 — Zusammenarbeit</span>
               <h2 className="band-title">
-                Ein Ansprechpartner. <em>Ein Kanal.</em>
+                Deine Kampagne. <em>Direkter Draht.</em>
               </h2>
               <p className="lead">
-                Kein Ticket-System, kein Callcenter, keine Rückrufbitte. Während
-                der Zusammenarbeit erreichst du einen festen Ansprechpartner
-                direkt per WhatsApp.
+                Kein Ticket-System, kein Zwischenmanager. Neue Creatives, Zielgruppen oder Budget-Fragen klärst du direkt per WhatsApp mit deinem festen Ansprechpartner.
               </p>
             </div>
             <div className="reveal">
@@ -258,7 +256,7 @@ export default function MetaAdsPage() {
                   { from: "out", text: "Ja, hab schon 3 neue Varianten hochgeladen." },
                   { from: "in", text: "👍 Super, schau ich mir gleich an." },
                 ]}
-                footer="Antwortzeit während der Zusammenarbeit: meist unter 1 Stunde"
+                footer="Neue Creatives besprechen — Antwort meist unter 1 Stunde"
               />
             </div>
           </div>

@@ -9,9 +9,9 @@ import { getStellen } from "@/lib/sanity";
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-  title: "Karriere",
+  title: "Karriere bei Pixel56",
   description:
-    "Arbeite an Dingen, die live gehen — Jobs bei Pixel56 in Bendorf bei Koblenz oder remote. Bewerbung ohne Umwege, Antwort in wenigen Tagen.",
+    "Werde Teil von Pixel56: Jobs in Webdesign, Online-Marketing & Content für spannende KMU-Projekte — remote oder vor Ort in Bendorf bei Koblenz. Jetzt unkompliziert bewerben.",
 };
 
 const gruende = [
@@ -111,8 +111,7 @@ export default async function KarrierePage() {
               </h2>
             </div>
             <p className="band-note">
-              Die Stellen hier sind Platzhalter — im echten Aufbau wird diese
-              Liste aus dem CMS gepflegt.
+              Aktuelle Positionen — remote oder vor Ort in Bendorf bei Koblenz.
             </p>
           </div>
           <div className="job-list reveal">

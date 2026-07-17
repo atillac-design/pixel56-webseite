@@ -20,9 +20,9 @@ import { SearchMock } from "@/components/mocks";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Google Ads",
+  title: "Google Ads für KMUs",
   description:
-    "Sichtbar im Moment der Suchabsicht — Google-Ads-Kampagnen mit sauberem Tracking und Struktur statt Bauchgefühl. Aus Bendorf bei Koblenz.",
+    "Google Ads mit sauberem Tracking und Struktur statt Bauchgefühl: sichtbar im Moment der Suchabsicht. Für KMUs & Handwerker deutschlandweit. Jetzt kostenlose Beratung sichern.",
 };
 
 const jsonLd = {
@@ -276,12 +276,10 @@ export default function GoogleAdsPage() {
             <div className="reveal">
               <span className="band-tag">08 — Zusammenarbeit</span>
               <h2 className="band-title">
-                Ein Ansprechpartner. <em>Ein Kanal.</em>
+                Dein Budget. <em>Volle Transparenz.</em>
               </h2>
               <p className="lead">
-                Kein Ticket-System, kein Callcenter, keine Rückrufbitte. Während
-                der Zusammenarbeit erreichst du einen festen Ansprechpartner
-                direkt per WhatsApp.
+                Kein Callcenter, keine Rückrufbitte. Zahlen, Klickpreise und Anpassungen besprichst du direkt mit dem, der die Kampagne steuert — per WhatsApp, jederzeit.
               </p>
             </div>
             <div className="reveal">
@@ -292,7 +290,7 @@ export default function GoogleAdsPage() {
                   { from: "out", text: "Runter auf 1,20 €, Anfragen hoch auf 12 diese Woche." },
                   { from: "in", text: "👍 Perfekt, weiter so." },
                 ]}
-                footer="Antwortzeit während der Zusammenarbeit: meist unter 1 Stunde"
+                footer="Kampagnen-Fragen? Antwort meist innerhalb einer Stunde"
               />
             </div>
           </div>

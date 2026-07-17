@@ -9,9 +9,9 @@ import { getBlogBeitraege } from "@/lib/sanity";
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog — Marketing-Wissen für KMUs",
   description:
-    "Wissen, das wirklich weiterhilft — Antworten auf die Fragen, die uns Kunden tatsächlich stellen. Website, SEO, Ads und Google Business.",
+    "Der Pixel56-Blog: praxisnahe Tipps zu Webdesign, SEO, Google & Meta Ads und Social Media für KMUs, Handwerker & Selbstständige. Wissen, das wirklich weiterhilft.",
 };
 
 // Fallback-Artikel, solange kein CMS verbunden ist.
