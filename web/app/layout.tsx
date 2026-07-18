@@ -3,9 +3,12 @@ import "./globals.css";
 import Reveal from "@/components/Reveal";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import CookieConsent from "@/components/CookieConsent";
+import { indexable } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.pixel56.de"),
+  // Test-/Staging-Deployment: global auf noindex, bis die Seite live geht.
+  robots: indexable ? undefined : { index: false, follow: false },
   title: {
     default: "Pixel56 — Digitalagentur & Webdesign für KMUs | Bendorf bei Koblenz",
     template: "%s | Pixel56",

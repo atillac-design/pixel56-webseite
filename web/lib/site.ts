@@ -15,6 +15,14 @@ export const site = {
   url: "https://www.pixel56.de",
 };
 
+/**
+ * Suchmaschinen-Indexierung. Nur wenn NEXT_PUBLIC_INDEXABLE === "true"
+ * (in der Netlify-Produktionsumgebung gesetzt) darf Google die Seite
+ * indexieren. Die Test-/Staging-Deployments bleiben so auf "noindex",
+ * damit die unfertige Seite nicht bei Google landet.
+ */
+export const indexable = process.env.NEXT_PUBLIC_INDEXABLE === "true";
+
 export const clients = [
   "Stark ins Neue",
   "Sportler für Kinderherzen",
