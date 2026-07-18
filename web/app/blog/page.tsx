@@ -4,6 +4,7 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PulseField, CloseCta } from "@/components/ui";
 import { getBlogBeitraege } from "@/lib/sanity";
+import { artikel as fallbackArtikel } from "@/lib/blog";
 
 // CMS-Inhalte spätestens nach 5 Minuten übernehmen, ohne Neu-Deployment.
 export const revalidate = 300;
@@ -14,15 +15,15 @@ export const metadata: Metadata = {
     "Der Pixel56-Blog: praxisnahe Tipps zu Webdesign, SEO, Google & Meta Ads und Social Media für KMUs, Handwerker & Selbstständige. Wissen, das wirklich weiterhilft.",
 };
 
-// Fallback-Artikel, solange kein CMS verbunden ist.
-const artikelFallback = [
-  { cover: "c1", tag: "Website", title: "Website-Kosten für Handwerksbetriebe: Was ist realistisch?", text: "Was eine professionelle Website wirklich kostet — und warum die billigste Lösung oft teurer wird.", meta: "Website · 6 Min. Lesezeit" },
-  { cover: "c2", tag: "Google Business", title: "Google Business Profil optimieren", text: "Kostenlos, aber oft vernachlässigt: der wirksamste Hebel für mehr lokale Anfragen.", meta: "Lokal · 5 Min. Lesezeit" },
-  { cover: "c5", tag: "Performance", title: "Warum eine langsame Website Kunden kostet", text: "Jede Sekunde Ladezeit kostet Besucher und Google-Ranking — die Zahlen dahinter.", meta: "Technik · 4 Min. Lesezeit" },
-  { cover: "c3", tag: "Bewertungen", title: "Mehr Google-Rezensionen bekommen", text: "Warum Bewertungen mehr Kunden bringen als Werbung — und wie man systematisch mehr bekommt.", meta: "Lokal · 5 Min. Lesezeit" },
-  { cover: "c4", tag: "Ads", title: "Meta Ads Budget: Was realistisch einplanen?", text: "Warum Konstanz bei Meta Ads wichtiger ist als die Höhe des Budgets.", meta: "Kampagnen · 6 Min. Lesezeit" },
-  { cover: "c6", tag: "SEO", title: "SEO: Wie lange dauert es wirklich bis zu Ergebnissen?", text: "Realistische Zeiträume — und warum die meisten zu früh aufgeben.", meta: "SEO · 7 Min. Lesezeit" },
-];
+// Fallback-Artikel (aus lib/blog), solange kein CMS verbunden ist.
+const artikelFallback = fallbackArtikel.map((a) => ({
+  cover: a.cover,
+  tag: a.kategorie,
+  title: a.titel,
+  text: a.teaser,
+  meta: `${a.kategorie} · ${a.lesezeit} Min. Lesezeit`,
+  slug: a.slug,
+}));
 
 const freebies = [
   { fl: "Checkliste · PDF", title: "SEO-Checkliste", text: "Die wichtigsten Punkte, die jede Website erfüllen sollte, um bei Google gefunden zu werden — zum Selbst-Abhaken.", href: "/ressourcen/seo-checkliste" },
@@ -41,6 +42,7 @@ export default async function BlogPage() {
           title: b.titel,
           text: b.teaser,
           meta: `${b.kategorie} · ${b.lesezeit} Min. Lesezeit`,
+          slug: b.slug,
         }))
       : artikelFallback;
 
@@ -82,7 +84,7 @@ export default async function BlogPage() {
           </div>
           <div className="blog-grid reveal">
             {artikel.map((a) => (
-              <Link className="blog-card" href="/blog" key={a.title}>
+              <Link className="blog-card" href={`/blog/${a.slug}`} key={a.title}>
                 <div className={`blog-cover ${a.cover}`} data-tag={a.tag} />
                 <h4>{a.title}</h4>
                 <p>{a.text}</p>

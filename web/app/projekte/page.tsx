@@ -105,7 +105,7 @@ export default function ProjektePage() {
               <Link className="proj-card" href={`/projekte/${p.slug}`} key={p.slug}>
                 {p.bild ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
-                  <img className="pc-img" src={p.bild} alt={`Projekt: ${p.kunde}`} />
+                  <img className="pc-img" src={p.bild} alt={`${p.kunde} — ${p.titel}`} />
                 ) : (
                   <>
                     <div className="ic-chrome">

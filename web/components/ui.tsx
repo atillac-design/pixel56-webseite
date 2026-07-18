@@ -183,7 +183,7 @@ export function RefCard({ item }: { item: RefItem }) {
     <>
       {item.img ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img className="rc-img" src={item.img} alt={`Projekt: ${item.cat}`} />
+        <img className="rc-img" src={item.img} alt={`${item.cat} — ${item.title}`} />
       ) : (
         <BrowserMock variant={item.variant} barWidth={item.barWidth ?? 60} />
       )}

@@ -61,7 +61,7 @@ export default async function FallstudiePage({ params }: Props) {
           <section className="band" style={{ paddingTop: 0, paddingBottom: 60 }}>
             <div className="reveal">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="case-img" src={f.bild} alt={`Projekt ${f.kunde}`} />
+              <img className="case-img" src={f.bild} alt={`${f.kunde} — ${f.titel}`} />
             </div>
           </section>
         )}
@@ -97,10 +97,10 @@ export default async function FallstudiePage({ params }: Props) {
             <div className="reveal">
               {f.galerie?.[0] ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img className="case-img" src={f.galerie[0]} alt={`Einblick ${f.kunde}`} />
+                <img className="case-img" src={f.galerie[0]} alt={`Einblick in das Projekt für ${f.kunde}`} />
               ) : f.bild ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img className="case-img" src={f.bild} alt={`Einblick ${f.kunde}`} />
+                <img className="case-img" src={f.bild} alt={`Einblick in das Projekt für ${f.kunde}`} />
               ) : (
                 <BrowserMock variant={f.variant} barWidth={60} />
               )}
@@ -121,7 +121,7 @@ export default async function FallstudiePage({ params }: Props) {
             <div className="case-galerie reveal">
               {f.galerie.slice(1).map((g) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={g} alt={`Einblick ${f.kunde}`} key={g} />
+                <img src={g} alt={`Einblick in das Projekt für ${f.kunde}`} key={g} />
               ))}
             </div>
           </section>
