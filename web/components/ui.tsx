@@ -228,7 +228,7 @@ export function Reviews({ reviews }: { reviews: Review[] }) {
   return (
     <div className="reviews-wrap reveal">
       <div className="reviews-score">
-        <div className="rs-num">4.9</div>
+        <div className="rs-num">5.0</div>
         <div className="rs-stars">★★★★★</div>
         <div className="rs-meta">
           27 Google Bewertungen
