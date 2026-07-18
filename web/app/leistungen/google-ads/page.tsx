@@ -51,9 +51,9 @@ const faktoren = [
 ];
 
 const steps = [
-  { nr: "01", tag: "Phase 1", title: "Analyse & Keywords", text: "Wonach eure Zielgruppe sucht, bevor ein Euro Budget fließt." },
+  { nr: "01", tag: "Phase 1", title: "Analyse & Keywords", text: "Wonach deine Zielgruppe sucht, bevor ein Euro Budget fließt." },
   { nr: "02", tag: "Phase 2", title: "Tracking-Fundament", text: "Sauberes Conversion-Tracking zuerst — sonst bleibt alles Rätselraten." },
-  { nr: "03", tag: "Phase 3", title: "Kampagnen-Aufbau", text: "Anzeigengruppen und Keywords, abgestimmt auf euer Angebot." },
+  { nr: "03", tag: "Phase 3", title: "Kampagnen-Aufbau", text: "Anzeigengruppen und Keywords, abgestimmt auf dein Angebot." },
   { nr: "04", tag: "Phase 4", title: "Laufende Optimierung", text: "Anpassung anhand echter Daten, nicht anhand von Vermutungen." },
   { nr: "05", tag: "Phase 5", title: "Reporting & Kurs", text: "Transparente Auswertung, was das Budget tatsächlich bringt." },
 ];
@@ -65,7 +65,7 @@ const referenzen: RefItem[] = [
 
 const faqs = [
   { q: "Wie viel Budget brauche ich für den Einstieg?", a: "Das hängt stark von Branche, Suchvolumen und Wettbewerb ab. Wichtiger als die Höhe ist eine saubere Struktur — ohne die verpufft auch ein großes Budget." },
-  { q: "Was kostet ein Klick bei Google Ads?", a: "Das variiert stark je nach Branche und Wettbewerb — von wenigen Cent bis zu mehreren Euro pro Klick. Wir schätzen das für euren Bereich im Erstgespräch ein." },
+  { q: "Was kostet ein Klick bei Google Ads?", a: "Das variiert stark je nach Branche und Wettbewerb — von wenigen Cent bis zu mehreren Euro pro Klick. Wir schätzen das für deinen Bereich im Erstgespräch ein." },
   { q: "Brauche ich eine spezielle Landingpage für die Anzeigen?", a: "Empfehlenswert ist es fast immer. Eine fokussierte Landingpage, die zum Anzeigenversprechen passt, verbessert Conversion und Qualitätsfaktor." },
   { q: "Wie schnell sehe ich erste Ergebnisse?", a: "Erste Daten meist innerhalb weniger Tage, belastbare Aussagen nach zwei bis vier Wochen laufender Optimierung." },
   { q: "Was kostet die Betreuung, getrennt vom Werbebudget?", a: "Werbebudget geht direkt an Google, die Betreuung deckt Strategie, Aufbau und laufende Optimierung ab. Den passenden Umfang klären wir im kostenlosen Erstgespräch." },
@@ -95,8 +95,8 @@ export default function GoogleAdsPage() {
             <span className="in"><span>Nicht erst danach.</span></span>
           </h1>
           <p className="hero-sub">
-            Jemand tippt gerade eure Leistung in Google ein — bereit, zu handeln.
-            Wir sorgen dafür, dass ihr dort steht, mit Tracking und Struktur
+            Jemand tippt gerade deine Leistung in Google ein — bereit, zu handeln.
+            Wir sorgen dafür, dass du dort stehst, mit Tracking und Struktur
             statt Bauchgefühl.
           </p>
           <div className="hero-actions">
@@ -145,13 +145,13 @@ export default function GoogleAdsPage() {
                 Der einzige Kanal, der <em>Absicht abholt</em>
               </h2>
               <p className="lead">
-                Bei den meisten Werbeformen weckt ihr Interesse, das erst noch
+                Bei den meisten Werbeformen weckst du Interesse, das erst noch
                 entstehen muss. Bei Google Ads ist die Absicht bereits da —
-                jemand tippt aktiv eure Leistung in die Suche ein.
+                jemand tippt aktiv deine Leistung in die Suche ein.
               </p>
               <ul className="lines">
-                <li>Ohne Ads seid ihr unsichtbar im entscheidenden Moment.</li>
-                <li>Ohne Struktur zahlt ihr drauf für Klicks ohne Anfrage.</li>
+                <li>Ohne Ads bist du unsichtbar im entscheidenden Moment.</li>
+                <li>Ohne Struktur zahlst du drauf für Klicks ohne Anfrage.</li>
                 <li>Mit sauberem Tracking lässt sich jeder Euro einem Ergebnis zuordnen.</li>
               </ul>
             </div>
@@ -225,7 +225,7 @@ export default function GoogleAdsPage() {
               </p>
               <ul className="lines">
                 <li>Sauberes Conversion-Tracking, bevor eine Kampagne live geht.</li>
-                <li>Struktur statt generischer Vorlagen — abgestimmt auf euer Angebot.</li>
+                <li>Struktur statt generischer Vorlagen — abgestimmt auf dein Angebot.</li>
                 <li>Ergebnisse mit echten Zahlen belegt, nicht mit Bauchgefühl.</li>
                 <li>Laufende Optimierung — Budget wandert dahin, wo es wirkt.</li>
               </ul>
@@ -284,7 +284,7 @@ export default function GoogleAdsPage() {
             </div>
             <div className="reveal">
               <WaMock
-                name="Pixel56 — Ihr Ansprechpartner"
+                name="Pixel56 — Dein Ansprechpartner"
                 messages={[
                   { from: "in", text: "Wie sieht der Klickpreis diese Woche aus?" },
                   { from: "out", text: "Runter auf 1,20 €, Anfragen hoch auf 12 diese Woche." },
@@ -321,7 +321,7 @@ export default function GoogleAdsPage() {
         </section>
 
         <CloseCta>
-          Lass uns über eure <em>Google-Ads-Kampagne</em> sprechen.
+          Lass uns über deine <em>Google-Ads-Kampagne</em> sprechen.
         </CloseCta>
 
         <SiteFooter />

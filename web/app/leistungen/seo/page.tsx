@@ -112,7 +112,7 @@ export default function SeoPage() {
             <div className="reveal">
               <span className="band-tag">01 — Der Status quo</span>
               <h2 className="band-title">
-                Sechs Zeichen, dass Google <em>euch übersieht</em>
+                Sechs Zeichen, dass Google <em>dich übersieht</em>
               </h2>
               <p className="lead">
                 Die Leistung stimmt, aber wer danach sucht, landet zuerst bei der
@@ -288,7 +288,7 @@ export default function SeoPage() {
             </div>
             <div className="reveal">
               <WaMock
-                name="Pixel56 — Ihr Ansprechpartner"
+                name="Pixel56 — Dein Ansprechpartner"
                 messages={[
                   { from: "in", text: "Wie sieht das Ranking für „Dachdecker Koblenz“ diesen Monat aus?" },
                   { from: "out", text: "Platz 3, letzten Monat noch Platz 7 — schick dir gleich die Auswertung." },
@@ -325,7 +325,7 @@ export default function SeoPage() {
         </section>
 
         <CloseCta>
-          Lass uns über eure <em>Sichtbarkeit</em> sprechen.
+          Lass uns über deine <em>Sichtbarkeit</em> sprechen.
         </CloseCta>
 
         <SiteFooter />

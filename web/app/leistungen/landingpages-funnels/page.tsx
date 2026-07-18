@@ -172,7 +172,7 @@ export default function FunnelsPage() {
             </div>
             <p className="band-note">
               Ein Erstgespräch verkauft sich anders als ein digitales Produkt.
-              Wir wählen die passende Struktur für euer konkretes Angebot.
+              Wir wählen die passende Struktur für dein konkretes Angebot.
             </p>
           </div>
           <div className="fact-grid reveal">
@@ -281,7 +281,7 @@ export default function FunnelsPage() {
             </div>
             <div className="reveal">
               <WaMock
-                name="Pixel56 — Ihr Ansprechpartner"
+                name="Pixel56 — Dein Ansprechpartner"
                 messages={[
                   { from: "in", text: "Können wir das Formular auf zwei Felder kürzen?" },
                   { from: "out", text: "Klar, schon umgesetzt — testest du mal kurz?" },
@@ -318,7 +318,7 @@ export default function FunnelsPage() {
         </section>
 
         <CloseCta>
-          Lass uns über euren <em>Funnel</em> sprechen.
+          Lass uns über deinen <em>Funnel</em> sprechen.
         </CloseCta>
 
         <SiteFooter />

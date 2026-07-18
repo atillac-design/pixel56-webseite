@@ -47,7 +47,7 @@ const statusRows = [
 const steps = [
   { nr: "01", tag: "Phase 1", title: "Analyse & Ziel", text: "Was eine Anfrage wert ist, bevor Budget fließt." },
   { nr: "02", tag: "Phase 2", title: "Tracking-Fundament", text: "Sauberes Conversion-Tracking zuerst." },
-  { nr: "03", tag: "Phase 3", title: "Kampagnen-Aufbau", text: "Zielgruppen und Creatives, abgestimmt auf euer Angebot." },
+  { nr: "03", tag: "Phase 3", title: "Kampagnen-Aufbau", text: "Zielgruppen und Creatives, abgestimmt auf dein Angebot." },
   { nr: "04", tag: "Phase 4", title: "Laufende Optimierung", text: "Anpassung anhand echter Daten, ohne ständiges Stoppen." },
   { nr: "05", tag: "Phase 5", title: "Reporting & Kurs", text: "Transparente Auswertung, was das Budget bringt." },
 ];
@@ -144,7 +144,7 @@ export default function MetaAdsPage() {
                 überhaupt aktiv gesucht wird.
               </p>
               <ul className="lines">
-                <li>Ohne Meta Ads erreicht ihr nur, wer euch schon folgt.</li>
+                <li>Ohne Meta Ads erreichst du nur, wer dir schon folgt.</li>
                 <li>Sprunghafte Kampagnen kommen nie richtig ins Lernen.</li>
                 <li>Ein konstantes Budget baut Reichweite auf, die bleibt.</li>
               </ul>
@@ -250,7 +250,7 @@ export default function MetaAdsPage() {
             </div>
             <div className="reveal">
               <WaMock
-                name="Pixel56 — Ihr Ansprechpartner"
+                name="Pixel56 — Dein Ansprechpartner"
                 messages={[
                   { from: "in", text: "Sollen wir das Creative für die neue Kampagne tauschen?" },
                   { from: "out", text: "Ja, hab schon 3 neue Varianten hochgeladen." },
@@ -287,7 +287,7 @@ export default function MetaAdsPage() {
         </section>
 
         <CloseCta>
-          Lass uns über eure <em>Meta-Ads-Kampagne</em> sprechen.
+          Lass uns über deine <em>Meta-Ads-Kampagne</em> sprechen.
         </CloseCta>
 
         <SiteFooter />

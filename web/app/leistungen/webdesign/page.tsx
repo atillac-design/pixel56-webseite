@@ -124,8 +124,8 @@ export default function WebdesignPage() {
                 Sieben Zeichen, dass die Website <em>gegen dich arbeitet</em>
               </h2>
               <p className="lead">
-                Egal ob eure Seite seit Jahren unangetastet ist oder es noch gar
-                keine gibt — beides kostet euch heute Kunden, jeden einzelnen Tag.
+                Egal ob deine Seite seit Jahren unangetastet ist oder es noch gar
+                keine gibt — beides kostet dich heute Kunden, jeden einzelnen Tag.
               </p>
             </div>
             <div className="reveal">
@@ -285,7 +285,7 @@ export default function WebdesignPage() {
             </div>
             <div className="reveal">
               <WaMock
-                name="Pixel56 — Ihr Ansprechpartner"
+                name="Pixel56 — Dein Ansprechpartner"
                 messages={[
                   { from: "in", text: "Kurze Frage: Können wir das Bild auf der Startseite noch tauschen?" },
                   { from: "out", text: "Klar, schick's mir rüber — ist heute noch online." },

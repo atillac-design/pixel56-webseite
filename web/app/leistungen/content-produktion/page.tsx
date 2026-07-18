@@ -51,8 +51,8 @@ const formate = [
 ];
 
 const steps = [
-  { nr: "01", tag: "Phase 1", title: "Content-Strategie", text: "Welche Formate und welcher Rhythmus zu euch passen." },
-  { nr: "02", tag: "Phase 2", title: "Vor-Ort-Termin", text: "Dreh oder Fotoshooting direkt bei euch, im echten Umfeld." },
+  { nr: "01", tag: "Phase 1", title: "Content-Strategie", text: "Welche Formate und welcher Rhythmus zu dir passen." },
+  { nr: "02", tag: "Phase 2", title: "Vor-Ort-Termin", text: "Dreh oder Fotoshooting direkt bei dir, im echten Umfeld." },
   { nr: "03", tag: "Phase 3", title: "Schnitt & Bearbeitung", text: "Aus dem Rohmaterial entstehen mehrere Formate." },
   { nr: "04", tag: "Phase 4", title: "Veröffentlichung", text: "Inhalte im geplanten Rhythmus, statt unregelmäßig." },
   { nr: "05", tag: "Phase 5", title: "Auswertung", text: "Was Reichweite bringt, wird gezielt ausgebaut." },
@@ -95,9 +95,9 @@ export default function ContentPage() {
             <span className="in"><span>Keine Kulisse.</span></span>
           </h1>
           <p className="hero-sub">
-            Reels, Fotos und Social-Content direkt aus eurem Alltag — von der
+            Reels, Fotos und Social-Content direkt aus deinem Alltag — von der
             Burgerbude bis zur Coaching-Marke. Kein Stockmaterial, sondern
-            Aufnahmen, die tatsächlich zu euch gehören.
+            Aufnahmen, die tatsächlich zu dir gehören.
           </p>
           <div className="hero-actions">
             <a className="btn-primary" href="https://calendly.com/pixel56/15min" target="_blank" rel="noopener">
@@ -223,7 +223,7 @@ export default function ContentPage() {
                 statt nur zu existieren.
               </p>
               <ul className="lines">
-                <li>Echtes Material aus eurem Alltag, kein Studio, kein Stock.</li>
+                <li>Echtes Material aus deinem Alltag, kein Studio, kein Stock.</li>
                 <li>Ein Dreh liefert mehrere Formate für verschiedene Kanäle.</li>
                 <li>Fester Veröffentlichungs-Rhythmus statt sporadischer Posts.</li>
                 <li>Laufende Auswertung — was ankommt, wird ausgebaut.</li>
@@ -284,7 +284,7 @@ export default function ContentPage() {
             </div>
             <div className="reveal">
               <WaMock
-                name="Pixel56 — Ihr Ansprechpartner"
+                name="Pixel56 — Dein Ansprechpartner"
                 messages={[
                   { from: "in", text: "Können wir das neue Reel schon diese Woche drehen?" },
                   { from: "out", text: "Ja, Dienstag 14 Uhr passt bei mir." },
@@ -321,7 +321,7 @@ export default function ContentPage() {
         </section>
 
         <CloseCta>
-          Lass uns über euren <em>Content</em> sprechen.
+          Lass uns über deinen <em>Content</em> sprechen.
         </CloseCta>
 
         <SiteFooter />

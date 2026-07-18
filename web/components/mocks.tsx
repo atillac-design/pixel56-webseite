@@ -13,7 +13,7 @@ export function SearchMock({ query, youTag, others }: { query: string; youTag: s
       </div>
       <div className="search-results">
         <div className="sres you">
-          <span>Ihr Unternehmen</span>
+          <span>Dein Unternehmen</span>
           <span className="tag">{youTag}</span>
         </div>
         {others.map((o) => (
@@ -43,7 +43,7 @@ const ShareIcon = (
 );
 
 /** Instagram-/Meta-Feed-Post (gesponsert) — optional mit echtem Anzeigenbild. */
-export function FeedMock({ imgSrc, wer = "Ihr Unternehmen" }: { imgSrc?: string; wer?: string }) {
+export function FeedMock({ imgSrc, wer = "Dein Unternehmen" }: { imgSrc?: string; wer?: string }) {
   return (
     <div className="feed-mock">
       <div className="fm-head">
@@ -93,7 +93,7 @@ export function ReelMock({ caption = "Ein Tag bei uns im Betrieb", videoSrc }: {
           </div>
         </div>
         <div className="rl-cap">
-          <b>Ihr Unternehmen</b>
+          <b>Dein Unternehmen</b>
           <span>{caption}</span>
         </div>
       </div>

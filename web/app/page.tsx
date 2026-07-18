@@ -228,7 +228,7 @@ export default function HomePage() {
             </div>
             <div className="reveal">
               <MetricMock
-                head="Live-Auswertung · Van den Berg Gruppe"
+                head="Beispiel-Dashboard · Kampagnen-Auswertung"
                 rows={[
                   { label: "Anfragen / Monat", value: "34", countTo: "34" },
                   { label: "Klickrate", value: "6.8%", countTo: "6.8", suffix: "%" },
@@ -241,21 +241,18 @@ export default function HomePage() {
 
         <section className="band tint" id="beweis">
           <span className="band-tag reveal" style={{ marginBottom: 44 }}>05 — Der Beweis</span>
-          <div className="stat-block reveal">
-            <div className="stat-num" data-label="WACHSTUM">+56<small>%</small></div>
-            <div className="stat-copy">
-              <p className="quote">
-                „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
-                gearbeitet — und das hat gereicht.“
-              </p>
-              <p>
-                Van den Berg Gruppe, laufende Betreuung. Reale Kampagnendaten,
-                kein Schätzwert. Dazu: spürbar leichtere Mitarbeitergewinnung
-                für GM-Dachdecker, deutlich mehr Kursanmeldungen für Stark ins
-                Neue.
-              </p>
-              <cite>{"// VAN DEN BERG GRUPPE, LAUFENDE BETREUUNG"}</cite>
-            </div>
+          <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
+            <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
+              „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
+              gearbeitet — und das hat gereicht.“
+            </p>
+            <p>
+              Van den Berg Gruppe, seit Jahren in laufender Betreuung. Kein
+              Strohfeuer, sondern konstante Arbeit statt wöchentlich neu
+              erfundenem Budget. Dazu: spürbar leichtere Mitarbeitergewinnung
+              für GM-Dachdecker und mehr Kursanmeldungen für Stark ins Neue.
+            </p>
+            <cite>{"// VAN DEN BERG GRUPPE, LAUFENDE BETREUUNG"}</cite>
           </div>
         </section>
 
@@ -272,7 +269,7 @@ export default function HomePage() {
             </div>
             <div className="reveal">
               <WaMock
-                name="Pixel56 — Ihr Ansprechpartner"
+                name="Pixel56 — Dein Ansprechpartner"
                 messages={[
                   { from: "in", text: "Können wir kurz was zur Startseite ändern?" },
                   { from: "out", text: "Klar, sag mir was — ist heute noch online." },
@@ -321,7 +318,7 @@ export default function HomePage() {
         <section className="band">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">09 — Für Ihre Branche</span>
+              <span className="band-tag">09 — Für deine Branche</span>
               <h2 className="band-title">So <em>könnte</em> es aussehen</h2>
             </div>
             <p className="band-note">
@@ -367,7 +364,7 @@ export default function HomePage() {
         </section>
 
         <CloseCta>
-          Lass uns über euren <em>digitalen Auftritt</em> sprechen.
+          Lass uns über deinen <em>digitalen Auftritt</em> sprechen.
         </CloseCta>
 
         <SiteFooter />

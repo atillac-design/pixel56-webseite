@@ -98,7 +98,7 @@ export default function UeberUnsPage() {
               </p>
               <ul className="lines">
                 <li>Direkter Kontakt zum Umsetzer, keine Übergaben zwischen Abteilungen.</li>
-                <li>Ehrliche Einschätzungen — auch wenn die Antwort mal „braucht ihr nicht“ lautet.</li>
+                <li>Ehrliche Einschätzungen — auch wenn die Antwort mal „brauchst du nicht“ lautet.</li>
                 <li>Kurze Wege: WhatsApp, Telefon oder vor Ort in Bendorf.</li>
               </ul>
             </div>
@@ -226,7 +226,7 @@ export default function UeberUnsPage() {
             </div>
             <div className="reveal">
               <WaMock
-                name="Pixel56 — Ihr Ansprechpartner"
+                name="Pixel56 — Dein Ansprechpartner"
                 messages={[
                   { from: "in", text: "Hast du kurz Zeit für eine Frage zum Projekt?" },
                   { from: "out", text: "Klar, ruf einfach durch — bin am Platz." },

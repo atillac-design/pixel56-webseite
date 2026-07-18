@@ -68,7 +68,7 @@ const faqs = [
   { q: "Können Bewerber ihre Unterlagen wirklich ohne E-Mail hochladen?", a: "Ja. Ein direktes Upload-Formular nimmt Unterlagen entgegen, ohne dass Bewerber ihr E-Mail-Programm öffnen müssen — das senkt die Abbruchquote spürbar." },
   { q: "Funktioniert das auch für schwer zu besetzende Stellen?", a: "Ein einfacherer Bewerbungsweg löst nicht jeden Fachkräftemangel, hilft aber dabei, von den vorhandenen Kandidaten möglichst viele tatsächlich zu erreichen." },
   { q: "Was kostet eine Recruiting-Kampagne im Vergleich zu einer Kunden-Kampagne?", a: "Die Mechanik ist ähnlich wie bei Google oder Meta Ads für Kunden — Budget für die Plattform getrennt von der Betreuung. Details klären wir im Erstgespräch." },
-  { q: "Wie schnell ist die Karriereseite fertig?", a: "Je nach Umfang meist innerhalb weniger Wochen — der Zeitrahmen hängt vor allem davon ab, wie schnell Inhalte und Freigaben von eurer Seite kommen." },
+  { q: "Wie schnell ist die Karriereseite fertig?", a: "Je nach Umfang meist innerhalb weniger Wochen — der Zeitrahmen hängt vor allem davon ab, wie schnell Inhalte und Freigaben von deiner Seite kommen." },
   { q: "Bleibst du auch danach erreichbar?", a: "Ja — per WhatsApp über einen festen Ansprechpartner, siehe oben. Betreuung ist Teil der Zusammenarbeit, kein Zusatzverkauf danach." },
 ];
 
@@ -150,7 +150,7 @@ export default function RecruitingPage() {
                 dieselben Prinzipien.
               </p>
               <ul className="lines">
-                <li>Ohne Karriereseite seid ihr für aktiv Suchende unsichtbar.</li>
+                <li>Ohne Karriereseite bist du für aktiv Suchende unsichtbar.</li>
                 <li>Jede zusätzliche Hürde im Bewerbungsweg kostet Kandidaten.</li>
                 <li>Eine einfache Bewerberstrecke wird tatsächlich zu Ende gegangen.</li>
               </ul>
@@ -282,7 +282,7 @@ export default function RecruitingPage() {
             </div>
             <div className="reveal">
               <WaMock
-                name="Pixel56 — Ihr Ansprechpartner"
+                name="Pixel56 — Dein Ansprechpartner"
                 messages={[
                   { from: "in", text: "Können wir die Stellenanzeige noch anpassen?" },
                   { from: "out", text: "Klar, schick mir den neuen Text — ist heute noch online." },
@@ -319,7 +319,7 @@ export default function RecruitingPage() {
         </section>
 
         <CloseCta>
-          Lass uns über eure <em>Mitarbeitergewinnung</em> sprechen.
+          Lass uns über deine <em>Mitarbeitergewinnung</em> sprechen.
         </CloseCta>
 
         <SiteFooter />

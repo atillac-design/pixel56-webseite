@@ -76,11 +76,11 @@ export default async function StandortPage({ params }: Props) {
 
   const faqs = [
     { q: "Wie lange dauert die Umsetzung?", a: "Je nach Umfang 3–5 Wochen von der Analyse bis zum Livegang — siehe die fünf Phasen oben." },
-    { q: "Was kostet eine neue Website?", a: "Individuell kalkuliert nach Umfang, nicht pauschal. Im kostenlosen Erstgespräch bekommen Sie ein konkretes Angebot, keine Bauchgefühl-Zahl." },
-    { q: "Muss ich Texte und Bilder selbst liefern?", a: "Nein. Wir übernehmen Struktur, Text und Design — Sie liefern nur, was wirklich nur Sie wissen können." },
-    { q: "Bleiben Sie auch nach dem Launch erreichbar?", a: "Ja — per WhatsApp über einen festen Ansprechpartner, siehe oben. Betreuung ist Teil der Zusammenarbeit, kein Zusatzverkauf danach." },
+    { q: "Was kostet eine neue Website?", a: "Individuell kalkuliert nach Umfang, nicht pauschal. Im kostenlosen Erstgespräch bekommst du ein konkretes Angebot, keine Bauchgefühl-Zahl." },
+    { q: "Muss ich Texte und Bilder selbst liefern?", a: "Nein. Wir übernehmen Struktur, Text und Design — du lieferst nur, was wirklich nur du wissen kannst." },
+    { q: "Bleibt ihr auch nach dem Launch erreichbar?", a: "Ja — per WhatsApp über einen festen Ansprechpartner, siehe oben. Betreuung ist Teil der Zusammenarbeit, kein Zusatzverkauf danach." },
     { q: "Was passiert mit meiner alten Website?", a: "Sie bleibt bis zum Livegang der neuen online — kein Ausfall, kein Bruch. Wir schalten erst um, wenn alles geprüft ist." },
-    { q: "Kann ich Inhalte später selbst ändern?", a: "Ja, Sie bekommen ein einfaches System dafür. Wenn Sie lieber nichts anfassen wollen, übernehmen wir das genauso." },
+    { q: "Kann ich Inhalte später selbst ändern?", a: "Ja, du bekommst ein einfaches System dafür. Wenn du lieber nichts anfassen willst, übernehmen wir das genauso." },
     { q: "Ist die Seite auch für Google- und Meta-Ads vorbereitet?", a: "Ja — Landingpages und Tracking werden von Anfang an mitgedacht, nicht nachträglich draufgesetzt." },
   ];
 
@@ -141,7 +141,7 @@ export default async function StandortPage({ params }: Props) {
             <div className="reveal">
               <span className="band-tag">01 — Der Status quo</span>
               <h2 className="band-title">
-                Sieben Gründe, warum <em>Kunden Sie nicht finden</em>
+                Sieben Gründe, warum <em>Kunden dich nicht finden</em>
               </h2>
               <p className="lead">
                 Jeder Punkt hier hat denselben Ursprung: die Website selbst. Und
@@ -172,7 +172,7 @@ export default async function StandortPage({ params }: Props) {
             <div className="reveal">
               <SearchMock
                 query={`webdesign ${ort.stadt.toLowerCase()}`}
-                youTag="Ihr Eintrag"
+                youTag="Dein Eintrag"
                 others={["Mitbewerber A · Webagentur", "Mitbewerber B · Freelancer"]}
               />
             </div>
@@ -183,22 +183,17 @@ export default async function StandortPage({ params }: Props) {
           <div className="band-tag reveal" style={{ marginBottom: 44 }}>
             03 — Der Beweis
           </div>
-          <div className="stat-block reveal">
-            <div className="stat-num" data-label="WACHSTUM">
-              +56<small>%</small>
-            </div>
-            <div className="stat-copy">
-              <p className="quote">
-                „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
-                gearbeitet — und das hat gereicht.“
-              </p>
-              <p>
-                Van den Berg Gruppe, laufende Betreuung. Reale Kampagnendaten,
-                kein Schätzwert — Wachstum, das entstand, weil niemand das
-                Budget wöchentlich neu erfunden hat.
-              </p>
-              <cite>{`// VAN DEN BERG GRUPPE, REGION ${ort.stadt.toUpperCase()}`}</cite>
-            </div>
+          <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
+            <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
+              „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
+              gearbeitet — und das hat gereicht.“
+            </p>
+            <p>
+              Van den Berg Gruppe, seit Jahren in laufender Betreuung —
+              Wachstum, das entstand, weil niemand das Budget wöchentlich neu
+              erfunden hat, sondern konstant gearbeitet wurde.
+            </p>
+            <cite>{`// VAN DEN BERG GRUPPE, REGION ${ort.stadt.toUpperCase()}`}</cite>
           </div>
         </section>
 
@@ -216,13 +211,13 @@ export default async function StandortPage({ params }: Props) {
               <ul className="lines">
                 <li>Lokal verwurzelt — Bendorf bei Koblenz, kurze Wege, kein Callcenter.</li>
                 <li>Ein fester Ansprechpartner, keine wechselnden Projektmanager.</li>
-                <li>Ergebnisse mit echten Zahlen belegt, nicht mit Bauchgefühl.</li>
+                <li>Ergebnisse ehrlich eingeordnet, nicht schöngerechnet.</li>
                 <li>Bleibt nach dem Launch — Betreuung, kein Zusatzverkauf danach.</li>
               </ul>
             </div>
             <div className="reveal">
               <MetricMock
-                head="Live-Auswertung · Van den Berg Gruppe"
+                head="Beispiel-Dashboard · Kampagnen-Auswertung"
                 rows={[
                   { label: "Anfragen / Monat", value: "34", countTo: "34" },
                   { label: "Klickrate", value: "6.8%", countTo: "6.8", suffix: "%" },
@@ -248,14 +243,14 @@ export default async function StandortPage({ params }: Props) {
         <section className="band" id="branchen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">06 — Für Ihre Branche</span>
+              <span className="band-tag">06 — Für deine Branche</span>
               <h2 className="band-title">
                 So <em>könnte</em> es aussehen
               </h2>
             </div>
             <p className="band-note">
-              Sechs Richtungen als Beispiel. Am Ende entsteht Ihre Website
-              individuell nach Ihrer eigenen Marke — keine dieser Vorlagen wird
+              Sechs Richtungen als Beispiel. Am Ende entsteht deine Website
+              individuell nach deiner eigenen Marke — keine dieser Vorlagen wird
               1:1 verwendet.
             </p>
           </div>
@@ -284,14 +279,14 @@ export default async function StandortPage({ params }: Props) {
               </h2>
               <p className="lead">
                 Kein Ticket-System, kein Callcenter, keine Rückrufbitte. Während
-                Ihres Projekts erreichen Sie einen festen Ansprechpartner direkt
+                deines Projekts erreichst du einen festen Ansprechpartner direkt
                 per WhatsApp — für schnelle Fragen genauso wie für große
                 Entscheidungen.
               </p>
             </div>
             <div className="reveal">
               <WaMock
-                name="Pixel56 — Ihr Ansprechpartner"
+                name="Pixel56 — Dein Ansprechpartner"
                 messages={[
                   { from: "in", text: "Kurze Frage: Können wir das Bild auf der Startseite noch tauschen?" },
                   { from: "out", text: "Klar, schick's mir rüber — ist heute noch online." },
@@ -320,7 +315,7 @@ export default async function StandortPage({ params }: Props) {
             <div>
               <span className="band-tag">09 — Häufige Fragen</span>
               <h2 className="band-title">
-                Bevor Sie <em>schreiben</em>
+                Bevor du <em>schreibst</em>
               </h2>
             </div>
           </div>
