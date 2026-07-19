@@ -60,7 +60,7 @@ const steps = [
 
 const referenzen: RefItem[] = [
   { variant: "ic-3", barWidth: 55, img: "/bilder/projekt-stark-ins-neue-3.webp", href: "/projekte/stark-ins-neue", cat: "Stark ins Neue gGmbH", title: "Klare Nutzerführung zur Kursanmeldung", text: "Fokussierte Anmeldestrecke für eine Bildungsinitiative — DSGVO-konform, ohne unnötige Zwischenschritte.", tag: "Landingpage · Anmeldefunnel · 2025" },
-  { variant: "ic-4", barWidth: 65, img: "/bilder/projekt-van-den-berg.webp", href: "/projekte/van-den-berg", cat: "Van den Berg Gruppe", title: "Anzeige direkt auf ein Angebot geführt", text: "Facebook-Ads-Kampagnen mit passender Zielseite statt allgemeiner Startseite — Teil eines 56 % Wachstums.", tag: "Meta Ads · Landingpage" },
+  { variant: "ic-4", barWidth: 65, img: "/bilder/projekt-van-den-berg.webp", href: "/projekte/van-den-berg", cat: "Van den Berg Gruppe", title: "Anzeige direkt auf ein Angebot geführt", text: "Facebook-Ads-Kampagnen mit passender Zielseite statt allgemeiner Startseite — Teil eines spürbaren Wachstums.", tag: "Meta Ads · Landingpage" },
 ];
 
 const faqs = [
@@ -190,22 +190,17 @@ export default function FunnelsPage() {
           <div className="band-tag reveal" style={{ marginBottom: 44 }}>
             04 — Der Beweis
           </div>
-          <div className="stat-block reveal">
-            <div className="stat-num" data-label="WACHSTUM">
-              +56<small>%</small>
-            </div>
-            <div className="stat-copy">
-              <p className="quote">
+          <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
+              <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
                 „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
                 gearbeitet — und das hat gereicht.“
               </p>
               <p>
-                Van den Berg Gruppe: Facebook-Ads-Kampagnen mit passender
-                Zielseite statt allgemeiner Startseite — Teil des Ergebnisses
-                war ein Wachstum von 56 % bei den Anfragen.
+              Van den Berg Gruppe: Facebook-Ads-Kampagnen mit passender
+              Zielseite statt allgemeiner Startseite — mit spürbar mehr
+              Anfragen als Ergebnis.
               </p>
               <cite>{"// VAN DEN BERG GRUPPE"}</cite>
-            </div>
           </div>
         </section>
 
@@ -223,13 +218,13 @@ export default function FunnelsPage() {
               <ul className="lines">
                 <li>Kurze Formulare — nur, was für die Qualifizierung nötig ist.</li>
                 <li>Eine Seite, ein Ziel, kein Wettbewerb mehrerer Angebote.</li>
-                <li>Ergebnisse mit echten Zahlen belegt, nicht mit Bauchgefühl.</li>
+                <li>Ergebnisse ehrlich eingeordnet, nicht schöngerechnet.</li>
                 <li>Laufende Optimierung an genau der Stelle, wo abgesprungen wird.</li>
               </ul>
             </div>
             <div className="reveal">
               <MetricMock
-                head="Live-Auswertung · Van den Berg Gruppe"
+                head="Beispiel-Dashboard · Kampagnen-Auswertung"
                 rows={[
                   { label: "Anfragen / Monat", value: "34", countTo: "34" },
                   { label: "Formular-Abschlussrate", value: "6.8%", countTo: "6.8", suffix: "%" },

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const reviews = [
   { text: "Von der ersten Idee bis zum Livegang alles aus einer Hand — schnell, unkompliziert, top Ergebnis.", who: "GM-Dachdecker" },
-  { text: "56 % Wachstum, und wir wissen genau, woher es kommt. Absolute Empfehlung.", who: "Van den Berg Gruppe" },
+  { text: "Endlich Wachstum, und wir wissen genau, woher es kommt. Absolute Empfehlung.", who: "Van den Berg Gruppe" },
   { text: "Die neue Website hat sich in wenigen Wochen ausgezahlt. Klare Empfehlung.", who: "Stark ins Neue gGmbH" },
 ];
 
@@ -139,23 +139,17 @@ export default function ProjektePage() {
           <div className="band-tag reveal" style={{ marginBottom: 44 }}>
             02 — Der Beweis
           </div>
-          <div className="stat-block reveal">
-            <div className="stat-num" data-label="WACHSTUM">
-              +56<small>%</small>
-            </div>
-            <div className="stat-copy">
-              <p className="quote">
+          <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
+              <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
                 „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
                 gearbeitet — und das hat gereicht.“
               </p>
               <p>
-                Van den Berg Gruppe, laufende Betreuung. Reale Kampagnendaten,
-                kein Schätzwert. Dazu: spürbar leichtere Mitarbeitergewinnung
-                für GM-Dachdecker, deutlich mehr Kursanmeldungen für Stark ins
-                Neue.
+              Van den Berg Gruppe, seit Jahren in laufender Betreuung. Dazu:
+              spürbar leichtere Mitarbeitergewinnung für GM-Dachdecker und mehr
+              Kursanmeldungen für Stark ins Neue.
               </p>
               <cite>{"// VAN DEN BERG GRUPPE, LAUFENDE BETREUUNG"}</cite>
-            </div>
           </div>
         </section>
 

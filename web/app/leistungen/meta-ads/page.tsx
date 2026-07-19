@@ -53,7 +53,7 @@ const steps = [
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-van-den-berg.webp", href: "/projekte/van-den-berg", cat: "Van den Berg Gruppe", title: "56 % Wachstum durch gezielte Facebook Ads", text: "Kontinuierlicher Kampagnenaufbau mit konsequenter Budget-Steuerung nach Datenlage statt Bauchgefühl.", tag: "Meta Ads · laufende Betreuung" },
+  { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-van-den-berg.webp", href: "/projekte/van-den-berg", cat: "Van den Berg Gruppe", title: "Konstantes Wachstum durch gezielte Facebook Ads", text: "Kontinuierlicher Kampagnenaufbau mit konsequenter Budget-Steuerung nach Datenlage statt Bauchgefühl.", tag: "Meta Ads · laufende Betreuung" },
   { variant: "ic-1", barWidth: 50, img: "/bilder/ads-recruiting-kampagne.webp", href: "/projekte/gm-dachdecker", cat: "GM-Dachdecker Meisterbetrieb", title: "Kampagnen für Mitarbeitergewinnung", text: "Neben klassischer Kundengewinnung setzen wir Meta Ads gezielt zur Bewerbergewinnung ein — spürbar leichtere Mitarbeitersuche.", tag: "Meta Ads · Recruiting" },
 ];
 
@@ -67,7 +67,7 @@ const faqs = [
 ];
 
 const reviews = [
-  { text: "56 % Wachstum, und wir wissen genau, woher es kommt. Absolute Empfehlung.", who: "Van den Berg Gruppe" },
+  { text: "Endlich Wachstum, und wir wissen genau, woher es kommt. Absolute Empfehlung.", who: "Van den Berg Gruppe" },
   { text: "Auch für die Mitarbeitersuche über Meta Ads — hätten wir nicht erwartet, dass das so gut läuft.", who: "GM-Dachdecker" },
   { text: "Konstante Betreuung statt einmal aufgesetzt und liegen gelassen.", who: "Colak GmbH", img: "/bilder/person-nalan-colak.webp" },
 ];
@@ -159,22 +159,17 @@ export default function MetaAdsPage() {
           <div className="band-tag reveal" style={{ marginBottom: 44 }}>
             03 — Der Beweis
           </div>
-          <div className="stat-block reveal">
-            <div className="stat-num" data-label="WACHSTUM">
-              +56<small>%</small>
-            </div>
-            <div className="stat-copy">
-              <p className="quote">
+          <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
+              <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
                 „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
                 gearbeitet — und das hat gereicht.“
               </p>
               <p>
-                Van den Berg Gruppe, kontinuierlich weiterentwickelte
-                Facebook-Ads-Kampagnen. Auch bei reduziertem Budget hielt der
-                Anfrage-Effekt an — Konstanz schlägt Sprunghaftigkeit.
+              Van den Berg Gruppe, kontinuierlich weiterentwickelte
+              Facebook-Ads-Kampagnen. Auch bei reduziertem Budget hielt der
+              Anfrage-Effekt an — Konstanz schlägt Sprunghaftigkeit.
               </p>
               <cite>{"// VAN DEN BERG GRUPPE"}</cite>
-            </div>
           </div>
         </section>
 
@@ -192,13 +187,13 @@ export default function MetaAdsPage() {
               <ul className="lines">
                 <li>Sauberes Conversion-Tracking, bevor eine Kampagne live geht.</li>
                 <li>Konstantes Budget statt ständigem Stoppen und Neustarten.</li>
-                <li>Ergebnisse mit echten Zahlen belegt, nicht mit Bauchgefühl.</li>
+                <li>Ergebnisse ehrlich eingeordnet, nicht schöngerechnet.</li>
                 <li>Laufende Optimierung — Budget wandert dahin, wo es wirkt.</li>
               </ul>
             </div>
             <div className="reveal">
               <MetricMock
-                head="Live-Auswertung · Van den Berg Gruppe"
+                head="Beispiel-Dashboard · Kampagnen-Auswertung"
                 rows={[
                   { label: "Anfragen / Monat", value: "34", countTo: "34" },
                   { label: "Klickrate", value: "6.8%", countTo: "6.8", suffix: "%" },

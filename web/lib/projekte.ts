@@ -124,7 +124,7 @@ export const fallstudien: Fallstudie[] = [
     bild: "/bilder/projekt-van-den-berg.webp",
     logo: "/bilder/kunde-vandenberg.png",
     variant: "ic-4",
-    titel: "56 % Wachstum durch gezielte Facebook Ads",
+    titel: "Konstantes Wachstum durch gezielte Facebook Ads",
     teaser:
       "Kontinuierlicher Kampagnenaufbau mit konsequenter Budget-Steuerung nach Datenlage statt Bauchgefühl — auch bei reduziertem Budget hielt der Anfrage-Effekt an.",
     problem: {
@@ -146,9 +146,7 @@ export const fallstudien: Fallstudie[] = [
       ],
     },
     ergebnis: {
-      statNum: "+56",
-      statLabel: "WACHSTUM",
-      text: "56 % mehr Anfragen — reale Kampagnendaten, kein Schätzwert. Auch bei reduziertem Budget hielt der Effekt an: Konstanz schlägt Sprunghaftigkeit.",
+      text: "Spürbar mehr Anfragen — und der Effekt hielt auch bei reduziertem Budget an: Konstanz schlägt Sprunghaftigkeit.",
     },
     stimme: {
       text: "Wir haben nicht mehr Budget verbrannt. Wir haben konstant gearbeitet — und das hat gereicht.",

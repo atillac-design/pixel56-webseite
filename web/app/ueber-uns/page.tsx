@@ -154,22 +154,17 @@ export default function UeberUnsPage() {
           <div className="band-tag reveal" style={{ marginBottom: 44 }}>
             03 — Der Beweis
           </div>
-          <div className="stat-block reveal">
-            <div className="stat-num" data-label="WACHSTUM">
-              +56<small>%</small>
-            </div>
-            <div className="stat-copy">
-              <p className="quote">
-                „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
-                gearbeitet — und das hat gereicht.“
-              </p>
-              <p>
-                Van den Berg Gruppe, laufende Betreuung. Reale Kampagnendaten,
-                kein Schätzwert — so arbeiten wir mit jedem Kunden: konstant,
-                messbar, ohne leere Versprechen.
-              </p>
-              <cite>{"// VAN DEN BERG GRUPPE, LAUFENDE BETREUUNG"}</cite>
-            </div>
+          <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
+            <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
+              „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
+              gearbeitet — und das hat gereicht.“
+            </p>
+            <p>
+              Van den Berg Gruppe, seit Jahren in laufender Betreuung — so
+              arbeiten wir mit jedem Kunden: konstant, ehrlich, ohne leere
+              Versprechen und ohne wöchentlich neu erfundenes Budget.
+            </p>
+            <cite>{"// VAN DEN BERG GRUPPE, LAUFENDE BETREUUNG"}</cite>
           </div>
         </section>
 

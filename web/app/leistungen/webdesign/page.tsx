@@ -190,22 +190,17 @@ export default function WebdesignPage() {
           <div className="band-tag reveal" style={{ marginBottom: 44 }}>
             04 — Der Beweis
           </div>
-          <div className="stat-block reveal">
-            <div className="stat-num" data-label="WACHSTUM">
-              +56<small>%</small>
-            </div>
-            <div className="stat-copy">
-              <p className="quote">
+          <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
+              <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
                 „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
                 gearbeitet — und das hat gereicht.“
               </p>
               <p>
-                Van den Berg Gruppe, laufende Betreuung. Reale Kampagnendaten,
-                kein Schätzwert — Wachstum, das entstand, weil niemand das Budget
-                wöchentlich neu erfunden hat.
+              Van den Berg Gruppe, laufende Betreuung — Wachstum, das
+              entstand, weil niemand das Budget wöchentlich neu erfunden hat,
+              sondern konstant gearbeitet wurde.
               </p>
               <cite>{"// VAN DEN BERG GRUPPE"}</cite>
-            </div>
           </div>
         </section>
 
@@ -223,13 +218,13 @@ export default function WebdesignPage() {
               <ul className="lines">
                 <li>Lokal verwurzelt — Bendorf bei Koblenz, kurze Wege, kein Callcenter.</li>
                 <li>Ein fester Ansprechpartner, keine wechselnden Projektmanager.</li>
-                <li>Ergebnisse mit echten Zahlen belegt, nicht mit Bauchgefühl.</li>
+                <li>Ergebnisse ehrlich eingeordnet, nicht schöngerechnet.</li>
                 <li>Bleibt nach dem Launch — Betreuung, kein Zusatzverkauf danach.</li>
               </ul>
             </div>
             <div className="reveal">
               <MetricMock
-                head="Live-Auswertung · Van den Berg Gruppe"
+                head="Beispiel-Dashboard · Kampagnen-Auswertung"
                 rows={[
                   { label: "Anfragen / Monat", value: "34", countTo: "34" },
                   { label: "Klickrate", value: "6.8%", countTo: "6.8", suffix: "%" },
