@@ -262,7 +262,7 @@ export default function SeoPage() {
           </div>
           <div className="ref-solo reveal">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="rc-img" src="/bilder/projekt-stark-ins-neue-2.webp" alt="Projekt: Stark ins Neue" style={{ marginBottom: 18 }} />
+            <img className="rc-img" src="/bilder/projekt-stark-ins-neue-2.webp" alt="Projekt: Stark ins Neue" style={{ marginBottom: 18 }} loading="lazy" decoding="async" />
             <div className="rc-cat">Stark ins Neue gGmbH</div>
             <h4>Kompletter Relaunch mit SEO von Grund auf</h4>
             <p>

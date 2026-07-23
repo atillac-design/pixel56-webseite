@@ -102,7 +102,7 @@ export function WaMock({ name, messages, footer }: { name: string; messages: WaM
       <div className="wa-head">
         <div className="wa-avatar">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/bilder/team-atilla.webp" alt="Atilla Ciftcioglu" />
+          <img src="/bilder/team-atilla.webp" alt="Atilla Ciftcioglu" loading="lazy" decoding="async" />
         </div>
         <div className="wa-id">
           <b>{name}</b>
@@ -161,8 +161,19 @@ export function CloseCta({ children, ctaHref = "https://calendly.com/pixel56/15m
 export type Faq = { q: string; a: string };
 
 export function FaqList({ items }: { items: Faq[] }) {
+  // FAQPage-Schema für Google — macht die Fragen als Rich Result auffindbar.
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
   return (
     <div className="faq-list reveal">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {items.map((f) => (
         <details className="faq-item" key={f.q}>
           <summary>
@@ -183,7 +194,7 @@ export function RefCard({ item }: { item: RefItem }) {
     <>
       {item.img ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img className="rc-img" src={item.img} alt={`${item.cat} — ${item.title}`} />
+        <img className="rc-img" src={item.img} alt={`${item.cat} — ${item.title}`} loading="lazy" decoding="async" />
       ) : (
         <BrowserMock variant={item.variant} barWidth={item.barWidth ?? 60} />
       )}
@@ -244,7 +255,7 @@ export function Reviews({ reviews }: { reviews: Review[] }) {
             {r.img ? (
               <div className="rc-person">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={r.img} alt={r.who} />
+                <img src={r.img} alt={r.who} loading="lazy" decoding="async" />
                 <div className="rc-who">{r.who}</div>
               </div>
             ) : (

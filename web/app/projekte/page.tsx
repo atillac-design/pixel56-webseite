@@ -105,7 +105,7 @@ export default function ProjektePage() {
               <Link className="proj-card" href={`/projekte/${p.slug}`} key={p.slug}>
                 {p.bild ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
-                  <img className="pc-img" src={p.bild} alt={`${p.kunde} — ${p.titel}`} />
+                  <img className="pc-img" src={p.bild} alt={`${p.kunde} — ${p.titel}`} loading="lazy" decoding="async" />
                 ) : (
                   <>
                     <div className="ic-chrome">
@@ -173,7 +173,7 @@ export default function ProjektePage() {
                 <div className="voice-person">
                   {s.img ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={s.img} alt={s.name} />
+                    <img src={s.img} alt={s.name} loading="lazy" decoding="async" />
                   ) : (
                     <div className="vp-fallback">{s.name.slice(0, 1)}</div>
                   )}
@@ -183,7 +183,7 @@ export default function ProjektePage() {
                   </div>
                   {s.logo && (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img className="case-logo" src={s.logo} alt="" style={{ marginLeft: "auto" }} />
+                    <img className="case-logo" src={s.logo} alt="" style={{ marginLeft: "auto" }} loading="lazy" decoding="async" />
                   )}
                 </div>
                 <div className="voice-solved">

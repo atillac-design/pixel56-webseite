@@ -61,7 +61,7 @@ export default async function FallstudiePage({ params }: Props) {
           <section className="band" style={{ paddingTop: 0, paddingBottom: 60 }}>
             <div className="reveal">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="case-img" src={f.bild} alt={`${f.kunde} — ${f.titel}`} />
+              <img className="case-img" src={f.bild} alt={`${f.kunde} — ${f.titel}`} loading="lazy" decoding="async" />
             </div>
           </section>
         )}
@@ -97,10 +97,10 @@ export default async function FallstudiePage({ params }: Props) {
             <div className="reveal">
               {f.galerie?.[0] ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img className="case-img" src={f.galerie[0]} alt={`Einblick in das Projekt für ${f.kunde}`} />
+                <img className="case-img" src={f.galerie[0]} alt={`Einblick in das Projekt für ${f.kunde}`} loading="lazy" decoding="async" />
               ) : f.bild ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img className="case-img" src={f.bild} alt={`Einblick in das Projekt für ${f.kunde}`} />
+                <img className="case-img" src={f.bild} alt={`Einblick in das Projekt für ${f.kunde}`} loading="lazy" decoding="async" />
               ) : (
                 <BrowserMock variant={f.variant} barWidth={60} />
               )}
@@ -121,7 +121,7 @@ export default async function FallstudiePage({ params }: Props) {
             <div className="case-galerie reveal">
               {f.galerie.slice(1).map((g) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={g} alt={`Einblick in das Projekt für ${f.kunde}`} key={g} />
+                <img src={g} alt={`Einblick in das Projekt für ${f.kunde}`} key={g} loading="lazy" decoding="async" />
               ))}
             </div>
           </section>
@@ -173,7 +173,7 @@ export default async function FallstudiePage({ params }: Props) {
                   <div className="voice-person">
                     {f.stimme.img ? (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={f.stimme.img} alt={f.stimme.name} />
+                      <img src={f.stimme.img} alt={f.stimme.name} loading="lazy" decoding="async" />
                     ) : (
                       <div className="vp-fallback">{f.stimme.name.slice(0, 1)}</div>
                     )}
@@ -183,7 +183,7 @@ export default async function FallstudiePage({ params }: Props) {
                     </div>
                     {f.logo && (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img className="case-logo" src={f.logo} alt="" style={{ marginLeft: "auto" }} />
+                      <img className="case-logo" src={f.logo} alt="" style={{ marginLeft: "auto" }} loading="lazy" decoding="async" />
                     )}
                   </div>
                 </div>

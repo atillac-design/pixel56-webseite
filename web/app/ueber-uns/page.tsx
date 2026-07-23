@@ -107,7 +107,7 @@ export default function UeberUnsPage() {
                 <div className="pm-top">
                   <div className="pm-avatar">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/bilder/team-atilla.webp" alt="Atilla Ciftcioglu" />
+                    <img src="/bilder/team-atilla.webp" alt="Atilla Ciftcioglu" loading="lazy" decoding="async" />
                   </div>
                   <div className="pm-id">
                     <b>Atilla Ciftcioglu</b>

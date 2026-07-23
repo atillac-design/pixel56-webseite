@@ -76,6 +76,7 @@ const faqs = [
   { q: "Was, wenn ich noch gar nicht genau weiß, was ich brauche?", a: "Völlig normal. Die meisten Gespräche starten nicht mit „ich brauche X, Y, Z“, sondern mit einem Ziel: mehr Anfragen, mehr Sichtbarkeit, mehr Zeit. Wir sortieren gemeinsam, was zuerst dran sollte." },
   { q: "Arbeitet ihr nur regional in Bendorf und Koblenz?", a: "Der Sitz ist in Bendorf bei Koblenz, lokale Betriebe sind uns besonders vertraut. Die Zusammenarbeit läuft aber ortsunabhängig — daher betreuen wir auch Kunden außerhalb der Region." },
   { q: "Was kostet das Erstgespräch?", a: "Nichts. Das Erstgespräch dient dazu, deine Situation ehrlich einzuschätzen. Erst danach gibt es ein konkretes, auf dich zugeschnittenes Angebot." },
+  { q: "Und was kostet dann z. B. eine Website?", a: "Das hängt ehrlich vom Umfang ab — eine fokussierte Landingpage kostet etwas anderes als ein Auftritt mit Karriereportal. Im Blog erklären wir offen, woraus sich der Preis zusammensetzt. Im Erstgespräch bekommst du eine belastbare Einschätzung für deinen Fall statt einer Zahl aus dem Bauch." },
   { q: "Wie schnell kann es losgehen?", a: "Das hängt vom Umfang und der Vorbereitung ab — Texte, Bildmaterial, Zugänge. Im Erstgespräch bekommst du einen realistischen Zeitrahmen statt einer pauschalen Zusage." },
   { q: "Was, wenn die Website nach dem Launch angepasst werden muss?", a: "Das ist eingeplant. Kleinere Anpassungen nach dem Launch gehören zum normalen Prozess — per WhatsApp über einen festen Ansprechpartner." },
 ];

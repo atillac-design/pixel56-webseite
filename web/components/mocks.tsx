@@ -55,7 +55,7 @@ export function FeedMock({ imgSrc, wer = "Dein Unternehmen" }: { imgSrc?: string
       </div>
       <div className={imgSrc ? "fm-image has-img" : "fm-image"}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        {imgSrc && <img src={imgSrc} alt="Beispiel-Anzeige" />}
+        {imgSrc && <img src={imgSrc} alt="Beispiel-Anzeige" loading="lazy" decoding="async" />}
       </div>
       <div className="fm-actions">
         {HeartIcon}
