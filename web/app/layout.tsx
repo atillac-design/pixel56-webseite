@@ -7,6 +7,8 @@ import { indexable } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.pixel56.de"),
+  // Jede Seite bekommt automatisch eine selbstreferenzierende Canonical-URL.
+  alternates: { canonical: "./" },
   // Test-/Staging-Deployment: global auf noindex, bis die Seite live geht.
   robots: indexable ? undefined : { index: false, follow: false },
   title: {
