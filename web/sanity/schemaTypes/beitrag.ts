@@ -24,8 +24,8 @@ export const beitrag = defineType({
       initialValue: "c1",
     }),
     defineField({ name: "lesezeit", title: "Lesezeit (Minuten)", type: "number", initialValue: 5 }),
-    defineField({ name: "inhalt", title: "Inhalt", type: "array", of: [{ type: "block" }] }),
-    defineField({ name: "veroeffentlichtAm", title: "Veröffentlicht am", type: "datetime" }),
+    defineField({ name: "inhalt", title: "Inhalt", type: "array", of: [{ type: "block" }], validation: (r) => r.required().min(1) }),
+    defineField({ name: "veroeffentlichtAm", title: "Veröffentlicht am", type: "datetime", validation: (r) => r.required() }),
   ],
   preview: { select: { title: "titel", subtitle: "kategorie" } },
 });

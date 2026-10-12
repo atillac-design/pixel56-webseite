@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site, footerNav } from "@/lib/site";
+import CookieSettingsButton from "@/components/CookieSettingsButton";
 
 export default function SiteFooter() {
   return (
@@ -67,6 +68,7 @@ export default function SiteFooter() {
         <div>
           <Link href="/impressum">Impressum</Link>
           <Link href="/datenschutz">Datenschutz</Link>
+          <CookieSettingsButton />
           <Link href="/agb">AGB</Link>
         </div>
       </div>

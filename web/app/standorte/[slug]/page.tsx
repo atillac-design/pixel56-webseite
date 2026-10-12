@@ -19,20 +19,37 @@ import {
 import { SearchMock } from "@/components/mocks";
 import { site } from "@/lib/site";
 import { standorte, getStandort } from "@/lib/standorte";
+import LegacyLocationPage from "@/components/LegacyLocationPage";
+import { getLegacyLocation, legacyLocations } from "@/lib/legacy-locations";
+import { locationPath } from "@/lib/routes";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return standorte.map((s) => ({ slug: s.slug }));
+  return [...new Set([
+    ...standorte.map((s) => s.slug),
+    ...legacyLocations.map((s) => s.slug),
+  ])]
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const ort = getStandort(slug);
+  const legacy = getLegacyLocation(slug);
+  if (!ort && !legacy) return {};
+  if (!ort && legacy) {
+    return {
+      title: { absolute: legacy.titel },
+      description: legacy.beschreibung,
+      alternates: { canonical: locationPath(legacy.slug) },
+    };
+  }
   if (!ort) return {};
   return {
     title: `Webdesign in ${ort.stadt}`,
     description: `Webdesign, Google & Meta Ads und Social-Media-Content für Unternehmen in ${ort.stadt} und Umgebung — von Pixel56 aus Bendorf bei Koblenz.`,
+    alternates: { canonical: locationPath(ort.slug) },
   };
 }
 
@@ -72,7 +89,11 @@ const reviews = [
 export default async function StandortPage({ params }: Props) {
   const { slug } = await params;
   const ort = getStandort(slug);
-  if (!ort) notFound();
+  if (!ort) {
+    const legacy = getLegacyLocation(slug);
+    if (!legacy) notFound();
+    return <LegacyLocationPage location={legacy} />;
+  }
 
   const faqs = [
     { q: "Wie lange dauert die Umsetzung?", a: "Je nach Umfang 3–5 Wochen von der Analyse bis zum Livegang — siehe die fünf Phasen oben." },
@@ -91,17 +112,17 @@ export default async function StandortPage({ params }: Props) {
     serviceType: "Webdesign",
     provider: { "@type": "ProfessionalService", name: site.name, url: site.url },
     areaServed: ort.stadt,
-    url: `${site.url}/standorte/${ort.slug}`,
+    url: `${site.url}${locationPath(ort.slug)}`,
   };
 
   return (
-    <>
+    <main className="service-premium service-suite page-suite location-suite">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="sheet">
         <SiteNav crumb={{ section: "Standort", page: `Webdesign in ${ort.stadt}` }} />
 
-        <header className="hero">
+        <header className="hero service-suite-hero">
           {ort.heroBild && (
             <div className="hero-scenic" aria-hidden="true">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -135,7 +156,8 @@ export default async function StandortPage({ params }: Props) {
 
       <ClientMarquee />
 
-      <div className="sheet">
+      <div className="editorial-shell service-editorial">
+        <div className="sheet">
         <section className="band tint-amber">
           <div className="split2 reverse">
             <div className="reveal">
@@ -181,19 +203,18 @@ export default async function StandortPage({ params }: Props) {
 
         <section className="band tint" id="beweis">
           <div className="band-tag reveal" style={{ marginBottom: 44 }}>
-            03 — Der Beweis
+            03 — Die Zusammenarbeit
           </div>
           <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
             <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
-              „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
-              gearbeitet — und das hat gereicht.“
+              Persönlich erreichbar. Digital gut organisiert.
             </p>
             <p>
-              Van den Berg Gruppe, seit Jahren in laufender Betreuung —
-              Wachstum, das entstand, weil niemand das Budget wöchentlich neu
-              erfunden hat, sondern konstant gearbeitet wurde.
+              Pixel56 arbeitet von Bendorf bei Koblenz aus mit Unternehmen in
+              ganz Deutschland. Workshops, Abstimmungen und Umsetzung stimmen
+              wir auf dein Projekt ab — ohne einen Standort vor Ort zu behaupten.
             </p>
-            <cite>{`// VAN DEN BERG GRUPPE, REGION ${ort.stadt.toUpperCase()}`}</cite>
+            <cite>{"// PIXEL56 · BENDORF BEI KOBLENZ"}</cite>
           </div>
         </section>
 
@@ -322,12 +343,15 @@ export default async function StandortPage({ params }: Props) {
           <FaqList items={faqs} />
         </section>
 
+        </div>
+      </div>
+
+      <div className="sheet service-ending">
         <CloseCta>
           Bereit, in {ort.stadt} <em>gefunden</em> zu werden?
         </CloseCta>
-
         <SiteFooter />
       </div>
-    </>
+    </main>
   );
 }

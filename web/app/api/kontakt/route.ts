@@ -1,60 +1,64 @@
 import { NextResponse } from "next/server";
 
-/**
- * Kontaktanfragen: legt den Kontakt mit Name/Telefon in MailerLite an
- * (Standardfelder name/phone, Feld quelle = "kontaktanfrage"), sodass eine
- * MailerLite-Automation die Benachrichtigung an Pixel56 auslösen kann.
- */
+const leistungen = new Set([
+  "Webdesign", "Meta Ads", "Social Content & Reels", "KI-Prozesse", "Mehrere Leistungen", "Anderes",
+]);
+
+function stringFeld(value: unknown, max: number): string {
+  return typeof value === "string" ? value.trim().slice(0, max) : "";
+}
+
 export async function POST(request: Request) {
-  let body: { name?: string; email?: string; telefon?: string };
+  let body: Record<string, unknown>;
   try {
-    body = await request.json();
+    if (Number(request.headers.get("content-length") ?? 0) > 12000) {
+      return NextResponse.json({ error: "Die Nachricht ist zu lang." }, { status: 413 });
+    }
+    const parsed: unknown = await request.json();
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) throw new Error("Invalid body");
+    body = parsed as Record<string, unknown>;
   } catch {
     return NextResponse.json({ error: "Ungültige Anfrage." }, { status: 400 });
   }
 
-  const email = (body.email ?? "").trim();
-  const name = (body.name ?? "").trim().slice(0, 120);
-  const telefon = (body.telefon ?? "").trim().slice(0, 40);
+  if (stringFeld(body.website, 100)) return NextResponse.json({ ok: true });
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-    return NextResponse.json(
-      { error: "Bitte gib eine gültige E-Mail-Adresse ein." },
-      { status: 400 }
-    );
+  const name = stringFeld(body.name, 120);
+  const email = stringFeld(body.email, 254);
+  const telefon = stringFeld(body.telefon, 40);
+  const leistung = stringFeld(body.leistung, 80);
+  const nachricht = stringFeld(body.nachricht, 3000);
+  if (name.length < 2 || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || !leistungen.has(leistung) || nachricht.length < 10) {
+    return NextResponse.json({ error: "Bitte fülle Name, E-Mail, Leistung und Projektbeschreibung aus." }, { status: 400 });
   }
 
-  const apiKey = process.env.MAILERLITE_API_KEY;
-  if (!apiKey) {
-    return NextResponse.json(
-      { error: "Die Anfrage kann gerade nicht gesendet werden — erreich uns direkt per WhatsApp oder Telefon." },
-      { status: 503 }
-    );
+  const apiKey = process.env.RESEND_API_KEY;
+  const from = process.env.PIXEL56_CONTACT_FROM;
+  const to = process.env.PIXEL56_CONTACT_TO;
+  if (!apiKey || !from || !to) {
+    return NextResponse.json({ error: "Das Formular ist derzeit nicht verfügbar. Bitte nutze E-Mail, WhatsApp oder Telefon." }, { status: 503 });
   }
 
-  const payload: Record<string, unknown> = {
-    email,
-    fields: { name, phone: telefon, quelle: "kontaktanfrage" },
-  };
-  const groupId = process.env.MAILERLITE_GROUP_KONTAKTANFRAGE ?? process.env.MAILERLITE_GROUP_ID;
-  if (groupId) payload.groups = [groupId];
-
-  const res = await fetch("https://connect.mailerlite.com/api/subscribers", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify(payload),
-  });
-
-  if (!res.ok && res.status !== 200 && res.status !== 201) {
-    return NextResponse.json(
-      { error: "Senden fehlgeschlagen — erreich uns direkt per WhatsApp oder Telefon." },
-      { status: 502 }
-    );
+  try {
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from,
+        to: [to],
+        reply_to: email,
+        subject: `Pixel56 Anfrage: ${leistung}`,
+        text: `Neue Projektanfrage\n\nName: ${name}\nE-Mail: ${email}\nTelefon: ${telefon || "nicht angegeben"}\nLeistung: ${leistung}\n\n${nachricht}`,
+      }),
+      signal: AbortSignal.timeout(10000),
+    });
+    if (!response.ok) {
+      console.error("Kontaktzustellung fehlgeschlagen:", response.status);
+      throw new Error("Delivery failed");
+    }
+    return NextResponse.json({ ok: true });
+  } catch (error) {
+    console.error("Kontaktzustellung nicht abgeschlossen:", error);
+    return NextResponse.json({ error: "Senden fehlgeschlagen. Bitte schreib uns direkt per E-Mail oder WhatsApp." }, { status: 502 });
   }
-
-  return NextResponse.json({ ok: true });
 }

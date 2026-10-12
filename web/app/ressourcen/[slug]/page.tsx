@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { FaqList } from "@/components/ui";
 import FreebieForm from "@/components/FreebieForm";
 import { ressourcen, getRessource } from "@/lib/ressourcen";
+import { resourcePath } from "@/lib/routes";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: res.docTitle,
     description: res.heroSub,
+    alternates: { canonical: resourcePath(res.slug) },
   };
 }
 
@@ -35,7 +37,7 @@ export default async function RessourcePage({ params }: Props) {
   if (!res) notFound();
 
   return (
-    <>
+    <main className="service-premium service-suite page-suite resource-premium">
       <div className="sheet">
         <nav className="site-nav">
           <Link className="mark" href="/">
@@ -45,7 +47,7 @@ export default async function RessourcePage({ params }: Props) {
           <span className="nav-note">Kostenlose Ressource</span>
         </nav>
 
-        <header className="hero-grab">
+        <header className="hero-grab contact-premium-hero">
           <div>
             <div className="hero-eyebrow">{res.eyebrow}</div>
             <h1>
@@ -86,7 +88,8 @@ export default async function RessourcePage({ params }: Props) {
         </header>
       </div>
 
-      <div className="sheet">
+      <div className="editorial-shell service-editorial">
+        <div className="sheet">
         <section className="band tint-amber">
           <div className="band-head reveal">
             <div>
@@ -121,17 +124,15 @@ export default async function RessourcePage({ params }: Props) {
           <FaqList items={res.faqs} />
         </section>
 
+        </div>
+      </div>
+
+      <div className="sheet service-ending">
         <section className="close-cta reveal">
           <div className="close-glow" />
-          <h2>
-            {res.ctaStart}
-            <em>{res.ctaEm}</em>
-          </h2>
-          <a className="btn-primary" href="#download">
-            Kostenlos herunterladen <DownloadIcon />
-          </a>
+          <h2>{res.ctaStart}<em>{res.ctaEm}</em></h2>
+          <a className="btn-primary" href="#download">Kostenlos herunterladen <DownloadIcon /></a>
         </section>
-
         <footer className="footer-slim">
           <div>© {new Date().getFullYear()} Pixel56</div>
           <div>
@@ -140,6 +141,6 @@ export default async function RessourcePage({ params }: Props) {
           </div>
         </footer>
       </div>
-    </>
+    </main>
   );
 }

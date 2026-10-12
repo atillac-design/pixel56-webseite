@@ -10,11 +10,14 @@ import {
   Reviews,
 } from "@/components/ui";
 import { fallstudien } from "@/lib/projekte";
+import { projectPath, routes } from "@/lib/routes";
+import { verifiedProjectVoices } from "@/lib/verified-reviews";
 
 export const metadata: Metadata = {
   title: "Projekte & Kundenprojekte",
   description:
-    "Echte Kundenprojekte von Pixel56: Webdesign, Branding, Meta Ads & Content für KMUs und Handwerker. 16 Fallstudien mit nachvollziehbaren Ergebnissen — vom Handwerk bis Non-Profit.",
+    "Echte Kundenprojekte von Pixel56: Webdesign, Branding, Meta Ads & Content für KMUs und Handwerker. Einblicke in ausgewählte Arbeiten vom Handwerk bis Non-Profit.",
+  alternates: { canonical: routes.projects },
 };
 
 const reviews = [
@@ -23,47 +26,38 @@ const reviews = [
   { text: "Die neue Website hat sich in wenigen Wochen ausgezahlt. Klare Empfehlung.", who: "Stark ins Neue gGmbH" },
 ];
 
-// Kundenstimmen mit Gesicht — aus den Fallstudien, ergänzt um Colak GmbH.
-const stimmen = [
-  ...fallstudien
-    .filter((f) => f.stimme?.img)
-    .map((f) => ({
-      text: f.stimme!.text,
-      name: f.stimme!.name,
-      rolle: f.stimme!.rolle,
-      img: f.stimme!.img,
-      logo: f.logo,
-      geloest: f.loesung.punkte[0],
-      slug: f.slug,
-    })),
-  {
-    text: "Messbare Ergebnisse statt leerer Versprechen — und auch Jahre später noch derselbe Ansprechpartner.",
-    name: "Nalan Colak",
-    rolle: "Colak GmbH",
-    img: "/bilder/person-nalan-colak.webp",
-    logo: "/bilder/kunde-colak.png",
-    geloest: "Webdesign und laufende digitale Betreuung",
-    slug: undefined as string | undefined,
-  },
-];
+// Nur kurze, auf der bisherigen Website veröffentlichte Originalauszüge.
+const stimmen = fallstudien.flatMap((f) => {
+  const voice = verifiedProjectVoices[f.slug];
+  if (!voice?.img) return [];
+  return [{
+    text: voice.text,
+    name: voice.who.split(" · ")[0],
+    rolle: f.kunde,
+    img: voice.img,
+    logo: f.logo,
+    geloest: f.loesung.punkte[0],
+    slug: f.slug,
+  }];
+});
 
 export default function ProjektePage() {
   return (
-    <>
+    <main className="service-premium service-suite page-suite page-suite-projects">
       <div className="sheet">
         <SiteNav crumb={{ section: "Unternehmen", page: "Projekte" }} />
 
-        <header className="hero">
+        <header className="hero service-suite-hero">
           <PulseField label1={`// ${fallstudien.length} PROJEKTE AUSGEWÄHLT`} label2="// SEIT 2019 IM EINSATZ" />
           <div className="hero-eyebrow">UNTERNEHMEN · PROJEKTE</div>
           <h1>
             <span className="in"><span>Echte Projekte.</span></span>
-            <span className="in"><span>Echte Ergebnisse.</span></span>
-            <span className="in"><span>Keine Behauptungen.</span></span>
+            <span className="in"><span>Echte Einblicke.</span></span>
+            <span className="in"><span>Klare Leistungen.</span></span>
           </h1>
           <p className="hero-sub">
             Vom Dachdecker-Karriereportal bis zur Spendengala — jedes Projekt
-            hier ist real, mit echten Kunden und nachvollziehbaren Ergebnissen.
+            hier zeigt echte Kundenarbeit und unseren Beitrag zum Projekt.
           </p>
           <div className="hero-actions">
             <a className="btn-primary" href="https://calendly.com/pixel56/15min" target="_blank" rel="noopener">
@@ -85,7 +79,8 @@ export default function ProjektePage() {
 
       <ClientMarquee />
 
-      <div className="sheet">
+      <div className="editorial-shell service-editorial">
+        <div className="sheet">
         <section className="band" id="projekte">
           <div className="band-head reveal">
             <div>
@@ -102,7 +97,7 @@ export default function ProjektePage() {
           </div>
           <div className="proj-grid reveal">
             {fallstudien.map((p) => (
-              <Link className="proj-card" href={`/projekte/${p.slug}`} key={p.slug}>
+              <Link className="proj-card" href={projectPath(p.slug)} key={p.slug}>
                 {p.bild ? (
                   /* eslint-disable-next-line @next/next/no-img-element */
                   <img className="pc-img" src={p.bild} alt={`${p.kunde} — ${p.titel}`} loading="lazy" decoding="async" />
@@ -137,19 +132,18 @@ export default function ProjektePage() {
 
         <section className="band tint" id="beweis">
           <div className="band-tag reveal" style={{ marginBottom: 44 }}>
-            02 — Der Beweis
+            02 — Unsere Arbeit
           </div>
           <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
-              <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
-                „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
-                gearbeitet — und das hat gereicht.“
-              </p>
-              <p>
-              Van den Berg Gruppe, seit Jahren in laufender Betreuung. Dazu:
-              spürbar leichtere Mitarbeitergewinnung für GM-Dachdecker und mehr
-              Kursanmeldungen für Stark ins Neue.
-              </p>
-              <cite>{"// VAN DEN BERG GRUPPE, LAUFENDE BETREUUNG"}</cite>
+            <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
+              Vom ersten Konzept bis zur laufenden Betreuung.
+            </p>
+            <p>
+              Die Projekte zeigen Websites, Kampagnen, Content und
+              Anmeldestrecken im realen Einsatz. Wo keine freigegebenen
+              Kennzahlen vorliegen, beschreiben wir die umgesetzte Arbeit
+              statt einen Erfolg zu behaupten.
+            </p>
           </div>
         </section>
 
@@ -158,7 +152,7 @@ export default function ProjektePage() {
             <div>
               <span className="band-tag">03 — Kundenstimmen</span>
               <h2 className="band-title">
-                Echte Gesichter, <em>echte Ergebnisse</em>
+                Echte Gesichter, <em>echte Stimmen</em>
               </h2>
             </div>
             <p className="band-note">
@@ -191,7 +185,7 @@ export default function ProjektePage() {
                   {s.geloest}
                 </div>
                 {s.slug && (
-                  <Link className="voice-link" href={`/projekte/${s.slug}`}>
+                  <Link className="voice-link" href={projectPath(s.slug)}>
                     Zur Fallstudie <ArrowIcon />
                   </Link>
                 )}
@@ -203,7 +197,7 @@ export default function ProjektePage() {
         <section className="band" id="bewertungen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">04 — Google-Bewertungen</span>
+              <span className="band-tag">04 — Kundenfeedback</span>
               <h2 className="band-title">
                 Das sagen <em>Kunden über uns</em>
               </h2>
@@ -212,12 +206,15 @@ export default function ProjektePage() {
           <Reviews reviews={reviews} />
         </section>
 
+        </div>
+      </div>
+
+      <div className="sheet service-ending">
         <CloseCta>
           Dein Projekt könnte das <em>nächste</em> sein.
         </CloseCta>
-
         <SiteFooter />
       </div>
-    </>
+    </main>
   );
 }

@@ -4,11 +4,14 @@ import { useState } from "react";
 
 type Status = "idle" | "loading" | "success" | "error";
 
-/** Kontaktformular — legt die Anfrage via /api/kontakt in MailerLite an. */
+/** Kontaktformular — sendet eine Projektanfrage an /api/kontakt. */
 export default function KontaktForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [telefon, setTelefon] = useState("");
+  const [leistung, setLeistung] = useState("");
+  const [nachricht, setNachricht] = useState("");
+  const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
 
@@ -21,7 +24,7 @@ export default function KontaktForm() {
       const res = await fetch("/api/kontakt", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, telefon }),
+        body: JSON.stringify({ name, email, telefon, leistung, nachricht, website }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
@@ -39,14 +42,13 @@ export default function KontaktForm() {
   if (status === "success") {
     return (
       <div className="form-success" role="status">
-        <b>Anfrage angekommen!</b> Wir melden uns innerhalb eines Werktags bei
-        dir — meist deutlich schneller.
+        <b>Danke für deine Anfrage!</b> Deine Nachricht wurde an Pixel56 übermittelt.
       </div>
     );
   }
 
   return (
-    <form className="kontakt-form" onSubmit={submit} noValidate>
+    <form className="kontakt-form" onSubmit={submit}>
       <label className="form-label" htmlFor="k-name">
         Wie heißt du?
       </label>
@@ -56,6 +58,8 @@ export default function KontaktForm() {
         type="text"
         placeholder="Vor- und Nachname"
         autoComplete="name"
+        required
+        maxLength={120}
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
@@ -69,18 +73,37 @@ export default function KontaktForm() {
         placeholder="deine@email.de"
         autoComplete="email"
         required
+        maxLength={254}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
+      <label className="form-label" htmlFor="k-telefon">Telefon (optional)</label>
       <input
         id="k-telefon"
         className="form-field"
         type="tel"
         placeholder="Telefon (optional)"
         autoComplete="tel"
+        maxLength={40}
         value={telefon}
         onChange={(e) => setTelefon(e.target.value)}
       />
+      <label className="form-label" htmlFor="k-leistung">Wobei können wir helfen?</label>
+      <select id="k-leistung" className="form-field" required value={leistung} onChange={(e) => setLeistung(e.target.value)}>
+        <option value="">Bitte auswählen</option>
+        <option value="Webdesign">Webdesign</option>
+        <option value="Meta Ads">Meta Ads</option>
+        <option value="Social Content & Reels">Social Content &amp; Reels</option>
+        <option value="KI-Prozesse">KI-Prozesse</option>
+        <option value="Mehrere Leistungen">Mehrere Leistungen</option>
+        <option value="Anderes">Anderes</option>
+      </select>
+      <label className="form-label" htmlFor="k-nachricht">Erzähl uns kurz von deinem Vorhaben</label>
+      <textarea id="k-nachricht" className="form-field" required minLength={10} maxLength={3000} rows={4} placeholder="Was möchtest du erreichen?" value={nachricht} onChange={(e) => setNachricht(e.target.value)} />
+      <div className="form-honeypot" aria-hidden="true">
+        <label htmlFor="k-website">Website</label>
+        <input id="k-website" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+      </div>
       <button className="btn-primary" type="submit" disabled={status === "loading"}>
         {status === "loading" ? "Wird gesendet…" : "Erstgespräch anfragen"}
         <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -89,7 +112,7 @@ export default function KontaktForm() {
       </button>
       {status === "error" && <div className="form-error" role="alert">{error}</div>}
       <div className="form-privacy">
-        Unverbindlich & kostenlos. Deine Daten werden nur für die Kontaktaufnahme genutzt.
+        Unverbindlich &amp; kostenlos. Details zur Datenverarbeitung findest du in unserer <a href="/datenschutz">Datenschutzerklärung</a>.
       </div>
     </form>
   );

@@ -5,6 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 import { PulseField, CloseCta } from "@/components/ui";
 import { getBlogBeitraege } from "@/lib/sanity";
 import { artikel as fallbackArtikel } from "@/lib/blog";
+import { resourceRoutes, routes } from "@/lib/routes";
 
 // CMS-Inhalte spätestens nach 5 Minuten übernehmen, ohne Neu-Deployment.
 export const revalidate = 300;
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
   title: "Blog — Marketing-Wissen für KMUs",
   description:
     "Der Pixel56-Blog: praxisnahe Tipps zu Webdesign, SEO, Google & Meta Ads und Social Media für KMUs, Handwerker & Selbstständige. Wissen, das wirklich weiterhilft.",
+  alternates: { canonical: routes.blog },
 };
 
 // Fallback-Artikel (aus lib/blog), solange kein CMS verbunden ist.
@@ -26,32 +28,31 @@ const artikelFallback = fallbackArtikel.map((a) => ({
 }));
 
 const freebies = [
-  { fl: "Checkliste · PDF", title: "SEO-Checkliste", text: "Die wichtigsten Punkte, die jede Website erfüllen sollte, um bei Google gefunden zu werden — zum Selbst-Abhaken.", href: "/ressourcen/seo-checkliste" },
-  { fl: "Checkliste · PDF", title: "KI-Agenten-Checkliste", text: "Wo KI im Betriebsalltag tatsächlich Zeit spart — und wo sie nur Spielerei ist. Ehrlich eingeordnet.", href: "/ressourcen/ki-agenten-checkliste" },
-  { fl: "Vorlage · PDF", title: "Tagesplaner", text: "Die Planungs-Vorlage, mit der wir selbst arbeiten — für fokussierte Tage statt Zettelwirtschaft.", href: "/ressourcen/tagesplaner" },
+  { fl: "Checkliste · PDF", title: "SEO-Checkliste", text: "Die wichtigsten Punkte, die jede Website erfüllen sollte, um bei Google gefunden zu werden — zum Selbst-Abhaken.", href: resourceRoutes["seo-checkliste"] },
+  { fl: "Checkliste · PDF", title: "KI-Agenten-Checkliste", text: "Wo KI im Betriebsalltag tatsächlich Zeit spart — und wo sie nur Spielerei ist. Ehrlich eingeordnet.", href: resourceRoutes["ki-agenten-checkliste"] },
+  { fl: "Vorlage · PDF", title: "Tagesplaner", text: "Die Planungs-Vorlage, mit der wir selbst arbeiten — für fokussierte Tage statt Zettelwirtschaft.", href: resourceRoutes.tagesplaner },
 ];
 
 export default async function BlogPage() {
   const beitraege = await getBlogBeitraege();
   // Solange das CMS leer ist, bleiben die Fallback-Artikel sichtbar.
-  const artikel =
-    beitraege && beitraege.length > 0
-      ? beitraege.map((b) => ({
+  const cmsArtikel = (beitraege ?? []).map((b) => ({
           cover: b.coverFarbe,
           tag: b.kategorie,
           title: b.titel,
           text: b.teaser,
           meta: `${b.kategorie} · ${b.lesezeit} Min. Lesezeit`,
           slug: b.slug,
-        }))
-      : artikelFallback;
+        }));
+  const cmsSlugs = new Set(cmsArtikel.map((a) => a.slug));
+  const artikel = [...cmsArtikel, ...artikelFallback.filter((a) => !cmsSlugs.has(a.slug))];
 
   return (
-    <>
+    <main className="service-premium service-suite page-suite page-suite-blog">
       <div className="sheet">
         <SiteNav crumb={{ section: "Unternehmen", page: "Blog" }} />
 
-        <header className="hero">
+        <header className="hero service-suite-hero">
           <PulseField />
           <div className="hero-eyebrow">UNTERNEHMEN · BLOG</div>
           <h1>
@@ -72,7 +73,8 @@ export default async function BlogPage() {
         </header>
       </div>
 
-      <div className="sheet">
+      <div className="editorial-shell service-editorial">
+        <div className="sheet">
         <section className="band" id="artikel" style={{ paddingTop: 40 }}>
           <div className="band-head reveal">
             <div>
@@ -121,12 +123,15 @@ export default async function BlogPage() {
           </div>
         </section>
 
+        </div>
+      </div>
+
+      <div className="sheet service-ending">
         <CloseCta>
           Lieber direkt <em>fragen?</em>
         </CloseCta>
-
         <SiteFooter />
       </div>
-    </>
+    </main>
   );
 }

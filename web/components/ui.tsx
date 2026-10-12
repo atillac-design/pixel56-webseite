@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { clients } from "@/lib/site";
+import { verifiedReviews } from "@/lib/verified-reviews";
 
 export function ArrowIcon() {
   return (
@@ -66,10 +67,11 @@ const BAR_HEIGHTS = [38, 52, 44, 68, 60, 82, 100];
 
 export function MetricMock({ head, rows, bars = BAR_HEIGHTS }: { head: string; rows: MetricRow[]; bars?: number[] }) {
   return (
-    <div className="metric-mock">
+    <div className="metric-mock" aria-label="Illustratives Dashboard mit Beispieldaten">
       <div className="mm-head">
         <span className="wdot" />
         {head}
+        <span className="mm-demo">DEMO</span>
       </div>
       {rows.map((r) => (
         <div className="metric-row" key={r.label}>
@@ -88,6 +90,7 @@ export function MetricMock({ head, rows, bars = BAR_HEIGHTS }: { head: string; r
           <i key={`${i}-${h}`} style={{ height: `${h}%`, animationDelay: `${0.5 + i * 0.1}s` }} />
         ))}
       </div>
+      <p className="mm-disclaimer">Illustrative Werte · keine Kundendaten</p>
     </div>
   );
 }
@@ -161,7 +164,8 @@ export function CloseCta({ children, ctaHref = "https://calendly.com/pixel56/15m
 export type Faq = { q: string; a: string };
 
 export function FaqList({ items }: { items: Faq[] }) {
-  // FAQPage-Schema für Google — macht die Fragen als Rich Result auffindbar.
+  // Beschreibt die sichtbaren Fragen maschinenlesbar; die Suchdarstellung
+  // entscheidet Google abhängig von Seitentyp und Suchanfrage.
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -235,22 +239,23 @@ export function Stepper({ steps, six = false }: { steps: Step[]; six?: boolean }
 
 export type Review = { text: string; who: string; img?: string };
 
-export function Reviews({ reviews }: { reviews: Review[] }) {
+export function Reviews({ reviews: _reviews }: { reviews: Review[] }) {
   return (
     <div className="reviews-wrap reveal">
       <div className="reviews-score">
-        <div className="rs-num">5.0</div>
-        <div className="rs-stars">★★★★★</div>
+        <span className="reviews-kicker">KUNDENFEEDBACK</span>
+        <div className="rs-num">Nicht wir sagen das.</div>
         <div className="rs-meta">
-          27 Google Bewertungen
-          <br />
-          Pixel56 · Bendorf
+          Auszüge aus veröffentlichten Aussagen auf der bisherigen Pixel56-Website.
         </div>
+        <a className="reviews-google-link" href="https://www.google.com/maps/search/?api=1&amp;query=pixel56%20H%C3%BCttenstra%C3%9Fe%20100%20Bendorf" target="_blank" rel="noopener noreferrer">
+          Pixel56 bei Google Maps suchen <ArrowIcon />
+        </a>
       </div>
       <div className="reviews-grid">
-        {reviews.map((r) => (
+        {verifiedReviews.map((r) => (
           <div className="review-card" key={r.who}>
-            <div className="rc-stars">★★★★★</div>
+            <span className="review-quote-mark" aria-hidden="true">“</span>
             <p>„{r.text}“</p>
             {r.img ? (
               <div className="rc-person">

@@ -17,12 +17,15 @@ import {
   type RefItem,
 } from "@/components/ui";
 import { SearchMock } from "@/components/mocks";
+import PlannedMedia from "@/components/PlannedMedia";
 import { site } from "@/lib/site";
+import { projectPath, serviceRoutes } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "Google Ads für KMUs",
   description:
     "Google Ads mit sauberem Tracking und Struktur statt Bauchgefühl: sichtbar im Moment der Suchabsicht. Für KMUs & Handwerker deutschlandweit. Jetzt kostenlose Beratung sichern.",
+  alternates: { canonical: serviceRoutes["google-ads"] },
 };
 
 const jsonLd = {
@@ -32,7 +35,7 @@ const jsonLd = {
   serviceType: "Suchmaschinenwerbung",
   provider: { "@type": "ProfessionalService", name: site.name, url: site.url },
   areaServed: "DE",
-  url: `${site.url}/leistungen/google-ads`,
+  url: `${site.url}${serviceRoutes["google-ads"]}`,
 };
 
 const statusRows = [
@@ -59,7 +62,7 @@ const steps = [
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-4", barWidth: 55, href: "/projekte/gm-dachdecker", cat: "GM-Dachdecker Meisterbetrieb", title: "Digitale Sichtbarkeit als Gesamtpaket", text: "Neue Website und laufende Kampagnenarbeit Hand in Hand — Tracking und Landingpage stimmen von Anfang an aufeinander ab.", tag: "Website · Kampagnenbetreuung" },
+  { variant: "ic-4", barWidth: 55, img: "/bilder/projekt-gm-dachdecker.webp", href: projectPath("gm-dachdecker"), cat: "GM-Dachdecker Meisterbetrieb", title: "Digitale Sichtbarkeit als Gesamtpaket", text: "Neue Website und laufende Kampagnenarbeit Hand in Hand — Tracking und Landingpage stimmen von Anfang an aufeinander ab.", tag: "Website · Kampagnenbetreuung" },
   { variant: "ic-2", barWidth: 65, cat: "Unser eigener Anspruch", title: "Tracking ist nie ein Nachgedanke", text: "Jede Kampagne bekommt sauberes Conversion-Tracking, bevor sie live geht — keine Ausnahme, kein optionales Extra für später.", tag: "Grundprinzip · alle Projekte" },
 ];
 
@@ -80,13 +83,13 @@ const reviews = [
 
 export default function GoogleAdsPage() {
   return (
-    <>
+    <main className="service-premium service-suite service-suite-google">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="sheet">
         <SiteNav crumb={{ section: "Leistungen", page: "Google Ads" }} />
 
-        <header className="hero">
+        <header className="hero service-suite-hero">
           <PulseField label1="// KAMPAGNE AKTIV" label2="// TRACKING LÜCKENLOS" />
           <div className="hero-eyebrow">LEISTUNG · GOOGLE ADS</div>
           <h1>
@@ -101,7 +104,7 @@ export default function GoogleAdsPage() {
           </p>
           <div className="hero-actions">
             <a className="btn-primary" href="https://calendly.com/pixel56/15min" target="_blank" rel="noopener">
-              Kostenloses Erstgespräch <ArrowIcon />
+              Google-Ads-Potenzial prüfen <ArrowIcon />
             </a>
             <Link className="btn-text" href="#status">
               Kennst du das? ↓
@@ -118,7 +121,15 @@ export default function GoogleAdsPage() {
 
       <ClientMarquee />
 
-      <div className="sheet">
+      <div className="editorial-shell service-editorial">
+        <div className="sheet">
+        <section className="service-summary service-summary-premium reveal" aria-label="Google Ads auf einen Blick">
+          <div><span>Moment</span><strong>Sichtbar bei aktiver Nachfrage</strong></div>
+          <div><span>Setup</span><strong>Keywords, Anzeigen, Zielseiten</strong></div>
+          <div><span>Messung</span><strong>Sauberes Conversion-Tracking</strong></div>
+          <div><span>Ziel</span><strong>Mehr Wert aus jedem Klick</strong></div>
+        </section>
+
         <section className="band tint-amber" id="status">
           <div className="split2 reverse">
             <div className="reveal">
@@ -187,23 +198,27 @@ export default function GoogleAdsPage() {
               </div>
             ))}
           </div>
+          <PlannedMedia
+            title="Einblick in eine echte Google-Ads-Kampagne"
+            description="Hier passt später ein freigegebener, anonymisierter Screenshot von Kampagnenstruktur und Auswertung hinein — mit echten Daten statt erfundener Ergebnisse."
+            format="16:9"
+          />
         </section>
 
         <section className="band tint" id="beweis">
           <div className="band-tag reveal" style={{ marginBottom: 44 }}>
-            04 — Der Beweis
+            04 — Aus der Projektarbeit
           </div>
           <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
-              <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
-                „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
-                gearbeitet — und das hat gereicht.“
-              </p>
-              <p>
-              Van den Berg Gruppe, laufende Kampagnenbetreuung — Wachstum,
-              das entstand, weil niemand das Budget wöchentlich neu erfunden
-              hat, sondern konstant gearbeitet wurde.
-              </p>
-              <cite>{"// VAN DEN BERG GRUPPE"}</cite>
+            <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
+              Kampagnenstruktur, Zielseite und Messung gehören zusammen.
+            </p>
+            <p>
+              Bei der Van den Berg Gruppe wurden Kampagnen, Conversion-Tracking
+              und Zielseiten aufeinander abgestimmt und laufend ausgewertet.
+              Konkrete Ergebniszahlen veröffentlichen wir nur mit Freigabe.
+            </p>
+            <cite>{"// PROJEKT VAN DEN BERG GRUPPE"}</cite>
           </div>
         </section>
 
@@ -315,12 +330,16 @@ export default function GoogleAdsPage() {
           <FaqList items={faqs} />
         </section>
 
+        </div>
+      </div>
+
+      <div className="sheet service-ending">
         <CloseCta>
           Lass uns über deine <em>Google-Ads-Kampagne</em> sprechen.
         </CloseCta>
 
         <SiteFooter />
       </div>
-    </>
+    </main>
   );
 }

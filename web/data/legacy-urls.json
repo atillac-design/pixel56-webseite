@@ -1,0 +1,1945 @@
+{
+  "source": "https://www.pixel56.de/sitemap.xml",
+  "generatedAt": "2026-08-13T22:02:04.102Z",
+  "total": 240,
+  "counts": {
+    "byType": {
+      "core": 20,
+      "system": 3,
+      "blog": 31,
+      "team": 1,
+      "portfolio": 10,
+      "job": 1,
+      "blog-category": 8,
+      "location": 166
+    },
+    "byAction": {
+      "preserve": 70,
+      "exclude": 3,
+      "redirect": 1,
+      "review": 166
+    }
+  },
+  "routes": [
+    {
+      "sourceUrl": "https://www.pixel56.de",
+      "sourcePath": "/",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog",
+      "sourcePath": "/blog",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/blog",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/checkout",
+      "sourcePath": "/checkout",
+      "type": "system",
+      "action": "exclude",
+      "targetPath": null,
+      "note": "Nicht in die neue Sitemap aufnehmen; nicht indexierbar ausliefern oder entfernen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/datenschutz",
+      "sourcePath": "/datenschutz",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/datenschutz",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/dein-kostenloses-beratungsgesprach",
+      "sourcePath": "/dein-kostenloses-beratungsgesprach",
+      "type": "core",
+      "action": "redirect",
+      "targetPath": "/kontakt",
+      "note": "Semantisch passendes, vorab geprüftes Weiterleitungsziel."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/dienstleistung",
+      "sourcePath": "/dienstleistung",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/dienstleistung",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/impressum",
+      "sourcePath": "/impressum",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/impressum",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/karriere",
+      "sourcePath": "/karriere",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/karriere",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/kontakt",
+      "sourcePath": "/kontakt",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/kontakt",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/kundenprojekte",
+      "sourcePath": "/kundenprojekte",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/kundenprojekte",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/order-confirmation",
+      "sourcePath": "/order-confirmation",
+      "type": "system",
+      "action": "exclude",
+      "targetPath": null,
+      "note": "Nicht in die neue Sitemap aufnehmen; nicht indexierbar ausliefern oder entfernen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/paypal-checkout",
+      "sourcePath": "/paypal-checkout",
+      "type": "system",
+      "action": "exclude",
+      "targetPath": null,
+      "note": "Nicht in die neue Sitemap aufnehmen; nicht indexierbar ausliefern oder entfernen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/uber-uns",
+      "sourcePath": "/uber-uns",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/uber-uns",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/webdesign",
+      "sourcePath": "/webdesign",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/webdesign",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/checkliste-seo",
+      "sourcePath": "/checkliste-seo",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/checkliste-seo",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/checkliste-ki-agenten",
+      "sourcePath": "/checkliste-ki-agenten",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/checkliste-ki-agenten",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/social-media-content",
+      "sourcePath": "/social-media-content",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/social-media-content",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/facebook-meta-ads",
+      "sourcePath": "/facebook-meta-ads",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/facebook-meta-ads",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/standorte",
+      "sourcePath": "/standorte",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/standorte",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/suchmaschinenoptimierung",
+      "sourcePath": "/suchmaschinenoptimierung",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/suchmaschinenoptimierung",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/kostenloser-tagesplaner-to-do-liste-als-pdf-vorlage",
+      "sourcePath": "/kostenloser-tagesplaner-to-do-liste-als-pdf-vorlage",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/kostenloser-tagesplaner-to-do-liste-als-pdf-vorlage",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/5-einfache-tipps-um-mehr-kundenanfragen-als-handwerker-zu-bekommen",
+      "sourcePath": "/blog/5-einfache-tipps-um-mehr-kundenanfragen-als-handwerker-zu-bekommen",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/5-einfache-tipps-um-mehr-kundenanfragen-als-handwerker-zu-bekommen",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/5-unglaubliche-ki-schreibtools",
+      "sourcePath": "/blog/5-unglaubliche-ki-schreibtools",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/5-unglaubliche-ki-schreibtools",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/8-bessere-ai-tools-als-chatgpt",
+      "sourcePath": "/blog/8-bessere-ai-tools-als-chatgpt",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/8-bessere-ai-tools-als-chatgpt",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/branding-mehr-als-ein-logo",
+      "sourcePath": "/blog/branding-mehr-als-ein-logo",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/branding-mehr-als-ein-logo",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/der-ultimative-guide-zur-erstellung-eines-effektiven-marketing-funnels",
+      "sourcePath": "/blog/der-ultimative-guide-zur-erstellung-eines-effektiven-marketing-funnels",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/der-ultimative-guide-zur-erstellung-eines-effektiven-marketing-funnels",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/die-besten-alternativen-zu-calendly-fuer-2023-effiziente-terminplanung",
+      "sourcePath": "/blog/die-besten-alternativen-zu-calendly-fuer-2023-effiziente-terminplanung",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/die-besten-alternativen-zu-calendly-fuer-2023-effiziente-terminplanung",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/die-besten-online-marketing-strategien-2024",
+      "sourcePath": "/blog/die-besten-online-marketing-strategien-2024",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/die-besten-online-marketing-strategien-2024",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/die-ultimative-marketing-checkliste-fuer-selbststaendige-und-kmus",
+      "sourcePath": "/blog/die-ultimative-marketing-checkliste-fuer-selbststaendige-und-kmus",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/die-ultimative-marketing-checkliste-fuer-selbststaendige-und-kmus",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/effektive-nutzung-von-social-media-fur-branding-und-lead-generierung",
+      "sourcePath": "/blog/effektive-nutzung-von-social-media-fur-branding-und-lead-generierung",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/effektive-nutzung-von-social-media-fur-branding-und-lead-generierung",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/google-ads-fuer-handwerker",
+      "sourcePath": "/blog/google-ads-fuer-handwerker",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/google-ads-fuer-handwerker",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/google-business-profil-optimieren",
+      "sourcePath": "/blog/google-business-profil-optimieren",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/google-business-profil-optimieren",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/grok-vs-deepseek-ki-webdesign-social-media-kmus-deutschland",
+      "sourcePath": "/blog/grok-vs-deepseek-ki-webdesign-social-media-kmus-deutschland",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/grok-vs-deepseek-ki-webdesign-social-media-kmus-deutschland",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/ki-agenten-fuer-selbststaendige",
+      "sourcePath": "/blog/ki-agenten-fuer-selbststaendige",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/ki-agenten-fuer-selbststaendige",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/kostenloser-website-check",
+      "sourcePath": "/blog/kostenloser-website-check",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/kostenloser-website-check",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/leitfaden-zur-verwendung-von-instagram-anzeigen",
+      "sourcePath": "/blog/leitfaden-zur-verwendung-von-instagram-anzeigen",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/leitfaden-zur-verwendung-von-instagram-anzeigen",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/lernen-sie-wie-sie-ihre-website-fur-kleine-unternehmen-optimieren-und-neue-kunden-gewinnen",
+      "sourcePath": "/blog/lernen-sie-wie-sie-ihre-website-fur-kleine-unternehmen-optimieren-und-neue-kunden-gewinnen",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/lernen-sie-wie-sie-ihre-website-fur-kleine-unternehmen-optimieren-und-neue-kunden-gewinnen",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/marketing-prioritaeten-handwerksbetrieb",
+      "sourcePath": "/blog/marketing-prioritaeten-handwerksbetrieb",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/marketing-prioritaeten-handwerksbetrieb",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/mehr-google-rezensionen-handwerksbetrieb",
+      "sourcePath": "/blog/mehr-google-rezensionen-handwerksbetrieb",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/mehr-google-rezensionen-handwerksbetrieb",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/meta-ads-budget-handwerksbetrieb",
+      "sourcePath": "/blog/meta-ads-budget-handwerksbetrieb",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/meta-ads-budget-handwerksbetrieb",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/meta-ads-mehr-kunden-fur-handwerker-kmu",
+      "sourcePath": "/blog/meta-ads-mehr-kunden-fur-handwerker-kmu",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/meta-ads-mehr-kunden-fur-handwerker-kmu",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/nische-auf-social-media-finden",
+      "sourcePath": "/blog/nische-auf-social-media-finden",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/nische-auf-social-media-finden",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/revolution-durch-ki-fuer-kleine-und-mittelstandische-unternehmen",
+      "sourcePath": "/blog/revolution-durch-ki-fuer-kleine-und-mittelstandische-unternehmen",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/revolution-durch-ki-fuer-kleine-und-mittelstandische-unternehmen",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/seo-dauer-bis-ergebnisse",
+      "sourcePath": "/blog/seo-dauer-bis-ergebnisse",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/seo-dauer-bis-ergebnisse",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/seo-fur-handwerker-steigere-deine-sichtbarkeit",
+      "sourcePath": "/blog/seo-fur-handwerker-steigere-deine-sichtbarkeit",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/seo-fur-handwerker-steigere-deine-sichtbarkeit",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/skool-die-neue-plattform-fur-community-building-und-lernen",
+      "sourcePath": "/blog/skool-die-neue-plattform-fur-community-building-und-lernen",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/skool-die-neue-plattform-fur-community-building-und-lernen",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/transparenz-fairness-im-digitalen-marketing",
+      "sourcePath": "/blog/transparenz-fairness-im-digitalen-marketing",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/transparenz-fairness-im-digitalen-marketing",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/warum-ihre-website-im-jahr-2024-mobil-first-sein-sollte",
+      "sourcePath": "/blog/warum-ihre-website-im-jahr-2024-mobil-first-sein-sollte",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/warum-ihre-website-im-jahr-2024-mobil-first-sein-sollte",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/warum-ist-eine-neue-webseite-so-wichtig-fuer-unternehmer",
+      "sourcePath": "/blog/warum-ist-eine-neue-webseite-so-wichtig-fuer-unternehmer",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/warum-ist-eine-neue-webseite-so-wichtig-fuer-unternehmer",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/warum-langsame-website-kunden-kostet",
+      "sourcePath": "/blog/warum-langsame-website-kunden-kostet",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/warum-langsame-website-kunden-kostet",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/website-kosten-handwerksbetriebe",
+      "sourcePath": "/blog/website-kosten-handwerksbetriebe",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/website-kosten-handwerksbetriebe",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog/wie-social-media-kleinen-unternehmen-hilft-sich-zu-differenzieren",
+      "sourcePath": "/blog/wie-social-media-kleinen-unternehmen-hilft-sich-zu-differenzieren",
+      "type": "blog",
+      "action": "preserve",
+      "targetPath": "/blog/wie-social-media-kleinen-unternehmen-hilft-sich-zu-differenzieren",
+      "note": "Bestehenden Artikel und Slug migrieren; erst nach GSC-Prüfung zusammenführen."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/team/atilla-ciftcioglu",
+      "sourcePath": "/team/atilla-ciftcioglu",
+      "type": "team",
+      "action": "preserve",
+      "targetPath": "/team/atilla-ciftcioglu",
+      "note": "E-E-A-T-Profil unter dem bestehenden Pfad erhalten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/product/tagesplaner-to-do-liste-set",
+      "sourcePath": "/product/tagesplaner-to-do-liste-set",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/product/tagesplaner-to-do-liste-set",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/portfolio/branding-und-webdesign-discounthaus-holding",
+      "sourcePath": "/portfolio/branding-und-webdesign-discounthaus-holding",
+      "type": "portfolio",
+      "action": "preserve",
+      "targetPath": "/portfolio/branding-und-webdesign-discounthaus-holding",
+      "note": "Bestehende Projekt-URL erhalten und auf die neue Fallstudien-Komponente abbilden."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/portfolio/branding-webseite-oktay-coemertler",
+      "sourcePath": "/portfolio/branding-webseite-oktay-coemertler",
+      "type": "portfolio",
+      "action": "preserve",
+      "targetPath": "/portfolio/branding-webseite-oktay-coemertler",
+      "note": "Bestehende Projekt-URL erhalten und auf die neue Fallstudien-Komponente abbilden."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/portfolio/digitale-meisterleistung-fur-gm-dach-handwerk-trifft-innovation",
+      "sourcePath": "/portfolio/digitale-meisterleistung-fur-gm-dach-handwerk-trifft-innovation",
+      "type": "portfolio",
+      "action": "preserve",
+      "targetPath": "/portfolio/digitale-meisterleistung-fur-gm-dach-handwerk-trifft-innovation",
+      "note": "Bestehende Projekt-URL erhalten und auf die neue Fallstudien-Komponente abbilden."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/portfolio/digitale-revolutionierung-fur-ma-transporte-qualitat-und-kundenorientierung-im-fokus",
+      "sourcePath": "/portfolio/digitale-revolutionierung-fur-ma-transporte-qualitat-und-kundenorientierung-im-fokus",
+      "type": "portfolio",
+      "action": "preserve",
+      "targetPath": "/portfolio/digitale-revolutionierung-fur-ma-transporte-qualitat-und-kundenorientierung-im-fokus",
+      "note": "Bestehende Projekt-URL erhalten und auf die neue Fallstudien-Komponente abbilden."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/portfolio/digitale-transformation-fur-cass-schulungen-experten-in-luftsicherheit",
+      "sourcePath": "/portfolio/digitale-transformation-fur-cass-schulungen-experten-in-luftsicherheit",
+      "type": "portfolio",
+      "action": "preserve",
+      "targetPath": "/portfolio/digitale-transformation-fur-cass-schulungen-experten-in-luftsicherheit",
+      "note": "Bestehende Projekt-URL erhalten und auf die neue Fallstudien-Komponente abbilden."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/portfolio/erstklassige-facebook-werbeanzeigen-fur-ihr-geschaftswachstum",
+      "sourcePath": "/portfolio/erstklassige-facebook-werbeanzeigen-fur-ihr-geschaftswachstum",
+      "type": "portfolio",
+      "action": "preserve",
+      "targetPath": "/portfolio/erstklassige-facebook-werbeanzeigen-fur-ihr-geschaftswachstum",
+      "note": "Bestehende Projekt-URL erhalten und auf die neue Fallstudien-Komponente abbilden."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/portfolio/neue-webprasenz-fur-colak-gmbh-pioniere-in-trocknungstechnologien",
+      "sourcePath": "/portfolio/neue-webprasenz-fur-colak-gmbh-pioniere-in-trocknungstechnologien",
+      "type": "portfolio",
+      "action": "preserve",
+      "targetPath": "/portfolio/neue-webprasenz-fur-colak-gmbh-pioniere-in-trocknungstechnologien",
+      "note": "Bestehende Projekt-URL erhalten und auf die neue Fallstudien-Komponente abbilden."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/portfolio/revolutionierung-des-online-auftritts-fur-lernforum-obertshausen",
+      "sourcePath": "/portfolio/revolutionierung-des-online-auftritts-fur-lernforum-obertshausen",
+      "type": "portfolio",
+      "action": "preserve",
+      "targetPath": "/portfolio/revolutionierung-des-online-auftritts-fur-lernforum-obertshausen",
+      "note": "Bestehende Projekt-URL erhalten und auf die neue Fallstudien-Komponente abbilden."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/portfolio/sportler-fur-kinderherzen---erfolgreiches-eventmarketing-fur-eine-spendengala",
+      "sourcePath": "/portfolio/sportler-fur-kinderherzen---erfolgreiches-eventmarketing-fur-eine-spendengala",
+      "type": "portfolio",
+      "action": "preserve",
+      "targetPath": "/portfolio/sportler-fur-kinderherzen---erfolgreiches-eventmarketing-fur-eine-spendengala",
+      "note": "Bestehende Projekt-URL erhalten und auf die neue Fallstudien-Komponente abbilden."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/portfolio/stark-ins-neue--webdesign-seo-fur-eine-gemeinnutzige-bildungsinitiative",
+      "sourcePath": "/portfolio/stark-ins-neue--webdesign-seo-fur-eine-gemeinnutzige-bildungsinitiative",
+      "type": "portfolio",
+      "action": "preserve",
+      "targetPath": "/portfolio/stark-ins-neue--webdesign-seo-fur-eine-gemeinnutzige-bildungsinitiative",
+      "note": "Bestehende Projekt-URL erhalten und auf die neue Fallstudien-Komponente abbilden."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/stellenangebote/pixel56-marketing-agentur-in-koblenz-sucht-vertriebsprofi-in",
+      "sourcePath": "/stellenangebote/pixel56-marketing-agentur-in-koblenz-sucht-vertriebsprofi-in",
+      "type": "job",
+      "action": "preserve",
+      "targetPath": "/stellenangebote/pixel56-marketing-agentur-in-koblenz-sucht-vertriebsprofi-in",
+      "note": "Aktive Stellenanzeige unter dem bestehenden Pfad erhalten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/category/digitale-produkte",
+      "sourcePath": "/category/digitale-produkte",
+      "type": "core",
+      "action": "preserve",
+      "targetPath": "/category/digitale-produkte",
+      "note": "URL und Inhalt beim Relaunch unter demselben Pfad ausliefern."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog-kategorien/kunstliche-intelligenz",
+      "sourcePath": "/blog-kategorien/kunstliche-intelligenz",
+      "type": "blog-category",
+      "action": "preserve",
+      "targetPath": "/blog-kategorien/kunstliche-intelligenz",
+      "note": "Bestehende Kategorie-URL als echte Themenübersicht erhalten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog-kategorien/marketing-tools",
+      "sourcePath": "/blog-kategorien/marketing-tools",
+      "type": "blog-category",
+      "action": "preserve",
+      "targetPath": "/blog-kategorien/marketing-tools",
+      "note": "Bestehende Kategorie-URL als echte Themenübersicht erhalten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog-kategorien/meta-ads",
+      "sourcePath": "/blog-kategorien/meta-ads",
+      "type": "blog-category",
+      "action": "preserve",
+      "targetPath": "/blog-kategorien/meta-ads",
+      "note": "Bestehende Kategorie-URL als echte Themenübersicht erhalten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog-kategorien/seo",
+      "sourcePath": "/blog-kategorien/seo",
+      "type": "blog-category",
+      "action": "preserve",
+      "targetPath": "/blog-kategorien/seo",
+      "note": "Bestehende Kategorie-URL als echte Themenübersicht erhalten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog-kategorien/soziale-medien",
+      "sourcePath": "/blog-kategorien/soziale-medien",
+      "type": "blog-category",
+      "action": "preserve",
+      "targetPath": "/blog-kategorien/soziale-medien",
+      "note": "Bestehende Kategorie-URL als echte Themenübersicht erhalten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog-kategorien/wachstum",
+      "sourcePath": "/blog-kategorien/wachstum",
+      "type": "blog-category",
+      "action": "preserve",
+      "targetPath": "/blog-kategorien/wachstum",
+      "note": "Bestehende Kategorie-URL als echte Themenübersicht erhalten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog-kategorien/webdesign",
+      "sourcePath": "/blog-kategorien/webdesign",
+      "type": "blog-category",
+      "action": "preserve",
+      "targetPath": "/blog-kategorien/webdesign",
+      "note": "Bestehende Kategorie-URL als echte Themenübersicht erhalten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/blog-kategorien/webseite",
+      "sourcePath": "/blog-kategorien/webseite",
+      "type": "blog-category",
+      "action": "preserve",
+      "targetPath": "/blog-kategorien/webseite",
+      "note": "Bestehende Kategorie-URL als echte Themenübersicht erhalten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/aachen",
+      "sourcePath": "/locations/aachen",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/aachen",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/aachen-google-ads",
+      "sourcePath": "/locations/aachen-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/aachen-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/ahrweiler-meta-ads",
+      "sourcePath": "/locations/ahrweiler-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/ahrweiler-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/altenkirchen-meta-ads",
+      "sourcePath": "/locations/altenkirchen-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/altenkirchen-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/andernach",
+      "sourcePath": "/locations/andernach",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/andernach",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/andernach-google-ads",
+      "sourcePath": "/locations/andernach-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/andernach-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/andernach-meta-ads",
+      "sourcePath": "/locations/andernach-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/andernach-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/augsburg",
+      "sourcePath": "/locations/augsburg",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/augsburg",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/augsburg-google-ads",
+      "sourcePath": "/locations/augsburg-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/augsburg-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bad-ems-meta-ads",
+      "sourcePath": "/locations/bad-ems-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bad-ems-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bad-godesberg",
+      "sourcePath": "/locations/bad-godesberg",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bad-godesberg",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bad-godesberg-google-ads",
+      "sourcePath": "/locations/bad-godesberg-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bad-godesberg-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bad-godesberg-meta-ads",
+      "sourcePath": "/locations/bad-godesberg-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bad-godesberg-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/basel",
+      "sourcePath": "/locations/basel",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/basel",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/basel-meta-ads",
+      "sourcePath": "/locations/basel-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/basel-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bendorf",
+      "sourcePath": "/locations/bendorf",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bendorf",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bendorf-google-ads",
+      "sourcePath": "/locations/bendorf-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bendorf-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bendorf-meta-ads",
+      "sourcePath": "/locations/bendorf-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bendorf-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/berlin",
+      "sourcePath": "/locations/berlin",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/berlin",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/berlin-google-ads",
+      "sourcePath": "/locations/berlin-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/berlin-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/berlin-meta-ads",
+      "sourcePath": "/locations/berlin-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/berlin-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bern",
+      "sourcePath": "/locations/bern",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bern",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bern-meta-ads",
+      "sourcePath": "/locations/bern-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bern-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/biel-bienne",
+      "sourcePath": "/locations/biel-bienne",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/biel-bienne",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bielefeld",
+      "sourcePath": "/locations/bielefeld",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bielefeld",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bielefeld-google-ads",
+      "sourcePath": "/locations/bielefeld-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bielefeld-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bochum",
+      "sourcePath": "/locations/bochum",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bochum",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bochum-google-ads",
+      "sourcePath": "/locations/bochum-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bochum-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bonn",
+      "sourcePath": "/locations/bonn",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bonn",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bonn-google-ads",
+      "sourcePath": "/locations/bonn-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bonn-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bonn-meta-ads",
+      "sourcePath": "/locations/bonn-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bonn-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/braunschweig",
+      "sourcePath": "/locations/braunschweig",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/braunschweig",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/braunschweig-google-ads",
+      "sourcePath": "/locations/braunschweig-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/braunschweig-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bremen",
+      "sourcePath": "/locations/bremen",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bremen",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bremen-google-ads",
+      "sourcePath": "/locations/bremen-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bremen-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/chemnitz",
+      "sourcePath": "/locations/chemnitz",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/chemnitz",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/chemnitz-google-ads",
+      "sourcePath": "/locations/chemnitz-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/chemnitz-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/cochem-meta-ads",
+      "sourcePath": "/locations/cochem-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/cochem-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/diez-meta-ads",
+      "sourcePath": "/locations/diez-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/diez-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/dornbirn",
+      "sourcePath": "/locations/dornbirn",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/dornbirn",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/dortmund",
+      "sourcePath": "/locations/dortmund",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/dortmund",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/dortmund-google-ads",
+      "sourcePath": "/locations/dortmund-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/dortmund-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/dortmund-meta-ads",
+      "sourcePath": "/locations/dortmund-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/dortmund-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/dresden",
+      "sourcePath": "/locations/dresden",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/dresden",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/dresden-google-ads",
+      "sourcePath": "/locations/dresden-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/dresden-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/duesseldorf",
+      "sourcePath": "/locations/duesseldorf",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/duesseldorf",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/dusseldorf-google-ads",
+      "sourcePath": "/locations/dusseldorf-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/dusseldorf-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/dusseldorf-meta-ads",
+      "sourcePath": "/locations/dusseldorf-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/dusseldorf-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/emmelshausen-meta-ads",
+      "sourcePath": "/locations/emmelshausen-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/emmelshausen-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/essen",
+      "sourcePath": "/locations/essen",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/essen",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/essen-google-ads",
+      "sourcePath": "/locations/essen-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/essen-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/frankfurt",
+      "sourcePath": "/locations/frankfurt",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/frankfurt",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/frankfurt-google-ads",
+      "sourcePath": "/locations/frankfurt-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/frankfurt-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/frankfurt-meta-ads",
+      "sourcePath": "/locations/frankfurt-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/frankfurt-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/gelsenkirchen",
+      "sourcePath": "/locations/gelsenkirchen",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/gelsenkirchen",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/gelsenkirchen-google-ads",
+      "sourcePath": "/locations/gelsenkirchen-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/gelsenkirchen-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/genf",
+      "sourcePath": "/locations/genf",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/genf",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/genf-meta-ads",
+      "sourcePath": "/locations/genf-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/genf-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/graz",
+      "sourcePath": "/locations/graz",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/graz",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/graz-google-ads",
+      "sourcePath": "/locations/graz-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/graz-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/graz-meta-ads",
+      "sourcePath": "/locations/graz-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/graz-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/halle",
+      "sourcePath": "/locations/halle",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/halle",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/halle-google-ads",
+      "sourcePath": "/locations/halle-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/halle-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/hamburg",
+      "sourcePath": "/locations/hamburg",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/hamburg",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/hamburg-google-ads",
+      "sourcePath": "/locations/hamburg-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/hamburg-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/hamburg-meta-ads",
+      "sourcePath": "/locations/hamburg-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/hamburg-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/hannover",
+      "sourcePath": "/locations/hannover",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/hannover",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/hannover-google-ads",
+      "sourcePath": "/locations/hannover-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/hannover-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/hohr-grenzhausen",
+      "sourcePath": "/locations/hohr-grenzhausen",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/hohr-grenzhausen",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/hohr-grenzhausen-google-ads",
+      "sourcePath": "/locations/hohr-grenzhausen-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/hohr-grenzhausen-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/hohr-grenzhausen-meta-ads",
+      "sourcePath": "/locations/hohr-grenzhausen-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/hohr-grenzhausen-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/innsbruck",
+      "sourcePath": "/locations/innsbruck",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/innsbruck",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/innsbruck-meta-ads",
+      "sourcePath": "/locations/innsbruck-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/innsbruck-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/karlsruhe",
+      "sourcePath": "/locations/karlsruhe",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/karlsruhe",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/karlsruhe-google-ads",
+      "sourcePath": "/locations/karlsruhe-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/karlsruhe-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/kiel",
+      "sourcePath": "/locations/kiel",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/kiel",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/kiel-google-ads",
+      "sourcePath": "/locations/kiel-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/kiel-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/klagenfurt",
+      "sourcePath": "/locations/klagenfurt",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/klagenfurt",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/koblenz",
+      "sourcePath": "/locations/koblenz",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/koblenz",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/koblenz-google-ads",
+      "sourcePath": "/locations/koblenz-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/koblenz-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/koblenz-meta-ads",
+      "sourcePath": "/locations/koblenz-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/koblenz-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/koeln",
+      "sourcePath": "/locations/koeln",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/koeln",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/koln-google-ads",
+      "sourcePath": "/locations/koln-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/koln-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/koln-meta-ads",
+      "sourcePath": "/locations/koln-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/koln-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/lahnstein",
+      "sourcePath": "/locations/lahnstein",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/lahnstein",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/lahnstein-google-ads",
+      "sourcePath": "/locations/lahnstein-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/lahnstein-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/lahnstein-meta-ads",
+      "sourcePath": "/locations/lahnstein-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/lahnstein-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/lausanne",
+      "sourcePath": "/locations/lausanne",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/lausanne",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/lausanne-meta-ads",
+      "sourcePath": "/locations/lausanne-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/lausanne-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/leipzig",
+      "sourcePath": "/locations/leipzig",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/leipzig",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/leipzig-google-ads",
+      "sourcePath": "/locations/leipzig-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/leipzig-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/leipzig-meta-ads",
+      "sourcePath": "/locations/leipzig-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/leipzig-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/limburg",
+      "sourcePath": "/locations/limburg",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/limburg",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/limburg-meta-ads",
+      "sourcePath": "/locations/limburg-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/limburg-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/linz",
+      "sourcePath": "/locations/linz",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/linz",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/linz-meta-ads",
+      "sourcePath": "/locations/linz-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/linz-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/lugano",
+      "sourcePath": "/locations/lugano",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/lugano",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/luzern",
+      "sourcePath": "/locations/luzern",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/luzern",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mainz-meta-ads",
+      "sourcePath": "/locations/mainz-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mainz-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mannheim",
+      "sourcePath": "/locations/mannheim",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mannheim",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mannheim-google-ads",
+      "sourcePath": "/locations/mannheim-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mannheim-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mayen",
+      "sourcePath": "/locations/mayen",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mayen",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mayen-meta-ads",
+      "sourcePath": "/locations/mayen-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mayen-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/moenchengladbach",
+      "sourcePath": "/locations/moenchengladbach",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/moenchengladbach",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/monchengladbach-google-ads",
+      "sourcePath": "/locations/monchengladbach-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/monchengladbach-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/montabaur-meta-ads",
+      "sourcePath": "/locations/montabaur-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/montabaur-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/morfelden-walldorf",
+      "sourcePath": "/locations/morfelden-walldorf",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/morfelden-walldorf",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/muenchen",
+      "sourcePath": "/locations/muenchen",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/muenchen",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/muenster",
+      "sourcePath": "/locations/muenster",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/muenster",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mulheim-karlich",
+      "sourcePath": "/locations/mulheim-karlich",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mulheim-karlich",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mulheim-karlich-google-ads",
+      "sourcePath": "/locations/mulheim-karlich-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mulheim-karlich-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mulheim-karlich-meta-ads",
+      "sourcePath": "/locations/mulheim-karlich-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mulheim-karlich-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/munchen-google-ads",
+      "sourcePath": "/locations/munchen-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/munchen-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/munchen-meta-ads",
+      "sourcePath": "/locations/munchen-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/munchen-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/munster-google-ads",
+      "sourcePath": "/locations/munster-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/munster-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/nassau-meta-ads",
+      "sourcePath": "/locations/nassau-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/nassau-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/neuwied",
+      "sourcePath": "/locations/neuwied",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/neuwied",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/neuwied-google-ads",
+      "sourcePath": "/locations/neuwied-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/neuwied-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/neuwied-meta-ads",
+      "sourcePath": "/locations/neuwied-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/neuwied-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/nuernberg",
+      "sourcePath": "/locations/nuernberg",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/nuernberg",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/nurnberg-google-ads",
+      "sourcePath": "/locations/nurnberg-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/nurnberg-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/nurnberg-meta-ads",
+      "sourcePath": "/locations/nurnberg-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/nurnberg-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/plaidt",
+      "sourcePath": "/locations/plaidt",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/plaidt",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/plaidt-meta-ads",
+      "sourcePath": "/locations/plaidt-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/plaidt-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/ransbach-baumbach",
+      "sourcePath": "/locations/ransbach-baumbach",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/ransbach-baumbach",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/ransbach-baumbach-google-ads",
+      "sourcePath": "/locations/ransbach-baumbach-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/ransbach-baumbach-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/ransbach-baumbach-meta-ads",
+      "sourcePath": "/locations/ransbach-baumbach-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/ransbach-baumbach-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/rhens",
+      "sourcePath": "/locations/rhens",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/rhens",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/rhens-google-ads",
+      "sourcePath": "/locations/rhens-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/rhens-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/rhens-meta-ads",
+      "sourcePath": "/locations/rhens-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/rhens-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/salzburg",
+      "sourcePath": "/locations/salzburg",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/salzburg",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/salzburg-meta-ads",
+      "sourcePath": "/locations/salzburg-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/salzburg-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/siershahn-meta-ads",
+      "sourcePath": "/locations/siershahn-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/siershahn-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/simmern-meta-ads",
+      "sourcePath": "/locations/simmern-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/simmern-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/st-gallen",
+      "sourcePath": "/locations/st-gallen",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/st-gallen",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/st-poelten",
+      "sourcePath": "/locations/st-poelten",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/st-poelten",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/stuttgart",
+      "sourcePath": "/locations/stuttgart",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/stuttgart",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/stuttgart-google-ads",
+      "sourcePath": "/locations/stuttgart-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/stuttgart-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/stuttgart-meta-ads",
+      "sourcePath": "/locations/stuttgart-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/stuttgart-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/trier-meta-ads",
+      "sourcePath": "/locations/trier-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/trier-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/urbar",
+      "sourcePath": "/locations/urbar",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/urbar",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/urbar-google-ads",
+      "sourcePath": "/locations/urbar-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/urbar-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/urbar-meta-ads",
+      "sourcePath": "/locations/urbar-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/urbar-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/urmitz-am-rhein",
+      "sourcePath": "/locations/urmitz-am-rhein",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/urmitz-am-rhein",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/urmitz-meta-ads",
+      "sourcePath": "/locations/urmitz-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/urmitz-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/vallendar",
+      "sourcePath": "/locations/vallendar",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/vallendar",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/vallendar-google-ads",
+      "sourcePath": "/locations/vallendar-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/vallendar-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/vallendar-meta-ads",
+      "sourcePath": "/locations/vallendar-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/vallendar-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/villach",
+      "sourcePath": "/locations/villach",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/villach",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/weissenthurm",
+      "sourcePath": "/locations/weissenthurm",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/weissenthurm",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/weissenthurm-google-ads",
+      "sourcePath": "/locations/weissenthurm-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/weissenthurm-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/weissenthurm-meta-ads",
+      "sourcePath": "/locations/weissenthurm-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/weissenthurm-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wels",
+      "sourcePath": "/locations/wels",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wels",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/westerburg-meta-ads",
+      "sourcePath": "/locations/westerburg-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/westerburg-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wien",
+      "sourcePath": "/locations/wien",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wien",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wien-meta-ads",
+      "sourcePath": "/locations/wien-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wien-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wiesbaden",
+      "sourcePath": "/locations/wiesbaden",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wiesbaden",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wiesbaden-google-ads",
+      "sourcePath": "/locations/wiesbaden-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wiesbaden-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wiesbaden-meta-ads",
+      "sourcePath": "/locations/wiesbaden-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wiesbaden-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/winterthur",
+      "sourcePath": "/locations/winterthur",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/winterthur",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wirges-meta-ads",
+      "sourcePath": "/locations/wirges-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wirges-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wissen-meta-ads",
+      "sourcePath": "/locations/wissen-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wissen-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wuppertal",
+      "sourcePath": "/locations/wuppertal",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wuppertal",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wuppertal-google-ads",
+      "sourcePath": "/locations/wuppertal-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wuppertal-google-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/zuerich",
+      "sourcePath": "/locations/zuerich",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/zuerich",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/zurich-meta-ads",
+      "sourcePath": "/locations/zurich-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/zurich-meta-ads",
+      "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    }
+  ]
+}

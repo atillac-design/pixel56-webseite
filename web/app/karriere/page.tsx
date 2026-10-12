@@ -4,6 +4,7 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { ArrowIcon, PulseField, WaMock, FaqList } from "@/components/ui";
 import { getStellen } from "@/lib/sanity";
+import { site } from "@/lib/site";
 
 // CMS-Inhalte spätestens nach 5 Minuten übernehmen, ohne Neu-Deployment.
 export const revalidate = 300;
@@ -20,34 +21,24 @@ const gruende = [
   { fl: "Grund 3", title: "Lernen am echten Fall", text: "SEO, Ads, Design, Content — bei uns arbeitest du über Disziplinen hinweg statt in einer einzigen Nische zu versauern." },
 ];
 
-// Fallback-Stellen, solange kein CMS verbunden ist.
-const stellenFallback = [
-  { title: "Webdesigner / Webentwickler (m/w/d)", meta: "Vollzeit oder Teilzeit · Bendorf / Remote" },
-  { title: "Content Creator — Foto & Video (m/w/d)", meta: "Teilzeit oder Freelance · Region Koblenz" },
-  { title: "Werkstudent Performance Marketing (m/w/d)", meta: "Werkstudent · Bendorf / Remote" },
-];
-
 const faqs = [
   { q: "Kann ich komplett remote arbeiten?", a: "Je nach Rolle ja — Content-Produktion braucht Vor-Ort-Termine in der Region, Entwicklung und Kampagnen-Arbeit funktionieren auch komplett remote." },
   { q: "Brauche ich ein klassisches Anschreiben?", a: "Nein. Lebenslauf plus Arbeitsproben sagen mehr als jede Floskel-Seite. Wenn du uns etwas mitgeben willst, reichen drei ehrliche Sätze." },
-  { q: "Wie schnell bekomme ich eine Antwort?", a: "Innerhalb weniger Tage — wir wissen selbst am besten, wie sehr langsame Antworten gute Kandidaten kosten." },
+  { q: "Wie schnell bekomme ich eine Antwort?", a: "Wir melden uns nach Sichtung deiner Nachricht bei dir. Schreib uns gern direkt, wenn du eine zeitkritische Frage hast." },
   { q: "Nehmt ihr auch Quereinsteiger?", a: "Wenn die Arbeitsproben überzeugen, ja. Was du kannst, zählt mehr als wo du es gelernt hast." },
 ];
 
 export default async function KarrierePage() {
   const cmsStellen = await getStellen();
-  // Solange das CMS leer ist, bleiben die Fallback-Stellen sichtbar.
-  const stellen =
-    cmsStellen && cmsStellen.length > 0
-      ? cmsStellen.map((s) => ({ title: s.titel, meta: s.pensum }))
-      : stellenFallback;
+  const stellen = (cmsStellen ?? []).map((s) => ({ title: s.titel, meta: s.pensum }));
+  const bewerbungEmail = `mailto:${site.email}?subject=Bewerbung%20bei%20Pixel56`;
 
   return (
-    <>
+    <main className="service-premium service-suite page-suite page-suite-career">
       <div className="sheet">
         <SiteNav crumb={{ section: "Unternehmen", page: "Karriere" }} />
 
-        <header className="hero">
+        <header className="hero service-suite-hero">
           <PulseField label1="// BENDORF & REMOTE" label2="// BEWERBUNG OHNE UMWEGE" />
           <div className="hero-eyebrow">UNTERNEHMEN · KARRIERE</div>
           <h1>
@@ -61,8 +52,8 @@ export default async function KarrierePage() {
             Unterschied.
           </p>
           <div className="hero-actions">
-            <Link className="btn-primary" href="#stellen">
-              Offene Stellen ansehen <ArrowIcon />
+            <Link className="btn-primary" href={stellen.length ? "#stellen" : "#bewerben"}>
+              {stellen.length ? "Offene Stellen ansehen" : "Kontakt aufnehmen"} <ArrowIcon />
             </Link>
             <Link className="btn-text" href="#warum">
               Warum Pixel56? ↓
@@ -77,7 +68,8 @@ export default async function KarrierePage() {
         </header>
       </div>
 
-      <div className="sheet">
+      <div className="editorial-shell service-editorial">
+        <div className="sheet">
         <section className="band tint-amber" id="warum" style={{ paddingTop: 60 }}>
           <div className="band-head reveal">
             <div>
@@ -111,20 +103,20 @@ export default async function KarrierePage() {
               </h2>
             </div>
             <p className="band-note">
-              Aktuelle Positionen — remote oder vor Ort in Bendorf bei Koblenz.
+              {stellen.length ? "Aktuelle Positionen — remote oder vor Ort in Bendorf bei Koblenz." : "Aktuell sind keine Stellen ausgeschrieben. Du kannst uns trotzdem dein Profil schicken."}
             </p>
           </div>
-          <div className="job-list reveal">
+          {stellen.length > 0 && <div className="job-list reveal">
             {stellen.map((s) => (
-              <Link className="job-row" href="#bewerben" key={s.title}>
+              <a className="job-row" href={`mailto:${site.email}?subject=${encodeURIComponent(`Bewerbung: ${s.title}`)}`} key={s.title}>
                 <div className="jr-info">
                   <b>{s.title}</b>
                   <span>{s.meta}</span>
                 </div>
                 <span className="jr-btn">Jetzt bewerben →</span>
-              </Link>
+              </a>
             ))}
-          </div>
+          </div>}
           <p className="job-open-note reveal">
             <b>Nichts Passendes dabei?</b> Initiativbewerbungen sind
             ausdrücklich willkommen — wenn du gut bist in dem, was du tust,
@@ -145,25 +137,17 @@ export default async function KarrierePage() {
                 kein Bewerbungsportal mit zwölf Pflichtfeldern.
               </p>
               <ul className="lines">
-                <li>Unterlagen direkt hochladen — ohne E-Mail-Programm.</li>
-                <li>Kurzes Formular: wer du bist, was du kannst, was du willst.</li>
-                <li>Antwort innerhalb weniger Tage, nicht Wochen.</li>
+                <li>Schick uns eine E-Mail mit deinem Lebenslauf oder einem Link zu Arbeitsproben.</li>
+                <li>Schreib in ein paar Sätzen, was du kannst und was du suchst.</li>
+                <li>Wir melden uns nach Sichtung deiner Nachricht bei dir.</li>
               </ul>
             </div>
             <div className="reveal">
               <div className="job-mock">
                 <span className="jm-tag">Deine Bewerbung</span>
-                <div className="jm-title">In 2 Minuten abgeschickt</div>
-                <div className="jm-line" />
-                <div className="jm-line short" />
-                <div className="jm-upload">
-                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M12 16V4M12 4l-4 4M12 4l4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                  </svg>
-                  Lebenslauf &amp; Arbeitsproben hochladen
-                </div>
-                <div className="jm-btn">Bewerbung absenden →</div>
+                <div className="jm-title">Zeig uns, was du machst.</div>
+                <p>Ein kurzer Einblick in deine Arbeit reicht für den ersten Kontakt.</p>
+                <a className="jm-btn" href={bewerbungEmail}>Bewerbung per E-Mail senden →</a>
               </div>
             </div>
           </div>
@@ -209,18 +193,17 @@ export default async function KarrierePage() {
           <FaqList items={faqs} />
         </section>
 
+        </div>
+      </div>
+
+      <div className="sheet service-ending">
         <section className="close-cta reveal" id="kontakt">
           <div className="close-glow" />
-          <h2>
-            Klingt nach <em>dir?</em>
-          </h2>
-          <Link className="btn-primary" href="#stellen">
-            Jetzt bewerben <ArrowIcon />
-          </Link>
+          <h2>Klingt nach <em>dir?</em></h2>
+          <a className="btn-primary" href={bewerbungEmail}>Bewerbung per E-Mail senden <ArrowIcon /></a>
         </section>
-
         <SiteFooter />
       </div>
-    </>
+    </main>
   );
 }

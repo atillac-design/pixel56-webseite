@@ -12,11 +12,13 @@ import {
   Reviews,
 } from "@/components/ui";
 import { site } from "@/lib/site";
+import { routes } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "Über uns — Ein Ansprechpartner statt Callcenter",
   description:
     "Pixel56: kein anonymes Team, ein fester Ansprechpartner in Bendorf bei Koblenz. Persönlich, regional verwurzelt, alles aus einer Hand — für KMUs, Handwerker & Selbstständige.",
+  alternates: { canonical: routes.about },
 };
 
 const prinzipien = [
@@ -41,11 +43,11 @@ const reviews = [
 
 export default function UeberUnsPage() {
   return (
-    <>
+    <main className="service-premium service-suite page-suite page-suite-about">
       <div className="sheet">
         <SiteNav crumb={{ section: "Unternehmen", page: "Über uns" }} />
 
-        <header className="hero">
+        <header className="hero service-suite-hero">
           <div className="hero-portrait">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/bilder/team-atilla-quadrat.webp" alt="Atilla Ciftcioglu, Gründer von Pixel56" />
@@ -81,7 +83,8 @@ export default function UeberUnsPage() {
 
       <ClientMarquee />
 
-      <div className="sheet">
+      <div className="editorial-shell service-editorial">
+        <div className="sheet">
         <section className="band tint-amber" id="wer">
           <div className="split2 reverse">
             <div className="reveal">
@@ -152,19 +155,18 @@ export default function UeberUnsPage() {
 
         <section className="band tint" id="beweis">
           <div className="band-tag reveal" style={{ marginBottom: 44 }}>
-            03 — Der Beweis
+            03 — Unser Anspruch
           </div>
           <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
             <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
-              „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
-              gearbeitet — und das hat gereicht.“
+              Ein fester Ansprechpartner. Klare Entscheidungen. Kontinuität.
             </p>
             <p>
-              Van den Berg Gruppe, seit Jahren in laufender Betreuung — so
-              arbeiten wir mit jedem Kunden: konstant, ehrlich, ohne leere
-              Versprechen und ohne wöchentlich neu erfundenes Budget.
+              Wir verbinden Konzeption, Umsetzung und laufende Betreuung.
+              Welche Kanäle sinnvoll sind, entscheiden wir ausgehend vom
+              Angebot und Ziel des Kunden — nicht von einem Standardpaket.
             </p>
-            <cite>{"// VAN DEN BERG GRUPPE, LAUFENDE BETREUUNG"}</cite>
+            <cite>{"// SO ARBEITET PIXEL56"}</cite>
           </div>
         </section>
 
@@ -257,12 +259,15 @@ export default function UeberUnsPage() {
           <FaqList items={faqs} />
         </section>
 
+        </div>
+      </div>
+
+      <div className="sheet service-ending">
         <CloseCta>
           Lern uns <em>kennen.</em>
         </CloseCta>
-
         <SiteFooter />
       </div>
-    </>
+    </main>
   );
 }

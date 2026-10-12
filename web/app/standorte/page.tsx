@@ -4,19 +4,22 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { PulseField, CloseCta } from "@/components/ui";
 import { standorte } from "@/lib/standorte";
+import { locationPath } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "Standorte — Webdesign & Marketing in deiner Stadt",
   description:
     "Webdesign, Google & Meta Ads und Social-Media-Content in deiner Nähe — für KMUs, Handwerker und Dienstleister. Persönlich, digital & lokal.",
+  alternates: { canonical: "/standorte" },
 };
 
 export default function StandorteUebersicht() {
   return (
-    <div className="sheet">
-      <SiteNav crumb={{ section: "Pixel56", page: "Standorte" }} />
+    <main className="service-premium service-suite page-suite page-suite-locations">
+      <div className="sheet">
+        <SiteNav crumb={{ section: "Pixel56", page: "Standorte" }} />
 
-      <header className="hero" style={{ minHeight: "60vh" }}>
+      <header className="hero service-suite-hero" style={{ minHeight: "60vh" }}>
         <PulseField label1="// BENDORF BEI KOBLENZ" label2="// DEUTSCHLANDWEIT IM EINSATZ" />
         <div className="hero-eyebrow">STANDORTE</div>
         <h1>
@@ -29,7 +32,10 @@ export default function StandorteUebersicht() {
           deiner Nähe.
         </p>
       </header>
+      </div>
 
+      <div className="editorial-shell service-editorial">
+        <div className="sheet">
       <section className="band" style={{ paddingTop: 0 }}>
         <div className="band-head reveal">
           <div>
@@ -44,7 +50,7 @@ export default function StandorteUebersicht() {
         </div>
         <div className="kontakt-kanaele reveal">
           {standorte.map((s) => (
-            <Link className="kanal" href={`/standorte/${s.slug}`} key={s.slug}>
+            <Link className="kanal" href={locationPath(s.slug)} key={s.slug}>
               <span className="kl">Region</span>
               <b>Webdesign in {s.stadt}</b>
               <span>
@@ -64,11 +70,15 @@ export default function StandorteUebersicht() {
         </div>
       </section>
 
-      <CloseCta>
-        Lass uns über deine <em>Sichtbarkeit</em> sprechen.
-      </CloseCta>
+        </div>
+      </div>
 
-      <SiteFooter />
-    </div>
+      <div className="sheet service-ending">
+        <CloseCta>
+          Lass uns über deine <em>Sichtbarkeit</em> sprechen.
+        </CloseCta>
+        <SiteFooter />
+      </div>
+    </main>
   );
 }

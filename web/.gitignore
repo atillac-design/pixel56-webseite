@@ -40,3 +40,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Private Search Console exports: keep locally, do not publish to the public repo.
+/data/gsc-*.json
+/data/gsc-*.csv
+/SEO-MIGRATION.md

@@ -17,11 +17,13 @@ import {
 } from "@/components/ui";
 import { CompareMock, SearchMock } from "@/components/mocks";
 import { site } from "@/lib/site";
+import { serviceRoutes } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "SEO & Suchmaschinenoptimierung",
   description:
     "Unsichtbar bei Google? Pixel56 bringt KMUs & Handwerker mit lokaler Suchmaschinenoptimierung nach oben — organische Sichtbarkeit, die bleibt. Kostenloses SEO-Erstgespräch anfragen.",
+  alternates: { canonical: serviceRoutes.seo },
 };
 
 const jsonLd = {
@@ -31,7 +33,7 @@ const jsonLd = {
   serviceType: "SEO",
   provider: { "@type": "ProfessionalService", name: site.name, url: site.url },
   areaServed: "DE",
-  url: `${site.url}/leistungen/seo`,
+  url: `${site.url}${serviceRoutes.seo}`,
 };
 
 const statusRows = [
@@ -68,13 +70,13 @@ const reviews = [
 
 export default function SeoPage() {
   return (
-    <>
+    <main className="service-premium service-suite service-suite-seo">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="sheet">
         <SiteNav crumb={{ section: "Leistungen", page: "SEO" }} />
 
-        <header className="hero">
+        <header className="hero service-suite-hero">
           <PulseField label1="// RANKING AKTIV" label2="// ORGANISCH, NICHT GEMIETET" />
           <div className="hero-eyebrow">LEISTUNG · SUCHMASCHINENOPTIMIERUNG</div>
           <h1>
@@ -89,7 +91,7 @@ export default function SeoPage() {
           </p>
           <div className="hero-actions">
             <a className="btn-primary" href="https://calendly.com/pixel56/15min" target="_blank" rel="noopener">
-              Kostenloses Erstgespräch <ArrowIcon />
+              SEO-Potenzial besprechen <ArrowIcon />
             </a>
             <Link className="btn-text" href="#status">
               Kennst du das? ↓
@@ -106,7 +108,15 @@ export default function SeoPage() {
 
       <ClientMarquee />
 
-      <div className="sheet">
+      <div className="editorial-shell service-editorial">
+        <div className="sheet">
+        <section className="service-summary service-summary-premium reveal" aria-label="SEO auf einen Blick">
+          <div><span>Fundament</span><strong>Technik, Struktur &amp; Indexierung</strong></div>
+          <div><span>Lokal</span><strong>Google-Sichtbarkeit in deiner Region</strong></div>
+          <div><span>Inhalte</span><strong>Seiten für echte Suchintentionen</strong></div>
+          <div><span>Ziel</span><strong>Nachhaltig qualifizierte Anfragen</strong></div>
+        </section>
+
         <section className="band tint-amber" id="status">
           <div className="split2 reverse">
             <div className="reveal">
@@ -227,7 +237,7 @@ export default function SeoPage() {
             </div>
             <div className="reveal">
               <MetricMock
-                head="Live-Auswertung · Stark ins Neue"
+                head="Beispiel-Dashboard · SEO-Auswertung"
                 rows={[
                   { label: "Organische Klicks / Monat", value: "210", countTo: "210" },
                   { label: "Sichtbarkeitsindex", value: "8.4", countTo: "8.4" },
@@ -324,12 +334,16 @@ export default function SeoPage() {
           <FaqList items={faqs} />
         </section>
 
+        </div>
+      </div>
+
+      <div className="sheet service-ending">
         <CloseCta>
           Lass uns über deine <em>Sichtbarkeit</em> sprechen.
         </CloseCta>
 
         <SiteFooter />
       </div>
-    </>
+    </main>
   );
 }

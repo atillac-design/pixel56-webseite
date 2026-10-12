@@ -4,11 +4,13 @@ import SiteFooter from "@/components/SiteFooter";
 import KontaktForm from "@/components/KontaktForm";
 import { WaMock, FaqList } from "@/components/ui";
 import { site } from "@/lib/site";
+import { routes } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "Kontakt — Kostenloses Erstgespräch",
   description:
     "Erreich uns direkt per WhatsApp, Telefon oder E-Mail — oder frag in 30 Sekunden dein kostenloses Erstgespräch an. Pixel56, Bendorf bei Koblenz.",
+  alternates: { canonical: routes.contact },
 };
 
 const faqs = [
@@ -18,33 +20,46 @@ const faqs = [
 ];
 
 export default function KontaktPage() {
+  const formularAktiv = Boolean(process.env.RESEND_API_KEY && process.env.PIXEL56_CONTACT_FROM && process.env.PIXEL56_CONTACT_TO);
   return (
-    <div className="sheet">
-      <SiteNav crumb={{ section: "Kontakt", page: "Erstgespräch" }} />
+    <main className="service-premium service-suite page-suite contact-premium">
+      <div className="sheet">
+        <SiteNav crumb={{ section: "Kontakt", page: "Erstgespräch" }} />
 
-      <header className="hero-grab">
-        <div>
-          <div className="hero-eyebrow">KONTAKT · KOSTENLOSES ERSTGESPRÄCH</div>
-          <h1>
-            Lass uns <em>reden.</em>
-          </h1>
-          <p className="hero-sub">
-            Kein Callcenter, kein Ticket-System — du erreichst direkt den
-            Menschen, der dein Projekt umsetzt. Such dir den Weg aus, der dir
-            am liebsten ist.
-          </p>
-          <ul className="hero-points">
-            <li>Antwort innerhalb eines Werktags, meist schneller</li>
-            <li>Ehrliche Einschätzung statt Verkaufsgespräch</li>
-            <li>Unverbindlich & kostenlos</li>
-          </ul>
-        </div>
-        <div className="reveal in">
-          <KontaktForm />
-        </div>
-      </header>
+        <header className="hero-grab contact-premium-hero">
+          <div>
+            <div className="hero-eyebrow">KONTAKT · KOSTENLOSES ERSTGESPRÄCH</div>
+            <h1>
+              Lass uns <em>reden.</em>
+            </h1>
+            <p className="hero-sub">
+              Kein Callcenter, kein Ticket-System — du erreichst direkt den
+              Menschen, der dein Projekt umsetzt. Such dir den Weg aus, der dir
+              am liebsten ist.
+            </p>
+            <ul className="hero-points">
+              <li>Antwort innerhalb eines Werktags, meist schneller</li>
+              <li>Ehrliche Einschätzung statt Verkaufsgespräch</li>
+              <li>Unverbindlich &amp; kostenlos</li>
+            </ul>
+          </div>
+          <div className="reveal in">
+            {formularAktiv ? <KontaktForm /> : (
+              <div className="kontakt-form contact-fallback">
+                <span className="band-tag">DIREKT KONTAKT AUFNEHMEN</span>
+                <h2>Erzähl uns von deinem Projekt.</h2>
+                <p>Für eine Anfrage kannst du direkt einen Termin wählen oder uns eine E-Mail schreiben.</p>
+                <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">Erstgespräch buchen →</a>
+                <a className="contact-fallback-mail" href={`mailto:${site.email}?subject=Projektanfrage%20an%20Pixel56`}>E-Mail an {site.email} →</a>
+              </div>
+            )}
+          </div>
+        </header>
+      </div>
 
-      <section className="band tint-amber" style={{ paddingTop: 70 }}>
+      <div className="editorial-shell service-editorial">
+        <div className="sheet">
+      <section className="band tint-amber" style={{ paddingTop: 100 }}>
         <div className="band-head reveal">
           <div>
             <span className="band-tag">Direkte Wege</span>
@@ -111,7 +126,12 @@ export default function KontaktPage() {
         <FaqList items={faqs} />
       </section>
 
-      <SiteFooter />
-    </div>
+        </div>
+      </div>
+
+      <div className="sheet service-ending">
+        <SiteFooter />
+      </div>
+    </main>
   );
 }

@@ -18,11 +18,13 @@ import {
 } from "@/components/ui";
 import { JobMock } from "@/components/mocks";
 import { site } from "@/lib/site";
+import { projectPath, serviceRoutes } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "Mitarbeitergewinnung & Recruiting",
   description:
     "Karriereseiten und Recruiting-Kampagnen mit einem Bewerbungsweg ohne Umwege. Endlich passende Bewerbungen für KMUs & Handwerker. Kostenlose Beratung bei Pixel56 anfragen.",
+  alternates: { canonical: serviceRoutes.mitarbeitergewinnung },
 };
 
 const jsonLd = {
@@ -32,7 +34,7 @@ const jsonLd = {
   serviceType: "Recruiting-Marketing",
   provider: { "@type": "ProfessionalService", name: site.name, url: site.url },
   areaServed: "DE",
-  url: `${site.url}/leistungen/mitarbeitergewinnung`,
+  url: `${site.url}${serviceRoutes.mitarbeitergewinnung}`,
 };
 
 const statusRows = [
@@ -59,8 +61,8 @@ const steps = [
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-1", barWidth: 55, href: "/projekte/gm-dachdecker", cat: "GM-Dachdecker Meisterbetrieb", title: "Karriereportal mit Direkt-Upload", text: "Bewerber laden ihre Unterlagen direkt hoch, ohne E-Mail-Programm.", tag: "Karriereportal · Webdesign · 2023" },
-  { variant: "ic-3", barWidth: 65, img: "/bilder/ads-recruiting-beispiel.webp", href: "/projekte/gm-dachdecker", cat: "GM-Dachdecker Meisterbetrieb ", title: "Kampagnen zur Bewerbergewinnung", text: "Neben klassischer Kundengewinnung setzen wir Meta Ads gezielt zur Ansprache passender Kandidaten ein.", tag: "Meta Ads · Recruiting" },
+  { variant: "ic-1", barWidth: 55, href: projectPath("gm-dachdecker"), cat: "GM-Dachdecker Meisterbetrieb", title: "Karriereportal mit Direkt-Upload", text: "Bewerber laden ihre Unterlagen direkt hoch, ohne E-Mail-Programm.", tag: "Karriereportal · Webdesign · 2023" },
+  { variant: "ic-3", barWidth: 65, img: "/bilder/ads-recruiting-beispiel.webp", href: projectPath("gm-dachdecker"), cat: "GM-Dachdecker Meisterbetrieb ", title: "Kampagnen zur Bewerbergewinnung", text: "Neben klassischer Kundengewinnung setzen wir Meta Ads gezielt zur Ansprache passender Kandidaten ein.", tag: "Meta Ads · Recruiting" },
 ];
 
 const faqs = [
@@ -80,13 +82,13 @@ const reviews = [
 
 export default function RecruitingPage() {
   return (
-    <>
+    <main className="service-premium service-suite service-suite-recruiting">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="sheet">
         <SiteNav crumb={{ section: "Leistungen", page: "Mitarbeitergewinnung" }} />
 
-        <header className="hero">
+        <header className="hero service-suite-hero">
           <PulseField label1="// STELLE AKTIV" label2="// UPLOAD OHNE E-MAIL" />
           <div className="hero-eyebrow">LEISTUNG · MITARBEITERGEWINNUNG</div>
           <h1>
@@ -101,7 +103,7 @@ export default function RecruitingPage() {
           </p>
           <div className="hero-actions">
             <a className="btn-primary" href="https://calendly.com/pixel56/15min" target="_blank" rel="noopener">
-              Kostenloses Erstgespräch <ArrowIcon />
+              Recruiting-Projekt besprechen <ArrowIcon />
             </a>
             <Link className="btn-text" href="#status">
               Kennst du das? ↓
@@ -118,7 +120,15 @@ export default function RecruitingPage() {
 
       <ClientMarquee />
 
-      <div className="sheet">
+      <div className="editorial-shell service-editorial">
+        <div className="sheet">
+        <section className="service-summary service-summary-premium reveal" aria-label="Mitarbeitergewinnung auf einen Blick">
+          <div><span>Zielgruppe</span><strong>Passende Kandidaten erreichen</strong></div>
+          <div><span>Auftritt</span><strong>Karriereseite mit Arbeitgeberprofil</strong></div>
+          <div><span>Gewinnung</span><strong>Social Ads &amp; klare Ansprache</strong></div>
+          <div><span>Bewerbung</span><strong>Mobil, kurz und ohne Umweg</strong></div>
+        </section>
+
         <section className="band tint-amber" id="status">
           <div className="split2 reverse">
             <div className="reveal">
@@ -229,7 +239,7 @@ export default function RecruitingPage() {
             </div>
             <div className="reveal">
               <MetricMock
-                head="Live-Auswertung · GM-Dachdecker"
+                head="Beispiel-Dashboard · Recruiting-Auswertung"
                 rows={[
                   { label: "Bewerbungen / Monat", value: "18", countTo: "18" },
                   { label: "Formular-Abschlussrate", value: "72%", countTo: "72", suffix: "%" },
@@ -318,12 +328,16 @@ export default function RecruitingPage() {
           <FaqList items={faqs} />
         </section>
 
+        </div>
+      </div>
+
+      <div className="sheet service-ending">
         <CloseCta>
           Lass uns über deine <em>Mitarbeitergewinnung</em> sprechen.
         </CloseCta>
 
         <SiteFooter />
       </div>
-    </>
+    </main>
   );
 }

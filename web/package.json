@@ -5,16 +5,21 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "seo:sync-legacy": "node scripts/sync-legacy-urls.mjs",
+    "seo:sync-blog": "node scripts/sync-legacy-blog.mjs",
+    "seo:sync-locations": "node scripts/sync-legacy-locations.mjs",
+    "seo:analyze:gsc": "node scripts/analyze-gsc-export.mjs",
+    "seo:report:gsc": "node scripts/build-gsc-report-artifact.mjs",
+    "seo:check": "node scripts/check-seo-migration.mjs",
+    "seo:check:strict": "node scripts/check-seo-migration.mjs --strict",
+    "seo:check:http": "node scripts/check-http-migration.mjs"
   },
   "dependencies": {
-    "@sanity/vision": "^6.5.0",
-    "next": "16.2.10",
-    "next-sanity": "^13.1.3",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "sanity": "^6.5.0",
-    "styled-components": "^6.4.3"
+    "@sanity/client": "^8.0.0",
+    "next": "^16.3.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@types/node": "^20",

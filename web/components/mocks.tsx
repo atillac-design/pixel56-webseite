@@ -1,4 +1,5 @@
 import { BrowserMock } from "@/components/ui";
+import LazyVideo from "@/components/LazyVideo";
 
 /** Google-Suche mit Tipp-Animation und Ergebnisliste. */
 export function SearchMock({ query, youTag, others }: { query: string; youTag: string; others: string[] }) {
@@ -75,7 +76,7 @@ export function ReelMock({ caption = "Ein Tag bei uns im Betrieb", videoSrc }: {
     <div className="reel-mock">
       <div className="rl-frame">
         <div className="rl-video">
-          {videoSrc && <video src={videoSrc} autoPlay muted loop playsInline preload="metadata" />}
+          {videoSrc && <LazyVideo src={videoSrc} ariaLabel={caption} />}
         </div>
         {!videoSrc && <div className="rl-play" />}
         <div className="rl-side">

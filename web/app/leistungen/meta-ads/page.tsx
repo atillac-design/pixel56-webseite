@@ -18,11 +18,13 @@ import {
 } from "@/components/ui";
 import { FeedMock } from "@/components/mocks";
 import { site } from "@/lib/site";
+import { projectPath, serviceRoutes } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "Meta Ads: Facebook & Instagram Werbung",
   description:
     "Erfolgreiche Meta Ads für KMUs, Handwerker & Selbstständige: zielgerichtete Facebook- & Instagram-Werbung, mehr Leads & Anfragen. Kostenlose Beratung bei Pixel56 buchen.",
+  alternates: { canonical: serviceRoutes["meta-ads"] },
 };
 
 const jsonLd = {
@@ -32,7 +34,7 @@ const jsonLd = {
   serviceType: "Social-Media-Werbung",
   provider: { "@type": "ProfessionalService", name: site.name, url: site.url },
   areaServed: "DE",
-  url: `${site.url}/leistungen/meta-ads`,
+  url: `${site.url}${serviceRoutes["meta-ads"]}`,
 };
 
 const statusRows = [
@@ -53,8 +55,8 @@ const steps = [
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-van-den-berg.webp", href: "/projekte/van-den-berg", cat: "Van den Berg Gruppe", title: "Konstantes Wachstum durch gezielte Facebook Ads", text: "Kontinuierlicher Kampagnenaufbau mit konsequenter Budget-Steuerung nach Datenlage statt Bauchgefühl.", tag: "Meta Ads · laufende Betreuung" },
-  { variant: "ic-1", barWidth: 50, img: "/bilder/ads-recruiting-kampagne.webp", href: "/projekte/gm-dachdecker", cat: "GM-Dachdecker Meisterbetrieb", title: "Kampagnen für Mitarbeitergewinnung", text: "Neben klassischer Kundengewinnung setzen wir Meta Ads gezielt zur Bewerbergewinnung ein — spürbar leichtere Mitarbeitersuche.", tag: "Meta Ads · Recruiting" },
+  { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-van-den-berg.webp", href: projectPath("van-den-berg"), cat: "Van den Berg Gruppe", title: "Meta Ads mit kontinuierlicher Betreuung", text: "Kampagnenaufbau mit Budget-Steuerung nach Datenlage und laufender Auswertung.", tag: "Meta Ads · laufende Betreuung" },
+  { variant: "ic-1", barWidth: 50, img: "/bilder/ads-recruiting-kampagne.webp", href: projectPath("gm-dachdecker"), cat: "GM-Dachdecker Meisterbetrieb", title: "Kampagnen für Mitarbeitergewinnung", text: "Neben klassischer Kundengewinnung wurden Meta Ads auch für die gezielte Bewerberansprache eingesetzt.", tag: "Meta Ads · Recruiting" },
 ];
 
 const faqs = [
@@ -64,6 +66,11 @@ const faqs = [
   { q: "Was, wenn ich das Budget mal pausieren muss?", a: "Möglich, aber der Aufbau-Effekt geht dabei meist verloren — nach einer Pause muss der Algorithmus neu lernen." },
   { q: "Was kostet die Betreuung, getrennt vom Werbebudget?", a: "Werbebudget geht direkt an Meta, die Betreuung deckt Strategie, Aufbau und laufende Optimierung ab. Den passenden Umfang klären wir im kostenlosen Erstgespräch." },
   { q: "Bleibst du auch danach erreichbar?", a: "Ja — per WhatsApp über einen festen Ansprechpartner, siehe oben. Betreuung ist Teil der Zusammenarbeit, kein Zusatzverkauf danach." },
+  { q: "Wem gehört das Werbekonto?", a: "Das klären wir vor dem Start transparent. Im Regelfall arbeiten wir mit einem Werbekonto, auf das dein Unternehmen Zugriff hat, damit Budget und Kampagnendaten nachvollziehbar bleiben." },
+  { q: "Könnt ihr Creatives und Reels für die Anzeigen erstellen?", a: "Ja. Wir können aus deinem Material Anzeigenmotive und kurze Videos schneiden oder bei Bedarf Aufnahmen vor Ort planen. Beides wird getrennt nach Aufwand angeboten." },
+  { q: "Wie messt ihr, ob Anfragen aus den Anzeigen kommen?", a: "Wir definieren zuerst, welche Aktion zählt — etwa eine Anfrage oder Terminbuchung. Dann richten wir passende Messpunkte ein und besprechen, welche Daten wegen Einwilligung und Plattformgrenzen tatsächlich verfügbar sind." },
+  { q: "Bekomme ich Einblick in die Kampagnenergebnisse?", a: "Ja. Wir besprechen Ausgaben, Reichweite, Klicks und die messbaren Anfragen regelmäßig. Die Beispielgrafik oben zeigt das Format; sie enthält keine echten Kundenzahlen." },
+  { q: "Wie lange sollte eine Kampagne laufen?", a: "Das hängt von Ziel, Budget und Datenmenge ab. Wir legen vorab einen sinnvollen Testzeitraum fest und bewerten danach gemeinsam, ob sich eine Fortsetzung lohnt." },
 ];
 
 const reviews = [
@@ -74,13 +81,13 @@ const reviews = [
 
 export default function MetaAdsPage() {
   return (
-    <>
+    <main className="service-premium service-suite service-suite-meta">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="sheet">
         <SiteNav crumb={{ section: "Leistungen", page: "Meta Ads" }} />
 
-        <header className="hero">
+        <header className="hero service-suite-hero">
           <PulseField label1="// REICHWEITE AKTIV" label2="// FEED & STORY" />
           <div className="hero-eyebrow">LEISTUNG · META ADS</div>
           <h1>
@@ -95,7 +102,7 @@ export default function MetaAdsPage() {
           </p>
           <div className="hero-actions">
             <a className="btn-primary" href="https://calendly.com/pixel56/15min" target="_blank" rel="noopener">
-              Kostenloses Erstgespräch <ArrowIcon />
+              Meta-Ads-Potenzial besprechen <ArrowIcon />
             </a>
             <Link className="btn-text" href="#status">
               Kennst du das? ↓
@@ -112,7 +119,15 @@ export default function MetaAdsPage() {
 
       <ClientMarquee />
 
-      <div className="sheet">
+      <div className="editorial-shell service-editorial">
+        <div className="sheet">
+        <section className="service-summary service-summary-premium reveal" aria-label="Meta Ads auf einen Blick">
+          <div><span>Ziel</span><strong>Planbare qualifizierte Anfragen</strong></div>
+          <div><span>Kanäle</span><strong>Instagram &amp; Facebook</strong></div>
+          <div><span>Hebel</span><strong>Creative, Zielgruppe, Angebot</strong></div>
+          <div><span>Steuerung</span><strong>Tracking &amp; laufende Optimierung</strong></div>
+        </section>
+
         <section className="band tint-amber" id="status">
           <div className="split2 reverse">
             <div className="reveal">
@@ -157,26 +172,57 @@ export default function MetaAdsPage() {
 
         <section className="band tint" id="beweis">
           <div className="band-tag reveal" style={{ marginBottom: 44 }}>
-            03 — Der Beweis
+            03 — Aus der Projektarbeit
           </div>
           <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
-              <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
-                „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
-                gearbeitet — und das hat gereicht.“
-              </p>
-              <p>
-              Van den Berg Gruppe, kontinuierlich weiterentwickelte
-              Facebook-Ads-Kampagnen. Auch bei reduziertem Budget hielt der
-              Anfrage-Effekt an — Konstanz schlägt Sprunghaftigkeit.
-              </p>
-              <cite>{"// VAN DEN BERG GRUPPE"}</cite>
+            <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
+              Kampagnen brauchen ein klares Ziel und laufende Betreuung.
+            </p>
+            <p>
+              Für die Van den Berg Gruppe wurden Meta-Kampagnen mit passender
+              Zielseite und Conversion-Tracking aufgebaut. Motive und Struktur
+              werden anhand der verfügbaren Kampagnendaten weiterentwickelt.
+            </p>
+            <cite>{"// PROJEKT VAN DEN BERG GRUPPE"}</cite>
+          </div>
+        </section>
+
+        <section className="band" aria-labelledby="meta-creatives-title">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">04 — Echte Kampagnenmotive</span>
+              <h2 className="band-title" id="meta-creatives-title">
+                Creatives aus <em>echter Kundenarbeit</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Die Motive zeigen reale Arbeiten von Pixel56. Kampagnenaufbau,
+              Zielgruppe und Landingpage werden jeweils auf das Angebot abgestimmt.
+            </p>
+          </div>
+          <div className="work-gallery work-gallery-social reveal">
+            <figure>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/bilder/ads-meta-beispiel.webp" alt="Instagram- und Facebook-Anzeigen für Mitarbeitergewinnung" loading="lazy" decoding="async" />
+              <figcaption><b>Mitarbeitergewinnung</b><span>Feed · Story · Recruiting</span></figcaption>
+            </figure>
+            <figure>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/bilder/ads-fb-beispiele.webp" alt="Meta-Ad für einen Abbruch- und Tiefbaubetrieb" loading="lazy" decoding="async" />
+              <figcaption><b>Abbruch &amp; Tiefbau</b><span>Ad Creative · Bewerberansprache</span></figcaption>
+            </figure>
+            <figure>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/bilder/projekt-stark-ins-neue-3.webp" alt="Social-Media-Anzeige für Stark ins Neue" loading="lazy" decoding="async" />
+              <figcaption><b>Stark ins Neue</b><span>Meta Ads · Kursanmeldung</span></figcaption>
+            </figure>
           </div>
         </section>
 
         <section className="band">
           <div className="split2 reverse">
             <div className="reveal">
-              <span className="band-tag">04 — Warum wir</span>
+              <span className="band-tag">05 — Warum wir</span>
               <h2 className="band-title">
                 Konstanz statt <em>Stop-and-go.</em>
               </h2>
@@ -281,12 +327,16 @@ export default function MetaAdsPage() {
           <FaqList items={faqs} />
         </section>
 
+        </div>
+      </div>
+
+      <div className="sheet service-ending">
         <CloseCta>
           Lass uns über deine <em>Meta-Ads-Kampagne</em> sprechen.
         </CloseCta>
 
         <SiteFooter />
       </div>
-    </>
+    </main>
   );
 }

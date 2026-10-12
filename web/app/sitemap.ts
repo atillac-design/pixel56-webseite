@@ -4,39 +4,67 @@ import { standorte } from "@/lib/standorte";
 import { ressourcen } from "@/lib/ressourcen";
 import { fallstudien } from "@/lib/projekte";
 import { artikel } from "@/lib/blog";
+import { locationPath, projectPath, resourcePath, routes } from "@/lib/routes";
+import { legacyLocations } from "@/lib/legacy-locations";
+import { getBlogBeitraege } from "@/lib/sanity";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+export const revalidate = 300;
 
-  const statisch = ["", "/ueber-uns", "/projekte", "/blog", "/karriere", "/kontakt", "/standorte"].map(
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const statisch = [
+    routes.home,
+    routes.about,
+    routes.projects,
+    routes.blog,
+    routes.careers,
+    routes.contact,
+    routes.locations,
+    "/dienstleistung",
+    "/team/atilla-ciftcioglu",
+    "/stellenangebote/pixel56-marketing-agentur-in-koblenz-sucht-vertriebsprofi-in",
+    "/category/digitale-produkte",
+    "/product/tagesplaner-to-do-liste-set",
+    ...[
+      "kunstliche-intelligenz",
+      "marketing-tools",
+      "meta-ads",
+      "seo",
+      "soziale-medien",
+      "wachstum",
+      "webdesign",
+      "webseite",
+    ].map((slug) => `/blog-kategorien/${slug}`),
+  ].map(
     (path) => ({
-      url: `${site.url}${path}`,
-      lastModified,
-      priority: path === "" ? 1 : 0.7,
+      url: path === routes.home ? site.url : `${site.url}${path}`,
+      priority: path === routes.home ? 1 : 0.7,
     })
   );
 
   const leistungen = services.map((s) => ({
-    url: `${site.url}/leistungen/${s.slug}`,
-    lastModified,
+    url: `${site.url}${s.href}`,
     priority: 0.9,
   }));
 
-  const orte = standorte.map((s) => ({
-    url: `${site.url}/standorte/${s.slug}`,
-    lastModified,
-    priority: 0.6,
+  const curatedLocationSlugs = new Set(standorte.map((location) => location.slug));
+  const locationSlugs = [
+    ...new Set([
+      ...legacyLocations.map((location) => location.slug),
+      ...curatedLocationSlugs,
+    ]),
+  ];
+  const orte = locationSlugs.map((slug) => ({
+    url: `${site.url}${locationPath(slug)}`,
+    priority: curatedLocationSlugs.has(slug) ? 0.6 : 0.4,
   }));
 
   const freebies = ressourcen.map((r) => ({
-    url: `${site.url}/ressourcen/${r.slug}`,
-    lastModified,
+    url: `${site.url}${resourcePath(r.slug)}`,
     priority: 0.5,
   }));
 
   const projekte = fallstudien.map((f) => ({
-    url: `${site.url}/projekte/${f.slug}`,
-    lastModified,
+    url: `${site.url}${projectPath(f.slug)}`,
     priority: 0.6,
   }));
 
@@ -46,5 +74,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...statisch, ...leistungen, ...orte, ...freebies, ...projekte, ...beitraege];
+  const cmsBeitraege = await getBlogBeitraege();
+  const lokaleBlogSlugs = new Set(artikel.map((a) => a.slug));
+  const neueCmsBeitraege = (cmsBeitraege ?? [])
+    .filter((a) => !lokaleBlogSlugs.has(a.slug))
+    .map((a) => ({ url: `${site.url}/blog/${a.slug}`, priority: 0.5 }));
+
+  return [...statisch, ...leistungen, ...orte, ...freebies, ...projekte, ...beitraege, ...neueCmsBeitraege];
 }

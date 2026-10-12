@@ -67,7 +67,7 @@ export const fallstudien: Fallstudie[] = [
       ],
     },
     ergebnis: {
-      text: "Deutlich mehr Kursanmeldungen und Newsletter-Abos — und Klarheit darüber, welche Kampagne was bringt.",
+      text: "Kursangebot, Anmeldestrecke und begleitende Kampagnen sind in einem konsistenten Auftritt verbunden.",
     },
     stimme: {
       text: "Endlich zeigen sich unsere Kurse auch online. Die Zusammenarbeit ist unkompliziert und auf Augenhöhe — man merkt, dass hier jemand mitdenkt.",
@@ -106,7 +106,7 @@ export const fallstudien: Fallstudie[] = [
       ],
     },
     ergebnis: {
-      text: "Gestärkte Markenwahrnehmung, mehr Anfragen — und ein Auftritt, der zur Qualität des Betriebs passt. Die Zusammenarbeit läuft seit 2019.",
+      text: "Eine klar strukturierte Leistungswebsite und laufender Social-Media-Content zeigen den Betrieb und seine Arbeit. Die Zusammenarbeit läuft seit 2019.",
     },
     stimme: {
       text: "Seit Jahren derselbe Ansprechpartner, immer erreichbar, alles aus einer Hand — Website, Content, Kampagnen. Das findet man selten.",
@@ -124,9 +124,9 @@ export const fallstudien: Fallstudie[] = [
     bild: "/bilder/projekt-van-den-berg.webp",
     logo: "/bilder/kunde-vandenberg.png",
     variant: "ic-4",
-    titel: "Konstantes Wachstum durch gezielte Facebook Ads",
+    titel: "Meta Ads mit kontinuierlicher Betreuung",
     teaser:
-      "Kontinuierlicher Kampagnenaufbau mit konsequenter Budget-Steuerung nach Datenlage statt Bauchgefühl — auch bei reduziertem Budget hielt der Anfrage-Effekt an.",
+      "Kontinuierlicher Kampagnenaufbau mit Budget-Steuerung nach Datenlage und laufender Auswertung.",
     problem: {
       titel: "Werbebudget ohne klare Linie",
       text: "Kampagnen liefen sprunghaft: mal viel Budget, mal gar nichts. Der Algorithmus kam nie ins Lernen, Ergebnisse waren nicht vorhersehbar und niemand wusste, welcher Euro was brachte.",
@@ -146,7 +146,7 @@ export const fallstudien: Fallstudie[] = [
       ],
     },
     ergebnis: {
-      text: "Spürbar mehr Anfragen — und der Effekt hielt auch bei reduziertem Budget an: Konstanz schlägt Sprunghaftigkeit.",
+      text: "Kampagnenstruktur, Conversion-Tracking und Zielseiten wurden aufeinander abgestimmt und werden laufend ausgewertet.",
     },
     stimme: {
       text: "Wir haben nicht mehr Budget verbrannt. Wir haben konstant gearbeitet — und das hat gereicht.",
@@ -160,6 +160,8 @@ export const fallstudien: Fallstudie[] = [
     branche: "Handwerk & Bau",
     jahr: "2023",
     tags: ["Webdesign", "Karriereportal", "Recruiting"],
+    bild: "/bilder/projekt-gm-dachdecker.webp",
+    galerie: ["/bilder/ads-recruiting-kampagne.webp", "/bilder/gm-dachdecker-bewertung.webp"],
     variant: "ic-1",
     titel: "Handwerkskunst digital erlebbar gemacht",
     teaser:
@@ -183,7 +185,7 @@ export const fallstudien: Fallstudie[] = [
       ],
     },
     ergebnis: {
-      text: "Spürbar leichtere Mitarbeitergewinnung — nicht weil plötzlich mehr Menschen Dachdecker werden wollten, sondern weil der Weg zur Bewerbung nicht mehr im Weg stand.",
+      text: "Die neue Website zeigt den Meisterbetrieb und führt Bewerber über einen direkten Weg zum Karriereportal.",
     },
     stimme: {
       text: "Von der ersten Idee bis zum Livegang alles aus einer Hand — schnell, unkompliziert, top Ergebnis. Endlich bekommen wir Bewerbungen.",
@@ -226,8 +228,10 @@ export const fallstudien: Fallstudie[] = [
     slug: "oktay-coemertler",
     kunde: "Oktay Cömertler",
     branche: "Abbruch, Tief- & Kanalbau",
-    jahr: "seit 2022",
+    jahr: "2018–2023",
     tags: ["Branding", "Webdesign"],
+    bild: "/bilder/projekt-oktay-coemertler.webp",
+    galerie: ["/bilder/ads-fb-beispiele.webp"],
     variant: "ic-7",
     titel: "Full-Service für Abbruch, Tief- & Kanalbau",
     teaser:
@@ -570,6 +574,46 @@ export const fallstudien: Fallstudie[] = [
         "Fester Veröffentlichungs-Rhythmus",
         "Ein Dreh liefert Content für mehrere Wochen",
       ],
+    },
+  },
+  {
+    slug: "colak-gmbh",
+    kunde: "Colak GmbH",
+    branche: "Trocknungstechnologien",
+    jahr: "2020–2021",
+    tags: ["Webdesign", "Produktkommunikation"],
+    bild: "/bilder/projekt-colak.webp",
+    logo: "/bilder/kunde-colak.png",
+    variant: "ic-6",
+    titel: "Trocknungstechnologie verständlich präsentiert",
+    teaser:
+      "Neue Webpräsenz für die Colak GmbH: moderne Produktkommunikation für fortschrittliche Trocknungssysteme und ein klarer Weg von der technischen Information zur Anfrage.",
+    problem: {
+      titel: "Komplexe Technologie, schwer greifbar",
+      text: "Die vielseitigen Trocknungssysteme der Colak GmbH ließen sich online nur schwer erfassen. Potenzielle Kunden brauchten einen schnellen Überblick über Produkte, Einsatzbereiche und Integrationsmöglichkeiten.",
+      punkte: [
+        "Technische Vorteile waren online nicht klar erklärt",
+        "Einsatzbereiche der Systeme blieben abstrakt",
+        "Der Weg von der Information zur Anfrage war zu lang",
+      ],
+    },
+    loesung: {
+      titel: "Produkte und Prozesse klar strukturiert",
+      text: "Wir entwickelten einen modernen Auftritt, der die Systeme CT 500 und CF 500, ihre Einsatzbereiche und die flexible Einbindung in Produktionsprozesse verständlich erklärt.",
+      punkte: [
+        "Klare Darstellung der Trocknungssysteme und Endprodukte",
+        "Visualisierung verschiedener Prozess- und Zuführungsvarianten",
+        "Direkte Kontaktwege für konkrete Produktanfragen",
+      ],
+    },
+    ergebnis: {
+      text: "Die neue Website stärkte die digitale Sichtbarkeit der Colak GmbH und machte ihre technischen Lösungen für potenzielle Kunden leichter verständlich und anfragbar.",
+    },
+    stimme: {
+      text: "Messbare Ergebnisse statt leerer Versprechen — und auch Jahre später noch derselbe Ansprechpartner.",
+      name: "Nalan Colak",
+      rolle: "Colak GmbH",
+      img: "/bilder/person-nalan-colak.webp",
     },
   },
 ];

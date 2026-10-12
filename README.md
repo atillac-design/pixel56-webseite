@@ -1,60 +1,26 @@
-# Pixel56 Webseite — Neugestaltung
+# Pixel56 – neue Website
 
-Kompletter Neuaufbau von pixel56.de (aktuell Webflow). Prozess: statische HTML-Mockups → Feedback-Iterationen → technischer Aufbau (Next.js + CMS) mit finaler SEO-/Text-Optimierung.
+Die neue Pixel56-Website liegt bereits vollständig getrennt von den älteren HTML-Entwürfen im Ordner [`web/`](web/). Dieser Ordner ist der gemeinsame Arbeitsbereich für Codex und Claude Code. `mockups/` ist nur ein historisches Designarchiv; dort keine neuen Seiten entwickeln.
 
-## Stand
+## Lokal starten
 
-**Technischer Aufbau läuft:** Alle 14 Mockup-Seiten sind als Next.js-App unter `web/` portiert (Stand Juli 2026). Details siehe Abschnitt "Technischer Aufbau" unten.
+```bash
+cd web
+npm ci
+npm run dev
+```
 
-Alle 14 Seiten als Mockup in der finalen Formsprache ("Freier Entwurf", Stand Juli 2026):
+Danach `http://localhost:3000` öffnen. Vor Änderungen an Next.js-Code bitte [`web/AGENTS.md`](web/AGENTS.md) lesen. Wichtige Befehle: `npm run build`, `npm run seo:check:strict`.
 
-| Seite | Datei | Artifact-URL |
-|---|---|---|
-| Startseite | `mockups/startseite.html` | https://claude.ai/code/artifact/bdf40464-c599-4297-a2a7-cb8c194f58c2 |
-| Webdesign | `mockups/leistung-webdesign.html` | https://claude.ai/code/artifact/c60992fe-d5ee-4619-91a2-4e758e3e321e |
-| SEO | `mockups/leistung-seo.html` | https://claude.ai/code/artifact/4b1e2430-61e4-4087-b452-c5d09d950eee |
-| Google Ads | `mockups/leistung-google-ads.html` | https://claude.ai/code/artifact/89ff1698-5e5f-46a9-919c-a11edff4dddd |
-| Meta Ads | `mockups/leistung-meta-ads.html` | https://claude.ai/code/artifact/fac58a97-09c0-4818-9eb2-7b54327302fb |
-| Landingpages & Funnels | `mockups/leistung-landingpages-funnels.html` | https://claude.ai/code/artifact/ad8bdb6e-c85b-4c84-804e-54e1045f3476 |
-| Content-Produktion | `mockups/leistung-content-produktion.html` | https://claude.ai/code/artifact/d10649f1-08df-4f24-a58e-d7c1a16e00c1 |
-| Mitarbeitergewinnung | `mockups/leistung-mitarbeitergewinnung.html` | https://claude.ai/code/artifact/f69597e4-1f07-4437-89e0-153216c56142 |
-| Über uns | `mockups/ueber-uns.html` | https://claude.ai/code/artifact/9483e155-6c85-4e09-93bc-f23b9fee73d5 |
-| Projekte | `mockups/projekte.html` | https://claude.ai/code/artifact/87122e8b-d315-44f6-8fc6-158b5bb66e6d |
-| Blog | `mockups/blog.html` | https://claude.ai/code/artifact/02c55f02-7608-4d1f-a0a4-91e949ec4f4c |
-| Karriere | `mockups/karriere.html` | https://claude.ai/code/artifact/605814db-aec4-4f3c-86a6-71fe6ee2f83d |
-| Standort-Vorlage (Koblenz) | `mockups/standort-vorlage-koblenz.html` | https://claude.ai/code/artifact/48fcc1d2-e051-438c-9d24-c8d2c80a131d |
-| Freebie-Vorlage (SEO-Checkliste) | `mockups/freebie-vorlage-seo-checkliste.html` | https://claude.ai/code/artifact/cc4316a4-aa4e-4fe7-aac1-a7a7515f04cb |
+## Arbeitsstand
 
-`mockups/archiv/` enthält die früheren, verworfenen Design-Iterationen.
+- Eigenständige Next.js-Website mit Startseite, Leistungen, Projekten, Blog, Ressourcen, Standorten und Kontakt. Sie ist **nicht** mit Webflow verbunden.
+- Bestehende Pixel56-URLs werden im Migrationsmanifest und über Weiterleitungen bzw. direkte Routen berücksichtigt. Vor einem Domainwechsel alle wichtigen URLs nochmals gegen die Live-Seite und Search Console prüfen.
+- Die Startseite zeigt ausgewählte echte Projekte; weitere Beispiele stehen unter `/projekte`.
+- Sichtbare Medienplätze in der lokalen Vorschau markieren noch fehlendes Material. Auf einer indexierbaren Produktion werden diese Platzhalter nicht angezeigt. Siehe [`web/docs/MEDIA_PLAN.md`](web/docs/MEDIA_PLAN.md).
+- **Nicht live geschaltet:** Das aktuelle Webflow-Angebot bleibt unverändert. Rechtstexte, Tracking/Cookies, Formulare, Bildrechte und SEO-Migration brauchen vor dem Launch eine abschließende Prüfung.
+- „KMU-Webseiten“ ist ein separates Projekt. Die URL wird nachgereicht und noch nicht verlinkt.
 
-## Formsprache (Design-System der Mockups)
+## Zusammenarbeit über GitHub
 
-- Grund: `#07070c`, Akzent Rot `#ff3951`, Amber `#ffc226`, Blau `#3f80fd`, Violett `#6a35ff`
-- Serif-Kursiv (Georgia-Stack) für Subheadlines/Zitate, Sans 800 für Headlines, Mono für Labels
-- Pill-Buttons (100px Radius), Puls-/Radar-Motiv im Hero, kinetischer Headline-Reveal
-- Wiederkehrende "lebendige" Komponenten: Status-Panel (blinkende Warnsignale), Live-Metrik-Karte (Count-up + Balken), WhatsApp-Chat-Mockup, Such-/Feed-/Reel-/Upload-Mockups je nach Thema
-- Vollflächige Farb-Verläufe pro Sektion (rot/amber/violett), alternierende Split-Layouts
-
-## Technischer Aufbau (`web/`)
-
-Next.js 16 (App Router, TypeScript, kein Tailwind — das Design-System der Mockups ist 1:1 als globales CSS portiert). Aufbau:
-
-- `app/` — alle Routen: `/`, `/leistungen/<slug>` (7 Seiten), `/ueber-uns`, `/projekte`, `/blog`, `/karriere`, `/standorte/[slug]` (aktuell Koblenz), `/ressourcen/[slug]` (3 Freebies), Rechtsseiten-Stubs
-- `components/` — SiteNav, SiteFooter, Reveal (Scroll-Reveal + Count-up), `ui.tsx` (Status-Panel, Metrik-Karte, WhatsApp-Mock, Browser-Mock, Stepper, Reviews, FAQ, Close-CTA …), `mocks.tsx` (Such-/Feed-/Reel-/Upload-/Vergleichs-/Funnel-Mockups)
-- `lib/` — zentrale Inhalts-Schicht (`site.ts`, `standorte.ts`, `ressourcen.ts`). **Das ist der Andockpunkt für Sanity:** sobald CMS-Zugänge da sind, werden diese Dateien durch Queries ersetzt, die Komponenten bleiben unverändert.
-
-Lokal: `cd web && npm install && npm run dev`. Produktion: `npm run build`. Umgebungsvariablen siehe `web/.env.example`.
-
-**CMS (Sanity):** Schemas (Blog-Beitrag, Offene Stelle, Standortseite) und eingebettetes Studio unter `/studio` sind fertig. Es fehlt nur noch das Sanity-Projekt: unter sanity.io anlegen, Projekt-ID als `NEXT_PUBLIC_SANITY_PROJECT_ID` setzen — Blog und Karriere ziehen dann automatisch aus dem CMS (bis dahin statische Fallbacks).
-
-**Freebie-Formulare (MailerLite):** `/api/lead` legt Kontakte per MailerLite-API an (Feld `quelle` = Freebie-Slug für Automationen). Es fehlt nur `MAILERLITE_API_KEY` (optional `MAILERLITE_GROUP_ID`).
-
-## Offene Punkte
-
-- Sanity-Projekt anlegen + Projekt-ID eintragen (Code ist fertig, s. o.)
-- Vercel-Deployment aufsetzen (Account kommt von Atilla) + Env-Variablen setzen
-- MailerLite-API-Key eintragen + PDF-Versand-Automationen je Freebie anlegen
-- Echte Bilder einsetzen (Koblenz/Deutsches Eck im Hero, Team-Fotos, Projekt-Screenshots)
-- Google-Bewertungen live anbinden (Places API), Platzhalter 4.9/27 ersetzen
-- 166 Standortseiten über `lib/standorte.ts`/CMS ausrollen (Achtung: Thin-Content-Risiko der Altseiten beheben; Slug-Inkonsistenz `zuerich`/`zurich-meta-ads` bei Migration/Redirects beachten)
-- Finale SEO-/Copy-Optimierung als eigener Durchgang vor Livegang (gemeinsamer Review aller 14 Seiten)
+Das Repository ist öffentlich. Search-Console-Rohdaten unter `web/data/gsc-*` und lokale `.env`-Dateien bleiben absichtlich nur lokal und werden nicht hochgeladen. Für Claude Code: dieses Repository und den Arbeitszweig öffnen, dann [`web/docs/HANDOFF.md`](web/docs/HANDOFF.md) lesen. Keine erfundenen Kundenbewertungen, Kennzahlen oder Projektbilder veröffentlichen.

@@ -1,12 +1,13 @@
 /**
  * Blog-Artikel als Fallback-Inhalt, solange das CMS (Sanity) leer ist.
  * Jeder Artikel hat einen vollständigen Body aus Absätzen und
- * Zwischenüberschriften. Sobald Sanity-Beiträge existieren, ersetzen sie
- * diese Liste auf der Blog-Übersicht (Detailseiten bleiben hier).
+ * Zwischenüberschriften. Sanity-Beiträge ergänzen die Übersicht und
+ * erhalten eigene Detailseiten; diese Bestandsartikel bleiben erhalten.
  */
+import legacyBlog from "@/data/legacy-blog.json";
 
 export type Block =
-  | { typ: "p"; text: string }
+  | { typ: "p"; text: string; html?: string }
   | { typ: "h2"; text: string }
   | { typ: "ul"; items: string[] };
 
@@ -22,7 +23,7 @@ export type Artikel = {
   body: Block[];
 };
 
-export const artikel: Artikel[] = [
+const neueArtikel: Artikel[] = [
   {
     slug: "website-kosten-handwerksbetriebe",
     cover: "c1",
@@ -187,6 +188,15 @@ export const artikel: Artikel[] = [
     ],
   },
 ];
+
+const migrierteArtikel = legacyBlog as Artikel[];
+
+export const artikel: Artikel[] = [
+  ...neueArtikel,
+  ...migrierteArtikel.filter(
+    (migriert) => !neueArtikel.some((artikel) => artikel.slug === migriert.slug),
+  ),
+].sort((a, b) => b.datum.localeCompare(a.datum));
 
 export function getArtikel(slug: string): Artikel | undefined {
   return artikel.find((a) => a.slug === slug);

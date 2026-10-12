@@ -11,6 +11,8 @@ import {
   BrowserMock,
 } from "@/components/ui";
 import { fallstudien, getFallstudie } from "@/lib/projekte";
+import { projectPath, routes } from "@/lib/routes";
+import { verifiedProjectVoices } from "@/lib/verified-reviews";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -25,6 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${f.kunde} — Projekt`,
     description: f.teaser,
+    alternates: { canonical: projectPath(f.slug) },
   };
 }
 
@@ -32,13 +35,14 @@ export default async function FallstudiePage({ params }: Props) {
   const { slug } = await params;
   const f = getFallstudie(slug);
   if (!f) notFound();
+  const voice = verifiedProjectVoices[f.slug];
 
   return (
-    <>
+    <main className="service-premium service-suite page-suite case-suite">
       <div className="sheet">
         <SiteNav crumb={{ section: "Projekte", page: f.kunde }} />
 
-        <header className="hero hero-case" style={{ minHeight: "62vh" }}>
+        <header className="hero hero-case service-suite-hero" style={{ minHeight: "62vh" }}>
           <PulseField label1={`// ${f.branche.toUpperCase()}`} label2={`// ${f.jahr.toUpperCase()}`} />
           <div className="hero-eyebrow">PROJEKT · {f.kunde.toUpperCase()}</div>
           <h1>
@@ -56,7 +60,8 @@ export default async function FallstudiePage({ params }: Props) {
         </header>
       </div>
 
-      <div className="sheet">
+      <div className="editorial-shell service-editorial">
+        <div className="sheet">
         {f.bild && (
           <section className="band" style={{ paddingTop: 0, paddingBottom: 60 }}>
             <div className="reveal">
@@ -153,7 +158,7 @@ export default async function FallstudiePage({ params }: Props) {
           </section>
         )}
 
-        {f.stimme && (
+        {voice && (
           <section className="band tint-violet">
             <div className="split2">
               <div className="reveal">
@@ -169,17 +174,17 @@ export default async function FallstudiePage({ params }: Props) {
               </div>
               <div className="reveal">
                 <div className="voice-card">
-                  <blockquote>„{f.stimme.text}“</blockquote>
+                  <blockquote>„{voice.text}“</blockquote>
                   <div className="voice-person">
-                    {f.stimme.img ? (
+                    {voice.img ? (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={f.stimme.img} alt={f.stimme.name} loading="lazy" decoding="async" />
+                      <img src={voice.img} alt={voice.who} loading="lazy" decoding="async" />
                     ) : (
-                      <div className="vp-fallback">{f.stimme.name.slice(0, 1)}</div>
+                      <div className="vp-fallback">{voice.who.slice(0, 1)}</div>
                     )}
                     <div>
-                      <b>{f.stimme.name}</b>
-                      <span>{f.stimme.rolle}</span>
+                      <b>{voice.who}</b>
+                      <span>Kundenstimme</span>
                     </div>
                     {f.logo && (
                       // eslint-disable-next-line @next/next/no-img-element
@@ -201,19 +206,22 @@ export default async function FallstudiePage({ params }: Props) {
               </h2>
             </div>
             <p className="band-note">
-              <Link href="/projekte" className="voice-link">
+              <Link href={routes.projects} className="voice-link">
                 Alle Projekte ansehen <ArrowIcon />
               </Link>
             </p>
           </div>
         </section>
 
+        </div>
+      </div>
+
+      <div className="sheet service-ending">
         <CloseCta>
           Dein Projekt könnte das <em>nächste</em> sein.
         </CloseCta>
-
         <SiteFooter />
       </div>
-    </>
+    </main>
   );
 }

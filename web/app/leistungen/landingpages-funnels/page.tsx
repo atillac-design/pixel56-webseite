@@ -18,11 +18,13 @@ import {
 } from "@/components/ui";
 import { Funnel2 } from "@/components/mocks";
 import { site } from "@/lib/site";
+import { projectPath, serviceRoutes } from "@/lib/routes";
 
 export const metadata: Metadata = {
   title: "Landingpages & Funnels, die konvertieren",
   description:
     "Landingpages und Funnels mit genau einem Ziel: von der Anzeige bis zur Anfrage gezielt geführt. Mehr aus deinem Werbebudget für KMUs & Selbstständige. Jetzt Erstgespräch buchen.",
+  alternates: { canonical: serviceRoutes["landingpages-funnels"] },
 };
 
 const jsonLd = {
@@ -32,7 +34,7 @@ const jsonLd = {
   serviceType: "Landingpage- und Funnel-Entwicklung",
   provider: { "@type": "ProfessionalService", name: site.name, url: site.url },
   areaServed: "DE",
-  url: `${site.url}/leistungen/landingpages-funnels`,
+  url: `${site.url}${serviceRoutes["landingpages-funnels"]}`,
 };
 
 const statusRows = [
@@ -59,8 +61,8 @@ const steps = [
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-3", barWidth: 55, img: "/bilder/projekt-stark-ins-neue-3.webp", href: "/projekte/stark-ins-neue", cat: "Stark ins Neue gGmbH", title: "Klare Nutzerführung zur Kursanmeldung", text: "Fokussierte Anmeldestrecke für eine Bildungsinitiative — DSGVO-konform, ohne unnötige Zwischenschritte.", tag: "Landingpage · Anmeldefunnel · 2025" },
-  { variant: "ic-4", barWidth: 65, img: "/bilder/projekt-van-den-berg.webp", href: "/projekte/van-den-berg", cat: "Van den Berg Gruppe", title: "Anzeige direkt auf ein Angebot geführt", text: "Facebook-Ads-Kampagnen mit passender Zielseite statt allgemeiner Startseite — Teil eines spürbaren Wachstums.", tag: "Meta Ads · Landingpage" },
+  { variant: "ic-3", barWidth: 55, img: "/bilder/projekt-stark-ins-neue-3.webp", href: projectPath("stark-ins-neue"), cat: "Stark ins Neue gGmbH", title: "Klare Nutzerführung zur Kursanmeldung", text: "Fokussierte Anmeldestrecke für eine Bildungsinitiative — DSGVO-konform, ohne unnötige Zwischenschritte.", tag: "Landingpage · Anmeldefunnel · 2025" },
+  { variant: "ic-4", barWidth: 65, img: "/bilder/projekt-van-den-berg.webp", href: projectPath("van-den-berg"), cat: "Van den Berg Gruppe", title: "Anzeige direkt auf ein Angebot geführt", text: "Facebook-Ads-Kampagnen mit passender Zielseite statt allgemeiner Startseite — Teil eines spürbaren Wachstums.", tag: "Meta Ads · Landingpage" },
 ];
 
 const faqs = [
@@ -80,13 +82,13 @@ const reviews = [
 
 export default function FunnelsPage() {
   return (
-    <>
+    <main className="service-premium service-suite service-suite-funnels">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="sheet">
         <SiteNav crumb={{ section: "Leistungen", page: "Landingpages & Funnels" }} />
 
-        <header className="hero">
+        <header className="hero service-suite-hero">
           <PulseField label1="// FUNNEL AKTIV" label2="// EIN ZIEL, KEINE ABLENKUNG" />
           <div className="hero-eyebrow">LEISTUNG · LANDINGPAGES &amp; FUNNELS</div>
           <h1>
@@ -102,7 +104,7 @@ export default function FunnelsPage() {
           </p>
           <div className="hero-actions">
             <a className="btn-primary" href="https://calendly.com/pixel56/15min" target="_blank" rel="noopener">
-              Kostenloses Erstgespräch <ArrowIcon />
+              Landingpage besprechen <ArrowIcon />
             </a>
             <Link className="btn-text" href="#status">
               Kennst du das? ↓
@@ -119,7 +121,15 @@ export default function FunnelsPage() {
 
       <ClientMarquee />
 
-      <div className="sheet">
+      <div className="editorial-shell service-editorial">
+        <div className="sheet">
+        <section className="service-summary service-summary-premium reveal" aria-label="Landingpages und Funnels auf einen Blick">
+          <div><span>Traffic</span><strong>Ads, Social oder organisch</strong></div>
+          <div><span>Seitenziel</span><strong>Eine klare nächste Handlung</strong></div>
+          <div><span>System</span><strong>Formular, Tracking, Übergabe</strong></div>
+          <div><span>Ergebnis</span><strong>Mehr Anfragen ohne Ablenkung</strong></div>
+        </section>
+
         <section className="band tint-amber" id="status">
           <div className="split2 reverse">
             <div className="reveal">
@@ -188,19 +198,18 @@ export default function FunnelsPage() {
 
         <section className="band tint" id="beweis">
           <div className="band-tag reveal" style={{ marginBottom: 44 }}>
-            04 — Der Beweis
+            04 — Aus der Projektarbeit
           </div>
           <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
-              <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
-                „Wir haben nicht mehr Budget verbrannt. Wir haben konstant
-                gearbeitet — und das hat gereicht.“
-              </p>
-              <p>
-              Van den Berg Gruppe: Facebook-Ads-Kampagnen mit passender
-              Zielseite statt allgemeiner Startseite — mit spürbar mehr
-              Anfragen als Ergebnis.
-              </p>
-              <cite>{"// VAN DEN BERG GRUPPE"}</cite>
+            <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
+              Eine Anzeige braucht eine Zielseite, die das Versprechen einlöst.
+            </p>
+            <p>
+              Bei der Van den Berg Gruppe wurden Kampagnen auf fokussierte
+              Zielseiten geführt und mit Conversion-Tracking verbunden.
+              So ist der Weg von der Anzeige zur Anfrage nachvollziehbar.
+            </p>
+            <cite>{"// PROJEKT VAN DEN BERG GRUPPE"}</cite>
           </div>
         </section>
 
@@ -312,12 +321,16 @@ export default function FunnelsPage() {
           <FaqList items={faqs} />
         </section>
 
+        </div>
+      </div>
+
+      <div className="sheet service-ending">
         <CloseCta>
           Lass uns über deinen <em>Funnel</em> sprechen.
         </CloseCta>
 
         <SiteFooter />
       </div>
-    </>
+    </main>
   );
 }
