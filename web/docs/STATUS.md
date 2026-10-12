@@ -21,40 +21,69 @@ Aussagen über die Lauffähigkeit belastbar.
 
 ## Offene Punkte
 
-### 1. Standort-URLs: 166 im Manifest, 291 im Webflow-CMS
+### 1. Migrationsmanifest kennt 125 von 291 Standortseiten nicht
 
-Über die Webflow-API geprüfte Fakten (12.10.2026):
+**Das ist der kritischste Punkt vor dem Domainwechsel.** Über die Webflow-API
+geprüft am 12.10.2026:
 
-| Quelle | Anzahl |
-| --- | --- |
-| Webflow-Sammlung „Locations" | **291** Einträge, alle mit `lastPublished`, keine Entwürfe |
-| `web/data/legacy-locations.json` / Sitemap-Manifest | **166** Standort-URLs |
+| Variante (Slug-Endung) | in Webflow | im Manifest | **fehlt** |
+| --- | --- | --- | --- |
+| nur Stadt (`aachen`) | 83 | 68 | **15** |
+| `-google-ads` | 83 | 44 | **39** |
+| `-meta-ads` | 83 | 54 | **29** |
+| `-seo` | 29 | 0 | **29** |
+| `-social-media` | 13 | 0 | **13** |
+| **Summe** | **291** | **166** | **125** |
 
-Letzter **vollständiger** Publish der Webflow-Site: **03.07.2026**
-(`lastUpdated` der Site: 18.07.2026). Das Manifest wurde am 13.08.2026 aus
-`sitemap.xml` erzeugt.
+Das Manifest ist eine echte Teilmenge: es enthält keine URL, die nicht auch im
+CMS liegt.
 
-Naheliegende Erklärung: Webflow erzeugt `sitemap.xml` nur beim Veröffentlichen
-der **gesamten** Site. Die Standorteinträge aus Ende Juli (29 Slugs auf `-seo`,
-13 auf `-social-media`) fehlen deshalb im Manifest, obwohl die Einträge selbst
-veröffentlicht sind.
+**Ursache ist geklärt.** Die Entstehungsdaten sind trennscharf:
 
-**Vor dem Domainwechsel zu klären:** Sind diese Seiten live erreichbar? Wenn ja,
-fehlen sie im Migrationsplan und laufen nach dem Umzug auf 404 — bei 125
-Seiten wäre das ein spürbarer Rankingverlust.
+- Alle **166** Einträge im Manifest wurden im **Mai 2025** angelegt.
+- Alle **125** fehlenden Einträge wurden im **Juli 2026** angelegt.
+- Fehlende Einträge, die vor Juli 2026 entstanden sind: **keine**.
 
-Prüfweg: einige Slugs direkt auf der Live-Domain aufrufen (z. B.
-`www.pixel56.de/standorte/vallendar-seo`). Sind sie erreichbar, nach einem
-vollständigen Webflow-Publish `npm run seo:sync-legacy` erneut laufen lassen,
-damit das Manifest alle URLs kennt.
+Alle 125 haben ein `lastPublished` im Juli 2026, sind also **einzeln**
+veröffentlicht. Der letzte **vollständige** Publish der Webflow-Site war aber am
+**03.07.2026**. Webflow erzeugt `sitemap.xml` nur beim Publish der gesamten
+Site — deshalb fehlen die im Juli entstandenen Seiten in der Sitemap vom
+13.08.2026, aus der das Manifest gebaut wurde.
 
-Kleinere Lücke mit möglicherweise gleicher Ursache, ebenfalls zu prüfen: das
-Webflow-CMS enthält **35** Blogartikel, das Manifest **31** Blog-URLs.
+#### Was noch zu prüfen ist
 
-Im Manifest stehen die 166 Standort-URLs ohnehin auf `review` — die inhaltliche
-Entscheidung (erhalten, zusammenfassen oder weiterleiten) ist also offen.
-`HANDOFF.md` weist zu Recht darauf hin, keine pauschalen Redirects ganzer
-Inhaltsgruppen auf Übersichtsseiten zu setzen.
+Einzeln veröffentlichte CMS-Einträge sind in Webflow normalerweise live
+erreichbar, auch ohne vollständigen Site-Publish. Ist das hier so, fehlen **125
+live erreichbare URLs** im Migrationsplan und liefern nach dem Domainwechsel
+404.
+
+Prüfen lässt sich das nur von außen — aus der Cloud-Session ist
+`pixel56.de` durch die Netzwerk-Richtlinie gesperrt (`CONNECT tunnel failed,
+403`, DNS nicht auflösbar). Also im Browser oder aus einer lokalen Sitzung:
+
+| URL | erwartet | Bedeutung |
+| --- | --- | --- |
+| `https://www.pixel56.de/locations/aachen` | 200 | Kontrolle: Pfadschema stimmt |
+| `https://www.pixel56.de/locations/vallendar-seo` | **offen** | lädt sie → 125 URLs fehlen im Plan |
+
+Der Live-Pfad lautet `/locations/<slug>` (nicht `/standorte/…` — das ist der
+Pfad der **neuen** Seite). Ein 404 auf `/standorte/…` sagt daher nichts aus.
+
+**Wenn `/locations/vallendar-seo` lädt:** Webflow-Site einmal vollständig
+publizieren, danach `npm run seo:sync-legacy` erneut laufen lassen, damit das
+Manifest alle 291 URLs kennt. Erst dann über Erhalt bzw. Weiterleitung
+entscheiden.
+
+**Wenn sie 404 liefert:** Das Manifest ist vollständig, die 125 Einträge sind
+reine CMS-Datensätze ohne öffentliche URL, und der Punkt ist erledigt.
+
+Unabhängig davon stehen die 166 bekannten Standort-URLs im Manifest auf
+`review` — die inhaltliche Entscheidung ist noch offen. `HANDOFF.md` weist zu
+Recht darauf hin, keine pauschalen Redirects ganzer Inhaltsgruppen auf
+Übersichtsseiten zu setzen.
+
+Gleiche mögliche Ursache, ebenfalls offen: das Webflow-CMS enthält **35**
+Blogartikel, das Manifest **31** Blog-URLs.
 
 ### 2. Deployment steht, ist aber nicht ausgerollt
 
@@ -84,9 +113,9 @@ erscheinen.
 
 ## Webflow-Altstand zum Nachschlagen (12.10.2026)
 
-Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter Publish
-03.07.2026, letzte Designer-Bearbeitung 18.07.2026. CMS: 291 Standorte, 35
-Blogartikel, keine Entwürfe, nichts Unveröffentlichtes. Collection-Schemas
-unverändert seit 01.07.2026.
+Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter
+vollständiger Publish 03.07.2026, letzte Designer-Bearbeitung 18.07.2026. CMS:
+291 Standorte, 35 Blogartikel, keine Entwürfe, nichts Unveröffentlichtes.
+Collection-Schemas unverändert seit 01.07.2026.
 
 Das Webflow-Angebot bleibt unangetastet, bis die neue Seite abgenommen ist.
