@@ -23,4 +23,4 @@ Danach `http://localhost:3000` öffnen. Vor Änderungen an Next.js-Code bitte [`
 
 ## Zusammenarbeit über GitHub
 
-Das Repository ist öffentlich. Search-Console-Rohdaten unter `web/data/gsc-*` und lokale `.env`-Dateien bleiben absichtlich nur lokal und werden nicht hochgeladen. Für Claude Code: dieses Repository und den Arbeitszweig öffnen, dann [`web/docs/HANDOFF.md`](web/docs/HANDOFF.md) lesen. Keine erfundenen Kundenbewertungen, Kennzahlen oder Projektbilder veröffentlichen.
+Das Repository ist öffentlich. Search-Console-Rohdaten unter `web/data/gsc-*` und lokale `.env`-Dateien bleiben absichtlich nur lokal und werden nicht hochgeladen. Für Claude Code: dieses Repository und den Arbeitszweig öffnen, dann [`web/docs/HANDOFF.md`](web/docs/HANDOFF.md) und [`web/docs/STATUS.md`](web/docs/STATUS.md) lesen — letztere hält den aktuellen Arbeitsstand und die offenen Punkte nach Priorität. Keine erfundenen Kundenbewertungen, Kennzahlen oder Projektbilder veröffentlichen.
