@@ -24,9 +24,9 @@ import { projectPath, resourceRoutes, routes, serviceRoutes } from "@/lib/routes
 import gmDachdeckerImage from "@/public/bilder/projekt-gm-dachdecker.webp";
 
 export const metadata: Metadata = {
-  title: "Webdesign Agentur Koblenz: Websites, die Anfragen bringen",
+  title: "Webdesign Koblenz: Websites, die Anfragen bringen",
   description:
-    "Pixel56 entwickelt individuelle Websites für Unternehmen in Koblenz und deutschlandweit: klare Struktur, Texte mit Suchintention, schnelle Technik und ein Relaunch, der Rankings schützt.",
+    "Individuelle Websites für Unternehmen in Koblenz und deutschlandweit: klare Struktur, Texte mit Suchintention, schnelle Technik, Relaunch ohne Verlust.",
   alternates: { canonical: serviceRoutes.webdesign },
   openGraph: {
     title: "Webdesign Agentur Koblenz: Websites, die Anfragen bringen | Pixel56",

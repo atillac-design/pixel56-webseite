@@ -16,7 +16,11 @@ export type StandortLeistung = {
   kurz: string;
   route: string;
   heroLine: string;
+  /** Kurzer Titelzusatz als Ersatz für heroLine, wenn der Stadtname lang ist. */
+  titleShort: string;
   heroText: (stadt: string) => string;
+  /** Meta-Beschreibung, höchstens 155 Zeichen inklusive Stadtname. */
+  metaText: (stadt: string) => string;
   proof: string[];
   boardTop: string;
   flow: StandortFlow[];
@@ -33,8 +37,10 @@ const webdesign: StandortLeistung = {
   kurz: "Webdesign",
   route: serviceRoutes.webdesign,
   heroLine: "Websites, die Anfragen bringen.",
+  titleShort: "Websites mit Wirkung",
   heroText: (stadt) =>
     `Pixel56 entwickelt Websites für Unternehmen in ${stadt}, die online gefunden und angefragt werden wollen: klare Struktur, Texte mit Suchintention, schnelle Technik und ein Relaunch, der bestehende Rankings schützt. Aus Bendorf bei Koblenz, mit einem festen Ansprechpartner.`,
+  metaText: (stadt) => `Webdesign für Unternehmen in ${stadt}: klare Struktur, schnelle Technik, Texte mit Suchintention. Pixel56 aus Bendorf bei Koblenz.`,
   proof: ["Individuelles Design", "Technik, die schnell lädt", "Relaunch ohne Rankingverlust", "Ein Ansprechpartner"],
   boardTop: "PIXEL56 · WEBSITE",
   flow: [
@@ -91,8 +97,10 @@ const googleAds: StandortLeistung = {
   kurz: "Google Ads",
   route: serviceRoutes["google-ads"],
   heroLine: "Sichtbar im Moment der Suche.",
+  titleShort: "Anzeigen mit Wirkung",
   heroText: (stadt) =>
     `Google-Anzeigen für Unternehmen in ${stadt}, die gefunden werden wollen, wenn jemand gerade nach ihrer Leistung sucht. Mit Suchbegriffen, die zum Angebot passen, Zielseiten, die Anfragen aufnehmen, und Tracking, das zeigt, was das Budget bringt.`,
+  metaText: (stadt) => `Google Ads für Unternehmen in ${stadt}: Suchbegriffe mit Absicht, Zielseiten, die Anfragen aufnehmen, Tracking bis zur Anfrage.`,
   proof: ["Suchbegriffe mit Absicht", "Zielseiten, die aufnehmen", "Budget nachvollziehbar", "Ein Ansprechpartner"],
   boardTop: "PIXEL56 · SUCHKAMPAGNE",
   flow: [
@@ -149,8 +157,10 @@ const metaAds: StandortLeistung = {
   kurz: "Meta Ads",
   route: serviceRoutes["meta-ads"],
   heroLine: "Nachfrage, wo noch keine ist.",
+  titleShort: "Anzeigen, die wirken",
   heroText: (stadt) =>
     `Facebook- und Instagram-Kampagnen für Unternehmen in ${stadt}, die neue Kunden oder Bewerber erreichen wollen, bevor diese aktiv suchen. Mit Creatives aus dem Betrieb, Zielseiten, die das Versprechen der Anzeige einlösen, und Tracking, das zeigt, was funktioniert.`,
+  metaText: (stadt) => `Meta Ads für Unternehmen in ${stadt}: Facebook- und Instagram-Kampagnen für Kunden und Bewerber, Creatives aus dem Betrieb. Pixel56 bei Koblenz.`,
   proof: ["Zielgruppen in der Region", "Creatives aus dem Betrieb", "Zielseite statt Streuverlust", "Ein Ansprechpartner"],
   boardTop: "PIXEL56 · META-KAMPAGNE",
   flow: [
@@ -207,8 +217,10 @@ const seo: StandortLeistung = {
   kurz: "SEO",
   route: serviceRoutes.seo,
   heroLine: "Gefunden werden, dauerhaft.",
+  titleShort: "Sichtbar bei Google",
   heroText: (stadt) =>
     `Suchmaschinenoptimierung für Unternehmen in ${stadt}: technisches Fundament, Inhalte mit Suchintention und ein gepflegtes Google-Unternehmensprofil. Kein Rankingversprechen, aber eine Basis, die Sichtbarkeit aufbaut und hält.`,
+  metaText: (stadt) => `SEO für Unternehmen in ${stadt}: technisches Fundament, Inhalte mit Suchintention, Google-Unternehmensprofil. Ehrlich, ohne Platz-1-Versprechen.`,
   proof: ["Technisches Fundament", "Inhalte mit Suchintention", "Google-Unternehmensprofil", "Kein Rankingversprechen"],
   boardTop: "PIXEL56 · SICHTBARKEIT",
   flow: [
@@ -265,8 +277,10 @@ const socialMedia: StandortLeistung = {
   kurz: "Social Media",
   route: serviceRoutes["content-produktion"],
   heroLine: "Sichtbar, auch ohne Zeit dafür.",
+  titleShort: "Content aus dem Betrieb",
   heroText: (stadt) =>
     `Social-Media-Betreuung für Unternehmen in ${stadt}: Reels, Fotos und Beiträge, die zeigen, wie der Betrieb wirklich arbeitet. Aus deinem Material geschnitten oder bei dir vor Ort produziert, mit einem festen Rhythmus, der auch dann läuft, wenn du keine Zeit hast.`,
+  metaText: (stadt) => `Social-Media-Betreuung für Unternehmen in ${stadt}: Reels, Fotos und Beiträge aus dem Betrieb, geschnitten oder vor Ort gedreht.`,
   proof: ["Vor-Ort-Dreh in der Region", "Schnitt aus deinem Material", "Fester Redaktionsplan", "Ein Ansprechpartner"],
   boardTop: "PIXEL56 · CONTENT",
   flow: [

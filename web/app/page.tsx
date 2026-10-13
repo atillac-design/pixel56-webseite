@@ -31,10 +31,10 @@ import kiFreebieImage from "@/public/bilder/freebie-ki-ebook.webp";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Digitalagentur Koblenz: Webdesign, Ads, Content & KI | Pixel56",
+    absolute: "Digitalagentur Koblenz: Webdesign, Ads & KI | Pixel56",
   },
   description:
-    "Pixel56 aus Bendorf bei Koblenz baut Websites, die Anfragen bringen, schaltet Meta- und Google-Ads mit sauberem Tracking, produziert Reels vor Ort und richtet KI-Prozesse ein. Inhabergeführt, deutschlandweit.",
+    "Pixel56 aus Bendorf bei Koblenz: Websites, die Anfragen bringen, Meta- und Google-Ads mit Tracking, Reels vor Ort und KI-Prozesse. Seit 2018.",
   alternates: { canonical: "/" },
 };
 
@@ -44,6 +44,7 @@ const jsonLd = {
     {
       "@type": "ProfessionalService",
       "@id": `${site.url}/#organization`,
+      foundingDate: "2018",
       name: site.name,
       description:
         "Digitalagentur für Webdesign, Meta Ads, Google Ads, Social-Media-Content, Reels und KI-gestützte Prozesse. Inhabergeführt in Bendorf bei Koblenz, deutschlandweit im Einsatz.",
@@ -500,6 +501,7 @@ export default function HomePage() {
               <Link href={serviceRoutes.mitarbeitergewinnung}>Mitarbeitergewinnung</Link>
               <Link href={serviceRoutes["google-ads"]}>Google Ads</Link>
               <Link href={serviceRoutes.seo}>SEO-Grundlagen</Link>
+              <Link href="/dienstleistung">Alle Leistungen im Überblick</Link>
             </div>
           </section>
 
@@ -831,7 +833,7 @@ export default function HomePage() {
               {latestArticles.map((article) => (
                 <Link className="blog-card" href={`/blog/${article.slug}`} key={article.slug}>
                   <div className={`blog-cover ${article.cover}`} data-tag={article.kategorie} />
-                  <h4>{article.titel}</h4>
+                  <h3>{article.titel}</h3>
                   <p>{article.teaser}</p>
                   <span className="bc-meta">{article.kategorie} · {article.lesezeit} Min. Lesezeit</span>
                 </Link>

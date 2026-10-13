@@ -13,7 +13,7 @@ export const revalidate = 300;
 export const metadata: Metadata = {
   title: "Blog — Marketing-Wissen für KMUs",
   description:
-    "Der Pixel56-Blog: praxisnahe Tipps zu Webdesign, SEO, Google & Meta Ads und Social Media für KMUs, Handwerker & Selbstständige. Wissen, das wirklich weiterhilft.",
+    "Praxisnahe Tipps zu Webdesign, SEO, Google und Meta Ads und Social Media für KMU, Handwerker und Selbstständige. Der Pixel56-Blog.",
   alternates: { canonical: routes.blog },
 };
 
@@ -88,7 +88,7 @@ export default async function BlogPage() {
             {artikel.map((a) => (
               <Link className="blog-card" href={`/blog/${a.slug}`} key={a.title}>
                 <div className={`blog-cover ${a.cover}`} data-tag={a.tag} />
-                <h4>{a.title}</h4>
+                <h3>{a.title}</h3>
                 <p>{a.text}</p>
                 <span className="bc-meta">{a.meta}</span>
               </Link>
@@ -113,7 +113,7 @@ export default async function BlogPage() {
             {freebies.map((f) => (
               <div className="freebie" key={f.title}>
                 <span className="fl">{f.fl}</span>
-                <h4>{f.title}</h4>
+                <h3>{f.title}</h3>
                 <p>{f.text}</p>
                 <Link className="fbtn" href={f.href}>
                   Kostenlos laden ↓

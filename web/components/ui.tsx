@@ -204,7 +204,7 @@ export function RefCard({ item }: { item: RefItem }) {
         <BrowserMock variant={item.variant} barWidth={item.barWidth ?? 60} />
       )}
       <div className="rc-cat">{item.cat}</div>
-      <h4>{item.title}</h4>
+      <h3>{item.title}</h3>
       <p>{item.text}</p>
       <span className="rc-tag">{item.tag}</span>
     </>
@@ -229,7 +229,7 @@ export function Stepper({ steps, six = false }: { steps: Step[]; six?: boolean }
           <div className="sdot">{s.nr}</div>
           <div className="step-body">
             <span className="stag">{s.tag}</span>
-            <h4>{s.title}</h4>
+            <h3>{s.title}</h3>
             <p>{s.text}</p>
           </div>
         </div>

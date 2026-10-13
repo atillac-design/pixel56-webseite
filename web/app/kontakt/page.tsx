@@ -11,9 +11,9 @@ import { resourceRoutes, routes, serviceRoutes } from "@/lib/routes";
 import koblenzImage from "@/public/bilder/koblenz-rhein.webp";
 
 export const metadata: Metadata = {
-  title: "Kontakt: Kostenloses Erstgespräch mit Pixel56 in Bendorf bei Koblenz",
+  title: "Kontakt: Kostenloses Erstgespräch in Koblenz",
   description:
-    "Erreich Pixel56 direkt per WhatsApp, Telefon oder E-Mail oder frag dein kostenloses Erstgespräch an. Antwort innerhalb eines Werktags, ehrliche Einschätzung statt Verkaufsgespräch.",
+    "Erreich Pixel56 per WhatsApp, Telefon oder E-Mail oder buch dein kostenloses Erstgespräch. Antwort innerhalb eines Werktags, ehrliche Einschätzung.",
   alternates: { canonical: routes.contact },
   openGraph: {
     title: "Kontakt zu Pixel56: kostenloses Erstgespräch",

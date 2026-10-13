@@ -18,9 +18,9 @@ import { verifiedProjectVoices, verifiedReviews } from "@/lib/verified-reviews";
 import starkImage from "@/public/bilder/projekt-stark-ins-neue.webp";
 
 export const metadata: Metadata = {
-  title: "Kundenprojekte: Websites, Branding, Kampagnen und Content aus der Praxis",
+  title: "Kundenprojekte: Websites, Branding & Kampagnen",
   description:
-    "Echte Kundenprojekte von Pixel56 aus Handwerk, Transport, Bildung, Immobilien, Gastronomie und Non-Profit. Jede Fallstudie beschreibt Ausgangslage, Umsetzung und unseren Beitrag.",
+    "Echte Kundenprojekte von Pixel56 aus Handwerk, Transport, Bildung und Non-Profit: Ausgangslage, Umsetzung und unser Beitrag, ohne erfundene Zahlen.",
   alternates: { canonical: routes.projects },
   openGraph: {
     title: "Kundenprojekte von Pixel56",
@@ -215,7 +215,7 @@ export default function ProjektePage() {
                 )}
                 <div className="pc-body">
                   <span className="rc-cat">{p.kunde}</span>
-                  <h4>{p.titel}</h4>
+                  <h3>{p.titel}</h3>
                   <p>{p.teaser}</p>
                   <div className="rc-tag">
                     <span>{p.tags.join(" · ")}</span>

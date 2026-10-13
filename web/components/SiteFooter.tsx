@@ -9,7 +9,7 @@ export default function SiteFooter() {
         <div className="footer-brand">
           <Link className="mark" href="/">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/bilder/logo-pixel56.webp" alt="Pixel56" loading="lazy" decoding="async" />
+            <img src="/bilder/logo-pixel56-360.webp" alt="Pixel56" width={360} height={155} loading="lazy" decoding="async" />
           </Link>
           <p>
             {site.address}. Digitale Auftritte für KMUs, Coaches, Shops und
@@ -17,7 +17,7 @@ export default function SiteFooter() {
           </p>
         </div>
         <div className="footer-col">
-          <h5>Leistungen</h5>
+          <p className="fc-title">Leistungen</p>
           <ul>
             {footerNav.leistungen.map((l) => (
               <li key={l.href}>
@@ -27,7 +27,7 @@ export default function SiteFooter() {
           </ul>
         </div>
         <div className="footer-col">
-          <h5>Unternehmen</h5>
+          <p className="fc-title">Unternehmen</p>
           <ul>
             {footerNav.unternehmen.map((l) => (
               <li key={l.href}>
@@ -37,7 +37,7 @@ export default function SiteFooter() {
           </ul>
         </div>
         <div className="footer-col">
-          <h5>Kostenlose Ressourcen</h5>
+          <p className="fc-title">Kostenlose Ressourcen</p>
           <ul>
             {footerNav.ressourcen.map((l) => (
               <li key={l.href}>
@@ -47,7 +47,7 @@ export default function SiteFooter() {
           </ul>
         </div>
         <div className="footer-col">
-          <h5>Kontakt</h5>
+          <p className="fc-title">Kontakt</p>
           <ul>
             <li>
               <a href={`mailto:${site.email}`}>{site.email}</a>

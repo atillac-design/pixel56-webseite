@@ -38,14 +38,14 @@ export default function DigitaleProduktePage() {
           {ressourcen.map((ressource) => (
             <div className="freebie" key={ressource.slug}>
               <span className="fl">{ressource.docTag} · {ressource.docPages}</span>
-              <h4>{ressource.docTitle}</h4>
+              <h3>{ressource.docTitle}</h3>
               <p>{ressource.heroSub}</p>
               <Link className="fbtn" href={resourcePath(ressource.slug)}>Kostenlos öffnen →</Link>
             </div>
           ))}
           <div className="freebie">
             <span className="fl">Canva-Vorlagen · Set</span>
-            <h4>Produktivitäts-Set</h4>
+            <h3>Produktivitäts-Set</h3>
             <p>Tagesplaner und To-do-Liste – editierbar, druckbar und sofort einsatzbereit.</p>
             <Link className="fbtn" href="/product/tagesplaner-to-do-liste-set">Produkt ansehen →</Link>
           </div>

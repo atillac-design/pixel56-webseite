@@ -21,9 +21,9 @@ import { resourceRoutes, routes, serviceRoutes } from "@/lib/routes";
 import seoFreebieImage from "@/public/bilder/freebie-seo-ebook-transparent.webp";
 
 export const metadata: Metadata = {
-  title: "SEO für KMU und Handwerk: Gefunden werden, ohne Klickpreis",
+  title: "SEO für KMU: Gefunden werden, ohne Klickpreis",
   description:
-    "Suchmaschinenoptimierung als Fundament: Technik, Struktur, lokale Sichtbarkeit und Inhalte mit Suchintention. Ehrlich eingeordnet, ohne Platz-1-Versprechen. Pixel56 aus Bendorf bei Koblenz.",
+    "SEO als Fundament: Technik, Struktur, lokale Sichtbarkeit und Inhalte mit Suchintention. Ehrlich, ohne Platz-1-Versprechen. Pixel56 bei Koblenz.",
   alternates: { canonical: serviceRoutes.seo },
   openGraph: {
     title: "SEO für KMU und Handwerk: Gefunden werden, ohne Klickpreis | Pixel56",

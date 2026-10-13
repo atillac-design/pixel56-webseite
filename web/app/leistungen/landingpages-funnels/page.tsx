@@ -24,9 +24,9 @@ import { projectPath, resourceRoutes, routes, serviceRoutes } from "@/lib/routes
 import starkDetailImage from "@/public/bilder/projekt-stark-ins-neue-3.webp";
 
 export const metadata: Metadata = {
-  title: "Landingpages & Funnels: Eine Seite, ein Ziel, mehr Anfragen",
+  title: "Landingpages & Funnels: Eine Seite, ein Ziel",
   description:
-    "Landingpages und Funnels, die das Versprechen der Anzeige einlösen: klare Struktur, kurzes Formular, sauberes Tracking. Für Kampagnen, Anmeldungen und Erstgespräche. Pixel56 aus Bendorf bei Koblenz.",
+    "Landingpages und Funnels, die das Versprechen der Anzeige einlösen: klare Struktur, kurzes Formular, sauberes Tracking. Pixel56 aus Bendorf bei Koblenz.",
   alternates: { canonical: serviceRoutes["landingpages-funnels"] },
   openGraph: {
     title: "Landingpages & Funnels: Eine Seite, ein Ziel, mehr Anfragen | Pixel56",

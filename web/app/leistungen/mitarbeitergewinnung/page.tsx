@@ -22,9 +22,9 @@ import { projectPath, serviceRoutes } from "@/lib/routes";
 import gmDachdeckerImage from "@/public/bilder/projekt-gm-dachdecker.webp";
 
 export const metadata: Metadata = {
-  title: "Mitarbeitergewinnung für Handwerk und Mittelstand: Bewerbungen ohne Umweg",
+  title: "Mitarbeitergewinnung: Bewerbungen ohne Umweg",
   description:
-    "Karriereseiten mit Direkt-Upload und Recruiting-Kampagnen auf Instagram und Facebook. Für Betriebe, die Fachkräfte suchen und keine Bewerbungen bekommen. Pixel56 aus Bendorf bei Koblenz.",
+    "Karriereseiten mit Direkt-Upload und Recruiting-Kampagnen auf Instagram und Facebook für Betriebe, die Fachkräfte suchen. Pixel56 aus Bendorf bei Koblenz.",
   alternates: { canonical: serviceRoutes.mitarbeitergewinnung },
   openGraph: {
     title: "Mitarbeitergewinnung: Bewerbungen ohne Umweg | Pixel56",

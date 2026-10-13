@@ -4,7 +4,7 @@ import LegalLayout from "@/components/LegalLayout";
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
   description:
-    "Datenschutzerklärung von Pixel56: Wie wir mit personenbezogenen Daten umgehen — Hosting, Formulare, Newsletter, Terminbuchung, Analyse und deine Rechte nach DSGVO.",
+    "Datenschutzerklärung von Pixel56: Umgang mit personenbezogenen Daten bei Hosting, Formularen, Newsletter, Terminbuchung und Analyse sowie deine Rechte.",
   robots: { index: true },
 };
 

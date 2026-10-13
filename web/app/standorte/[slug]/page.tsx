@@ -31,9 +31,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const stadt = stadtAnzeige(location);
   const leistung = getStandortLeistung(location.leistung);
+  // Titel höchstens 50 Zeichen vor dem Zusatz " | Pixel56".
+  const titleCandidates = [
+    `${leistung.kurz} ${stadt}: ${leistung.heroLine.replace(/\.$/, "")}`,
+    `${leistung.kurz} ${stadt}: ${leistung.titleShort}`,
+    `${leistung.kurz} ${stadt}`,
+  ];
+  const title = titleCandidates.find((candidate) => candidate.length <= 50) ?? titleCandidates[2];
   return {
-    title: `${leistung.kurz} ${stadt}: ${leistung.heroLine.replace(/\.$/, "")}`,
-    description: leistung.heroText(stadt),
+    title,
+    description: leistung.metaText(stadt),
     alternates: { canonical },
     openGraph: {
       title: `${leistung.kurz} in ${stadt} | Pixel56`,

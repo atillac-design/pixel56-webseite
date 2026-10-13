@@ -24,9 +24,9 @@ import { projectPath, routes, serviceRoutes } from "@/lib/routes";
 import vanDenBergImage from "@/public/bilder/projekt-van-den-berg.webp";
 
 export const metadata: Metadata = {
-  title: "Meta Ads Agentur: Facebook & Instagram Werbung, die Anfragen bringt",
+  title: "Meta Ads Agentur: Werbung, die Anfragen bringt",
   description:
-    "Meta Ads für Handwerk, Mittelstand und Dienstleister: Facebook- und Instagram-Kampagnen mit sauberem Tracking, passender Zielseite und laufender Betreuung. Pixel56 aus Bendorf bei Koblenz.",
+    "Meta Ads für Handwerk, Mittelstand und Dienstleister: Facebook- und Instagram-Kampagnen mit Tracking, Zielseite und Betreuung. Pixel56 bei Koblenz.",
   alternates: { canonical: serviceRoutes["meta-ads"] },
   openGraph: {
     title: "Meta Ads Agentur: Facebook & Instagram Werbung, die Anfragen bringt | Pixel56",

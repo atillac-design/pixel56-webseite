@@ -24,9 +24,9 @@ import { projectPath, routes, serviceRoutes } from "@/lib/routes";
 import maTransporteImage from "@/public/bilder/projekt-ma-transporte.webp";
 
 export const metadata: Metadata = {
-  title: "Reels & Social-Media-Content erstellen lassen: Schnitt oder Dreh vor Ort",
+  title: "Reels & Social Content: Schnitt oder Dreh vor Ort",
   description:
-    "Pixel56 produziert Reels und Social-Media-Content für Unternehmen: Schnitt aus deinem Rohmaterial oder Dreh direkt in deinem Betrieb, mit festem Rhythmus. Aus Bendorf bei Koblenz.",
+    "Reels und Social-Media-Content für Unternehmen: Schnitt aus deinem Rohmaterial oder Dreh im Betrieb, mit festem Rhythmus. Pixel56 aus Bendorf bei Koblenz.",
   alternates: { canonical: serviceRoutes["content-produktion"] },
   openGraph: {
     title: "Reels & Social-Media-Content erstellen lassen | Pixel56",

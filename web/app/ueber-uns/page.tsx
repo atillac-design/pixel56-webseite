@@ -21,9 +21,9 @@ import maTransporteImage from "@/public/bilder/projekt-ma-transporte.webp";
 import koblenzImage from "@/public/bilder/koblenz-rhein.webp";
 
 export const metadata: Metadata = {
-  title: "Über uns: Digitalagentur aus Bendorf bei Koblenz mit einem Ansprechpartner",
+  title: "Über uns: Digitalagentur in Bendorf bei Koblenz",
   description:
-    "Pixel56 ist eine gründergeführte Digitalagentur in Bendorf bei Koblenz. Websites, Meta Ads, Content und KI-Prozesse aus einer Hand, mit einem festen Ansprechpartner statt Callcenter.",
+    "Gründergeführte Digitalagentur in Bendorf bei Koblenz: Websites, Meta Ads, Content und KI aus einer Hand, mit einem festen Ansprechpartner.",
   alternates: { canonical: routes.about },
   openGraph: {
     title: "Über Pixel56: ein Ansprechpartner, alles aus einer Hand",
@@ -48,6 +48,7 @@ const jsonLd = {
     url: site.url,
     telephone: site.phoneIntl,
     email: site.email,
+    foundingDate: "2018",
     founder: { "@type": "Person", name: "Atilla Ciftcioglu", url: `${site.url}/team/atilla-ciftcioglu` },
     address: {
       "@type": "PostalAddress",
@@ -197,7 +198,7 @@ export default function UeberUnsPage() {
                 </Link>
               </div>
               <div className="premium-proof" aria-label="Pixel56 auf einen Blick">
-                <span>Gründergeführt</span>
+                <span>Gründergeführt seit 2018</span>
                 <span>Bendorf bei Koblenz</span>
                 <span>Web, Ads, Content, KI</span>
                 <span>Betreuung nach dem Launch</span>
@@ -220,7 +221,7 @@ export default function UeberUnsPage() {
         <section className="service-summary service-summary-premium reveal theme-light" aria-label="Pixel56 auf einen Blick">
           <div>
             <span>Gründer</span>
-            <strong>Atilla Ciftcioglu</strong>
+            <strong>Atilla Ciftcioglu, seit 2018</strong>
           </div>
           <div>
             <span>Standort</span>

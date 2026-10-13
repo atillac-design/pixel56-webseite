@@ -12,9 +12,9 @@ import { locationPath, routes, serviceRoutes } from "@/lib/routes";
 import koblenzImage from "@/public/bilder/koblenz-rhein.webp";
 
 export const metadata: Metadata = {
-  title: "Standorte: Webdesign, Ads und Content rund um Koblenz",
+  title: "Standorte: Pixel56 rund um Koblenz",
   description:
-    "Pixel56 arbeitet aus Bendorf bei Koblenz für Unternehmen in Koblenz, Neuwied, Andernach, Montabaur, Mayen, Limburg und der ganzen Region. Vor Ort oder per Video-Call, deutschlandweit.",
+    "Pixel56 aus Bendorf bei Koblenz: vor Ort in Koblenz, Neuwied, Andernach, Montabaur, Mayen und Limburg, per Video-Call in ganz Deutschland.",
   alternates: { canonical: routes.locations },
   openGraph: {
     title: "Pixel56 in deiner Stadt: Region Koblenz und deutschlandweit",

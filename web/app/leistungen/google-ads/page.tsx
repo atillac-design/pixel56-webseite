@@ -20,9 +20,9 @@ import { verifiedReviews } from "@/lib/verified-reviews";
 import { serviceRoutes } from "@/lib/routes";
 
 export const metadata: Metadata = {
-  title: "Google Ads Agentur für KMU: Sichtbar, wenn gesucht wird",
+  title: "Google Ads Agentur: Sichtbar, wenn gesucht wird",
   description:
-    "Google Ads mit sauberem Tracking, klarer Kampagnenstruktur und passender Zielseite. Für Handwerk, Dienstleister und Mittelstand. Pixel56 aus Bendorf bei Koblenz, deutschlandweit.",
+    "Google Ads mit sauberem Tracking, klarer Kampagnenstruktur und passender Zielseite für Handwerk, Dienstleister und Mittelstand. Pixel56 bei Koblenz.",
   alternates: { canonical: serviceRoutes["google-ads"] },
   openGraph: {
     title: "Google Ads Agentur für KMU: Sichtbar, wenn gesucht wird | Pixel56",

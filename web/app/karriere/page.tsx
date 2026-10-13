@@ -12,7 +12,7 @@ export const revalidate = 300;
 export const metadata: Metadata = {
   title: "Karriere bei Pixel56",
   description:
-    "Werde Teil von Pixel56: Jobs in Webdesign, Online-Marketing & Content für spannende KMU-Projekte — remote oder vor Ort in Bendorf bei Koblenz. Jetzt unkompliziert bewerben.",
+    "Jobs bei Pixel56 in Webdesign, Online-Marketing und Content für KMU-Projekte, remote oder vor Ort in Bendorf bei Koblenz. Unkompliziert bewerben.",
 };
 
 const gruende = [
@@ -87,7 +87,7 @@ export default async function KarrierePage() {
             {gruende.map((f) => (
               <div className="fact-cell" key={f.fl}>
                 <span className="fl">{f.fl}</span>
-                <h4>{f.title}</h4>
+                <h3>{f.title}</h3>
                 <p>{f.text}</p>
               </div>
             ))}

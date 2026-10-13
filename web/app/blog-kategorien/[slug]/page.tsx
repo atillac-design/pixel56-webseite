@@ -64,7 +64,7 @@ export default async function BlogKategoriePage({ params }: Props) {
           {beitraege.map((beitrag) => (
             <Link className="blog-card" href={`/blog/${beitrag.slug}`} key={beitrag.slug}>
               <div className={`blog-cover ${beitrag.cover}`} data-tag={beitrag.kategorie} />
-              <h4>{beitrag.titel}</h4>
+              <h3>{beitrag.titel}</h3>
               <p>{beitrag.teaser}</p>
               <span className="bc-meta">{beitrag.kategorie} · {beitrag.lesezeit} Min. Lesezeit</span>
             </Link>

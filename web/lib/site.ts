@@ -67,12 +67,13 @@ export const services: Service[] = [
 export const primaryServices = services.filter((service) => service.primary);
 
 export const footerNav = {
-  leistungen: services.map((s) => ({ label: s.title.replace(" & Onlinepräsenz", ""), href: s.href })),
+  leistungen: [{ label: "Alle Leistungen", href: "/dienstleistung" }, ...services.map((s) => ({ label: s.title.replace(" & Onlinepräsenz", ""), href: s.href }))],
   unternehmen: [
     { label: "Über uns", href: routes.about },
     { label: "Projekte", href: routes.projects },
     { label: "Bewertungen", href: "/#bewertungen" },
     { label: "Blog", href: routes.blog },
+    { label: "Standorte", href: routes.locations },
     { label: "Karriere", href: routes.careers },
     { label: "Kontakt", href: routes.contact },
   ],

@@ -22,7 +22,7 @@ export default function SiteNav({ crumb }: { crumb?: Crumb }) {
     <nav className="site-nav">
       <Link className="mark" href="/">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/bilder/logo-pixel56.webp" alt="Pixel56" />
+        <img src="/bilder/logo-pixel56-360.webp" alt="Pixel56" width={360} height={155} />
       </Link>
       {crumb ? (
         <div className="crumb">

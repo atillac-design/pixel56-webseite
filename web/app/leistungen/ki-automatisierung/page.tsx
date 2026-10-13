@@ -19,9 +19,9 @@ import { resourceRoutes, serviceRoutes } from "@/lib/routes";
 import kiFreebieImage from "@/public/bilder/freebie-ki-ebook.webp";
 
 export const metadata: Metadata = {
-  title: "KI-Automatisierung für Unternehmen: Prozesse, die wirklich Zeit sparen",
+  title: "KI-Automatisierung: Prozesse, die Zeit sparen",
   description:
-    "Pixel56 baut KI-Prozesse für kleine und mittlere Unternehmen: Anfragen vorsortieren, Angebote vorbereiten, Wissen durchsuchbar machen. Prozess zuerst, Werkzeug danach, Mensch entscheidet.",
+    "KI-Prozesse für kleine und mittlere Unternehmen: Anfragen vorsortieren, Angebote vorbereiten, Wissen durchsuchbar machen. Der Mensch entscheidet.",
   alternates: { canonical: serviceRoutes["ki-automatisierung"] },
   openGraph: {
     title: "KI-Automatisierung für Unternehmen | Pixel56",

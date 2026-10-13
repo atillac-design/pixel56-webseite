@@ -15,6 +15,23 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 13.10.2026: **Technischer SEO- und Tempo-Check.** Crawl aller intern
+  verlinkten Seiten des lokalen Builds (140 Seiten): 0 defekte Links, überall
+  genau eine H1, alle Bilder mit Alt-Text, überall Canonical. Danach
+  behoben: 41 zu lange Titel (jetzt höchstens 60 Zeichen inkl. „| Pixel56“),
+  84 zu lange Meta-Beschreibungen (jetzt höchstens 155 Zeichen, auch auf den
+  65 indexierbaren Standortseiten über `metaText` je Leistung),
+  Leistungsübersicht `/dienstleistung` war verwaist und ist jetzt im Footer
+  und auf der Startseite verlinkt, `/standorte` im Footer verlinkt.
+  Lighthouse 12 (mobil, lokal): Startseite Performance 82 → 98,
+  Barrierefreiheit 87 → 100 (Kontrast Cookie-Button, Überschriften-Reihenfolge
+  H4 → H3 in Karten, Footer-Überschriften als `p`, größere Klickflächen im
+  Footer), Best Practices 100. Logo als 360-px-Variante mit Maßangaben
+  (vorher 900 px unskaliert). SEO-Score bleibt lokal bei 69, einzig wegen des
+  globalen `noindex` ohne `NEXT_PUBLIC_INDEXABLE`; in Produktion entfällt
+  der Punkt.
+- 13.10.2026: **Gründungsjahr 2018 bestätigt** (Atilla). Steht als
+  `foundingDate` im Organisations-Schema und auf Über uns.
 - 13.10.2026: **Standortseiten: Thin-Content-Risiko behoben.** Analyse der
   291 Seiten: 94 % der Wörter sind je Leistung auf allen Seiten identisch,
   nur ein Absatz pro Stadt (CMS-Feld `lokaler-content`) ist einzigartig; 84

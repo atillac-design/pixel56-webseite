@@ -42,7 +42,7 @@ export default async function RessourcePage({ params }: Props) {
         <nav className="site-nav">
           <Link className="mark" href="/">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/bilder/logo-pixel56.webp" alt="Pixel56" />
+            <img src="/bilder/logo-pixel56-360.webp" alt="Pixel56" width={360} height={155} />
           </Link>
           <span className="nav-note">Kostenlose Ressource</span>
         </nav>
@@ -105,7 +105,7 @@ export default async function RessourcePage({ params }: Props) {
             {res.teile.map((t) => (
               <div className="fact-cell" key={t.fl}>
                 <span className="fl">{t.fl}</span>
-                <h4>{t.title}</h4>
+                <h3>{t.title}</h3>
                 <p>{t.text}</p>
               </div>
             ))}

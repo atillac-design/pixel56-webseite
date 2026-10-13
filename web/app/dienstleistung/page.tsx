@@ -23,9 +23,9 @@ import kiFreebieImage from "@/public/bilder/freebie-ki-ebook.webp";
 const canonical = "/dienstleistung";
 
 export const metadata: Metadata = {
-  title: "Leistungen: Webdesign, Meta Ads, Content und KI aus einer Hand",
+  title: "Leistungen: Webdesign, Ads, Content & KI",
   description:
-    "Alle Leistungen von Pixel56 im Überblick: Webdesign, Meta Ads, Social Content, KI-Prozesse, Landingpages, Mitarbeitergewinnung, Google Ads und SEO. Für Unternehmen in Koblenz und deutschlandweit.",
+    "Alle Leistungen von Pixel56: Webdesign, Meta Ads, Social Content, KI-Prozesse, Landingpages, Mitarbeitergewinnung, Google Ads und SEO. Aus Koblenz.",
   alternates: { canonical },
   openGraph: {
     title: "Leistungen von Pixel56: acht Bausteine, ein System",

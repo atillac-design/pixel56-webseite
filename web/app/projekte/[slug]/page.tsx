@@ -16,6 +16,14 @@ import { verifiedProjectVoices } from "@/lib/verified-reviews";
 
 type Props = { params: Promise<{ slug: string }> };
 
+
+/** Kürzt Beschreibungen für Suchmaschinen an einer Wortgrenze. */
+function kuerzen(text: string, max: number): string {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max - 1);
+  return `${cut.slice(0, cut.lastIndexOf(" "))}…`;
+}
+
 export function generateStaticParams() {
   return fallstudien.map((f) => ({ slug: f.slug }));
 }
@@ -26,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!f) return {};
   return {
     title: `${f.kunde} — Projekt`,
-    description: f.teaser,
+    description: kuerzen(f.teaser, 155),
     alternates: { canonical: projectPath(f.slug) },
   };
 }

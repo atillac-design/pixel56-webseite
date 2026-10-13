@@ -22,9 +22,9 @@ import atillaImage from "@/public/bilder/team-atilla.webp";
 const canonical = "/team/atilla-ciftcioglu";
 
 export const metadata: Metadata = {
-  title: "Atilla Ciftcioglu: Gründer von Pixel56 und dein fester Ansprechpartner",
+  title: "Atilla Ciftcioglu: Gründer von Pixel56",
   description:
-    "Atilla Ciftcioglu ist Gründer von Pixel56 in Bendorf bei Koblenz. Er verantwortet Strategie, Webdesign, Kampagnen und KI-Prozesse selbst und bleibt über das ganze Projekt dein Ansprechpartner.",
+    "Atilla Ciftcioglu, Gründer von Pixel56 in Bendorf bei Koblenz, verantwortet Strategie, Webdesign, Kampagnen und KI-Prozesse selbst.",
   alternates: { canonical },
   openGraph: {
     title: "Atilla Ciftcioglu, Gründer von Pixel56",
