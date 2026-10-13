@@ -13,7 +13,7 @@ const bewerbungEmail = `mailto:${site.email}?subject=Bewerbung%20Vertrieb%20bei%
 export const metadata: Metadata = {
   title: "Vertriebsprofi/in bei Pixel56 in Koblenz",
   description:
-    "Vertrieb bei Pixel56 in der Region Koblenz: Erstgespräche mit Handwerkern und KMU führen, digitale Leistungen verständlich erklären, ehrlich beraten. Umfang nach Absprache.",
+    "Vertrieb bei Pixel56 in der Region Koblenz: Erstgespräche mit Handwerkern und KMU, Leistungen verständlich erklären, beraten. Umfang nach Absprache.",
   alternates: { canonical },
   openGraph: { title: "Vertriebsprofi/in bei Pixel56", description: "Beratung vor Druck: Vertrieb für Websites, Kampagnen und Content in der Region Koblenz.", url: canonical },
 };

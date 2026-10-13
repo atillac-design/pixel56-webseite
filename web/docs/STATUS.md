@@ -164,8 +164,17 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Canonical auf sich selbst, in der Sitemap; `/locations/hamburg` und
   `/locations/wien-meta-ads` mit seitenbezogenem `noindex, follow`, altem
   Titel, nicht in der Sitemap. Die Sitemap enthält 65 Standort-URLs.
-- **Screenshots** (Desktop 1440 px, Mobil 390 px) aller überarbeiteten Seiten
-  geprüft: keine horizontalen Überläufe, Bilder laden, dunkle Bühnen lesbar.
+- **Crawl des lokalen Builds** (alle intern verlinkten Seiten, 150 Stück):
+  0 defekte Links, überall genau eine H1, alle Bilder mit Alt-Text, überall
+  Canonical, Titel höchstens 60 und Beschreibungen höchstens 155 Zeichen.
+- **Überlauf-Prüfung** bei 390, 768 und 1440 px Breite auf 19 Seitentypen:
+  lange Wörter in Hero-Überschriften („Ansprechpartner.“,
+  „Vertriebsprofi/in“) verbreiterten die Seite auf dem Handy; behoben über
+  Zeilenumbruch in Wörtern und kleinere Schrift unter 480 px.
+- **Lighthouse 12** (mobil, lokal) auf Startseite, Leistungs-, Standort-,
+  Projekt-, Blog- und Karriereseiten: Performance 92 bis 98, Barrierefreiheit
+  96 bis 100, Best Practices 100. SEO lokal 69 nur wegen des globalen
+  `noindex` ohne `NEXT_PUBLIC_INDEXABLE`.
 - **Erwartete Build-Meldung:** „Sanity nicht erreichbar, nutze statische
   Inhalte“ erscheint dreimal. In der Cloud-Session sperrt die
   Netzwerk-Richtlinie die Sanity-API; der statische Fallback greift und der

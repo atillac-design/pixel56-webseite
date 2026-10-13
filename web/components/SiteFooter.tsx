@@ -9,7 +9,7 @@ export default function SiteFooter() {
         <div className="footer-brand">
           <Link className="mark" href="/">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/bilder/logo-pixel56-360.webp" alt="Pixel56" width={360} height={155} loading="lazy" decoding="async" />
+            <img src="/bilder/logo-pixel56-180.webp" alt="Pixel56" width={180} height={77} loading="lazy" decoding="async" />
           </Link>
           <p>
             {site.address}. Digitale Auftritte für KMUs, Coaches, Shops und

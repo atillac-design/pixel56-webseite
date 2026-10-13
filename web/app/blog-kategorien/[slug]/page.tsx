@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!kategorie) return {};
   const anzahl = artikelInKategorie(slug).length;
   return {
-    title: `${kategorie.label}: Wissen für KMU und Handwerk`,
+    title: `${kategorie.label}: Wissen für KMU`,
     description: `${anzahl} Artikel zu ${kategorie.label}: ${kategorie.beschreibung}`.slice(0, 155),
     alternates: { canonical: `/blog-kategorien/${slug}` },
   };

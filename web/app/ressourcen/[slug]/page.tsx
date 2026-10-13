@@ -61,7 +61,7 @@ export default async function RessourcePage({ params }: Props) {
           <nav className="site-nav">
             <Link className="mark" href="/">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/bilder/logo-pixel56-360.webp" alt="Pixel56" width={360} height={155} />
+              <img src="/bilder/logo-pixel56-180.webp" alt="Pixel56" width={180} height={77} />
             </Link>
             <span className="nav-note">Kostenlose Ressource</span>
           </nav>
