@@ -11,8 +11,12 @@ import {
   Reviews,
 } from "@/components/ui";
 import { site } from "@/lib/site";
-import { projectPath, routes, serviceRoutes } from "@/lib/routes";
+import { artikel } from "@/lib/blog";
+import { getFallstudie } from "@/lib/projekte";
+import { verifiedReviews } from "@/lib/verified-reviews";
+import { projectPath, resourceRoutes, routes, serviceRoutes } from "@/lib/routes";
 import starkImage from "@/public/bilder/projekt-stark-ins-neue.webp";
+import starkDetailImage from "@/public/bilder/projekt-stark-ins-neue-2.webp";
 import vanDenBergImage from "@/public/bilder/projekt-van-den-berg.webp";
 import curlyAnnImage from "@/public/bilder/projekt-curlyann-1.webp";
 import maTransporteImage from "@/public/bilder/projekt-ma-transporte.webp";
@@ -20,13 +24,16 @@ import gmDachdeckerImage from "@/public/bilder/projekt-gm-dachdecker.webp";
 import oktayCoemertlerImage from "@/public/bilder/projekt-oktay-coemertler.webp";
 import colakImage from "@/public/bilder/projekt-colak.webp";
 import atillaImage from "@/public/bilder/team-atilla.webp";
+import koblenzImage from "@/public/bilder/koblenz-rhein.webp";
+import seoFreebieImage from "@/public/bilder/freebie-seo-ebook-transparent.webp";
+import kiFreebieImage from "@/public/bilder/freebie-ki-ebook.webp";
 
 export const metadata: Metadata = {
   title: {
     absolute: "Digitalagentur Koblenz: Webdesign, Ads, Content & KI | Pixel56",
   },
   description:
-    "Pixel56 verbindet hochwertiges Webdesign, Meta Ads, Social Content, Reels und KI-Prozesse für Unternehmen — aus Koblenz, deutschlandweit im Einsatz.",
+    "Pixel56 aus Bendorf bei Koblenz baut Websites, die Anfragen bringen, schaltet Meta- und Google-Ads mit sauberem Tracking, produziert Reels vor Ort und richtet KI-Prozesse ein. Inhabergeführt, deutschlandweit.",
   alternates: { canonical: "/" },
 };
 
@@ -38,7 +45,8 @@ const jsonLd = {
       "@id": `${site.url}/#organization`,
       name: site.name,
       description:
-        "Digitalagentur für Webdesign, Meta Ads, Social-Media-Content, Reels und KI-gestützte Prozesse.",
+        "Digitalagentur für Webdesign, Meta Ads, Google Ads, Social-Media-Content, Reels und KI-gestützte Prozesse. Inhabergeführt in Bendorf bei Koblenz, deutschlandweit im Einsatz.",
+      founder: { "@type": "Person", name: "Atilla Ciftcioglu" },
       address: {
         "@type": "PostalAddress",
         streetAddress: "Hüttenstraße 100",
@@ -58,6 +66,7 @@ const jsonLd = {
       knowsAbout: [
         "Webdesign",
         "Meta Ads",
+        "Google Ads",
         "Social-Media-Content",
         "Reels",
         "Video-Produktion",
@@ -81,36 +90,102 @@ const coreServices = [
     code: "WEB",
     title: "Webdesign",
     href: serviceRoutes.webdesign,
-    text: "Individuelle Websites und Relaunches, die hochwertig aussehen, schnell laden und Besucher klar zur Anfrage führen.",
+    text: "Websites, die nicht nur gut aussehen, sondern Besucher zur Anfrage führen: klare Struktur, schnelle Technik, saubere SEO-Basis. Beim Relaunch nehmen wir bestehende Rankings und Adressen mit, statt sie zu verlieren.",
     tags: ["Strategie", "UX & Design", "Entwicklung", "SEO-Basis"],
-    outcome: "Aus Besuchern wird Vertrauen.",
+    outcome: "Aus Besuchern werden Anfragen.",
   },
   {
     nr: "02",
     code: "ADS",
     title: "Meta Ads",
     href: serviceRoutes["meta-ads"],
-    text: "Facebook- und Instagram-Kampagnen für neue Kunden oder Bewerber — mit Creatives, Zielseite und sauberer Auswertung.",
-    tags: ["Strategie", "Creatives", "Tracking", "Optimierung"],
-    outcome: "Aus Aufmerksamkeit wird Nachfrage.",
+    text: "Facebook- und Instagram-Kampagnen für neue Kunden oder Bewerber. Mit Creatives, die im Feed auffallen, einer Zielseite, die das Versprechen der Anzeige einlöst, und Tracking, das zeigt, was wirklich funktioniert.",
+    tags: ["Zielgruppen", "Creatives", "Tracking", "Optimierung"],
+    outcome: "Aus Reichweite wird Nachfrage.",
   },
   {
     nr: "03",
     code: "REC",
     title: "Social Content & Reels",
     href: serviceRoutes["content-produktion"],
-    text: "Du schickst uns Rohmaterial und wir schneiden es — oder wir drehen bei dir vor Ort und liefern fertige Reels, Fotos und Social Content.",
-    tags: ["Videoschnitt", "Reels", "Vor-Ort-Dreh", "Social Assets"],
-    outcome: "Aus Alltag wird markenstarker Content.",
+    text: "Du schickst uns Rohmaterial, wir schneiden es. Oder wir drehen bei dir im Betrieb und liefern fertige Reels, Fotos und Beiträge, die zeigen, wie ihr wirklich arbeitet. Mit einem festen Rhythmus, der auch ohne dich läuft.",
+    tags: ["Videoschnitt", "Reels", "Vor-Ort-Dreh", "Redaktionsplan"],
+    outcome: "Aus Betriebsalltag wird Content.",
   },
   {
     nr: "04",
     code: "AI",
     title: "KI-Prozesse & Automatisierung",
     href: serviceRoutes["ki-automatisierung"],
-    text: "Wir finden wiederkehrende Arbeit, strukturieren Wissen und bauen sinnvolle KI-Workflows, die zu deinem Unternehmen passen.",
-    tags: ["Prozessanalyse", "KI-Assistenten", "Workflows", "Integration"],
-    outcome: "Aus Routine wird Zeitgewinn.",
+    text: "Wir suchen die Stellen, an denen in deinem Betrieb jeden Tag dieselbe Arbeit anfällt, und bauen dafür KI-Workflows, die zuverlässig laufen. Prozess zuerst, Werkzeug danach. Keine Spielerei, die nach zwei Wochen niemand mehr öffnet.",
+    tags: ["Prozessanalyse", "KI-Assistenten", "Workflows", "Anbindung"],
+    outcome: "Aus Routine wird Zeit.",
+  },
+];
+
+const audiences = [
+  {
+    tag: "Handwerk & Bau",
+    title: "Volle Auftragsbücher, online unsichtbar",
+    text: "Dachdecker, Abbruch, Tiefbau, Trocknung: Betriebe, deren Arbeit vor Ort überzeugt, die aber online kaum gefunden werden oder keine Bewerber erreichen. Wir machen das Handwerk digital so sichtbar, wie es auf der Baustelle längst ist.",
+    refs: "GM-Dachdecker · MDU Bedachungen · Oktay Cömertler",
+  },
+  {
+    tag: "Transport & Logistik",
+    title: "Leistungen, die man erklären muss",
+    text: "Spezialtransporte und Logistikleistungen versteht niemand aus einem Logo. Website, Content und Kampagnen übernehmen genau diese Erklärung, bevor jemand zum Hörer greift.",
+    refs: "M&A Transporte",
+  },
+  {
+    tag: "Bildung & Soziales",
+    title: "Vertrauen vor der Anmeldung",
+    text: "Kurse, Schulungen und gemeinnützige Angebote entscheiden sich daran, ob die Anmeldung ohne Umwege gelingt und der Auftritt seriös wirkt. Dafür bauen wir klare Strecken statt verschachtelter Seiten.",
+    refs: "Stark ins Neue · CASS Schulungen · Lernforum Obertshausen",
+  },
+  {
+    tag: "Immobilien & Modulbau",
+    title: "Große Entscheidungen, hoher Anspruch",
+    text: "Wer eine Immobilie oder ein Gebäude in Auftrag gibt, prüft vorher sehr genau. Der Auftritt muss diese Prüfung bestehen, noch bevor das erste Gespräch stattfindet.",
+    refs: "Schlüsselfertig-Immobilien · DiscountHaus Holding",
+  },
+  {
+    tag: "Dienstleistung & Technik",
+    title: "Werbebudget mit klarer Linie",
+    text: "Laufende Kampagnen mit konstanter Betreuung und sauberer Auswertung, damit Budget nicht verpufft, sondern planbar Anfragen bringt. Produkte und Leistungen so erklärt, dass Kunden sie verstehen.",
+    refs: "Van den Berg Gruppe · Colak GmbH",
+  },
+  {
+    tag: "Gastronomie, Handel & Kreativ",
+    title: "Marken, die von Bildern leben",
+    text: "Restaurants, Shops und Ateliers gewinnen über Stimmung, Bilder und Bewegtbild. Reels, Social Content und Shops, die Lust machen und direkt zur Buchung oder zum Kauf führen.",
+    refs: "Burgerfabrik · Cavar Home · CurlyAnn Atelier",
+  },
+];
+
+const frictions = [
+  {
+    problem: "Die Website sieht gut aus, aber niemand findet den Weg zur Anfrage.",
+    answer: "Wir bauen jede Seite vom Ziel her: Was soll der Besucher als Nächstes tun? Struktur, Texte und Buttons folgen dieser einen Frage, nicht dem Geschmack des Tages.",
+  },
+  {
+    problem: "Anzeigen laufen, führen aber auf die Startseite statt auf ein konkretes Angebot.",
+    answer: "Jede Kampagne bekommt eine Zielseite, die das Versprechen der Anzeige einlöst. Alles andere verbrennt Budget, egal wie gut die Anzeige ist.",
+  },
+  {
+    problem: "Content entsteht nur, wenn gerade Zeit ist. Also selten.",
+    answer: "Wir drehen bei dir vor Ort oder schneiden dein vorhandenes Material und liefern einen festen Rhythmus, der ohne dein tägliches Zutun läuft.",
+  },
+  {
+    problem: "Bewerber landen auf einer Karriereseite, die wie ein Aushang wirkt.",
+    answer: "Karriereseiten mit direktem Upload und Kampagnen, die passende Menschen erreichen, bevor sie aktiv suchen. So haben wir es etwa für GM-Dachdecker umgesetzt.",
+  },
+  {
+    problem: "Entscheidungen laufen nach Gefühl, weil niemand weiß, was die Werbung bringt.",
+    answer: "Wir richten Messung sauber und DSGVO-konform ein und sagen dir ehrlich, was die Zahlen hergeben und was nicht.",
+  },
+  {
+    problem: "Jede Anfrage wird von Hand sortiert, beantwortet und abgelegt.",
+    answer: "KI-Prozesse übernehmen Vorsortierung, Antwortentwürfe und Ablage. Du triffst die Entscheidungen, die Routine erledigt sich im Hintergrund.",
   },
 ];
 
@@ -126,7 +201,7 @@ type CaseItem = {
 const cases: CaseItem[] = [
   {
     customer: "Stark ins Neue gGmbH",
-    title: "Website, Landingpage und Kampagnen als zusammenhängendes System",
+    title: "Landingpage und Meta Ads, die zur Kursanmeldung führen",
     tags: "WEBDESIGN · META ADS · LANDINGPAGE",
     href: projectPath("stark-ins-neue"),
     image: starkImage,
@@ -134,37 +209,37 @@ const cases: CaseItem[] = [
   },
   {
     customer: "CurlyAnn Atelier",
-    title: "Ein digitaler Auftritt mit eigener visueller Handschrift",
-    tags: "STRATEGIE · WEBDESIGN · BUCHUNG",
+    title: "Ein Auftritt mit eigener Handschrift und direkter Buchung",
+    tags: "KONZEPTION · WEBDESIGN · BUCHUNG",
     href: projectPath("curlyann"),
     image: curlyAnnImage,
     className: "work-card-tall",
   },
   {
     customer: "Van den Berg Gruppe",
-    title: "Laufende Meta-Ads-Betreuung statt kurzfristigem Kampagnenfeuer",
+    title: "Meta Ads mit laufender Betreuung statt kurzem Kampagnenfeuer",
     tags: "META ADS · TRACKING · OPTIMIERUNG",
     href: projectPath("van-den-berg"),
     image: vanDenBergImage,
   },
   {
     customer: "M&A Transporte",
-    title: "Website und Social Media seit Jahren aus einer Hand",
+    title: "Website und Social Media seit 2019 aus einer Hand",
     tags: "WEBDESIGN · SOCIAL CONTENT · BETREUUNG",
     href: projectPath("ma-transporte"),
     image: maTransporteImage,
   },
   {
     customer: "GM-Dachdecker Meisterbetrieb",
-    title: "Ein klarer digitaler Auftritt für das Dachdeckerhandwerk",
-    tags: "WEBDESIGN · HANDWERK · SICHTBARKEIT",
+    title: "Website und Karriereportal für das Dachdeckerhandwerk",
+    tags: "WEBDESIGN · KARRIEREPORTAL · RECRUITING",
     href: projectPath("gm-dachdecker"),
     image: gmDachdeckerImage,
     className: "work-card-compact",
   },
   {
     customer: "Oktay Cömertler",
-    title: "Eine starke Marke für Abbruch, Tief- und Kanalbau",
+    title: "Eine eigene Marke für Abbruch, Tief- und Kanalbau",
     tags: "BRANDING · WEBDESIGN · BAU",
     href: projectPath("oktay-coemertler"),
     image: oktayCoemertlerImage,
@@ -172,8 +247,8 @@ const cases: CaseItem[] = [
   },
   {
     customer: "Colak GmbH",
-    title: "Digitale Präsenz mit Charakter und Wiedererkennung",
-    tags: "WEBDESIGN · MARKENAUFTRITT",
+    title: "Trocknungstechnik verständlich erklärt und sichtbar gemacht",
+    tags: "WEBDESIGN · PRODUKTKOMMUNIKATION",
     href: projectPath("colak-gmbh"),
     image: colakImage,
     className: "work-card-compact",
@@ -181,49 +256,84 @@ const cases: CaseItem[] = [
 ];
 
 const processSteps = [
-  { nr: "01", title: "Zuhören", text: "Wir klären Ziel, Engpass, Zielgruppe und was heute bereits vorhanden ist." },
-  { nr: "02", title: "Schärfen", text: "Angebot, Botschaft, Kanäle und ein realistischer Umfang werden eindeutig." },
-  { nr: "03", title: "Umsetzen", text: "Design, Content, Kampagne oder Workflow entstehen in kurzen, sichtbaren Etappen." },
-  { nr: "04", title: "Verbessern", text: "Nach dem Start lernen wir aus echten Reaktionen und entwickeln gezielt weiter." },
+  {
+    nr: "01",
+    title: "Erstgespräch",
+    text: "15 Minuten, kostenlos. Du schilderst Ziel und Engpass, wir sagen offen, ob und wie wir helfen können. Ohne Verkaufsdruck.",
+    gets: "Du bekommst: eine ehrliche Ersteinschätzung",
+  },
+  {
+    nr: "02",
+    title: "Analyse & Empfehlung",
+    text: "Wir sehen uns an, was schon da ist: Website, Anzeigenkonto, Material, Abläufe. Daraus entsteht eine klare Empfehlung, welcher Baustein zuerst den größten Hebel hat.",
+    gets: "Du bekommst: Angebot mit Umfang und Preis",
+  },
+  {
+    nr: "03",
+    title: "Umsetzung in Etappen",
+    text: "Design, Content, Kampagne oder Workflow entstehen in kurzen, sichtbaren Schritten. Du siehst früh Ergebnisse und kannst eingreifen, nicht erst am Ende.",
+    gets: "Du bekommst: Zwischenstände, die du prüfen kannst",
+  },
+  {
+    nr: "04",
+    title: "Betreuung",
+    text: "Nach dem Start bleiben wir erreichbar: Auswertung, Optimierung, Pflege. Per WhatsApp, Telefon oder vor Ort in Bendorf, je nachdem, was gerade schneller ist.",
+    gets: "Du bekommst: einen festen Ansprechpartner",
+  },
 ];
 
-const reviews = [
+const kiExamples = [
+  { title: "Anfragen vorsortieren", text: "Eingehende Mails und Formulare nach Anliegen einordnen und passende Antwortentwürfe vorbereiten." },
+  { title: "Angebote vorbereiten", text: "Aus Vorlagen und Projektnotizen entsteht ein erster Angebotsentwurf, den du nur noch prüfst und anpasst." },
+  { title: "Wissen durchsuchbar machen", text: "Preislisten, Abläufe, alte Projekte: ein interner Assistent, der Fragen aus deinem Betrieb beantwortet." },
+  { title: "Social-Media-Rohtexte", text: "Aus Baustellenfotos und Stichworten werden Beitragsentwürfe im Ton deiner Marke, bereit zur Freigabe." },
+  { title: "Bewerbungen strukturieren", text: "Eingehende Unterlagen zusammenfassen und nach deinen Kriterien vergleichbar machen." },
+  { title: "Wiederkehrende Berichte", text: "Zahlen aus Kampagnen und Website in einen lesbaren Wochenbericht übersetzen, ohne Copy-and-paste." },
+];
+
+const resources = [
   {
-    text: "Endlich zeigen sich unsere Kurse auch online. Die Zusammenarbeit ist unkompliziert und auf Augenhöhe — man merkt, dass hier jemand mitdenkt.",
-    who: "Margarita Wolf · Stark ins Neue",
-    img: "/bilder/person-margarita-wolf.webp",
+    tag: "Checkliste · PDF",
+    title: "SEO-Checkliste",
+    text: "30 Prüfpunkte in drei Bereichen, dieselben, die wir bei jedem Kundenprojekt durchgehen. Technik, lokale Sichtbarkeit, Inhalte. Zum Selbst-Abhaken, ohne Vorkenntnisse.",
+    href: resourceRoutes["seo-checkliste"],
+    image: seoFreebieImage,
   },
   {
-    text: "Seit Jahren derselbe Ansprechpartner, immer erreichbar, alles aus einer Hand — Website, Content, Kampagnen. Das findet man selten.",
-    who: "Mithat Akgün · M&A Transporte",
-    img: "/bilder/person-mithat-akguen.webp",
+    tag: "Checkliste · PDF",
+    title: "KI-Agenten-Checkliste",
+    text: "Wo KI im Betriebsalltag tatsächlich Zeit spart und wo sie nur Spielerei ist. Ehrlich eingeordnet, mit konkreten Beispielen für kleine Unternehmen.",
+    href: resourceRoutes["ki-agenten-checkliste"],
+    image: kiFreebieImage,
   },
   {
-    text: "Wir haben nicht mehr Budget verbrannt. Wir haben konstant gearbeitet — und das hat gereicht.",
-    who: "Van den Berg Gruppe",
+    tag: "Vorlage · PDF",
+    title: "Tagesplaner",
+    text: "Die Planungsvorlage, mit der wir selbst arbeiten: Prioritäten, Zeitblöcke, To-do-Liste. Für fokussierte Tage statt Zettelwirtschaft.",
+    href: resourceRoutes.tagesplaner,
   },
 ];
 
 const faqs = [
   {
     q: "Muss ich alle Leistungen zusammen buchen?",
-    a: "Nein. Du kannst mit einer einzelnen Leistung starten — zum Beispiel einer neuen Website, dem Schnitt vorhandener Videos oder einer Meta-Ads-Kampagne. Wenn mehrere Bausteine sinnvoll zusammenarbeiten, zeigen wir dir den Zusammenhang, ohne daraus ein unnötig großes Paket zu machen.",
+    a: "Nein. Du kannst mit einer einzelnen Leistung starten, zum Beispiel einer neuen Website, dem Schnitt vorhandener Videos oder einer Meta-Ads-Kampagne. Wenn mehrere Bausteine sinnvoll zusammenarbeiten, zeigen wir dir den Zusammenhang, ohne daraus ein unnötig großes Paket zu machen.",
+  },
+  {
+    q: "Arbeitet ihr nur in der Region Koblenz?",
+    a: "Nein. Pixel56 sitzt in Bendorf bei Koblenz und betreut Unternehmen in ganz Deutschland. Vor-Ort-Termine, etwa für Content-Produktionen, bieten wir in der Region an; alles andere läuft per Video-Call, Telefon und WhatsApp genauso verbindlich.",
   },
   {
     q: "Könnt ihr Reels nur aus vorhandenem Videomaterial schneiden?",
-    a: "Ja. Du kannst uns dein Rohmaterial schicken und wir übernehmen Auswahl, Schnitt, Untertitel, Musik und Formatierung. Wenn dir eigenes Material fehlt, planen wir alternativ einen Vor-Ort-Termin und produzieren die Aufnahmen bei dir im Unternehmen.",
-  },
-  {
-    q: "Kommt ihr für Content-Produktionen auch vor Ort?",
-    a: "Ja. In der Region Koblenz und nach Absprache auch darüber hinaus produzieren wir Fotos, Interviews, Reels und weiteres Material direkt im Betrieb. Anfahrt und Produktionsumfang werden vorab transparent im Angebot festgehalten.",
+    a: "Ja. Du kannst uns dein Rohmaterial schicken, und wir übernehmen Auswahl, Schnitt, Untertitel, Musik und Formatierung. Wenn dir eigenes Material fehlt, planen wir alternativ einen Vor-Ort-Termin und produzieren die Aufnahmen bei dir im Unternehmen.",
   },
   {
     q: "Was versteht ihr unter KI-Prozessen?",
-    a: "Gemeint sind konkrete Abläufe, bei denen KI sinnvoll Zeit spart: Informationen strukturieren, Entwürfe vorbereiten, Anfragen vorsortieren, interne Wissensassistenten aufbauen oder wiederkehrende Schritte miteinander verbinden. Wir beginnen beim Prozess, nicht bei einem beliebigen KI-Tool.",
+    a: "Konkrete Abläufe, bei denen KI messbar Zeit spart: Informationen strukturieren, Entwürfe vorbereiten, Anfragen vorsortieren, internes Wissen durchsuchbar machen oder wiederkehrende Schritte miteinander verbinden. Wir beginnen beim Prozess, nicht bei einem beliebigen Tool.",
   },
   {
     q: "Macht Pixel56 auch SEO?",
-    a: "Ja, vor allem als Fundament einer neuen Website: saubere Technik, Struktur, Metadaten, interne Links, Inhalte und eine sichere URL-Migration. Laufende SEO-Betreuung bieten wir gezielt an, sie ist aber nicht die Hauptleistung von Pixel56.",
+    a: "Ja, vor allem als Fundament einer neuen Website: saubere Technik, Struktur, Metadaten, interne Verlinkung, Inhalte und eine sichere URL-Migration beim Relaunch. Laufende SEO-Betreuung bieten wir gezielt an, sie ist aber nicht die Hauptleistung von Pixel56.",
   },
   {
     q: "Wie startet eine Zusammenarbeit?",
@@ -235,13 +345,19 @@ const faqs = [
   },
   {
     q: "Könnt ihr meine bisherigen Webseiten-Links erhalten?",
-    a: "Ja. Vor einem Relaunch erfassen wir bestehende URLs und erhalten sie nach Möglichkeit. Wenn sich ein Pfad ändern muss, planen wir eine passende dauerhafte Weiterleitung und kontrollieren sie nach dem Start.",
+    a: "Ja. Vor einem Relaunch erfassen wir alle bestehenden Adressen und erhalten sie nach Möglichkeit. Wenn sich ein Pfad ändern muss, richten wir eine passende dauerhafte Weiterleitung ein und kontrollieren sie nach dem Start.",
   },
   {
     q: "Gibt es feste Pakete oder eine individuelle Lösung?",
-    a: "Der Umfang richtet sich nach deinem Ziel und dem vorhandenen Material. Du bekommst vor der Umsetzung ein Angebot mit klaren Leistungen; Werbebudget und laufende Betreuung werden separat ausgewiesen.",
+    a: "Der Umfang richtet sich nach deinem Ziel und dem vorhandenen Material. Du bekommst vor der Umsetzung ein Angebot mit klar benannten Leistungen; Werbebudget und laufende Betreuung werden separat ausgewiesen.",
   },
 ];
+
+const spotlight = getFallstudie("stark-ins-neue");
+const spotlightVoice = verifiedReviews[0];
+const latestArticles = [...artikel]
+  .sort((a, b) => b.datum.localeCompare(a.datum))
+  .slice(0, 3);
 
 export default function HomePage() {
   return (
@@ -255,30 +371,33 @@ export default function HomePage() {
           <header className="premium-hero">
             <div className="premium-hero-glow" aria-hidden="true" />
             <div className="premium-hero-copy">
-              <div className="premium-kicker">DIGITALAGENTUR · KOBLENZ · DEUTSCHLANDWEIT</div>
+              <div className="premium-kicker">DIGITALAGENTUR · BENDORF BEI KOBLENZ · DEUTSCHLANDWEIT</div>
               <h1>
-                <span>Websites.</span>
-                <span>Kampagnen.</span>
-                <span className="premium-accent">Content. KI.</span>
-                <span>Als System.</span>
+                <span>Websites, Ads,</span>
+                <span>Content, KI.</span>
+                <span className="premium-accent">Mehr Anfragen.</span>
+                <span>Aus einer Hand.</span>
               </h1>
               <p>
-                Pixel56 verbindet hochwertiges Webdesign, Meta Ads, Reels,
-                Social Content und KI-Prozesse zu einem digitalen Auftritt,
-                der Vertrauen aufbaut und neue Möglichkeiten schafft.
+                Pixel56 baut Websites mit klarer Nutzerführung, schaltet Meta- und
+                Google-Ads mit sauberem Tracking, produziert Reels direkt in deinem
+                Betrieb und richtet KI-Prozesse ein, die wiederkehrende Arbeit
+                abnehmen. Ein Ansprechpartner, von der ersten Idee bis zur
+                Betreuung nach dem Start.
               </p>
               <div className="premium-actions">
                 <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">
-                  Projekt kostenlos besprechen <ArrowIcon />
+                  Kostenloses Erstgespräch <ArrowIcon />
                 </a>
                 <Link className="btn-text" href="#arbeiten">
-                  Ausgewählte Arbeiten ↓
+                  Projekte ansehen ↓
                 </Link>
               </div>
               <div className="premium-proof" aria-label="Pixel56 auf einen Blick">
                 <span>Seit 2018</span>
+                <span>Inhabergeführt</span>
                 <span>Bendorf bei Koblenz</span>
-                <span>Persönlich geführt</span>
+                <span>Ein fester Ansprechpartner</span>
               </div>
             </div>
 
@@ -307,26 +426,51 @@ export default function HomePage() {
         <div className="editorial-shell" id="editorial">
           <div className="sheet">
           <section className="premium-statement band reveal theme-light light-opening">
-            <span className="band-tag">01 — Die Idee hinter Pixel56</span>
+            <span className="band-tag">01 — Woran es meistens liegt</span>
             <p>
-              Dein Unternehmen braucht nicht noch mehr einzelne Tools oder
-              Dienstleister. Es braucht einen digitalen Auftritt, bei dem
-              <em> Gestaltung, Reichweite, Content und Prozesse </em>
-              zusammenarbeiten.
+              Die meisten Unternehmen haben kein Marketing-Problem. Sie haben
+              <em> Einzelteile, die nicht zusammenspielen.</em>
             </p>
+          </section>
+
+          <section className="band theme-light" id="fuer-wen">
+            <div className="band-head reveal">
+              <div>
+                <span className="band-tag">02 — Für wen wir arbeiten</span>
+                <h2 className="band-title">
+                  Gemacht für Betriebe, <em>die Anfragen brauchen.</em>
+                </h2>
+              </div>
+              <p className="band-note">
+                Kein Konzern-Marketing. Wir arbeiten für Unternehmen, bei denen am
+                Ende das Telefon klingeln, eine Buchung eingehen oder sich jemand
+                bewerben soll.
+              </p>
+            </div>
+            <div className="audience-grid reveal">
+              {audiences.map((audience) => (
+                <article className="audience-card" key={audience.tag}>
+                  <span>{audience.tag}</span>
+                  <h3>{audience.title}</h3>
+                  <p>{audience.text}</p>
+                  <small>Referenzen: {audience.refs}</small>
+                </article>
+              ))}
+            </div>
           </section>
 
           <section className="band theme-light light-services" id="leistungen">
             <div className="band-head reveal">
               <div>
-                <span className="band-tag">02 — Kernleistungen</span>
+                <span className="band-tag">03 — Kernleistungen</span>
                 <h2 className="band-title">
-                  Vier Disziplinen. <em>Ein hoher Anspruch.</em>
+                  Vier Disziplinen. <em>Ein Anspruch.</em>
                 </h2>
               </div>
               <p className="band-note">
-                Jede Leistung funktioniert eigenständig. Richtig stark wird sie,
-                wenn Botschaft, Gestaltung und Ausspielung zusammenpassen.
+                Jede Leistung funktioniert für sich. Richtig stark wird sie, wenn
+                Botschaft, Gestaltung und Ausspielung aus einer Hand kommen und
+                zusammenpassen.
               </p>
             </div>
 
@@ -361,41 +505,68 @@ export default function HomePage() {
           <section className="band system-section dark-stage" id="system">
             <div className="split2">
               <div className="reveal">
-                <span className="band-tag">03 — Nicht nur Einzelmaßnahmen</span>
+                <span className="band-tag">04 — Nicht nur Einzelmaßnahmen</span>
                 <h2 className="band-title">
                   Ein System, das <em>miteinander arbeitet</em>
                 </h2>
                 <p className="lead">
-                  Eine starke Website ohne Besucher bleibt unsichtbar. Werbung
-                  ohne gute Zielseite verbrennt Potenzial. Content ohne klare
+                  Eine starke Website ohne Besucher bleibt unsichtbar. Anzeigen
+                  ohne passende Zielseite verbrennen Budget. Content ohne klare
                   Marke bleibt beliebig. Und ein voller Posteingang ohne Prozess
-                  kostet Zeit.
+                  kostet jeden Tag Zeit.
                 </p>
                 <p className="lead">
-                  Deshalb denken wir vom Ergebnis rückwärts und verbinden nur
-                  die Bausteine, die dein Unternehmen tatsächlich braucht.
+                  Deshalb denken wir vom Ergebnis rückwärts: Welche Anfrage soll
+                  am Ende entstehen? Von dort aus verbinden wir nur die Bausteine,
+                  die dein Unternehmen tatsächlich braucht. Nicht mehr, nicht
+                  weniger.
                 </p>
               </div>
               <div className="system-flow reveal" aria-label="Zusammenspiel der Leistungen">
                 <div><span>01</span><b>Klarer Auftritt</b><small>Webdesign &amp; Positionierung</small></div>
                 <div><span>02</span><b>Relevanter Content</b><small>Reels, Fotos &amp; Creatives</small></div>
-                <div><span>03</span><b>Gezielte Reichweite</b><small>Meta Ads &amp; Kampagnen</small></div>
+                <div><span>03</span><b>Gezielte Reichweite</b><small>Meta Ads, Google Ads &amp; Kampagnen</small></div>
                 <div><span>04</span><b>Smarte Abläufe</b><small>KI-Prozesse &amp; Automatisierung</small></div>
               </div>
+            </div>
+          </section>
+
+          <section className="band theme-light" id="engpaesse">
+            <div className="band-head reveal">
+              <div>
+                <span className="band-tag">05 — Typische Engpässe</span>
+                <h2 className="band-title">
+                  Sechs Sätze, die wir <em>im Erstgespräch oft hören</em>
+                </h2>
+              </div>
+              <p className="band-note">
+                Und was wir jeweils dagegen tun. Wenn du dich in einem davon
+                wiedererkennst, lohnt sich das Gespräch.
+              </p>
+            </div>
+            <div className="friction-list reveal">
+              {frictions.map((item, index) => (
+                <div className="friction-row" key={item.problem}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h3>„{item.problem}“</h3>
+                  <p>{item.answer}</p>
+                </div>
+              ))}
             </div>
           </section>
 
           <section className="band theme-light light-work" id="arbeiten">
             <div className="band-head reveal">
               <div>
-                <span className="band-tag">04 — Ausgewählte Arbeiten</span>
+                <span className="band-tag">06 — Ausgewählte Arbeiten</span>
                 <h2 className="band-title">
-                  Die Qualität zeigt sich <em>im echten Projekt</em>
+                  Qualität zeigt sich <em>im echten Projekt</em>
                 </h2>
               </div>
               <p className="band-note">
-                Unterschiedliche Branchen, unterschiedliche Aufgaben — aber
-                immer ein Auftritt, der zum Unternehmen passt.
+                Unterschiedliche Branchen, unterschiedliche Aufgaben. Gemeinsam
+                ist ihnen ein Auftritt, der zum Unternehmen passt und nicht zur
+                Vorlage.
               </p>
             </div>
 
@@ -421,28 +592,86 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="band founder-section theme-light light-founder">
+          {spotlight && (
+            <section className="band theme-light" id="fallstudie">
+              <div className="band-head reveal">
+                <div>
+                  <span className="band-tag">07 — Ein Projekt im Detail</span>
+                  <h2 className="band-title">
+                    {spotlight.kunde}: <em>{spotlight.loesung.titel}</em>
+                  </h2>
+                </div>
+                <p className="band-note">{spotlight.branche} · {spotlight.tags.join(" · ")} · {spotlight.jahr}</p>
+              </div>
+              <div className="case-spotlight reveal">
+                <div>
+                  <figure className="case-spotlight-visual" style={{ margin: 0 }}>
+                    <Image src={starkDetailImage} alt={`${spotlight.kunde}: ${spotlight.titel}`} fill sizes="(max-width: 980px) 100vw, 50vw" />
+                    <figcaption>{spotlight.kunde.toUpperCase()}</figcaption>
+                  </figure>
+                  <blockquote className="case-quote">
+                    „{spotlightVoice.text}“
+                    <cite>{spotlightVoice.who}</cite>
+                  </blockquote>
+                </div>
+                <div>
+                  <p className="lead" style={{ margin: 0 }}>{spotlight.teaser}</p>
+                  <div className="case-steps">
+                    <div className="case-step">
+                      <span>Ausgangslage</span>
+                      <h3>{spotlight.problem.titel}</h3>
+                      <p>{spotlight.problem.text}</p>
+                      <ul>
+                        {spotlight.problem.punkte.map((punkt) => <li key={punkt}>{punkt}</li>)}
+                      </ul>
+                    </div>
+                    <div className="case-step">
+                      <span>Lösung</span>
+                      <h3>{spotlight.loesung.titel}</h3>
+                      <p>{spotlight.loesung.text}</p>
+                      <ul>
+                        {spotlight.loesung.punkte.map((punkt) => <li key={punkt}>{punkt}</li>)}
+                      </ul>
+                    </div>
+                    {spotlight.ergebnis && (
+                      <div className="case-step">
+                        <span>Stand heute</span>
+                        <h3>Ein Auftritt, der zusammenhängt</h3>
+                        <p>{spotlight.ergebnis.text}</p>
+                      </div>
+                    )}
+                  </div>
+                  <Link className="body-link" href={projectPath(spotlight.slug)}>
+                    Zur vollständigen Fallstudie <ArrowIcon />
+                  </Link>
+                </div>
+              </div>
+            </section>
+          )}
+
+          <section className="band founder-section theme-light light-founder" id="atilla">
             <div className="founder-visual reveal">
               <div className="founder-frame">
                 <Image src={atillaImage} alt="Atilla Ciftcioglu, Gründer von Pixel56" sizes="(max-width: 900px) 100vw, 42vw" />
               </div>
-              <span>// GRÜNDER · STRATEGIE · UMSETZUNG</span>
+              <span>// ATILLA CIFTCIOGLU · GRÜNDER · STRATEGIE &amp; UMSETZUNG</span>
             </div>
             <div className="founder-copy reveal">
-              <span className="band-tag">05 — Persönlich geführt</span>
+              <span className="band-tag">08 — Persönlich geführt</span>
               <h2 className="band-title">
                 Kleine Struktur. <em>Hoher Anspruch.</em>
               </h2>
               <p className="lead">
-                Pixel56 ist bewusst persönlich aufgebaut. Du sprichst nicht mit
-                einem Vertriebsteam, das dein Projekt anschließend weiterreicht,
-                sondern direkt mit den Menschen, die Strategie und Umsetzung
-                verantworten.
+                Pixel56 ist bewusst klein aufgebaut. Du sprichst nicht mit einem
+                Vertrieb, der dein Projekt anschließend weiterreicht, sondern mit
+                Atilla Ciftcioglu, der Strategie und Umsetzung selbst verantwortet.
+                Wenn ein Projekt Spezialisten braucht, etwa für Dreh, Schnitt oder
+                Entwicklung, holen wir sie aus einem festen Netzwerk dazu.
               </p>
               <ul className="premium-list">
-                <li>Direkte Kommunikation und kurze Entscheidungen</li>
-                <li>Ein einheitlicher Qualitätsanspruch über alle Leistungen</li>
-                <li>Ein Netzwerk aus Spezialisten, wenn ein Projekt es braucht</li>
+                <li>Ein Ansprechpartner über das gesamte Projekt, keine wechselnden Projektmanager</li>
+                <li>Ehrliche Einschätzungen, auch wenn die Antwort mal „brauchst du nicht“ lautet</li>
+                <li>Kurze Wege per WhatsApp, Telefon oder vor Ort in Bendorf</li>
                 <li>Betreuung auch nach Veröffentlichung oder Kampagnenstart</li>
               </ul>
               <Link className="body-link" href={routes.about}>
@@ -454,11 +683,15 @@ export default function HomePage() {
           <section className="band dark-stage dark-process" id="ablauf">
             <div className="band-head reveal">
               <div>
-                <span className="band-tag">06 — Zusammenarbeit</span>
+                <span className="band-tag">09 — So läuft die Zusammenarbeit</span>
                 <h2 className="band-title">
                   Klarer Prozess. <em>Keine Blackbox.</em>
                 </h2>
               </div>
+              <p className="band-note">
+                Vier Schritte, bei denen du jederzeit weißt, wo das Projekt steht
+                und was als Nächstes passiert.
+              </p>
             </div>
             <div className="premium-process reveal">
               {processSteps.map((step) => (
@@ -466,27 +699,154 @@ export default function HomePage() {
                   <span>{step.nr}</span>
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>
+                  <small>{step.gets}</small>
                 </article>
               ))}
+            </div>
+          </section>
+
+          <section className="band theme-light" id="ki">
+            <div className="split2">
+              <div className="reveal">
+                <span className="band-tag">10 — KI im Betrieb, konkret</span>
+                <h2 className="band-title">
+                  Was KI dir abnehmen kann, <em>ohne dass du zum Tech-Unternehmen wirst</em>
+                </h2>
+                <p className="lead">
+                  Die interessanten KI-Anwendungen für kleine und mittlere
+                  Unternehmen sind unspektakulär: Sie erledigen Arbeit, die heute
+                  jemand von Hand macht, obwohl sie jeden Tag gleich abläuft.
+                </p>
+                <p className="lead">
+                  Wir starten mit deinem Prozess, nicht mit einem Tool. Erst wenn
+                  klar ist, wo Zeit verloren geht, wählen wir die passende Technik
+                  und binden sie an das an, was du ohnehin nutzt.
+                </p>
+                <Link className="body-link" href={serviceRoutes["ki-automatisierung"]}>
+                  KI-Prozesse &amp; Automatisierung <ArrowIcon />
+                </Link>
+              </div>
+              <div className="ki-examples reveal" aria-label="Beispiele für KI-Prozesse">
+                {kiExamples.map((example) => (
+                  <div key={example.title}>
+                    <b>{example.title}</b>
+                    <small>{example.text}</small>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section className="band theme-light" id="region">
+            <div className="split2 reverse">
+              <div className="reveal">
+                <span className="band-tag">11 — Standort</span>
+                <h2 className="band-title">
+                  Aus Bendorf bei Koblenz. <em>Vor Ort und überall.</em>
+                </h2>
+                <p className="lead">
+                  Pixel56 sitzt in Bendorf, direkt vor den Toren von Koblenz. Für
+                  Content-Produktionen kommen wir in der Region zu dir in den
+                  Betrieb. Alles andere läuft per Video-Call, Telefon und WhatsApp
+                  genauso verbindlich, mit Kunden in ganz Deutschland.
+                </p>
+                <ul className="lines">
+                  <li>Vor-Ort-Dreh für Reels und Fotos in Koblenz, Neuwied, Montabaur und Umgebung</li>
+                  <li>Kennenlernen in Bendorf oder per Video-Call, wie es dir besser passt</li>
+                  <li>Lokale Betriebe aus der Region Koblenz sind uns besonders vertraut</li>
+                  <li>
+                    <Link href={routes.locations}>Webdesign, Ads und SEO in deiner Stadt</Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="region-visual reveal">
+                <Image src={koblenzImage} alt="Koblenz am Rhein, wenige Minuten vom Pixel56-Standort in Bendorf" fill sizes="(max-width: 900px) 100vw, 50vw" />
+              </div>
             </div>
           </section>
 
           <section className="band theme-light light-reviews" id="bewertungen">
             <div className="band-head reveal">
               <div>
-                <span className="band-tag">07 — Kundenstimmen</span>
+                <span className="band-tag">12 — Kundenstimmen</span>
                 <h2 className="band-title">
-                  Vertrauen entsteht durch <em>Zusammenarbeit</em>
+                  Vertrauen entsteht <em>in der Zusammenarbeit</em>
                 </h2>
               </div>
+              <p className="band-note">
+                Wir zeigen nur Aussagen, die unsere Kunden so veröffentlicht haben.
+                Keine erfundenen Bewertungen, keine geschönten Zahlen.
+              </p>
             </div>
-            <Reviews reviews={reviews} />
+            <Reviews reviews={verifiedReviews} />
           </section>
 
-          <section className="band theme-light light-faq">
+          <section className="band theme-light" id="ressourcen">
             <div className="band-head reveal">
               <div>
-                <span className="band-tag">08 — Häufige Fragen</span>
+                <span className="band-tag">13 — Kostenlose Ressourcen</span>
+                <h2 className="band-title">
+                  Zum Selbermachen, <em>bevor du uns brauchst</em>
+                </h2>
+              </div>
+              <p className="band-note">
+                Drei Vorlagen aus unserer eigenen Arbeit. Kostenlos als PDF, ohne
+                Haken.
+              </p>
+            </div>
+            <div className="resource-grid reveal">
+              {resources.map((resource) => (
+                <Link className="resource-card" href={resource.href} key={resource.title}>
+                  {resource.image ? (
+                    <div className="resource-mockup">
+                      <Image src={resource.image} alt="" fill sizes="(max-width: 720px) 100vw, 33vw" />
+                    </div>
+                  ) : (
+                    <div className="resource-mockup resource-mockup-placeholder" aria-hidden="true"><i /></div>
+                  )}
+                  <span>{resource.tag}</span>
+                  <h3>{resource.title}</h3>
+                  <p>{resource.text}</p>
+                  <em>Kostenlos herunterladen <ArrowIcon /></em>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section className="band theme-light" id="wissen">
+            <div className="band-head reveal">
+              <div>
+                <span className="band-tag">14 — Aus dem Blog</span>
+                <h2 className="band-title">
+                  Wissen, das <em>Entscheidungen leichter macht</em>
+                </h2>
+              </div>
+              <p className="band-note">
+                Was Websites kosten, warum das Google-Unternehmensprofil
+                unterschätzt wird und worauf es bei Anzeigen wirklich ankommt.
+              </p>
+            </div>
+            <div className="blog-grid reveal">
+              {latestArticles.map((article) => (
+                <Link className="blog-card" href={`/blog/${article.slug}`} key={article.slug}>
+                  <div className={`blog-cover ${article.cover}`} data-tag={article.kategorie} />
+                  <h4>{article.titel}</h4>
+                  <p>{article.teaser}</p>
+                  <span className="bc-meta">{article.kategorie} · {article.lesezeit} Min. Lesezeit</span>
+                </Link>
+              ))}
+            </div>
+            <div className="section-link-row reveal">
+              <Link className="body-link" href={routes.blog}>
+                Alle Artikel lesen <ArrowIcon />
+              </Link>
+            </div>
+          </section>
+
+          <section className="band theme-light light-faq" id="faq">
+            <div className="band-head reveal">
+              <div>
+                <span className="band-tag">15 — Häufige Fragen</span>
                 <h2 className="band-title">
                   Was vor dem Start <em>wichtig ist</em>
                 </h2>
@@ -499,9 +859,32 @@ export default function HomePage() {
         </div>
 
         <div className="sheet home-ending">
-          <CloseCta ctaLabel="Projekt kostenlos besprechen">
-            Lass uns etwas bauen, das <em>nach vorne aussieht.</em>
+          <CloseCta ctaLabel="Kostenloses Erstgespräch buchen">
+            Lass uns über <em>dein Projekt</em> sprechen.
           </CloseCta>
+
+          <div className="contact-strip reveal" aria-label="Kontaktmöglichkeiten">
+            <a href={`tel:${site.phoneIntl}`}>
+              <span>Telefon</span>
+              <b>{site.phone}</b>
+              <small>Mo bis Fr, direkt mit Atilla</small>
+            </a>
+            <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+              <span>WhatsApp</span>
+              <b>Nachricht schreiben</b>
+              <small>Kurze Frage, schnelle Antwort</small>
+            </a>
+            <a href={`mailto:${site.email}`}>
+              <span>E-Mail</span>
+              <b>{site.email}</b>
+              <small>Für Unterlagen und Anfragen</small>
+            </a>
+            <div>
+              <span>Vor Ort</span>
+              <b>Hüttenstraße 100, 56170 Bendorf</b>
+              <small>Termin nach Absprache</small>
+            </div>
+          </div>
 
           <SiteFooter />
         </div>
