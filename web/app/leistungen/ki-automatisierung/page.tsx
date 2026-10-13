@@ -192,6 +192,21 @@ const eigeneProjekte: DetailEintrag[] = [
     hinweis: "Produkt von Pixel56, mit KI entwickelt und betrieben.",
   },
   {
+    kicker: "Eigenes Produkt · B2B-Daten",
+    titel: "Adloc: B2B-Kontaktdatenbank für Deutschland",
+    text: "Schluss mit stundenlanger Recherche: Firmenkontakte nach Branche und Bundesland finden und für Vertrieb und Akquise nutzen. Als Abo zum festen Monatspreis, mit KI-Unterstützung gebaut und betrieben.",
+    punkte: [
+      "Suche nach Branche und Bundesland, Ergebnisse in Sekunden statt Stunden",
+      "Kontaktdaten für Vertrieb, Akquise und Kampagnen gebündelt an einem Ort",
+      "Drei transparente Monatspakete, Einstieg in wenigen Schritten",
+    ],
+    variant: "ic-6",
+    href: "https://adloc.io",
+    linkText: "adloc.io ansehen",
+    extern: true,
+    hinweis: "Eigenes Produkt von Pixel56.",
+  },
+  {
     kicker: "Eigenes Werkzeug · Live-Dashboard",
     titel: "Zentrale: ein Live-Dashboard für den eigenen Betrieb",
     text: "Alle Projekte, Ziele und offenen Aufgaben auf einer Karte: Jedes Vorhaben ist ein Gebäude, der Fortschritt steht dran, der Stand wird live gespeichert. Ein Klick auf „Was mache ich heute?“ und die KI schlägt die Prioritäten für den Tag vor.",

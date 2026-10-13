@@ -464,9 +464,13 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   einstellbar), automatische Bestätigung per E-Mail, eigener Raum für
   Workshops und Seminare.
 - 13.10.2026: **Nachtrag eigene Projekte.** Inhaber nennt zusätzlich
-  `adloc.io` als eigenes Produkt; öffentlich war dazu nichts zu finden und
-  die Domain ist aus der Sandbox nicht erreichbar. Wartet auf Beschreibung
-  und Screenshot, dann als weiteres Projekt auf die KI-Seite.
+  `adloc.io` als eigenes Produkt (B2B-Kontaktdatenbank für Deutschland,
+  Suche nach Branche und Bundesland, drei Monatspakete). Öffentlich war dazu
+  nichts zu finden, die Domain ist aus der Sandbox nicht erreichbar; Fakten
+  stammen aus dem Screenshot des Inhabers. Der war nur 212 px breit, daher
+  Browser-Mockup statt Bild, schärferer Screenshot erbeten. Zahlen von der
+  Adloc-Seite (Kontaktzahl, Prozentwerte) bewusst nicht übernommen. Als
+  fünftes eigenes Projekt auf der KI-Seite, vor der Zentrale.
 
 ## Verifiziert am 13.10.2026
 
