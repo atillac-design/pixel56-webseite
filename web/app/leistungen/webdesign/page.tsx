@@ -1,32 +1,37 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import {
   ArrowIcon,
   ClientMarquee,
-  StatusPanel,
-  WaMock,
   CloseCta,
+  ContactStrip,
   FaqList,
-  Reviews,
   RefCard,
+  Reviews,
+  StatusPanel,
   Stepper,
+  WaMock,
   type RefItem,
 } from "@/components/ui";
 import { Funnel2 } from "@/components/mocks";
 import { site } from "@/lib/site";
-import { projectPath, routes, serviceRoutes } from "@/lib/routes";
+import { getFallstudie } from "@/lib/projekte";
+import { verifiedProjectVoices, verifiedReviews } from "@/lib/verified-reviews";
+import { projectPath, resourceRoutes, routes, serviceRoutes } from "@/lib/routes";
+import gmDachdeckerImage from "@/public/bilder/projekt-gm-dachdecker.webp";
 
 export const metadata: Metadata = {
-  title: "Webdesign Agentur Koblenz für Unternehmen",
+  title: "Webdesign Agentur Koblenz: Websites, die Anfragen bringen",
   description:
-    "Pixel56 entwickelt schnelle, individuelle Websites für Unternehmen in Koblenz und deutschlandweit: Strategie, Design, Entwicklung und SEO-Basis aus einer Hand.",
+    "Pixel56 entwickelt individuelle Websites für Unternehmen in Koblenz und deutschlandweit: klare Struktur, Texte mit Suchintention, schnelle Technik und ein Relaunch, der Rankings schützt.",
   alternates: { canonical: serviceRoutes.webdesign },
   openGraph: {
-    title: "Webdesign Agentur Koblenz für Unternehmen | Pixel56",
+    title: "Webdesign Agentur Koblenz: Websites, die Anfragen bringen | Pixel56",
     description:
-      "Individuelle Websites, die Vertrauen aufbauen und Interessenten zur Anfrage führen — aus Bendorf bei Koblenz.",
+      "Individuelle Websites, die Vertrauen aufbauen und Interessenten zur Anfrage führen. Aus Bendorf bei Koblenz, für Unternehmen in ganz Deutschland.",
     url: serviceRoutes.webdesign,
   },
 };
@@ -42,7 +47,7 @@ const jsonLd = {
       name: "Webdesign für Unternehmen und Selbstständige",
       serviceType: "Webdesign, Website-Relaunch und Landingpages",
       description:
-        "Strategisches Webdesign für Unternehmen und Selbstständige: Konzeption, Texte, individuelles Design, technische Entwicklung, SEO-Grundlagen und Betreuung.",
+        "Strategisches Webdesign für Unternehmen und Selbstständige: Konzeption, Texte, individuelles Design, technische Entwicklung, SEO-Grundlagen, sichere URL-Migration und Betreuung.",
       url: serviceUrl,
       provider: {
         "@type": "ProfessionalService",
@@ -74,10 +79,11 @@ const jsonLd = {
         name: "Webdesign-Leistungen",
         itemListElement: [
           "Strategie und Seitenstruktur",
-          "SEO-Texte",
+          "Texte mit Suchintention",
           "Individuelles Webdesign",
           "Responsive Entwicklung",
           "Technisches SEO und Performance",
+          "Relaunch mit URL-Migration",
           "Wartung und Betreuung",
         ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
       },
@@ -99,72 +105,156 @@ const statusRows = [
   { label: "Auf dem Handy mühsam", tag: "Mobil" },
   { label: "Austauschbare Baukasten-Optik", tag: "Marke" },
   { label: "Leistungen bleiben unklar", tag: "Inhalt" },
-  { label: "Änderungen dauern zu lange", tag: "Betreuung" },
+  { label: "Änderungen dauern Wochen", tag: "Betreuung" },
+];
+
+const projectTypes = [
+  {
+    tag: "Unternehmenswebsite",
+    title: "Der komplette Auftritt",
+    text: "Startseite, Leistungen, Über uns, Referenzen, Kontakt. Für Betriebe, die online so professionell wirken wollen, wie sie arbeiten, und die Anfragen über die Website gewinnen möchten.",
+    refs: "M&A Transporte · Colak GmbH · MDU Bedachungen",
+  },
+  {
+    tag: "Relaunch",
+    title: "Bestehende Website erneuern",
+    text: "Wenn die alte Seite nicht mehr zum Unternehmen passt. Wir übernehmen, was funktioniert, bauen den Rest neu und sichern dabei Adressen und Rankings, damit der Neustart keine Sichtbarkeit kostet.",
+    refs: "Stark ins Neue · Lernforum Obertshausen",
+  },
+  {
+    tag: "Landingpage",
+    title: "Eine Seite, ein Ziel",
+    text: "Für Kampagnen bei Google oder Meta: Die Seite greift genau das Versprechen der Anzeige auf und führt ohne Umwege zur Anfrage, Buchung oder Anmeldung.",
+    refs: "Stark ins Neue · Van den Berg Gruppe",
+  },
+  {
+    tag: "Karriereseite",
+    title: "Bewerber gewinnen",
+    text: "Stellen, Einblicke in den Betrieb und eine Bewerbung in zwei Minuten, mit Upload direkt auf der Seite statt per E-Mail. Für Handwerk und Mittelstand, die Fachkräfte suchen.",
+    refs: "GM-Dachdecker",
+  },
+  {
+    tag: "Onlineshop",
+    title: "Produkte verkaufen",
+    text: "Shops mit klarer Produktdarstellung, schnellem Checkout und einem Look, der zur Marke passt. Mit Anbindung an Zahlung, Versand und Bestand.",
+    refs: "Cavar Home",
+  },
+  {
+    tag: "Marke & Website",
+    title: "Auftritt von Grund auf",
+    text: "Wenn noch keine Marke steht: Logo, Farben, Bildsprache und Website entstehen zusammen, damit nichts zusammengestückelt wirkt.",
+    refs: "Oktay Cömertler · DEMA Bedachungen",
+  },
 ];
 
 const scope = [
   {
     nr: "01",
     title: "Strategie & Seitenstruktur",
-    text: "Wir ordnen Zielgruppen, Leistungen und Suchintentionen, bevor Design oder Texte entstehen.",
+    text: "Bevor Design oder Texte entstehen, klären wir Zielgruppen, Leistungen und Suchabsichten. Daraus entsteht eine Seitenstruktur, in der jede Seite eine Aufgabe hat.",
   },
   {
     nr: "02",
     title: "Texte mit Suchintention",
-    text: "Verständliche Inhalte beantworten echte Kundenfragen und geben Google ein klares Seitenthema.",
+    text: "Verständliche Inhalte, die echte Kundenfragen beantworten und Google ein klares Seitenthema geben. Keine Textwüsten, kein Fachjargon.",
   },
   {
     nr: "03",
     title: "Individuelles Webdesign",
-    text: "Ein Auftritt passend zur Marke — keine Vorlage, die bei fünf anderen Unternehmen genauso aussieht.",
+    text: "Ein Auftritt, der zur Marke passt und nicht bei fünf anderen Unternehmen genauso aussieht. Mit Bildsprache, Typografie und Farben, die wiedererkennbar sind.",
   },
   {
     nr: "04",
-    title: "Schnelle Entwicklung",
-    text: "Saubere, responsive Technik mit kurzen Ladezeiten und klarer Bedienung auf jedem Gerät.",
+    title: "Schnelle, saubere Technik",
+    text: "Responsive Entwicklung mit kurzen Ladezeiten und klarer Bedienung auf jedem Gerät. Formulare, Buchung oder Upload werden so eingebunden, dass sie zuverlässig funktionieren.",
   },
   {
     nr: "05",
-    title: "SEO beim Relaunch",
-    text: "Bestehende URLs, Weiterleitungen, Metadaten, interne Links und Indexierung werden mitgeplant.",
+    title: "SEO-Basis & Relaunch-Sicherung",
+    text: "Metadaten, interne Links, strukturierte Daten, Sitemap. Beim Relaunch zusätzlich ein vollständiges URL-Inventar mit Weiterleitungen, damit bestehende Rankings erhalten bleiben.",
   },
   {
     nr: "06",
     title: "Messung & Betreuung",
-    text: "Anfragen, Klickwege und Sichtbarkeit werden nachvollziehbar — und die Website entwickelt sich weiter.",
+    text: "Anfragen, Klickwege und Sichtbarkeit werden nachvollziehbar. Nach dem Launch bleiben wir erreichbar für Änderungen, Pflege und Weiterentwicklung.",
   },
 ];
 
+const checks = [
+  {
+    problem: "In drei Sekunden ist klar, was du anbietest und für wen.",
+    answer: "Überschrift, erster Absatz und Bild sagen dasselbe. Wer auf der Seite landet, muss nicht raten, ob er richtig ist.",
+  },
+  {
+    problem: "Jede Seite hat genau einen nächsten Schritt.",
+    answer: "Anruf, Formular, Buchung oder WhatsApp: Der Weg zur Anfrage ist auf jeder Seite sichtbar und auf dem Handy mit einem Daumen erreichbar.",
+  },
+  {
+    problem: "Die Seite lädt schnell, auch mit schlechtem Empfang.",
+    answer: "Komprimierte Bilder, schlanker Code, keine unnötigen Skripte. Wir messen die Ladezeit vor dem Launch auf echten Geräten, nicht nur im Büro-WLAN.",
+  },
+  {
+    problem: "Google versteht, worum es auf jeder Seite geht.",
+    answer: "Ein Thema pro Seite, saubere Überschriften, Metadaten und strukturierte Daten. Die technische Basis, ohne die kein Ranking entsteht.",
+  },
+  {
+    problem: "Texte und Bilder zeigen den echten Betrieb.",
+    answer: "Keine Stockfotos von Menschen, die es bei dir nicht gibt. Wir planen Bilder und Texte gemeinsam und produzieren fehlendes Material auf Wunsch vor Ort.",
+  },
+  {
+    problem: "Impressum, Datenschutz und Cookies sind sauber gelöst.",
+    answer: "Rechtstexte, Einwilligung und Tracking werden von Anfang an mitgedacht, damit der Auftritt nicht nur wirkt, sondern auch Bestand hat.",
+  },
+];
+
+const relaunchSteps = [
+  { title: "URL-Inventar", text: "Alle bestehenden Adressen werden erfasst, inklusive der Seiten, die niemand mehr auf dem Schirm hat, aber Google noch kennt." },
+  { title: "Bewertung nach Daten", text: "Welche Seiten bringen Klicks, welche haben Backlinks, welche sind nur Ballast? Die Search Console entscheidet, nicht das Bauchgefühl." },
+  { title: "Pfade erhalten", text: "Wo immer möglich bleibt die alte Adresse die neue. Nur wenn ein Pfad sich ändern muss, gibt es eine dauerhafte Weiterleitung auf die passende Seite." },
+  { title: "Kontrolle nach dem Launch", text: "Indexierung, Weiterleitungen, Sitemap und Fehlerseiten werden nach dem Start geprüft. Erst dann ist der Relaunch für uns abgeschlossen." },
+];
+
 const steps = [
-  { nr: "01", tag: "Phase 1", title: "Analyse", text: "Ziele, Zielgruppen, bestehende Daten und Wettbewerb bilden die Grundlage." },
-  { nr: "02", tag: "Phase 2", title: "Struktur & Text", text: "Wir planen Suchintentionen, Seitenwege und Inhalte bis zur Anfrage." },
-  { nr: "03", tag: "Phase 3", title: "Design", text: "Das visuelle System macht die Marke wiedererkennbar und verständlich." },
-  { nr: "04", tag: "Phase 4", title: "Technik & SEO", text: "Entwicklung, Performance, Tracking und die SEO-Migration greifen ineinander." },
-  { nr: "05", tag: "Phase 5", title: "Launch & Wachstum", text: "Nach Qualitätscheck und Launch messen, lernen und verbessern wir weiter." },
+  { nr: "01", tag: "Phase 1", title: "Analyse", text: "Ziele, Zielgruppen, bestehende Daten und Wettbewerb. Wir sehen uns an, was die heutige Seite leistet und wo sie Anfragen verliert." },
+  { nr: "02", tag: "Phase 2", title: "Struktur & Text", text: "Seitenstruktur, Suchabsichten und Inhalte bis zur Anfrage. Du siehst die Texte, bevor das Design entsteht." },
+  { nr: "03", tag: "Phase 3", title: "Design", text: "Das visuelle System macht die Marke wiedererkennbar. Wir zeigen Entwürfe früh und arbeiten mit deinem Feedback weiter." },
+  { nr: "04", tag: "Phase 4", title: "Technik & SEO", text: "Entwicklung, Ladezeit, Tracking und die URL-Migration greifen ineinander. Getestet auf echten Geräten." },
+  { nr: "05", tag: "Phase 5", title: "Launch & Betreuung", text: "Nach dem Qualitätscheck geht die Seite live. Danach messen wir, was ankommt, und entwickeln gezielt weiter." },
+];
+
+const afterLaunch = [
+  { title: "Einweisung", text: "Du bekommst ein Redaktionssystem, mit dem du Texte, Bilder und Referenzen selbst pflegen kannst, und eine kurze Einweisung dazu." },
+  { title: "Pflege & Updates", text: "Wenn du nichts anfassen willst, übernehmen wir Updates, Sicherheit und Inhaltsänderungen. Ohne Ticketsystem, per WhatsApp oder Mail." },
+  { title: "Messung", text: "Anfragen, Klickwege und Sichtbarkeit bei Google werden nachvollziehbar, DSGVO-konform und ohne Datenfriedhof." },
+  { title: "Weiterentwicklung", text: "Neue Leistung, neue Landingpage, Karriereseite dazu: Die Website wächst mit dem Unternehmen, statt nach zwei Jahren wieder von vorn zu starten." },
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-4", barWidth: 55, img: "/bilder/projekt-gm-dachdecker.webp", href: projectPath("gm-dachdecker"), cat: "GM-Dachdecker Meisterbetrieb", title: "Handwerkskunst digital erlebbar gemacht", text: "Neue Website inklusive Karriereportal — Bewerber laden Unterlagen direkt hoch, ohne E-Mail.", tag: "Webdesign · Karriereportal · 2023" },
-  { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-stark-ins-neue-2.webp", href: projectPath("stark-ins-neue"), cat: "Stark ins Neue gGmbH", title: "Vertrauen für eine Bildungsinitiative", text: "Kompletter Relaunch mit klarer Nutzerführung, SEO-Grundlage und angebundenen Anmeldeprozessen.", tag: "Webdesign · SEO · 2025" },
-  { variant: "ic-1", barWidth: 48, img: "/bilder/projekt-oktay-coemertler.webp", href: projectPath("oktay-coemertler"), cat: "Oktay Cömertler", title: "Eine Marke für Abbruch, Tief- und Kanalbau", text: "Branding und Webdesign auf Basis einer umfassenden Markt- und Unternehmensanalyse.", tag: "Branding · Webdesign · 2018–2023" },
-  { variant: "ic-2", barWidth: 70, img: "/bilder/projekt-ma-transporte.webp", href: projectPath("ma-transporte"), cat: "MA-Transporte", title: "Dienstleistungsqualität digital sichtbar gemacht", text: "Ein repräsentativer Webauftritt mit einer klaren Darstellung von Unternehmen und Leistungen.", tag: "Webdesign · Social Media · seit 2019" },
+  { variant: "ic-4", barWidth: 55, img: "/bilder/projekt-gm-dachdecker.webp", href: projectPath("gm-dachdecker"), cat: "GM-Dachdecker Meisterbetrieb", title: "Website und Karriereportal für das Handwerk", text: "Neue Website inklusive Karriereportal: Bewerber laden ihre Unterlagen direkt hoch, ohne E-Mail und ohne Umweg.", tag: "Webdesign · Karriereportal · 2023" },
+  { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-stark-ins-neue-2.webp", href: projectPath("stark-ins-neue"), cat: "Stark ins Neue gGmbH", title: "Landingpage, die zur Kursanmeldung führt", text: "Fokussierte Anmeldestrecke für eine Bildungsinitiative, abgestimmt auf die begleitenden Meta-Ads-Kampagnen.", tag: "Webdesign · Landingpage · 2025" },
+  { variant: "ic-1", barWidth: 48, img: "/bilder/projekt-oktay-coemertler.webp", href: projectPath("oktay-coemertler"), cat: "Oktay Cömertler", title: "Marke und Website aus einem Guss", text: "Branding und Webdesign für Abbruch, Tief- und Kanalbau auf Basis einer Markt- und Unternehmensanalyse.", tag: "Branding · Webdesign · 2018–2023" },
+  { variant: "ic-2", barWidth: 70, img: "/bilder/projekt-ma-transporte.webp", href: projectPath("ma-transporte"), cat: "M&A Transporte", title: "Spezialleistungen verständlich gemacht", text: "Eine klar strukturierte Leistungswebsite, die seit 2019 gemeinsam mit Social-Media-Content gepflegt wird.", tag: "Webdesign · Social Media · seit 2019" },
 ];
 
 const faqs = [
-  { q: "Was kostet professionelles Webdesign?", a: "Der Preis hängt von Seitenumfang, Textarbeit, Funktionen, Bildmaterial und Integrationen ab. Nach einem kurzen Erstgespräch erhältst du einen klar abgegrenzten Leistungsumfang statt einer offenen Stundenabrechnung ohne Ziel." },
-  { q: "Wie lange dauert es, eine Website erstellen zu lassen?", a: "Eine fokussierte Unternehmenswebsite ist häufig in vier bis zehn Wochen realistisch. Umfangreiche Inhalte, Schnittstellen oder lange Freigabeschleifen verlängern den Ablauf. Zu Beginn erhältst du deshalb einen verbindlichen Projektplan." },
-  { q: "Übernehmt ihr Texte und Suchmaschinenoptimierung?", a: "Ja. Seitenstruktur, Texte, technische SEO-Grundlagen, Metadaten, interne Links und strukturierte Daten werden gemeinsam geplant. Für dauerhaft umkämpfte Suchbegriffe kann nach dem Launch eine laufende SEO-Betreuung sinnvoll sein." },
-  { q: "Verliere ich bei einem Website-Relaunch meine Google-Rankings?", a: "Ein Relaunch muss bestehende Signale nicht unnötig verlieren. Wir erfassen wertvolle URLs, übernehmen sie möglichst unverändert und richten für tatsächlich geänderte Adressen dauerhafte Weiterleitungen ein. Zusätzlich prüfen wir Canonicals, interne Links, Sitemap und Indexierung." },
-  { q: "Kann ich Inhalte später selbst ändern?", a: "Ja. Je nach Projekt erhältst du ein passendes Redaktionssystem für Texte, Bilder und Referenzen. Wenn du die Pflege auslagern möchtest, übernehmen wir Updates und technische Betreuung." },
-  { q: "Arbeitet Pixel56 nur in Koblenz?", a: "Nein. Unser Standort ist in Bendorf bei Koblenz, wodurch persönliche Termine in der Region unkompliziert sind. Projekte setzen wir für KMU und Handwerksbetriebe in ganz Deutschland um." },
-  { q: "Ist eine individuelle Website besser als ein Baukasten?", a: "Nicht automatisch. Für sehr einfache Anforderungen kann ein Baukasten genügen. Individuelles Webdesign lohnt sich, wenn Positionierung, mehrere Leistungen, SEO, besondere Funktionen oder messbare Kundengewinnung wichtig sind." },
+  { q: "Was kostet professionelles Webdesign?", a: "Der Preis hängt von Seitenumfang, Textarbeit, Funktionen, Bildmaterial und Anbindungen ab. Eine fokussierte Landingpage ist der günstigste Einstieg, eine Unternehmenswebsite liegt in der Mitte, Auftritte mit Karriereportal, Shop oder Schnittstellen darüber. Nach dem Erstgespräch bekommst du ein Angebot mit klar abgegrenztem Umfang, keine offene Stundenabrechnung." },
+  { q: "Wie lange dauert es, eine Website erstellen zu lassen?", a: "Eine fokussierte Unternehmenswebsite ist meist in vier bis zehn Wochen realistisch. Umfangreiche Inhalte, Schnittstellen oder lange Freigabeschleifen verlängern den Ablauf. Zu Beginn bekommst du deshalb einen Projektplan mit Terminen für deine Entscheidungen." },
+  { q: "Was brauche ich, um zu starten?", a: "Ein Ziel und 15 Minuten für das Erstgespräch. Logo, Texte und Bilder sind hilfreich, aber keine Voraussetzung: Wir sichten, was da ist, und planen fehlendes Material gemeinsam. Fotos und Videos können wir bei dir im Betrieb produzieren." },
+  { q: "Übernehmt ihr Texte und Suchmaschinenoptimierung?", a: "Ja. Seitenstruktur, Texte, technische SEO-Grundlagen, Metadaten, interne Links und strukturierte Daten werden gemeinsam geplant. Für dauerhaft umkämpfte Suchbegriffe kann nach dem Launch eine laufende SEO-Betreuung sinnvoll sein; sie ist aber nicht Voraussetzung." },
+  { q: "Verliere ich bei einem Website-Relaunch meine Google-Rankings?", a: "Nicht, wenn der Relaunch sauber vorbereitet ist. Wir erfassen alle bestehenden Adressen, übernehmen sie möglichst unverändert und richten für geänderte Pfade dauerhafte Weiterleitungen ein. Nach dem Start prüfen wir Indexierung, Sitemap und Fehlerseiten. Genau so gehen wir auch beim Relaunch unserer eigenen Website vor." },
+  { q: "Kann ich Inhalte später selbst ändern?", a: "Ja. Je nach Projekt bekommst du ein passendes Redaktionssystem für Texte, Bilder und Referenzen und eine Einweisung. Wenn du die Pflege lieber auslagerst, übernehmen wir Updates und technische Betreuung." },
+  { q: "Arbeitet Pixel56 nur in Koblenz?", a: "Nein. Unser Standort in Bendorf bei Koblenz macht persönliche Termine in der Region einfach. Websites setzen wir für Unternehmen in ganz Deutschland um, Abstimmungen laufen dann per Video-Call, Telefon und WhatsApp." },
+  { q: "Ist eine individuelle Website besser als ein Baukasten?", a: "Nicht automatisch. Für sehr einfache Anforderungen kann ein Baukasten reichen. Individuelles Webdesign lohnt sich, wenn Positionierung, mehrere Leistungen, Sichtbarkeit bei Google, besondere Funktionen oder messbare Kundengewinnung wichtig sind. Im Erstgespräch sagen wir dir ehrlich, was in deinem Fall sinnvoll ist." },
 ];
 
-const reviews = [
-  { text: "Maßgeschneidert, professionell, auf den Punkt — genau das haben wir gebraucht.", who: "Oktay Cömertler", img: "/bilder/person-oktay-coemertler.webp" },
-  { text: "Wir haben unsere neue Website mit Pixel56 umgesetzt und sind sehr zufrieden.", who: "Bewertung eines Webdesign-Kunden" },
-  { text: "Schnell, zuverlässig und auch nach dem Launch immer erreichbar.", who: "Colak GmbH", img: "/bilder/person-nalan-colak.webp" },
+const webVoices = [
+  verifiedProjectVoices["gm-dachdecker"],
+  verifiedProjectVoices["cass-schulungen"],
+  verifiedReviews[1],
 ];
+
+const spotlight = getFallstudie("gm-dachdecker");
+const spotlightVoice = verifiedProjectVoices["gm-dachdecker"];
 
 export default function WebdesignPage() {
   return (
@@ -180,15 +270,16 @@ export default function WebdesignPage() {
             <div className="service-premium-copy">
               <div className="premium-kicker">WEBDESIGN AGENTUR · KOBLENZ · DEUTSCHLANDWEIT</div>
               <h1>
-                <span>Webdesign aus Koblenz.</span>
-                <span className="service-hero-accent">Für Unternehmen,</span>
-                <span>die mehr vorhaben.</span>
+                <span>Webdesign, das</span>
+                <span className="service-hero-accent">Anfragen bringt.</span>
+                <span>Nicht nur gefällt.</span>
               </h1>
               <p>
-                Pixel56 entwickelt individuelle Websites für Unternehmen aller
-                Branchen. Strategisch geplant, hochwertig gestaltet, schnell
-                umgesetzt und so aufgebaut, dass aus Aufmerksamkeit Vertrauen
-                und aus Vertrauen eine Anfrage werden kann.
+                Pixel56 entwickelt individuelle Websites für Unternehmen, die
+                online gefunden und angefragt werden wollen: klare Struktur,
+                Texte mit Suchintention, schnelle Technik und ein Relaunch, der
+                bestehende Rankings schützt. Aus Bendorf bei Koblenz, für Kunden
+                in ganz Deutschland.
               </p>
               <div className="premium-actions">
                 <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">
@@ -200,8 +291,9 @@ export default function WebdesignPage() {
               </div>
               <div className="premium-proof" aria-label="Webdesign-Leistungen auf einen Blick">
                 <span>Individuelles Design</span>
-                <span>Schnelle Technik</span>
-                <span>SEO-sicherer Relaunch</span>
+                <span>Technik, die schnell lädt</span>
+                <span>Relaunch ohne Rankingverlust</span>
+                <span>Ein Ansprechpartner</span>
               </div>
             </div>
 
@@ -239,15 +331,15 @@ export default function WebdesignPage() {
         <section className="service-summary service-summary-premium reveal theme-light" aria-label="Webdesign auf einen Blick">
           <div>
             <span>Für wen</span>
-            <strong>Unternehmen aller Branchen</strong>
+            <strong>Handwerk, Mittelstand, Dienstleister</strong>
           </div>
           <div>
             <span>Standort</span>
-            <strong>Bendorf bei Koblenz</strong>
+            <strong>Bendorf bei Koblenz, deutschlandweit</strong>
           </div>
           <div>
             <span>Geeignet für</span>
-            <strong>Neue Websites &amp; Relaunches</strong>
+            <strong>Neue Websites, Relaunches, Landingpages</strong>
           </div>
           <div>
             <span>Ziel</span>
@@ -265,7 +357,13 @@ export default function WebdesignPage() {
               <p className="lead">
                 Eine Unternehmenswebsite muss in wenigen Sekunden erklären, was
                 du anbietest, für wen es gedacht ist und warum man dir vertrauen
-                kann. Fehlt diese Klarheit, geht der nächste Klick zur Konkurrenz.
+                kann. Fehlt diese Klarheit, geht der nächste Klick zur
+                Konkurrenz, auch wenn deine Arbeit besser ist.
+              </p>
+              <p className="lead">
+                Die meisten Websites, die wir im Erstgespräch sehen, scheitern
+                nicht am Design. Sie scheitern daran, dass niemand entschieden
+                hat, was die Seite erreichen soll.
               </p>
             </div>
             <div className="reveal">
@@ -274,17 +372,44 @@ export default function WebdesignPage() {
           </div>
         </section>
 
+        <section className="band theme-light" id="projekttypen">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">02 — Welche Website brauchst du?</span>
+              <h2 className="band-title">
+                Sechs Projektarten, <em>ein Anspruch</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Nicht jedes Unternehmen braucht dasselbe. Im Erstgespräch klären
+              wir, welche Art von Website den größten Hebel hat, und starten
+              dort.
+            </p>
+          </div>
+          <div className="audience-grid reveal">
+            {projectTypes.map((type) => (
+              <article className="audience-card" key={type.tag}>
+                <span>{type.tag}</span>
+                <h3>{type.title}</h3>
+                <p>{type.text}</p>
+                <small>Referenzen: {type.refs}</small>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="band theme-light" id="leistungen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">02 — Website erstellen lassen</span>
+              <span className="band-tag">03 — Website erstellen lassen</span>
               <h2 className="band-title">
                 Vom ersten Gedanken bis zum <em>messbaren Webauftritt</em>
               </h2>
             </div>
             <p className="band-note">
               Kein Weiterreichen zwischen Texter, Designer und Entwickler. Die
-              sechs Bausteine werden von Anfang an gemeinsam geplant.
+              sechs Bausteine werden von Anfang an zusammen geplant und von
+              einer Person verantwortet.
             </p>
           </div>
           <div className="scope-grid reveal">
@@ -298,21 +423,84 @@ export default function WebdesignPage() {
           </div>
         </section>
 
+        <section className="band theme-light" id="qualitaet">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">04 — Woran wir eine Website messen</span>
+              <h2 className="band-title">
+                Sechs Prüfpunkte, <em>die jede Seite bestehen muss</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Dieselben Punkte stehen in unserer kostenlosen SEO-Checkliste.
+              Du kannst deine aktuelle Website damit selbst prüfen.
+            </p>
+          </div>
+          <div className="friction-list checklist reveal">
+            {checks.map((item, index) => (
+              <div className="friction-row" key={item.problem}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{item.problem}</h3>
+                <p>{item.answer}</p>
+              </div>
+            ))}
+          </div>
+          <div className="section-link-row reveal">
+            <Link className="body-link" href={resourceRoutes["seo-checkliste"]}>
+              SEO-Checkliste kostenlos herunterladen <ArrowIcon />
+            </Link>
+          </div>
+        </section>
+
+        <section className="band dark-stage service-dark-stage" id="relaunch">
+          <div className="split2">
+            <div className="reveal">
+              <span className="band-tag">05 — Relaunch ohne Rankingverlust</span>
+              <h2 className="band-title">
+                Neue Website, <em>alte Sichtbarkeit bleibt</em>
+              </h2>
+              <p className="lead">
+                Der häufigste Fehler beim Relaunch: Die neue Seite geht live,
+                alte Adressen verschwinden, Google findet nur noch Fehlerseiten.
+                Rankings, die über Jahre entstanden sind, sind in Wochen weg.
+              </p>
+              <p className="lead">
+                Deshalb behandeln wir die URL-Migration als eigenen Arbeitsschritt
+                mit Inventar, Bewertung, Weiterleitungen und Kontrolle. Wir
+                wenden das auch auf unseren eigenen Relaunch an.
+              </p>
+              <Link className="body-link" href={serviceRoutes.seo}>
+                SEO-Grundlagen &amp; Sichtbarkeit <ArrowIcon />
+              </Link>
+            </div>
+            <div className="mini-grid reveal" aria-label="Schritte der URL-Migration">
+              {relaunchSteps.map((step) => (
+                <div key={step.title}>
+                  <b>{step.title}</b>
+                  <small>{step.text}</small>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="band theme-light" id="koblenz">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">03 — Webdesign Agentur Koblenz</span>
+              <span className="band-tag">06 — Webdesign Agentur Koblenz</span>
               <h2 className="band-title">
                 Lokal erreichbar. <em>Deutschlandweit wirksam.</em>
               </h2>
               <p className="lead">
-                Unser Büro liegt in Bendorf, wenige Minuten von Koblenz entfernt.
-                Für Unternehmen aus der Region bedeutet das: persönliche
-                Workshops sind genauso möglich wie schnelle digitale Abstimmungen.
+                Unser Büro liegt in Bendorf, wenige Minuten von Koblenz. Für
+                Unternehmen aus der Region heißt das: Kennenlernen vor Ort,
+                Fotos und Videos direkt im Betrieb, kurze Wege bei jeder
+                Abstimmung. Für alle anderen laufen Projekte per Video-Call
+                genauso verbindlich.
               </p>
               <ul className="lines">
-                <li>Direkter Ansprechpartner statt anonymer Agenturstruktur.</li>
-                <li>Erfahrung mit KMU, Handwerk, Bildung und Dienstleistungen.</li>
+                <li>Direkter Ansprechpartner statt Agenturstruktur mit Übergaben.</li>
+                <li>Erfahrung mit Handwerk, Bildung, Logistik, Immobilien und Dienstleistung.</li>
                 <li>Webdesign und <Link href={serviceRoutes.seo}>Suchmaschinenoptimierung</Link> greifen ineinander.</li>
                 <li>Bestehende Google-Signale werden beim Relaunch systematisch geschützt.</li>
               </ul>
@@ -365,13 +553,13 @@ export default function WebdesignPage() {
         <section className="band theme-light" id="referenzen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">04 — Webdesign-Referenzen</span>
+              <span className="band-tag">07 — Webdesign-Referenzen</span>
               <h2 className="band-title">
-                Reale Projekte statt <em>leerer Versprechen</em>
+                Echte Projekte statt <em>leerer Versprechen</em>
               </h2>
             </div>
             <p className="band-note">
-              Vier unterschiedliche Unternehmen — jeweils mit eigener
+              Vier unterschiedliche Unternehmen, jeweils mit eigener
               Positionierung, Nutzerführung und technischer Lösung.
             </p>
           </div>
@@ -387,10 +575,69 @@ export default function WebdesignPage() {
           </div>
         </section>
 
-        <section className="band dark-stage service-dark-stage">
+        {spotlight && (
+          <section className="band theme-light" id="fallstudie">
+            <div className="band-head reveal">
+              <div>
+                <span className="band-tag">08 — Ein Projekt im Detail</span>
+                <h2 className="band-title">
+                  {spotlight.kunde}: <em>{spotlight.loesung.titel}</em>
+                </h2>
+              </div>
+              <p className="band-note">{spotlight.branche} · {spotlight.tags.join(" · ")} · {spotlight.jahr}</p>
+            </div>
+            <div className="case-spotlight reveal">
+              <div>
+                <figure className="case-spotlight-visual" style={{ margin: 0 }}>
+                  <Image src={gmDachdeckerImage} alt={`${spotlight.kunde}: ${spotlight.titel}`} fill sizes="(max-width: 980px) 100vw, 50vw" />
+                  <figcaption>{spotlight.kunde.toUpperCase()}</figcaption>
+                </figure>
+                {spotlightVoice && (
+                  <blockquote className="case-quote">
+                    „{spotlightVoice.text}“
+                    <cite>{spotlightVoice.who}</cite>
+                  </blockquote>
+                )}
+              </div>
+              <div>
+                <p className="lead" style={{ margin: 0 }}>{spotlight.teaser}</p>
+                <div className="case-steps">
+                  <div className="case-step">
+                    <span>Ausgangslage</span>
+                    <h3>{spotlight.problem.titel}</h3>
+                    <p>{spotlight.problem.text}</p>
+                    <ul>
+                      {spotlight.problem.punkte.map((punkt) => <li key={punkt}>{punkt}</li>)}
+                    </ul>
+                  </div>
+                  <div className="case-step">
+                    <span>Lösung</span>
+                    <h3>{spotlight.loesung.titel}</h3>
+                    <p>{spotlight.loesung.text}</p>
+                    <ul>
+                      {spotlight.loesung.punkte.map((punkt) => <li key={punkt}>{punkt}</li>)}
+                    </ul>
+                  </div>
+                  {spotlight.ergebnis && (
+                    <div className="case-step">
+                      <span>Stand heute</span>
+                      <h3>Website und Bewerbungsweg aus einem Guss</h3>
+                      <p>{spotlight.ergebnis.text}</p>
+                    </div>
+                  )}
+                </div>
+                <Link className="body-link" href={projectPath(spotlight.slug)}>
+                  Zur vollständigen Fallstudie <ArrowIcon />
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
+
+        <section className="band dark-stage service-dark-stage" id="landingpages">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">05 — Landingpages &amp; Funnels</span>
+              <span className="band-tag">09 — Landingpages &amp; Funnels</span>
               <h2 className="band-title">
                 Für Kampagnen braucht es <em>einen klaren nächsten Schritt</em>
               </h2>
@@ -415,39 +662,69 @@ export default function WebdesignPage() {
           </div>
         </section>
 
-        <section className="band theme-light">
+        <section className="band theme-light" id="prozess">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">06 — Unser Prozess</span>
+              <span className="band-tag">10 — Unser Prozess</span>
               <h2 className="band-title">
-                Fünf Phasen. <em>Ein gemeinsames Ziel.</em>
+                Fünf Phasen. <em>Keine Überraschungen.</em>
               </h2>
             </div>
             <p className="band-note">
               Du weißt jederzeit, was als Nächstes passiert, welche Entscheidung
-              gebraucht wird und wann der Launch geplant ist.
+              von dir gebraucht wird und wann der Launch geplant ist.
             </p>
           </div>
           <Stepper steps={steps} />
         </section>
 
-        <section className="band dark-stage service-dark-stage">
+        <section className="band theme-light" id="danach">
           <div className="split2 reverse">
             <div className="reveal">
-              <span className="band-tag">07 — Warum Pixel56</span>
+              <span className="band-tag">11 — Nach dem Launch</span>
+              <h2 className="band-title">
+                Live ist der Anfang, <em>nicht das Ende</em>
+              </h2>
+              <p className="lead">
+                Eine Website, die nach dem Launch niemand mehr anfasst, verliert
+                nach und nach: Inhalte veralten, Technik bleibt stehen,
+                Anfragen bleiben aus. Deshalb endet unsere Arbeit nicht mit der
+                Freischaltung.
+              </p>
+              <p className="lead">
+                Du entscheidest, wie viel du selbst machen willst. Beides ist in
+                Ordnung: eigenständig pflegen oder komplett abgeben.
+              </p>
+            </div>
+            <div className="mini-grid reveal" aria-label="Betreuung nach dem Launch">
+              {afterLaunch.map((item) => (
+                <div key={item.title}>
+                  <b>{item.title}</b>
+                  <small>{item.text}</small>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="band dark-stage service-dark-stage" id="warum">
+          <div className="split2 reverse">
+            <div className="reveal">
+              <span className="band-tag">12 — Warum Pixel56</span>
               <h2 className="band-title">
                 Kein Baukasten. <em>Kein Projekt auf Autopilot.</em>
               </h2>
               <p className="lead">
                 Wir verbinden Gestaltung, Marketing und Technik. So entsteht
-                keine isolierte Designfläche, sondern ein belastbarer
-                Vertriebskanal, den dein Unternehmen weiterentwickeln kann.
+                keine isolierte Designfläche, sondern ein Vertriebskanal, den
+                dein Unternehmen über Jahre weiterentwickeln kann.
               </p>
               <ul className="lines">
                 <li>Individuelle Strategie statt austauschbarer Branchenvorlage.</li>
                 <li>Klare Aussagen statt Fachjargon und Textwüsten.</li>
                 <li>Technische Qualität, SEO und Datenschutz von Anfang an mitgedacht.</li>
                 <li>Betreuung nach dem Launch, wenn Inhalte oder Ziele sich ändern.</li>
+                <li>Ein fester Ansprechpartner, der das Projekt selbst umsetzt.</li>
               </ul>
             </div>
             <div className="reveal">
@@ -455,10 +732,10 @@ export default function WebdesignPage() {
                 name="Pixel56 — Dein Ansprechpartner"
                 messages={[
                   { from: "in", text: "Können wir die neue Leistung heute ergänzen?" },
-                  { from: "out", text: "Ja. Schick mir die Eckdaten — wir kümmern uns um Text, Aufbau und Veröffentlichung." },
+                  { from: "out", text: "Ja. Schick mir die Eckdaten, wir kümmern uns um Text, Aufbau und Veröffentlichung." },
                   { from: "in", text: "Perfekt, genau so hatten wir uns die Betreuung vorgestellt." },
                 ]}
-                footer="Direkter Austausch während des Projekts und danach"
+                footer="Beispielhafter Ablauf einer Abstimmung während der Betreuung"
               />
             </div>
           </div>
@@ -467,19 +744,23 @@ export default function WebdesignPage() {
         <section className="band theme-light" id="bewertungen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">08 — Kundenstimmen</span>
+              <span className="band-tag">13 — Kundenstimmen</span>
               <h2 className="band-title">
                 Zusammenarbeit, die <em>in Erinnerung bleibt</em>
               </h2>
             </div>
+            <p className="band-note">
+              Nur Aussagen, die unsere Kunden so veröffentlicht haben. Keine
+              erfundenen Bewertungen.
+            </p>
           </div>
-          <Reviews reviews={reviews} />
+          <Reviews reviews={webVoices} items={webVoices} />
         </section>
 
-        <section className="band theme-light">
+        <section className="band theme-light" id="faq">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">09 — Häufige Fragen</span>
+              <span className="band-tag">14 — Häufige Fragen</span>
               <h2 className="band-title">
                 Antworten vor dem <em>ersten Gespräch</em>
               </h2>
@@ -495,6 +776,8 @@ export default function WebdesignPage() {
           <CloseCta ctaLabel="Website-Projekt kostenlos besprechen">
             Soll deine Website endlich <em>Kunden gewinnen?</em>
           </CloseCta>
+
+          <ContactStrip />
 
           <SiteFooter />
         </div>

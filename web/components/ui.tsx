@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { clients } from "@/lib/site";
-import { verifiedReviews } from "@/lib/verified-reviews";
+import { verifiedReviews, type VerifiedReview } from "@/lib/verified-reviews";
+import { site } from "@/lib/site";
 
 export function ArrowIcon() {
   return (
@@ -239,7 +240,13 @@ export function Stepper({ steps, six = false }: { steps: Step[]; six?: boolean }
 
 export type Review = { text: string; who: string; img?: string };
 
-export function Reviews({ reviews: _reviews }: { reviews: Review[] }) {
+/**
+ * Zeigt ausschließlich geprüfte Kundenstimmen. `reviews` wird aus
+ * Kompatibilitätsgründen entgegengenommen, aber nicht gerendert; über
+ * `items` kann eine Auswahl aus lib/verified-reviews übergeben werden.
+ */
+export function Reviews({ reviews: _reviews, items }: { reviews: Review[]; items?: VerifiedReview[] }) {
+  const shown = items && items.length ? items : verifiedReviews;
   return (
     <div className="reviews-wrap reveal">
       <div className="reviews-score">
@@ -253,7 +260,7 @@ export function Reviews({ reviews: _reviews }: { reviews: Review[] }) {
         </a>
       </div>
       <div className="reviews-grid">
-        {verifiedReviews.map((r) => (
+        {shown.map((r) => (
           <div className="review-card" key={r.who}>
             <span className="review-quote-mark" aria-hidden="true">“</span>
             <p>„{r.text}“</p>
@@ -268,6 +275,34 @@ export function Reviews({ reviews: _reviews }: { reviews: Review[] }) {
             )}
           </div>
         ))}
+      </div>
+    </div>
+  );
+}
+
+/** Kontaktleiste vor dem Footer: Telefon, WhatsApp, E-Mail, Adresse. */
+export function ContactStrip() {
+  return (
+    <div className="contact-strip reveal" aria-label="Kontaktmöglichkeiten">
+      <a href={`tel:${site.phoneIntl}`}>
+        <span>Telefon</span>
+        <b>{site.phone}</b>
+        <small>Mo bis Fr, direkt mit Atilla</small>
+      </a>
+      <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+        <span>WhatsApp</span>
+        <b>Nachricht schreiben</b>
+        <small>Kurze Frage, schnelle Antwort</small>
+      </a>
+      <a href={`mailto:${site.email}`}>
+        <span>E-Mail</span>
+        <b>{site.email}</b>
+        <small>Für Unterlagen und Anfragen</small>
+      </a>
+      <div>
+        <span>Vor Ort</span>
+        <b>Hüttenstraße 100, 56170 Bendorf</b>
+        <small>Termin nach Absprache</small>
       </div>
     </div>
   );

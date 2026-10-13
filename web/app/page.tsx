@@ -7,6 +7,7 @@ import {
   ArrowIcon,
   ClientMarquee,
   CloseCta,
+  ContactStrip,
   FaqList,
   Reviews,
 } from "@/components/ui";
@@ -863,28 +864,7 @@ export default function HomePage() {
             Lass uns über <em>dein Projekt</em> sprechen.
           </CloseCta>
 
-          <div className="contact-strip reveal" aria-label="Kontaktmöglichkeiten">
-            <a href={`tel:${site.phoneIntl}`}>
-              <span>Telefon</span>
-              <b>{site.phone}</b>
-              <small>Mo bis Fr, direkt mit Atilla</small>
-            </a>
-            <a href={site.whatsapp} target="_blank" rel="noopener noreferrer">
-              <span>WhatsApp</span>
-              <b>Nachricht schreiben</b>
-              <small>Kurze Frage, schnelle Antwort</small>
-            </a>
-            <a href={`mailto:${site.email}`}>
-              <span>E-Mail</span>
-              <b>{site.email}</b>
-              <small>Für Unterlagen und Anfragen</small>
-            </a>
-            <div>
-              <span>Vor Ort</span>
-              <b>Hüttenstraße 100, 56170 Bendorf</b>
-              <small>Termin nach Absprache</small>
-            </div>
-          </div>
+          <ContactStrip />
 
           <SiteFooter />
         </div>
