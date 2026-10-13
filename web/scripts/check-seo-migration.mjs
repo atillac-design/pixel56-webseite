@@ -73,7 +73,8 @@ for (const route of portfolio) {
   if (!routesSource.includes(`"${slug}"`)) errors.push(`${route.sourcePath}: Einzelmapping fehlt`);
 }
 
-const categorySource = readFileSync(resolve(root, "app/blog-kategorien/[slug]/page.tsx"), "utf8");
+// Blog-Themen liegen in lib/blog.ts (blogKategorien); die Seite selbst bleibt generisch.
+const categorySource = readFileSync(resolve(root, "app/blog-kategorien/[slug]/page.tsx"), "utf8") + readFileSync(resolve(root, "lib/blog.ts"), "utf8");
 for (const route of manifest.routes.filter((route) => route.type === "blog-category")) {
   const slug = route.sourcePath.replace("/blog-kategorien/", "");
   if (!categorySource.includes(`"${slug}"`) && !categorySource.includes(`${slug}:`)) {

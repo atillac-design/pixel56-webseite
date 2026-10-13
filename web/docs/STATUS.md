@@ -15,6 +15,24 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 13.10.2026: **Blog neu aufgebaut.** Übersicht (`app/blog/page.tsx`) mit
+  neuestem Artikel im Hero, fünf jüngsten Beiträgen, acht Themen mit
+  Artikelanzahl, Archiv und Ressourcen; Artikelvorlage
+  (`app/blog/[slug]/page.tsx`) mit Teaser, Inhaltsverzeichnis aus den
+  Zwischenüberschriften, Autorenkasten, Leistungs-Hinweis passend zum
+  Thema, drei weiteren Artikeln, Checklisten, Kontaktleiste, `BlogPosting`-
+  und `BreadcrumbList`-Schema; Themenseiten
+  (`app/blog-kategorien/[slug]/page.tsx`) im selben Stil. **Behobener
+  SEO-Fehler:** Die Themenseiten hatten nur die Kategorie-Werte der acht neu
+  geschriebenen Artikel gekannt; die 31 alten Artikel (Werte wie „Künstliche
+  Intelligenz“, „Soziale Medien“) passten nirgends, weshalb fast jede
+  Themenseite als Rückfall alle 35 Artikel zeigte, also acht nahezu
+  identische Seiten. Die Zuordnung liegt jetzt in `lib/blog.ts`
+  (`blogKategorien`) und deckt alte und neue Werte ab; jede Themenseite
+  zeigt nur ihre eigenen Artikel (2 bis 6). Alte absolute Links in den
+  Artikeltexten (`https://www.pixel56.de/...`) werden beim Rendern relativ,
+  damit sie auch auf Testumgebungen funktionieren. Seitentitel langer
+  Artikelüberschriften enden nicht mehr mit „…“, sondern am Doppelpunkt.
 - 13.10.2026: **Projekt-Detailseiten (17 Fallstudien) neu aufgebaut.** Neue
   Vorlage in `app/projekte/[slug]/page.tsx`: Hero mit Projektbild
   (Browser-Mockup als Rückfall), Zusammenfassung, Ausgangslage und Umsetzung

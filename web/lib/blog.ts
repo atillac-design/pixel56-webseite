@@ -201,3 +201,51 @@ export const artikel: Artikel[] = [
 export function getArtikel(slug: string): Artikel | undefined {
   return artikel.find((a) => a.slug === slug);
 }
+
+/** Themenseiten des Blogs: alte Webflow-Slugs, passende Kategorie-Werte alter und neuer Artikel. */
+export type BlogKategorie = {
+  slug: string;
+  label: string;
+  matches: readonly string[];
+  beschreibung: string;
+  /** Passende Leistungsseite für den Hinweis am Artikelende. */
+  leistung: { href: string; label: string; text: string };
+};
+
+export const blogKategorien: BlogKategorie[] = [
+  { slug: "webdesign", label: "Webdesign", matches: ["Webdesign", "Website"], beschreibung: "Websites, die Anfragen bringen: Struktur, Design, Technik und Relaunch ohne Rankingverlust.", leistung: { href: "/webdesign", label: "Webdesign", text: "Websites, die nicht nur gut aussehen, sondern Anfragen bringen. Aus Bendorf bei Koblenz, mit einem Ansprechpartner." } },
+  { slug: "seo", label: "SEO", matches: ["SEO", "Lokal"], beschreibung: "Gefunden werden bei Google: Technik, Inhalte, lokale Sichtbarkeit und realistische Zeiträume.", leistung: { href: "/suchmaschinenoptimierung", label: "SEO-Grundlagen", text: "Technisches Fundament, Inhalte mit Suchintention und ein gepflegtes Unternehmensprofil. Ehrlich, ohne Platz-1-Versprechen." } },
+  { slug: "meta-ads", label: "Meta Ads", matches: ["Meta-Ads", "Kampagnen"], beschreibung: "Facebook- und Instagram-Werbung für Kunden- und Mitarbeitergewinnung: Budget, Creatives, Zielseiten.", leistung: { href: "/facebook-meta-ads", label: "Meta Ads", text: "Kampagnen mit Creatives aus dem Betrieb, passender Zielseite und Tracking bis zur Anfrage." } },
+  { slug: "soziale-medien", label: "Soziale Medien", matches: ["Soziale Medien"], beschreibung: "Social Media für Betriebe mit wenig Zeit: Formate, Rhythmus und Inhalte aus dem Alltag.", leistung: { href: "/social-media-content", label: "Social Content & Reels", text: "Reels, Fotos und Beiträge aus deinem Material oder vor Ort gedreht, mit festem Rhythmus." } },
+  { slug: "kunstliche-intelligenz", label: "Künstliche Intelligenz", matches: ["Künstliche Intelligenz", "KI"], beschreibung: "Was KI im Betriebsalltag wirklich bringt: Einsatzfälle, Grenzen, Datenschutz und der pragmatische Einstieg.", leistung: { href: "/ki-automatisierung", label: "KI-Prozesse & Automatisierung", text: "Wiederkehrende Abläufe automatisieren, Wissen nutzbar machen. Prozess zuerst, Werkzeug danach." } },
+  { slug: "wachstum", label: "Wachstum", matches: ["Wachstum"], beschreibung: "Mehr Anfragen, bessere Kunden, weniger Streuverlust: Strategien für kleine und mittlere Unternehmen.", leistung: { href: "/dienstleistung", label: "Alle Leistungen", text: "Websites, Kampagnen, Content und KI-Prozesse, die zusammenpassen. Du wählst den Baustein mit dem größten Hebel." } },
+  { slug: "marketing-tools", label: "Marketing-Tools", matches: ["Marketing-Tools", "Technik"], beschreibung: "Werkzeuge, die kleinen Betrieben Zeit sparen: Auswahl, Einrichtung und was man sich sparen kann.", leistung: { href: "/webdesign", label: "Webdesign & Technik", text: "Saubere Technik, schnelle Ladezeiten und Anbindungen, die im Alltag funktionieren." } },
+  { slug: "webseite", label: "Webseite", matches: ["Webseite"], beschreibung: "Grundlagen rund um die eigene Website: Kosten, Pflege und Fehler, die Anfragen kosten.", leistung: { href: "/webdesign", label: "Webdesign", text: "Neue Website oder Relaunch: klare Struktur, Texte mit Suchintention, Rankings bleiben erhalten." } },
+];
+
+export function getBlogKategorie(slug: string): BlogKategorie | undefined {
+  return blogKategorien.find((k) => k.slug === slug);
+}
+
+export function kategorieVonArtikel(a: Pick<Artikel, "kategorie">): BlogKategorie {
+  return blogKategorien.find((k) => k.matches.includes(a.kategorie)) ?? blogKategorien[0];
+}
+
+export function artikelInKategorie(slug: string): Artikel[] {
+  const kategorie = getBlogKategorie(slug);
+  if (!kategorie) return [];
+  return artikel.filter((a) => kategorie.matches.includes(a.kategorie));
+}
+
+/** Drei weitere Artikel: zuerst aus derselben Kategorie, dann die neuesten. */
+export function aehnlicheArtikel(a: Artikel, anzahl = 3): Artikel[] {
+  const kategorie = kategorieVonArtikel(a);
+  const gleiche = artikel.filter((b) => b.slug !== a.slug && kategorie.matches.includes(b.kategorie));
+  const rest = artikel.filter((b) => b.slug !== a.slug && !gleiche.includes(b));
+  return [...gleiche, ...rest].slice(0, anzahl);
+}
+
+/** Alte absolute Links auf die bisherige Domain werden relativ, damit sie auch auf Testumgebungen funktionieren. */
+export function relativeLinks(html: string): string {
+  return html.replace(/https?:\/\/(www\.)?pixel56\.de(?=\/|")/g, "");
+}

@@ -12,6 +12,7 @@ export type BlogBeitrag = {
   kategorie: string;
   coverFarbe: string;
   lesezeit: number;
+  veroeffentlichtAm?: string;
 };
 
 type SanityTextBlock = {
@@ -50,7 +51,7 @@ async function safeFetch<T>(query: string, params: Record<string, string> = {}):
 export function getBlogBeitraege(): Promise<BlogBeitrag[] | null> {
   return safeFetch<BlogBeitrag[]>(
     `*[_type == "beitrag" && defined(slug.current) && count(inhalt) > 0] | order(veroeffentlichtAm desc) {
-      titel, "slug": slug.current, teaser, kategorie, coverFarbe, lesezeit
+      titel, "slug": slug.current, teaser, kategorie, coverFarbe, lesezeit, veroeffentlichtAm
     }`
   );
 }
