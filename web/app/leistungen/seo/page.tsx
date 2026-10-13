@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import BreadcrumbLd from "@/components/BreadcrumbLd";
+import RegionLinks from "@/components/RegionLinks";
 import {
   ArrowIcon,
   ClientMarquee,
@@ -146,6 +148,7 @@ export default function SeoPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BreadcrumbLd items={[{ name: "Leistungen", href: "/dienstleistung" }, { name: "SEO-Grundlagen", href: serviceRoutes.seo }]} />
 
       <main className="service-premium seo-premium">
         <div className="sheet">
@@ -552,6 +555,8 @@ export default function SeoPage() {
           </div>
           <Reviews reviews={verifiedReviews} items={verifiedReviews} />
         </section>
+
+        <RegionLinks leistung="SEO" kurz="SEO" />
 
         <section className="band theme-light" id="faq">
           <div className="band-head reveal">

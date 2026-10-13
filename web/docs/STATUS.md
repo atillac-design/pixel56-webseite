@@ -15,6 +15,18 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 13.10.2026: **Abschlussrunde ohne Eigentümer-Input.** Leistungsseiten
+  verlinken auf die Standortseiten derselben Leistung im Einzugsgebiet
+  (`components/RegionLinks.tsx`), Breadcrumb-Schema auf Leistungs-,
+  Standort- und Projektseiten (`components/BreadcrumbLd.tsx`),
+  Geo-Koordinaten und erweitertes `areaServed` im Organisations-Schema,
+  Sicherheits-Header in `next.config.ts` (nosniff, Frame-Options,
+  Referrer-Policy, Permissions-Policy, HSTS), 404-Seite und die beiden alten
+  Shop-Pfade (`/category/digitale-produkte`,
+  `/product/tagesplaner-to-do-liste-set`) im neuen Stil, `npm run qa:crawl`
+  als wiederholbare Prüfung im Repo, HANDOFF.md auf den aktuellen Stand
+  gebracht. Korrektur zur Bewertung vom selben Tag: Google Analytics ist
+  vorhanden und lädt nach Zustimmung; es fehlt nur die Search Console.
 - 13.10.2026: **Ressourcen, Karriere, Stellenanzeige neu aufgebaut.** Die
   drei Freebie-Seiten behalten Formular und schlanke Navigation, bekommen
   aber Zusammenfassung, „Für wen“, „So nutzt du sie“, passende Leistung,

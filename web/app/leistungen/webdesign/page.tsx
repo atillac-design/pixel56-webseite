@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import BreadcrumbLd from "@/components/BreadcrumbLd";
+import RegionLinks from "@/components/RegionLinks";
 import {
   ArrowIcon,
   ClientMarquee,
@@ -260,6 +262,7 @@ export default function WebdesignPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BreadcrumbLd items={[{ name: "Leistungen", href: "/dienstleistung" }, { name: "Webdesign", href: serviceRoutes.webdesign }]} />
 
       <main className="service-premium webdesign-premium">
         <div className="sheet">
@@ -756,6 +759,8 @@ export default function WebdesignPage() {
           </div>
           <Reviews reviews={webVoices} items={webVoices} />
         </section>
+
+        <RegionLinks leistung="Webdesign" kurz="Webdesign" />
 
         <section className="band theme-light" id="faq">
           <div className="band-head reveal">

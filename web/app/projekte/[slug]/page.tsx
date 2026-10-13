@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import BreadcrumbLd from "@/components/BreadcrumbLd";
 import {
   ArrowIcon,
   BrowserMock,
@@ -137,6 +138,7 @@ export default async function FallstudiePage({ params }: Props) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BreadcrumbLd items={[{ name: "Kundenprojekte", href: routes.projects }, { name: f.kunde, href: projectPath(f.slug) }]} />
 
       <main className="service-premium projects-premium case-premium">
         <div className="sheet">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import BreadcrumbLd from "@/components/BreadcrumbLd";
 import {
   ArrowIcon,
   ClientMarquee,
@@ -102,6 +103,7 @@ export default function LocationPage({ location }: { location: LegacyLocation })
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BreadcrumbLd items={[{ name: "Standorte", href: routes.locations }, { name: `${leistung.kurz} in ${stadt}`, href: canonical }]} />
 
       <main className="service-premium location-premium">
         <div className="sheet">

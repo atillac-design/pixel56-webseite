@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import BreadcrumbLd from "@/components/BreadcrumbLd";
+import RegionLinks from "@/components/RegionLinks";
 import {
   ArrowIcon,
   ClientMarquee,
@@ -187,6 +189,7 @@ export default function ContentPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BreadcrumbLd items={[{ name: "Leistungen", href: "/dienstleistung" }, { name: "Social Content & Reels", href: serviceRoutes["content-produktion"] }]} />
 
       <main className="service-premium content-premium">
         <div className="sheet">
@@ -636,6 +639,8 @@ export default function ContentPage() {
           </div>
           <Reviews reviews={contentVoices} items={contentVoices} />
         </section>
+
+        <RegionLinks leistung="Social-Media Betreuung" kurz="Social Media" />
 
         <section className="band theme-light" id="faq">
           <div className="band-head reveal">

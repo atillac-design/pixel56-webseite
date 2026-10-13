@@ -12,7 +12,18 @@ const projectRewrites = Object.entries(legacyProjectSlugs).map(([internalSlug, l
   destination: `/projekte/${internalSlug}`,
 }));
 
+const securityHeaders = [
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "X-Frame-Options", value: "SAMEORIGIN" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=()" },
+  { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains" },
+];
+
 const nextConfig: NextConfig = {
+  async headers() {
+    return [{ source: "/:path*", headers: securityHeaders }];
+  },
   async redirects() {
     // Die bestehenden Webflow-URLs bleiben die kanonischen Zielpfade. Nur die
     // während der Entwicklung angelegte Next.js-Struktur wird dorthin

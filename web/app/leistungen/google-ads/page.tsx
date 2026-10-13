@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import BreadcrumbLd from "@/components/BreadcrumbLd";
+import RegionLinks from "@/components/RegionLinks";
 import PlannedMedia from "@/components/PlannedMedia";
 import {
   ArrowIcon,
@@ -168,6 +170,7 @@ export default function GoogleAdsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BreadcrumbLd items={[{ name: "Leistungen", href: "/dienstleistung" }, { name: "Google Ads", href: serviceRoutes["google-ads"] }]} />
 
       <main className="service-premium google-premium">
         <div className="sheet">
@@ -556,6 +559,8 @@ export default function GoogleAdsPage() {
           </div>
           <Reviews reviews={verifiedReviews} items={verifiedReviews} />
         </section>
+
+        <RegionLinks leistung="Google Ads" kurz="Google Ads" />
 
         <section className="band theme-light" id="faq">
           <div className="band-head reveal">

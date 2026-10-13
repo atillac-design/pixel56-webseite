@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import BreadcrumbLd from "@/components/BreadcrumbLd";
+import RegionLinks from "@/components/RegionLinks";
 import {
   ArrowIcon,
   ClientMarquee,
@@ -195,6 +197,7 @@ export default function MetaAdsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BreadcrumbLd items={[{ name: "Leistungen", href: "/dienstleistung" }, { name: "Meta Ads", href: serviceRoutes["meta-ads"] }]} />
 
       <main className="service-premium meta-premium">
         <div className="sheet">
@@ -670,6 +673,8 @@ export default function MetaAdsPage() {
           </div>
           <Reviews reviews={metaVoices} items={metaVoices} />
         </section>
+
+        <RegionLinks leistung="Meta Ads" kurz="Meta Ads" />
 
         <section className="band theme-light" id="faq">
           <div className="band-head reveal">

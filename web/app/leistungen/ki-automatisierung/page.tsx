@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import BreadcrumbLd from "@/components/BreadcrumbLd";
 import PlannedMedia from "@/components/PlannedMedia";
 import {
   ArrowIcon,
@@ -156,6 +157,7 @@ export default function KiAutomatisierungPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BreadcrumbLd items={[{ name: "Leistungen", href: "/dienstleistung" }, { name: "KI-Prozesse & Automatisierung", href: serviceRoutes["ki-automatisierung"] }]} />
 
       <main className="service-premium ki-premium">
         <div className="sheet">

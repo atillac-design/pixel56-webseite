@@ -59,8 +59,11 @@ const jsonLd = {
       },
       telephone: site.phoneIntl,
       email: site.email,
+      geo: { "@type": "GeoCoordinates", latitude: 50.4297, longitude: 7.5703 },
       areaServed: [
         { "@type": "City", name: "Koblenz" },
+        { "@type": "City", name: "Neuwied" },
+        { "@type": "City", name: "Bendorf" },
         { "@type": "Country", name: "Deutschland" },
       ],
       url: site.url,

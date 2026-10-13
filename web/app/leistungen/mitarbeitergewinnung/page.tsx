@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import BreadcrumbLd from "@/components/BreadcrumbLd";
 import {
   ArrowIcon,
   ClientMarquee,
@@ -147,6 +148,7 @@ export default function RecruitingPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BreadcrumbLd items={[{ name: "Leistungen", href: "/dienstleistung" }, { name: "Mitarbeitergewinnung", href: serviceRoutes.mitarbeitergewinnung }]} />
 
       <main className="service-premium recruiting-premium">
         <div className="sheet">
