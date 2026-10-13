@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import VorherNachher from "@/components/VorherNachher";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
 import {
   ArrowIcon,
@@ -259,6 +260,25 @@ export default async function FallstudiePage({ params }: Props) {
                   <figcaption><b>{f.kunde}</b><span>{index === 0 && f.galerieHinweis ? "Beispiel-Creative" : f.tags[0]}</span></figcaption>
                 </figure>
               ))}
+            </div>
+          </section>
+        ) : null}
+
+        {f.vorher && f.bild ? (
+          <section className="band theme-light" id="vorher-nachher">
+            <div className="band-head reveal">
+              <div>
+                <span className="band-tag">Vorher · Nachher</span>
+                <h2 className="band-title">
+                  Der Auftritt <em>davor und danach</em>
+                </h2>
+              </div>
+              <p className="band-note">
+                Links der Auftritt vor dem Projekt, rechts der neue. Zieh den Regler, um zu vergleichen.
+              </p>
+            </div>
+            <div className="reveal">
+              <VorherNachher vorher={f.vorher} nachher={f.bild} kunde={f.kunde} />
             </div>
           </section>
         ) : null}

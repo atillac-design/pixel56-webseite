@@ -19,6 +19,8 @@ export type Fallstudie = {
   tags: string[];
   /** Karten-/Hero-Bild (Pfad unter public/). Ohne Bild: abstraktes Browser-Mockup. */
   bild?: string;
+  /** Screenshot des alten Auftritts (Pfad unter public/) für den Vorher-nachher-Vergleich; braucht auch `bild`. */
+  vorher?: string;
   /** Weitere Einblicke auf der Detailseite. */
   galerie?: string[];
   /** Bildunterschrift zum ersten Galeriebild, z. B. wenn es ein Beispiel aus einem anderen Projekt ist. */
