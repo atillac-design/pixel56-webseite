@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" preserveAspectRatio="xMidYMid slice">
+<defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity="0.14"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+<ellipse cx="800" cy="500" rx="560" ry="330" fill="url(#g)"/>
+<g stroke="#fff" fill="none" stroke-width="2" opacity="0.08">
+  <circle cx="800" cy="500" r="300"/><circle cx="800" cy="500" r="420"/><circle cx="800" cy="500" r="560"/>
+</g>
+
+  <rect x="650" y="230" width="300" height="540" rx="40" fill="#151319" fill-opacity="0.35"/>
+  <rect x="650" y="230" width="300" height="540" rx="40" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="750" y="252" width="100" height="14" rx="7" fill="#fff" fill-opacity="0.6"/>
+  <rect x="674" y="290" width="252" height="420" rx="22" fill="#fff" fill-opacity="0.16"/>
+  <circle cx="800" cy="500" r="58" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M786 474 l44 26 l-44 26 z" fill="#fff"/>
+  <rect x="690" y="686" width="220" height="8" rx="4" fill="#fff" fill-opacity="0.35"/><rect x="690" y="686" width="130" height="8" rx="4" fill="#ff3951"/>
+  <g transform="translate(560 420)">
+    <circle r="46" fill="#fff" fill-opacity="0.16"/><circle r="46" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M-16 -4 c-10 -12 2 -30 16 -22 c14 -8 26 10 16 22 l-16 16 z" fill="#ff3951"/>
+  </g>
+  <g transform="translate(1050 350)">
+    <circle r="46" fill="#fff" fill-opacity="0.16"/><circle r="46" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M-20 -10 h40 v24 h-22 l-10 10 v-10 h-8 z" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(1040 590)">
+    <circle r="46" fill="#fff" fill-opacity="0.16"/><circle r="46" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M-18 8 l16 -24 l16 24 z M-14 14 h28 M-8 20 h16" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M606 420 c40 -60 80 -140 160 -150 M996 350 c-30 -40 -80 -80 -140 -90 M994 590 c-30 30 -70 60 -130 70" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.35" stroke-dasharray="6 12"/>
+</svg>

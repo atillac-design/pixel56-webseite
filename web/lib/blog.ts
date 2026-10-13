@@ -219,6 +219,11 @@ export function kategorieVonArtikel(a: Pick<Artikel, "kategorie">): BlogKategori
   return blogKategorien.find((k) => k.matches.includes(a.kategorie)) ?? blogKategorien[0];
 }
 
+/** CSS-Klasse für die Themengrafik eines Covers (public/bilder/blog/cover-<slug>.svg). */
+export function coverKlasse(kategorie: string): string {
+  return `kat-${kategorieVonArtikel({ kategorie }).slug}`;
+}
+
 export function artikelInKategorie(slug: string): Artikel[] {
   const kategorie = getBlogKategorie(slug);
   if (!kategorie) return [];

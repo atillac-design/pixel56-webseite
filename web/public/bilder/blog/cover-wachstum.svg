@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" preserveAspectRatio="xMidYMid slice">
+<defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity="0.14"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+<ellipse cx="800" cy="500" rx="560" ry="330" fill="url(#g)"/>
+<g stroke="#fff" fill="none" stroke-width="2" opacity="0.08">
+  <circle cx="800" cy="500" r="300"/><circle cx="800" cy="500" r="420"/><circle cx="800" cy="500" r="560"/>
+</g>
+
+  <line x1="420" y1="740" x2="1180" y2="740" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.6"/>
+  <line x1="420" y1="740" x2="420" y2="260" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.6"/>
+  <g stroke="#fff" stroke-width="2" stroke-dasharray="8 14" opacity="0.3"><line x1="420" y1="620" x2="1180" y2="620"/><line x1="420" y1="500" x2="1180" y2="500"/><line x1="420" y1="380" x2="1180" y2="380"/></g>
+  <path d="M470 690 L620 640 L770 600 L920 470 L1070 400 L1130 330 L1130 740 L470 740 z" fill="#fff" fill-opacity="0.08"/>
+  <path d="M470 690 L620 640 L770 600 L920 470 L1070 400 L1130 330" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="470" cy="690" r="12" fill="#fff" fill-opacity="0.16"/><circle cx="470" cy="690" r="12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="620" cy="640" r="12" fill="#fff" fill-opacity="0.16"/><circle cx="620" cy="640" r="12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="770" cy="600" r="12" fill="#fff" fill-opacity="0.16"/><circle cx="770" cy="600" r="12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="920" cy="470" r="12" fill="#fff" fill-opacity="0.16"/><circle cx="920" cy="470" r="12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1070" cy="400" r="12" fill="#fff" fill-opacity="0.16"/><circle cx="1070" cy="400" r="12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1130" cy="330" r="40" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.5"/>
+  <circle cx="1130" cy="330" r="22" fill="#ff3951"/>
+  <rect x="820" y="250" width="200" height="64" rx="16" fill="#fff" fill-opacity="0.16"/>
+  <rect x="820" y="250" width="200" height="64" rx="16" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.6"/>
+  <line x1="846" y1="274" x2="946" y2="274" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.7"/>
+<line x1="846" y1="292" x2="986" y2="292" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.7"/>
+</svg>

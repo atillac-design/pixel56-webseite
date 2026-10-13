@@ -5,7 +5,7 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { ArrowIcon, ClientMarquee, CloseCta, ContactStrip } from "@/components/ui";
 import { getBlogBeitraege } from "@/lib/sanity";
-import { artikel as fallbackArtikel, artikelInKategorie, blogKategorien } from "@/lib/blog";
+import { artikel as fallbackArtikel, artikelInKategorie, blogKategorien, coverKlasse } from "@/lib/blog";
 import { site } from "@/lib/site";
 import { resourceRoutes, routes } from "@/lib/routes";
 import seoFreebieImage from "@/public/bilder/freebie-seo-ebook-transparent.webp";
@@ -116,7 +116,7 @@ export default async function BlogPage() {
                   <span>NEUESTER ARTIKEL · {neuester.tag.toUpperCase()}</span>
                   <i>{neuester.meta.split(" · ")[1] ?? "LESEN"}</i>
                 </div>
-                <div className={`blog-cover ${neuester.cover}`} data-tag={neuester.tag} aria-hidden="true" />
+                <div className={`blog-cover ${neuester.cover} ${coverKlasse(neuester.tag)}`} data-tag={neuester.tag} aria-hidden="true" />
                 <strong className="bf-title">{neuester.title}</strong>
                 <p className="bf-text">{neuester.text}</p>
                 <span className="bf-meta">{datumLesbar(neuester.datum)} · Artikel lesen <ArrowIcon /></span>
@@ -164,7 +164,7 @@ export default async function BlogPage() {
           <div className="blog-grid reveal">
             {neueste.map((a) => (
               <Link className="blog-card" href={`/blog/${a.slug}`} key={a.slug}>
-                <div className={`blog-cover ${a.cover}`} data-tag={a.tag} />
+                <div className={`blog-cover ${a.cover} ${coverKlasse(a.tag)}`} data-tag={a.tag} />
                 <h3>{a.title}</h3>
                 <p>{a.text}</p>
                 <span className="bc-meta">{a.meta}{a.datum ? ` · ${datumLesbar(a.datum)}` : ""}</span>
@@ -218,7 +218,7 @@ export default async function BlogPage() {
             <div className="blog-grid reveal">
               {archiv.map((a) => (
                 <Link className="blog-card" href={`/blog/${a.slug}`} key={a.slug}>
-                  <div className={`blog-cover ${a.cover}`} data-tag={a.tag} />
+                  <div className={`blog-cover ${a.cover} ${coverKlasse(a.tag)}`} data-tag={a.tag} />
                   <h3>{a.title}</h3>
                   <p>{a.text}</p>
                   <span className="bc-meta">{a.meta}{a.datum ? ` · ${datumLesbar(a.datum)}` : ""}</span>

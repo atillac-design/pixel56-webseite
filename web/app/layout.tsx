@@ -26,9 +26,9 @@ export const metadata: Metadata = {
       "Digitale Systeme für Unternehmen: hochwertige Websites, Meta Ads, Reels, Social Content und KI-gestützte Prozesse.",
     images: [{ url: "/bilder/og-pixel56-premium.png", width: 1200, height: 630, alt: "Pixel56 — Websites, Kampagnen, Content und KI als System." }],
   },
+  // Kein eigenes twitter:image: X/Twitter nutzt dann das og:image der jeweiligen Seite.
   twitter: {
     card: "summary_large_image",
-    images: ["/bilder/og-pixel56-premium.png"],
   },
 };
 

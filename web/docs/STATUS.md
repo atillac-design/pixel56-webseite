@@ -55,6 +55,25 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Artikeltexten (`https://www.pixel56.de/...`) werden beim Rendern relativ,
   damit sie auch auf Testumgebungen funktionieren. Seitentitel langer
   Artikelüberschriften enden nicht mehr mit „…“, sondern am Doppelpunkt.
+- 13.10.2026: **Blog-Cover mit Themengrafiken und Vorschaubilder je Seite.**
+  Die Blog-Cover zeigen statt reiner Farbverläufe jetzt acht
+  Linien-Illustrationen je Thema (`public/bilder/blog/cover-<thema>.svg`,
+  erzeugt mit `node scripts/make-blog-covers.mjs`, transparent, 2 bis 6 KB).
+  Der Farbverlauf je Artikel (`c1` bis `c6`) bleibt darunter erhalten; die
+  Zuordnung läuft über `coverKlasse()` in `lib/blog.ts` bzw. die
+  Themen-Slugs. **Open Graph:** Jede Seite außer Startseite, Rechtstexten
+  und Projekt-Detailseiten bekommt ein eigenes, beim Build gerendertes
+  Vorschaubild (1200×630, `lib/og-bild.tsx` mit `ImageResponse`,
+  `opengraph-image.tsx` je Route, 24 Dateien): Logo, rote Themenzeile,
+  Titel, Kurztext, Themengrafik, Fußzeile. Standortseiten (291),
+  Blogartikel, Themen und Ressourcen nutzen `generateStaticParams`, damit
+  die Bilder statisch entstehen (Build: 742 statt 386 Routen, etwa 30 s
+  mehr). Projekt-Detailseiten behalten ihr echtes Projektfoto als og:image,
+  die Startseite das vorhandene Premium-Bild. Schrift: Inter als
+  Latin-Subset (`assets/fonts`, OFL, 36 KB je Schnitt). Das globale
+  `twitter:image` im Layout ist entfernt, damit X das jeweilige og:image
+  nutzt. Prüfung: Build, Crawl (0 defekte Links), Sichtprüfung von acht
+  Bildern und der Blogseiten.
 - 13.10.2026: **16 alte Blogartikel neu geschrieben.** Von den 31 aus Webflow
   übernommenen Artikeln sprachen 14 den Leser mit „Sie“ an; dazu kamen ein
   Lorem-ipsum-Teaser, eine „Wir als Unternehmen“-Perspektive, abgebrochene

@@ -491,7 +491,16 @@ footer.site-footer { border-top: 1px solid var(--line); padding: 70px 0 0; }
 .blog-card { display: flex; flex-direction: column; text-decoration: none; transition: transform 0.3s cubic-bezier(0.2,0.7,0.2,1); }
 .blog-card:hover { transform: translateY(-4px); }
 .blog-cover { aspect-ratio: 16/10; margin-bottom: 18px; position: relative; overflow: hidden; border: 1px solid var(--line-strong); border-radius: 16px; }
-.blog-cover::before { content: attr(data-tag); position: absolute; top: 14px; left: 14px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: rgba(255,255,255,0.9); text-transform: uppercase; background: rgba(7,7,12,0.5); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 5px 12px; }
+.blog-cover::before { content: attr(data-tag); z-index: 1; position: absolute; top: 14px; left: 14px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: rgba(255,255,255,0.9); text-transform: uppercase; background: rgba(7,7,12,0.5); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 5px 12px; }
+.blog-cover::after { content: ""; position: absolute; inset: 0; background: center / cover no-repeat; pointer-events: none; }
+.blog-cover.kat-webdesign::after { background-image: url("/bilder/blog/cover-webdesign.svg"); }
+.blog-cover.kat-seo::after { background-image: url("/bilder/blog/cover-seo.svg"); }
+.blog-cover.kat-meta-ads::after { background-image: url("/bilder/blog/cover-meta-ads.svg"); }
+.blog-cover.kat-soziale-medien::after { background-image: url("/bilder/blog/cover-soziale-medien.svg"); }
+.blog-cover.kat-kunstliche-intelligenz::after { background-image: url("/bilder/blog/cover-kunstliche-intelligenz.svg"); }
+.blog-cover.kat-wachstum::after { background-image: url("/bilder/blog/cover-wachstum.svg"); }
+.blog-cover.kat-marketing-tools::after { background-image: url("/bilder/blog/cover-marketing-tools.svg"); }
+.blog-cover.kat-webseite::after { background-image: url("/bilder/blog/cover-webseite.svg"); }
 .blog-cover.c1 { background: linear-gradient(135deg, #2a0f18, #ff3951 160%); }
 .blog-cover.c2 { background: linear-gradient(135deg, #10131f, #3f80fd 170%); }
 .blog-cover.c3 { background: linear-gradient(135deg, #2b1118, #ff6073 180%); }

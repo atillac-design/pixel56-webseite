@@ -6,7 +6,7 @@ import { cache } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { ArrowIcon, CloseCta, ContactStrip } from "@/components/ui";
-import { aehnlicheArtikel, artikel, getArtikel, kategorieVonArtikel, relativeLinks, type Artikel, type Block } from "@/lib/blog";
+import { aehnlicheArtikel, artikel, coverKlasse, getArtikel, kategorieVonArtikel, relativeLinks, type Artikel, type Block } from "@/lib/blog";
 import { getBlogBeitrag } from "@/lib/sanity";
 import { site } from "@/lib/site";
 import { resourceRoutes, routes } from "@/lib/routes";
@@ -178,7 +178,7 @@ export default async function ArtikelPage({ params }: Props) {
           </div>
         </div>
 
-        <div className={`article-cover blog-cover ${a.cover}`} data-tag={kategorie.label} aria-hidden="true" />
+        <div className={`article-cover blog-cover ${a.cover} kat-${kategorie.slug}`} data-tag={kategorie.label} aria-hidden="true" />
 
         <div className="article-body">
           <p className="lead-intro">{a.intro}</p>
@@ -247,7 +247,7 @@ export default async function ArtikelPage({ params }: Props) {
         <div className="blog-grid reveal">
           {weitere.map((w) => (
             <Link className="blog-card" href={`/blog/${w.slug}`} key={w.slug}>
-              <div className={`blog-cover ${w.cover}`} data-tag={w.kategorie} />
+              <div className={`blog-cover ${w.cover} ${coverKlasse(w.kategorie)}`} data-tag={w.kategorie} />
               <h3>{w.titel}</h3>
               <p>{w.teaser}</p>
               <span className="bc-meta">{w.kategorie} · {w.lesezeit} Min. Lesezeit</span>

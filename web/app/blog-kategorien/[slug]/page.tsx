@@ -91,7 +91,7 @@ export default async function BlogKategoriePage({ params }: Props) {
                   <span>NEUESTER ARTIKEL · {kategorie.label.toUpperCase()}</span>
                   <i>{beitraege[0].lesezeit} MIN.</i>
                 </div>
-                <div className={`blog-cover ${beitraege[0].cover}`} data-tag={kategorie.label} aria-hidden="true" />
+                <div className={`blog-cover ${beitraege[0].cover} kat-${kategorie.slug}`} data-tag={kategorie.label} aria-hidden="true" />
                 <strong className="bf-title">{beitraege[0].titel}</strong>
                 <p className="bf-text">{beitraege[0].teaser}</p>
                 <span className="bf-meta">{datumLesbar(beitraege[0].datum)} · Artikel lesen <ArrowIcon /></span>
@@ -120,7 +120,7 @@ export default async function BlogKategoriePage({ params }: Props) {
           <div className="blog-grid reveal">
             {beitraege.map((beitrag) => (
               <Link className="blog-card" href={`/blog/${beitrag.slug}`} key={beitrag.slug}>
-                <div className={`blog-cover ${beitrag.cover}`} data-tag={kategorie.label} />
+                <div className={`blog-cover ${beitrag.cover} kat-${kategorie.slug}`} data-tag={kategorie.label} />
                 <h3>{beitrag.titel}</h3>
                 <p>{beitrag.teaser}</p>
                 <span className="bc-meta">{beitrag.lesezeit} Min. Lesezeit{beitrag.datum ? ` · ${datumLesbar(beitrag.datum)}` : ""}</span>

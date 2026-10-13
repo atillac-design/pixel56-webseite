@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" preserveAspectRatio="xMidYMid slice">
+<defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity="0.14"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+<ellipse cx="800" cy="500" rx="560" ry="330" fill="url(#g)"/>
+<g stroke="#fff" fill="none" stroke-width="2" opacity="0.08">
+  <circle cx="800" cy="500" r="300"/><circle cx="800" cy="500" r="420"/><circle cx="800" cy="500" r="560"/>
+</g>
+
+  
+  <rect x="470" y="280" width="660" height="440" rx="22" fill="#fff" fill-opacity="0.09"/>
+  <rect x="470" y="280" width="660" height="440" rx="22" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="470" y1="336" x2="1130" y2="336" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="500" cy="308" r="7" fill="#ff3951"/><circle cx="526" cy="308" r="7" fill="#fff" fill-opacity="0.7"/><circle cx="552" cy="308" r="7" fill="#fff" fill-opacity="0.7"/>
+  <rect x="520" y="380" width="250" height="300" rx="14" fill="#fff" fill-opacity="0.16"/>
+  <line x1="545" y1="420" x2="725" y2="420" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.7"/>
+<line x1="545" y1="446" x2="685" y2="446" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.7"/>
+<line x1="545" y1="472" x2="705" y2="472" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.7"/>
+<line x1="545" y1="498" x2="655" y2="498" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.7"/>
+  <rect x="545" y="560" width="130" height="44" rx="12" fill="#ff3951"/>
+  <g transform="translate(950 560)">
+    <path d="M-130 0 a130 130 0 0 1 260 0" stroke="#fff" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.3"/>
+    <path d="M-130 0 a130 130 0 0 1 184 -92" stroke="#ff3951" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="0" y1="0" x2="60" y2="-96" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+    <circle r="16" fill="#fff"/>
+  </g>
+  <circle cx="1190" cy="330" r="40" fill="#fff" fill-opacity="0.16"/><circle cx="1190" cy="330" r="40" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1170 330 l14 14 l28 -30" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
