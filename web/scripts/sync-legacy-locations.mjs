@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { cleanLocationBlocks, sortLocations } from "./legacy-location-blocks.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const manifest = JSON.parse(readFileSync(resolve(root, "data/legacy-urls.json"), "utf8"));
@@ -70,14 +71,19 @@ async function migrate(route) {
   const title = capture(html, /<title>([\s\S]*?)<\/title>/i, `${service} in ${city}`);
   const description = capture(html, /<meta content="([^"]*)" name="description"/i);
   const heroLead = capture(html, /<p[^>]*class="f-paragraph-large-7"[^>]*>([\s\S]*?)<\/p>/i, description);
-  const body = contentBlocks(html).filter((block) => block.text !== city && block.text !== service);
+  const slug = route.sourcePath.replace("/locations/", "");
+  const body = cleanLocationBlocks(
+    contentBlocks(html).filter((block) => block.text !== city && block.text !== service),
+    slug,
+    service,
+  );
 
   if (!city || !title || !description || body.length < 3) {
     throw new Error(`${route.sourcePath}: Standortstruktur unvollständig`);
   }
 
   return {
-    slug: route.sourcePath.replace("/locations/", ""),
+    slug,
     stadt: city,
     leistung: service,
     titel: title,
@@ -103,7 +109,6 @@ async function migrateAll(routes, concurrency = 8) {
 }
 
 const routes = manifest.routes.filter((route) => route.type === "location");
-const locations = await migrateAll(routes);
-locations.sort((a, b) => a.slug.localeCompare(b.slug, "de"));
+const locations = sortLocations(await migrateAll(routes));
 writeFileSync(outputPath, `${JSON.stringify(locations, null, 2)}\n`);
 console.log(`${locations.length} Standortseiten nach ${outputPath} migriert.`);

@@ -1,7 +1,7 @@
 {
   "source": "https://www.pixel56.de/sitemap.xml",
   "generatedAt": "2026-08-13T22:02:04.102Z",
-  "total": 240,
+  "total": 365,
   "counts": {
     "byType": {
       "core": 20,
@@ -11,13 +11,13 @@
       "portfolio": 10,
       "job": 1,
       "blog-category": 8,
-      "location": 166
+      "location": 291
     },
     "byAction": {
       "preserve": 70,
       "exclude": 3,
       "redirect": 1,
-      "review": 166
+      "review": 291
     }
   },
   "routes": [
@@ -1940,6 +1940,1014 @@
       "action": "review",
       "targetPath": "/locations/zurich-meta-ads",
       "note": "Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/aachen-meta-ads",
+      "sourcePath": "/locations/aachen-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/aachen-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/aachen-seo",
+      "sourcePath": "/locations/aachen-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/aachen-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/ahrweiler",
+      "sourcePath": "/locations/ahrweiler",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/ahrweiler",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/ahrweiler-google-ads",
+      "sourcePath": "/locations/ahrweiler-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/ahrweiler-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/altenkirchen",
+      "sourcePath": "/locations/altenkirchen",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/altenkirchen",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/altenkirchen-google-ads",
+      "sourcePath": "/locations/altenkirchen-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/altenkirchen-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/andernach-seo",
+      "sourcePath": "/locations/andernach-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/andernach-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/andernach-social-media",
+      "sourcePath": "/locations/andernach-social-media",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/andernach-social-media",
+      "note": "Einzeln in Webflow publiziert (2026-07-30) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/augsburg-meta-ads",
+      "sourcePath": "/locations/augsburg-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/augsburg-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bad-ems",
+      "sourcePath": "/locations/bad-ems",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bad-ems",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bad-ems-google-ads",
+      "sourcePath": "/locations/bad-ems-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bad-ems-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/basel-google-ads",
+      "sourcePath": "/locations/basel-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/basel-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bendorf-seo",
+      "sourcePath": "/locations/bendorf-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bendorf-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bendorf-social-media",
+      "sourcePath": "/locations/bendorf-social-media",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bendorf-social-media",
+      "note": "Einzeln in Webflow publiziert (2026-07-30) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/berlin-seo",
+      "sourcePath": "/locations/berlin-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/berlin-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bern-google-ads",
+      "sourcePath": "/locations/bern-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bern-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/biel-bienne-google-ads",
+      "sourcePath": "/locations/biel-bienne-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/biel-bienne-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/biel-bienne-meta-ads",
+      "sourcePath": "/locations/biel-bienne-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/biel-bienne-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bielefeld-meta-ads",
+      "sourcePath": "/locations/bielefeld-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bielefeld-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bochum-meta-ads",
+      "sourcePath": "/locations/bochum-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bochum-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bonn-seo",
+      "sourcePath": "/locations/bonn-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bonn-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/braunschweig-meta-ads",
+      "sourcePath": "/locations/braunschweig-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/braunschweig-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/bremen-meta-ads",
+      "sourcePath": "/locations/bremen-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/bremen-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/chemnitz-meta-ads",
+      "sourcePath": "/locations/chemnitz-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/chemnitz-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/cochem",
+      "sourcePath": "/locations/cochem",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/cochem",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/cochem-google-ads",
+      "sourcePath": "/locations/cochem-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/cochem-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/diez",
+      "sourcePath": "/locations/diez",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/diez",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/diez-google-ads",
+      "sourcePath": "/locations/diez-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/diez-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/dornbirn-google-ads",
+      "sourcePath": "/locations/dornbirn-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/dornbirn-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/dornbirn-meta-ads",
+      "sourcePath": "/locations/dornbirn-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/dornbirn-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/dortmund-seo",
+      "sourcePath": "/locations/dortmund-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/dortmund-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/dresden-meta-ads",
+      "sourcePath": "/locations/dresden-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/dresden-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/duesseldorf-seo",
+      "sourcePath": "/locations/duesseldorf-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/duesseldorf-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/emmelshausen",
+      "sourcePath": "/locations/emmelshausen",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/emmelshausen",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/emmelshausen-google-ads",
+      "sourcePath": "/locations/emmelshausen-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/emmelshausen-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/essen-meta-ads",
+      "sourcePath": "/locations/essen-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/essen-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/frankfurt-seo",
+      "sourcePath": "/locations/frankfurt-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/frankfurt-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/gelsenkirchen-meta-ads",
+      "sourcePath": "/locations/gelsenkirchen-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/gelsenkirchen-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/genf-google-ads",
+      "sourcePath": "/locations/genf-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/genf-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/halle-meta-ads",
+      "sourcePath": "/locations/halle-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/halle-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/hamburg-seo",
+      "sourcePath": "/locations/hamburg-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/hamburg-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/hannover-meta-ads",
+      "sourcePath": "/locations/hannover-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/hannover-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/hohr-grenzhausen-seo",
+      "sourcePath": "/locations/hohr-grenzhausen-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/hohr-grenzhausen-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/hohr-grenzhausen-social-media",
+      "sourcePath": "/locations/hohr-grenzhausen-social-media",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/hohr-grenzhausen-social-media",
+      "note": "Einzeln in Webflow publiziert (2026-07-30) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/innsbruck-google-ads",
+      "sourcePath": "/locations/innsbruck-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/innsbruck-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/karlsruhe-meta-ads",
+      "sourcePath": "/locations/karlsruhe-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/karlsruhe-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/kiel-meta-ads",
+      "sourcePath": "/locations/kiel-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/kiel-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/klagenfurt-google-ads",
+      "sourcePath": "/locations/klagenfurt-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/klagenfurt-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/klagenfurt-meta-ads",
+      "sourcePath": "/locations/klagenfurt-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/klagenfurt-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/koblenz-seo",
+      "sourcePath": "/locations/koblenz-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/koblenz-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/koblenz-social-media",
+      "sourcePath": "/locations/koblenz-social-media",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/koblenz-social-media",
+      "note": "Einzeln in Webflow publiziert (2026-07-30) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/koeln-seo",
+      "sourcePath": "/locations/koeln-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/koeln-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/lahnstein-seo",
+      "sourcePath": "/locations/lahnstein-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/lahnstein-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/lahnstein-social-media",
+      "sourcePath": "/locations/lahnstein-social-media",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/lahnstein-social-media",
+      "note": "Einzeln in Webflow publiziert (2026-07-30) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/lausanne-google-ads",
+      "sourcePath": "/locations/lausanne-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/lausanne-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/leipzig-seo",
+      "sourcePath": "/locations/leipzig-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/leipzig-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/limburg-google-ads",
+      "sourcePath": "/locations/limburg-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/limburg-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/limburg-seo",
+      "sourcePath": "/locations/limburg-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/limburg-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/limburg-social-media",
+      "sourcePath": "/locations/limburg-social-media",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/limburg-social-media",
+      "note": "Einzeln in Webflow publiziert (2026-07-30) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/linz-google-ads",
+      "sourcePath": "/locations/linz-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/linz-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/lugano-google-ads",
+      "sourcePath": "/locations/lugano-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/lugano-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/lugano-meta-ads",
+      "sourcePath": "/locations/lugano-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/lugano-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/luzern-google-ads",
+      "sourcePath": "/locations/luzern-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/luzern-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/luzern-meta-ads",
+      "sourcePath": "/locations/luzern-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/luzern-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mainz",
+      "sourcePath": "/locations/mainz",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mainz",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mainz-google-ads",
+      "sourcePath": "/locations/mainz-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mainz-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mainz-seo",
+      "sourcePath": "/locations/mainz-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mainz-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mannheim-meta-ads",
+      "sourcePath": "/locations/mannheim-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mannheim-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mayen-google-ads",
+      "sourcePath": "/locations/mayen-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mayen-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mayen-seo",
+      "sourcePath": "/locations/mayen-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mayen-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mayen-social-media",
+      "sourcePath": "/locations/mayen-social-media",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mayen-social-media",
+      "note": "Einzeln in Webflow publiziert (2026-07-30) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/moenchengladbach-meta-ads",
+      "sourcePath": "/locations/moenchengladbach-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/moenchengladbach-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/moenchengladbach-seo",
+      "sourcePath": "/locations/moenchengladbach-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/moenchengladbach-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/montabaur",
+      "sourcePath": "/locations/montabaur",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/montabaur",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/montabaur-google-ads",
+      "sourcePath": "/locations/montabaur-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/montabaur-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/montabaur-seo",
+      "sourcePath": "/locations/montabaur-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/montabaur-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/montabaur-social-media",
+      "sourcePath": "/locations/montabaur-social-media",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/montabaur-social-media",
+      "note": "Einzeln in Webflow publiziert (2026-07-30) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/morfelden-walldorf-google-ads",
+      "sourcePath": "/locations/morfelden-walldorf-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/morfelden-walldorf-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/morfelden-walldorf-meta-ads",
+      "sourcePath": "/locations/morfelden-walldorf-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/morfelden-walldorf-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/muenchen-seo",
+      "sourcePath": "/locations/muenchen-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/muenchen-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/muenster-meta-ads",
+      "sourcePath": "/locations/muenster-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/muenster-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mulheim-karlich-seo",
+      "sourcePath": "/locations/mulheim-karlich-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mulheim-karlich-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/mulheim-karlich-social-media",
+      "sourcePath": "/locations/mulheim-karlich-social-media",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/mulheim-karlich-social-media",
+      "note": "Einzeln in Webflow publiziert (2026-07-30) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/nassau",
+      "sourcePath": "/locations/nassau",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/nassau",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/nassau-google-ads",
+      "sourcePath": "/locations/nassau-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/nassau-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/neuwied-seo",
+      "sourcePath": "/locations/neuwied-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/neuwied-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/neuwied-social-media",
+      "sourcePath": "/locations/neuwied-social-media",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/neuwied-social-media",
+      "note": "Einzeln in Webflow publiziert (2026-07-30) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/nuernberg-seo",
+      "sourcePath": "/locations/nuernberg-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/nuernberg-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/plaidt-google-ads",
+      "sourcePath": "/locations/plaidt-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/plaidt-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/ransbach-baumbach-seo",
+      "sourcePath": "/locations/ransbach-baumbach-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/ransbach-baumbach-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/ransbach-baumbach-social-media",
+      "sourcePath": "/locations/ransbach-baumbach-social-media",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/ransbach-baumbach-social-media",
+      "note": "Einzeln in Webflow publiziert (2026-07-30) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/salzburg-google-ads",
+      "sourcePath": "/locations/salzburg-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/salzburg-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/siershahn",
+      "sourcePath": "/locations/siershahn",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/siershahn",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/siershahn-google-ads",
+      "sourcePath": "/locations/siershahn-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/siershahn-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/simmern",
+      "sourcePath": "/locations/simmern",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/simmern",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/simmern-google-ads",
+      "sourcePath": "/locations/simmern-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/simmern-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/st-gallen-google-ads",
+      "sourcePath": "/locations/st-gallen-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/st-gallen-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/st-gallen-meta-ads",
+      "sourcePath": "/locations/st-gallen-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/st-gallen-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/st-poelten-google-ads",
+      "sourcePath": "/locations/st-poelten-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/st-poelten-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/st-poelten-meta-ads",
+      "sourcePath": "/locations/st-poelten-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/st-poelten-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/stuttgart-seo",
+      "sourcePath": "/locations/stuttgart-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/stuttgart-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/trier",
+      "sourcePath": "/locations/trier",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/trier",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/trier-google-ads",
+      "sourcePath": "/locations/trier-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/trier-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/trier-seo",
+      "sourcePath": "/locations/trier-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/trier-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/urmitz-google-ads",
+      "sourcePath": "/locations/urmitz-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/urmitz-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/vallendar-seo",
+      "sourcePath": "/locations/vallendar-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/vallendar-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-30) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/vallendar-social-media",
+      "sourcePath": "/locations/vallendar-social-media",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/vallendar-social-media",
+      "note": "Einzeln in Webflow publiziert (2026-07-30) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/villach-google-ads",
+      "sourcePath": "/locations/villach-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/villach-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/villach-meta-ads",
+      "sourcePath": "/locations/villach-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/villach-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/weissenthurm-seo",
+      "sourcePath": "/locations/weissenthurm-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/weissenthurm-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/weissenthurm-social-media",
+      "sourcePath": "/locations/weissenthurm-social-media",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/weissenthurm-social-media",
+      "note": "Einzeln in Webflow publiziert (2026-07-30) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wels-google-ads",
+      "sourcePath": "/locations/wels-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wels-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wels-meta-ads",
+      "sourcePath": "/locations/wels-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wels-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/westerburg",
+      "sourcePath": "/locations/westerburg",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/westerburg",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/westerburg-google-ads",
+      "sourcePath": "/locations/westerburg-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/westerburg-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wien-google-ads",
+      "sourcePath": "/locations/wien-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wien-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wiesbaden-seo",
+      "sourcePath": "/locations/wiesbaden-seo",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wiesbaden-seo",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/winterthur-google-ads",
+      "sourcePath": "/locations/winterthur-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/winterthur-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/winterthur-meta-ads",
+      "sourcePath": "/locations/winterthur-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/winterthur-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wirges",
+      "sourcePath": "/locations/wirges",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wirges",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wirges-google-ads",
+      "sourcePath": "/locations/wirges-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wirges-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wissen",
+      "sourcePath": "/locations/wissen",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wissen",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wissen-google-ads",
+      "sourcePath": "/locations/wissen-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wissen-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/wuppertal-meta-ads",
+      "sourcePath": "/locations/wuppertal-meta-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/wuppertal-meta-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    },
+    {
+      "sourceUrl": "https://www.pixel56.de/locations/zuerich-google-ads",
+      "sourcePath": "/locations/zuerich-google-ads",
+      "type": "location",
+      "action": "review",
+      "targetPath": "/locations/zuerich-google-ads",
+      "note": "Einzeln in Webflow publiziert (2026-07-29) und daher nicht in der Sitemap, aus der das Manifest stammt; am 2026-10-13 aus dem CMS-Export ergänzt. Vor Livegang GSC, Backlinks und lokale Einzigartigkeit prüfen; nicht pauschal umleiten."
+    }
+  ],
+  "supplements": [
+    {
+      "source": "Webflow CMS, Collection „Locations“ (681d2e9713ad40017667e637)",
+      "mergedAt": "2026-10-13T00:41:02.669Z",
+      "addedRoutes": 125,
+      "reason": "Einzeln publizierte CMS-Einträge fehlen in der Webflow-Sitemap, bis die gesamte Site erneut publiziert wird. Ergänzt ohne Publish aus dem CMS-Export."
     }
   ]
 }

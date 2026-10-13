@@ -2,7 +2,7 @@
  * Datenschicht für die Standortseiten. Später kommen diese Einträge aus dem
  * CMS (Sanity) — die Seiten-Vorlage in app/standorte/[slug]/ bleibt gleich.
  *
- * Achtung (siehe README): Bei ~166 Städten droht Thin-Content. Jede Stadt
+ * Achtung (siehe README): Bei 291 Standortseiten droht Thin-Content. Jede Stadt
  * braucht individuelle Text-Bausteine, bevor sie live geht.
  */
 
