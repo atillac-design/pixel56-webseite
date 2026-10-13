@@ -440,7 +440,10 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Provision, Repo `atillac-design/Teykto-Claude`, Fakten aus README und
   `docs/STAND-UND-NAECHSTE-SCHRITTE.md`, Pilotphase; Teykto konnte lokal nicht
   gestartet werden, da `npm install` im Fremd-Repo vom Auto-Modus blockiert
-  wurde, deshalb Browser-Mockup statt Screenshot), KMU-Webseiten.de (Repo
+  wurde; der Inhaber hat danach einen Screenshot der Bestellseite geliefert,
+  oberer Ausschnitt als `public/bilder/ki-projekt-teykto.webp`, Quelle nur
+  630 px breit, daher auf 945 px begrenzt, schärferes Bild erbeten),
+  KMU-Webseiten.de (Repo
   `atillac-design/kmu-webseiten`, Make-Flows laut `docs/make-lead.md` und
   `docs/make-onboarding.md` live, Entwurfs-Fabrik laut `docs/entwurfs-fabrik.md`;
   Screenshot des Demo-Entwurfs aus lokalem Astro-Build als
@@ -460,6 +463,10 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   „Konzeption“, Buchung mit Kalender-Anbindung, Online-Zahlung (Barzahlung
   einstellbar), automatische Bestätigung per E-Mail, eigener Raum für
   Workshops und Seminare.
+- 13.10.2026: **Nachtrag eigene Projekte.** Inhaber nennt zusätzlich
+  `adloc.io` als eigenes Produkt; öffentlich war dazu nichts zu finden und
+  die Domain ist aus der Sandbox nicht erreichbar. Wartet auf Beschreibung
+  und Screenshot, dann als weiteres Projekt auf die KI-Seite.
 
 ## Verifiziert am 13.10.2026
 
