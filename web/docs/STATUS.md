@@ -448,7 +448,14 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   (`public/bilder/ki-projekt-pixel56-website.webp`, Standortkarte). Das vom
   Inhaber genannte Live-Dashboard „Zentrale“ (atilla.ci) war in keinem der
   Repos (auch nicht `AI-Agent`, `chrono` (leer), `Leads-Finder`) zu finden
-  und fehlt deshalb noch. CurlyAnn-Fallstudie nach Angaben des Inhabers
+  und fehlt deshalb noch. Nachtrag: Die Zentrale ist eine KI-Anwendung im
+  Chat (Artefakt), kein Repo. Inhaber hat einen Screenshot geliefert; die
+  isometrische Projektkarte daraus liegt als `public/bilder/ki-projekt-zentrale.webp`
+  und ist als viertes eigenes Projekt eingetragen (Live-Stand, Fortschritt je
+  Vorhaben, Tagesplanung per „Was mache ich heute?“, Level und XP). Auf dem
+  Ausschnitt sind interne Stände sichtbar (z. B. „KMU-Webseiten verkaufen
+  25 %“, „Erste Restaurants 0/3“); der Inhaber entscheidet, ob das so bleibt.
+  CurlyAnn-Fallstudie nach Angaben des Inhabers
   erweitert: Branche „Coaching & Workshops“, Tag „Branding“ statt
   „Konzeption“, Buchung mit Kalender-Anbindung, Online-Zahlung (Barzahlung
   einstellbar), automatische Bestätigung per E-Mail, eigener Raum für

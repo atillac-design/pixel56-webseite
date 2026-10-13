@@ -191,6 +191,20 @@ const eigeneProjekte: DetailEintrag[] = [
     hinweis: "Produkt von Pixel56, mit KI entwickelt und betrieben.",
   },
   {
+    kicker: "Eigenes Werkzeug · Live-Dashboard",
+    titel: "Zentrale: ein Live-Dashboard für den eigenen Betrieb",
+    text: "Alle Projekte, Ziele und offenen Aufgaben auf einer Karte: Jedes Vorhaben ist ein Gebäude, der Fortschritt steht dran, der Stand wird live gespeichert. Ein Klick auf „Was mache ich heute?“ und die KI schlägt die Prioritäten für den Tag vor.",
+    punkte: [
+      "Hauptziel und Nebenprojekte mit Fortschritt in Prozent und offenen Punkten je Vorhaben",
+      "Stand wird live gespeichert, auf dem Handy genauso wie am Rechner",
+      "Tagesplanung per KI: „Was mache ich heute?“ liefert die nächsten Schritte",
+      "Spielerische Motivation mit Level, Erfahrungspunkten und Missionen",
+    ],
+    bild: "/bilder/ki-projekt-zentrale.webp",
+    bildAlt: "Zentrale: isometrische Projektkarte mit Fortschritt je Vorhaben, Hauptquest Pixel56, KMU-Webseiten und Teykto",
+    hinweis: "Eigenes Werkzeug, als interaktive KI-Anwendung direkt im Chat gebaut, ohne eigenen Server. Für andere Betriebe als Dashboard mit ihren Zahlen umsetzbar.",
+  },
+  {
     kicker: "Eigene Website · Technik & Inhalte",
     titel: "Diese Website: mit KI gebaut, in Tagen statt Monaten",
     text: "Die Seite, die du gerade liest, ist aus Webflow in ein eigenes System umgezogen. Inhalte, Standortseiten, Vorschaubilder und Werkzeuge entstanden mit KI-Unterstützung, geprüft und freigegeben von Menschen.",
