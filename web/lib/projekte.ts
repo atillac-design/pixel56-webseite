@@ -11,6 +11,9 @@ export type Stimme = {
   img?: string;
 };
 
+/** Ausgangslage für den Vorher-nachher-Vergleich, schematisch dargestellt (kein Screenshot). */
+export type VorherArt = "keine-website" | "veraltet" | "social";
+
 export type Fallstudie = {
   slug: string;
   kunde: string;
@@ -21,6 +24,8 @@ export type Fallstudie = {
   bild?: string;
   /** Screenshot des alten Auftritts (Pfad unter public/) für den Vorher-nachher-Vergleich; braucht auch `bild`. */
   vorher?: string;
+  /** Alternativ zur Datei: Ausgangslage als neutrale Skizze. Wird ignoriert, wenn `vorher` gesetzt ist. */
+  vorherArt?: VorherArt;
   /** Weitere Einblicke auf der Detailseite. */
   galerie?: string[];
   /** Bildunterschrift zum ersten Galeriebild, z. B. wenn es ein Beispiel aus einem anderen Projekt ist. */
@@ -82,6 +87,7 @@ export const fallstudien: Fallstudie[] = [
   },
   {
     slug: "ma-transporte",
+    vorherArt: "veraltet",
     kunde: "M&A Transporte GmbH",
     branche: "Transport & Logistik",
     jahr: "seit 2019",
@@ -160,6 +166,7 @@ export const fallstudien: Fallstudie[] = [
   },
   {
     slug: "gm-dachdecker",
+    vorherArt: "keine-website",
     kunde: "GM-Dachdecker Meisterbetrieb",
     branche: "Handwerk & Bau",
     jahr: "2023",
@@ -201,6 +208,7 @@ export const fallstudien: Fallstudie[] = [
   },
   {
     slug: "mdu-bedachungen",
+    vorherArt: "keine-website",
     kunde: "MDU Bedachungen",
     branche: "Handwerk & Bau",
     jahr: "2024",
@@ -232,6 +240,7 @@ export const fallstudien: Fallstudie[] = [
   },
   {
     slug: "oktay-coemertler",
+    vorherArt: "keine-website",
     kunde: "Oktay Cömertler",
     branche: "Abbruch, Tief- & Kanalbau",
     jahr: "2018–2023",
@@ -269,6 +278,7 @@ export const fallstudien: Fallstudie[] = [
   },
   {
     slug: "cass-schulungen",
+    vorherArt: "veraltet",
     kunde: "CASS Schulungen",
     branche: "Bildung & Sicherheit",
     jahr: "2023",
@@ -335,6 +345,7 @@ export const fallstudien: Fallstudie[] = [
   },
   {
     slug: "lernforum-obertshausen",
+    vorherArt: "veraltet",
     kunde: "Lernforum Obertshausen",
     branche: "Bildung & Nachhilfe",
     jahr: "2023",
@@ -371,6 +382,7 @@ export const fallstudien: Fallstudie[] = [
   },
   {
     slug: "curlyann",
+    vorherArt: "veraltet",
     kunde: "CurlyAnn Atelier",
     branche: "Kreativ & Workshops",
     jahr: "2024",
@@ -402,6 +414,7 @@ export const fallstudien: Fallstudie[] = [
   },
   {
     slug: "cavar-home",
+    vorherArt: "keine-website",
     kunde: "Cavar Home",
     branche: "E-Commerce & Living",
     jahr: "2023",
@@ -432,6 +445,7 @@ export const fallstudien: Fallstudie[] = [
   },
   {
     slug: "discounthaus-holding",
+    vorherArt: "keine-website",
     kunde: "DiscountHaus Holding",
     branche: "Container- & Modulbau",
     jahr: "2023",
@@ -463,6 +477,7 @@ export const fallstudien: Fallstudie[] = [
   },
   {
     slug: "schluesselfertig-immobilien",
+    vorherArt: "keine-website",
     kunde: "Schlüsselfertig-Immobilien",
     branche: "Immobilien",
     jahr: "2022",
@@ -584,6 +599,7 @@ export const fallstudien: Fallstudie[] = [
   },
   {
     slug: "colak-gmbh",
+    vorherArt: "veraltet",
     kunde: "Colak GmbH",
     branche: "Trocknungstechnologien",
     jahr: "2020–2021",

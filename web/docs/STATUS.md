@@ -55,6 +55,22 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Artikeltexten (`https://www.pixel56.de/...`) werden beim Rendern relativ,
   damit sie auch auf Testumgebungen funktionieren. Seitentitel langer
   Artikelüberschriften enden nicht mehr mit „…“, sondern am Doppelpunkt.
+- 13.10.2026: **Vorher-nachher mit schematischer Ausgangslage.** Weil die meisten
+  Kunden vorher keine Website hatten, zeigt der Schieber links statt eines
+  Screenshots eine neutrale Skizze (`components/VorherSchema.tsx`, Feld
+  `vorherArt` an `Fallstudie`): „keine-website“ (Suchmaske mit Verzeichnissen
+  und Mitbewerbern, Hinweis „Kein eigener Auftritt“), „veraltet“ (graues
+  Wireframe ohne Kundenlogo mit den Marken „Nicht für Handys gebaut, Kontakt
+  versteckt, Keine Leistungsseiten“) und „social“ (nur Social-Media-Profil).
+  Beschriftung „Vorher · schematisch“, der Begleittext sagt ausdrücklich, dass
+  es kein Screenshot ist. Ein echtes Vorher-Bild (`vorher`) hat Vorrang.
+  Zuordnung nach den Ausgangslage-Texten der Fallstudien, vom Inhaber noch zu
+  bestätigen: keine-website für MDU Bedachungen, Oktay Cömertler, Cavar Home,
+  DiscountHaus Holding, Schlüsselfertig-Immobilien, GM-Dachdecker; veraltet
+  für M&A Transporte, CASS Schulungen, Lernforum Obertshausen, CurlyAnn, Colak
+  GmbH. Kein Vergleich bei Projekten ohne Website-Bezug (Stark ins Neue, Van
+  den Berg, Sportler für Kinderherzen, Berkan Kaya) oder ohne Bild (DEMA,
+  Burgerfabrik).
 - 13.10.2026: **Branchen-Leitfaden und Richtwerte im Budget-Planer.** Neue Datei
   `lib/meta-ads-branchen.ts` mit sieben Branchen (Handwerk & Bau, Transport &
   Logistik, Bildung & Soziales, Immobilien & Modulbau, Dienstleistung &

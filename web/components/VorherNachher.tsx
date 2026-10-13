@@ -1,13 +1,15 @@
 "use client";
 
 import { useId, useState } from "react";
+import VorherSchema from "@/components/VorherSchema";
+import type { VorherArt } from "@/lib/projekte";
 
 /**
  * Vorher-nachher-Vergleich zweier Bilder mit Schieberegler. Der unsichtbare
  * Bereichsregler liegt über dem Bild und macht den Vergleich per Maus, Touch
  * und Tastatur (Pfeiltasten) bedienbar.
  */
-export default function VorherNachher({ vorher, nachher, kunde }: { vorher: string; nachher: string; kunde: string }) {
+export default function VorherNachher({ vorher, vorherArt, nachher, kunde }: { vorher?: string; vorherArt?: VorherArt; nachher: string; kunde: string }) {
   const [pos, setPos] = useState(50);
   const id = useId();
   return (
@@ -18,9 +20,13 @@ export default function VorherNachher({ vorher, nachher, kunde }: { vorher: stri
         <span className="vn-label rechts">Nachher</span>
       </div>
       <div className="vn-bild vn-vorher" aria-hidden="true">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={vorher} alt="" loading="lazy" decoding="async" />
-        <span className="vn-label links">Vorher</span>
+        {vorher ? (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img src={vorher} alt="" loading="lazy" decoding="async" />
+        ) : (
+          <VorherSchema art={vorherArt ?? "keine-website"} kunde={kunde} />
+        )}
+        <span className="vn-label links">{vorher ? "Vorher" : "Vorher · schematisch"}</span>
       </div>
       <div className="vn-griff" aria-hidden="true">
         <i />

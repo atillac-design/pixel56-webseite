@@ -264,7 +264,7 @@ export default async function FallstudiePage({ params }: Props) {
           </section>
         ) : null}
 
-        {f.vorher && f.bild ? (
+        {(f.vorher || f.vorherArt) && f.bild ? (
           <section className="band theme-light" id="vorher-nachher">
             <div className="band-head reveal">
               <div>
@@ -274,11 +274,17 @@ export default async function FallstudiePage({ params }: Props) {
                 </h2>
               </div>
               <p className="band-note">
-                Links der Auftritt vor dem Projekt, rechts der neue. Zieh den Regler, um zu vergleichen.
+                {f.vorher
+                  ? "Links der Auftritt vor dem Projekt, rechts der neue. Zieh den Regler, um zu vergleichen."
+                  : f.vorherArt === "veraltet"
+                    ? "Links die Ausgangslage als neutrale Skizze, kein Screenshot der alten Seite. Rechts der neue Auftritt. Zieh den Regler, um zu vergleichen."
+                    : f.vorherArt === "social"
+                      ? "Links die Ausgangslage als Skizze: nur eine Social-Media-Seite, kein Screenshot. Rechts der neue Auftritt. Zieh den Regler, um zu vergleichen."
+                      : "Links die Ausgangslage als Skizze: kein eigener Auftritt im Netz. Rechts der neue. Zieh den Regler, um zu vergleichen."}
               </p>
             </div>
             <div className="reveal">
-              <VorherNachher vorher={f.vorher} nachher={f.bild} kunde={f.kunde} />
+              <VorherNachher vorher={f.vorher} vorherArt={f.vorherArt} nachher={f.bild} kunde={f.kunde} />
             </div>
           </section>
         ) : null}

@@ -3174,3 +3174,45 @@ body { overflow-x: clip; }
 .rw-tile figcaption { margin-top: 10px; display: grid; gap: 2px; }
 .rw-tile figcaption b { font-size: 14px; }
 .rw-tile figcaption span { font-size: 12.5px; color: var(--ink-dim); }
+
+/* ============================================================
+   Schematische Ausgangslage im Vorher-nachher-Vergleich (components/VorherSchema.tsx)
+   ============================================================ */
+.vs { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 14px; padding: 48px 26px 26px; background: #ececec; color: #4a4a4a; font-family: var(--sans); overflow: hidden; }
+.vs span, .vs b, .vs i { display: block; }
+.vs-suchleiste { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 999px; background: #fff; border: 1px solid #d6d6d6; font-size: 14px; font-weight: 600; color: #333; }
+.vs-suchleiste i { width: 14px; height: 14px; border: 2px solid #8a8a8a; border-radius: 50%; }
+.vs-treffer { display: grid; gap: 10px; }
+.vs-zeile { display: grid; gap: 5px; padding: 10px 12px; border-radius: 10px; background: #f6f6f6; border: 1px solid #e0e0e0; }
+.vs-zeile b { font-size: 12.5px; font-weight: 600; color: #555; }
+.vs-zeile span { height: 7px; width: 72%; border-radius: 4px; background: #d9d9d9; }
+.vs-zeile span.kurz { width: 46%; }
+.vs-zeile.fremd { opacity: 0.6; }
+.vs-callout { margin-top: auto; padding: 12px 14px; border-radius: 12px; background: #fff3f4; border: 1px solid rgba(229,61,82,0.4); }
+.vs-callout b { font-size: 13.5px; color: #c4203a; margin-bottom: 3px; }
+.vs-callout span { font-size: 12.5px; line-height: 1.5; color: #5a5a5a; }
+.vs-profil { display: flex; gap: 12px; align-items: center; }
+.vs-profil i { width: 54px; height: 54px; border-radius: 50%; background: #cfcfcf; flex-shrink: 0; }
+.vs-profil div { display: grid; gap: 6px; flex: 1; }
+.vs-profil b { height: 10px; width: 40%; border-radius: 5px; background: #bdbdbd; }
+.vs-profil span { height: 7px; width: 65%; border-radius: 4px; background: #d9d9d9; }
+.vs-kacheln { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.vs-kacheln span { aspect-ratio: 1; border-radius: 6px; background: linear-gradient(135deg, #d4d4d4, #c2c2c2); }
+.vs-alt { gap: 10px; background: #e3e3e3; }
+.vs-alt-kopf { display: flex; align-items: center; gap: 12px; padding: 10px 12px; background: #b9b9b9; }
+.vs-alt-kopf span { width: 34px; height: 34px; background: #8d8d8d; }
+.vs-alt-kopf em { font-family: var(--serif); font-size: 13px; color: #3d3d3d; }
+.vs-alt-nav { display: flex; gap: 4px; }
+.vs-alt-nav span { flex: 1; height: 16px; background: #c9c9c9; border: 1px solid #b0b0b0; }
+.vs-alt-body { display: grid; grid-template-columns: 1fr 0.4fr; gap: 10px; flex: 1; }
+.vs-alt-text, .vs-alt-seite { display: grid; gap: 6px; align-content: start; padding: 10px; background: #f1f1f1; }
+.vs-alt-text span, .vs-alt-seite span { height: 5px; width: 92%; border-radius: 2px; background: #c6c6c6; }
+.vs-alt-text span.kurz, .vs-alt-seite span.kurz { width: 55%; }
+.vs-marken { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+.vs-marken span { padding: 5px 9px; border-radius: 999px; background: #fff3f4; border: 1px solid rgba(229,61,82,0.4); font-size: 11px; font-weight: 600; color: #c4203a; }
+@media (max-width: 640px) {
+  .vs { padding: 44px 14px 14px; gap: 10px; }
+  .vs-callout span { display: none; }
+  .vs-zeile:nth-child(n+3) { display: none; }
+  .vs-marken span:nth-child(n+3) { display: none; }
+}
