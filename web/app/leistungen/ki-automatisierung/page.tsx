@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import AblaufSimulator from "@/components/AblaufSimulator";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
 import PlannedMedia from "@/components/PlannedMedia";
 import {
@@ -425,7 +426,10 @@ export default function KiAutomatisierungPage() {
               wir es.
             </p>
           </div>
-          <div className="case-steps reveal" style={{ marginTop: 0 }}>
+          <div className="reveal">
+            <AblaufSimulator />
+          </div>
+          <div className="case-steps reveal" style={{ marginTop: 40 }}>
             {exampleFlow.map((step) => (
               <div className="case-step" key={step.tag}>
                 <span>{step.tag}</span>

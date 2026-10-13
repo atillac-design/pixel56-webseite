@@ -55,6 +55,38 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Artikeltexten (`https://www.pixel56.de/...`) werden beim Rendern relativ,
   damit sie auch auf Testumgebungen funktionieren. Seitentitel langer
   Artikelüberschriften enden nicht mehr mit „…“, sondern am Doppelpunkt.
+- 13.10.2026: **Branchen-Leitfaden und Richtwerte im Budget-Planer.** Neue Datei
+  `lib/meta-ads-branchen.ts` mit sieben Branchen (Handwerk & Bau, Transport &
+  Logistik, Bildung & Soziales, Immobilien & Modulbau, Dienstleistung &
+  Technik, Gastronomie/Handel/Kreativ, Mitarbeitergewinnung): je drei Punkte
+  „Darauf kommt es an“ und „Unbedingt nötig“ sowie eine veröffentlichte Spanne
+  je Anfrage bzw. Bewerbung mit Quellen (WordStream 2025, USA; deutsche
+  Agentur- und Anbieterblogs 2026: artico.agency, Ostend Digital, Skill
+  Sprinters, Talentbait, Fachkraft jetzt, myonlineconcept). Keine der Quellen
+  legt eine Stichprobe offen; das steht so unter dem Abschnitt. Auf der
+  Meta-Ads-Seite neuer Abschnitt „11 — Worauf es je Branche ankommt“ mit
+  Karten und Quellenzeile, folgende Abschnitte umnummeriert (12 bis 16). Der
+  Budget-Planer hat eine optionale Branchenauswahl und ordnet den eigenen
+  Höchstpreis je Anfrage gegen die veröffentlichte Spanne ein (darunter,
+  innerhalb, darüber). Hintergrund: Der Inhaber hat kein Werbekonto mehr und
+  damit keine eigenen Erfahrungswerte; die Seite nennt deshalb ausschließlich
+  fremde, belegte Richtwerte.
+- 13.10.2026: **Projektfilter.** `components/ProjektFilter.tsx` auf
+  `/kundenprojekte`: Chips für Branche (aus `branche`) und Leistung (aus
+  `tags`), Anzahl der Treffer, Zurücksetzen, Hinweis mit Kontaktlink bei
+  leerer Kombination. Karten-Markup unverändert übernommen.
+- 13.10.2026: **Ablauf-Simulator auf der KI-Seite.** `components/AblaufSimulator.tsx`
+  im Abschnitt „09 — Ein Beispielablauf“ über den bisherigen Textschritten:
+  fünf Schritte (Eingang, KI bereitet vor, Mensch prüft, Antwort, Ablage) als
+  Chat-Verlauf mit Schrittleiste, Abspielen/Pause und Erklärung je Schritt.
+  Kunde, Nachrichten, Zeiten sind erfunden und so beschriftet. Lighthouse
+  KI-Seite danach 90/100/100 (vorher 92 bis 98 auf Leistungsseiten).
+- 13.10.2026: **Reel-Wand vorbereitet.** `components/ReelWand.tsx` und
+  `lib/reels.ts` (ein Eintrag: `/videos/reel-handwerker-tipps.mp4`). Die Wand
+  erscheint auf der Content-Seite erst ab zwei Reels, Videos laden erst beim
+  Abspielen, Ton erst nach Klick, immer nur eines läuft. Weitere Reels: Datei
+  unter `public/videos/` ablegen und in `lib/reels.ts` eintragen. Außerdem die
+  erfundenen Zähler (482, 36, 12) aus dem Reel-Mockup entfernt.
 - 13.10.2026: **Schnellsuche über alle Seiten.** `components/Schnellsuche.tsx`
   (im Layout) öffnet sich über den Suchknopf in der Navigation
   (`SiteNav`, `data-suche-oeffnen`) oder mit Strg/Cmd+K: Eingabe, bis zu

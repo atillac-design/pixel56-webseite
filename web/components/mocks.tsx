@@ -82,15 +82,12 @@ export function ReelMock({ caption = "Ein Tag bei uns im Betrieb", videoSrc }: {
         <div className="rl-side">
           <div className="rl-ic">
             {HeartIcon}
-            <span>482</span>
           </div>
           <div className="rl-ic">
             {CommentIcon}
-            <span>36</span>
           </div>
           <div className="rl-ic">
             {ShareIcon}
-            <span>12</span>
           </div>
         </div>
         <div className="rl-cap">

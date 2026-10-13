@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import ReelWand from "@/components/ReelWand";
+import { reels } from "@/lib/reels";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
 import RegionLinks from "@/components/RegionLinks";
 import {
@@ -534,6 +536,25 @@ export default function ContentPage() {
           </div>
           <Stepper steps={steps} />
         </section>
+
+        {reels.length >= 2 ? (
+          <section className="band theme-light" id="reels">
+            <div className="band-head reveal">
+              <div>
+                <span className="band-tag">Reel-Wand</span>
+                <h2 className="band-title">
+                  Reels, die <em>gelaufen sind</em>
+                </h2>
+              </div>
+              <p className="band-note">
+                Echte Produktionen für echte Betriebe, mit Freigabe der Kunden. Tippe auf ein Reel, um es mit Ton abzuspielen.
+              </p>
+            </div>
+            <div className="reveal">
+              <ReelWand reels={reels} />
+            </div>
+          </section>
+        ) : null}
 
         <section className="band theme-light" id="pakete">
           <div className="split2 reverse">
