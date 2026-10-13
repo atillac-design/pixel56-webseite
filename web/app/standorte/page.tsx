@@ -58,7 +58,7 @@ const faqs = [
   { q: "Arbeitet ihr nur in der Region Koblenz?", a: "Nein. Der Sitz ist in Bendorf bei Koblenz, und im Einzugsgebiet kommen wir für Kennenlernen, Fotos und Drehs vorbei. Alles andere läuft per Video-Call, Telefon und WhatsApp, auch mit Kunden in anderen Bundesländern." },
   { q: "Meine Stadt steht nicht in der Liste. Was nun?", a: "Dann arbeiten wir ortsunabhängig zusammen. Die Liste zeigt nur die Städte, in denen wir regelmäßig vor Ort sind. Für Betriebe außerhalb ändert sich an Leistung und Ablauf nichts." },
   { q: "Kommt ihr für einen Drehtag in den Betrieb?", a: "Im Einzugsgebiet um Koblenz ohne Reisekosten. Weiter entfernt planen wir Drehtage nach Aufwand oder arbeiten mit Material, das du selbst aufnimmst." },
-  { q: "Kann ich in Bendorf vorbeikommen?", a: `Ja, nach Terminabsprache: ${site.address}. Für ein erstes Kennenlernen ist der Termin über Calendly der einfachste Weg.` },
+  { q: "Treffen wir uns persönlich?", a: "Gern, bei dir im Betrieb: zum Kennenlernen, für Fotos oder einen Dreh. Alles andere läuft per WhatsApp, E-Mail, Telefon oder Video-Call, so bleibt es für beide Seiten schnell. Ein Ladenlokal mit Wartezimmer haben wir nicht. Für ein erstes Kennenlernen ist der Termin über Calendly der einfachste Weg." },
 ];
 
 export default function StandorteUebersicht() {
@@ -118,7 +118,7 @@ export default function StandorteUebersicht() {
 
             <div className="founder-visual about-hero-visual projects-hero-visual reveal">
               <div className="founder-frame">
-                <Image src={koblenzImage} alt="Koblenz am Rhein, wenige Minuten vom Pixel56-Standort in Bendorf" priority sizes="(max-width: 1080px) 92vw, 520px" />
+                <Image src={koblenzImage} alt="Koblenz am Rhein, wenige Minuten von Bendorf, der Heimat von Pixel56" priority sizes="(max-width: 1080px) 92vw, 520px" />
               </div>
               <span>// KOBLENZ · DEUTSCHES ECK · 10 KM VON BENDORF</span>
             </div>
@@ -132,7 +132,7 @@ export default function StandorteUebersicht() {
         <section className="service-summary service-summary-premium reveal theme-light" aria-label="Standorte auf einen Blick">
           <div>
             <span>Sitz</span>
-            <strong>{site.address}</strong>
+            <strong>Bendorf bei Koblenz</strong>
           </div>
           <div>
             <span>Einzugsgebiet</span>
@@ -199,13 +199,14 @@ export default function StandorteUebersicht() {
                 Zuhause in Bendorf. <em>Unterwegs in der Region.</em>
               </h2>
               <p className="lead">
-                {site.address}: Hier sitzen wir wirklich, hier kannst du nach
-                Absprache vorbeikommen. Koblenz liegt wenige Minuten entfernt,
-                Neuwied, Montabaur und der Westerwald sind schnell erreicht.
+                Pixel56 arbeitet aus Bendorf bei Koblenz, ohne Ladenlokal:
+                Kennenlernen per Video-Call oder bei dir im Betrieb. Koblenz liegt
+                wenige Minuten entfernt, Neuwied, Montabaur und der Westerwald
+                sind schnell erreicht.
               </p>
               <ul className="lines">
                 <li>Vor-Ort-Dreh für Reels und Fotos im Einzugsgebiet ohne Reisekosten</li>
-                <li>Kennenlernen in Bendorf oder per Video-Call, wie es dir besser passt</li>
+                <li>Kennenlernen per Video-Call oder bei dir im Betrieb, wie es dir besser passt</li>
                 <li>Lokale Betriebe aus der Region Koblenz sind uns besonders vertraut</li>
                 <li>
                   <Link href={routes.about}>Mehr über Pixel56</Link>

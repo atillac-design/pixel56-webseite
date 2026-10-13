@@ -29,7 +29,7 @@ export type RegionStadt = {
 };
 
 export const regionStaedte: RegionStadt[] = [
-  { stadt: "Bendorf", landkreis: "Landkreis Mayen-Koblenz", entfernungKm: 0, fahrzeitMin: 0, kontext: "Bendorf ist unser Sitz. Die Hüttenstraße 100 liegt wenige Minuten vom Rhein entfernt, zwischen Vallendar und Neuwied. Betriebe aus Bendorf, Sayn und Mülhofen erreichen uns zu Fuß oder mit dem Auto in wenigen Minuten." },
+  { stadt: "Bendorf", landkreis: "Landkreis Mayen-Koblenz", entfernungKm: 0, fahrzeitMin: 0, kontext: "Bendorf ist unser Sitz, wenige Minuten vom Rhein entfernt, zwischen Vallendar und Neuwied. Für Betriebe aus Bendorf, Sayn und Mülhofen sind wir in wenigen Minuten vor Ort." },
   { stadt: "Koblenz", landkreis: "Kreisfreie Stadt Koblenz", entfernungKm: 10, fahrzeitMin: 15, kontext: "Koblenz ist das Oberzentrum der Region, am Zusammenfluss von Rhein und Mosel. Hier konkurrieren Dienstleister, Handwerksbetriebe, Praxen und Kanzleien um dieselben Suchanfragen, und ein klarer Auftritt entscheidet, wer angefragt wird." },
   { stadt: "Vallendar", landkreis: "Landkreis Mayen-Koblenz", entfernungKm: 4, fahrzeitMin: 8, kontext: "Vallendar liegt direkt neben Bendorf am rechten Rheinufer, bekannt durch die WHU. Viele kleine Betriebe und Selbstständige arbeiten hier eng mit Koblenz verzahnt und brauchen einen Auftritt, der in der ganzen Region gefunden wird." },
   { stadt: "Neuwied", landkreis: "Landkreis Neuwied", entfernungKm: 6, fahrzeitMin: 10, kontext: "Neuwied ist Kreisstadt und mit seinen Stadtteilen am Rhein ein eigener Markt mit Handel, Handwerk und Industrie. Wer hier gesucht wird, konkurriert mit Anbietern aus Koblenz und Andernach um dieselben Kunden." },

@@ -280,7 +280,7 @@ export function Reviews({ reviews: _reviews, items }: { reviews: Review[]; items
   );
 }
 
-/** Kontaktleiste vor dem Footer: Telefon, WhatsApp, E-Mail, Adresse. */
+/** Kontaktleiste vor dem Footer: Telefon, WhatsApp, E-Mail, Termin. */
 export function ContactStrip() {
   return (
     <div className="contact-strip reveal" aria-label="Kontaktmöglichkeiten">
@@ -299,11 +299,11 @@ export function ContactStrip() {
         <b>{site.email}</b>
         <small>Für Unterlagen und Anfragen</small>
       </a>
-      <div>
-        <span>Vor Ort</span>
-        <b>Hüttenstraße 100, 56170 Bendorf</b>
-        <small>Termin nach Absprache</small>
-      </div>
+      <a href={site.calendly} target="_blank" rel="noopener noreferrer">
+        <span>Erstgespräch</span>
+        <b>Termin online wählen</b>
+        <small>Video-Call oder Telefon, kostenlos</small>
+      </a>
     </div>
   );
 }

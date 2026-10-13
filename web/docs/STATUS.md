@@ -398,6 +398,34 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Gegenwartsform („regelmäßig ausgewertet“ statt „werden laufend
   ausgewertet“). Dass die Firma nicht mehr existiert, steht bewusst nicht auf
   der Seite, nur „Zusammenarbeit bis 2024“.
+- 13.10.2026: **Schrift und Lesbarkeit, Feedback des Inhabers zur Testseite.** Die
+  Seite lief bisher komplett auf dem System-Schriftstack (San Francisco, Segoe
+  UI), Fließtext wirkte zu dünn und zu klein. Jetzt Figtree als selbst
+  gehosteter Variable Font (`assets/fonts/figtree-latin.woff2`, 20 KB, über
+  `next/font/local` in `app/layout.tsx`, CSS-Variable `--font-figtree`) für
+  Überschriften, Fließtext und Labels. Grundgewicht 450 auf `body`,
+  Fließtext-Selektoren (p, li, .lead, .band-note usw.) 13–15,5 px um 1,5 px
+  und 16–16,5 px um 1 px angehoben, Mono-Labels um 1 px, gedämpfte Textfarben
+  dunkler (hell: #625e65 → #4f4b55, #89838a → #716b74; dunkel: #a19dae →
+  #b3afbe). Serifen-Kursiv in Überschriften, Hero-Untertitel, Zitaten und
+  Akzentwörtern durch dieselbe Sans ersetzt (Akzentwort in Rot, gleiches
+  Gewicht wie die Überschrift); nur Flussnamen auf der Karte und die
+  „veraltet“-Skizze behalten Serife. Vergleichsbild mit Plus Jakarta Sans,
+  Figtree und Manrope an den Inhaber, Figtree vorerst gesetzt. OG-Bilder laufen
+  weiter mit Inter.
+- 13.10.2026: **Kein Büro, keine Besuche.** Inhaber: In Bendorf gibt es kein
+  Büro, niemand soll dorthin kommen. Straße und Hausnummer stehen nur noch im
+  Impressum, in der Datenschutzerklärung und im Organisations-Schema (für
+  Google unsichtbar). Entfernt oder umformuliert: Kontaktseite (Abschnitt
+  „Standort & Anfahrt“ → „Region & Erreichbarkeit“ ohne Maps-Link, mit
+  Calendly), FAQs „Kann ich vorbeikommen?“ → „Treffen wir uns persönlich?“
+  (Kontakt, Standorte, Über uns, Standortseiten), ContactStrip „Vor Ort“ →
+  „Erstgespräch · Termin online wählen“, Footer und Ressourcen-Footer,
+  Standorte-Übersicht („Sitz: Bendorf bei Koblenz“), Webdesign-Seite
+  (Adressblock, „Unser Büro“), Startseite („vor Ort in Bendorf“ → „bei dir im
+  Betrieb“), Karriere und Stellenanzeige („vor Ort in Bendorf“ → „bei einem
+  Kaffee in Koblenz“ bzw. „remote mit Treffen in der Region Koblenz“),
+  Bild-Alt-Texte. „Aus Bendorf bei Koblenz“ als Herkunft bleibt.
 
 ## Verifiziert am 13.10.2026
 

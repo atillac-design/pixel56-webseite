@@ -36,7 +36,7 @@ const faqs = [
   { q: "Ist das eine Festanstellung, freie Mitarbeit oder Provision?", a: "Das klären wir im Gespräch. Wir sind offen für verschiedene Modelle und sagen dir ehrlich, was aktuell möglich ist und was nicht." },
   { q: "Muss ich in Koblenz wohnen?", a: "Nein, aber die Region ist von Vorteil, weil viele Erstgespräche und Kennenlerntermine vor Ort stattfinden. Vieles läuft auch per Video-Call." },
   { q: "Brauche ich Marketing-Erfahrung?", a: "Hilfreich, aber wichtiger ist, dass du Betriebe verstehst und erklären kannst. Die Leistungen bringen wir dir bei, Zuhören und Ehrlichkeit nicht." },
-  { q: "Wie läuft die Bewerbung?", a: "E-Mail mit Lebenslauf oder kurzem Profil und drei Sätzen zu dir. Dann ein Gespräch, per Video-Call oder in Bendorf. Kein Anschreiben, kein Portal." },
+  { q: "Wie läuft die Bewerbung?", a: "E-Mail mit Lebenslauf oder kurzem Profil und drei Sätzen zu dir. Dann ein Gespräch, per Video-Call oder bei einem Kaffee in Koblenz. Kein Anschreiben, kein Portal." },
 ];
 
 export default function VertriebsprofiPage() {
@@ -192,7 +192,7 @@ export default function VertriebsprofiPage() {
               </h2>
               <p className="lead">
                 Schick uns Lebenslauf oder ein kurzes Profil und drei Sätze zu
-                dir. Dann reden wir, per Video-Call oder in Bendorf. Danach
+                dir. Dann reden wir, per Video-Call oder bei einem Kaffee in Koblenz. Danach
                 sagen wir offen, ob und wie es passt.
               </p>
               <a className="btn-primary" href={bewerbungEmail}>Bewerbung per E-Mail senden <ArrowIcon /></a>

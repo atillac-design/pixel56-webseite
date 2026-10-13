@@ -246,7 +246,7 @@ const faqs = [
   { q: "Übernehmt ihr Texte und Suchmaschinenoptimierung?", a: "Ja. Seitenstruktur, Texte, technische SEO-Grundlagen, Metadaten, interne Links und strukturierte Daten werden gemeinsam geplant. Für dauerhaft umkämpfte Suchbegriffe kann nach dem Launch eine laufende SEO-Betreuung sinnvoll sein; sie ist aber nicht Voraussetzung." },
   { q: "Verliere ich bei einem Website-Relaunch meine Google-Rankings?", a: "Nicht, wenn der Relaunch sauber vorbereitet ist. Wir erfassen alle bestehenden Adressen, übernehmen sie möglichst unverändert und richten für geänderte Pfade dauerhafte Weiterleitungen ein. Nach dem Start prüfen wir Indexierung, Sitemap und Fehlerseiten. Genau so gehen wir auch beim Relaunch unserer eigenen Website vor." },
   { q: "Kann ich Inhalte später selbst ändern?", a: "Ja. Je nach Projekt bekommst du ein passendes Redaktionssystem für Texte, Bilder und Referenzen und eine Einweisung. Wenn du die Pflege lieber auslagerst, übernehmen wir Updates und technische Betreuung." },
-  { q: "Arbeitet Pixel56 nur in Koblenz?", a: "Nein. Unser Standort in Bendorf bei Koblenz macht persönliche Termine in der Region einfach. Websites setzen wir für Unternehmen in ganz Deutschland um, Abstimmungen laufen dann per Video-Call, Telefon und WhatsApp." },
+  { q: "Arbeitet Pixel56 nur in Koblenz?", a: "Nein. Von Bendorf bei Koblenz aus sind persönliche Termine in der Region einfach, wir kommen zu dir in den Betrieb. Websites setzen wir für Unternehmen in ganz Deutschland um, Abstimmungen laufen dann per Video-Call, Telefon und WhatsApp." },
   { q: "Ist eine individuelle Website besser als ein Baukasten?", a: "Nicht automatisch. Für sehr einfache Anforderungen kann ein Baukasten reichen. Individuelles Webdesign lohnt sich, wenn Positionierung, mehrere Leistungen, Sichtbarkeit bei Google, besondere Funktionen oder messbare Kundengewinnung wichtig sind. Im Erstgespräch sagen wir dir ehrlich, was in deinem Fall sinnvoll ist." },
 ];
 
@@ -338,7 +338,7 @@ export default function WebdesignPage() {
             <strong>Handwerk, Mittelstand, Dienstleister</strong>
           </div>
           <div>
-            <span>Standort</span>
+            <span>Region</span>
             <strong>Bendorf bei Koblenz, deutschlandweit</strong>
           </div>
           <div>
@@ -496,9 +496,9 @@ export default function WebdesignPage() {
                 Lokal erreichbar. <em>Deutschlandweit wirksam.</em>
               </h2>
               <p className="lead">
-                Unser Büro liegt in Bendorf, wenige Minuten von Koblenz. Für
-                Unternehmen aus der Region heißt das: Kennenlernen vor Ort,
-                Fotos und Videos direkt im Betrieb, kurze Wege bei jeder
+                Pixel56 arbeitet aus Bendorf, wenige Minuten von Koblenz. Für
+                Unternehmen aus der Region heißt das: Kennenlernen bei dir im
+                Betrieb, Fotos und Videos direkt vor Ort, kurze Wege bei jeder
                 Abstimmung. Für alle anderen laufen Projekte per Video-Call
                 genauso verbindlich.
               </p>
@@ -546,8 +546,8 @@ export default function WebdesignPage() {
                 </figure>
               </div>
               <address className="local-address">
-                <span>// PIXEL56 STUDIO</span>
-                <strong>Hüttenstraße 100 · 56170 Bendorf</strong>
+                <span>// PIXEL56</span>
+                <strong>Bendorf bei Koblenz</strong>
                 <span>Region Koblenz · Rheinland-Pfalz</span>
               </address>
             </div>

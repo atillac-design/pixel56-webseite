@@ -284,7 +284,7 @@ const processSteps = [
   {
     nr: "04",
     title: "Betreuung",
-    text: "Nach dem Start bleiben wir erreichbar: Auswertung, Optimierung, Pflege. Per WhatsApp, Telefon oder vor Ort in Bendorf, je nachdem, was gerade schneller ist.",
+    text: "Nach dem Start bleiben wir erreichbar: Auswertung, Optimierung, Pflege. Per WhatsApp, Telefon oder bei dir im Betrieb, je nachdem, was gerade schneller ist.",
     gets: "Du bekommst: einen festen Ansprechpartner",
   },
 ];
@@ -671,7 +671,7 @@ export default function HomePage() {
               <ul className="premium-list">
                 <li>Ein Ansprechpartner über das gesamte Projekt, keine wechselnden Projektmanager</li>
                 <li>Ehrliche Einschätzungen, auch wenn die Antwort mal „brauchst du nicht“ lautet</li>
-                <li>Kurze Wege per WhatsApp, Telefon oder vor Ort in Bendorf</li>
+                <li>Kurze Wege per WhatsApp, Telefon oder E-Mail</li>
                 <li>Betreuung auch nach Veröffentlichung oder Kampagnenstart</li>
               </ul>
               <Link className="body-link" href={routes.about}>
@@ -760,7 +760,7 @@ export default function HomePage() {
                 </ul>
               </div>
               <div className="region-visual reveal">
-                <Image src={koblenzImage} alt="Koblenz am Rhein, wenige Minuten vom Pixel56-Standort in Bendorf" fill sizes="(max-width: 900px) 100vw, 50vw" />
+                <Image src={koblenzImage} alt="Koblenz am Rhein, wenige Minuten von Bendorf, der Heimat von Pixel56" fill sizes="(max-width: 900px) 100vw, 50vw" />
               </div>
             </div>
           </section>

@@ -12,9 +12,9 @@ import { routes } from "@/lib/routes";
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-  title: "Karriere: Jobs bei Pixel56 in Bendorf und remote",
+  title: "Karriere: Jobs bei Pixel56, remote und in Koblenz",
   description:
-    "Jobs bei Pixel56 in Webdesign, Online-Marketing und Content für KMU-Projekte, remote oder vor Ort in Bendorf bei Koblenz. Unkompliziert bewerben.",
+    "Jobs bei Pixel56 in Webdesign, Online-Marketing und Content für KMU-Projekte, remote mit Treffen in der Region Koblenz. Unkompliziert bewerben.",
   alternates: { canonical: routes.careers },
   openGraph: {
     title: "Karriere bei Pixel56: Arbeit, die live geht",
@@ -40,7 +40,7 @@ const arbeitsweise = [
 
 const bewerbung = [
   { nr: "01", title: "E-Mail schicken", text: "Lebenslauf oder Link zu Arbeitsproben, dazu drei ehrliche Sätze: Was kannst du, was suchst du? Kein Anschreiben-Roman." },
-  { nr: "02", title: "Kurzes Gespräch", text: "Per Video-Call oder vor Ort in Bendorf. Kein Assessment-Center, keine Fangfragen. Wir wollen wissen, wie du denkst und arbeitest." },
+  { nr: "02", title: "Kurzes Gespräch", text: "Per Video-Call oder bei einem Kaffee in Koblenz. Kein Assessment-Center, keine Fangfragen. Wir wollen wissen, wie du denkst und arbeitest." },
   { nr: "03", title: "Probeaufgabe am echten Fall", text: "Eine kleine Aufgabe aus dem Alltag, bezahlt oder zeitlich eng begrenzt, damit beide Seiten sehen, ob es passt." },
   { nr: "04", title: "Entscheidung", text: "Wir sagen offen, ob und in welcher Form eine Zusammenarbeit möglich ist. Auch ein Nein kommt schnell und mit Begründung." },
 ];
@@ -128,7 +128,7 @@ export default async function KarrierePage() {
           <div className="sheet">
         <section className="service-summary service-summary-premium reveal theme-light" aria-label="Arbeiten bei Pixel56 auf einen Blick">
           <div>
-            <span>Standort</span>
+            <span>Region</span>
             <strong>Bendorf bei Koblenz oder remote</strong>
           </div>
           <div>
@@ -211,7 +211,7 @@ export default async function KarrierePage() {
               </h2>
             </div>
             <p className="band-note">
-              {stellen.length ? "Aktuelle Positionen, remote oder vor Ort in Bendorf bei Koblenz." : "Aktuell ist keine feste Stelle ausgeschrieben. Im Vertrieb sind wir offen für Gespräche, und Initiativbewerbungen sind ausdrücklich willkommen."}
+              {stellen.length ? "Aktuelle Positionen, remote mit Treffen in der Region Koblenz." : "Aktuell ist keine feste Stelle ausgeschrieben. Im Vertrieb sind wir offen für Gespräche, und Initiativbewerbungen sind ausdrücklich willkommen."}
             </p>
           </div>
           {stellen.length > 0 ? (
@@ -273,7 +273,7 @@ export default async function KarrierePage() {
               </h2>
               <p className="lead">
                 Nach deiner Bewerbung folgt ein lockeres Gespräch, per
-                Video-Call oder vor Ort in Bendorf. Kein Assessment-Center,
+                Video-Call oder bei einem Kaffee in Koblenz. Kein Assessment-Center,
                 keine Fangfragen. Wir wollen wissen, wie du denkst und
                 arbeitest, nicht wie gut du Bewerbungsratgeber auswendig kennst.
               </p>

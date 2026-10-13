@@ -81,14 +81,14 @@ export default function LocationPage({ location }: { location: LegacyLocation })
   const faqs = [
     ...leistung.faqs(stadt),
     region
-      ? { q: `Habt ihr ein Büro in ${stadt}?`, a: region.entfernungKm === 0 ? `Ja, Bendorf ist unser Sitz: ${site.address}. Besuche sind nach Terminabsprache jederzeit möglich.` : `Nein, unser Sitz ist in Bendorf bei Koblenz, rund ${region.entfernungKm} km von ${stadt} entfernt. Für Kennenlernen, Fotos oder Drehs kommen wir zu dir, alles andere läuft per Video-Call, Telefon und WhatsApp.` }
+      ? { q: `Habt ihr ein Büro in ${stadt}?`, a: region.entfernungKm === 0 ? `Pixel56 arbeitet aus Bendorf, ohne Ladenlokal. Kennenlernen läuft per Video-Call, Telefon oder WhatsApp, für Fotos und Drehs kommen wir zu dir in den Betrieb.` : `Nein, unser Sitz ist in Bendorf bei Koblenz, rund ${region.entfernungKm} km von ${stadt} entfernt. Für Kennenlernen, Fotos oder Drehs kommen wir zu dir, alles andere läuft per Video-Call, Telefon und WhatsApp.` }
       : { q: `Habt ihr ein Büro in ${stadt}?`, a: `Nein. Pixel56 sitzt in Bendorf bei Koblenz und arbeitet mit Unternehmen in ganz Deutschland. Die Zusammenarbeit mit Kunden in ${stadt} läuft per Video-Call, Telefon und WhatsApp, mit denselben festen Terminen wie vor Ort.` },
     { q: "Was kostet das Erstgespräch?", a: "Nichts. Es ist unverbindlich und dient dazu, deine Situation ehrlich einzuschätzen. Erst danach gibt es ein konkretes Angebot." },
   ];
 
   const fakten = region
     ? [
-        { b: "Entfernung", small: region.entfernungKm === 0 ? "Unser Sitz, Hüttenstraße 100" : `Rund ${region.entfernungKm} km ab Bendorf, etwa ${region.fahrzeitMin} Minuten` },
+        { b: "Entfernung", small: region.entfernungKm === 0 ? "Unser Sitz, mitten in Bendorf" : `Rund ${region.entfernungKm} km ab Bendorf, etwa ${region.fahrzeitMin} Minuten` },
         { b: "Vor Ort", small: "Kennenlernen, Fotos und Drehs bei dir im Betrieb, ohne Reisekosten" },
         { b: "Region", small: region.landkreis },
         { b: "Abstimmung", small: "Telefon, WhatsApp, Video-Call oder persönlich in Bendorf" },

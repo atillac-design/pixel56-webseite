@@ -65,7 +65,7 @@ const steckbrief = [
   { title: "Rolle", text: "Atilla Ciftcioglu, Gründer. Verantwortet Strategie, Konzeption und Umsetzung selbst." },
   { title: "Schwerpunkte", text: "Websites, Meta Ads, Social Content und KI-Prozesse für kleine und mittlere Unternehmen." },
   { title: "Netzwerk", text: "Für Dreh, Schnitt oder Entwicklung kommen feste Partner dazu. Die Verantwortung bleibt bei Pixel56." },
-  { title: "Erreichbar", text: "Telefon, WhatsApp, Video-Call oder vor Ort in Bendorf. Du kennst den Namen, du kennst die Nummer." },
+  { title: "Erreichbar", text: "Telefon, WhatsApp, Video-Call oder bei dir im Betrieb. Du kennst den Namen, du kennst die Nummer." },
 ];
 
 const agenturProbleme = [
@@ -157,7 +157,7 @@ const faqs = [
   { q: "Wer ist mein Ansprechpartner während des Projekts?", a: "Atilla Ciftcioglu, von der ersten Anfrage bis zur laufenden Betreuung. Keine wechselnden Projektmanager, kein Neu-Erklären. Wenn Partner für Dreh, Schnitt oder Entwicklung dazukommen, bleibt die Verantwortung bei Pixel56." },
   { q: "Wie groß ist Pixel56?", a: "Bewusst klein. Pixel56 ist gründergeführt und arbeitet mit einem festen Netzwerk aus Spezialisten, die je nach Projekt dazukommen. Dadurch bleiben die Wege kurz und die Preise nachvollziehbar." },
   { q: "Arbeitet ihr nur in Bendorf und Koblenz?", a: "Der Sitz ist in Bendorf, und lokale Betriebe aus der Region sind uns besonders vertraut. Die Zusammenarbeit läuft aber ortsunabhängig per Video-Call, Telefon und WhatsApp. Wir betreuen Kunden in ganz Deutschland." },
-  { q: "Kann ich persönlich vorbeikommen?", a: "Ja, gern nach Terminabsprache in der Hüttenstraße 100 in Bendorf. Für Content-Produktionen kommen wir umgekehrt zu dir in den Betrieb." },
+  { q: "Treffen wir uns persönlich?", a: "Gern, bei dir im Betrieb: zum Kennenlernen, für Fotos oder einen Dreh. Alles andere läuft per WhatsApp, E-Mail, Telefon oder Video-Call, so bleibt es für beide Seiten schnell. Ein Ladenlokal mit Wartezimmer haben wir nicht." },
   { q: "Übernehmt ihr auch nur Teilleistungen?", a: "Ja. Alles aus einer Hand ist ein Angebot, kein Zwang. Wer nur eine Website, nur Anzeigen oder nur Content braucht, bekommt genau das." },
   { q: "Was kostet das Erstgespräch?", a: "Nichts. Es dient dazu, deine Situation ehrlich einzuschätzen. Erst danach gibt es ein konkretes, auf dich zugeschnittenes Angebot." },
 ];
@@ -224,7 +224,7 @@ export default function UeberUnsPage() {
             <strong>Atilla Ciftcioglu, seit 2018</strong>
           </div>
           <div>
-            <span>Standort</span>
+            <span>Region</span>
             <strong>Bendorf bei Koblenz, deutschlandweit</strong>
           </div>
           <div>
@@ -464,9 +464,10 @@ export default function UeberUnsPage() {
                 Zuhause in Bendorf. <em>Unterwegs in der Region.</em>
               </h2>
               <p className="lead">
-                {site.address}: Hier sitzen wir wirklich, hier kannst du nach
-                Absprache vorbeikommen. Koblenz liegt wenige Minuten entfernt,
-                Neuwied, Montabaur und der Westerwald sind schnell erreicht.
+                Pixel56 arbeitet aus Bendorf bei Koblenz, ohne Ladenlokal:
+                Kennenlernen per Video-Call oder bei dir im Betrieb. Koblenz liegt
+                wenige Minuten entfernt, Neuwied, Montabaur und der Westerwald
+                sind schnell erreicht.
               </p>
               <p className="lead">
                 Die Zusammenarbeit selbst ist nicht an den Ort gebunden. Per
@@ -483,7 +484,7 @@ export default function UeberUnsPage() {
               </ul>
             </div>
             <div className="region-visual reveal">
-              <Image src={koblenzImage} alt="Koblenz am Rhein, wenige Minuten vom Pixel56-Standort in Bendorf" fill sizes="(max-width: 900px) 100vw, 50vw" />
+              <Image src={koblenzImage} alt="Koblenz am Rhein, wenige Minuten von Bendorf, der Heimat von Pixel56" fill sizes="(max-width: 900px) 100vw, 50vw" />
             </div>
           </div>
         </section>

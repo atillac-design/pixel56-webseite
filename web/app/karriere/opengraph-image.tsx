@@ -7,8 +7,8 @@ export const contentType = ogContentType;
 export default function Image() {
   return ogBild({
     kicker: "Karriere",
-    titel: "Jobs bei Pixel56 in Bendorf und remote",
-    text: "Jobs bei Pixel56 in Webdesign, Online-Marketing und Content für KMU-Projekte, remote oder vor Ort in Bendorf bei Koblenz. Unkompliziert bewerben.",
+    titel: "Jobs bei Pixel56, remote und in Koblenz",
+    text: "Jobs bei Pixel56 in Webdesign, Online-Marketing und Content für KMU-Projekte, remote mit Treffen in der Region Koblenz. Unkompliziert bewerben.",
     motiv: "soziale-medien",
   });
 }

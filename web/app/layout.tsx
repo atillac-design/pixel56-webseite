@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import Reveal from "@/components/Reveal";
 import Interaktiv from "@/components/Interaktiv";
@@ -7,6 +8,15 @@ import KontaktLeiste from "@/components/KontaktLeiste";
 import Schnellsuche from "@/components/Schnellsuche";
 import CookieConsent from "@/components/CookieConsent";
 import { indexable } from "@/lib/site";
+
+/** Figtree (Variable Font, Latin), selbst gehostet: eine Datei für Fließtext, Labels und Überschriften. */
+const figtree = localFont({
+  src: "../assets/fonts/figtree-latin.woff2",
+  weight: "400 900",
+  style: "normal",
+  display: "swap",
+  variable: "--font-figtree",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.pixel56.de"),
@@ -41,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
+    <html lang="de" className={figtree.variable}>
       <body>
         {children}
         <WhatsAppFloat />

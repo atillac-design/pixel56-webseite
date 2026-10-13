@@ -141,7 +141,7 @@ export default function AtillaCiftciogluPage() {
             <strong>Gründer &amp; fester Ansprechpartner</strong>
           </div>
           <div>
-            <span>Standort</span>
+            <span>Region</span>
             <strong>Bendorf bei Koblenz</strong>
           </div>
           <div>

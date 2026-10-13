@@ -76,13 +76,12 @@ const faqs = [
   { q: "Was kostet das Erstgespräch?", a: "Nichts. Es ist unverbindlich und ergebnisoffen. Erst danach gibt es ein konkretes, auf dich zugeschnittenes Angebot, wenn beide Seiten das wollen." },
   { q: "Muss ich mich vorbereiten?", a: "Nein. Es hilft, wenn du dein Ziel grob benennen kannst, etwa mehr Anfragen, neue Website oder Mitarbeiter finden. Den Rest sortieren wir gemeinsam." },
   { q: "Mit wem spreche ich?", a: "Mit Atilla Ciftcioglu, dem Gründer von Pixel56. Er führt das Erstgespräch und bleibt während der Zusammenarbeit dein Ansprechpartner." },
-  { q: "Kann ich auch vorbeikommen?", a: "Ja, nach Terminabsprache in der Hüttenstraße 100 in Bendorf. Für Content-Produktionen kommen wir umgekehrt zu dir in den Betrieb." },
+  { q: "Treffen wir uns persönlich?", a: "Gern, bei dir im Betrieb: zum Kennenlernen, für Fotos oder einen Dreh. Alles andere läuft per WhatsApp, E-Mail, Telefon oder Video-Call, so bleibt es für beide Seiten schnell. Ein Ladenlokal mit Wartezimmer haben wir nicht." },
   { q: "Arbeitet ihr auch mit Unternehmen außerhalb der Region?", a: "Ja. Der Sitz ist in Bendorf bei Koblenz, die Zusammenarbeit läuft aber ortsunabhängig per Video-Call, Telefon und WhatsApp." },
 ];
 
 export default function KontaktPage() {
   const formularAktiv = Boolean(process.env.RESEND_API_KEY && process.env.PIXEL56_CONTACT_FROM && process.env.PIXEL56_CONTACT_TO);
-  const mapsHref = "https://www.google.com/maps/search/?api=1&query=H%C3%BCttenstra%C3%9Fe+100%2C+56170+Bendorf";
 
   return (
     <>
@@ -242,27 +241,27 @@ export default function KontaktPage() {
         <section className="band theme-light" id="standort">
           <div className="split2 reverse">
             <div className="reveal">
-              <span className="band-tag">05 — Standort &amp; Anfahrt</span>
+              <span className="band-tag">05 — Region &amp; Erreichbarkeit</span>
               <h2 className="band-title">
-                Hüttenstraße 100, <em>Bendorf bei Koblenz</em>
+                Aus Bendorf bei Koblenz, <em>bei dir im Betrieb</em>
               </h2>
               <p className="lead">
-                Hier sitzen wir wirklich. Besuche sind nach Absprache jederzeit
-                möglich, zum Kennenlernen oder für einen Workshop. Koblenz liegt
-                wenige Minuten entfernt, Neuwied und Montabaur sind schnell
-                erreicht.
+                Pixel56 arbeitet aus Bendorf bei Koblenz, ohne Ladenlokal und
+                ohne Wartezimmer. Kennenlernen läuft per Video-Call, Telefon oder
+                WhatsApp, Fotos und Drehs machen wir bei dir im Betrieb. Koblenz,
+                Neuwied und Montabaur sind in wenigen Minuten erreicht.
               </p>
               <ul className="lines">
-                <li>{site.address}</li>
+                <li>Kurze Wege per WhatsApp und E-Mail, Antwort meist am selben Tag</li>
                 <li>Termine nach Absprache, auch abends für Betriebe mit vollem Tag</li>
                 <li>Für Content-Produktionen kommen wir zu dir in den Betrieb</li>
               </ul>
-              <a className="body-link" href={mapsHref} target="_blank" rel="noopener noreferrer">
-                Route in Google Maps öffnen <ArrowIcon />
+              <a className="body-link" href={site.calendly} target="_blank" rel="noopener noreferrer">
+                Erstgespräch online buchen <ArrowIcon />
               </a>
             </div>
             <div className="region-visual reveal">
-              <Image src={koblenzImage} alt="Koblenz am Rhein, wenige Minuten vom Pixel56-Standort in Bendorf" fill sizes="(max-width: 900px) 100vw, 50vw" />
+              <Image src={koblenzImage} alt="Koblenz am Rhein, wenige Minuten von Bendorf, der Heimat von Pixel56" fill sizes="(max-width: 900px) 100vw, 50vw" />
             </div>
           </div>
         </section>
