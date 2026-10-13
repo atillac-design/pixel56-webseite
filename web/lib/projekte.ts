@@ -21,6 +21,8 @@ export type Fallstudie = {
   bild?: string;
   /** Weitere Einblicke auf der Detailseite. */
   galerie?: string[];
+  /** Bildunterschrift zum ersten Galeriebild, z. B. wenn es ein Beispiel aus einem anderen Projekt ist. */
+  galerieHinweis?: string;
   /** Reel/Video für die Detailseite. */
   video?: string;
   logo?: string;
@@ -71,7 +73,7 @@ export const fallstudien: Fallstudie[] = [
     },
     stimme: {
       text: "Endlich zeigen sich unsere Kurse auch online. Die Zusammenarbeit ist unkompliziert und auf Augenhöhe — man merkt, dass hier jemand mitdenkt.",
-      name: "Margarita Wolf",
+      name: "Margarete Wolf",
       rolle: "Gründerin, Stark ins Neue gGmbH",
       img: "/bilder/person-margarita-wolf.webp",
     },
@@ -162,6 +164,8 @@ export const fallstudien: Fallstudie[] = [
     tags: ["Webdesign", "Karriereportal", "Recruiting"],
     bild: "/bilder/projekt-gm-dachdecker.webp",
     galerie: ["/bilder/ads-recruiting-kampagne.webp", "/bilder/gm-dachdecker-bewertung.webp"],
+    galerieHinweis:
+      "Beispiel-Creative aus der Recruiting-Kampagne für die Van den Berg Gruppe: So sieht Mitarbeitergewinnung für Handwerksbetriebe im Feed aus.",
     variant: "ic-1",
     titel: "Handwerkskunst digital erlebbar gemacht",
     teaser:

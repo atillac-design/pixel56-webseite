@@ -101,8 +101,11 @@ export default async function FallstudiePage({ params }: Props) {
             </div>
             <div className="reveal">
               {f.galerie?.[0] ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img className="case-img" src={f.galerie[0]} alt={`Einblick in das Projekt für ${f.kunde}`} loading="lazy" decoding="async" />
+                <figure style={{ margin: 0 }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img className="case-img" src={f.galerie[0]} alt={f.galerieHinweis ?? `Einblick in das Projekt für ${f.kunde}`} loading="lazy" decoding="async" />
+                  {f.galerieHinweis ? <figcaption className="case-img-note">{f.galerieHinweis}</figcaption> : null}
+                </figure>
               ) : f.bild ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img className="case-img" src={f.bild} alt={`Einblick in das Projekt für ${f.kunde}`} loading="lazy" decoding="async" />

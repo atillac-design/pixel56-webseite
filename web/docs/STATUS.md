@@ -38,9 +38,16 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Abbruch-Motiv („Andernach“, Abbruchhelfer/Baggerfahrer) ist in
   `lib/projekte.ts` sowohl Van den Berg Gruppe als auch GM-Dachdecker
   zugeordnet; die Meta-Ads-Referenzkarte nutzt deshalb das
-  GM-Dachdecker-Projektbild. **Atilla bitte prüfen:** Zu welchem Kunden
-  gehört das Abbruch-Creative (Zuordnung in `lib/projekte.ts`, Zeile
-  `galerie` bei `gm-dachdecker`)?
+  GM-Dachdecker-Projektbild. **Geklärt (Atilla, 13.10.):** Das
+  Abbruch-Creative gehört zur Recruiting-Kampagne der Van den Berg Gruppe
+  und steht bewusst auch bei GM-Dachdecker als Beispiel für
+  Mitarbeitergewinnung im Handwerk. Umsetzung: Bildunterschriften auf den
+  Leistungsseiten nennen die Van den Berg Gruppe; die Projektseite
+  GM-Dachdecker zeigt das Motiv mit dem Hinweis `galerieHinweis`
+  („Beispiel-Creative aus der Recruiting-Kampagne für die Van den Berg
+  Gruppe“). Ebenfalls geklärt: Die Kundin heißt **Margarete Wolf** (mit e);
+  `lib/projekte.ts` korrigiert, nur der Dateiname
+  `person-margarita-wolf.webp` bleibt.
 - 13.10.2026: **Seiten-Überarbeitung Runde 1.** Startseite (15 Sektionen) und
   die acht Leistungsseiten (13 bis 15 Sektionen) neu geschrieben: Premium-Hero
   mit Board, Zusammenfassung, nummerierte Sektionen, Praxisbeispiel aus

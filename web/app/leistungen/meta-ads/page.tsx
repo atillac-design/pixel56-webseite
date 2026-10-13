@@ -403,7 +403,7 @@ export default function MetaAdsPage() {
             <figure>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/bilder/ads-fb-beispiele.webp" alt="Meta-Anzeige für einen Abbruch- und Tiefbaubetrieb" loading="lazy" decoding="async" />
-              <figcaption><b>Abbruch &amp; Tiefbau</b><span>Ad Creative · Bewerberansprache</span></figcaption>
+              <figcaption><b>Van den Berg Gruppe</b><span>Recruiting-Creative · Abbruch &amp; Tiefbau</span></figcaption>
             </figure>
             <figure>
               {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -413,12 +413,12 @@ export default function RecruitingPage() {
             <figure>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/bilder/ads-recruiting-kampagne.webp" alt="Recruiting-Anzeige für einen Abbruchbetrieb: Bewirb dich jetzt als Abbruchhelfer" loading="lazy" decoding="async" />
-              <figcaption><b>Recruiting-Kampagne</b><span>Abbruch &amp; Tiefbau · Feed</span></figcaption>
+              <figcaption><b>Recruiting-Kampagne</b><span>Van den Berg Gruppe · Abbruch &amp; Tiefbau</span></figcaption>
             </figure>
             <figure>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/bilder/ads-fb-beispiele.webp" alt="Variante derselben Recruiting-Anzeige für die Stelle Baggerfahrer" loading="lazy" decoding="async" />
-              <figcaption><b>Stellenvariante</b><span>Ein Motiv, mehrere Stellen</span></figcaption>
+              <figcaption><b>Stellenvariante</b><span>Van den Berg Gruppe · ein Motiv, mehrere Stellen</span></figcaption>
             </figure>
             <figure>
               {/* eslint-disable-next-line @next/next/no-img-element */}

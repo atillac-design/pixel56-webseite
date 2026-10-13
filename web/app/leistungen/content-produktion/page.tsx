@@ -389,7 +389,7 @@ export default function ContentPage() {
             <figure>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/bilder/content-creative-abbruch.webp" alt="Social-Media-Creative für die Mitarbeitergewinnung im Abbruch" loading="lazy" decoding="async" />
-              <figcaption><b>Recruiting-Creative</b><span>Abbruch &amp; Tiefbau · 1:1</span></figcaption>
+              <figcaption><b>Recruiting-Creative</b><span>Van den Berg Gruppe · Abbruch &amp; Tiefbau</span></figcaption>
             </figure>
             <figure>
               {/* eslint-disable-next-line @next/next/no-img-element */}
