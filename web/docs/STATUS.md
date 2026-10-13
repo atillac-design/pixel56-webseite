@@ -495,42 +495,62 @@ Diff von `data/legacy-locations.json` sichtbar.
 
 ## Offene Punkte
 
-### 1. Standortseiten: Liste der indexierbaren Städte mit GSC-Daten abgleichen
+Stand 13.10.2026, Reihenfolge = Priorität. Alles Inhaltliche ist gebaut; was
+fehlt, ist der Betrieb auf der Domain und das, was nur der Inhaber liefern
+kann.
+
+### 1. Abnahme durch den Inhaber
+
+Der Inhaber sieht sich die Seite in Ruhe an und gibt Feedback. Der Stand ist
+der Branch `codex/pixel56-neue-seite` (Netlify-Branch-Deploy oder lokal mit
+`npm run build && npm run start`). Zu bestätigen sind außerdem die Zuordnung
+der schematischen Vorher-Varianten (siehe „Vorher-nachher mit schematischer
+Ausgangslage“) und die 13 Stadttexte mit Entfernungen.
+
+### 2. Umzug auf die Domain
+
+`netlify.toml` ist konfiguriert (`base = "web"`, `@netlify/plugin-nextjs`).
+Reihenfolge: Produktions-Deploy auf Netlify prüfen, DNS von Webflow auf
+Netlify umstellen, dann `NEXT_PUBLIC_INDEXABLE=true` setzen (vorher bleibt
+die Seite `noindex` ohne Sitemap), danach in der Search Console die Sitemap
+`/sitemap.xml` einreichen und die alten Webflow-URLs beobachten
+(`npm run seo:check:http` gegen die Live-Domain). Grund für den Schalter: im
+Juli hatte Google eine offene Netlify-Testumgebung gecrawlt.
+
+### 3. Formulare und Env-Variablen
+
+`MAILERLITE_API_KEY` mit Gruppen-IDs (Freebies, Kontakt), `RESEND_API_KEY`,
+`PIXEL56_CONTACT_FROM`, `PIXEL56_CONTACT_TO` in Netlify setzen, sonst nehmen
+Kontakt- und Freebie-Formulare nichts an. Optional
+`NEXT_PUBLIC_SANITY_STUDIO_URL` für die Weiterleitung von `/studio`. Nach dem
+Deploy den Website-Check einmal mit einer echten Adresse testen (in der
+Entwicklungsumgebung ließen sich fast keine Domains auflösen).
+
+### 4. Rechtstexte
+
+AGB-Platzhalter ersetzen, Impressum und Datenschutz (Google Analytics mit
+Einwilligung, Website-Check ohne Speicherung, Calendly, WhatsApp) gegenlesen
+lassen.
+
+### 5. Medien, die nur der Inhaber liefern kann
+
+- Weitere Reels für die Reel-Wand, vor allem Handwerk (M&A Transporte,
+  GM-Dachdecker, Van den Berg): **verschoben**, der Inhaber hat aktuell keine
+  Dateien auf dem Mac. Einbau: MP4 unter `public/videos/`, Eintrag in
+  `lib/reels.ts`. Weitere Burgerfabriq-Reels nur dosiert, damit die Wand
+  nicht nur Gastronomie zeigt.
+- Echte Vorher-Screenshots, falls doch welche auftauchen (`vorher` an der
+  Fallstudie hat Vorrang vor der Skizze).
+- Siehe [`MEDIA_PLAN.md`](MEDIA_PLAN.md) für markierte Medienplätze auf
+  Google Ads und KI-Automatisierung.
+
+### 6. Standortseiten mit Search-Console-Daten abgleichen
 
 Die Entscheidung „13 Städte indexierbar, 226 URLs noindex“ ist ohne
-Search-Console-Daten getroffen (siehe „Erledigt: Standortseiten“). Sobald
-Atilla einen GSC-Export (Seiten-Bericht, 16 Monate) bereitstellt: Seiten
-außerhalb des Einzugsgebiets mit echten Klicks oder nennenswerten
-Impressionen prüfen und bei Bedarf mit eigenen lokalen Angaben in
-`regionStaedte` aufnehmen. Dann wird die Stadt automatisch indexierbar und
-landet in der Sitemap. Ebenso die Schätzwerte für Entfernung und Fahrzeit
-sowie die Kontexttexte der 13 Städte gegenlesen.
-
-### 2. Deployment steht, ist aber nicht ausgerollt
-
-`netlify.toml` ist konfiguriert (`base = "web"`, `@netlify/plugin-nextjs`), die
-Seite ist jedoch nicht deployt. `pixel56.de` liefert weiterhin Webflow.
-
-`NEXT_PUBLIC_INDEXABLE=true` erst in der geprüften Produktion setzen — ohne den
-Schalter bleibt die Seite `noindex` und liefert keine Sitemap. Grund: im Juli
-hatte Google eine offene Netlify-Testumgebung gecrawlt und unfertige URLs
-indexiert.
-
-### 3. Fehlende Env-Variablen
-
-- `MAILERLITE_API_KEY` und die Gruppen-IDs sind leer. Freebie- und
-  Kontaktformulare nehmen dadurch keine Kontakte auf.
-- `NEXT_PUBLIC_SANITY_STUDIO_URL` fehlt. Das Studio ist bewusst aus dem
-  Frontend gelöst (siehe [`../sanity/STUDIO.md`](../sanity/STUDIO.md)); `/studio`
-  leitet erst nach einem separaten Studio-Deployment weiter. Die Abhängigkeiten
-  `sanity`, `@sanity/vision`, `next-sanity` und `styled-components` wurden dafür
-  entfernt, nur `@sanity/client` bleibt.
-
-### 4. Medien
-
-Siehe [`MEDIA_PLAN.md`](MEDIA_PLAN.md). Google Ads und KI-Automatisierung haben
-bewusst markierte Medienplätze, die auf einer indexierbaren Produktion nicht
-erscheinen.
+Search-Console-Daten getroffen. Sobald ein GSC-Export (Seiten-Bericht, 16
+Monate) vorliegt: Seiten außerhalb des Einzugsgebiets mit echten Klicks
+prüfen und bei Bedarf in `regionStaedte` aufnehmen; die Stadt wird dann
+automatisch indexierbar und landet in der Sitemap.
 
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
