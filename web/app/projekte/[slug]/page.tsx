@@ -43,6 +43,8 @@ const tagZuLeistung: Record<string, { href: string; titel: string; text: string 
   Design: { href: serviceRoutes.webdesign, titel: "Design", text: "Ein Auftritt, der zum Betrieb passt: Farben, Bilder, Tonalität. Vertrauen auf den ersten Blick." },
   Konzeption: { href: serviceRoutes.webdesign, titel: "Konzeption", text: "Seitenaufbau und Botschaften entstehen aus Ziel und Zielgruppe, nicht aus einer Vorlage." },
   Onlineshop: { href: serviceRoutes.webdesign, titel: "Onlineshop", text: "Produkte klar präsentiert, Kaufweg ohne Umwege, Technik, die auch mobil trägt." },
+  Buchungssystem: { href: serviceRoutes.webdesign, titel: "Buchungssystem", text: "Termine, freie Plätze und Buchung direkt auf der Website, ohne Telefon und E-Mail-Pingpong." },
+  "Online-Zahlung": { href: serviceRoutes.webdesign, titel: "Online-Zahlung", text: "Bezahlung im selben Schritt wie die Buchung, damit aus Interesse sofort ein fester Platz wird." },
   Branding: { href: serviceRoutes.webdesign, titel: "Branding", text: "Logo, Farben, Schrift und Tonalität als Grundlage für Website, Anzeigen und Content." },
   Logo: { href: serviceRoutes.webdesign, titel: "Logo", text: "Ein Zeichen, das auf Fahrzeug, Website und Visitenkarte gleich gut funktioniert." },
   Print: { href: serviceRoutes.webdesign, titel: "Print", text: "Drucksachen im selben Erscheinungsbild wie der digitale Auftritt." },
@@ -126,7 +128,7 @@ export default async function FallstudiePage({ params }: Props) {
     description: f.teaser,
     url: `${site.url}${projectPath(f.slug)}`,
     ...(f.bild ? { image: `${site.url}${f.bild}` } : {}),
-    about: { "@type": "Organization", name: f.kunde },
+    about: { "@type": "Organization", name: f.kunde, ...(f.website ? { url: f.website } : {}) },
     creator: { "@type": "ProfessionalService", "@id": `${site.url}/#organization`, name: site.name, url: site.url },
     keywords: f.tags.join(", "),
   };
@@ -162,6 +164,11 @@ export default async function FallstudiePage({ params }: Props) {
                 <Link className="btn-text" href="#ausgangslage">
                   Zum Projekt ↓
                 </Link>
+                {f.website ? (
+                  <a className="btn-text" href={f.website} target="_blank" rel="noopener noreferrer">
+                    Website ansehen ↗
+                  </a>
+                ) : null}
               </div>
               <div className="premium-proof" aria-label="Leistungen in diesem Projekt">
                 {f.tags.map((t) => <span key={t}>{t}</span>)}

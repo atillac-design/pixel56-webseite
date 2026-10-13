@@ -217,7 +217,7 @@ const cases: CaseItem[] = [
   {
     customer: "CurlyAnn Atelier",
     title: "Ein Auftritt mit eigener Handschrift und direkter Buchung",
-    tags: "KONZEPTION · WEBDESIGN · BUCHUNG",
+    tags: "WEBDESIGN · BUCHUNG · ONLINE-ZAHLUNG",
     href: projectPath("curlyann"),
     image: curlyAnnImage,
     className: "work-card-tall",

@@ -359,6 +359,22 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   nicht auseinander, es gab keine Konflikte: die Codex-Arbeit setzt direkt auf
   dem vorherigen Commit `17e597c` vom 23.07.2026 auf. Pull Requests, Issues
   und Tags gibt es im Repo keine.
+- 13.10.2026: **CurlyAnn: komplette Website mit Buchung und Bezahlung.** Der
+  Inhaber hat ergänzt, dass die gesamte Website curlyann-soulcare.de von
+  Pixel56 stammt, inklusive Online-Buchung für Workshops und angebundenem
+  Bezahlsystem. Fallstudie in `lib/projekte.ts` entsprechend ergänzt (Tags
+  Buchungssystem und Online-Zahlung, Gutscheine als Baustein, Teaser und
+  Umsetzungstext), neues Feld `website` im Typ `Fallstudie`, das die
+  Projekt-Detailseite als Link „Website ansehen“ im Hero zeigt und als `url`
+  der Organisation ins CreativeWork-Schema schreibt. Tag-Erklärungen für die
+  beiden neuen Tags in `app/projekte/[slug]/page.tsx`, Startseiten-Karte mit
+  „Webdesign · Buchung · Online-Zahlung“. Hinweise aus den Google-Snippets der
+  Live-Seite (nicht direkt prüfbar, Proxy blockt die Domain): auf
+  `/gutschein/` soll im Blog-Bereich ein Fremdtext „hacked by chinafans“ und
+  ein englischer Textblock stehen, auf Workshop-Seiten Dollarbeträge aus der
+  Vorlage, Stornofristen in FAQ (60 Tage) und auf „Let's Pearl“ (14 Tage)
+  widersprechen sich, Impressum liegt unter `/privacy-policy/`. Dem Inhaber
+  gemeldet, zu prüfen auf der Kundenseite, nicht in diesem Repo.
 
 ## Verifiziert am 13.10.2026
 

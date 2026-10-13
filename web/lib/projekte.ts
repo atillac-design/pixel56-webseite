@@ -20,6 +20,8 @@ export type Fallstudie = {
   branche: string;
   jahr: string;
   tags: string[];
+  /** Live-Adresse des Kundenauftritts, wird als Link auf der Detailseite gezeigt. */
+  website?: string;
   /** Karten-/Hero-Bild (Pfad unter public/). Ohne Bild: abstraktes Browser-Mockup. */
   bild?: string;
   /** Screenshot des alten Auftritts (Pfad unter public/) für den Vorher-nachher-Vergleich; braucht auch `bild`. */
@@ -392,29 +394,31 @@ export const fallstudien: Fallstudie[] = [
     kunde: "CurlyAnn Atelier",
     branche: "Kreativ & Workshops",
     jahr: "2024",
-    tags: ["Konzeption", "Webdesign"],
+    tags: ["Konzeption", "Webdesign", "Buchungssystem", "Online-Zahlung"],
+    website: "https://curlyann-soulcare.de",
     bild: "/bilder/projekt-curlyann-1.webp",
     galerie: ["/bilder/projekt-curlyann-ipad.webp", "/bilder/projekt-curlyann-2.webp", "/bilder/projekt-curlyann-3.webp"],
     variant: "ic-5",
     titel: "Kreative Marke. Klare Struktur.",
     teaser:
-      "Konzeption und Webdesign für ein Kreativ-Atelier in Koblenz — mit Online-Kursbuchung für Workshops, von Schnullerketten-DIY bis Teamevents.",
+      "Komplette Website für ein Kreativ-Atelier in Koblenz: Konzeption, Webdesign, Online-Buchung für Workshops mit angebundener Bezahlung und Gutscheinen.",
     problem: {
       titel: "Kreatives Angebot, unklarer Weg zur Buchung",
       text: "Workshops, Coachings, Mama-Baby-Treffen, Locationmiete — das Angebot von CurlyAnn ist vielfältig. Genau das machte es online unübersichtlich: Interessenten wussten nicht, wo sie buchen sollen.",
       punkte: [
         "Vielfältiges Angebot ohne klare Online-Struktur",
-        "Keine direkte Kursbuchung möglich",
+        "Keine direkte Kursbuchung, keine Online-Bezahlung",
         "Marke und Auftritt passten nicht zusammen",
       ],
     },
     loesung: {
       titel: "Struktur, die Kreativität verkauft",
-      text: "Wir haben das Angebot neu strukturiert und eine Website gebaut, auf der jeder Workshop eine klare Seite mit direkter Buchung hat — im warmen Look der Marke.",
+      text: "Wir haben das Angebot neu strukturiert und eine komplette Website gebaut, auf der jeder Workshop eine klare Seite mit direkter Buchung hat. Bezahlt wird online im selben Schritt, im warmen Look der Marke.",
       punkte: [
-        "Klare Angebotsstruktur mit eigener Seite je Workshop",
-        "Online-Kursbuchung mit Terminen und freien Plätzen",
-        "Design im Stil der Marke — warm, kreativ, persönlich",
+        "Klare Angebotsstruktur mit eigener Seite je Workshop, Preis und Dauer",
+        "Buchungssystem mit Terminen und freien Plätzen, Bezahlung direkt bei der Buchung",
+        "Gutscheine zum Verschenken, per E-Mail oder zum Abholen im Atelier",
+        "Design im Stil der Marke: warm, kreativ, persönlich",
       ],
     },
   },
