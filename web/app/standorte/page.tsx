@@ -6,10 +6,28 @@ import SiteFooter from "@/components/SiteFooter";
 import { ArrowIcon, ClientMarquee, CloseCta, ContactStrip, FaqList, Reviews } from "@/components/ui";
 import { site } from "@/lib/site";
 import { regionStaedte, locationsOfCity } from "@/lib/standorte";
+import Standortkarte, { type KartenOrt } from "@/components/Standortkarte";
 import { getStandortLeistung } from "@/lib/standort-inhalte";
 import { verifiedReviews } from "@/lib/verified-reviews";
 import { locationPath, routes, serviceRoutes } from "@/lib/routes";
 import koblenzImage from "@/public/bilder/koblenz-rhein.webp";
+
+/** Ungefähre Koordinaten (Breite, Länge) nur für die schematische Karte. */
+const koordinaten: Record<string, [number, number]> = {
+  Bendorf: [50.4297, 7.5706],
+  Koblenz: [50.3569, 7.589],
+  Vallendar: [50.3985, 7.6153],
+  Neuwied: [50.4286, 7.4604],
+  Andernach: [50.4397, 7.4028],
+  "Höhr-Grenzhausen": [50.436, 7.669],
+  "Ransbach-Baumbach": [50.4537, 7.7281],
+  Montabaur: [50.437, 7.8256],
+  Lahnstein: [50.3, 7.6056],
+  "Mülheim-Kärlich": [50.3878, 7.4956],
+  Weissenthurm: [50.4164, 7.4556],
+  Mayen: [50.3283, 7.2222],
+  Limburg: [50.3856, 8.062],
+};
 
 export const metadata: Metadata = {
   title: "Standorte: Pixel56 rund um Koblenz",
@@ -45,6 +63,19 @@ const faqs = [
 
 export default function StandorteUebersicht() {
   const staedte = [...regionStaedte].sort((a, b) => a.entfernungKm - b.entfernungKm);
+  const kartenOrte: KartenOrt[] = staedte.map((region) => {
+    const koordinate = koordinaten[region.stadt];
+    const seite = locationsOfCity(region.stadt).find((l) => l.leistung === "Webdesign") ?? locationsOfCity(region.stadt)[0];
+    return {
+      name: region.anzeige ?? region.stadt,
+      lat: koordinate?.[0] ?? 50.43,
+      lon: koordinate?.[1] ?? 7.57,
+      km: region.entfernungKm,
+      min: region.fahrzeitMin,
+      href: seite ? locationPath(seite.slug) : "#region",
+      sitz: region.entfernungKm === 0,
+    };
+  });
   const leistungen = ["Webdesign", "Google Ads", "Meta Ads", "SEO", "Social-Media Betreuung"];
 
   return (
@@ -129,6 +160,9 @@ export default function StandorteUebersicht() {
               Sortiert nach Entfernung von Bendorf. Jede Stadt hat eigene Seiten
               für Webdesign, Google Ads, Meta Ads, SEO und Social Media.
             </p>
+          </div>
+          <div className="reveal">
+            <Standortkarte orte={kartenOrte} />
           </div>
           <div className="audience-grid reveal">
             {staedte.map((region) => {
