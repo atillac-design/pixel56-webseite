@@ -5,6 +5,7 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
 import RegionLinks from "@/components/RegionLinks";
+import WebsiteCheck from "@/components/WebsiteCheck";
 import {
   ArrowIcon,
   ClientMarquee,
@@ -758,6 +759,28 @@ export default function WebdesignPage() {
             </p>
           </div>
           <Reviews reviews={webVoices} items={webVoices} />
+        </section>
+
+        <section className="band theme-light" id="website-check">
+          <div className="split2">
+            <div className="reveal">
+              <span className="band-tag">Kostenlos · Website-Check</span>
+              <h2 className="band-title">
+                Wie steht deine Website <em>heute da?</em>
+              </h2>
+              <p className="lead">
+                Adresse eingeben, und in Sekunden siehst du, ob die Grundlagen stimmen:
+                Verschlüsselung, Antwortzeit, Titel, Mobilansicht, Impressum und mehr. Ohne
+                Anmeldung, ohne Speicherung. Zu jedem Punkt gibt es einen Tipp.
+              </p>
+              <Link className="btn-text" href="/website-check">
+                Mehr zum Website-Check →
+              </Link>
+            </div>
+            <div className="reveal">
+              <WebsiteCheck kompakt />
+            </div>
+          </div>
         </section>
 
         <RegionLinks leistung="Webdesign" kurz="Webdesign" />

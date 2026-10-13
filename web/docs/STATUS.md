@@ -55,6 +55,30 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Artikeltexten (`https://www.pixel56.de/...`) werden beim Rendern relativ,
   damit sie auch auf Testumgebungen funktionieren. Seitentitel langer
   Artikelüberschriften enden nicht mehr mit „…“, sondern am Doppelpunkt.
+- 13.10.2026: **Budget-Planer auf der Meta-Ads-Seite.** `components/BudgetPlaner.tsx`
+  im Abschnitt „Budget & Kosten“: Der Besucher gibt Auftragswert, gewünschte
+  Aufträge pro Monat, Werbeanteil und Anfragen je Auftrag ein; daraus ergeben
+  sich Werbebudget pro Monat, nötige Anfragen, Höchstpreis je Anfrage und
+  Tagesbudget. Die Rechnung steht offen daneben. Es werden keine Branchen-
+  oder Erfahrungswerte behauptet: Startwerte sind als „Beispielwerte, bitte
+  anpassen“ markiert, bis der Besucher etwas ändert; der Text nennt den Rahmen
+  ausdrücklich als Rahmen, nicht als Versprechen.
+- 13.10.2026: **Website-Check als eigenes Werkzeug.** Seite `/website-check`
+  (in Sitemap und mit Vorschaubild), Route `app/api/website-check/route.ts`
+  (Node-Runtime, dynamisch) und `components/WebsiteCheck.tsx`. Die Route lädt
+  die angegebene Startseite serverseitig und prüft zwölf Punkte: HTTPS,
+  Antwortzeit, Titel- und Beschreibungslänge, H1-Anzahl, Viewport, Sprache,
+  Bild-Alternativtexte, Impressum-Link, Kontaktweg, Vorschaubild, HTML-Größe
+  (plus noindex-Hinweis). Schutz vor Missbrauch: nur http(s), keine
+  IP-Adressen, lokale oder private Ziele (DNS-Auflösung wird geprüft, auch
+  nach jeder Weiterleitung), höchstens fünf Weiterleitungen, 9 s Zeitlimit,
+  1,5 MB Lesegrenze, zwölf Prüfungen je Absender in zehn Minuten (im
+  Speicher der Funktion). Keine Speicherung der Adresse, keine E-Mail nötig.
+  Eingebettet außerdem auf den Seiten Webdesign und SEO (Abschnitt
+  „Kostenlos · Website-Check“). In dieser Sandbox lassen sich die meisten
+  Domains nicht auflösen; der Durchlauf wurde mit github.com geprüft (7 von
+  12 Punkten, Impressum-Hinweis gilt für deutsche Seiten). Lighthouse
+  `/website-check`: 99/100/100.
 - 13.10.2026: **System-Szene auch auf der Leistungsseite, Inhalte ausgelagert.**
   `components/SystemSzene.tsx` nimmt jetzt eine Konfiguration
   (`lib/system-szene.ts`): `startseiteSzene` mit vier Bausteinen,

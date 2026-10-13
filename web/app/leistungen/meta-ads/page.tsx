@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import BudgetPlaner from "@/components/BudgetPlaner";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
 import RegionLinks from "@/components/RegionLinks";
 import {
@@ -570,6 +571,9 @@ export default function MetaAdsPage() {
                 </div>
               ))}
             </div>
+          </div>
+          <div className="reveal">
+            <BudgetPlaner />
           </div>
         </section>
 
