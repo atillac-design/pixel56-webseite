@@ -29,6 +29,7 @@ import koblenzImage from "@/public/bilder/koblenz-rhein.webp";
 import seoFreebieImage from "@/public/bilder/freebie-seo-ebook-transparent.webp";
 import kiFreebieImage from "@/public/bilder/freebie-ki-ebook.webp";
 import SystemSzene from "@/components/SystemSzene";
+import { startseiteSzene } from "@/lib/system-szene";
 
 export const metadata: Metadata = {
   title: {
@@ -526,7 +527,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="reveal">
-              <SystemSzene />
+              <SystemSzene konfig={startseiteSzene} />
             </div>
           </section>
 

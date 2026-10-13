@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import SystemSzene from "@/components/SystemSzene";
+import { leistungenSzene } from "@/lib/system-szene";
 import {
   ArrowIcon,
   ClientMarquee,
@@ -321,10 +323,29 @@ export default function DienstleistungenPage() {
           </div>
         </section>
 
+        <section className="band system-section dark-stage service-dark-stage" id="system">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">04 — Alles greift ineinander</span>
+              <h2 className="band-title">
+                Acht Bausteine, <em>ein System</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Keine Leistung steht für sich. Anzeigen brauchen Zielseiten, Zielseiten
+              brauchen Content, und jede Anfrage braucht einen Ablauf dahinter. Tippe
+              auf einen Baustein und sieh, was er im Zusammenspiel leistet.
+            </p>
+          </div>
+          <div className="reveal">
+            <SystemSzene konfig={leistungenSzene} />
+          </div>
+        </section>
+
         <section className="band theme-light" id="ziele">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">04 — Welcher Baustein zu welchem Ziel passt</span>
+              <span className="band-tag">05 — Welcher Baustein zu welchem Ziel passt</span>
               <h2 className="band-title">
                 Sechs Ziele, <em>sechs Empfehlungen</em>
               </h2>
@@ -348,7 +369,7 @@ export default function DienstleistungenPage() {
         <section className="band dark-stage service-dark-stage" id="ablauf">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">05 — So läuft die Zusammenarbeit</span>
+              <span className="band-tag">06 — So läuft die Zusammenarbeit</span>
               <h2 className="band-title">
                 Vier Schritte, <em>bei jeder Leistung gleich</em>
               </h2>
@@ -373,7 +394,7 @@ export default function DienstleistungenPage() {
         <section className="band theme-light" id="kosten">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">06 — Kosten &amp; Transparenz</span>
+              <span className="band-tag">07 — Kosten &amp; Transparenz</span>
               <h2 className="band-title">
                 Wie Preise <em>bei uns entstehen</em>
               </h2>
@@ -396,7 +417,7 @@ export default function DienstleistungenPage() {
         <section className="band theme-light" id="referenzen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">07 — Ausgewählte Arbeiten</span>
+              <span className="band-tag">08 — Ausgewählte Arbeiten</span>
               <h2 className="band-title">
                 Drei Projekte, <em>drei Leistungen</em>
               </h2>
@@ -422,7 +443,7 @@ export default function DienstleistungenPage() {
         <section className="band theme-light light-reviews" id="stimmen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">08 — Kundenstimmen</span>
+              <span className="band-tag">09 — Kundenstimmen</span>
               <h2 className="band-title">
                 Was Kunden <em>über die Zusammenarbeit sagen</em>
               </h2>
@@ -438,7 +459,7 @@ export default function DienstleistungenPage() {
         <section className="band theme-light" id="ressourcen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">09 — Kostenlose Ressourcen</span>
+              <span className="band-tag">10 — Kostenlose Ressourcen</span>
               <h2 className="band-title">
                 Zum Selbermachen, <em>bevor du uns brauchst</em>
               </h2>
@@ -470,7 +491,7 @@ export default function DienstleistungenPage() {
         <section className="band theme-light" id="faq">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">10 — Häufige Fragen</span>
+              <span className="band-tag">11 — Häufige Fragen</span>
               <h2 className="band-title">
                 Was du vorher <em>wissen willst</em>
               </h2>

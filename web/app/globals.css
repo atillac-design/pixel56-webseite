@@ -2877,3 +2877,9 @@ body { overflow-x: clip; }
 [data-tilt]::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: radial-gradient(260px circle at var(--sx, 50%) var(--sy, 50%), rgba(255,57,81,0.14), transparent 65%); }
 .theme-light [data-tilt]::after { background: radial-gradient(260px circle at var(--sx, 50%) var(--sy, 50%), rgba(229,61,82,0.1), transparent 65%); }
 .lese-fortschritt { position: fixed; top: 0; left: 0; z-index: 80; width: 100%; height: 3px; transform-origin: left center; transform: scaleX(0); background: linear-gradient(90deg, var(--accent), var(--violet)); pointer-events: none; }
+/* Kompakte Pins bei acht Bausteinen: Symbol und Nummer, Namen in Karte und Chips. */
+.iso-wrap.kompakt .iso-karte { gap: 7px; padding: 6px 10px 6px 6px; }
+.iso-wrap.kompakt .ik-icon { width: 28px; height: 28px; border-radius: 8px; }
+.iso-wrap.kompakt .ik-icon svg { width: 16px; height: 16px; }
+.iso-wrap.kompakt .ik-text b { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; }
+.iso-wrap.kompakt .iso-karte.betrieb .ik-text b { font-family: var(--sans); font-size: 12px; letter-spacing: -0.01em; }

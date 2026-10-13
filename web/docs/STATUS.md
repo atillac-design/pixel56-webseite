@@ -55,6 +55,14 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Artikeltexten (`https://www.pixel56.de/...`) werden beim Rendern relativ,
   damit sie auch auf Testumgebungen funktionieren. Seitentitel langer
   Artikelüberschriften enden nicht mehr mit „…“, sondern am Doppelpunkt.
+- 13.10.2026: **System-Szene auch auf der Leistungsseite, Inhalte ausgelagert.**
+  `components/SystemSzene.tsx` nimmt jetzt eine Konfiguration
+  (`lib/system-szene.ts`): `startseiteSzene` mit vier Bausteinen,
+  `leistungenSzene` mit allen acht Leistungen im 3×3-Raster um den Betrieb.
+  Bei acht Bausteinen zeigen die Pins nur Symbol und Nummer, die Namen
+  stehen in Detailkarte und Chips. Auf `/dienstleistung` neuer Abschnitt
+  „04 — Alles greift ineinander“, die folgenden Abschnitte sind umnummeriert
+  (05 bis 11).
 - 13.10.2026: **Zeiger-Effekte und Lesefortschritt.** Globale
   Client-Komponente `components/Interaktiv.tsx` (im Layout neben `Reveal`):
   Karten (`premium-service-card`, `audience-card`, `resource-card`,
