@@ -412,18 +412,18 @@ export default function RecruitingPage() {
           <div className="work-gallery work-gallery-social reveal">
             <figure>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/bilder/ads-recruiting-kampagne.webp" alt="Recruiting-Kampagne auf Instagram und Facebook für einen Handwerksbetrieb" loading="lazy" decoding="async" />
-              <figcaption><b>Recruiting-Kampagne</b><span>Feed · Story · Meta</span></figcaption>
+              <img src="/bilder/ads-recruiting-kampagne.webp" alt="Recruiting-Anzeige für einen Abbruchbetrieb: Bewirb dich jetzt als Abbruchhelfer" loading="lazy" decoding="async" />
+              <figcaption><b>Recruiting-Kampagne</b><span>Abbruch &amp; Tiefbau · Feed</span></figcaption>
             </figure>
             <figure>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/bilder/content-creative-abbruch.webp" alt="Social-Media-Creative für die Mitarbeitergewinnung im Abbruch" loading="lazy" decoding="async" />
-              <figcaption><b>Creative Abbruch</b><span>Mitarbeitergewinnung · 1:1</span></figcaption>
+              <img src="/bilder/ads-fb-beispiele.webp" alt="Variante derselben Recruiting-Anzeige für die Stelle Baggerfahrer" loading="lazy" decoding="async" />
+              <figcaption><b>Stellenvariante</b><span>Ein Motiv, mehrere Stellen</span></figcaption>
             </figure>
             <figure>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/bilder/ads-recruiting-beispiel.webp" alt="Beispiel einer Recruiting-Anzeige mit Bewerbungsaufruf" loading="lazy" decoding="async" />
-              <figcaption><b>Bewerberansprache</b><span>Meta Ads · Recruiting</span></figcaption>
+              <img src="/bilder/ads-meta-beispiel.webp" alt="Beispielansicht von Recruiting-Anzeigen im Instagram-Feed und in der Story" loading="lazy" decoding="async" />
+              <figcaption><b>Anzeigenformate</b><span>Feed · Story · Reels</span></figcaption>
             </figure>
           </div>
           <div className="section-link-row reveal">

@@ -2674,3 +2674,26 @@ h1, h2, h3 { text-wrap: balance; }
 .service-suite .service-editorial .dark-stage .band-note,
 .service-suite .service-editorial .dark-stage .split2 .lead,
 .service-suite .service-editorial .dark-stage .lines li { color: var(--ink-dim); }
+
+/* Über uns: Porträt im Hero, verlinkte Leistungskarten, 3er-Prinzipien */
+.about-hero-visual { justify-self: end; width: min(100%, 520px); }
+.about-hero-visual .founder-frame { aspect-ratio: 1 / 1; }
+.about-hero-visual .founder-frame img { width: 100%; height: 100%; object-fit: cover; }
+a.scope-card { display: block; color: inherit; text-decoration: none; }
+.scope-grid-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+.audience-grid.cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.audience-grid.cols-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
+@media (max-width: 1080px) { .about-hero-visual { justify-self: center; } .scope-grid-4, .audience-grid.cols-4 { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 980px) { .audience-grid.cols-3 { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .audience-grid.cols-4 { grid-template-columns: 1fr; } }
+@media (max-width: 540px) { .scope-grid-4 { grid-template-columns: 1fr; } }
+.friction-list.prep .friction-row p::before { content: "Warum das hilft"; }
+.friction-list.prep .friction-row h3 { font-family: var(--sans); font-style: normal; font-weight: 700; font-size: 18px; }
+.mini-grid > div .body-link { margin-top: 14px; font-size: 13px; }
+.theme-light .reviews-google-link, .service-editorial .theme-light .reviews-google-link { color: #d82f49; }
+.theme-light .reviews-google-link:hover { color: #151319; }
+.friction-list.advice .friction-row p::before { content: "Unsere Empfehlung"; }
+a.audience-card { color: inherit; text-decoration: none; }
+.projects-hero-visual .founder-frame { aspect-ratio: 4 / 3; }
+.mini-grid small a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(229,61,82,0.5); }
+.mini-grid small a:hover { color: var(--accent); }

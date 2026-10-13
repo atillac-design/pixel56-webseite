@@ -170,7 +170,7 @@ const costParts = [
 
 const referenzen: RefItem[] = [
   { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-van-den-berg.webp", href: projectPath("van-den-berg"), cat: "Van den Berg Gruppe", title: "Meta Ads mit laufender Betreuung", text: "Kampagnenstruktur neu aufgebaut, Tracking eingerichtet, Anzeigen auf fokussierte Zielseiten geführt. Seitdem konstantes Budget und laufende Auswertung.", tag: "Meta Ads · Landingpage · laufend" },
-  { variant: "ic-1", barWidth: 50, img: "/bilder/ads-recruiting-kampagne.webp", href: projectPath("gm-dachdecker"), cat: "GM-Dachdecker Meisterbetrieb", title: "Kampagnen für die Mitarbeitergewinnung", text: "Meta Ads sprechen Kandidaten an, die nicht aktiv suchen, und führen auf ein Karriereportal mit Direkt-Upload.", tag: "Meta Ads · Recruiting · 2023" },
+  { variant: "ic-1", barWidth: 50, img: "/bilder/projekt-gm-dachdecker.webp", href: projectPath("gm-dachdecker"), cat: "GM-Dachdecker Meisterbetrieb", title: "Kampagnen für die Mitarbeitergewinnung", text: "Meta Ads sprechen Kandidaten an, die nicht aktiv suchen, und führen auf ein Karriereportal mit Direkt-Upload.", tag: "Meta Ads · Recruiting · 2023" },
 ];
 
 const faqs = [
@@ -389,15 +389,16 @@ export default function MetaAdsPage() {
               </h2>
             </div>
             <p className="band-note">
-              Die Motive zeigen reale Arbeiten von Pixel56. Kampagnenaufbau,
-              Zielgruppe und Zielseite wurden jeweils auf das Angebot abgestimmt.
+              Die Motive stammen aus Kampagnen und Formatvorlagen von Pixel56.
+              Kampagnenaufbau, Zielgruppe und Zielseite wurden jeweils auf das
+              Angebot abgestimmt.
             </p>
           </div>
           <div className="work-gallery work-gallery-social reveal">
             <figure>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/bilder/ads-meta-beispiel.webp" alt="Instagram- und Facebook-Anzeigen für Mitarbeitergewinnung" loading="lazy" decoding="async" />
-              <figcaption><b>Mitarbeitergewinnung</b><span>Feed · Story · Recruiting</span></figcaption>
+              <figcaption><b>Anzeigenformate</b><span>Feed · Story · Recruiting</span></figcaption>
             </figure>
             <figure>
               {/* eslint-disable-next-line @next/next/no-img-element */}

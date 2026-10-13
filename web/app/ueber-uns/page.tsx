@@ -1,256 +1,568 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import {
   ArrowIcon,
-  PulseField,
   ClientMarquee,
-  WaMock,
   CloseCta,
+  ContactStrip,
   FaqList,
   Reviews,
+  WaMock,
 } from "@/components/ui";
-import { site } from "@/lib/site";
-import { routes } from "@/lib/routes";
+import { services, site } from "@/lib/site";
+import { getFallstudie } from "@/lib/projekte";
+import { verifiedReviews } from "@/lib/verified-reviews";
+import { projectPath, routes } from "@/lib/routes";
+import atillaImage from "@/public/bilder/team-atilla.webp";
+import maTransporteImage from "@/public/bilder/projekt-ma-transporte.webp";
+import koblenzImage from "@/public/bilder/koblenz-rhein.webp";
 
 export const metadata: Metadata = {
-  title: "Über uns — Ein Ansprechpartner statt Callcenter",
+  title: "Über uns: Digitalagentur aus Bendorf bei Koblenz mit einem Ansprechpartner",
   description:
-    "Pixel56: kein anonymes Team, ein fester Ansprechpartner in Bendorf bei Koblenz. Persönlich, regional verwurzelt, alles aus einer Hand — für KMUs, Handwerker & Selbstständige.",
+    "Pixel56 ist eine gründergeführte Digitalagentur in Bendorf bei Koblenz. Websites, Meta Ads, Content und KI-Prozesse aus einer Hand, mit einem festen Ansprechpartner statt Callcenter.",
   alternates: { canonical: routes.about },
+  openGraph: {
+    title: "Über Pixel56: ein Ansprechpartner, alles aus einer Hand",
+    description:
+      "Wer hinter Pixel56 steht, wie wir arbeiten und warum du bei uns immer mit der Person sprichst, die dein Projekt umsetzt.",
+    url: routes.about,
+  },
 };
 
+const aboutUrl = `${site.url}${routes.about}`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": `${aboutUrl}#about`,
+  url: aboutUrl,
+  name: "Über Pixel56",
+  mainEntity: {
+    "@type": "ProfessionalService",
+    "@id": `${site.url}/#organization`,
+    name: site.name,
+    url: site.url,
+    telephone: site.phoneIntl,
+    email: site.email,
+    founder: { "@type": "Person", name: "Atilla Ciftcioglu", url: `${site.url}/team/atilla-ciftcioglu` },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Hüttenstraße 100",
+      postalCode: "56170",
+      addressLocality: "Bendorf",
+      addressRegion: "Rheinland-Pfalz",
+      addressCountry: "DE",
+    },
+  },
+};
+
+const steckbrief = [
+  { title: "Rolle", text: "Atilla Ciftcioglu, Gründer. Verantwortet Strategie, Konzeption und Umsetzung selbst." },
+  { title: "Schwerpunkte", text: "Websites, Meta Ads, Social Content und KI-Prozesse für kleine und mittlere Unternehmen." },
+  { title: "Netzwerk", text: "Für Dreh, Schnitt oder Entwicklung kommen feste Partner dazu. Die Verantwortung bleibt bei Pixel56." },
+  { title: "Erreichbar", text: "Telefon, WhatsApp, Video-Call oder vor Ort in Bendorf. Du kennst den Namen, du kennst die Nummer." },
+];
+
+const agenturProbleme = [
+  {
+    problem: "Das Verkaufsgespräch führt jemand anderes als die Umsetzung.",
+    answer: "Bei uns ist es dieselbe Person. Was im Erstgespräch besprochen wird, landet ohne Übersetzungsverlust in der Umsetzung, weil niemand dazwischensitzt.",
+  },
+  {
+    problem: "Website, Anzeigen und Content kommen von drei Anbietern, die sich nicht abstimmen.",
+    answer: "Wir planen die Bausteine zusammen. Die Website nimmt auf, was die Anzeige verspricht, und der Content zeigt, was die Website behauptet.",
+  },
+  {
+    problem: "Nach dem Launch wird es still.",
+    answer: "Betreuung gehört zur Zusammenarbeit. Wir schauen, was ankommt, und passen an, statt zu warten, bis sich jemand beschwert.",
+  },
+  {
+    problem: "Berichte voller Kennzahlen, aber ohne Aussage.",
+    answer: "Du bekommst eine Einordnung in ganzen Sätzen: Was hat funktioniert, was nicht, und was machen wir als Nächstes. Die Zahlen bleiben jederzeit einsehbar.",
+  },
+  {
+    problem: "Pakete von der Stange, egal was der Betrieb eigentlich braucht.",
+    answer: "Wir starten bei deinem Ziel. Wer nur eine Website braucht, bekommt eine Website. Wer nur Anzeigen braucht, bekommt Anzeigen.",
+  },
+];
+
 const prinzipien = [
-  { fl: "Prinzip 1", title: "Ehrlichkeit vor Verkauf", text: "Das Erstgespräch ist kostenlos und ergebnisoffen. Wenn eine Leistung nichts bringt, sagen wir das — bevor sie beauftragt wird, nicht danach." },
-  { fl: "Prinzip 2", title: "Ergebnisse vor Ästhetik", text: "Schön ist Pflicht, wirksam ist das Ziel. Jede Website und jede Kampagne wird an echten Zahlen gemessen, nicht an Bauchgefühl." },
-  { fl: "Prinzip 3", title: "Dranbleiben vor Abliefern", text: "Der Launch ist der Anfang, nicht das Ende. Betreuung ist Teil der Zusammenarbeit — kein Zusatzverkauf danach." },
+  {
+    tag: "Prinzip 01",
+    title: "Ehrlichkeit vor Verkauf",
+    text: "Das Erstgespräch ist kostenlos und ergebnisoffen. Wenn eine Leistung dir nichts bringt, sagen wir das vorher. Lieber ein Projekt weniger als ein Kunde, der nach drei Monaten enttäuscht ist.",
+    note: "Im Alltag heißt das: Auch ein „Das brauchst du nicht“ ist eine Antwort.",
+  },
+  {
+    tag: "Prinzip 02",
+    title: "Wirkung vor Ästhetik",
+    text: "Eine Website muss gut aussehen, das ist Pflicht. Entscheidend ist, ob sie Anfragen bringt, ob Bewerber sich melden, ob die Anzeige zum Angebot passt. Daran messen wir unsere Arbeit.",
+    note: "Im Alltag heißt das: Schön allein reicht nicht als Abnahmekriterium.",
+  },
+  {
+    tag: "Prinzip 03",
+    title: "Dranbleiben vor Abliefern",
+    text: "Der Livegang ist ein Anfang. Rankings, Kampagnen und Inhalte brauchen Pflege, sonst verlieren sie an Wert. Deshalb ist Betreuung Teil unserer Zusammenarbeit und kein Zusatzverkauf.",
+    note: "Im Alltag heißt das: Wir melden uns, bevor du fragen musst.",
+  },
+];
+
+const zielgruppen = [
+  {
+    tag: "Handwerk & Bau",
+    title: "Betriebe mit vollen Auftragsbüchern und leerer Bewerbermappe",
+    text: "Dachdecker, Abbruch, Tiefbau, Trocknungstechnik. Hier geht es um Vertrauen, Erreichbarkeit und darum, die richtigen Leute zu finden.",
+    refs: "GM-Dachdecker, MDU Bedachungen, DEMA Bedachungen, Oktay Cömertler, Colak GmbH",
+  },
+  {
+    tag: "Transport, Technik & Dienstleistung",
+    title: "Unternehmen, deren Leistung online nicht sichtbar war",
+    text: "Spezialisierte Anbieter, die über Empfehlungen wachsen und online nachholen wollen, was sie im Betrieb längst können.",
+    refs: "M&A Transporte, Van den Berg Gruppe, CASS Schulungen, Schlüsselfertig-Immobilien",
+  },
+  {
+    tag: "Bildung, Soziales & Vereine",
+    title: "Initiativen, die mit kleinem Budget viel erreichen müssen",
+    text: "Gemeinnützige Träger und Vereine, bei denen jede Anmeldung und jede Spende zählt und die Website das zentrale Werkzeug ist.",
+    refs: "Stark ins Neue, Lernforum Obertshausen, Sportler für Kinderherzen",
+  },
+  {
+    tag: "Lokale Marken & Handel",
+    title: "Geschäfte, die eine erkennbare Marke brauchen",
+    text: "Vom Atelier bis zur Gastronomie: ein Auftritt, der zum Laden passt, und Content, der regelmäßig neue Kunden bringt.",
+    refs: "CurlyAnn Atelier, Cavar Home, DiscountHaus Holding, Burgerfabrik",
+  },
+];
+
+const ablauf = [
+  { nr: "01", title: "Erstgespräch", text: "Kostenlos, unverbindlich, meist 15 bis 30 Minuten. Du beschreibst, wo du stehst und was du erreichen willst. Wir hören zu und fragen nach.", gets: "Du bekommst: eine ehrliche erste Einschätzung" },
+  { nr: "02", title: "Einschätzung & Angebot", text: "Wir sagen, welcher Baustein den größten Hebel hat, und beschreiben den Weg dorthin. Das Angebot ist konkret, mit Umfang, Ablauf und Preis.", gets: "Du bekommst: ein Angebot, das zum Ziel passt" },
+  { nr: "03", title: "Umsetzung", text: "Feste Abstimmungstermine, Zwischenstände zum Anschauen, Feedback direkt an die Person, die umsetzt. Keine Überraschungen am Ende.", gets: "Du bekommst: Zwischenstände, die du prüfen kannst" },
+  { nr: "04", title: "Betreuung", text: "Nach dem Livegang oder Kampagnenstart beobachten wir, was passiert, und passen an. Du entscheidest, wie eng die Betreuung läuft.", gets: "Du bekommst: Einordnung statt Zahlenfriedhof" },
+];
+
+const nichtMachen = [
+  { title: "Keine Rankingversprechen", text: "Niemand kann Platz 1 bei Google garantieren. Wir versprechen saubere Arbeit und zeigen, was sich daraus entwickelt." },
+  { title: "Keine erfundenen Bewertungen", text: "Auf dieser Website stehen nur Aussagen, die unsere Kunden so veröffentlicht haben. Keine geschönten Zahlen, keine Fantasie-Statistiken." },
+  { title: "Keine Abhängigkeit", text: "Website, Werbekonten, Domains und Daten laufen auf deinen Namen. Wenn du gehen willst, nimmst du alles mit." },
+  { title: "Keine Standardpakete", text: "Jedes Angebot entsteht aus dem Erstgespräch. Was du nicht brauchst, steht auch nicht drin." },
 ];
 
 const faqs = [
-  { q: "Wer ist mein Ansprechpartner während des Projekts?", a: "Immer dieselbe Person — von der ersten Anfrage bis zur laufenden Betreuung. Keine wechselnden Projektmanager, kein Neu-Erklären." },
-  { q: "Arbeitet ihr nur regional in Bendorf und Koblenz?", a: "Der Sitz ist in Bendorf, lokale Betriebe sind uns besonders vertraut. Die Zusammenarbeit läuft aber ortsunabhängig — daher betreuen wir auch Kunden außerhalb der Region." },
-  { q: "Kann ich auch persönlich vorbeikommen?", a: "Ja, gerne nach Terminabsprache — Hüttenstraße 100 in Bendorf. Für Content-Produktionen kommen wir umgekehrt auch zu dir in den Betrieb." },
-  { q: "Was kostet das Erstgespräch?", a: "Nichts. Es dient dazu, deine Situation ehrlich einzuschätzen — erst danach gibt es ein konkretes, auf dich zugeschnittenes Angebot." },
-  { q: "Übernehmt ihr auch nur Teilleistungen?", a: "Ja. Alles aus einer Hand ist ein Angebot, kein Zwang — wer nur SEO, nur Ads oder nur Content braucht, bekommt genau das." },
-];
-
-const reviews = [
-  { text: "Man merkt sofort: Hier spricht man mit dem, der die Arbeit auch macht. Keine Übergaben, kein Stille-Post-Effekt.", who: "CASS Schulungen" },
-  { text: "Ehrliche Beratung von Anfang an — uns wurde sogar von einer Leistung abgeraten, die wir nicht gebraucht hätten.", who: "Colak GmbH", img: "/bilder/person-nalan-colak.webp" },
-  { text: "Seit Jahren derselbe Ansprechpartner, immer erreichbar. Das findet man selten.", who: "MA-Transporte" },
+  { q: "Wer ist mein Ansprechpartner während des Projekts?", a: "Atilla Ciftcioglu, von der ersten Anfrage bis zur laufenden Betreuung. Keine wechselnden Projektmanager, kein Neu-Erklären. Wenn Partner für Dreh, Schnitt oder Entwicklung dazukommen, bleibt die Verantwortung bei Pixel56." },
+  { q: "Wie groß ist Pixel56?", a: "Bewusst klein. Pixel56 ist gründergeführt und arbeitet mit einem festen Netzwerk aus Spezialisten, die je nach Projekt dazukommen. Dadurch bleiben die Wege kurz und die Preise nachvollziehbar." },
+  { q: "Arbeitet ihr nur in Bendorf und Koblenz?", a: "Der Sitz ist in Bendorf, und lokale Betriebe aus der Region sind uns besonders vertraut. Die Zusammenarbeit läuft aber ortsunabhängig per Video-Call, Telefon und WhatsApp. Wir betreuen Kunden in ganz Deutschland." },
+  { q: "Kann ich persönlich vorbeikommen?", a: "Ja, gern nach Terminabsprache in der Hüttenstraße 100 in Bendorf. Für Content-Produktionen kommen wir umgekehrt zu dir in den Betrieb." },
+  { q: "Übernehmt ihr auch nur Teilleistungen?", a: "Ja. Alles aus einer Hand ist ein Angebot, kein Zwang. Wer nur eine Website, nur Anzeigen oder nur Content braucht, bekommt genau das." },
+  { q: "Was kostet das Erstgespräch?", a: "Nichts. Es dient dazu, deine Situation ehrlich einzuschätzen. Erst danach gibt es ein konkretes, auf dich zugeschnittenes Angebot." },
 ];
 
 export default function UeberUnsPage() {
+  const spotlight = getFallstudie("ma-transporte");
+
   return (
-    <main className="service-premium service-suite page-suite page-suite-about">
-      <div className="sheet">
-        <SiteNav crumb={{ section: "Unternehmen", page: "Über uns" }} />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-        <header className="hero service-suite-hero">
-          <div className="hero-portrait">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/bilder/team-atilla-quadrat.webp" alt="Atilla Ciftcioglu, Gründer von Pixel56" />
-            <span className="hp-tag">Atilla Ciftcioglu · Gründer</span>
-          </div>
-          <div className="hero-eyebrow">UNTERNEHMEN · ÜBER UNS</div>
-          <h1>
-            <span className="in"><span>Kein anonymes</span></span>
-            <span className="in"><span>Team.</span></span>
-            <span className="in"><span>Ein Ansprechpartner.</span></span>
-          </h1>
-          <p className="hero-sub">
-            Hinter jeder Anfrage bei Pixel56 steht jemand, den du beim Namen
-            kennst und der ans Telefon geht — kein Callcenter, kein
-            Ticket-System.
-          </p>
-          <div className="hero-actions">
-            <a className="btn-primary" href="https://calendly.com/pixel56/15min" target="_blank" rel="noopener">
-              Kostenloses Erstgespräch <ArrowIcon />
-            </a>
-            <Link className="btn-text" href="#wer">
-              Wer dahinter steht ↓
-            </Link>
-          </div>
-          <div className="hero-foot">
-            <span className="hf-label">Was uns ausmacht:</span>
-            <div className="hf-chip">Persönlich</div>
-            <div className="hf-chip">Regional verwurzelt</div>
-            <div className="hf-chip">Alles aus einer Hand</div>
-          </div>
-        </header>
-      </div>
-
-      <ClientMarquee />
-
-      <div className="editorial-shell service-editorial">
+      <main className="service-premium about-premium">
         <div className="sheet">
-        <section className="band tint-amber" id="wer">
-          <div className="split2 reverse">
+          <SiteNav crumb={{ section: "Unternehmen", page: "Über uns" }} />
+
+          <header className="service-premium-hero about-hero">
+            <div className="service-premium-glow" aria-hidden="true" />
+            <div className="service-premium-copy">
+              <div className="premium-kicker">ÜBER PIXEL56 · BENDORF BEI KOBLENZ</div>
+              <h1>
+                <span>Eine Agentur,</span>
+                <span className="service-hero-accent">ein Ansprechpartner.</span>
+                <span>Kein Callcenter.</span>
+              </h1>
+              <p>
+                Pixel56 ist eine gründergeführte Digitalagentur aus Bendorf bei
+                Koblenz. Wer hier anruft, spricht mit der Person, die das Projekt
+                plant und umsetzt: Websites, Meta Ads, Social Content und
+                KI-Prozesse für Unternehmen, die online Anfragen und Bewerber
+                gewinnen wollen.
+              </p>
+              <div className="premium-actions">
+                <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">
+                  Kostenloses Erstgespräch <ArrowIcon />
+                </a>
+                <Link className="btn-text" href="#wer">
+                  Wer dahinter steht ↓
+                </Link>
+              </div>
+              <div className="premium-proof" aria-label="Pixel56 auf einen Blick">
+                <span>Gründergeführt</span>
+                <span>Bendorf bei Koblenz</span>
+                <span>Web, Ads, Content, KI</span>
+                <span>Betreuung nach dem Launch</span>
+              </div>
+            </div>
+
+            <div className="founder-visual about-hero-visual reveal">
+              <div className="founder-frame">
+                <Image src={atillaImage} alt="Atilla Ciftcioglu, Gründer von Pixel56" priority sizes="(max-width: 1080px) 92vw, 520px" />
+              </div>
+              <span>// ATILLA CIFTCIOGLU · GRÜNDER · STRATEGIE &amp; UMSETZUNG</span>
+            </div>
+          </header>
+        </div>
+
+        <ClientMarquee />
+
+        <div className="editorial-shell service-editorial">
+          <div className="sheet">
+        <section className="service-summary service-summary-premium reveal theme-light" aria-label="Pixel56 auf einen Blick">
+          <div>
+            <span>Gründer</span>
+            <strong>Atilla Ciftcioglu</strong>
+          </div>
+          <div>
+            <span>Standort</span>
+            <strong>Bendorf bei Koblenz, deutschlandweit</strong>
+          </div>
+          <div>
+            <span>Arbeitsweise</span>
+            <strong>Ein Ansprechpartner, alles aus einer Hand</strong>
+          </div>
+          <div>
+            <span>Kunden</span>
+            <strong>Handwerk, Mittelstand, Vereine, Selbstständige</strong>
+          </div>
+        </section>
+
+        <section className="band theme-light" id="wer">
+          <div className="split2">
             <div className="reveal">
               <span className="band-tag">01 — Wer dahinter steht</span>
               <h2 className="band-title">
-                Ein Name, <em>kein Callcenter</em>
+                Du sprichst mit dem, <em>der es auch macht</em>
               </h2>
               <p className="lead">
-                Pixel56 wurde aus dem Anspruch gegründet, dass digitale Arbeit
-                für kleine und mittlere Unternehmen genauso professionell sein
-                kann wie für Konzerne — nur persönlicher. Wer anruft, spricht
-                nicht mit einer Hotline, sondern mit dem Menschen, der das
-                Projekt tatsächlich umsetzt.
+                Pixel56 ist bewusst klein aufgebaut. Atilla Ciftcioglu hat die
+                Agentur gegründet, weil kleine und mittlere Unternehmen dieselbe
+                Qualität verdienen wie Konzerne, nur ohne die Abteilungen
+                dazwischen. Er verantwortet Strategie, Konzeption und Umsetzung
+                selbst.
               </p>
-              <ul className="lines">
-                <li>Direkter Kontakt zum Umsetzer, keine Übergaben zwischen Abteilungen.</li>
-                <li>Ehrliche Einschätzungen — auch wenn die Antwort mal „brauchst du nicht“ lautet.</li>
-                <li>Kurze Wege: WhatsApp, Telefon oder vor Ort in Bendorf.</li>
-              </ul>
+              <p className="lead">
+                Wenn ein Projekt Spezialisten braucht, etwa für Dreh, Schnitt
+                oder Entwicklung, kommen sie aus einem festen Netzwerk dazu. Dein
+                Ansprechpartner bleibt derselbe, und die Verantwortung für das
+                Ergebnis liegt bei Pixel56.
+              </p>
+              <Link className="body-link" href="/team/atilla-ciftcioglu">
+                Mehr über Atilla Ciftcioglu <ArrowIcon />
+              </Link>
             </div>
-            <div className="reveal">
-              <div className="profile-mock">
-                <div className="pm-top">
-                  <div className="pm-avatar">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/bilder/team-atilla.webp" alt="Atilla Ciftcioglu" loading="lazy" decoding="async" />
-                  </div>
-                  <div className="pm-id">
-                    <b>Atilla Ciftcioglu</b>
-                    <span>
-                      <span className="wdot" />
-                      Erreichbar
-                    </span>
-                  </div>
+            <div className="mini-grid reveal" aria-label="Steckbrief Pixel56">
+              {steckbrief.map((item) => (
+                <div key={item.title}>
+                  <b>{item.title}</b>
+                  <small>{item.text}</small>
                 </div>
-                <div className="pm-row"><span>Rolle</span><b>Gründer &amp; Ansprechpartner</b></div>
-                <div className="pm-row"><span>Standort</span><b>Bendorf bei Koblenz</b></div>
-                <div className="pm-row"><span>Kanal</span><b>WhatsApp · Telefon · vor Ort</b></div>
-                <div className="pm-row"><span>Antwortzeit</span><b>meist unter 1 Stunde</b></div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="band">
+        <section className="band theme-light" id="warum">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">02 — Woran wir glauben</span>
+              <span className="band-tag">02 — Warum es Pixel56 gibt</span>
               <h2 className="band-title">
-                Drei Prinzipien, <em>keine Floskeln</em>
+                Fünf Dinge, die bei Agenturen <em>oft schiefgehen</em>
               </h2>
             </div>
             <p className="band-note">
-              Keine Poster-Werte fürs Büro, sondern Regeln, die jede
-              Zusammenarbeit tatsächlich prägen.
+              Die meisten unserer Kunden hatten vorher schon eine Agentur. Die
+              Erfahrungen ähneln sich, und aus ihnen ist unsere Arbeitsweise
+              entstanden.
             </p>
           </div>
-          <div className="fact-grid reveal">
-            {prinzipien.map((f) => (
-              <div className="fact-cell" key={f.fl}>
-                <span className="fl">{f.fl}</span>
-                <h4>{f.title}</h4>
-                <p>{f.text}</p>
+          <div className="friction-list reveal">
+            {agenturProbleme.map((item, index) => (
+              <div className="friction-row" key={item.problem}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{item.problem}</h3>
+                <p>{item.answer}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="band tint" id="beweis">
-          <div className="band-tag reveal" style={{ marginBottom: 44 }}>
-            03 — Unser Anspruch
+        <section className="band theme-light" id="prinzipien">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">03 — Woran wir uns halten</span>
+              <h2 className="band-title">
+                Drei Prinzipien, <em>keine Poster-Werte</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Keine Leitsätze fürs Büro, sondern Regeln, an denen du jede
+              Zusammenarbeit mit uns messen kannst.
+            </p>
           </div>
-          <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
-            <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
-              Ein fester Ansprechpartner. Klare Entscheidungen. Kontinuität.
-            </p>
-            <p>
-              Wir verbinden Konzeption, Umsetzung und laufende Betreuung.
-              Welche Kanäle sinnvoll sind, entscheiden wir ausgehend vom
-              Angebot und Ziel des Kunden — nicht von einem Standardpaket.
-            </p>
-            <cite>{"// SO ARBEITET PIXEL56"}</cite>
+          <div className="audience-grid cols-3 reveal">
+            {prinzipien.map((item) => (
+              <article className="audience-card" key={item.tag}>
+                <span>{item.tag}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <small>{item.note}</small>
+              </article>
+            ))}
           </div>
         </section>
 
-        <section className="band">
-          <div className="split2">
-            <div className="reveal">
-              <span className="band-tag">04 — Der Standort</span>
+        <section className="band theme-light" id="leistungen">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">04 — Leistungen aus einer Hand</span>
               <h2 className="band-title">
-                Zuhause in Bendorf. <em>Zuhause im Digitalen.</em>
+                Acht Bausteine, <em>die zusammenpassen</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Jeder Baustein funktioniert für sich. Seine Wirkung entfaltet er
+              aber erst im Zusammenspiel: Die Anzeige führt auf die Website, die
+              Website zeigt den Content, und KI nimmt dir die Routine ab.
+            </p>
+          </div>
+          <div className="scope-grid scope-grid-4 reveal">
+            {services.map((service) => (
+              <Link className="scope-card" href={service.href} key={service.slug}>
+                <span>{service.nr}</span>
+                <h3>{service.title}</h3>
+                <p>{service.short}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="band theme-light" id="kunden">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">05 — Für wen wir arbeiten</span>
+              <h2 className="band-title">
+                Betriebe, die <em>etwas zu zeigen haben</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Unsere Kunden sind keine Konzerne. Es sind Unternehmen, bei denen
+              der Inhaber selbst entscheidet und jede Anfrage einen Unterschied
+              macht.
+            </p>
+          </div>
+          <div className="audience-grid cols-4 reveal">
+            {zielgruppen.map((item) => (
+              <article className="audience-card" key={item.tag}>
+                <span>{item.tag}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <small>Referenzen: {item.refs}</small>
+              </article>
+            ))}
+          </div>
+          <div className="section-link-row reveal">
+            <Link className="body-link" href={routes.projects}>
+              Alle Kundenprojekte ansehen <ArrowIcon />
+            </Link>
+          </div>
+        </section>
+
+        <section className="band dark-stage service-dark-stage" id="ablauf">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">06 — So läuft die Zusammenarbeit</span>
+              <h2 className="band-title">
+                Vier Schritte, <em>keine Blackbox</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Du weißt jederzeit, wo das Projekt steht, was als Nächstes passiert
+              und was es kostet.
+            </p>
+          </div>
+          <div className="premium-process reveal">
+            {ablauf.map((step) => (
+              <article key={step.nr}>
+                <span>{step.nr}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+                <small>{step.gets}</small>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {spotlight ? (
+          <section className="band theme-light" id="zusammenarbeit">
+            <div className="band-head reveal">
+              <div>
+                <span className="band-tag">07 — Aus der Praxis</span>
+                <h2 className="band-title">
+                  Eine Zusammenarbeit, <em>die seit 2019 läuft</em>
+                </h2>
+              </div>
+              <p className="band-note">
+                Wie sich „alles aus einer Hand“ über Jahre anfühlt, zeigt das
+                Beispiel {spotlight.kunde}: Website, Content und Kampagnen
+                aufeinander abgestimmt, mit demselben Ansprechpartner.
+              </p>
+            </div>
+            <div className="case-spotlight reveal">
+              <div>
+                <figure className="case-spotlight-visual" style={{ margin: 0 }}>
+                  <Image src={maTransporteImage} alt={`Website von ${spotlight.kunde}`} fill sizes="(max-width: 980px) 100vw, 46vw" />
+                  <figcaption>{spotlight.kunde} · {spotlight.branche}</figcaption>
+                </figure>
+              </div>
+              <div>
+                <div className="case-steps">
+                  <div className="case-step">
+                    <span>Ausgangslage</span>
+                    <h3>{spotlight.problem.titel}</h3>
+                    <p>{spotlight.problem.text}</p>
+                  </div>
+                  <div className="case-step">
+                    <span>Umsetzung</span>
+                    <h3>{spotlight.loesung.titel}</h3>
+                    <p>{spotlight.loesung.text}</p>
+                    <ul>
+                      {spotlight.loesung.punkte.map((punkt) => (
+                        <li key={punkt}>{punkt}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="case-step">
+                    <span>Heute</span>
+                    <h3>Laufende Betreuung</h3>
+                    <p>{spotlight.ergebnis?.text ?? spotlight.teaser}</p>
+                  </div>
+                </div>
+                <Link className="body-link" href={projectPath(spotlight.slug)}>
+                  Projekt ansehen <ArrowIcon />
+                </Link>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        <section className="band theme-light" id="standort">
+          <div className="split2 reverse">
+            <div className="reveal">
+              <span className="band-tag">08 — Der Standort</span>
+              <h2 className="band-title">
+                Zuhause in Bendorf. <em>Unterwegs in der Region.</em>
               </h2>
               <p className="lead">
-                {site.address} — hier sitzen wir wirklich, hier kann man
-                vorbeikommen. Die Zusammenarbeit selbst läuft aber
-                ortsunabhängig: per Video-Call, Telefon und WhatsApp betreuen
-                wir Kunden aus der ganzen Region und darüber hinaus.
+                {site.address}: Hier sitzen wir wirklich, hier kannst du nach
+                Absprache vorbeikommen. Koblenz liegt wenige Minuten entfernt,
+                Neuwied, Montabaur und der Westerwald sind schnell erreicht.
+              </p>
+              <p className="lead">
+                Die Zusammenarbeit selbst ist nicht an den Ort gebunden. Per
+                Video-Call, Telefon und WhatsApp betreuen wir Kunden in ganz
+                Deutschland genauso verbindlich wie Betriebe um die Ecke.
               </p>
               <ul className="lines">
-                <li>Lokale Betriebe aus der Region Koblenz sind uns besonders vertraut.</li>
-                <li>Vor-Ort-Termine für Content-Produktion und Kennenlernen.</li>
-                <li>Ortsunabhängige Betreuung für alle anderen Projekte.</li>
+                <li>Vor-Ort-Dreh für Reels und Fotos in Koblenz, Neuwied, Montabaur und Umgebung</li>
+                <li>Kennenlernen in Bendorf oder per Video-Call, wie es dir besser passt</li>
+                <li>Lokale Betriebe aus der Region Koblenz sind uns besonders vertraut</li>
+                <li>
+                  <Link href={routes.locations}>Webdesign, Ads und SEO in deiner Stadt</Link>
+                </li>
+              </ul>
+            </div>
+            <div className="region-visual reveal">
+              <Image src={koblenzImage} alt="Koblenz am Rhein, wenige Minuten vom Pixel56-Standort in Bendorf" fill sizes="(max-width: 900px) 100vw, 50vw" />
+            </div>
+          </div>
+        </section>
+
+        <section className="band dark-stage service-dark-stage" id="erreichbarkeit">
+          <div className="split2">
+            <div className="reveal">
+              <span className="band-tag">09 — Erreichbarkeit</span>
+              <h2 className="band-title">
+                Ein Kanal, <em>eine Nummer</em>
+              </h2>
+              <p className="lead">
+                Kein Ticket-System, keine Warteschleife, keine Rückrufbitte.
+                Während der Zusammenarbeit erreichst du deinen Ansprechpartner
+                direkt per WhatsApp oder Telefon, für die schnelle Frage genauso
+                wie für die große Entscheidung.
+              </p>
+              <ul className="lines">
+                <li>Antwort auf Anfragen innerhalb eines Werktags, meist deutlich schneller</li>
+                <li>Feste Abstimmungstermine während der Umsetzung</li>
+                <li>Zwischenstände als Link, nicht als PDF-Anhang</li>
               </ul>
             </div>
             <div className="reveal">
-              <div className="map-mock">
-                <div className="mm-ring" />
-                <div className="mm-ring" />
-                <div className="mm-ring" />
-                <div className="mm-pin">
-                  <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                    <path d="M16 3c-5.8 0-10 4.4-10 9.8C6 19.8 16 29 16 29s10-9.2 10-16.2C26 7.4 21.8 3 16 3z" stroke="currentColor" strokeWidth="2" fill="rgba(255,57,81,0.15)" />
-                    <circle cx="16" cy="12.5" r="3.2" fill="currentColor" />
-                  </svg>
-                </div>
-                <div className="mm-label">Hüttenstraße 100 · 56170 Bendorf</div>
-                <div className="mm-coords">50.4297° N, 7.5703° O</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="band tint-violet">
-          <div className="split2">
-            <div className="reveal">
-              <span className="band-tag">05 — Zusammenarbeit</span>
-              <h2 className="band-title">
-                Ein Ansprechpartner. <em>Ein Kanal.</em>
-              </h2>
-              <p className="lead">
-                Kein Ticket-System, kein Callcenter, keine Rückrufbitte. Während
-                der Zusammenarbeit erreichst du deinen festen Ansprechpartner
-                direkt per WhatsApp — für schnelle Fragen genauso wie für große
-                Entscheidungen.
-              </p>
-            </div>
-            <div className="reveal">
               <WaMock
-                name="Pixel56 — Dein Ansprechpartner"
+                name="Pixel56 · Atilla"
                 messages={[
-                  { from: "in", text: "Hast du kurz Zeit für eine Frage zum Projekt?" },
-                  { from: "out", text: "Klar, ruf einfach durch — bin am Platz." },
-                  { from: "in", text: "👍 Super, mach ich." },
+                  { from: "in", text: "Hast du kurz Zeit? Frage zur Startseite." },
+                  { from: "out", text: "Klar. Ruf durch oder schick mir einen Screenshot, dann schaue ich direkt rein." },
+                  { from: "in", text: "Screenshot kommt. Danke dir!" },
                 ]}
-                footer="Antwortzeit während der Zusammenarbeit: meist unter 1 Stunde"
+                footer="So laufen Abstimmungen während eines Projekts"
               />
             </div>
           </div>
         </section>
 
-        <section className="band">
+        <section className="band theme-light" id="nicht">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">06 — Bewertungen</span>
+              <span className="band-tag">10 — Was wir nicht machen</span>
               <h2 className="band-title">
-                Das sagen <em>Kunden über uns</em>
+                Vier Dinge, <em>die du bei uns nicht findest</em>
               </h2>
             </div>
+            <p className="band-note">
+              Vertrauen entsteht auch dadurch, dass man weiß, was jemand nicht
+              tut.
+            </p>
           </div>
-          <Reviews reviews={reviews} />
+          <div className="mini-grid cols-4 reveal">
+            {nichtMachen.map((item) => (
+              <div key={item.title}>
+                <b>{item.title}</b>
+                <small>{item.text}</small>
+              </div>
+            ))}
+          </div>
         </section>
 
-        <section className="band">
+        <section className="band theme-light light-reviews" id="stimmen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">07 — Häufige Fragen</span>
+              <span className="band-tag">11 — Kundenstimmen</span>
+              <h2 className="band-title">
+                Was Kunden <em>über die Zusammenarbeit sagen</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Wir zeigen nur Aussagen, die unsere Kunden so veröffentlicht haben.
+              Keine erfundenen Bewertungen, keine geschönten Zahlen.
+            </p>
+          </div>
+          <Reviews reviews={verifiedReviews} items={verifiedReviews} />
+        </section>
+
+        <section className="band theme-light" id="faq">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">12 — Häufige Fragen</span>
               <h2 className="band-title">
                 Was du vorher <em>wissen willst</em>
               </h2>
@@ -259,15 +571,17 @@ export default function UeberUnsPage() {
           <FaqList items={faqs} />
         </section>
 
+          </div>
         </div>
-      </div>
 
-      <div className="sheet service-ending">
-        <CloseCta>
-          Lern uns <em>kennen.</em>
-        </CloseCta>
-        <SiteFooter />
-      </div>
-    </main>
+        <div className="sheet service-ending">
+          <ContactStrip />
+          <CloseCta>
+            Lern uns <em>kennen.</em>
+          </CloseCta>
+          <SiteFooter />
+        </div>
+      </main>
+    </>
   );
 }
