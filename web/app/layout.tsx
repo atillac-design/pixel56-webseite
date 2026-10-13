@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import Interaktiv from "@/components/Interaktiv";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import KontaktLeiste from "@/components/KontaktLeiste";
+import Schnellsuche from "@/components/Schnellsuche";
 import CookieConsent from "@/components/CookieConsent";
 import { indexable } from "@/lib/site";
 
@@ -45,6 +46,7 @@ export default function RootLayout({
         {children}
         <WhatsAppFloat />
         <KontaktLeiste />
+        <Schnellsuche />
         <CookieConsent />
         <Reveal />
         <Interaktiv />

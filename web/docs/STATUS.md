@@ -55,6 +55,17 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Artikeltexten (`https://www.pixel56.de/...`) werden beim Rendern relativ,
   damit sie auch auf Testumgebungen funktionieren. Seitentitel langer
   Artikelüberschriften enden nicht mehr mit „…“, sondern am Doppelpunkt.
+- 13.10.2026: **Schnellsuche über alle Seiten.** `components/Schnellsuche.tsx`
+  (im Layout) öffnet sich über den Suchknopf in der Navigation
+  (`SiteNav`, `data-suche-oeffnen`) oder mit Strg/Cmd+K: Eingabe, bis zu
+  acht Treffer mit Typ (Leistung, Seite, Ressource, Projekt, Artikel,
+  Standort), Pfeiltasten, Enter, Esc, Vorschläge bei leerer Eingabe. Der
+  Index (`lib/suchindex.ts`, 8 Leistungen, 10 Seiten, 3 Ressourcen, 17
+  Projekte, 35 Artikel, 65 indexierbare Standortseiten, rund 34 KB) wird
+  beim Build als statische Datei unter `/api/suchindex` abgelegt und erst
+  beim ersten Öffnen geladen. Treffer: alle Suchwörter müssen in Titel oder
+  Text vorkommen, Titeltreffer wiegen mehr. Neue Seiten oder Artikel landen
+  automatisch im Index, weil er aus denselben Datenquellen gebaut wird.
 - 13.10.2026: **Vorher-nachher-Schieber vorbereitet.** `components/VorherNachher.tsx`
   (Regler per Maus, Touch und Tastatur, unsichtbarer Bereichsregler über dem
   Bild) und neues Feld `vorher?: string` an `Fallstudie`. Die Projektseite

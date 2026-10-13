@@ -45,6 +45,11 @@ export default function SiteNav({ crumb }: { crumb?: Crumb }) {
         {menuOpen ? "Schließen" : "Menü"}
         <span aria-hidden="true">{menuOpen ? "×" : "☰"}</span>
       </button>
+      <button type="button" className="nav-suche" data-suche-oeffnen aria-label="Seite durchsuchen (Strg+K)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><line x1="15.5" y1="15.5" x2="21" y2="21" /></svg>
+        <span>Suche</span>
+        <kbd>⌘K</kbd>
+      </button>
       <Link className="nav-cta" href={routes.contact}>
         Projekt anfragen
       </Link>

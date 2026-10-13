@@ -3052,3 +3052,40 @@ body { overflow-x: clip; }
   body { padding-bottom: 66px; }
 }
 @media (max-width: 760px) { .consent { bottom: 76px; } }
+
+/* ============================================================
+   Schnellsuche (components/Schnellsuche.tsx) und Suchknopf in der Navigation
+   ============================================================ */
+.nav-suche { display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-right: 10px; padding: 0 12px; height: 40px; border: 1px solid var(--line-strong); border-radius: 100px; background: rgba(245,244,242,0.06); color: var(--ink-dim); font: inherit; font-size: 12.5px; cursor: pointer; transition: border-color 0.2s ease, color 0.2s ease; }
+.nav-suche:hover { color: var(--ink); border-color: rgba(245,244,242,0.35); }
+.nav-suche svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.nav-suche kbd { font-family: var(--mono); font-size: 10.5px; padding: 2px 6px; border: 1px solid var(--line-strong); border-radius: 6px; color: var(--ink-faint); }
+@media (max-width: 860px) { .nav-suche { margin-left: 8px; margin-right: 0; width: 40px; padding: 0; } .nav-suche kbd, .nav-suche span { display: none; } }
+.suche-overlay { position: fixed; inset: 0; z-index: 120; display: flex; align-items: flex-start; justify-content: center; padding: clamp(24px, 10vh, 120px) 16px 16px; background: rgba(5,5,9,0.72); backdrop-filter: blur(6px); animation: iso-ein 0.18s ease both; }
+.suche-dialog { width: 100%; max-width: 640px; max-height: calc(100vh - 48px); overflow: hidden; display: flex; flex-direction: column; border: 1px solid rgba(245,244,242,0.16); border-radius: 20px; background: rgba(14,13,20,0.98); color: var(--ink); box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+.suche-kopf { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+.suche-kopf svg { width: 20px; height: 20px; flex-shrink: 0; fill: none; stroke: var(--ink-dim); stroke-width: 1.8; stroke-linecap: round; }
+.suche-kopf input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--ink); font: inherit; font-size: 17px; outline: none; }
+.suche-kopf input::-webkit-search-cancel-button { display: none; }
+.suche-schliessen { border: 0; background: transparent; padding: 0; cursor: pointer; color: var(--ink-faint); }
+.suche-dialog kbd { font-family: var(--mono); font-size: 10.5px; padding: 3px 7px; border: 1px solid var(--line-strong); border-radius: 6px; color: var(--ink-dim); }
+.suche-leer { padding: 18px 16px 8px; }
+.suche-leer > span { display: block; margin-bottom: 10px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.suche-leer > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.suche-leer button { padding: 8px 13px; border: 1px solid var(--line-strong); border-radius: 999px; background: transparent; color: var(--ink); font: inherit; font-size: 13px; cursor: pointer; }
+.suche-leer button:hover { border-color: var(--accent); }
+.suche-hinweis { margin: 0; padding: 22px 16px; font-size: 14.5px; color: var(--ink-dim); }
+.suche-hinweis a { color: var(--ink); }
+.suche-liste { list-style: none; margin: 0; padding: 8px; overflow-y: auto; }
+.suche-liste li { display: grid; grid-template-columns: 78px 1fr auto; gap: 12px; align-items: center; padding: 11px 12px; border-radius: 12px; cursor: pointer; }
+.suche-liste li.aktiv { background: rgba(255,57,81,0.12); }
+.suche-typ { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+.suche-liste li.aktiv .suche-typ { color: var(--accent-2); }
+.suche-text { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.suche-text b { font-size: 14.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.suche-text small { font-size: 12.5px; color: var(--ink-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.suche-pfeil { color: var(--ink-faint); font-size: 13px; opacity: 0; }
+.suche-liste li.aktiv .suche-pfeil { opacity: 1; }
+.suche-fuss { display: flex; gap: 18px; padding: 10px 16px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--ink-faint); }
+.suche-fuss span { display: inline-flex; align-items: center; gap: 5px; }
+@media (max-width: 560px) { .suche-liste li { grid-template-columns: 1fr auto; } .suche-typ { display: none; } .suche-fuss { display: none; } }
