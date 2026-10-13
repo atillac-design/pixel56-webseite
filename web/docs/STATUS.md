@@ -15,6 +15,14 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 13.10.2026: **Projekt-Detailseiten (17 Fallstudien) neu aufgebaut.** Neue
+  Vorlage in `app/projekte/[slug]/page.tsx`: Hero mit Projektbild
+  (Browser-Mockup als Rückfall), Zusammenfassung, Ausgangslage und Umsetzung
+  mit Befund-/Baustein-Karten, Einblicke, Ergebnis als Statement, Zuordnung
+  der Projekt-Tags zu Leistungsseiten (`tagZuLeistung`), Kundenstimme nur
+  aus `lib/verified-reviews.ts`, drei passende weitere Projekte (gleiche
+  Branche, dann ähnliche Tags), Ablauf, FAQ, Kontaktleiste. Titel und
+  Beschreibungen in Suchmaschinen-Länge, `CreativeWork`-Schema mit Bild.
 - 13.10.2026: **Technischer SEO- und Tempo-Check.** Crawl aller intern
   verlinkten Seiten des lokalen Builds (140 Seiten): 0 defekte Links, überall
   genau eine H1, alle Bilder mit Alt-Text, überall Canonical. Danach

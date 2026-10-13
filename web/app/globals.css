@@ -2703,3 +2703,11 @@ a.audience-card { color: inherit; text-decoration: none; }
 .split2.align-top { align-items: start; }
 .split2.align-top > .reveal > .lines { margin-top: 12px; }
 .case-img-note { margin-top: 12px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; line-height: 1.55; color: var(--ink-faint); }
+/* Projekt-Detailseiten */
+.projects-hero-visual .founder-frame { position: relative; }
+.projects-hero-visual .founder-frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.work-gallery-single { grid-template-columns: minmax(0, 720px); justify-content: center; }
+.work-gallery-pair { grid-template-columns: repeat(2, minmax(0,1fr)); }
+.work-gallery-single img, .work-gallery-pair img { aspect-ratio: 3 / 2; }
+@media (max-width: 720px) { .work-gallery-pair { grid-template-columns: 1fr; } }
+.premium-process article h3 { color: inherit; }
