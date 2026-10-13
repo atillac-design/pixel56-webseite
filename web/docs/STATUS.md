@@ -15,6 +15,16 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 13.10.2026: **Ressourcen, Karriere, Stellenanzeige neu aufgebaut.** Die
+  drei Freebie-Seiten behalten Formular und schlanke Navigation, bekommen
+  aber Zusammenfassung, „Für wen“, „So nutzt du sie“, passende Leistung,
+  weitere Ressourcen und FAQ (Daten in `lib/ressourcen.ts`: `fuerWen`,
+  `schritte`, `leistung`); `DigitalDocument`-Schema. Karriere mit
+  Bewerbungs-Board, Gründen, Arbeitsweise, Stellen (CMS plus
+  Vertriebs-Stelle und Initiativbewerbung), vier Bewerbungsschritten,
+  Kennenlernen, FAQ. Stellenanzeige Vertrieb mit Aufgaben, „Was zählt“,
+  Ablauf und FAQ; bewusst **kein** `JobPosting`-Schema, weil Umfang und
+  Modell offen sind und Google dafür konkrete Angaben verlangt.
 - 13.10.2026: **Blog neu aufgebaut.** Übersicht (`app/blog/page.tsx`) mit
   neuestem Artikel im Hero, fünf jüngsten Beiträgen, acht Themen mit
   Artikelanzahl, Archiv und Ressourcen; Artikelvorlage

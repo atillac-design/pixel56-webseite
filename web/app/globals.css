@@ -2745,3 +2745,7 @@ a.audience-card { color: inherit; text-decoration: none; }
 .article-editorial .theme-light .lead { color: #625e65; }
 .article-editorial .theme-light .voice-link { color: #151319; }
 @media (max-width: 640px) { .article-author { flex-direction: column; } .article-cta { padding: 24px 22px; } }
+.premium-process.cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+@media (max-width: 900px) { .premium-process.cols-3 { grid-template-columns: 1fr; } }
+.friction-list.plain .friction-row p::before { content: "Konkret heißt das"; }
+.friction-list.plain .friction-row h3 { font-family: var(--sans); font-style: normal; font-weight: 700; font-size: 18px; }
