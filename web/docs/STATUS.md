@@ -426,6 +426,33 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Betrieb“), Karriere und Stellenanzeige („vor Ort in Bendorf“ → „bei einem
   Kaffee in Koblenz“ bzw. „remote mit Treffen in der Region Koblenz“),
   Bild-Alt-Texte. „Aus Bendorf bei Koblenz“ als Herkunft bleibt.
+- 13.10.2026: **Mehrere Projekte im Detail, eigene KI-Projekte, CurlyAnn erweitert.**
+  Neue Komponente `components/DetailReihe.tsx`: kompakte Projektreihen (Bild
+  oder Browser-Mockup, Einordnung, Umsetzung in Punkten, Link), `weitereDetails()`
+  wählt je Seite zuerst bevorzugte Slugs, dann Projekte mit passendem Tag, nie
+  das Spotlight. Eingesetzt unter „Ein Projekt im Detail“ auf Startseite
+  (CurlyAnn, Burgerfabriq), Webdesign (CurlyAnn + Webdesign-Tag), Content
+  (Burgerfabriq + Content-Tags), Landingpages (Van den Berg + Landingpage),
+  Mitarbeitergewinnung (Van den Berg + Recruiting), Meta Ads (Stark ins Neue +
+  Meta Ads) und Projekte (CurlyAnn, Burgerfabriq). KI-Seite: neuer Abschnitt
+  „10 — Eigene Projekte“ (Folgeabschnitte 11–14) mit drei nachprüfbaren
+  eigenen Projekten aus den Repos des Inhabers: Teykto (Bestellsystem ohne
+  Provision, Repo `atillac-design/Teykto-Claude`, Fakten aus README und
+  `docs/STAND-UND-NAECHSTE-SCHRITTE.md`, Pilotphase; Teykto konnte lokal nicht
+  gestartet werden, da `npm install` im Fremd-Repo vom Auto-Modus blockiert
+  wurde, deshalb Browser-Mockup statt Screenshot), KMU-Webseiten.de (Repo
+  `atillac-design/kmu-webseiten`, Make-Flows laut `docs/make-lead.md` und
+  `docs/make-onboarding.md` live, Entwurfs-Fabrik laut `docs/entwurfs-fabrik.md`;
+  Screenshot des Demo-Entwurfs aus lokalem Astro-Build als
+  `public/bilder/ki-projekt-kmu-webseiten.webp`) und die Pixel56-Website selbst
+  (`public/bilder/ki-projekt-pixel56-website.webp`, Standortkarte). Das vom
+  Inhaber genannte Live-Dashboard „Zentrale“ (atilla.ci) war in keinem der
+  Repos (auch nicht `AI-Agent`, `chrono` (leer), `Leads-Finder`) zu finden
+  und fehlt deshalb noch. CurlyAnn-Fallstudie nach Angaben des Inhabers
+  erweitert: Branche „Coaching & Workshops“, Tag „Branding“ statt
+  „Konzeption“, Buchung mit Kalender-Anbindung, Online-Zahlung (Barzahlung
+  einstellbar), automatische Bestätigung per E-Mail, eigener Raum für
+  Workshops und Seminare.
 
 ## Verifiziert am 13.10.2026
 

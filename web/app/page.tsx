@@ -3,6 +3,7 @@ import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import DetailReihe, { weitereDetails } from "@/components/DetailReihe";
 import {
   ArrowIcon,
   ClientMarquee,
@@ -646,6 +647,7 @@ export default function HomePage() {
                   </Link>
                 </div>
               </div>
+              <DetailReihe eintraege={weitereDetails(["stark-ins-neue"], ["curlyann", "burgerfabrik"], [])} />
             </section>
           )}
 

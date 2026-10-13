@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import DetailReihe, { weitereDetails } from "@/components/DetailReihe";
 import ProjektFilter from "@/components/ProjektFilter";
 import {
   ArrowIcon,
@@ -325,6 +326,7 @@ export default function ProjektePage() {
                 </Link>
               </div>
             </div>
+            <DetailReihe eintraege={weitereDetails(["cass-schulungen"], ["curlyann", "burgerfabrik"], [])} />
           </section>
         ) : null}
 

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import DetailReihe, { weitereDetails } from "@/components/DetailReihe";
 import BudgetPlaner from "@/components/BudgetPlaner";
 import { metaBranchen, metaQuellen } from "@/lib/meta-ads-branchen";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
@@ -472,6 +473,7 @@ export default function MetaAdsPage() {
                 </Link>
               </div>
             </div>
+            <DetailReihe eintraege={weitereDetails(["van-den-berg"], ["stark-ins-neue"], ["Meta Ads"])} />
           </section>
         )}
 

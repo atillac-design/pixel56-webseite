@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import DetailReihe, { weitereDetails } from "@/components/DetailReihe";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
 import {
   ArrowIcon,
@@ -374,6 +375,7 @@ export default function FunnelsPage() {
                 </Link>
               </div>
             </div>
+            <DetailReihe eintraege={weitereDetails(["stark-ins-neue"], ["van-den-berg"], ["Landingpage"])} />
           </section>
         )}
 

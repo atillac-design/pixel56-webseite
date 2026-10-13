@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import DetailReihe, { type DetailEintrag } from "@/components/DetailReihe";
 import AblaufSimulator from "@/components/AblaufSimulator";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
 import PlannedMedia from "@/components/PlannedMedia";
@@ -152,6 +153,58 @@ const faqs = [
   { q: "Wie lange dauert ein erster Prototyp?", a: "Das hängt von Datenlage und beteiligten Systemen ab. Ein abgegrenzter Ablauf wie die Vorsortierung von Anfragen steht in der Regel innerhalb weniger Wochen im Alltag. Den konkreten Zeitplan bekommst du nach der Prozessaufnahme." },
   { q: "Was kostet ein KI-Prozess?", a: "Das hängt davon ab, wie viele Systeme beteiligt sind, wie sauber die Daten vorliegen und wie kritisch der Ablauf ist. Nach der Prozessaufnahme bekommst du einen klaren Vorschlag mit Umfang und Preis für den ersten Schritt, keine offene Stundenabrechnung." },
   { q: "Was passiert, wenn sich die Werkzeuge ändern?", a: "KI-Dienste entwickeln sich schnell. Deshalb dokumentieren wir jeden Ablauf unabhängig vom Werkzeug und betreuen ihn weiter. Wenn ein besseres oder günstigeres Modell sinnvoll ist, stellen wir um, ohne dass dein Prozess stillsteht." },
+];
+
+/** Eigene Produkte und Werkzeuge, mit KI gebaut. Keine Kundenprojekte, dafür vollständig nachprüfbar. */
+const eigeneProjekte: DetailEintrag[] = [
+  {
+    kicker: "Eigenes Produkt · Gastronomie · Pilotphase",
+    titel: "Teykto: Bestellsystem für Gastronomen ohne Provision",
+    text: "Lieferportale nehmen pro Bestellung Provision. Teykto gibt jedem Restaurant eine eigene Bestellseite zum festen Monatspreis. Das komplette System haben wir mit KI-Unterstützung entwickelt, vom Warenkorb bis zum Bondrucker.",
+    punkte: [
+      "Bestellseite mit Speisekarte, Optionen, Gutscheinen, Vorbestellung und Bewertungen echter Käufer",
+      "Online-Zahlung über Stripe (Karte, Apple Pay, Google Pay, PayPal), Auszahlung direkt ans Restaurant",
+      "Fahrer-App mit Live-Karte, Bondrucker-Anbindung und Dashboard für den Betrieb",
+      "Speisekarten-Import per Skript: knapp 100 Artikel mit Optionen in Minuten statt Tagen",
+    ],
+    variant: "ic-2",
+    href: "https://teykto.de",
+    linkText: "teykto.de ansehen",
+    extern: true,
+    hinweis: "Eigenes Produkt von Pixel56, aktuell in der Pilotphase mit dem ersten Betrieb.",
+  },
+  {
+    kicker: "Eigenes Produkt · Lead-Automatisierung",
+    titel: "KMU-Webseiten.de: vom Formular zum fertigen Entwurf",
+    text: "Ein Interessent füllt vier Felder aus, der Rest läuft automatisch: Benachrichtigung, Kontakt in MailerLite, Eingangsbestätigung per E-Mail. Aus einem Datensatz entsteht danach ein kompletter Website-Entwurf im Look des Betriebs.",
+    punkte: [
+      "Lead-Formular an Make: interne Mail, MailerLite-Kontakt und automatische Bestätigung an den Interessenten",
+      "Onboarding-Formular mit allen Betriebsdaten, ebenfalls automatisch verarbeitet",
+      "Entwurfs-Fabrik: aus einem Datensatz wird eine komplette One-Page-Website mit eigenen Farben, Logo und Texten",
+      "Schutzfilter gegen leere Bot-Anfragen, Herkunftsmessung ohne Cookies",
+    ],
+    bild: "/bilder/ki-projekt-kmu-webseiten.webp",
+    bildAlt: "Automatisch erzeugter Website-Entwurf für einen Malerbetrieb auf kmu-webseiten.de",
+    href: "https://kmu-webseiten.de",
+    linkText: "kmu-webseiten.de ansehen",
+    extern: true,
+    hinweis: "Produkt von Pixel56, mit KI entwickelt und betrieben.",
+  },
+  {
+    kicker: "Eigene Website · Technik & Inhalte",
+    titel: "Diese Website: mit KI gebaut, in Tagen statt Monaten",
+    text: "Die Seite, die du gerade liest, ist aus Webflow in ein eigenes System umgezogen. Inhalte, Standortseiten, Vorschaubilder und Werkzeuge entstanden mit KI-Unterstützung, geprüft und freigegeben von Menschen.",
+    punkte: [
+      "Über 700 Seiten, davon 291 Standortseiten aus einer Datenbasis mit eigenen Texten je Stadt",
+      "Website-Check mit zwölf Prüfpunkten, Budget-Planer, Leistungs-Finder und Schnellsuche",
+      "Vorschaubilder für Social Media automatisch je Seite erzeugt",
+      "Alle Weiterleitungen aus dem alten System übernommen, Rankings bleiben erhalten",
+    ],
+    bild: "/bilder/ki-projekt-pixel56-website.webp",
+    bildAlt: "Standortkarte der Pixel56-Website mit dreizehn Städten der Region Koblenz",
+    href: "/website-check",
+    linkText: "Website-Check ausprobieren",
+  },
 ];
 
 export default function KiAutomatisierungPage() {
@@ -440,10 +493,25 @@ export default function KiAutomatisierungPage() {
           </div>
         </section>
 
+        <section className="band theme-light" id="eigene-projekte">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">10 — Eigene Projekte</span>
+              <h2 className="band-title">Was wir selbst <em>mit KI gebaut haben</em></h2>
+            </div>
+            <p className="band-note">
+              Keine Kundenprojekte, sondern eigene Produkte und Werkzeuge. Jedes
+              davon läuft, jedes kannst du anschauen. Genau so bauen wir es auch
+              für dich.
+            </p>
+          </div>
+          <DetailReihe eintraege={eigeneProjekte} titel={null} />
+        </section>
+
         <section className="band theme-light" id="einstieg">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">10 — Einstieg &amp; Kosten</span>
+              <span className="band-tag">11 — Einstieg &amp; Kosten</span>
               <h2 className="band-title">Drei Schritte, <em>jeder einzeln entscheidbar</em></h2>
               <p className="lead">
                 Du musst dich nicht für ein großes KI-Projekt entscheiden. Die
@@ -471,7 +539,7 @@ export default function KiAutomatisierungPage() {
         <section className="band theme-light" id="checkliste">
           <div className="split2 reverse">
             <div className="reveal">
-              <span className="band-tag">11 — Selbst prüfen</span>
+              <span className="band-tag">12 — Selbst prüfen</span>
               <h2 className="band-title">Wo spart KI in deinem Betrieb <em>wirklich Zeit?</em></h2>
               <p className="lead">
                 Unsere KI-Agenten-Checkliste hilft dir, das vor dem ersten
@@ -500,7 +568,7 @@ export default function KiAutomatisierungPage() {
         <section className="band dark-stage service-dark-stage" id="zusammenarbeit">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">12 — Zusammenarbeit</span>
+              <span className="band-tag">13 — Zusammenarbeit</span>
               <h2 className="band-title">Dein Ablauf. <em>Ein fester Ansprechpartner.</em></h2>
               <p className="lead">
                 Kein Projektmanager, der weiterreicht. Du sprichst mit der
@@ -531,7 +599,7 @@ export default function KiAutomatisierungPage() {
         <section className="band theme-light" id="faq">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">13 — Häufige Fragen</span>
+              <span className="band-tag">14 — Häufige Fragen</span>
               <h2 className="band-title">Was du vor dem Start <em>wissen solltest</em></h2>
             </div>
           </div>

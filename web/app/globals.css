@@ -3219,6 +3219,27 @@ body { overflow-x: clip; }
 .reel-wand-einzeln .reel-wand { grid-template-columns: minmax(220px, 300px); }
 .work-gallery-hochkant.work-gallery-pair { grid-template-columns: repeat(2, minmax(0, 420px)); justify-content: center; }
 .work-gallery-hochkant img, .work-gallery-hochkant.work-gallery-pair img { aspect-ratio: 3 / 4; }
+/* Mehrere Projekte im Detail: kompakte Reihen mit Bild, Einordnung, Umsetzung in Punkten. */
+.detail-reihe { display: grid; gap: 22px; margin-top: 56px; }
+.detail-reihe-titel { margin: 0 0 4px; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.detail-eintrag { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 40px; align-items: center; padding: 26px; border: 1px solid var(--card-border, rgba(21,19,25,0.1)); border-radius: 26px; background: var(--card, rgba(255,253,249,0.82)); box-shadow: var(--card-shadow, 0 28px 70px -58px rgba(21,19,25,0.5)); }
+.detail-eintrag:nth-child(even) .detail-bild { order: 2; }
+.detail-bild { position: relative; overflow: hidden; aspect-ratio: 4 / 3; border-radius: 18px; background: #17151b; }
+.detail-bild img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.detail-mock { padding: 22px; height: 100%; display: flex; align-items: center; }
+.detail-kicker { display: block; margin-bottom: 12px; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+.detail-text h3 { margin: 0 0 12px; font-size: clamp(22px, 2.2vw, 28px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 800; text-wrap: balance; }
+.detail-text > p { margin: 0 0 16px; font-size: 17px; line-height: 1.65; color: var(--ink-dim); max-width: 56ch; }
+.detail-text ul { margin: 0 0 18px; padding: 0; list-style: none; display: grid; gap: 8px; }
+.detail-text li { position: relative; padding-left: 22px; font-size: 16px; line-height: 1.55; color: var(--ink-dim); }
+.detail-text li::before { content: ""; position: absolute; left: 0; top: 11px; width: 10px; height: 2px; background: var(--accent); }
+.detail-hinweis { display: block; margin: -6px 0 16px; font-size: 14.5px; color: var(--ink-faint); }
+.detail-text .body-link { margin-top: 4px; }
+@media (max-width: 900px) {
+  .detail-eintrag { grid-template-columns: 1fr; gap: 22px; padding: 18px; }
+  .detail-eintrag:nth-child(even) .detail-bild { order: 0; }
+  .detail-bild { aspect-ratio: 16 / 10; }
+}
 /* Anzeigenmotive unbeschnitten: Story (9:16) und Feed (1:1) nebeneinander, mittig ausgerichtet. */
 .work-gallery-anzeigen { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; }
 .work-gallery-anzeigen img { height: auto; aspect-ratio: auto; object-fit: contain; }

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import DetailReihe, { weitereDetails } from "@/components/DetailReihe";
 import ReelWand from "@/components/ReelWand";
 import { reels } from "@/lib/reels";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
@@ -518,6 +519,7 @@ export default function ContentPage() {
                 </Link>
               </div>
             </div>
+            <DetailReihe eintraege={weitereDetails(["ma-transporte"], ["burgerfabrik"], ["Social Content", "Reels", "Social Media"])} />
           </section>
         )}
 
