@@ -1,134 +1,264 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import {
   ArrowIcon,
-  PulseField,
   ClientMarquee,
-  StatusPanel,
-  MetricMock,
-  WaMock,
   CloseCta,
+  ContactStrip,
   FaqList,
-  Reviews,
   RefCard,
+  Reviews,
+  StatusPanel,
   Stepper,
+  WaMock,
   type RefItem,
 } from "@/components/ui";
-import { FeedMock } from "@/components/mocks";
+import { FeedMock, ReelMock } from "@/components/mocks";
 import { site } from "@/lib/site";
-import { projectPath, serviceRoutes } from "@/lib/routes";
+import { getFallstudie } from "@/lib/projekte";
+import { verifiedReviews } from "@/lib/verified-reviews";
+import { projectPath, routes, serviceRoutes } from "@/lib/routes";
+import vanDenBergImage from "@/public/bilder/projekt-van-den-berg.webp";
 
 export const metadata: Metadata = {
-  title: "Meta Ads: Facebook & Instagram Werbung",
+  title: "Meta Ads Agentur: Facebook & Instagram Werbung, die Anfragen bringt",
   description:
-    "Erfolgreiche Meta Ads für KMUs, Handwerker & Selbstständige: zielgerichtete Facebook- & Instagram-Werbung, mehr Leads & Anfragen. Kostenlose Beratung bei Pixel56 buchen.",
+    "Meta Ads für Handwerk, Mittelstand und Dienstleister: Facebook- und Instagram-Kampagnen mit sauberem Tracking, passender Zielseite und laufender Betreuung. Pixel56 aus Bendorf bei Koblenz.",
   alternates: { canonical: serviceRoutes["meta-ads"] },
+  openGraph: {
+    title: "Meta Ads Agentur: Facebook & Instagram Werbung, die Anfragen bringt | Pixel56",
+    description:
+      "Kampagnen für Kunden- und Mitarbeitergewinnung mit Tracking, Zielseite und laufender Optimierung. Aus Bendorf bei Koblenz, deutschlandweit.",
+    url: serviceRoutes["meta-ads"],
+  },
 };
+
+const serviceUrl = `${site.url}${serviceRoutes["meta-ads"]}`;
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Meta Ads",
-  serviceType: "Social-Media-Werbung",
-  provider: { "@type": "ProfessionalService", name: site.name, url: site.url },
-  areaServed: "DE",
-  url: `${site.url}${serviceRoutes["meta-ads"]}`,
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": `${serviceUrl}#service`,
+      name: "Meta Ads: Facebook- und Instagram-Werbung",
+      serviceType: "Social-Media-Werbung",
+      description:
+        "Planung, Aufbau und laufende Betreuung von Facebook- und Instagram-Kampagnen für Kunden- und Mitarbeitergewinnung, inklusive Conversion-Tracking, Creatives und Abstimmung mit der Zielseite.",
+      url: serviceUrl,
+      provider: { "@type": "ProfessionalService", "@id": `${site.url}/#organization`, name: site.name, url: site.url },
+      areaServed: [
+        { "@type": "City", name: "Koblenz" },
+        { "@type": "Country", name: "Deutschland" },
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Meta-Ads-Leistungen",
+        itemListElement: [
+          "Zieldefinition und Angebotsschärfung",
+          "Conversion-Tracking und Einwilligung",
+          "Zielgruppen und Kampagnenstruktur",
+          "Creatives: Bild, Video, Text",
+          "Landingpage-Abstimmung",
+          "Laufende Optimierung und Reporting",
+        ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Startseite", item: site.url },
+        { "@type": "ListItem", position: 2, name: "Leistungen", item: `${site.url}/dienstleistung` },
+        { "@type": "ListItem", position: 3, name: "Meta Ads", item: serviceUrl },
+      ],
+    },
+  ],
 };
 
 const statusRows = [
-  { label: "Budget läuft, niemand weiß warum", tag: "Tracking" },
-  { label: "Falsche Zielgruppe, richtige Anzeige", tag: "Targeting" },
-  { label: "Anzeige führt ins Leere", tag: "Landingpage" },
-  { label: "Kein Tracking, keine Klarheit", tag: "Conversion" },
-  { label: "Sprunghaftes Budget statt Konstanz", tag: "Kontinuität" },
-  { label: "Schlechte Erfahrung, abgeschrieben", tag: "Setup" },
+  { label: "Budget läuft, niemand weiß wofür", tag: "Tracking" },
+  { label: "Richtige Anzeige, falsche Zielgruppe", tag: "Targeting" },
+  { label: "Anzeige führt auf die Startseite", tag: "Zielseite" },
+  { label: "Immer dasselbe Motiv seit Monaten", tag: "Creative" },
+  { label: "Mal viel Budget, mal gar nichts", tag: "Konstanz" },
+  { label: "Einmal probiert, abgeschrieben", tag: "Setup" },
+];
+
+const useCases = [
+  {
+    tag: "Kundengewinnung",
+    title: "Anfragen für Dienstleistung und Handwerk",
+    text: "Menschen in deinem Einzugsgebiet sehen dein Angebot, bevor sie bei Google suchen. Für Betriebe, die planbar neue Aufträge brauchen und nicht nur auf Empfehlungen warten wollen.",
+    refs: "Van den Berg Gruppe · M&A Transporte",
+  },
+  {
+    tag: "Mitarbeitergewinnung",
+    title: "Bewerber erreichen, die nicht suchen",
+    text: "Die besten Fachkräfte lesen keine Stellenbörsen. Auf Instagram und Facebook erreichst du sie trotzdem, mit Einblicken in den Betrieb und einem Bewerbungsweg, der in zwei Minuten erledigt ist.",
+    refs: "GM-Dachdecker",
+  },
+  {
+    tag: "Anmeldungen",
+    title: "Kurse, Termine und Veranstaltungen",
+    text: "Kampagnen, die auf eine Anmeldestrecke führen statt auf eine allgemeine Seite. Für Bildungsangebote, Events und alles, was einen festen Termin hat.",
+    refs: "Stark ins Neue · Sportler für Kinderherzen",
+  },
+  {
+    tag: "Regionale Bekanntheit",
+    title: "Die Marke, die man schon kennt",
+    text: "Wer dich schon dreimal im Feed gesehen hat, ruft eher an. Reichweitenkampagnen im Umkreis bauen Vertrauen auf, bevor der Bedarf entsteht.",
+    refs: "Oktay Cömertler",
+  },
+  {
+    tag: "Retargeting",
+    title: "Besucher zurückholen",
+    text: "Die meisten fragen nicht beim ersten Besuch an. Wer auf deiner Website war, sieht danach die passende Anzeige, mit Angebot, Referenz oder Erinnerung.",
+    refs: "Baustein in laufenden Kampagnen",
+  },
+  {
+    tag: "Produkte & Shops",
+    title: "Verkaufen über den Feed",
+    text: "Produktanzeigen mit Katalog, Bewegtbild und direktem Weg in den Shop. Sinnvoll, wenn Marge und Warenkorb die Anzeigenkosten tragen; das prüfen wir vorher ehrlich.",
+    refs: "Nach Prüfung im Erstgespräch",
+  },
+];
+
+const scope = [
+  { nr: "01", title: "Ziel & Angebot", text: "Bevor Budget fließt, klären wir, welche Aktion zählt und was eine Anfrage wert ist. Daraus entsteht ein Angebot, das in einer Anzeige verständlich ist." },
+  { nr: "02", title: "Tracking-Fundament", text: "Pixel, Conversions API und Einwilligung werden sauber eingerichtet, DSGVO-konform. Erst wenn Anfragen messbar sind, geht die Kampagne live." },
+  { nr: "03", title: "Zielgruppen & Struktur", text: "Umkreis, Interessen, Lookalikes und Retargeting in einer Struktur, die der Algorithmus lernen kann. Nicht zehn Kampagnen, die sich gegenseitig das Budget wegnehmen." },
+  { nr: "04", title: "Creatives", text: "Bilder, kurze Videos und Texte, die im Feed stoppen und zum Angebot passen. Aus deinem Material oder von uns produziert, mit regelmäßigem Wechsel gegen Abnutzung." },
+  { nr: "05", title: "Zielseite", text: "Jede Kampagne bekommt eine Seite, die das Versprechen der Anzeige einlöst. Wenn nötig bauen wir sie, sonst passen wir die bestehende an." },
+  { nr: "06", title: "Optimierung & Reporting", text: "Wöchentliche Auswertung, Budget wandert dahin, wo es wirkt. Du bekommst verständliche Zahlen statt Screenshots aus dem Werbeanzeigenmanager." },
+];
+
+const mistakes = [
+  { problem: "Kampagne an, Kampagne aus, je nach Kontostand.", answer: "Ein moderates, konstantes Budget schlägt kurze Ausschläge fast immer. Der Algorithmus braucht Daten, und die entstehen nur im laufenden Betrieb." },
+  { problem: "Die Anzeige führt auf die Startseite.", answer: "Wer auf ein konkretes Angebot klickt, erwartet genau dieses Angebot. Eine Landingpage pro Kampagne, mit einem Ziel und ohne Ablenkung." },
+  { problem: "„Beitrag bewerben“ statt Kampagne.", answer: "Der Boost-Button ist bequem und teuer. Ziele, Zielgruppen und Conversion-Messung gibt es nur im Werbeanzeigenmanager." },
+  { problem: "Es läuft, aber niemand weiß, ob Anfragen daraus kommen.", answer: "Ohne Tracking ist jede Entscheidung Bauchgefühl. Wir messen die Aktion, die zählt, und besprechen offen, was wegen Einwilligung nicht messbar ist." },
+  { problem: "Dasselbe Motiv seit einem halben Jahr.", answer: "Creatives nutzen sich ab. Wir planen den Wechsel von Anfang an ein und testen Varianten, statt zu warten, bis die Kosten pro Anfrage steigen." },
+  { problem: "Zielgruppe so eng, dass niemand übrig bleibt. Oder so breit, dass alle gemeint sind.", answer: "Wir starten mit klaren Hypothesen, lassen den Algorithmus innerhalb sinnvoller Grenzen lernen und engen nach Daten ein, nicht nach Gefühl." },
 ];
 
 const steps = [
-  { nr: "01", tag: "Phase 1", title: "Analyse & Ziel", text: "Was eine Anfrage wert ist, bevor Budget fließt." },
-  { nr: "02", tag: "Phase 2", title: "Tracking-Fundament", text: "Sauberes Conversion-Tracking zuerst." },
-  { nr: "03", tag: "Phase 3", title: "Kampagnen-Aufbau", text: "Zielgruppen und Creatives, abgestimmt auf dein Angebot." },
-  { nr: "04", tag: "Phase 4", title: "Laufende Optimierung", text: "Anpassung anhand echter Daten, ohne ständiges Stoppen." },
-  { nr: "05", tag: "Phase 5", title: "Reporting & Kurs", text: "Transparente Auswertung, was das Budget bringt." },
+  { nr: "01", tag: "Phase 1", title: "Analyse & Ziel", text: "Angebot, Zielgruppe, bisherige Kampagnen und Website. Wir legen fest, welche Aktion zählt und was sie wert sein darf." },
+  { nr: "02", tag: "Phase 2", title: "Tracking", text: "Pixel, Conversions API, Einwilligung und Messpunkte auf der Zielseite. Getestet, bevor ein Euro fließt." },
+  { nr: "03", tag: "Phase 3", title: "Aufbau", text: "Kampagnenstruktur, Zielgruppen, Creatives und Texte. Du siehst alle Anzeigen vor dem Start." },
+  { nr: "04", tag: "Phase 4", title: "Laufende Optimierung", text: "Wöchentliche Auswertung, Anpassung von Budget, Zielgruppen und Motiven anhand echter Daten." },
+  { nr: "05", tag: "Phase 5", title: "Reporting & Kurs", text: "Verständliche Auswertung, was das Budget bringt, und gemeinsame Entscheidung, wie es weitergeht." },
+];
+
+const weeklyChecks = [
+  { title: "Ausgaben gegen Ziel", text: "Läuft das Budget dort, wo die Anfragen entstehen, oder in Anzeigen, die nur Reichweite bringen?" },
+  { title: "Kosten pro Anfrage", text: "Steigen sie, finden wir die Ursache: Creative, Zielgruppe oder Zielseite. Bevor es teuer wird, nicht danach." },
+  { title: "Frequenz", text: "Wie oft hat dieselbe Person die Anzeige gesehen? Ab einem gewissen Punkt braucht es ein neues Motiv." },
+  { title: "Zielseite", text: "Kommen Besucher an und tun sie, was sie sollen? Absprünge auf der Seite sind oft kein Anzeigenproblem." },
+  { title: "Überschneidungen", text: "Konkurrieren Zielgruppen miteinander und treiben die Preise hoch? Dann wird die Struktur bereinigt." },
+  { title: "Qualität der Anfragen", text: "Deine Rückmeldung, welche Anfragen brauchbar waren, fließt zurück in die Steuerung. Zahlen allein reichen nicht." },
+];
+
+const costParts = [
+  { title: "Werbebudget", text: "Geht direkt an Meta und bleibt in deinem Werbekonto nachvollziehbar. Wir empfehlen einen Rahmen, der zu Angebot und Region passt." },
+  { title: "Betreuung", text: "Strategie, Aufbau, Optimierung und Reporting durch Pixel56, als monatlicher Festbetrag, getrennt vom Werbebudget ausgewiesen." },
+  { title: "Creatives", text: "Anzeigenmotive aus deinem Material oder produziert vor Ort. Nach Aufwand angeboten, nie versteckt im Betreuungspreis." },
+  { title: "Zielseite", text: "Falls keine passende Seite existiert, bauen wir eine Landingpage. Einmalig, danach gehört sie dir und trägt jede weitere Kampagne." },
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-van-den-berg.webp", href: projectPath("van-den-berg"), cat: "Van den Berg Gruppe", title: "Meta Ads mit kontinuierlicher Betreuung", text: "Kampagnenaufbau mit Budget-Steuerung nach Datenlage und laufender Auswertung.", tag: "Meta Ads · laufende Betreuung" },
-  { variant: "ic-1", barWidth: 50, img: "/bilder/ads-recruiting-kampagne.webp", href: projectPath("gm-dachdecker"), cat: "GM-Dachdecker Meisterbetrieb", title: "Kampagnen für Mitarbeitergewinnung", text: "Neben klassischer Kundengewinnung wurden Meta Ads auch für die gezielte Bewerberansprache eingesetzt.", tag: "Meta Ads · Recruiting" },
+  { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-van-den-berg.webp", href: projectPath("van-den-berg"), cat: "Van den Berg Gruppe", title: "Meta Ads mit laufender Betreuung", text: "Kampagnenstruktur neu aufgebaut, Tracking eingerichtet, Anzeigen auf fokussierte Zielseiten geführt. Seitdem konstantes Budget und laufende Auswertung.", tag: "Meta Ads · Landingpage · laufend" },
+  { variant: "ic-1", barWidth: 50, img: "/bilder/ads-recruiting-kampagne.webp", href: projectPath("gm-dachdecker"), cat: "GM-Dachdecker Meisterbetrieb", title: "Kampagnen für die Mitarbeitergewinnung", text: "Meta Ads sprechen Kandidaten an, die nicht aktiv suchen, und führen auf ein Karriereportal mit Direkt-Upload.", tag: "Meta Ads · Recruiting · 2023" },
 ];
 
 const faqs = [
-  { q: "Wie viel Budget brauche ich für den Einstieg?", a: "Wichtiger als die Höhe ist Konstanz — ein moderates, dauerhaftes Budget bringt oft mehr als kurze, hohe Ausschläge." },
-  { q: "Facebook oder Instagram — was ist besser?", a: "Beide laufen über dieselbe Kampagnenstruktur bei Meta und lassen sich kombinieren. Was besser funktioniert, hängt von Zielgruppe und Angebot ab." },
-  { q: "Brauche ich professionelle Fotos oder Videos für die Anzeigen?", a: "Hilfreich, aber kein Muss von Anfang an. Authentischer Content performt auf Meta oft genauso gut wie aufwendig produzierter." },
-  { q: "Was, wenn ich das Budget mal pausieren muss?", a: "Möglich, aber der Aufbau-Effekt geht dabei meist verloren — nach einer Pause muss der Algorithmus neu lernen." },
-  { q: "Was kostet die Betreuung, getrennt vom Werbebudget?", a: "Werbebudget geht direkt an Meta, die Betreuung deckt Strategie, Aufbau und laufende Optimierung ab. Den passenden Umfang klären wir im kostenlosen Erstgespräch." },
-  { q: "Bleibst du auch danach erreichbar?", a: "Ja — per WhatsApp über einen festen Ansprechpartner, siehe oben. Betreuung ist Teil der Zusammenarbeit, kein Zusatzverkauf danach." },
-  { q: "Wem gehört das Werbekonto?", a: "Das klären wir vor dem Start transparent. Im Regelfall arbeiten wir mit einem Werbekonto, auf das dein Unternehmen Zugriff hat, damit Budget und Kampagnendaten nachvollziehbar bleiben." },
-  { q: "Könnt ihr Creatives und Reels für die Anzeigen erstellen?", a: "Ja. Wir können aus deinem Material Anzeigenmotive und kurze Videos schneiden oder bei Bedarf Aufnahmen vor Ort planen. Beides wird getrennt nach Aufwand angeboten." },
-  { q: "Wie messt ihr, ob Anfragen aus den Anzeigen kommen?", a: "Wir definieren zuerst, welche Aktion zählt — etwa eine Anfrage oder Terminbuchung. Dann richten wir passende Messpunkte ein und besprechen, welche Daten wegen Einwilligung und Plattformgrenzen tatsächlich verfügbar sind." },
-  { q: "Bekomme ich Einblick in die Kampagnenergebnisse?", a: "Ja. Wir besprechen Ausgaben, Reichweite, Klicks und die messbaren Anfragen regelmäßig. Die Beispielgrafik oben zeigt das Format; sie enthält keine echten Kundenzahlen." },
-  { q: "Wie lange sollte eine Kampagne laufen?", a: "Das hängt von Ziel, Budget und Datenmenge ab. Wir legen vorab einen sinnvollen Testzeitraum fest und bewerten danach gemeinsam, ob sich eine Fortsetzung lohnt." },
+  { q: "Wie viel Budget brauche ich für den Einstieg?", a: "Wichtiger als die Höhe ist Konstanz: Ein moderates, dauerhaftes Budget bringt mehr als kurze, hohe Ausschläge. Welcher Rahmen für dein Angebot und deine Region sinnvoll ist, klären wir im Erstgespräch anhand deiner Ziele, nicht pauschal." },
+  { q: "Facebook oder Instagram, was ist besser?", a: "Beide laufen über dieselbe Kampagnenstruktur bei Meta und lassen sich kombinieren. Welche Plattform mehr bringt, hängt von Zielgruppe und Angebot ab; wir starten meist auf beiden und verteilen das Budget nach Daten." },
+  { q: "Brauche ich professionelle Fotos oder Videos für die Anzeigen?", a: "Hilfreich, aber kein Muss von Anfang an. Echte Aufnahmen aus dem Betrieb wirken auf Meta oft besser als aufwendig produziertes Material. Wenn Material fehlt, schneiden wir aus Vorhandenem oder drehen bei dir vor Ort." },
+  { q: "Was, wenn ich das Budget mal pausieren muss?", a: "Möglich, aber der Lerneffekt geht dabei meist verloren: Nach einer Pause muss der Algorithmus neu lernen. Besser ist ein kleineres, konstantes Budget als ein Stopp." },
+  { q: "Was kostet die Betreuung, getrennt vom Werbebudget?", a: "Das Werbebudget geht direkt an Meta. Die Betreuung deckt Strategie, Aufbau, Optimierung und Reporting ab und wird als monatlicher Festbetrag separat ausgewiesen. Den passenden Umfang klären wir im kostenlosen Erstgespräch." },
+  { q: "Wem gehört das Werbekonto?", a: "Dir. Wir arbeiten in einem Werbekonto, auf das dein Unternehmen vollen Zugriff hat, damit Budget, Daten und Kampagnen jederzeit nachvollziehbar bleiben, auch wenn die Zusammenarbeit irgendwann endet." },
+  { q: "Könnt ihr Creatives und Reels für die Anzeigen erstellen?", a: "Ja. Wir schneiden aus deinem Material Anzeigenmotive und kurze Videos oder planen Aufnahmen vor Ort. Beides wird getrennt nach Aufwand angeboten." },
+  { q: "Wie messt ihr, ob Anfragen aus den Anzeigen kommen?", a: "Wir definieren zuerst, welche Aktion zählt, etwa eine Anfrage, ein Anruf oder eine Terminbuchung. Dann richten wir Pixel, Conversions API und Messpunkte ein und besprechen offen, welche Daten wegen Einwilligung und Plattformgrenzen tatsächlich verfügbar sind." },
+  { q: "Bekomme ich Einblick in die Kampagnenergebnisse?", a: "Ja. Ausgaben, Reichweite, Klicks und messbare Anfragen besprechen wir regelmäßig in verständlicher Form. Außerdem hast du jederzeit Zugriff auf dein Werbekonto." },
+  { q: "Wie lange sollte eine Kampagne laufen?", a: "Das hängt von Ziel, Budget und Datenmenge ab. Wir legen vorab einen Testzeitraum fest, meist einige Wochen, und bewerten danach gemeinsam, ob und wie es weitergeht." },
+  { q: "Bleibst du auch danach erreichbar?", a: "Ja. Per WhatsApp, Telefon oder E-Mail über einen festen Ansprechpartner. Betreuung ist Teil der Zusammenarbeit, kein Zusatzverkauf." },
 ];
 
-const reviews = [
-  { text: "Endlich Wachstum, und wir wissen genau, woher es kommt. Absolute Empfehlung.", who: "Van den Berg Gruppe" },
-  { text: "Auch für die Mitarbeitersuche über Meta Ads — hätten wir nicht erwartet, dass das so gut läuft.", who: "GM-Dachdecker" },
-  { text: "Konstante Betreuung statt einmal aufgesetzt und liegen gelassen.", who: "Colak GmbH", img: "/bilder/person-nalan-colak.webp" },
-];
+const metaVoices = [verifiedReviews[2], verifiedReviews[0], verifiedReviews[1]];
+const spotlight = getFallstudie("van-den-berg");
+const spotlightVoice = verifiedReviews[2];
 
 export default function MetaAdsPage() {
   return (
-    <main className="service-premium service-suite service-suite-meta">
+    <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <div className="sheet">
-        <SiteNav crumb={{ section: "Leistungen", page: "Meta Ads" }} />
-
-        <header className="hero service-suite-hero">
-          <PulseField label1="// REICHWEITE AKTIV" label2="// FEED & STORY" />
-          <div className="hero-eyebrow">LEISTUNG · META ADS</div>
-          <h1>
-            <span className="in"><span>Bekannt werden,</span></span>
-            <span className="in"><span>bevor gesucht wird.</span></span>
-            <span className="in"><span>Nicht erst danach.</span></span>
-          </h1>
-          <p className="hero-sub">
-            Facebook und Instagram erreichen Menschen, die noch gar nicht aktiv
-            suchen — aber genau zur Zielgruppe passen. Gezielt ausgesteuert und
-            laufend optimiert, statt einmal eingerichtet und stehen gelassen.
-          </p>
-          <div className="hero-actions">
-            <a className="btn-primary" href="https://calendly.com/pixel56/15min" target="_blank" rel="noopener">
-              Meta-Ads-Potenzial besprechen <ArrowIcon />
-            </a>
-            <Link className="btn-text" href="#status">
-              Kennst du das? ↓
-            </Link>
-          </div>
-          <div className="hero-foot">
-            <span className="hf-label">Wir steuern:</span>
-            <div className="hf-chip">Zielgruppen</div>
-            <div className="hf-chip">Creatives</div>
-            <div className="hf-chip">Budget</div>
-          </div>
-        </header>
-      </div>
-
-      <ClientMarquee />
-
-      <div className="editorial-shell service-editorial">
+      <main className="service-premium meta-premium">
         <div className="sheet">
-        <section className="service-summary service-summary-premium reveal" aria-label="Meta Ads auf einen Blick">
-          <div><span>Ziel</span><strong>Planbare qualifizierte Anfragen</strong></div>
+          <SiteNav crumb={{ section: "Leistungen", page: "Meta Ads" }} />
+
+          <header className="service-premium-hero">
+            <div className="service-premium-glow" aria-hidden="true" />
+            <div className="service-premium-copy">
+              <div className="premium-kicker">META ADS AGENTUR · FACEBOOK &amp; INSTAGRAM · DEUTSCHLANDWEIT</div>
+              <h1>
+                <span>Meta Ads, die</span>
+                <span className="service-hero-accent">Anfragen bringen.</span>
+                <span>Nicht nur Reichweite.</span>
+              </h1>
+              <p>
+                Facebook und Instagram erreichen Menschen, bevor sie bei Google
+                suchen. Wir bauen Kampagnen für Kunden- und Mitarbeitergewinnung
+                mit sauberem Tracking, einer Zielseite, die das Versprechen der
+                Anzeige einlöst, und laufender Betreuung statt einmaligem Setup.
+              </p>
+              <div className="premium-actions">
+                <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">
+                  Meta-Ads-Potenzial besprechen <ArrowIcon />
+                </a>
+                <Link className="btn-text" href="#fehler">
+                  Sechs typische Fehler ↓
+                </Link>
+              </div>
+              <div className="premium-proof" aria-label="Meta Ads auf einen Blick">
+                <span>Tracking vor dem Start</span>
+                <span>Eigenes Werbekonto</span>
+                <span>Konstanz statt Stop-and-go</span>
+                <span>Ein Ansprechpartner</span>
+              </div>
+            </div>
+
+            <div className="web-experience-board" aria-label="Beispiel einer Meta-Anzeige im Feed">
+              <div className="web-board-top">
+                <span>PIXEL56 · META ADS</span>
+                <i>LIVE</i>
+              </div>
+              <FeedMock imgSrc="/bilder/ads-meta-beispiel.webp" />
+              <div className="web-board-signals">
+                <div><span>01</span><b>Zielgruppe</b><small>passend</small></div>
+                <div><span>02</span><b>Creative</b><small>auffällig</small></div>
+                <div><span>03</span><b>Zielseite</b><small>fokussiert</small></div>
+                <div><span>04</span><b>Tracking</b><small>messbar</small></div>
+              </div>
+            </div>
+          </header>
+        </div>
+
+        <ClientMarquee />
+
+        <div className="editorial-shell service-editorial">
+          <div className="sheet">
+        <section className="service-summary service-summary-premium reveal theme-light" aria-label="Meta Ads auf einen Blick">
+          <div><span>Ziel</span><strong>Planbare, qualifizierte Anfragen</strong></div>
           <div><span>Kanäle</span><strong>Instagram &amp; Facebook</strong></div>
-          <div><span>Hebel</span><strong>Creative, Zielgruppe, Angebot</strong></div>
-          <div><span>Steuerung</span><strong>Tracking &amp; laufende Optimierung</strong></div>
+          <div><span>Hebel</span><strong>Angebot, Creative, Zielseite</strong></div>
+          <div><span>Steuerung</span><strong>Tracking &amp; wöchentliche Optimierung</strong></div>
         </section>
 
-        <section className="band tint-amber" id="status">
+        <section className="band dark-stage service-dark-stage" id="status">
           <div className="split2 reverse">
             <div className="reveal">
               <span className="band-tag">01 — Der Status quo</span>
@@ -138,66 +268,129 @@ export default function MetaAdsPage() {
               <p className="lead">
                 Eine Kampagne laufen zu lassen ist einfach. Eine Kampagne laufen
                 zu lassen, die tatsächlich Anfragen bringt, ist etwas anderes.
+                Die meisten Konten, die wir übernehmen, haben nicht zu wenig
+                Budget, sondern keine Struktur.
+              </p>
+              <p className="lead">
+                Fast immer fehlt eines von drei Dingen: ein messbares Ziel, eine
+                passende Zielseite oder die Geduld, den Algorithmus lernen zu
+                lassen.
               </p>
             </div>
             <div className="reveal">
-              <StatusPanel head="6 von 6 Warnsignalen aktiv" rows={statusRows} />
+              <StatusPanel head="Typische Warnsignale im Werbekonto" rows={statusRows} />
             </div>
           </div>
         </section>
 
-        <section className="band">
+        <section className="band theme-light" id="warum">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">02 — Warum es zählt</span>
+              <span className="band-tag">02 — Warum Meta Ads</span>
               <h2 className="band-title">
-                Bekanntheit, <em>bevor gesucht wird</em>
+                Bekannt werden, <em>bevor gesucht wird</em>
               </h2>
               <p className="lead">
-                Bei Google Ads muss die Absicht schon da sein. Facebook und
-                Instagram erreichen Menschen davor — wecken Interesse, bevor
-                überhaupt aktiv gesucht wird.
+                Bei Google Ads muss die Absicht schon da sein: Jemand sucht, du
+                erscheinst. Facebook und Instagram arbeiten davor. Sie zeigen
+                dein Angebot Menschen, die zur Zielgruppe passen, aber noch nicht
+                wissen, dass sie dich brauchen.
+              </p>
+              <p className="lead">
+                Deshalb ergänzen sich beide Kanäle: Google holt Nachfrage ab,
+                Meta weckt sie. Welcher zuerst sinnvoll ist, hängt von deinem
+                Angebot ab, und das sagen wir dir ehrlich.
               </p>
               <ul className="lines">
-                <li>Ohne Meta Ads erreichst du nur, wer dir schon folgt.</li>
-                <li>Sprunghafte Kampagnen kommen nie richtig ins Lernen.</li>
+                <li>Ohne Anzeigen erreichst du auf Social Media nur, wer dir schon folgt.</li>
                 <li>Ein konstantes Budget baut Reichweite auf, die bleibt.</li>
+                <li>Retargeting holt Besucher zurück, die beim ersten Mal nicht angefragt haben.</li>
+                <li>
+                  Für aktive Suchanfragen: <Link href={serviceRoutes["google-ads"]}>Google Ads</Link>
+                </li>
               </ul>
             </div>
-            <div className="reveal">
-              <FeedMock imgSrc="/bilder/ads-meta-beispiel.webp" />
+            <div className="mini-grid reveal" aria-label="Google Ads und Meta Ads im Vergleich">
+              <div>
+                <b>Google Ads: Nachfrage abholen</b>
+                <small>Jemand sucht „Dachdecker Koblenz“ und findet dich. Stark, wenn Suchvolumen da ist. Begrenzt, wenn niemand nach deiner Leistung sucht.</small>
+              </div>
+              <div>
+                <b>Meta Ads: Nachfrage wecken</b>
+                <small>Dein Angebot erscheint im Feed der passenden Menschen im Umkreis. Stark für Bekanntheit, Bewerber und Angebote, die man erst sehen muss.</small>
+              </div>
+              <div>
+                <b>Beides zusammen</b>
+                <small>Meta macht bekannt, Google fängt die Suche danach ab. Gemeinsam mit einer guten Zielseite entsteht ein System statt zwei Einzelmaßnahmen.</small>
+              </div>
+              <div>
+                <b>Was wir nicht tun</b>
+                <small>Budget auf Kanäle verteilen, nur weil es geht. Wenn Meta für dein Angebot nicht passt, sagen wir das im Erstgespräch.</small>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="band tint" id="beweis">
-          <div className="band-tag reveal" style={{ marginBottom: 44 }}>
-            03 — Aus der Projektarbeit
+        <section className="band theme-light" id="einsatz">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">03 — Wofür Meta Ads arbeiten</span>
+              <h2 className="band-title">
+                Sechs Einsatzfelder, <em>ein Prinzip</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Jede Kampagne hat genau ein Ziel und eine Seite, die dieses Ziel
+              einlöst. Alles andere ist Reichweite ohne Ergebnis.
+            </p>
           </div>
-          <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
-            <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
-              Kampagnen brauchen ein klares Ziel und laufende Betreuung.
-            </p>
-            <p>
-              Für die Van den Berg Gruppe wurden Meta-Kampagnen mit passender
-              Zielseite und Conversion-Tracking aufgebaut. Motive und Struktur
-              werden anhand der verfügbaren Kampagnendaten weiterentwickelt.
-            </p>
-            <cite>{"// PROJEKT VAN DEN BERG GRUPPE"}</cite>
+          <div className="audience-grid reveal">
+            {useCases.map((item) => (
+              <article className="audience-card" key={item.tag}>
+                <span>{item.tag}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <small>{item.refs.startsWith("Baustein") || item.refs.startsWith("Nach") ? item.refs : `Referenzen: ${item.refs}`}</small>
+              </article>
+            ))}
           </div>
         </section>
 
-        <section className="band" aria-labelledby="meta-creatives-title">
+        <section className="band theme-light" id="leistungen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">04 — Echte Kampagnenmotive</span>
+              <span className="band-tag">04 — Was wir liefern</span>
+              <h2 className="band-title">
+                Vom Angebot bis zur <em>wöchentlichen Auswertung</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Sechs Bausteine, die zusammengehören. Wer einen weglässt, zahlt
+              es über die Kosten pro Anfrage.
+            </p>
+          </div>
+          <div className="scope-grid reveal">
+            {scope.map((item) => (
+              <article className="scope-card" key={item.nr}>
+                <span>{item.nr}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="band theme-light" id="creatives" aria-labelledby="meta-creatives-title">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">05 — Echte Kampagnenmotive</span>
               <h2 className="band-title" id="meta-creatives-title">
                 Creatives aus <em>echter Kundenarbeit</em>
               </h2>
             </div>
             <p className="band-note">
               Die Motive zeigen reale Arbeiten von Pixel56. Kampagnenaufbau,
-              Zielgruppe und Landingpage werden jeweils auf das Angebot abgestimmt.
+              Zielgruppe und Zielseite wurden jeweils auf das Angebot abgestimmt.
             </p>
           </div>
           <div className="work-gallery work-gallery-social reveal">
@@ -208,7 +401,7 @@ export default function MetaAdsPage() {
             </figure>
             <figure>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/bilder/ads-fb-beispiele.webp" alt="Meta-Ad für einen Abbruch- und Tiefbaubetrieb" loading="lazy" decoding="async" />
+              <img src="/bilder/ads-fb-beispiele.webp" alt="Meta-Anzeige für einen Abbruch- und Tiefbaubetrieb" loading="lazy" decoding="async" />
               <figcaption><b>Abbruch &amp; Tiefbau</b><span>Ad Creative · Bewerberansprache</span></figcaption>
             </figure>
             <figure>
@@ -219,106 +412,268 @@ export default function MetaAdsPage() {
           </div>
         </section>
 
-        <section className="band">
-          <div className="split2 reverse">
-            <div className="reveal">
-              <span className="band-tag">05 — Warum wir</span>
-              <h2 className="band-title">
-                Konstanz statt <em>Stop-and-go.</em>
-              </h2>
-              <p className="lead">
-                Vier Gründe, warum unsere Meta-Ads-Kampagnen nachhaltig wirken
-                statt nur kurz auszuschlagen.
-              </p>
-              <ul className="lines">
-                <li>Sauberes Conversion-Tracking, bevor eine Kampagne live geht.</li>
-                <li>Konstantes Budget statt ständigem Stoppen und Neustarten.</li>
-                <li>Ergebnisse ehrlich eingeordnet, nicht schöngerechnet.</li>
-                <li>Laufende Optimierung — Budget wandert dahin, wo es wirkt.</li>
-              </ul>
+        {spotlight && (
+          <section className="band theme-light" id="fallstudie">
+            <div className="band-head reveal">
+              <div>
+                <span className="band-tag">06 — Ein Projekt im Detail</span>
+                <h2 className="band-title">
+                  {spotlight.kunde}: <em>{spotlight.loesung.titel}</em>
+                </h2>
+              </div>
+              <p className="band-note">{spotlight.branche} · {spotlight.tags.join(" · ")} · {spotlight.jahr}</p>
             </div>
-            <div className="reveal">
-              <MetricMock
-                head="Beispiel-Dashboard · Kampagnen-Auswertung"
-                rows={[
-                  { label: "Anfragen / Monat", value: "34", countTo: "34" },
-                  { label: "Klickrate", value: "6.8%", countTo: "6.8", suffix: "%" },
-                  { label: "Ladezeit Landingpage", value: "0.8s" },
-                ]}
-              />
+            <div className="case-spotlight reveal">
+              <div>
+                <figure className="case-spotlight-visual" style={{ margin: 0 }}>
+                  <Image src={vanDenBergImage} alt={`${spotlight.kunde}: ${spotlight.titel}`} fill sizes="(max-width: 980px) 100vw, 50vw" />
+                  <figcaption>{spotlight.kunde.toUpperCase()}</figcaption>
+                </figure>
+                <blockquote className="case-quote">
+                  „{spotlightVoice.text}“
+                  <cite>{spotlightVoice.who}</cite>
+                </blockquote>
+              </div>
+              <div>
+                <p className="lead" style={{ margin: 0 }}>{spotlight.teaser}</p>
+                <div className="case-steps">
+                  <div className="case-step">
+                    <span>Ausgangslage</span>
+                    <h3>{spotlight.problem.titel}</h3>
+                    <p>{spotlight.problem.text}</p>
+                    <ul>
+                      {spotlight.problem.punkte.map((punkt) => <li key={punkt}>{punkt}</li>)}
+                    </ul>
+                  </div>
+                  <div className="case-step">
+                    <span>Lösung</span>
+                    <h3>{spotlight.loesung.titel}</h3>
+                    <p>{spotlight.loesung.text}</p>
+                    <ul>
+                      {spotlight.loesung.punkte.map((punkt) => <li key={punkt}>{punkt}</li>)}
+                    </ul>
+                  </div>
+                  {spotlight.ergebnis && (
+                    <div className="case-step">
+                      <span>Stand heute</span>
+                      <h3>Laufende Betreuung statt Einmal-Setup</h3>
+                      <p>{spotlight.ergebnis.text}</p>
+                    </div>
+                  )}
+                </div>
+                <Link className="body-link" href={projectPath(spotlight.slug)}>
+                  Zur vollständigen Fallstudie <ArrowIcon />
+                </Link>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
-        <section className="band">
+        <section className="band theme-light" id="fehler">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">05 — Der Weg dahin</span>
+              <span className="band-tag">07 — Typische Fehler</span>
               <h2 className="band-title">
-                Fünf Phasen, <em>laufend optimiert</em>
+                Sechs Fehler, <em>die Budget kosten</em>
               </h2>
             </div>
+            <p className="band-note">
+              Wir sehen sie in fast jedem Werbekonto, das wir übernehmen. Keiner
+              davon ist peinlich, jeder ist vermeidbar.
+            </p>
           </div>
-          <Stepper steps={steps} />
-        </section>
-
-        <section className="band">
-          <div className="band-head reveal">
-            <div>
-              <span className="band-tag">06 — Referenzen</span>
-              <h2 className="band-title">
-                Aus der <em>echten Arbeit</em>
-              </h2>
-            </div>
-          </div>
-          <div className="ref-grid-2 reveal">
-            {referenzen.map((r) => (
-              <RefCard item={r} key={r.cat} />
+          <div className="friction-list reveal">
+            {mistakes.map((item, index) => (
+              <div className="friction-row" key={item.problem}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>„{item.problem}“</h3>
+                <p>{item.answer}</p>
+              </div>
             ))}
           </div>
         </section>
 
-        <section className="band tint-violet">
+        <section className="band theme-light" id="prozess">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">08 — Der Weg dahin</span>
+              <h2 className="band-title">
+                Fünf Phasen, <em>laufend optimiert</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Vom ersten Gespräch bis zur laufenden Betreuung. Du weißt
+              jederzeit, was gerade passiert und warum.
+            </p>
+          </div>
+          <Stepper steps={steps} />
+        </section>
+
+        <section className="band dark-stage service-dark-stage" id="optimierung">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">07 — Zusammenarbeit</span>
+              <span className="band-tag">09 — Laufende Betreuung</span>
+              <h2 className="band-title">
+                Was wir <em>jede Woche prüfen</em>
+              </h2>
+              <p className="lead">
+                Eine Kampagne ist nie fertig. Zielgruppen sättigen sich, Motive
+                nutzen sich ab, Wettbewerber ändern ihre Gebote. Deshalb gibt es
+                bei uns keinen Autopilot, sondern einen festen Rhythmus.
+              </p>
+              <p className="lead">
+                Du bekommst keine Screenshots aus dem Werbeanzeigenmanager,
+                sondern eine Einordnung: Was lief, was ändern wir, was brauchen
+                wir von dir.
+              </p>
+            </div>
+            <div className="mini-grid reveal" aria-label="Wöchentliche Prüfpunkte">
+              {weeklyChecks.map((item) => (
+                <div key={item.title}>
+                  <b>{item.title}</b>
+                  <small>{item.text}</small>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="band theme-light" id="kosten">
+          <div className="split2 reverse">
+            <div className="reveal">
+              <span className="band-tag">10 — Budget &amp; Kosten</span>
+              <h2 className="band-title">
+                Woraus sich die Kosten <em>zusammensetzen</em>
+              </h2>
+              <p className="lead">
+                Vier Posten, klar getrennt. Das Werbebudget bleibt immer in
+                deinem Werbekonto, die Betreuung ist ein fester Betrag, und
+                Creatives oder Zielseite werden nur angeboten, wenn du sie
+                brauchst.
+              </p>
+              <p className="lead">
+                Konkrete Zahlen nennen wir im Erstgespräch, weil sie von
+                Angebot, Region und Ziel abhängen. Was wir nicht tun: Prozente
+                vom Werbebudget nehmen. Das belohnt hohes Budget, nicht gute
+                Arbeit.
+              </p>
+            </div>
+            <div className="mini-grid reveal" aria-label="Kostenbestandteile">
+              {costParts.map((item) => (
+                <div key={item.title}>
+                  <b>{item.title}</b>
+                  <small>{item.text}</small>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="band theme-light" id="content">
+          <div className="split2">
+            <div className="reveal">
+              <span className="band-tag">11 — Creatives &amp; Reels</span>
+              <h2 className="band-title">
+                Anzeigen, die <em>im Feed stoppen</em>
+              </h2>
+              <p className="lead">
+                Die beste Zielgruppe nützt nichts, wenn das Motiv weitergescrollt
+                wird. Kurze Videos aus dem echten Betrieb, klare Bildsprache und
+                ein Satz, der das Angebot trifft, entscheiden über die Kosten pro
+                Anfrage.
+              </p>
+              <ul className="lines">
+                <li>Schnitt aus deinem vorhandenen Material, mit Untertiteln und Musik.</li>
+                <li>Dreh vor Ort in der Region Koblenz, wenn Material fehlt.</li>
+                <li>Mehrere Varianten pro Kampagne, damit wir testen statt raten.</li>
+                <li>
+                  Mehr dazu unter <Link href={serviceRoutes["content-produktion"]}>Social Content &amp; Reels</Link>
+                </li>
+              </ul>
+            </div>
+            <div className="reveal">
+              <ReelMock videoSrc="/videos/reel-handwerker-tipps.mp4" caption="Beispiel-Reel aus der Content-Produktion" />
+            </div>
+          </div>
+        </section>
+
+        <section className="band theme-light" id="referenzen">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">12 — Referenzen</span>
+              <h2 className="band-title">
+                Aus der <em>echten Arbeit</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Zwei Projekte mit unterschiedlichem Ziel: neue Kunden und neue
+              Mitarbeiter. Beide mit Tracking, Zielseite und laufender Betreuung.
+            </p>
+          </div>
+          <div className="ref-grid-2 reveal">
+            {referenzen.map((reference) => (
+              <RefCard item={reference} key={reference.cat} />
+            ))}
+          </div>
+          <div className="section-link-row reveal">
+            <Link className="body-link" href={routes.projects}>
+              Alle Kundenprojekte ansehen <ArrowIcon />
+            </Link>
+          </div>
+        </section>
+
+        <section className="band dark-stage service-dark-stage" id="zusammenarbeit">
+          <div className="split2">
+            <div className="reveal">
+              <span className="band-tag">13 — Zusammenarbeit</span>
               <h2 className="band-title">
                 Deine Kampagne. <em>Direkter Draht.</em>
               </h2>
               <p className="lead">
-                Kein Ticket-System, kein Zwischenmanager. Neue Creatives, Zielgruppen oder Budget-Fragen klärst du direkt per WhatsApp mit deinem festen Ansprechpartner.
+                Kein Ticketsystem, kein Zwischenmanager. Neue Creatives,
+                Zielgruppen oder Budgetfragen klärst du direkt per WhatsApp mit
+                deinem festen Ansprechpartner, der die Kampagne selbst steuert.
               </p>
+              <ul className="lines">
+                <li>Dein Werbekonto, dein Zugriff, deine Daten.</li>
+                <li>Alle Anzeigen vor dem Start zur Freigabe.</li>
+                <li>Regelmäßige Auswertung in verständlicher Sprache.</li>
+              </ul>
             </div>
             <div className="reveal">
               <WaMock
                 name="Pixel56 — Dein Ansprechpartner"
                 messages={[
                   { from: "in", text: "Sollen wir das Creative für die neue Kampagne tauschen?" },
-                  { from: "out", text: "Ja, hab schon 3 neue Varianten hochgeladen." },
-                  { from: "in", text: "👍 Super, schau ich mir gleich an." },
+                  { from: "out", text: "Ja, drei neue Varianten sind hochgeladen. Ich schicke dir die Vorschau." },
+                  { from: "in", text: "Super, schau ich mir gleich an." },
                 ]}
-                footer="Neue Creatives besprechen — Antwort meist unter 1 Stunde"
+                footer="Beispielhafter Ablauf einer Abstimmung während der Betreuung"
               />
             </div>
           </div>
         </section>
 
-        <section className="band">
+        <section className="band theme-light" id="bewertungen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">08 — Bewertungen</span>
+              <span className="band-tag">14 — Kundenstimmen</span>
               <h2 className="band-title">
                 Das sagen <em>Kunden über uns</em>
               </h2>
             </div>
+            <p className="band-note">
+              Nur Aussagen, die unsere Kunden so veröffentlicht haben. Keine
+              erfundenen Bewertungen, keine geschönten Zahlen.
+            </p>
           </div>
-          <Reviews reviews={reviews} />
+          <Reviews reviews={metaVoices} items={metaVoices} />
         </section>
 
-        <section className="band">
+        <section className="band theme-light" id="faq">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">09 — Häufige Fragen</span>
+              <span className="band-tag">15 — Häufige Fragen</span>
               <h2 className="band-title">
                 Was du vorher <em>wissen willst</em>
               </h2>
@@ -327,16 +682,19 @@ export default function MetaAdsPage() {
           <FaqList items={faqs} />
         </section>
 
+          </div>
         </div>
-      </div>
 
-      <div className="sheet service-ending">
-        <CloseCta>
-          Lass uns über deine <em>Meta-Ads-Kampagne</em> sprechen.
-        </CloseCta>
+        <div className="sheet service-ending">
+          <CloseCta ctaLabel="Meta-Ads-Potenzial besprechen">
+            Lass uns über deine <em>Meta-Ads-Kampagne</em> sprechen.
+          </CloseCta>
 
-        <SiteFooter />
-      </div>
-    </main>
+          <ContactStrip />
+
+          <SiteFooter />
+        </div>
+      </main>
+    </>
   );
 }

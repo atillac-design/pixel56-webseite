@@ -2665,3 +2665,12 @@ h1, h2, h3 { text-wrap: balance; }
 .friction-list.checklist .friction-row h3 { font-family: var(--sans); font-style: normal; font-weight: 700; font-size: 18px; }
 @media (max-width: 980px) { .mini-grid.cols-3, .mini-grid.cols-4 { grid-template-columns: repeat(2, minmax(0,1fr)); } }
 @media (max-width: 720px) { .mini-grid, .mini-grid.cols-3, .mini-grid.cols-4 { grid-template-columns: 1fr; } }
+
+/* Dunkle Bühnen auf Seiten mit altem service-suite-Theme lesbar halten */
+.service-suite .service-editorial .dark-stage .band-title,
+.service-suite .service-editorial .dark-stage .body-link { color: var(--ink); }
+.service-suite .service-editorial .dark-stage .band-title em { color: var(--accent); }
+.service-suite .service-editorial .dark-stage .band-tag { color: var(--accent-2); }
+.service-suite .service-editorial .dark-stage .band-note,
+.service-suite .service-editorial .dark-stage .split2 .lead,
+.service-suite .service-editorial .dark-stage .lines li { color: var(--ink-dim); }
