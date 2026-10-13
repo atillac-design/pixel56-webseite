@@ -4,6 +4,7 @@ import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import BudgetPlaner from "@/components/BudgetPlaner";
+import { metaBranchen, metaQuellen } from "@/lib/meta-ads-branchen";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
 import RegionLinks from "@/components/RegionLinks";
 import {
@@ -577,10 +578,56 @@ export default function MetaAdsPage() {
           </div>
         </section>
 
+        <section className="band theme-light" id="branchen">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">11 — Worauf es je Branche ankommt</span>
+              <h2 className="band-title">
+                Was in deiner Branche <em>unbedingt nötig ist</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Aus unserer Arbeit mit Handwerk, Transport, Bildung, Immobilien, Dienstleistern
+              und Gastronomie. Die Richtwerte je Anfrage stammen aus veröffentlichten
+              Benchmarks, nicht aus unseren Kampagnen, und schwanken je nach Quelle stark.
+            </p>
+          </div>
+          <div className="audience-grid audience-grid-cols-3 reveal">
+            {metaBranchen.map((b) => (
+              <article className="audience-card branchen-karte" key={b.id}>
+                <span>{b.zielTyp === "Bewerbung" ? "Ziel: Bewerbungen" : "Ziel: Anfragen"}</span>
+                <h3>{b.name}</h3>
+                <span className="bk-label">Darauf kommt es an</span>
+                <ul>
+                  {b.darauf.map((t) => <li key={t}>{t}</li>)}
+                </ul>
+                <span className="bk-label">Unbedingt nötig</span>
+                <ul>
+                  {b.noetig.map((t) => <li key={t}>{t}</li>)}
+                </ul>
+                <div className="bk-richtwert">
+                  <b>Veröffentlichte Richtwerte: etwa {b.spanneVon} bis {b.spanneBis} € je {b.zielTyp}</b>
+                  {b.einordnung}
+                </div>
+              </article>
+            ))}
+          </div>
+          <p className="branchen-quellen reveal">
+            Quellen der Richtwerte, Stand Oktober 2026, jeweils ohne offengelegte Stichprobe:{" "}
+            {metaQuellen.map((q, i) => (
+              <span key={q.url}>
+                {i > 0 ? " · " : ""}
+                <a href={q.url} target="_blank" rel="noopener nofollow">{q.name}</a> ({q.region}, {q.jahr})
+              </span>
+            ))}
+            . US-Werte in Dollar, hier gerundet übernommen. Was eine Anfrage bei dir kostet, zeigt erst dein eigenes Werbekonto nach den ersten Wochen.
+          </p>
+        </section>
+
         <section className="band theme-light" id="content">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">11 — Creatives &amp; Reels</span>
+              <span className="band-tag">12 — Creatives &amp; Reels</span>
               <h2 className="band-title">
                 Anzeigen, die <em>im Feed stoppen</em>
               </h2>
@@ -608,7 +655,7 @@ export default function MetaAdsPage() {
         <section className="band theme-light" id="referenzen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">12 — Referenzen</span>
+              <span className="band-tag">13 — Referenzen</span>
               <h2 className="band-title">
                 Aus der <em>echten Arbeit</em>
               </h2>
@@ -633,7 +680,7 @@ export default function MetaAdsPage() {
         <section className="band dark-stage service-dark-stage" id="zusammenarbeit">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">13 — Zusammenarbeit</span>
+              <span className="band-tag">14 — Zusammenarbeit</span>
               <h2 className="band-title">
                 Deine Kampagne. <em>Direkter Draht.</em>
               </h2>
@@ -665,7 +712,7 @@ export default function MetaAdsPage() {
         <section className="band theme-light" id="bewertungen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">14 — Kundenstimmen</span>
+              <span className="band-tag">15 — Kundenstimmen</span>
               <h2 className="band-title">
                 Das sagen <em>Kunden über uns</em>
               </h2>
@@ -683,7 +730,7 @@ export default function MetaAdsPage() {
         <section className="band theme-light" id="faq">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">15 — Häufige Fragen</span>
+              <span className="band-tag">16 — Häufige Fragen</span>
               <h2 className="band-title">
                 Was du vorher <em>wissen willst</em>
               </h2>

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useId, useState } from "react";
+import { getMetaBranche, metaBranchen } from "@/lib/meta-ads-branchen";
 
 /**
  * Budget-Planer für Anzeigen: rechnet ausschließlich mit den Angaben des
@@ -24,11 +25,14 @@ const START: Werte = { auftragswert: 2500, auftraege: 3, anteil: 10, anfragenJeA
 
 const euro = (n: number) => new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR", maximumFractionDigits: n < 100 ? 2 : 0 }).format(n);
 const zahl = (n: number) => new Intl.NumberFormat("de-DE").format(n);
+const euroGanz = (n: number) => new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(n);
 
 export default function BudgetPlaner() {
   const [w, setW] = useState<Werte>(START);
   const [angepasst, setAngepasst] = useState(false);
+  const [brancheId, setBrancheId] = useState("");
   const id = useId();
+  const branche = getMetaBranche(brancheId);
 
   const budget = w.auftraege * w.auftragswert * (w.anteil / 100);
   const anfragen = w.auftraege * w.anfragenJeAuftrag;
@@ -48,6 +52,16 @@ export default function BudgetPlaner() {
           <span className={`bp-hinweis${angepasst ? "" : " beispiel"}`}>
             {angepasst ? "Deine Angaben" : "Beispielwerte, bitte anpassen"}
           </span>
+        </div>
+        <div className="bp-feld">
+          <label htmlFor={`${id}-branche`}>Deine Branche, zum Vergleich mit veröffentlichten Richtwerten</label>
+          <select id={`${id}-branche`} className="bp-select" value={brancheId} onChange={(e) => setBrancheId(e.target.value)}>
+            <option value="">Keine Auswahl</option>
+            {metaBranchen.map((b) => (
+              <option key={b.id} value={b.id}>{b.name}</option>
+            ))}
+          </select>
+          <small>Optional. Die Richtwerte stammen aus fremden Veröffentlichungen, nicht aus unseren Kampagnen.</small>
         </div>
         {FELDER.map((f) => {
           const feldId = `${id}-${f.key}`;
@@ -109,6 +123,21 @@ export default function BudgetPlaner() {
         <p className="bp-rechnung">
           Rechnung: {zahl(w.auftraege)} × {euro(w.auftragswert)} × {zahl(w.anteil)} % = {euro(budget)}. Geteilt durch {zahl(anfragen)} Anfragen ergibt {euro(maxJeAnfrage)} je Anfrage.
         </p>
+        {branche ? (
+          <div className={`bp-vergleich ${maxJeAnfrage < branche.spanneVon ? "unter" : maxJeAnfrage > branche.spanneBis ? "ueber" : "innerhalb"}`}>
+            <b>
+              Veröffentlichte Richtwerte für {branche.name}: etwa {euroGanz(branche.spanneVon)} bis {euroGanz(branche.spanneBis)} je {branche.zielTyp}.
+            </b>
+            <span>
+              {maxJeAnfrage < branche.spanneVon
+                ? `Dein Höchstpreis von ${euro(maxJeAnfrage)} liegt darunter. Dann müssen Auftragswert, Werbeanteil oder Abschlussquote besser werden, bevor Anzeigen sich rechnen.`
+                : maxJeAnfrage > branche.spanneBis
+                  ? `Dein Höchstpreis von ${euro(maxJeAnfrage)} liegt darüber. Das lässt Spielraum, heißt aber nicht, dass Anfragen automatisch günstiger werden.`
+                  : `Dein Höchstpreis von ${euro(maxJeAnfrage)} liegt innerhalb der Spanne. Realistisch, wenn Angebot, Zielseite und Creatives stimmen.`}
+            </span>
+            <small>{branche.einordnung} Quellen stehen im Abschnitt „Worauf es je Branche ankommt“.</small>
+          </div>
+        ) : null}
         <p className="bp-note">
           Das ist dein Rahmen, kein Versprechen. Ob Anfragen in deiner Branche und Region darunter liegen, hängt von Angebot, Zielseite und Creatives ab. Die Betreuung durch uns kommt als fester Betrag dazu, nicht als Prozent vom Budget.
         </p>
