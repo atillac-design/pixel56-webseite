@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import ProjektFilter from "@/components/ProjektFilter";
 import {
   ArrowIcon,
   ClientMarquee,
@@ -192,38 +193,21 @@ export default function ProjektePage() {
               ausführlichen Fallstudie.
             </p>
           </div>
-          <div className="proj-grid reveal">
-            {fallstudien.map((p) => (
-              <Link className="proj-card" href={projectPath(p.slug)} key={p.slug}>
-                {p.bild ? (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <img className="pc-img" src={p.bild} alt={`${p.kunde}: ${p.titel}`} loading="lazy" decoding="async" />
-                ) : (
-                  <>
-                    <div className="ic-chrome">
-                      <span />
-                      <span />
-                      <span />
-                    </div>
-                    <div className={`ic-body ${p.variant}`}>
-                      <div className="ic-bar ic-bar-lg" />
-                      <div className="ic-bar ic-bar-sm" />
-                      <div className="ic-bar ic-bar-sm" style={{ width: "60%" }} />
-                      <div className="ic-btn" />
-                    </div>
-                  </>
-                )}
-                <div className="pc-body">
-                  <span className="rc-cat">{p.kunde}</span>
-                  <h3>{p.titel}</h3>
-                  <p>{p.teaser}</p>
-                  <div className="rc-tag">
-                    <span>{p.tags.join(" · ")}</span>
-                    <span>{p.jahr}</span>
-                  </div>
-                </div>
-              </Link>
-            ))}
+          <div className="reveal">
+            <ProjektFilter
+              projekte={fallstudien.map((p) => ({
+                slug: p.slug,
+                href: projectPath(p.slug),
+                kunde: p.kunde,
+                titel: p.titel,
+                teaser: p.teaser,
+                branche: p.branche,
+                tags: p.tags,
+                jahr: p.jahr,
+                bild: p.bild,
+                variant: p.variant,
+              }))}
+            />
           </div>
         </section>
 
