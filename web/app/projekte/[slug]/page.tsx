@@ -260,12 +260,12 @@ export default async function FallstudiePage({ params }: Props) {
                 {f.galerieHinweis ?? `Ausschnitte aus der Arbeit für ${f.kunde}. Echte Umsetzung, keine Vorlagen.`}
               </p>
             </div>
-            <div className={`work-gallery ${bilder.length === 1 ? "work-gallery-single" : bilder.length === 2 ? "work-gallery-pair" : ""}${f.galerieHochkant ? " work-gallery-hochkant" : ""} reveal`}>
+            <div className={`work-gallery ${bilder.length === 1 ? "work-gallery-single" : bilder.length === 2 ? "work-gallery-pair" : ""}${f.galerieHochkant ? " work-gallery-hochkant" : ""}${f.galerieAnzeigen ? " work-gallery-anzeigen" : ""} reveal`}>
               {bilder.map((bild, index) => (
                 <figure key={bild}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={bild} alt={index === 0 && f.galerieHinweis ? f.galerieHinweis : `Einblick ${index + 1} in das Projekt für ${f.kunde}`} loading="lazy" decoding="async" />
-                  <figcaption><b>{f.kunde}</b><span>{index === 0 && f.galerieHinweis ? "Beispiel-Creative" : f.tags[0]}</span></figcaption>
+                  <img src={bild} alt={f.galerieAlt?.[index] ?? (index === 0 && f.galerieHinweis ? f.galerieHinweis : `Einblick ${index + 1} in das Projekt für ${f.kunde}`)} loading="lazy" decoding="async" />
+                  <figcaption><b>{f.kunde}</b><span>{index === 0 && f.galerieHinweis && !f.galerieAlt ? "Beispiel-Creative" : f.tags[0]}</span></figcaption>
                 </figure>
               ))}
             </div>

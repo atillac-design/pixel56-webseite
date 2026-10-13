@@ -378,6 +378,20 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   auf Wunsch des Inhabers überall „CurlyAnn Soulcare & Art“ statt „CurlyAnn
   Atelier“ (Fallstudie, Kundenliste in `lib/site.ts`, Startseite, Über uns,
   Content-Produktion).
+- 13.10.2026: **Van den Berg: echte Recruiting-Anzeigen, CurlyAnn-Jahr korrigiert.**
+  Der Inhaber hat drei Meta-Anzeigen der Van den Berg Gruppe geliefert
+  (Baggerfahrer:in und Bürokräfte als Story 1080×1920, Abbruchhelfer als Feed
+  1080×1080), abgelegt als `public/bilder/projekt-van-den-berg-anzeige-*.webp`.
+  Fallstudie bekommt damit eine Galerie, Tag „Recruiting“ und einen
+  Umsetzungs-Baustein zu den Anzeigen. Neues Feld `galerieAnzeigen` im Typ
+  `Fallstudie` mit CSS `.work-gallery-anzeigen`: Motive unbeschnitten im
+  Originalformat, drei Spalten, mittig ausgerichtet, auf dem Handy maximal
+  360 px breit, ohne Beschriftungskachel über dem Motiv (die Anzeigen tragen
+  Logo und Botschaft selbst). Dazu `galerieAlt` für Alternativtexte je Bild;
+  das Label „Beispiel-Creative“ erscheint nur noch, wenn keine eigenen
+  Alternativtexte gesetzt sind. Das ältere `content-creative-abbruch.webp` (800×800) durch die
+  1080er-Fassung desselben Motivs ersetzt. CurlyAnn: Jahr von 2024 auf 2026
+  korrigiert, der Auftrag lief in diesem Jahr.
 
 ## Verifiziert am 13.10.2026
 

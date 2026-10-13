@@ -3219,3 +3219,9 @@ body { overflow-x: clip; }
 .reel-wand-einzeln .reel-wand { grid-template-columns: minmax(220px, 300px); }
 .work-gallery-hochkant.work-gallery-pair { grid-template-columns: repeat(2, minmax(0, 420px)); justify-content: center; }
 .work-gallery-hochkant img, .work-gallery-hochkant.work-gallery-pair img { aspect-ratio: 3 / 4; }
+/* Anzeigenmotive unbeschnitten: Story (9:16) und Feed (1:1) nebeneinander, mittig ausgerichtet. */
+.work-gallery-anzeigen { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; }
+.work-gallery-anzeigen img { height: auto; aspect-ratio: auto; object-fit: contain; }
+.work-gallery-anzeigen figcaption { display: none; } /* Die Motive tragen Logo und Botschaft selbst; keine Kachel über dem Button. */
+@media (max-width: 1080px) { .work-gallery-anzeigen { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .work-gallery-anzeigen { grid-template-columns: minmax(0, 360px); justify-content: center; } }

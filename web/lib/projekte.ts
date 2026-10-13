@@ -32,6 +32,10 @@ export type Fallstudie = {
   galerie?: string[];
   /** Galeriebilder sind hochkant (3:4), z. B. Plakate oder Verpackungen. */
   galerieHochkant?: boolean;
+  /** Galerie zeigt Anzeigenmotive unbeschnitten im Originalformat (Story 9:16 neben Feed 1:1). */
+  galerieAnzeigen?: boolean;
+  /** Alternativtexte je Galeriebild, gleiche Reihenfolge wie `galerie`. */
+  galerieAlt?: string[];
   /** Bildunterschrift zum ersten Galeriebild, z. B. wenn es ein Beispiel aus einem anderen Projekt ist. */
   galerieHinweis?: string;
   /** Reel/Video für die Detailseite (hochkant, MP4). */
@@ -138,8 +142,20 @@ export const fallstudien: Fallstudie[] = [
     kunde: "Van den Berg Gruppe",
     branche: "Dienstleistung",
     jahr: "laufend",
-    tags: ["Meta Ads", "Landingpage", "Betreuung"],
+    tags: ["Meta Ads", "Recruiting", "Landingpage", "Betreuung"],
     bild: "/bilder/projekt-van-den-berg.webp",
+    galerie: [
+      "/bilder/projekt-van-den-berg-anzeige-baggerfahrer.webp",
+      "/bilder/projekt-van-den-berg-anzeige-abbruchhelfer.webp",
+      "/bilder/projekt-van-den-berg-anzeige-buerokraefte.webp",
+    ],
+    galerieAnzeigen: true,
+    galerieAlt: [
+      "Recruiting-Anzeige der Van den Berg Gruppe im Story-Format: Wir suchen Baggerfahrer:in, Fachrichtung Abbruch in Vollzeit",
+      "Recruiting-Anzeige der Van den Berg Gruppe im Feed-Format: Du setzt alles auf Abbruch? Bewirb dich jetzt als Abbruchhelfer (m/w/d), unbefristet, Festeinstellung, Andernach",
+      "Recruiting-Anzeige der Van den Berg Gruppe im Story-Format: Wir suchen Bürokräfte (m/w/d), Vollzeitstelle",
+    ],
+    galerieHinweis: "Drei Motive aus der Recruiting-Kampagne: Baggerfahrer:in und Bürokräfte im Story-Format, Abbruchhelfer als Feed-Motiv.",
     logo: "/bilder/kunde-vandenberg.png",
     variant: "ic-4",
     titel: "Meta Ads mit kontinuierlicher Betreuung",
@@ -159,6 +175,7 @@ export const fallstudien: Fallstudie[] = [
       text: "Wir haben die Kampagnenstruktur neu aufgebaut, sauberes Tracking eingerichtet und Anzeigen auf fokussierte Zielseiten geführt — mit konstantem Budget und laufender Optimierung anhand echter Daten.",
       punkte: [
         "Neu strukturierte Meta-Ads-Kampagnen mit Conversion-Tracking",
+        "Recruiting-Anzeigen für Abbruchhelfer, Baggerfahrer:in und Bürokräfte im Story- und Feed-Format",
         "Fokussierte Landingpage statt allgemeiner Startseite",
         "Budget-Steuerung nach Datenlage, wöchentlich ausgewertet",
       ],
@@ -393,7 +410,7 @@ export const fallstudien: Fallstudie[] = [
     vorherArt: "veraltet",
     kunde: "CurlyAnn Soulcare & Art",
     branche: "Kreativ & Workshops",
-    jahr: "2024",
+    jahr: "2026",
     tags: ["Konzeption", "Webdesign", "Buchungssystem", "Online-Zahlung"],
     website: "https://curlyann-soulcare.de",
     bild: "/bilder/projekt-curlyann-1.webp",
