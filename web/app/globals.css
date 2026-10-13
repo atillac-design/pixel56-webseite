@@ -2697,3 +2697,8 @@ a.audience-card { color: inherit; text-decoration: none; }
 .projects-hero-visual .founder-frame { aspect-ratio: 4 / 3; }
 .mini-grid small a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(229,61,82,0.5); }
 .mini-grid small a:hover { color: var(--accent); }
+/* Standortseiten: Links in Karten-Fußzeilen lesbar halten */
+.audience-card small a { color: var(--ink); font-family: var(--sans); font-size: 13px; letter-spacing: 0; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(229,61,82,0.5); }
+.audience-card small a:hover { color: var(--accent); }
+.split2.align-top { align-items: start; }
+.split2.align-top > .reveal > .lines { margin-top: 12px; }

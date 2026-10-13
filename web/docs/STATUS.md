@@ -15,6 +15,38 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 13.10.2026: **Standortseiten: Thin-Content-Risiko behoben.** Analyse der
+  291 Seiten: 94 % der Wörter sind je Leistung auf allen Seiten identisch,
+  nur ein Absatz pro Stadt (CMS-Feld `lokaler-content`) ist einzigartig; 84
+  Städte, davon 13 im Einzugsgebiet, 16 Großstädte, 53 weitere inkl. Schweiz
+  und Österreich; keine GSC-Daten im Repo. Entscheidung (umkehrbar per Liste
+  in `lib/standorte.ts`): 13 Städte im Einzugsgebiet (65 URLs) bleiben
+  indexierbar und bekommen eine neue, leistungsspezifische Vorlage mit
+  lokalen Fakten; die übrigen 226 URLs bleiben 1:1 erreichbar, liefern aber
+  `noindex, follow` und stehen nicht in der Sitemap. Details unter
+  „Erledigt: Standortseiten“.
+- 13.10.2026: **Seiten-Überarbeitung Runde 2.** Über uns (13 Sektionen),
+  Team-Seite Atilla (8), Kontakt (10), Leistungen-Übersicht (12),
+  Projekte-Übersicht (11) und Standorte-Übersicht (7) neu geschrieben, im
+  Stil der Startseite und der acht Leistungsseiten. Erfundene
+  Review-Konstanten auf Über uns, Projekte und der alten Standortvorlage
+  entfernt; es werden nur noch Stimmen aus `lib/verified-reviews.ts`
+  gezeigt. Antwortzeit-Versprechen einheitlich „innerhalb eines Werktags“.
+- 13.10.2026: **Creatives geprüft.** `ads-recruiting-beispiel.webp` und
+  `content-creative-recruiting.webp` sind Vorlagen-Motive („IHR LOGO“,
+  `job@webseite.de`) und werden nicht mehr als Kundenarbeit gezeigt. Das
+  Abbruch-Motiv („Andernach“, Abbruchhelfer/Baggerfahrer) ist in
+  `lib/projekte.ts` sowohl Van den Berg Gruppe als auch GM-Dachdecker
+  zugeordnet; die Meta-Ads-Referenzkarte nutzt deshalb das
+  GM-Dachdecker-Projektbild. **Atilla bitte prüfen:** Zu welchem Kunden
+  gehört das Abbruch-Creative (Zuordnung in `lib/projekte.ts`, Zeile
+  `galerie` bei `gm-dachdecker`)?
+- 13.10.2026: **Seiten-Überarbeitung Runde 1.** Startseite (15 Sektionen) und
+  die acht Leistungsseiten (13 bis 15 Sektionen) neu geschrieben: Premium-Hero
+  mit Board, Zusammenfassung, nummerierte Sektionen, Praxisbeispiel aus
+  `lib/projekte.ts`, Kundenstimmen nur aus `lib/verified-reviews.ts`,
+  Kontaktleiste vor dem Footer. Demo-Dashboards mit erfundenen Kennzahlen
+  entfernt.
 - 13.10.2026: **Standort-Lücke im Migrationsmanifest geschlossen.** Atilla hat
   im Browser bestätigt, dass `https://www.pixel56.de/locations/vallendar-seo`
   lädt; die 125 im Juli 2026 einzeln publizierten Standortseiten sind also
@@ -57,22 +89,77 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 ## Verifiziert am 13.10.2026
 
 `npm ci && npm run build && npm run seo:check:strict` läuft fehlerfrei durch
-(Node 22.22.0, npm 10.9.4), zuletzt nach dem Standort-Merge.
+(Node 22.22.0, npm 10.9.4), zuletzt nach der Standort-Umstellung.
 
 - **Build:** TypeScript ohne Fehler, 386 statisch erzeugte Seiten, darunter
   291 Standorte, 35 Blogartikel, 17 Projekte, 8 Blog-Kategorien, 3 Ressourcen.
   `/api/kontakt`, `/api/lead` und `/studio` sind dynamisch.
 - **SEO-Check strict:** 365 Bestands-URLs inventarisiert, 21 Kernseiten, 10
   Portfolio-Einzelmappings, 2 GSC-Redirects, 291 Standort-URLs direkt
-  erreichbar. Keine Fehler, keine Warnungen.
-- **Stichprobe `/standorte/vallendar-seo`** (öffentlich unter
-  `/locations/vallendar-seo` per Rewrite): Titel, Meta-Beschreibung,
-  Canonical `/locations/vallendar-seo`, `noindex` (Schalter nicht gesetzt),
-  lokaler Text aus dem CMS vorhanden, kein Slug-Artefakt.
+  erreichbar, davon 65 indexierbar (13 Städte) und 226 `noindex,follow`.
+  Keine Fehler, keine Warnungen.
+- **Stichproben nach der Umstellung** (lokaler `next start`, Schalter
+  `NEXT_PUBLIC_INDEXABLE` nicht gesetzt, daher global `noindex, nofollow`):
+  `/locations/koblenz` und `/locations/vallendar-seo` mit neuem Titel,
+  Canonical auf sich selbst, in der Sitemap; `/locations/hamburg` und
+  `/locations/wien-meta-ads` mit seitenbezogenem `noindex, follow`, altem
+  Titel, nicht in der Sitemap. Die Sitemap enthält 65 Standort-URLs.
+- **Screenshots** (Desktop 1440 px, Mobil 390 px) aller überarbeiteten Seiten
+  geprüft: keine horizontalen Überläufe, Bilder laden, dunkle Bühnen lesbar.
 - **Erwartete Build-Meldung:** „Sanity nicht erreichbar, nutze statische
   Inhalte“ erscheint dreimal. In der Cloud-Session sperrt die
   Netzwerk-Richtlinie die Sanity-API; der statische Fallback greift und der
   Build bleibt grün. Lokal mit Netz erscheint die Meldung nicht.
+
+## Erledigt: Standortseiten ohne Thin Content
+
+Befund (Analyse von `data/legacy-locations.json`, 13.10.2026):
+
+| Merkmal | Wert |
+| --- | --- |
+| Seiten | 291 (Webdesign 83, Google Ads 83, Meta Ads 83, SEO 29, Social Media 13) |
+| Städte | 84: 13 mit fünf Leistungen (Einzugsgebiet), 16 Großstädte mit vier, 53 mit drei, Urmitz doppelt |
+| Identische Wörter je Leistung | 94 %; nur Block 3 (`lokaler-content`) ist pro Stadt einzigartig |
+| GSC-Daten im Repo | keine (`data/gsc-*` bleibt lokal bei Atilla) |
+
+Umsetzung:
+
+- `lib/standorte.ts`: Tabelle `regionStaedte` mit 13 Städten (Bendorf,
+  Koblenz, Vallendar, Neuwied, Andernach, Höhr-Grenzhausen,
+  Ransbach-Baumbach, Montabaur, Lahnstein, Mülheim-Kärlich, Weißenthurm,
+  Mayen, Limburg), je mit Landkreis, gerundeter Entfernung und Fahrzeit ab
+  Hüttenstraße 100 sowie zwei Sätzen lokalem Kontext. **Atilla bitte
+  prüfen:** Entfernungen/Fahrzeiten sind Schätzwerte, Kontexttexte enthalten
+  allgemeine Ortsfakten (WHU, Kannenbäckerland, ICE-Halt usw.).
+  `isIndexableLocation()` leitet die Indexierbarkeit allein aus dieser Liste
+  ab. Eine weitere Stadt wird indexierbar, sobald sie mit eigenen Angaben in
+  der Tabelle steht; so lassen sich GSC-Befunde später 1:1 umsetzen.
+- `lib/standort-inhalte.ts`: je Leistung eigene Texte (Hero, Einleitung,
+  sechs Bausteine, vier Ablaufschritte, Referenzen, vier Fragen), damit sich
+  Webdesign-, Google-Ads-, Meta-Ads-, SEO- und Social-Media-Seiten derselben
+  Stadt inhaltlich unterscheiden.
+- `components/LocationPage.tsx` (ersetzt `LegacyLocationPage.tsx`): neue
+  Vorlage mit Hero-Board, Zusammenfassung, Sektion „Pixel56 und <Stadt>“
+  (Einzugsgebiet: Kontext, Entfernung, Vor-Ort-Angebot; sonst ehrlich: „Wir
+  sitzen nicht in <Stadt>“), dem einzigartigen CMS-Absatz, Bausteinen,
+  Ablauf, Referenzen, Querverlinkung zu den anderen Leistungen der Stadt und
+  zur gleichen Leistung in Nachbarstädten, verifizierten Kundenstimmen, FAQ
+  mit stadtbezogener Frage, Kontaktleiste. Die alte Koblenz-Sondervorlage
+  mit Demo-Dashboard und erfundenen Stimmen ist entfernt.
+- `app/standorte/[slug]/page.tsx`: alle 291 Slugs aus `legacyLocations`;
+  außerhalb des Einzugsgebiets `robots: { index: false, follow: true }` und
+  alter Titel/Beschreibung; im Einzugsgebiet neue Titel nach dem Muster
+  „Webdesign Koblenz: Websites, die Anfragen bringen“.
+- `app/sitemap.ts`: nur `indexableLocations`. `app/standorte/page.tsx`:
+  Übersicht zeigt die 13 Städte mit Entfernung und ihren fünf Leistungsseiten;
+  noindex-Seiten werden nicht verlinkt.
+- `scripts/check-seo-migration.mjs`: prüft weiterhin, dass alle 291
+  Manifest-URLs als Routen existieren (jetzt Fehler statt Warnung, wenn eine
+  fehlt), zusätzlich, dass noindex-Seiten `noindex,follow` liefern und die
+  Sitemap genau die indexierbaren enthält. Sammelredirects bleiben verboten.
+
+Keine Weiterleitungen, kein Webflow-Publish, Manifest unverändert (`review`
+bleibt als Vermerk stehen, die Entscheidung liegt im Code).
 
 ## Erledigt: Migrationsmanifest kennt jetzt alle 291 Standortseiten
 
@@ -125,18 +212,16 @@ Diff von `data/legacy-locations.json` sichtbar.
 
 ## Offene Punkte
 
-### 1. Inhaltliche Entscheidung für 291 Standort-URLs
+### 1. Standortseiten: Liste der indexierbaren Städte mit GSC-Daten abgleichen
 
-Alle 291 Standort-URLs stehen im Manifest auf `review`: Pfade bleiben beim
-Relaunch 1:1 erreichbar, die inhaltliche Entscheidung (erhalten, ausbauen,
-konsolidieren, noindex) ist offen. `HANDOFF.md` weist zu Recht darauf hin,
-keine pauschalen Redirects ganzer Inhaltsgruppen auf Übersichtsseiten zu
-setzen; `seo:check:strict` erzwingt das. Die GSC-Auswertung in
-`scripts/build-gsc-report-artifact.mjs` bezieht sich noch auf die 166 alten
-URLs; die 125 neuen haben erst seit Juli 2026 Daten in der Search Console.
-Hinweis zur Qualität: Die Seiten teilen eine Vorlage und unterscheiden sich
-nur in sechs Textblöcken, also Thin-Content-Risiko (siehe Kommentar in
-`lib/standorte.ts`).
+Die Entscheidung „13 Städte indexierbar, 226 URLs noindex“ ist ohne
+Search-Console-Daten getroffen (siehe „Erledigt: Standortseiten“). Sobald
+Atilla einen GSC-Export (Seiten-Bericht, 16 Monate) bereitstellt: Seiten
+außerhalb des Einzugsgebiets mit echten Klicks oder nennenswerten
+Impressionen prüfen und bei Bedarf mit eigenen lokalen Angaben in
+`regionStaedte` aufnehmen. Dann wird die Stadt automatisch indexierbar und
+landet in der Sitemap. Ebenso die Schätzwerte für Entfernung und Fahrzeit
+sowie die Kontexttexte der 13 Städte gegenlesen.
 
 ### 2. Deployment steht, ist aber nicht ausgerollt
 

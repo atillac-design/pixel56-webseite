@@ -101,27 +101,35 @@ const legacyBlogSlugs = manifest.routes
 const missingBlogs = legacyBlogSlugs.filter((slug) => !staticBlogSlugs.has(slug));
 if (missingBlogs.length) warnings.push(`${missingBlogs.length} Bestands-Blogartikel müssen noch aus Webflow/Sanity migriert werden`);
 
-const staticLocationSlugs = sourceSlugs(locationSource);
-if (existsSync(legacyLocationsPath)) {
-  for (const location of JSON.parse(readFileSync(legacyLocationsPath, "utf8"))) {
-    staticLocationSlugs.add(location.slug);
-  }
-}
+// Standortseiten: alle alten URLs bleiben 1:1 erreichbar (data/legacy-locations.json),
+// indexierbar sind nur die Städte aus lib/standorte.ts (regionStaedte).
+const legacyLocationItems = existsSync(legacyLocationsPath) ? JSON.parse(readFileSync(legacyLocationsPath, "utf8")) : [];
+const staticLocationSlugs = new Set(legacyLocationItems.map((location) => location.slug));
 const legacyLocationSlugs = manifest.routes
   .filter((route) => route.type === "location")
   .map((route) => route.sourcePath.replace("/locations/", ""));
 const unresolvedLocations = legacyLocationSlugs.filter((slug) => !staticLocationSlugs.has(slug));
-if (unresolvedLocations.length) warnings.push(`${unresolvedLocations.length} Standort-URLs brauchen noch eine GSC-basierte Einzelentscheidung`);
+if (unresolvedLocations.length) errors.push(`${unresolvedLocations.length} Standort-URLs aus dem Manifest fehlen in data/legacy-locations.json`);
+const regionCities = new Set([...locationSource.matchAll(/stadt:\s*"([^"]+)"/g)].map((match) => match[1]));
+if (!regionCities.size) errors.push("lib/standorte.ts enthält keine Region-Städte (regionStaedte)");
+const indexableLocationCount = legacyLocationItems.filter((location) => regionCities.has(location.stadt)).length;
+const noindexLocationCount = legacyLocationItems.length - indexableLocationCount;
 
 const unresolved = manifest.routes.filter((route) => route.action === "review" && route.type !== "location");
 if (unresolved.length) warnings.push(`${unresolved.length} URLs stehen im Manifest auf review`);
 const legacyLocationPageSource = readFileSync(resolve(root, "app/standorte/[slug]/page.tsx"), "utf8");
 const sitemapSource = readFileSync(resolve(root, "app/sitemap.ts"), "utf8");
-if (!legacyLocationPageSource.includes("...legacyLocations.map((s) => s.slug)")) {
+if (!legacyLocationPageSource.includes("legacyLocations.map((location) => ({ slug: location.slug }))")) {
   errors.push("Nicht alle alten Standortseiten werden als Routen erzeugt");
 }
-if (!sitemapSource.includes("...legacyLocations.map((location) => location.slug)")) {
-  errors.push("Nicht alle alten Standortseiten stehen in der Sitemap");
+if (!legacyLocationPageSource.includes("robots: { index: false, follow: true }")) {
+  errors.push("Standortseiten außerhalb des Einzugsgebiets müssen noindex,follow ausliefern");
+}
+if (!sitemapSource.includes("indexableLocations.map(")) {
+  errors.push("Sitemap muss genau die indexierbaren Standortseiten enthalten");
+}
+if (sitemapSource.includes("legacyLocations")) {
+  errors.push("Sitemap darf keine noindex-Standortseiten enthalten");
 }
 if (configSource.includes("locationConsolidationRedirects")) {
   errors.push("Standort-Sammelredirects gefährden die zugesagte 1:1-URL-Übernahme");
@@ -131,7 +139,7 @@ console.log(`SEO-Migration: ${manifest.total} Bestands-URLs inventarisiert`);
 console.log(`Kernseiten geprüft: ${coreFiles.size + canonicalCoreViaRewrite.length}`);
 console.log(`Portfolio-Einzelmappings geprüft: ${portfolio.length}`);
 console.log(`Zusätzliche GSC-Redirects geprüft: ${gscDiscoveredRedirects.size}`);
-console.log(`Standortseiten geprüft: ${legacyLocationSlugs.length} alte URLs bleiben direkt erreichbar`);
+console.log(`Standortseiten geprüft: ${legacyLocationSlugs.length} alte URLs bleiben direkt erreichbar, ${indexableLocationCount} indexierbar (${regionCities.size} Städte im Einzugsgebiet), ${noindexLocationCount} noindex,follow`);
 for (const warning of warnings) console.warn(`WARN: ${warning}`);
 for (const error of errors) console.error(`FEHLER: ${error}`);
 

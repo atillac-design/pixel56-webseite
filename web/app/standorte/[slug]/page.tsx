@@ -1,357 +1,51 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import SiteNav from "@/components/SiteNav";
-import SiteFooter from "@/components/SiteFooter";
-import {
-  ArrowIcon,
-  PulseField,
-  ClientMarquee,
-  StatusPanel,
-  MetricMock,
-  WaMock,
-  BrowserMock,
-  CloseCta,
-  FaqList,
-  Reviews,
-  Stepper,
-} from "@/components/ui";
-import { SearchMock } from "@/components/mocks";
-import { site } from "@/lib/site";
-import { standorte, getStandort } from "@/lib/standorte";
-import LegacyLocationPage from "@/components/LegacyLocationPage";
+import LocationPage from "@/components/LocationPage";
 import { getLegacyLocation, legacyLocations } from "@/lib/legacy-locations";
+import { getStandortLeistung } from "@/lib/standort-inhalte";
+import { isIndexableLocation, stadtAnzeige } from "@/lib/standorte";
 import { locationPath } from "@/lib/routes";
 
 type Props = { params: Promise<{ slug: string }> };
 
+/** Alle 291 alten Standort-URLs bleiben 1:1 erreichbar. */
 export function generateStaticParams() {
-  return [...new Set([
-    ...standorte.map((s) => s.slug),
-    ...legacyLocations.map((s) => s.slug),
-  ])]
-    .map((slug) => ({ slug }));
+  return legacyLocations.map((location) => ({ slug: location.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const ort = getStandort(slug);
-  const legacy = getLegacyLocation(slug);
-  if (!ort && !legacy) return {};
-  if (!ort && legacy) {
+  const location = getLegacyLocation(slug);
+  if (!location) return {};
+  const canonical = locationPath(location.slug);
+
+  if (!isIndexableLocation(location)) {
+    // Außerhalb des Einzugsgebiets: erreichbar, aber nicht indexierbar.
     return {
-      title: { absolute: legacy.titel },
-      description: legacy.beschreibung,
-      alternates: { canonical: locationPath(legacy.slug) },
+      title: { absolute: location.titel },
+      description: location.beschreibung,
+      alternates: { canonical },
+      robots: { index: false, follow: true },
     };
   }
-  if (!ort) return {};
+
+  const stadt = stadtAnzeige(location);
+  const leistung = getStandortLeistung(location.leistung);
   return {
-    title: `Webdesign in ${ort.stadt}`,
-    description: `Webdesign, Google & Meta Ads und Social-Media-Content für Unternehmen in ${ort.stadt} und Umgebung — von Pixel56 aus Bendorf bei Koblenz.`,
-    alternates: { canonical: locationPath(ort.slug) },
+    title: `${leistung.kurz} ${stadt}: ${leistung.heroLine.replace(/\.$/, "")}`,
+    description: leistung.heroText(stadt),
+    alternates: { canonical },
+    openGraph: {
+      title: `${leistung.kurz} in ${stadt} | Pixel56`,
+      description: leistung.heroText(stadt),
+      url: canonical,
+    },
   };
 }
 
-const statusRows = [
-  { label: "Technisch unsichtbar", tag: "Struktur" },
-  { label: "Erster Eindruck verloren", tag: "Tempo" },
-  { label: "Wirkt veraltet", tag: "Design" },
-  { label: "Bricht auf dem Handy", tag: "Mobil" },
-  { label: "Kein Kontaktweg", tag: "Formular" },
-  { label: "Niemand antwortet", tag: "Betreuung" },
-  { label: "Keine Auswertung", tag: "Zahlen" },
-];
-
-const steps = [
-  { nr: "01", tag: "Woche 1", title: "Analyse", text: "Seite, Wettbewerb, Zielgruppe — bevor irgendetwas entworfen wird." },
-  { nr: "02", tag: "Woche 1–2", title: "Struktur", text: "Texte, die zur Anfrage führen, kein Textbaustein von der Stange." },
-  { nr: "03", tag: "Woche 2–3", title: "Design", text: "Passt zur Marke, baut Vertrauen auf — nicht nur „hübsch“." },
-  { nr: "04", tag: "Woche 3–4", title: "Technik", text: "Ladezeit, mobile Darstellung, SEO von Anfang an mitgedacht." },
-  { nr: "05", tag: "Laufend", title: "Betreuung", text: "Nach dem Launch bleiben wir dran, nicht nur bis zur Rechnung." },
-];
-
-const branchen = [
-  { variant: "ic-1", barWidth: 55, title: "Handwerk & Bau", text: "Robust, direkt, Vertrauen auf den ersten Blick." },
-  { variant: "ic-2", barWidth: 65, title: "Transport & Logistik", text: "Klar strukturiert, auf Zuverlässigkeit ausgelegt." },
-  { variant: "ic-3", barWidth: 50, title: "Bildung & Weiterbildung", text: "Freundlich, seriös, macht Wissen zugänglich." },
-  { variant: "ic-4", barWidth: 70, title: "Gastronomie", text: "Warm, appetitanregend, macht sofort Lust." },
-  { variant: "ic-5", barWidth: 60, title: "Einzelhandel & Mode", text: "Bildstark, leicht, zum Stöbern gemacht." },
-  { variant: "ic-6", barWidth: 58, title: "Beratung & Recht", text: "Ruhig, kompetent, schafft sofort Vertrauen." },
-];
-
-const reviews = [
-  { text: "Von der ersten Idee bis zum Livegang alles aus einer Hand — schnell, unkompliziert, top Ergebnis.", who: "GM-Dachdecker" },
-  { text: "Endlich eine Agentur, die auch nach dem Launch erreichbar ist. Kann ich nur empfehlen.", who: "MA-Transporte" },
-  { text: "Messbare Ergebnisse statt leerer Versprechen. Genau das haben wir gesucht.", who: "Van den Berg Gruppe" },
-];
-
 export default async function StandortPage({ params }: Props) {
   const { slug } = await params;
-  const ort = getStandort(slug);
-  if (!ort) {
-    const legacy = getLegacyLocation(slug);
-    if (!legacy) notFound();
-    return <LegacyLocationPage location={legacy} />;
-  }
-
-  const faqs = [
-    { q: "Wie lange dauert die Umsetzung?", a: "Je nach Umfang 3–5 Wochen von der Analyse bis zum Livegang — siehe die fünf Phasen oben." },
-    { q: "Was kostet eine neue Website?", a: "Individuell kalkuliert nach Umfang, nicht pauschal. Im kostenlosen Erstgespräch bekommst du ein konkretes Angebot, keine Bauchgefühl-Zahl." },
-    { q: "Muss ich Texte und Bilder selbst liefern?", a: "Nein. Wir übernehmen Struktur, Text und Design — du lieferst nur, was wirklich nur du wissen kannst." },
-    { q: "Bleibt ihr auch nach dem Launch erreichbar?", a: "Ja — per WhatsApp über einen festen Ansprechpartner, siehe oben. Betreuung ist Teil der Zusammenarbeit, kein Zusatzverkauf danach." },
-    { q: "Was passiert mit meiner alten Website?", a: "Sie bleibt bis zum Livegang der neuen online — kein Ausfall, kein Bruch. Wir schalten erst um, wenn alles geprüft ist." },
-    { q: "Kann ich Inhalte später selbst ändern?", a: "Ja, du bekommst ein einfaches System dafür. Wenn du lieber nichts anfassen willst, übernehmen wir das genauso." },
-    { q: "Ist die Seite auch für Google- und Meta-Ads vorbereitet?", a: "Ja — Landingpages und Tracking werden von Anfang an mitgedacht, nicht nachträglich draufgesetzt." },
-  ];
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: `Webdesign in ${ort.stadt}`,
-    serviceType: "Webdesign",
-    provider: { "@type": "ProfessionalService", name: site.name, url: site.url },
-    areaServed: ort.stadt,
-    url: `${site.url}${locationPath(ort.slug)}`,
-  };
-
-  return (
-    <main className="service-premium service-suite page-suite location-suite">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-
-      <div className="sheet">
-        <SiteNav crumb={{ section: "Standort", page: `Webdesign in ${ort.stadt}` }} />
-
-        <header className="hero service-suite-hero">
-          {ort.heroBild && (
-            <div className="hero-scenic" aria-hidden="true">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={ort.heroBild} alt="" />
-            </div>
-          )}
-          <PulseField label1={ort.koordinaten} label2="// SICHTBARKEIT AKTIV" />
-          <div className="hero-eyebrow">STANDORT {ort.stadt.toUpperCase()} · WEBDESIGN</div>
-          <h1>
-            <span className="in"><span>Sichtbar</span></span>
-            <span className="in"><span>in {ort.stadt}.</span></span>
-            <span className="in"><span>Überall gefunden.</span></span>
-          </h1>
-          <p className="hero-sub">{ort.heroSub}</p>
-          <div className="hero-actions">
-            <a className="btn-primary" href="https://calendly.com/pixel56/15min" target="_blank" rel="noopener">
-              Kostenloses Erstgespräch <ArrowIcon />
-            </a>
-            <Link className="btn-text" href="#beweis">
-              Warum {ort.stadt} anders tickt ↓
-            </Link>
-          </div>
-          <div className="hero-foot">
-            <span className="hf-label">Für {ort.stadt} im Einsatz:</span>
-            <div className="hf-chip">Webdesign</div>
-            <div className="hf-chip">Google &amp; Meta Ads</div>
-            <div className="hf-chip">Social-Media-Content</div>
-          </div>
-        </header>
-      </div>
-
-      <ClientMarquee />
-
-      <div className="editorial-shell service-editorial">
-        <div className="sheet">
-        <section className="band tint-amber">
-          <div className="split2 reverse">
-            <div className="reveal">
-              <span className="band-tag">01 — Der Status quo</span>
-              <h2 className="band-title">
-                Sieben Gründe, warum <em>Kunden dich nicht finden</em>
-              </h2>
-              <p className="lead">
-                Jeder Punkt hier hat denselben Ursprung: die Website selbst. Und
-                jeder kostet für sich schon Anfragen — unabhängig davon, wie gut
-                die Leistung dahinter ist.
-              </p>
-            </div>
-            <div className="reveal">
-              <StatusPanel head="7 von 7 Warnsignalen aktiv" rows={statusRows} />
-            </div>
-          </div>
-        </section>
-
-        <section className="band">
-          <div className="split2">
-            <div className="reveal">
-              <span className="band-tag">02 — Warum jetzt</span>
-              <h2 className="band-title">
-                Sichtbarkeit ist kein Zustand, <em>sondern ein Prozess</em>
-              </h2>
-              <p className="lead">{ort.warumJetztLead}</p>
-              <ul className="lines">
-                <li>Der erste Eindruck entsteht in unter drei Sekunden.</li>
-                <li>Wer nicht gefunden wird, existiert für den Kunden nicht.</li>
-                <li>Sichtbarkeit heute entscheidet über Anfragen morgen.</li>
-              </ul>
-            </div>
-            <div className="reveal">
-              <SearchMock
-                query={`webdesign ${ort.stadt.toLowerCase()}`}
-                youTag="Dein Eintrag"
-                others={["Mitbewerber A · Webagentur", "Mitbewerber B · Freelancer"]}
-              />
-            </div>
-          </div>
-        </section>
-
-        <section className="band tint" id="beweis">
-          <div className="band-tag reveal" style={{ marginBottom: 44 }}>
-            03 — Die Zusammenarbeit
-          </div>
-          <div className="stat-copy reveal" style={{ maxWidth: 780, margin: "0 auto" }}>
-            <p className="quote" style={{ fontSize: "clamp(24px, 3.4vw, 34px)" }}>
-              Persönlich erreichbar. Digital gut organisiert.
-            </p>
-            <p>
-              Pixel56 arbeitet von Bendorf bei Koblenz aus mit Unternehmen in
-              ganz Deutschland. Workshops, Abstimmungen und Umsetzung stimmen
-              wir auf dein Projekt ab — ohne einen Standort vor Ort zu behaupten.
-            </p>
-            <cite>{"// PIXEL56 · BENDORF BEI KOBLENZ"}</cite>
-          </div>
-        </section>
-
-        <section className="band">
-          <div className="split2 reverse">
-            <div className="reveal">
-              <span className="band-tag">04 — Warum wir</span>
-              <h2 className="band-title">
-                Nicht die günstigste Agentur. <em>Die dranbleibt.</em>
-              </h2>
-              <p className="lead">
-                Vier Gründe, warum Unternehmen aus {ort.stadt} und Umgebung bei
-                uns bleiben, statt nach einem Jahr weiterzuziehen.
-              </p>
-              <ul className="lines">
-                <li>Lokal verwurzelt — Bendorf bei Koblenz, kurze Wege, kein Callcenter.</li>
-                <li>Ein fester Ansprechpartner, keine wechselnden Projektmanager.</li>
-                <li>Ergebnisse ehrlich eingeordnet, nicht schöngerechnet.</li>
-                <li>Bleibt nach dem Launch — Betreuung, kein Zusatzverkauf danach.</li>
-              </ul>
-            </div>
-            <div className="reveal">
-              <MetricMock
-                head="Beispiel-Dashboard · Kampagnen-Auswertung"
-                rows={[
-                  { label: "Anfragen / Monat", value: "34", countTo: "34" },
-                  { label: "Klickrate", value: "6.8%", countTo: "6.8", suffix: "%" },
-                  { label: "Ladezeit", value: "0.8s" },
-                ]}
-              />
-            </div>
-          </div>
-        </section>
-
-        <section className="band">
-          <div className="band-head reveal">
-            <div>
-              <span className="band-tag">05 — Der Weg dahin</span>
-              <h2 className="band-title">
-                Fünf Schritte, <em>keine Umwege</em>
-              </h2>
-            </div>
-          </div>
-          <Stepper steps={steps} />
-        </section>
-
-        <section className="band" id="branchen">
-          <div className="band-head reveal">
-            <div>
-              <span className="band-tag">06 — Für deine Branche</span>
-              <h2 className="band-title">
-                So <em>könnte</em> es aussehen
-              </h2>
-            </div>
-            <p className="band-note">
-              Sechs Richtungen als Beispiel. Am Ende entsteht deine Website
-              individuell nach deiner eigenen Marke — keine dieser Vorlagen wird
-              1:1 verwendet.
-            </p>
-          </div>
-          <div className="industry-grid reveal">
-            {branchen.map((b) => (
-              <div className="industry-card" key={b.title}>
-                <BrowserMock variant={b.variant} barWidth={b.barWidth} />
-                <h4>{b.title}</h4>
-                <p>{b.text}</p>
-              </div>
-            ))}
-          </div>
-          <p className="industry-disclaimer">
-            Diese Vorschauen zeigen mögliche Design-Richtungen, keine fertigen
-            Vorlagen. Jede Pixel56-Website wird eigens für die Marke, Farben und
-            Zielgruppe des jeweiligen Kunden entworfen.
-          </p>
-        </section>
-
-        <section className="band tint-violet">
-          <div className="split2">
-            <div className="reveal">
-              <span className="band-tag">07 — Zusammenarbeit</span>
-              <h2 className="band-title">
-                Ein Ansprechpartner. <em>Ein Kanal.</em>
-              </h2>
-              <p className="lead">
-                Kein Ticket-System, kein Callcenter, keine Rückrufbitte. Während
-                deines Projekts erreichst du einen festen Ansprechpartner direkt
-                per WhatsApp — für schnelle Fragen genauso wie für große
-                Entscheidungen.
-              </p>
-            </div>
-            <div className="reveal">
-              <WaMock
-                name="Pixel56 — Dein Ansprechpartner"
-                messages={[
-                  { from: "in", text: "Kurze Frage: Können wir das Bild auf der Startseite noch tauschen?" },
-                  { from: "out", text: "Klar, schick's mir rüber — ist heute noch online." },
-                  { from: "in", text: "👍 Danke, schnell wie immer." },
-                ]}
-                footer="Antwortzeit während der Zusammenarbeit: meist unter 1 Stunde"
-              />
-            </div>
-          </div>
-        </section>
-
-        <section className="band">
-          <div className="band-head reveal">
-            <div>
-              <span className="band-tag">08 — Bewertungen</span>
-              <h2 className="band-title">
-                Das sagen <em>Kunden über uns</em>
-              </h2>
-            </div>
-          </div>
-          <Reviews reviews={reviews} />
-        </section>
-
-        <section className="band">
-          <div className="band-head reveal">
-            <div>
-              <span className="band-tag">09 — Häufige Fragen</span>
-              <h2 className="band-title">
-                Bevor du <em>schreibst</em>
-              </h2>
-            </div>
-          </div>
-          <FaqList items={faqs} />
-        </section>
-
-        </div>
-      </div>
-
-      <div className="sheet service-ending">
-        <CloseCta>
-          Bereit, in {ort.stadt} <em>gefunden</em> zu werden?
-        </CloseCta>
-        <SiteFooter />
-      </div>
-    </main>
-  );
+  const location = getLegacyLocation(slug);
+  if (!location) notFound();
+  return <LocationPage location={location} />;
 }

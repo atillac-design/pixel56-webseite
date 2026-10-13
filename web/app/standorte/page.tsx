@@ -1,84 +1,262 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import { PulseField, CloseCta } from "@/components/ui";
-import { standorte } from "@/lib/standorte";
-import { locationPath } from "@/lib/routes";
+import { ArrowIcon, ClientMarquee, CloseCta, ContactStrip, FaqList, Reviews } from "@/components/ui";
+import { site } from "@/lib/site";
+import { regionStaedte, locationsOfCity } from "@/lib/standorte";
+import { getStandortLeistung } from "@/lib/standort-inhalte";
+import { verifiedReviews } from "@/lib/verified-reviews";
+import { locationPath, routes, serviceRoutes } from "@/lib/routes";
+import koblenzImage from "@/public/bilder/koblenz-rhein.webp";
 
 export const metadata: Metadata = {
-  title: "Standorte — Webdesign & Marketing in deiner Stadt",
+  title: "Standorte: Webdesign, Ads und Content rund um Koblenz",
   description:
-    "Webdesign, Google & Meta Ads und Social-Media-Content in deiner Nähe — für KMUs, Handwerker und Dienstleister. Persönlich, digital & lokal.",
-  alternates: { canonical: "/standorte" },
+    "Pixel56 arbeitet aus Bendorf bei Koblenz für Unternehmen in Koblenz, Neuwied, Andernach, Montabaur, Mayen, Limburg und der ganzen Region. Vor Ort oder per Video-Call, deutschlandweit.",
+  alternates: { canonical: routes.locations },
+  openGraph: {
+    title: "Pixel56 in deiner Stadt: Region Koblenz und deutschlandweit",
+    description: "Webdesign, Google Ads, Meta Ads, SEO und Social Media für Betriebe im Einzugsgebiet von Bendorf bei Koblenz.",
+    url: routes.locations,
+  },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": `${site.url}${routes.locations}#list`,
+  name: "Standorte von Pixel56",
+  itemListElement: regionStaedte.map((region, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: region.anzeige ?? region.stadt,
+    url: `${site.url}${locationPath(locationsOfCity(region.stadt).find((l) => l.leistung === "Webdesign")?.slug ?? region.stadt.toLowerCase())}`,
+  })),
+};
+
+const faqs = [
+  { q: "Arbeitet ihr nur in der Region Koblenz?", a: "Nein. Der Sitz ist in Bendorf bei Koblenz, und im Einzugsgebiet kommen wir für Kennenlernen, Fotos und Drehs vorbei. Alles andere läuft per Video-Call, Telefon und WhatsApp, auch mit Kunden in anderen Bundesländern." },
+  { q: "Meine Stadt steht nicht in der Liste. Was nun?", a: "Dann arbeiten wir ortsunabhängig zusammen. Die Liste zeigt nur die Städte, in denen wir regelmäßig vor Ort sind. Für Betriebe außerhalb ändert sich an Leistung und Ablauf nichts." },
+  { q: "Kommt ihr für einen Drehtag in den Betrieb?", a: "Im Einzugsgebiet um Koblenz ohne Reisekosten. Weiter entfernt planen wir Drehtage nach Aufwand oder arbeiten mit Material, das du selbst aufnimmst." },
+  { q: "Kann ich in Bendorf vorbeikommen?", a: `Ja, nach Terminabsprache: ${site.address}. Für ein erstes Kennenlernen ist der Termin über Calendly der einfachste Weg.` },
+];
+
 export default function StandorteUebersicht() {
+  const staedte = [...regionStaedte].sort((a, b) => a.entfernungKm - b.entfernungKm);
+  const leistungen = ["Webdesign", "Google Ads", "Meta Ads", "SEO", "Social-Media Betreuung"];
+
   return (
-    <main className="service-premium service-suite page-suite page-suite-locations">
-      <div className="sheet">
-        <SiteNav crumb={{ section: "Pixel56", page: "Standorte" }} />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <header className="hero service-suite-hero" style={{ minHeight: "60vh" }}>
-        <PulseField label1="// BENDORF BEI KOBLENZ" label2="// DEUTSCHLANDWEIT IM EINSATZ" />
-        <div className="hero-eyebrow">STANDORTE</div>
-        <h1>
-          <span className="in"><span>Vor Ort verwurzelt.</span></span>
-          <span className="in"><span>Überall wirksam.</span></span>
-        </h1>
-        <p className="hero-sub">
-          Unser Zuhause ist Bendorf bei Koblenz — betreut werden Kunden in der
-          ganzen Region und darüber hinaus. Hier findest du unsere Angebote in
-          deiner Nähe.
-        </p>
-      </header>
-      </div>
-
-      <div className="editorial-shell service-editorial">
+      <main className="service-premium location-premium">
         <div className="sheet">
-      <section className="band" style={{ paddingTop: 0 }}>
-        <div className="band-head reveal">
+          <SiteNav crumb={{ section: "Pixel56", page: "Standorte" }} />
+
+          <header className="service-premium-hero about-hero">
+            <div className="service-premium-glow" aria-hidden="true" />
+            <div className="service-premium-copy">
+              <div className="premium-kicker">STANDORTE · REGION KOBLENZ · DEUTSCHLANDWEIT</div>
+              <h1>
+                <span>Vor Ort in der Region.</span>
+                <span className="service-hero-accent">Per Video-Call überall.</span>
+                <span>Ein Ansprechpartner.</span>
+              </h1>
+              <p>
+                Pixel56 sitzt in Bendorf, direkt vor den Toren von Koblenz. In
+                der Region kommen wir für Kennenlernen, Fotos und Drehs zu dir
+                in den Betrieb. Für alle anderen Städte läuft die Zusammenarbeit
+                per Video-Call, Telefon und WhatsApp, genauso verbindlich.
+              </p>
+              <div className="premium-actions">
+                <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">
+                  Kostenloses Erstgespräch <ArrowIcon />
+                </a>
+                <Link className="btn-text" href="#region">
+                  Städte in der Region ↓
+                </Link>
+              </div>
+              <div className="premium-proof" aria-label="Einzugsgebiet">
+                <span>{staedte.length} Städte im Einzugsgebiet</span>
+                <span>Vor-Ort-Drehs ohne Reisekosten</span>
+                <span>Deutschlandweit per Video-Call</span>
+              </div>
+            </div>
+
+            <div className="founder-visual about-hero-visual projects-hero-visual reveal">
+              <div className="founder-frame">
+                <Image src={koblenzImage} alt="Koblenz am Rhein, wenige Minuten vom Pixel56-Standort in Bendorf" priority sizes="(max-width: 1080px) 92vw, 520px" />
+              </div>
+              <span>// KOBLENZ · DEUTSCHES ECK · 10 KM VON BENDORF</span>
+            </div>
+          </header>
+        </div>
+
+        <ClientMarquee />
+
+        <div className="editorial-shell service-editorial">
+          <div className="sheet">
+        <section className="service-summary service-summary-premium reveal theme-light" aria-label="Standorte auf einen Blick">
           <div>
-            <span className="band-tag">Regionen</span>
-            <h2 className="band-title">
-              Webdesign in <em>deiner Stadt</em>
-            </h2>
+            <span>Sitz</span>
+            <strong>{site.address}</strong>
           </div>
-          <p className="band-note">
-            Weitere Städteseiten sind in Arbeit — die Liste wächst laufend.
-          </p>
-        </div>
-        <div className="kontakt-kanaele reveal">
-          {standorte.map((s) => (
-            <Link className="kanal" href={locationPath(s.slug)} key={s.slug}>
-              <span className="kl">Region</span>
-              <b>Webdesign in {s.stadt}</b>
-              <span>
-                Webdesign, Google &amp; Meta Ads und Content für Unternehmen in{" "}
-                {s.stadt} und Umgebung.
-              </span>
-            </Link>
-          ))}
-          <a className="kanal" href="https://calendly.com/pixel56/15min" target="_blank" rel="noopener">
-            <span className="kl">Nicht dabei?</span>
-            <b>Wir arbeiten ortsunabhängig</b>
-            <span>
-              Video-Call, Telefon, WhatsApp — dein Standort ist kein Hindernis.
-              Jetzt Erstgespräch buchen →
-            </span>
-          </a>
-        </div>
-      </section>
+          <div>
+            <span>Einzugsgebiet</span>
+            <strong>Koblenz, Neuwied, Westerwald, Rhein-Lahn, Eifelrand</strong>
+          </div>
+          <div>
+            <span>Leistungen vor Ort</span>
+            <strong>Webdesign, Google Ads, Meta Ads, SEO, Social Media</strong>
+          </div>
+          <div>
+            <span>Darüber hinaus</span>
+            <strong>Deutschlandweit per Video-Call</strong>
+          </div>
+        </section>
 
-        </div>
-      </div>
+        <section className="band theme-light" id="region">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">01 — Städte im Einzugsgebiet</span>
+              <h2 className="band-title">
+                {staedte.length} Städte, <em>in denen wir vor Ort sind</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Sortiert nach Entfernung von Bendorf. Jede Stadt hat eigene Seiten
+              für Webdesign, Google Ads, Meta Ads, SEO und Social Media.
+            </p>
+          </div>
+          <div className="audience-grid reveal">
+            {staedte.map((region) => {
+              const seiten = locationsOfCity(region.stadt);
+              const name = region.anzeige ?? region.stadt;
+              return (
+                <article className="audience-card" key={region.stadt}>
+                  <span>{region.entfernungKm === 0 ? "Unser Sitz" : `Rund ${region.entfernungKm} km · ${region.fahrzeitMin} Min.`}</span>
+                  <h3>{name}</h3>
+                  <p>{region.kontext}</p>
+                  <small>
+                    {leistungen.map((key, index) => {
+                      const seite = seiten.find((s) => s.leistung === key);
+                      if (!seite) return null;
+                      return (
+                        <span key={seite.slug}>
+                          {index > 0 ? " · " : ""}
+                          <Link href={locationPath(seite.slug)}>{getStandortLeistung(key).kurz}</Link>
+                        </span>
+                      );
+                    })}
+                  </small>
+                </article>
+              );
+            })}
+          </div>
+        </section>
 
-      <div className="sheet service-ending">
-        <CloseCta>
-          Lass uns über deine <em>Sichtbarkeit</em> sprechen.
-        </CloseCta>
-        <SiteFooter />
-      </div>
-    </main>
+        <section className="band theme-light" id="sitz">
+          <div className="split2 reverse">
+            <div className="reveal">
+              <span className="band-tag">02 — Der Sitz</span>
+              <h2 className="band-title">
+                Zuhause in Bendorf. <em>Unterwegs in der Region.</em>
+              </h2>
+              <p className="lead">
+                {site.address}: Hier sitzen wir wirklich, hier kannst du nach
+                Absprache vorbeikommen. Koblenz liegt wenige Minuten entfernt,
+                Neuwied, Montabaur und der Westerwald sind schnell erreicht.
+              </p>
+              <ul className="lines">
+                <li>Vor-Ort-Dreh für Reels und Fotos im Einzugsgebiet ohne Reisekosten</li>
+                <li>Kennenlernen in Bendorf oder per Video-Call, wie es dir besser passt</li>
+                <li>Lokale Betriebe aus der Region Koblenz sind uns besonders vertraut</li>
+                <li>
+                  <Link href={routes.about}>Mehr über Pixel56</Link>
+                </li>
+              </ul>
+            </div>
+            <div className="mini-grid reveal" aria-label="Kontaktwege">
+              <div><b>Telefon</b><small>{site.phone}, Mo bis Fr, direkt mit Atilla</small></div>
+              <div><b>WhatsApp</b><small>Kurze Frage, schnelle Antwort, auch für Terminabsprachen</small></div>
+              <div><b>Video-Call</b><small>Für Kennenlernen und Abstimmungen, egal wo du sitzt</small></div>
+              <div><b>Vor Ort</b><small>Nach Terminabsprache in Bendorf oder bei dir im Betrieb</small></div>
+            </div>
+          </div>
+        </section>
+
+        <section className="band dark-stage service-dark-stage" id="ueberall">
+          <div className="split2">
+            <div className="reveal">
+              <span className="band-tag">03 — Außerhalb der Region</span>
+              <h2 className="band-title">
+                Deine Stadt steht nicht dabei? <em>Kein Problem.</em>
+              </h2>
+              <p className="lead">
+                Viele unserer Kunden sitzen nicht in der Region Koblenz, sondern
+                in anderen Bundesländern. Websites, Kampagnen, Content und
+                KI-Prozesse entstehen ortsunabhängig, mit denselben festen
+                Terminen und demselben Ansprechpartner.
+              </p>
+              <ul className="lines">
+                <li>Erstgespräch und Abstimmungen per Video-Call oder Telefon</li>
+                <li>Zwischenstände als Link, Feedback per WhatsApp oder E-Mail</li>
+                <li>Drehtage und Workshops vor Ort nach Absprache und Aufwand</li>
+              </ul>
+            </div>
+            <div className="reveal">
+              <ul className="lines">
+                <li><Link href={serviceRoutes.webdesign}>Webdesign für Unternehmen deutschlandweit</Link></li>
+                <li><Link href={serviceRoutes["meta-ads"]}>Meta Ads für Kunden- und Mitarbeitergewinnung</Link></li>
+                <li><Link href={serviceRoutes["google-ads"]}>Google Ads im Moment der Suche</Link></li>
+                <li><Link href={serviceRoutes.seo}>SEO-Grundlagen und Sichtbarkeit</Link></li>
+                <li><Link href={serviceRoutes["content-produktion"]}>Social Content und Reels</Link></li>
+                <li><Link href={serviceRoutes["ki-automatisierung"]}>KI-Prozesse und Automatisierung</Link></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="band theme-light light-reviews" id="stimmen">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">04 — Kundenstimmen</span>
+              <h2 className="band-title">
+                Was Kunden <em>über die Zusammenarbeit sagen</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Wir zeigen nur Aussagen, die unsere Kunden so veröffentlicht haben.
+            </p>
+          </div>
+          <Reviews reviews={verifiedReviews} items={verifiedReviews} />
+        </section>
+
+        <section className="band theme-light" id="faq">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">05 — Häufige Fragen</span>
+              <h2 className="band-title">
+                Fragen <em>zum Standort</em>
+              </h2>
+            </div>
+          </div>
+          <FaqList items={faqs} />
+        </section>
+
+          </div>
+        </div>
+
+        <div className="sheet service-ending">
+          <ContactStrip />
+          <CloseCta>
+            Lass uns über deine <em>Sichtbarkeit</em> sprechen.
+          </CloseCta>
+          <SiteFooter />
+        </div>
+      </main>
+    </>
   );
 }

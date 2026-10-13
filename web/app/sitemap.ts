@@ -1,11 +1,10 @@
 import type { MetadataRoute } from "next";
 import { site, services } from "@/lib/site";
-import { standorte } from "@/lib/standorte";
+import { indexableLocations } from "@/lib/standorte";
 import { ressourcen } from "@/lib/ressourcen";
 import { fallstudien } from "@/lib/projekte";
 import { artikel } from "@/lib/blog";
 import { locationPath, projectPath, resourcePath, routes } from "@/lib/routes";
-import { legacyLocations } from "@/lib/legacy-locations";
 import { getBlogBeitraege } from "@/lib/sanity";
 
 export const revalidate = 300;
@@ -46,16 +45,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.9,
   }));
 
-  const curatedLocationSlugs = new Set(standorte.map((location) => location.slug));
-  const locationSlugs = [
-    ...new Set([
-      ...legacyLocations.map((location) => location.slug),
-      ...curatedLocationSlugs,
-    ]),
-  ];
-  const orte = locationSlugs.map((slug) => ({
-    url: `${site.url}${locationPath(slug)}`,
-    priority: curatedLocationSlugs.has(slug) ? 0.6 : 0.4,
+  // Nur Standortseiten aus dem Einzugsgebiet; alle anderen sind noindex
+  // und gehören deshalb nicht in die Sitemap (siehe lib/standorte.ts).
+  const orte = indexableLocations.map((location) => ({
+    url: `${site.url}${locationPath(location.slug)}`,
+    priority: 0.6,
   }));
 
   const freebies = ressourcen.map((r) => ({
