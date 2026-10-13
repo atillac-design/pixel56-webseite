@@ -4,6 +4,7 @@ import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import SystemSzene from "@/components/SystemSzene";
+import LeistungsFinder from "@/components/LeistungsFinder";
 import { leistungenSzene } from "@/lib/system-szene";
 import {
   ArrowIcon,
@@ -363,6 +364,25 @@ export default function DienstleistungenPage() {
                 <p>{item.empfehlung}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="band theme-light" id="finder">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">Leistungs-Finder · vier Fragen</span>
+              <h2 className="band-title">
+                Womit solltest du <em>anfangen?</em>
+              </h2>
+            </div>
+            <p className="band-note">
+              Vier kurze Fragen, dann siehst du, welcher Baustein für deinen Betrieb
+              als Erstes sinnvoll ist und was dazu passt. Unverbindlich, ohne Eingabe
+              von Kontaktdaten.
+            </p>
+          </div>
+          <div className="reveal">
+            <LeistungsFinder />
           </div>
         </section>
 
