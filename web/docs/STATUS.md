@@ -1,23 +1,59 @@
-# Status — 12.10.2026
+# Status — 13.10.2026
 
 Ergänzt [`HANDOFF.md`](HANDOFF.md) und das [README](../../README.md) um den
 Stand der Zusammenführung und um Befunde, die nur über die Webflow-API und
 GitHub sichtbar waren. Reihenfolge der offenen Punkte = Priorität.
 
+## Grundsatz
+
+Die neue Seite ist eine eigenständige Next.js-Anwendung in `web/` und hängt an
+keiner Webflow-Funktion. Webflow ist ausschließlich die **Quelle für das
+Inventar der alten URLs** (`data/legacy-*.json`), damit bestehende Rankings
+beim Domainwechsel per identischem Pfad oder 301-Weiterleitung weitergeführt
+werden. Am Webflow-Angebot wird bis zur Abnahme der neuen Seite nichts
+verändert, auch kein Publish.
+
 ## Was zuletzt passiert ist
 
-- `codex/pixel56-neue-seite` wurde als reiner Fast-Forward in
+- 13.10.2026: `codex/pixel56-neue-seite` per Fast-Forward auf `876f969`
+  gezogen; der Arbeitsbranch enthält damit auch STATUS.md. Die Commits vom
+  13.10. liegen zunächst nur auf `codex/pixel56-neue-seite`; der
+  GitHub-Default-Branch `claude/zen-dirac-z9djvd` ist dahinter und per
+  Fast-Forward nachziehbar.
+- 13.10.2026: `npm audit fix` ausgeführt. Nur `package-lock.json` geändert,
+  `package.json` unverändert. Vorher 4 Schwachstellen (1 kritisch, 3 hoch),
+  nachher 0. Die kritische betraf Next.js 16.3.0 bis 16.3.7, u. a. Remote Code
+  Execution in der Bildoptimierung und Cache Poisoning bei SSG/ISR, also genau
+  den Betrieb auf Netlify.
+
+  | Paket | vorher | nachher |
+  | --- | --- | --- |
+  | next | 16.3.0 | 16.4.0 |
+  | sharp | 0.35.3 | 0.35.5 |
+  | source-map-js | 1.2.1 | 1.2.2 |
+  | undici (Abhängigkeit von `@sanity/client`) | 7.29.0 | 7.30.0 |
+
+- 12.10.2026: `codex/pixel56-neue-seite` wurde als reiner Fast-Forward in
   `claude/zen-dirac-z9djvd` übernommen (Stand `b94ff80`). Die Historien liefen
   nicht auseinander, es gab keine Konflikte: die Codex-Arbeit setzt direkt auf
-  dem vorherigen Commit `17e597c` vom 23.07.2026 auf.
-- `claude/zen-dirac-z9djvd` ist der Default-Branch und enthält damit beide
-  Arbeitsstränge. Pull Requests, Issues und Tags gibt es im Repo keine.
+  dem vorherigen Commit `17e597c` vom 23.07.2026 auf. Pull Requests, Issues
+  und Tags gibt es im Repo keine.
 
-## Noch nicht verifiziert
+## Verifiziert am 13.10.2026
 
-`npm ci && npm run build && npm run seo:check:strict` ist nach dem Merge **nicht
-gelaufen**. Das ist der erste Schritt in der nächsten Sitzung — erst danach sind
-Aussagen über die Lauffähigkeit belastbar.
+`npm ci && npm run build && npm run seo:check:strict` läuft fehlerfrei durch,
+sowohl vor als auch nach dem Audit-Fix (Node 22.22.0, npm 10.9.4).
+
+- **Build:** TypeScript ohne Fehler, 261 statisch erzeugte Seiten, darunter
+  166 Standorte, 35 Blogartikel, 17 Projekte, 8 Blog-Kategorien, 3 Ressourcen.
+  `/api/kontakt`, `/api/lead` und `/studio` sind dynamisch.
+- **SEO-Check strict:** 240 Bestands-URLs inventarisiert, 21 Kernseiten, 10
+  Portfolio-Einzelmappings, 2 GSC-Redirects, 166 Standort-URLs direkt
+  erreichbar. Keine Fehler, keine Warnungen.
+- **Erwartete Build-Meldung:** „Sanity nicht erreichbar, nutze statische
+  Inhalte“ erscheint dreimal. In der Cloud-Session sperrt die
+  Netzwerk-Richtlinie die Sanity-API; der statische Fallback greift und der
+  Build bleibt grün. Lokal mit Netz erscheint die Meldung nicht.
 
 ## Offene Punkte
 
@@ -59,7 +95,8 @@ live erreichbare URLs** im Migrationsplan und liefern nach dem Domainwechsel
 
 Prüfen lässt sich das nur von außen — aus der Cloud-Session ist
 `pixel56.de` durch die Netzwerk-Richtlinie gesperrt (`CONNECT tunnel failed,
-403`, DNS nicht auflösbar). Also im Browser oder aus einer lokalen Sitzung:
+403`, erneut bestätigt am 13.10.2026). Also im Browser oder aus einer lokalen
+Sitzung:
 
 | URL | erwartet | Bedeutung |
 | --- | --- | --- |
@@ -69,10 +106,15 @@ Prüfen lässt sich das nur von außen — aus der Cloud-Session ist
 Der Live-Pfad lautet `/locations/<slug>` (nicht `/standorte/…` — das ist der
 Pfad der **neuen** Seite). Ein 404 auf `/standorte/…` sagt daher nichts aus.
 
-**Wenn `/locations/vallendar-seo` lädt:** Webflow-Site einmal vollständig
-publizieren, danach `npm run seo:sync-legacy` erneut laufen lassen, damit das
-Manifest alle 291 URLs kennt. Erst dann über Erhalt bzw. Weiterleitung
-entscheiden.
+**Wenn `/locations/vallendar-seo` lädt:** Die 125 Slugs **ohne Webflow-Publish**
+ins Manifest holen: über die Webflow-CMS-API (Items der Standort-Collection)
+oder den CSV-Export der Collection, dann als `location`-Einträge mit
+`action: review` in `data/legacy-urls.json` ergänzen und
+`npm run seo:sync-locations` ausführen, das die Live-Seiten abruft und nach
+`data/legacy-locations.json` schreibt. Kein vollständiger Site-Publish in
+Webflow: Er würde auch die Designer-Änderungen vom 18.07.2026 ungeprüft live
+schalten und widerspricht dem Grundsatz oben. Erst mit vollständigem Manifest
+über Erhalt bzw. Weiterleitung entscheiden.
 
 **Wenn sie 404 liefert:** Das Manifest ist vollständig, die 125 Einträge sind
 reine CMS-Datensätze ohne öffentliche URL, und der Punkt ist erledigt.
