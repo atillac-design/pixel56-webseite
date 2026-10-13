@@ -2869,3 +2869,11 @@ body { overflow-x: clip; }
   .iso-panel { padding: 22px 20px 20px; }
   .it-note { margin-left: 0; }
 }
+
+/* ============================================================
+   Zeiger-Effekte auf Karten und Lesefortschritt (components/Interaktiv.tsx)
+   ============================================================ */
+[data-tilt] { position: relative; transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-4px) !important; transition: transform 0.14s ease-out, border-color 0.3s ease, background 0.25s ease !important; will-change: transform; }
+[data-tilt]::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: radial-gradient(260px circle at var(--sx, 50%) var(--sy, 50%), rgba(255,57,81,0.14), transparent 65%); }
+.theme-light [data-tilt]::after { background: radial-gradient(260px circle at var(--sx, 50%) var(--sy, 50%), rgba(229,61,82,0.1), transparent 65%); }
+.lese-fortschritt { position: fixed; top: 0; left: 0; z-index: 80; width: 100%; height: 3px; transform-origin: left center; transform: scaleX(0); background: linear-gradient(90deg, var(--accent), var(--violet)); pointer-events: none; }

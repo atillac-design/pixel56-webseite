@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Reveal from "@/components/Reveal";
+import Interaktiv from "@/components/Interaktiv";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import CookieConsent from "@/components/CookieConsent";
 import { indexable } from "@/lib/site";
@@ -44,6 +45,7 @@ export default function RootLayout({
         <WhatsAppFloat />
         <CookieConsent />
         <Reveal />
+        <Interaktiv />
       </body>
     </html>
   );

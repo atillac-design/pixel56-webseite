@@ -55,6 +55,17 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Artikeltexten (`https://www.pixel56.de/...`) werden beim Rendern relativ,
   damit sie auch auf Testumgebungen funktionieren. Seitentitel langer
   Artikelüberschriften enden nicht mehr mit „…“, sondern am Doppelpunkt.
+- 13.10.2026: **Zeiger-Effekte und Lesefortschritt.** Globale
+  Client-Komponente `components/Interaktiv.tsx` (im Layout neben `Reveal`):
+  Karten (`premium-service-card`, `audience-card`, `resource-card`,
+  `proj-card`, `scope-card`, `svc-card`, `voice-card`) neigen sich bis 4°
+  zum Mauszeiger und zeigen einen weichen roten Lichtpunkt an der
+  Zeigerposition (`[data-tilt]` mit CSS-Variablen, Pseudo-Element). Nur bei
+  feinem Zeiger mit Hover und ohne `prefers-reduced-motion`, auf Touch-Geräten
+  passiert nichts. Auf Blogartikeln läuft eine 3 px dünne Fortschrittslinie
+  am oberen Rand mit (`.lese-fortschritt`, aus dem Scrollstand von
+  `.article-body`). Lighthouse danach (mobil, lokal): Startseite 98/100/100,
+  Artikelseite 93/100/100.
 - 13.10.2026: **Interaktive System-Szene auf der Startseite.** Abschnitt 04
   („Ein System, das miteinander arbeitet“) zeigt statt der Vier-Punkte-Liste
   eine isometrische Szene (`components/SystemSzene.tsx`, Client-Komponente
