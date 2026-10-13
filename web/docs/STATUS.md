@@ -55,6 +55,33 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Artikeltexten (`https://www.pixel56.de/...`) werden beim Rendern relativ,
   damit sie auch auf Testumgebungen funktionieren. Seitentitel langer
   Artikelüberschriften enden nicht mehr mit „…“, sondern am Doppelpunkt.
+- 13.10.2026: **Vorher-nachher-Schieber vorbereitet.** `components/VorherNachher.tsx`
+  (Regler per Maus, Touch und Tastatur, unsichtbarer Bereichsregler über dem
+  Bild) und neues Feld `vorher?: string` an `Fallstudie`. Die Projektseite
+  zeigt den Abschnitt „Vorher · Nachher“ nur, wenn `vorher` und `bild`
+  gesetzt sind. **Noch kein Projekt hat ein Vorher-Bild**: Dafür Screenshots
+  der alten Kunden-Websites unter `public/bilder/vorher-<slug>.webp` ablegen
+  und in `lib/projekte.ts` eintragen (Freigabe des Kunden vorausgesetzt).
+  Mit einem Testbild geprüft, Testbild vor dem Commit entfernt.
+- 13.10.2026: **Leistungs-Finder auf der Leistungsseite.** `components/LeistungsFinder.tsx`
+  im neuen Abschnitt „Leistungs-Finder · vier Fragen“ (nach „Welcher
+  Baustein zu welchem Ziel passt“): vier Fragen mit drei bis vier Antworten,
+  einfache Gewichtung auf die acht Leistungen, Ergebnis mit Begründung, zwei
+  passenden Ergänzungen, Link zur Leistungsseite und zum Erstgespräch.
+  Ausdrücklich als Einschätzung, nicht als Angebot formuliert; keine
+  Kontaktdaten nötig.
+- 13.10.2026: **Schematische Standortkarte.** `components/Standortkarte.tsx` auf
+  `/standorte` über den Stadtkarten: 13 Städte nach gerundeten Koordinaten
+  (in `app/standorte/page.tsx`), Rhein, Mosel und Lahn als vereinfachte
+  Linien, Bendorf mit Puls, Hover oder Fokus zeigt Entfernung und Fahrzeit
+  aus `regionStaedte`, Klick führt zur Webdesign-Seite der Stadt. Als
+  „schematisch, keine Straßenkarte“ beschriftet. Auf kleinen Bildschirmen
+  seitlich scrollbar statt verkleinert.
+- 13.10.2026: **Mobile Kontaktleiste.** `components/KontaktLeiste.tsx` im Layout:
+  unter 760 px feste Leiste am unteren Rand mit Anrufen, WhatsApp und Termin
+  (Calendly); der schwebende WhatsApp-Button ist dort ausgeblendet, der
+  Cookie-Hinweis rückt darüber, der Seiteninhalt bekommt unten Platz.
+  Termin-Button in dunklerem Rot, damit der Kontrast reicht.
 - 13.10.2026: **Budget-Planer auf der Meta-Ads-Seite.** `components/BudgetPlaner.tsx`
   im Abschnitt „Budget & Kosten“: Der Besucher gibt Auftragswert, gewünschte
   Aufträge pro Monat, Werbeanteil und Anfragen je Auftrag ein; daraus ergeben

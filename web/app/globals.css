@@ -2958,3 +2958,97 @@ body { overflow-x: clip; }
 /* Website-Check im dunklen Hero */
 .wc-dunkel { --card: rgba(13,12,20,0.86); --card-border: var(--line-strong); --card-shadow: 0 24px 60px rgba(0,0,0,0.4); align-self: center; }
 .website-check.kompakt .wc-form { padding: 22px; }
+
+/* ============================================================
+   Vorher-nachher-Schieber (components/VorherNachher.tsx)
+   ============================================================ */
+.vn-wrap { position: relative; overflow: hidden; border-radius: 20px; border: 1px solid var(--card-border, var(--line-strong)); background: #0d0d14; aspect-ratio: 16 / 10; user-select: none; }
+.vn-bild { position: absolute; inset: 0; }
+.vn-bild img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.vn-vorher { clip-path: inset(0 calc(100% - var(--pos, 50%)) 0 0); }
+.vn-label { position: absolute; top: 14px; padding: 6px 10px; border-radius: 999px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; background: rgba(7,7,12,0.7); }
+.vn-label.links { left: 14px; }
+.vn-label.rechts { right: 14px; background: var(--accent); }
+.vn-griff { position: absolute; top: 0; bottom: 0; left: var(--pos, 50%); width: 2px; margin-left: -1px; background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.25); pointer-events: none; }
+.vn-griff i { position: absolute; top: 50%; left: 50%; width: 42px; height: 42px; transform: translate(-50%, -50%); border-radius: 50%; background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
+.vn-griff i::before, .vn-griff i::after { content: ""; position: absolute; top: 50%; width: 0; height: 0; border: 6px solid transparent; transform: translateY(-50%); }
+.vn-griff i::before { left: 8px; border-right-color: #151319; }
+.vn-griff i::after { right: 8px; border-left-color: #151319; }
+.vn-regler { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; touch-action: none; }
+.vn-regler:focus-visible + .vn-griff i, .vn-wrap:has(.vn-regler:focus-visible) .vn-griff i { outline: 3px solid var(--accent); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* ============================================================
+   Leistungs-Finder (components/LeistungsFinder.tsx)
+   ============================================================ */
+.finder { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr); gap: 24px; align-items: start; }
+.finder-fragen { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.finder-frage { display: grid; grid-template-columns: 40px 1fr; gap: 14px; padding: 18px 20px; border: 1px solid var(--card-border, var(--line-strong)); border-radius: 18px; background: var(--card, rgba(13,12,20,0.78)); box-shadow: var(--card-shadow, none); opacity: 0.55; transition: opacity 0.3s ease, border-color 0.3s ease; }
+.finder-frage.aktiv, .finder-frage.beantwortet { opacity: 1; }
+.finder-frage.aktiv { border-color: rgba(229,61,82,0.45); }
+.finder-nr { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--accent); padding-top: 4px; }
+.finder-inhalt b { display: block; font-size: 16px; letter-spacing: -0.01em; }
+.finder-optionen { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.finder-option { padding: 9px 14px; border: 1px solid var(--line-strong); border-radius: 999px; background: transparent; color: inherit; font: inherit; font-size: 13.5px; cursor: pointer; transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease; }
+.finder-option:hover { border-color: rgba(229,61,82,0.5); }
+.finder-option.gewaehlt { background: var(--accent); border-color: var(--accent); color: #fff; }
+.finder-ergebnis { position: sticky; top: 24px; padding: 26px; border: 1px solid var(--card-border, var(--line-strong)); border-radius: 20px; background: var(--card, rgba(13,12,20,0.78)); box-shadow: var(--card-shadow, none); }
+.finder-ergebnis.fertig { border-color: rgba(229,61,82,0.45); }
+.finder-tag { display: block; margin-bottom: 10px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.finder-ergebnis h3 { margin: 0 0 10px; font-size: clamp(22px, 2.2vw, 28px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+.finder-ergebnis p { margin: 0 0 16px; font-size: 14.5px; line-height: 1.6; color: var(--ink-dim); }
+.finder-weitere { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-bottom: 18px; font-size: 13.5px; }
+.finder-weitere span { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+.finder-weitere a { color: inherit; font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(229,61,82,0.45); }
+.finder-aktionen { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; }
+.finder-reset { margin-top: 16px; padding: 0; border: 0; background: none; color: var(--ink-faint); font: inherit; font-size: 12.5px; text-decoration: underline; cursor: pointer; }
+.finder-ergebnis small { display: block; margin-top: 12px; font-size: 12px; line-height: 1.5; color: var(--ink-faint); }
+.finder-fortschritt { display: flex; gap: 6px; }
+.finder-fortschritt i { flex: 1; height: 6px; border-radius: 3px; background: rgba(127,127,127,0.18); }
+.finder-fortschritt i.voll { background: var(--accent); }
+@media (max-width: 900px) { .finder { grid-template-columns: 1fr; } .finder-ergebnis { position: static; } }
+
+/* ============================================================
+   Standortkarte (components/Standortkarte.tsx)
+   ============================================================ */
+.karte-wrap { margin-bottom: 40px; padding: 18px 18px 14px; border: 1px solid var(--card-border, var(--line-strong)); border-radius: 22px; background: var(--card, rgba(13,12,20,0.78)); box-shadow: var(--card-shadow, none); }
+.karte { width: 100%; height: auto; display: block; font-family: var(--sans); }
+.karte-fluss path { fill: none; stroke: rgba(63,128,253,0.45); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.karte-flussname text { font-family: var(--serif); font-style: italic; font-size: 14px; fill: rgba(63,128,253,0.8); }
+.karte-linie { stroke: rgba(127,127,127,0.22); stroke-width: 1; stroke-dasharray: 3 6; transition: stroke 0.25s ease; }
+.karte-linie.aktiv { stroke: var(--accent); stroke-dasharray: none; }
+.karte-ort { cursor: pointer; outline: none; }
+.karte-ort .karte-punkt { fill: #151319; stroke: #fff; stroke-width: 2.5; transition: fill 0.2s ease, r 0.2s ease; }
+.theme-light .karte-ort .karte-punkt { fill: #151319; stroke: #fffdf9; }
+.karte-ort text { font-size: 15px; font-weight: 700; fill: var(--ink); letter-spacing: -0.01em; paint-order: stroke; stroke: var(--card, #0d0d14); stroke-width: 4px; stroke-linejoin: round; }
+.karte-ort.sitz .karte-punkt { fill: var(--accent); stroke: #fff; }
+.karte-ort.aktiv .karte-punkt, .karte-ort:focus-visible .karte-punkt { fill: var(--accent); }
+.karte-ort.aktiv text, .karte-ort:focus-visible text { fill: var(--accent); }
+.karte-puls { fill: none; stroke: var(--accent); stroke-width: 2; opacity: 0.6; transform-origin: center; transform-box: fill-box; }
+@media (prefers-reduced-motion: no-preference) { .karte-puls { animation: karte-puls 2.4s ease-out infinite; } }
+@keyframes karte-puls { 0% { transform: scale(0.5); opacity: 0.8; } 100% { transform: scale(2.2); opacity: 0; } }
+.karte-info { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; align-items: baseline; margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--line); }
+.karte-info b { font-size: 16px; }
+.karte-info span { font-size: 14px; color: var(--ink-dim); }
+.karte-info small { grid-column: 1 / -1; font-size: 11.5px; color: var(--ink-faint); }
+.karte-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 640px) {
+  .karte { min-width: 760px; }
+  .karte-ort text { font-size: 17px; }
+  .karte-info { grid-template-columns: 1fr; }
+  .karte-info small::after { content: " Karte seitlich verschiebbar."; }
+}
+
+/* ============================================================
+   Mobile Kontaktleiste (components/KontaktLeiste.tsx)
+   ============================================================ */
+.kontakt-leiste { display: none; }
+@media (max-width: 760px) {
+  .kontakt-leiste { position: fixed; left: 0; right: 0; bottom: 0; z-index: 85; display: grid; grid-template-columns: 1fr 1fr 1.1fr; gap: 1px; padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); background: rgba(10,10,15,0.94); backdrop-filter: blur(10px); border-top: 1px solid rgba(255,255,255,0.12); }
+  .kontakt-leiste a { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 11px 6px; border-radius: 12px; color: #fff; font-size: 13px; font-weight: 700; text-decoration: none; }
+  .kontakt-leiste a svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .kontakt-leiste a.termin { background: #d12a41; }
+  .wa-float { display: none; }
+  body { padding-bottom: 66px; }
+}
+@media (max-width: 760px) { .consent { bottom: 76px; } }
