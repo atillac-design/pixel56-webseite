@@ -124,7 +124,7 @@ const steps = [
 
 const referenzen: RefItem[] = [
   { variant: "ic-3", barWidth: 55, img: "/bilder/projekt-stark-ins-neue-3.webp", href: projectPath("stark-ins-neue"), cat: "Stark ins Neue gGmbH", title: "Anmeldestrecke mit genau einem Ziel", text: "Fokussierte Landingpage für eine Bildungsinitiative, abgestimmt auf Meta-Ads-Kampagnen, DSGVO-konform, ohne unnötige Zwischenschritte.", tag: "Landingpage · Anmeldefunnel · 2025" },
-  { variant: "ic-4", barWidth: 65, img: "/bilder/projekt-van-den-berg.webp", href: projectPath("van-den-berg"), cat: "Van den Berg Gruppe", title: "Anzeige direkt auf ein Angebot geführt", text: "Meta-Ads-Kampagnen mit passender Zielseite statt allgemeiner Startseite, verbunden mit Conversion-Tracking und laufender Auswertung.", tag: "Meta Ads · Landingpage · laufend" },
+  { variant: "ic-4", barWidth: 65, img: "/bilder/projekt-van-den-berg.webp", href: projectPath("van-den-berg"), cat: "Van den Berg Gruppe", title: "Anzeige direkt auf ein Angebot geführt", text: "Meta-Ads-Kampagnen mit passender Zielseite statt allgemeiner Startseite, verbunden mit Conversion-Tracking und regelmäßiger Auswertung.", tag: "Meta Ads · Landingpage · bis 2024" },
 ];
 
 const faqs = [

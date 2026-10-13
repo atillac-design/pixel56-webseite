@@ -224,7 +224,7 @@ const cases: CaseItem[] = [
   },
   {
     customer: "Van den Berg Gruppe",
-    title: "Meta Ads mit laufender Betreuung statt kurzem Kampagnenfeuer",
+    title: "Meta Ads mit konstanter Betreuung statt kurzem Kampagnenfeuer",
     tags: "META ADS · TRACKING · OPTIMIERUNG",
     href: projectPath("van-den-berg"),
     image: vanDenBergImage,

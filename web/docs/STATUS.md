@@ -391,7 +391,13 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   das Label „Beispiel-Creative“ erscheint nur noch, wenn keine eigenen
   Alternativtexte gesetzt sind. Das ältere `content-creative-abbruch.webp` (800×800) durch die
   1080er-Fassung desselben Motivs ersetzt. CurlyAnn: Jahr von 2024 auf 2026
-  korrigiert, der Auftrag lief in diesem Jahr.
+  korrigiert, der Auftrag lief in diesem Jahr. Van den Berg Gruppe: Die
+  Zusammenarbeit lief bis 2024, die Gruppe besteht laut Inhaber nicht mehr.
+  Deshalb überall „bis 2024“ statt „laufend“ (Jahr, Kicker, Zitat-Rolle,
+  Karten auf Startseite, Meta-Ads- und Landingpage-Seite) und Texte ohne
+  Gegenwartsform („regelmäßig ausgewertet“ statt „werden laufend
+  ausgewertet“). Dass die Firma nicht mehr existiert, steht bewusst nicht auf
+  der Seite, nur „Zusammenarbeit bis 2024“.
 
 ## Verifiziert am 13.10.2026
 

@@ -141,7 +141,7 @@ export const fallstudien: Fallstudie[] = [
     slug: "van-den-berg",
     kunde: "Van den Berg Gruppe",
     branche: "Dienstleistung",
-    jahr: "laufend",
+    jahr: "bis 2024",
     tags: ["Meta Ads", "Recruiting", "Landingpage", "Betreuung"],
     bild: "/bilder/projekt-van-den-berg.webp",
     galerie: [
@@ -158,9 +158,9 @@ export const fallstudien: Fallstudie[] = [
     galerieHinweis: "Drei Motive aus der Recruiting-Kampagne: Baggerfahrer:in und Bürokräfte im Story-Format, Abbruchhelfer als Feed-Motiv.",
     logo: "/bilder/kunde-vandenberg.png",
     variant: "ic-4",
-    titel: "Meta Ads mit kontinuierlicher Betreuung",
+    titel: "Meta Ads mit konstanter Betreuung",
     teaser:
-      "Kontinuierlicher Kampagnenaufbau mit Budget-Steuerung nach Datenlage und laufender Auswertung.",
+      "Kampagnenaufbau mit konstantem Budget, Steuerung nach Datenlage und regelmäßiger Auswertung. Zusammenarbeit bis 2024.",
     problem: {
       titel: "Werbebudget ohne klare Linie",
       text: "Kampagnen liefen sprunghaft: mal viel Budget, mal gar nichts. Der Algorithmus kam nie ins Lernen, Ergebnisse waren nicht vorhersehbar und niemand wusste, welcher Euro was brachte.",
@@ -172,7 +172,7 @@ export const fallstudien: Fallstudie[] = [
     },
     loesung: {
       titel: "Konstanz, Tracking, passende Zielseiten",
-      text: "Wir haben die Kampagnenstruktur neu aufgebaut, sauberes Tracking eingerichtet und Anzeigen auf fokussierte Zielseiten geführt — mit konstantem Budget und laufender Optimierung anhand echter Daten.",
+      text: "Wir haben die Kampagnenstruktur neu aufgebaut, sauberes Tracking eingerichtet und Anzeigen auf fokussierte Zielseiten geführt — mit konstantem Budget und regelmäßiger Optimierung anhand echter Daten.",
       punkte: [
         "Neu strukturierte Meta-Ads-Kampagnen mit Conversion-Tracking",
         "Recruiting-Anzeigen für Abbruchhelfer, Baggerfahrer:in und Bürokräfte im Story- und Feed-Format",
@@ -181,12 +181,12 @@ export const fallstudien: Fallstudie[] = [
       ],
     },
     ergebnis: {
-      text: "Kampagnenstruktur, Conversion-Tracking und Zielseiten wurden aufeinander abgestimmt und werden laufend ausgewertet.",
+      text: "Kampagnenstruktur, Conversion-Tracking und Zielseiten wurden aufeinander abgestimmt und bis zum Ende der Zusammenarbeit 2024 regelmäßig ausgewertet.",
     },
     stimme: {
       text: "Wir haben nicht mehr Budget verbrannt. Wir haben konstant gearbeitet — und das hat gereicht.",
       name: "Van den Berg Gruppe",
-      rolle: "laufende Betreuung",
+      rolle: "Betreuung bis 2024",
     },
   },
   {

@@ -173,7 +173,7 @@ const costParts = [
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-van-den-berg.webp", href: projectPath("van-den-berg"), cat: "Van den Berg Gruppe", title: "Meta Ads mit laufender Betreuung", text: "Kampagnenstruktur neu aufgebaut, Tracking eingerichtet, Anzeigen auf fokussierte Zielseiten geführt. Seitdem konstantes Budget und laufende Auswertung.", tag: "Meta Ads · Landingpage · laufend" },
+  { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-van-den-berg.webp", href: projectPath("van-den-berg"), cat: "Van den Berg Gruppe", title: "Meta Ads mit konstanter Betreuung", text: "Kampagnenstruktur neu aufgebaut, Tracking eingerichtet, Anzeigen auf fokussierte Zielseiten geführt. Konstantes Budget und regelmäßige Auswertung bis 2024.", tag: "Meta Ads · Landingpage · bis 2024" },
   { variant: "ic-1", barWidth: 50, img: "/bilder/projekt-gm-dachdecker.webp", href: projectPath("gm-dachdecker"), cat: "GM-Dachdecker Meisterbetrieb", title: "Kampagnen für die Mitarbeitergewinnung", text: "Meta Ads sprechen Kandidaten an, die nicht aktiv suchen, und führen auf ein Karriereportal mit Direkt-Upload.", tag: "Meta Ads · Recruiting · 2023" },
 ];
 
