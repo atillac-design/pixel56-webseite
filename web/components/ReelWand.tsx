@@ -17,8 +17,7 @@ export default function ReelWand({ reels }: { reels: Reel[] }) {
       if (j === i) {
         if (v.paused) {
           v.muted = false;
-          void v.play();
-          setAktiv(i);
+          v.play().then(() => setAktiv(i)).catch(() => setAktiv(null));
         } else {
           v.pause();
           setAktiv(null);

@@ -102,7 +102,7 @@ const audiences = [
     tag: "Gastronomie",
     title: "Lust machen, bevor man vorbeikommt",
     text: "Küche, Produkt, Menschen hinter der Theke. Reels direkt aus dem laufenden Betrieb, die Appetit machen und den Laden zur Marke machen.",
-    refs: "Burgerfabrik",
+    refs: "Burger Fabriq",
   },
   {
     tag: "Transport & Logistik",
@@ -164,7 +164,7 @@ const packages = [
 ];
 
 const referenzen: RefItem[] = [
-  { variant: "ic-4", barWidth: 55, href: projectPath("burgerfabrik"), cat: "Burgerfabrik", title: "Reels direkt aus dem Ladenalltag", text: "Kurzvideos aus dem laufenden Betrieb statt gestellter Werbeaufnahmen. Küche, Produkt und Team als laufender Content.", tag: "Reels · Social Content · laufend" },
+  { variant: "ic-4", barWidth: 55, href: projectPath("burgerfabrik"), cat: "Burger Fabriq", title: "Reels direkt aus dem Ladenalltag", text: "Kurzvideos aus dem laufenden Betrieb statt gestellter Werbeaufnahmen. Küche, Produkt und Team als laufender Content.", tag: "Reels · Social Content · laufend" },
   { variant: "ic-2", barWidth: 65, img: "/bilder/projekt-ma-transporte.webp", href: projectPath("ma-transporte"), cat: "M&A Transporte", title: "Laufende Social-Media-Betreuung seit 2019", text: "Kontinuierliche Content-Produktion neben der Website, abgestimmt mit Meta-Ads-Kampagnen.", tag: "Social Media · Webdesign · seit 2019" },
 ];
 

@@ -28,10 +28,16 @@ export type Fallstudie = {
   vorherArt?: VorherArt;
   /** Weitere Einblicke auf der Detailseite. */
   galerie?: string[];
+  /** Galeriebilder sind hochkant (3:4), z. B. Plakate oder Verpackungen. */
+  galerieHochkant?: boolean;
   /** Bildunterschrift zum ersten Galeriebild, z. B. wenn es ein Beispiel aus einem anderen Projekt ist. */
   galerieHinweis?: string;
-  /** Reel/Video für die Detailseite. */
+  /** Reel/Video für die Detailseite (hochkant, MP4). */
   video?: string;
+  /** Vorschaubild zum Video (Pfad unter public/). */
+  videoPoster?: string;
+  /** Kurze Einordnung zum Video, z. B. wo und wofür gedreht wurde. */
+  videoHinweis?: string;
   logo?: string;
   /** Farb-Variante für Karten ohne Bild (ic-1 … ic-8). */
   variant: string;
@@ -570,17 +576,23 @@ export const fallstudien: Fallstudie[] = [
   },
   {
     slug: "burgerfabrik",
-    kunde: "Burgerfabrik",
+    kunde: "Burger Fabriq",
     branche: "Gastronomie",
-    jahr: "laufend",
-    tags: ["Reels", "Social Content"],
+    jahr: "seit 2024",
+    tags: ["Branding", "Reels", "Social Content"],
+    bild: "/bilder/projekt-burgerfabriq.webp",
+    galerie: ["/bilder/projekt-burgerfabriq-verpackung.webp", "/bilder/projekt-burgerfabriq-plakat.webp"],
+    galerieHochkant: true,
+    video: "/videos/reel-burgerfabriq-smash.mp4",
+    videoPoster: "/bilder/reel-burgerfabriq-smash.webp",
+    videoHinweis: "Gedreht im laufenden Betrieb, geschnitten für Instagram und TikTok, mit Logo-Abspann aus dem Branding.",
     variant: "ic-8",
-    titel: "Reels direkt aus dem echten Betrieb",
+    titel: "Marke und Reels direkt aus dem echten Betrieb",
     teaser:
-      "Kurzvideos aus dem laufenden Ladenalltag statt gestellter Werbeaufnahmen — Content, der zeigt, wie es dort tatsächlich zugeht.",
+      "Logo, Verpackung und Plakate aus einem Guss, dazu Kurzvideos aus dem laufenden Ladenalltag statt gestellter Werbeaufnahmen.",
     problem: {
       titel: "Gutes Essen, keine Reichweite",
-      text: "Die Qualität stimmte, aber auf Social Media fand die Burgerfabrik nicht statt — und gerade in der Gastronomie entscheiden Fotos und Videos, wer neue Gäste bekommt.",
+      text: "Die Qualität stimmte, aber auf Social Media fand Burger Fabriq nicht statt — und gerade in der Gastronomie entscheiden Fotos und Videos, wer neue Gäste bekommt. Dazu fehlte eine Marke, die Laden, Verpackung und Feed verbindet.",
       punkte: [
         "Kaum Social-Media-Präsenz",
         "Kein regelmäßiger Content",
@@ -588,12 +600,12 @@ export const fallstudien: Fallstudie[] = [
       ],
     },
     loesung: {
-      titel: "Echter Content aus dem Laden",
-      text: "Wir produzieren Reels und Fotos direkt im laufenden Betrieb — echte Menschen, echtes Essen, echte Atmosphäre. Veröffentlicht in festem Rhythmus statt sporadisch.",
+      titel: "Marke aus einem Guss, Content aus dem Laden",
+      text: "Wir haben das Branding entwickelt — Logo, Verpackung, Plakate — und produzieren Reels und Fotos direkt im laufenden Betrieb: echte Menschen, echtes Essen, echte Atmosphäre. Veröffentlicht in festem Rhythmus statt sporadisch.",
       punkte: [
+        "Logo, Verpackungsdesign und Plakate",
         "Reels aus dem echten Ladenalltag",
         "Fester Veröffentlichungs-Rhythmus",
-        "Ein Dreh liefert Content für mehrere Wochen",
       ],
     },
   },

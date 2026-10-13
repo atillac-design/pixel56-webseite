@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import VorherNachher from "@/components/VorherNachher";
+import ReelWand from "@/components/ReelWand";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
 import {
   ArrowIcon,
@@ -252,7 +253,7 @@ export default async function FallstudiePage({ params }: Props) {
                 {f.galerieHinweis ?? `Ausschnitte aus der Arbeit für ${f.kunde}. Echte Umsetzung, keine Vorlagen.`}
               </p>
             </div>
-            <div className={`work-gallery ${bilder.length === 1 ? "work-gallery-single" : bilder.length === 2 ? "work-gallery-pair" : ""} reveal`}>
+            <div className={`work-gallery ${bilder.length === 1 ? "work-gallery-single" : bilder.length === 2 ? "work-gallery-pair" : ""}${f.galerieHochkant ? " work-gallery-hochkant" : ""} reveal`}>
               {bilder.map((bild, index) => (
                 <figure key={bild}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -260,6 +261,25 @@ export default async function FallstudiePage({ params }: Props) {
                   <figcaption><b>{f.kunde}</b><span>{index === 0 && f.galerieHinweis ? "Beispiel-Creative" : f.tags[0]}</span></figcaption>
                 </figure>
               ))}
+            </div>
+          </section>
+        ) : null}
+
+        {f.video ? (
+          <section className="band theme-light" id="reel">
+            <div className="band-head reveal">
+              <div>
+                <span className="band-tag">Reel aus dem Projekt</span>
+                <h2 className="band-title">
+                  So sieht es <em>in Bewegung</em> aus
+                </h2>
+              </div>
+              <p className="band-note">
+                {f.videoHinweis ?? `Ein Reel aus der Arbeit für ${f.kunde}. Tippe darauf, um es mit Ton abzuspielen.`}
+              </p>
+            </div>
+            <div className="reel-wand-einzeln reveal">
+              <ReelWand reels={[{ src: f.video, poster: f.videoPoster, titel: `Reel für ${f.kunde}`, kunde: f.kunde, hinweis: f.tags.join(" · ") }]} />
             </div>
           </section>
         ) : null}

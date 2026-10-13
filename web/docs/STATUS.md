@@ -55,6 +55,23 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Artikeltexten (`https://www.pixel56.de/...`) werden beim Rendern relativ,
   damit sie auch auf Testumgebungen funktionieren. Seitentitel langer
   Artikelüberschriften enden nicht mehr mit „…“, sondern am Doppelpunkt.
+- 13.10.2026: **Burger Fabriq: Branding, Bilder und zwei echte Reels.** Der Inhaber
+  hat vier Videos und zwei Branding-Motive geliefert und bestätigt, dass das
+  Branding (Logo, Verpackung, Plakat) von Pixel56 stammt. Übernommen: zwei im
+  Laden gedrehte Reels (Smash Burger auf dem Grill, Lotus-Milchshake; aus
+  1080×1920 MOV, je rund 21 bis 25 MB, zu 720×1280 MP4 mit 3,7 bzw. 4,6 MB
+  verkleinert, Poster als WebP) in `lib/reels.ts` und als `video` des
+  Projekts; die Reel-Wand auf der Content-Seite ist damit sichtbar (drei
+  Reels). Zwei weitere, mit Gemini erzeugte Aktionsvideos (Desserts, Shake)
+  wurden bewusst nicht eingebaut, weil die Content-Seite mit „echten
+  Aufnahmen statt gestellter Werbung“ wirbt; sie liegen nur in den Uploads
+  der Sitzung. Projekt `burgerfabrik`: Anzeigename jetzt „Burger Fabriq“
+  (Schreibweise laut Logo und Domain burgerfabriq.de, Slug unverändert), Tag
+  „Branding“, Hero-Bild aus dem Verpackungsmotiv (16:10-Ausschnitt), Galerie
+  mit Verpackung und Plakat (neues Feld `galerieHochkant` für 3:4), neuer
+  Abschnitt „Reel aus dem Projekt“ (Felder `videoPoster`, `videoHinweis`).
+  Texte um das Branding ergänzt. Name auch in Kundenliste, Startseite, Über
+  uns und Content-Seite angepasst.
 - 13.10.2026: **Vorher-nachher mit schematischer Ausgangslage.** Weil die meisten
   Kunden vorher keine Website hatten, zeigt der Schieber links statt eines
   Screenshots eine neutrale Skizze (`components/VorherSchema.tsx`, Feld

@@ -3216,3 +3216,6 @@ body { overflow-x: clip; }
   .vs-zeile:nth-child(n+3) { display: none; }
   .vs-marken span:nth-child(n+3) { display: none; }
 }
+.reel-wand-einzeln .reel-wand { grid-template-columns: minmax(220px, 300px); }
+.work-gallery-hochkant.work-gallery-pair { grid-template-columns: repeat(2, minmax(0, 420px)); justify-content: center; }
+.work-gallery-hochkant img, .work-gallery-hochkant.work-gallery-pair img { aspect-ratio: 3 / 4; }

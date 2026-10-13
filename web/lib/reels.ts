@@ -16,7 +16,22 @@ export type Reel = {
 
 export const reels: Reel[] = [
   {
+    src: "/videos/reel-burgerfabriq-smash.mp4",
+    poster: "/bilder/reel-burgerfabriq-smash.webp",
+    titel: "Smash Burger auf dem Grill",
+    kunde: "Burger Fabriq",
+    hinweis: "Gedreht im laufenden Betrieb, geschnitten für Instagram und TikTok.",
+  },
+  {
+    src: "/videos/reel-burgerfabriq-shake.mp4",
+    poster: "/bilder/reel-burgerfabriq-shake.webp",
+    titel: "Lotus-Milchshake, Schritt für Schritt",
+    kunde: "Burger Fabriq",
+    hinweis: "Gedreht im laufenden Betrieb, mit Logo-Abspann aus dem Branding.",
+  },
+  {
     src: "/videos/reel-handwerker-tipps.mp4",
+    poster: "/bilder/reel-handwerker-tipps.webp",
     titel: "5 Tipps für mehr Kundenanfragen",
     kunde: "Pixel56",
     hinweis: "Erklär-Reel aus der eigenen Content-Produktion.",
