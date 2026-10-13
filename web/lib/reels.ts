@@ -19,14 +19,14 @@ export const reels: Reel[] = [
     src: "/videos/reel-burgerfabriq-smash.mp4",
     poster: "/bilder/reel-burgerfabriq-smash.webp",
     titel: "Smash Burger auf dem Grill",
-    kunde: "Burger Fabriq",
+    kunde: "Burgerfabriq",
     hinweis: "Gedreht im laufenden Betrieb, geschnitten für Instagram und TikTok.",
   },
   {
     src: "/videos/reel-burgerfabriq-shake.mp4",
     poster: "/bilder/reel-burgerfabriq-shake.webp",
     titel: "Lotus-Milchshake, Schritt für Schritt",
-    kunde: "Burger Fabriq",
+    kunde: "Burgerfabriq",
     hinweis: "Gedreht im laufenden Betrieb, mit Logo-Abspann aus dem Branding.",
   },
   {

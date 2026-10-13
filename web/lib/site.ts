@@ -41,7 +41,7 @@ export const clients = [
   "DiscountHaus Holding",
   "Schlüsselfertig-Immobilien",
   "DEMA Bedachungen",
-  "Burger Fabriq",
+  "Burgerfabriq",
 ];
 
 export type Service = {

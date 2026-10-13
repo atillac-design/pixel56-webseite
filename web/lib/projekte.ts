@@ -576,7 +576,7 @@ export const fallstudien: Fallstudie[] = [
   },
   {
     slug: "burgerfabrik",
-    kunde: "Burger Fabriq",
+    kunde: "Burgerfabriq",
     branche: "Gastronomie",
     jahr: "seit 2024",
     tags: ["Branding", "Reels", "Social Content"],
@@ -592,7 +592,7 @@ export const fallstudien: Fallstudie[] = [
       "Logo, Verpackung und Plakate aus einem Guss, dazu Kurzvideos aus dem laufenden Ladenalltag statt gestellter Werbeaufnahmen.",
     problem: {
       titel: "Gutes Essen, keine Reichweite",
-      text: "Die Qualität stimmte, aber auf Social Media fand Burger Fabriq nicht statt — und gerade in der Gastronomie entscheiden Fotos und Videos, wer neue Gäste bekommt. Dazu fehlte eine Marke, die Laden, Verpackung und Feed verbindet.",
+      text: "Die Qualität stimmte, aber auf Social Media fand Burgerfabriq nicht statt — und gerade in der Gastronomie entscheiden Fotos und Videos, wer neue Gäste bekommt. Dazu fehlte eine Marke, die Laden, Verpackung und Feed verbindet.",
       punkte: [
         "Kaum Social-Media-Präsenz",
         "Kein regelmäßiger Content",

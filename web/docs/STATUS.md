@@ -65,13 +65,14 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Reels). Zwei weitere, mit Gemini erzeugte Aktionsvideos (Desserts, Shake)
   wurden bewusst nicht eingebaut, weil die Content-Seite mit „echten
   Aufnahmen statt gestellter Werbung“ wirbt; sie liegen nur in den Uploads
-  der Sitzung. Projekt `burgerfabrik`: Anzeigename jetzt „Burger Fabriq“
-  (Schreibweise laut Logo und Domain burgerfabriq.de, Slug unverändert), Tag
+  der Sitzung. Projekt `burgerfabrik`: Anzeigename jetzt „Burgerfabriq“
+  (zusammengeschrieben, vom Inhaber bestätigt; Slug unverändert), Tag
   „Branding“, Hero-Bild aus dem Verpackungsmotiv (16:10-Ausschnitt), Galerie
   mit Verpackung und Plakat (neues Feld `galerieHochkant` für 3:4), neuer
   Abschnitt „Reel aus dem Projekt“ (Felder `videoPoster`, `videoHinweis`).
   Texte um das Branding ergänzt. Name auch in Kundenliste, Startseite, Über
-  uns und Content-Seite angepasst.
+  uns und Content-Seite angepasst. Der Inhaber hat bestätigt, dass
+  Burgerfabriq mit der Veröffentlichung der Reels und Motive einverstanden ist.
 - 13.10.2026: **Vorher-nachher mit schematischer Ausgangslage.** Weil die meisten
   Kunden vorher keine Website hatten, zeigt der Schieber links statt eines
   Screenshots eine neutrale Skizze (`components/VorherSchema.tsx`, Feld

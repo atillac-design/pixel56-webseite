@@ -165,7 +165,7 @@ const audiences = [
     tag: "Gastronomie, Handel & Kreativ",
     title: "Marken, die von Bildern leben",
     text: "Restaurants, Shops und Ateliers gewinnen über Stimmung, Bilder und Bewegtbild. Reels, Social Content und Shops, die Lust machen und direkt zur Buchung oder zum Kauf führen.",
-    refs: "Burger Fabriq · Cavar Home · CurlyAnn Atelier",
+    refs: "Burgerfabriq · Cavar Home · CurlyAnn Atelier",
   },
 ];
 

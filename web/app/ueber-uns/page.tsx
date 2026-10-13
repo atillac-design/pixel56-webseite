@@ -135,7 +135,7 @@ const zielgruppen = [
     tag: "Lokale Marken & Handel",
     title: "Geschäfte, die eine erkennbare Marke brauchen",
     text: "Vom Atelier bis zur Gastronomie: ein Auftritt, der zum Laden passt, und Content, der regelmäßig neue Kunden bringt.",
-    refs: "CurlyAnn Atelier, Cavar Home, DiscountHaus Holding, Burger Fabriq",
+    refs: "CurlyAnn Atelier, Cavar Home, DiscountHaus Holding, Burgerfabriq",
   },
 ];
 
