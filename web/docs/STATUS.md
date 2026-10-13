@@ -55,6 +55,20 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Artikeltexten (`https://www.pixel56.de/...`) werden beim Rendern relativ,
   damit sie auch auf Testumgebungen funktionieren. Seitentitel langer
   Artikelüberschriften enden nicht mehr mit „…“, sondern am Doppelpunkt.
+- 13.10.2026: **Interaktive System-Szene auf der Startseite.** Abschnitt 04
+  („Ein System, das miteinander arbeitet“) zeigt statt der Vier-Punkte-Liste
+  eine isometrische Szene (`components/SystemSzene.tsx`, Client-Komponente
+  ohne Bibliotheken): vier Bausteine (Website, Content, Reichweite,
+  KI-Abläufe) rund um „Dein Betrieb“, animierte Flüsse mit laufenden Punkten
+  (SVG `animateMotion`), schwebende Karten mit Status-Pulse, Detailkarte mit
+  Text, drei Punkten und Link zur Leistung, Auswahl-Chips und eine
+  Ereigniszeile, die als „Beispielablauf, kein Live-System“ gekennzeichnet
+  ist. Ohne Eingriff wandert die Auswahl alle 3,4 s weiter; Hover, Fokus oder
+  Klick stoppen das. `prefers-reduced-motion` schaltet Punkte, Laufmuster und
+  Wechsel ab. Auf dem Handy zeigen die Pins nur Symbole, Namen stehen in den
+  Chips. Zahlen oder Kennzahlen kommen bewusst nicht vor. Lighthouse
+  Startseite (mobil, lokal) danach: Performance 97, Barrierefreiheit 100,
+  Best Practices 100; Crawl unverändert 0 defekte Links.
 - 13.10.2026: **Blog-Cover mit Themengrafiken und Vorschaubilder je Seite.**
   Die Blog-Cover zeigen statt reiner Farbverläufe jetzt acht
   Linien-Illustrationen je Thema (`public/bilder/blog/cover-<thema>.svg`,

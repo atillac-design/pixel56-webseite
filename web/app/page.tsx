@@ -28,6 +28,7 @@ import atillaImage from "@/public/bilder/team-atilla.webp";
 import koblenzImage from "@/public/bilder/koblenz-rhein.webp";
 import seoFreebieImage from "@/public/bilder/freebie-seo-ebook-transparent.webp";
 import kiFreebieImage from "@/public/bilder/freebie-ki-ebook.webp";
+import SystemSzene from "@/components/SystemSzene";
 
 export const metadata: Metadata = {
   title: {
@@ -509,31 +510,23 @@ export default function HomePage() {
           </section>
 
           <section className="band system-section dark-stage" id="system">
-            <div className="split2">
-              <div className="reveal">
+            <div className="band-head reveal">
+              <div>
                 <span className="band-tag">04 — Nicht nur Einzelmaßnahmen</span>
                 <h2 className="band-title">
                   Ein System, das <em>miteinander arbeitet</em>
                 </h2>
-                <p className="lead">
-                  Eine starke Website ohne Besucher bleibt unsichtbar. Anzeigen
-                  ohne passende Zielseite verbrennen Budget. Content ohne klare
-                  Marke bleibt beliebig. Und ein voller Posteingang ohne Prozess
-                  kostet jeden Tag Zeit.
-                </p>
-                <p className="lead">
-                  Deshalb denken wir vom Ergebnis rückwärts: Welche Anfrage soll
-                  am Ende entstehen? Von dort aus verbinden wir nur die Bausteine,
-                  die dein Unternehmen tatsächlich braucht. Nicht mehr, nicht
-                  weniger.
-                </p>
               </div>
-              <div className="system-flow reveal" aria-label="Zusammenspiel der Leistungen">
-                <div><span>01</span><b>Klarer Auftritt</b><small>Webdesign &amp; Positionierung</small></div>
-                <div><span>02</span><b>Relevanter Content</b><small>Reels, Fotos &amp; Creatives</small></div>
-                <div><span>03</span><b>Gezielte Reichweite</b><small>Meta Ads, Google Ads &amp; Kampagnen</small></div>
-                <div><span>04</span><b>Smarte Abläufe</b><small>KI-Prozesse &amp; Automatisierung</small></div>
-              </div>
+              <p className="band-note">
+                Eine starke Website ohne Besucher bleibt unsichtbar. Anzeigen ohne
+                passende Zielseite verbrennen Budget. Content ohne klare Marke
+                bleibt beliebig. Deshalb verbinden wir nur die Bausteine, die dein
+                Unternehmen braucht. Tippe auf einen Baustein und sieh, was er im
+                Zusammenspiel leistet.
+              </p>
+            </div>
+            <div className="reveal">
+              <SystemSzene />
             </div>
           </section>
 
