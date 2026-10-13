@@ -55,6 +55,28 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Artikeltexten (`https://www.pixel56.de/...`) werden beim Rendern relativ,
   damit sie auch auf Testumgebungen funktionieren. Seitentitel langer
   Artikelüberschriften enden nicht mehr mit „…“, sondern am Doppelpunkt.
+- 13.10.2026: **16 alte Blogartikel neu geschrieben.** Von den 31 aus Webflow
+  übernommenen Artikeln sprachen 14 den Leser mit „Sie“ an; dazu kamen ein
+  Lorem-ipsum-Teaser, eine „Wir als Unternehmen“-Perspektive, abgebrochene
+  Einleitungen und erfundene Erfolgszahlen („Anfragen +40 %“, „60 % mehr
+  Buchungen“) in diesen und zwei weiteren Texten. Diese 16
+  Artikel liegen jetzt als Dateien in `lib/artikel/<slug>.ts` (Typ `Artikel`
+  aus `lib/blog-typen.ts`, Registrierung in `lib/artikel/index.ts`) und
+  ersetzen beim Zusammenführen in `lib/blog.ts` die migrierte Fassung aus
+  `data/legacy-blog.json`. Slug, Datum, Kategorie und Cover bleiben, die
+  URLs ändern sich nicht. Inhaltlich: du-Ansprache, Zwischenüberschriften für
+  das Inhaltsverzeichnis, relative interne Links auf die kanonischen
+  Leistungsseiten, keine erfundenen Kennzahlen und keine Kundenfälle außer
+  den belegten aus `lib/projekte.ts`; veraltete Jahresangaben („für 2023“,
+  „im Jahr 2024“) aus Überschriften entfernt, Slugs unverändert. Lesezeit aus
+  der Wortzahl (200 Wörter/Minute). Neues optionales Feld `seoTitel` für
+  kurze Seitentitel, genutzt bei sechs Artikeln mit langen Überschriften.
+  Inhaltsverzeichnis zählt nicht mehr doppelt, wenn die Überschriften selbst
+  nummeriert sind. Die restlichen 15 alten Artikel waren bereits in
+  du-Form; ihre vereinzelten „Sie“ sind Pronomen („Sie führt dich …“), keine
+  Anrede. Prüfung: `tsc`, Build, `seo:check:strict`, `qa:crawl` (150
+  Seiten, 0 defekte Links, 0 Titel über 60 Zeichen; der Crawl dekodiert
+  HTML-Entities jetzt vor der Längenmessung).
 - 13.10.2026: **Projekt-Detailseiten (17 Fallstudien) neu aufgebaut.** Neue
   Vorlage in `app/projekte/[slug]/page.tsx`: Hero mit Projektbild
   (Browser-Mockup als Rückfall), Zusammenfassung, Ausgangslage und Umsetzung

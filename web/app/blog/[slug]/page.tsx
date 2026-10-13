@@ -90,7 +90,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = await resolveArtikel(slug);
   if (!a) return {};
-  const seoTitle = seoTitel(a.titel, 50);
+  const seoTitle = a.seoTitel ?? seoTitel(a.titel, 50);
   const seoDescription = truncateSeoText(a.teaser, 155);
   return {
     title: seoTitle,
@@ -185,7 +185,7 @@ export default async function ArtikelPage({ params }: Props) {
           {abschnitte.length >= 3 ? (
             <nav className="article-toc" aria-label="Inhalt des Artikels">
               <span>Inhalt</span>
-              <ol>
+              <ol className={abschnitte.some((s) => /^\d+\.\s/.test(s.text)) ? "plain" : undefined}>
                 {abschnitte.map((s) => (
                   <li key={s.id}><a href={`#${s.id}`}>{s.text}</a></li>
                 ))}

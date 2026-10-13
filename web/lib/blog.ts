@@ -5,23 +5,10 @@
  * erhalten eigene Detailseiten; diese Bestandsartikel bleiben erhalten.
  */
 import legacyBlog from "@/data/legacy-blog.json";
+import { ueberarbeiteteArtikel } from "@/lib/artikel";
+import type { Artikel, Block } from "@/lib/blog-typen";
 
-export type Block =
-  | { typ: "p"; text: string; html?: string }
-  | { typ: "h2"; text: string }
-  | { typ: "ul"; items: string[] };
-
-export type Artikel = {
-  slug: string;
-  cover: string; // c1 … c6
-  kategorie: string;
-  titel: string;
-  teaser: string;
-  lesezeit: number;
-  datum: string; // ISO
-  intro: string;
-  body: Block[];
-};
+export type { Artikel, Block } from "@/lib/blog-typen";
 
 const neueArtikel: Artikel[] = [
   {
@@ -191,11 +178,12 @@ const neueArtikel: Artikel[] = [
 
 const migrierteArtikel = legacyBlog as Artikel[];
 
+// Reihenfolge der Quellen: neu geschrieben > redaktionell überarbeitet > alte Rohfassung.
+const vorrang = [...neueArtikel, ...ueberarbeiteteArtikel.filter((a) => !neueArtikel.some((n) => n.slug === a.slug))];
+
 export const artikel: Artikel[] = [
-  ...neueArtikel,
-  ...migrierteArtikel.filter(
-    (migriert) => !neueArtikel.some((artikel) => artikel.slug === migriert.slug),
-  ),
+  ...vorrang,
+  ...migrierteArtikel.filter((migriert) => !vorrang.some((a) => a.slug === migriert.slug)),
 ].sort((a, b) => b.datum.localeCompare(a.datum));
 
 export function getArtikel(slug: string): Artikel | undefined {

@@ -22,8 +22,10 @@ while (queue.length) {
   if (res.status !== 200) { broken.push([path, res.status]); continue; }
   const ct = res.headers.get("content-type") || ""; if (!ct.includes("text/html")) continue;
   const html = await res.text();
-  const title = (html.match(/<title>([^<]*)<\/title>/) || [])[1] || "";
-  const desc = (html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || "";
+  // HTML-Entities zurückübersetzen, damit "&amp;" als ein Zeichen zählt (sonst falsche Längenwarnungen).
+  const decode = (v) => v.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+  const title = decode((html.match(/<title>([^<]*)<\/title>/) || [])[1] || "");
+  const desc = decode((html.match(/<meta name="description" content="([^"]*)"/) || [])[1] || "");
   const h1s = (html.match(/<h1[\s>]/g) || []).length;
   const canonical = (html.match(/<link rel="canonical" href="([^"]*)"/) || [])[1] || "";
   const robots = (html.match(/<meta name="robots" content="([^"]*)"/) || [])[1] || "";
