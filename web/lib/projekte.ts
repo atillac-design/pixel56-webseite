@@ -391,7 +391,7 @@ export const fallstudien: Fallstudie[] = [
   {
     slug: "curlyann",
     vorherArt: "veraltet",
-    kunde: "CurlyAnn Atelier",
+    kunde: "CurlyAnn Soulcare & Art",
     branche: "Kreativ & Workshops",
     jahr: "2024",
     tags: ["Konzeption", "Webdesign", "Buchungssystem", "Online-Zahlung"],

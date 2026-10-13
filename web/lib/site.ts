@@ -36,7 +36,7 @@ export const clients = [
   "Van den Berg Gruppe",
   "MDU Bedachungen",
   "Lernforum Obertshausen",
-  "CurlyAnn Atelier",
+  "CurlyAnn Soulcare & Art",
   "Cavar Home",
   "DiscountHaus Holding",
   "Schlüsselfertig-Immobilien",

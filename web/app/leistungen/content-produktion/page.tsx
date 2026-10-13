@@ -120,7 +120,7 @@ const audiences = [
     tag: "Beauty & Kreativ",
     title: "Handwerk, das man sehen muss",
     text: "Ateliers, Studios, Workshops: Vorher-nachher, Prozess und Ergebnis. Content, der die eigene Handschrift zeigt und direkt zur Buchung führt.",
-    refs: "CurlyAnn Atelier",
+    refs: "CurlyAnn Soulcare & Art",
   },
   {
     tag: "Dienstleistung",

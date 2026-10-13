@@ -165,7 +165,7 @@ const audiences = [
     tag: "Gastronomie, Handel & Kreativ",
     title: "Marken, die von Bildern leben",
     text: "Restaurants, Shops und Ateliers gewinnen über Stimmung, Bilder und Bewegtbild. Reels, Social Content und Shops, die Lust machen und direkt zur Buchung oder zum Kauf führen.",
-    refs: "Burgerfabriq · Cavar Home · CurlyAnn Atelier",
+    refs: "Burgerfabriq · Cavar Home · CurlyAnn Soulcare & Art",
   },
 ];
 
@@ -215,7 +215,7 @@ const cases: CaseItem[] = [
     className: "work-card-wide",
   },
   {
-    customer: "CurlyAnn Atelier",
+    customer: "CurlyAnn Soulcare & Art",
     title: "Ein Auftritt mit eigener Handschrift und direkter Buchung",
     tags: "WEBDESIGN · BUCHUNG · ONLINE-ZAHLUNG",
     href: projectPath("curlyann"),

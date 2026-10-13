@@ -374,7 +374,10 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   ein englischer Textblock stehen, auf Workshop-Seiten Dollarbeträge aus der
   Vorlage, Stornofristen in FAQ (60 Tage) und auf „Let's Pearl“ (14 Tage)
   widersprechen sich, Impressum liegt unter `/privacy-policy/`. Dem Inhaber
-  gemeldet, zu prüfen auf der Kundenseite, nicht in diesem Repo.
+  gemeldet, zu prüfen auf der Kundenseite, nicht in diesem Repo. Kundenname
+  auf Wunsch des Inhabers überall „CurlyAnn Soulcare & Art“ statt „CurlyAnn
+  Atelier“ (Fallstudie, Kundenliste in `lib/site.ts`, Startseite, Über uns,
+  Content-Produktion).
 
 ## Verifiziert am 13.10.2026
 
