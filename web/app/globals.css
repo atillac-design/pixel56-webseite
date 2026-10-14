@@ -3266,7 +3266,7 @@ body { overflow-x: clip; }
 .zd-plan li { text-align: left; }
 .zd-plan, .zd-panel { text-align: left; }
 .zd-plan ol small { color: var(--ink-faint); font-size: 12.5px; }
-.zd-planlink { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; text-decoration-color: rgba(183,156,255,0.6); text-underline-offset: 3px; cursor: pointer; }
+.zd-planlink { display: inline; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; text-decoration: underline; text-decoration-color: rgba(183,156,255,0.6); text-underline-offset: 3px; cursor: pointer; }
 .zd-plan > small { font-size: 12.5px; line-height: 1.5; color: var(--ink-faint); }
 .zd-fuss { margin: 0; font-size: 13px; line-height: 1.5; color: var(--ink-faint); }
 @media (max-width: 900px) {
