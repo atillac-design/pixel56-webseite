@@ -26,7 +26,7 @@ import gmDachdeckerImage from "@/public/bilder/projekt-gm-dachdecker.webp";
 export const metadata: Metadata = {
   title: "Mitarbeitergewinnung: Bewerbungen ohne Umweg",
   description:
-    "Karriereseiten mit Direkt-Upload und Recruiting-Kampagnen auf Instagram und Facebook für Betriebe, die Fachkräfte suchen. Pixel56 aus Bendorf bei Koblenz.",
+    "Karriereseiten mit Direkt-Upload und Recruiting-Kampagnen auf Instagram und Facebook für Betriebe, die Fachkräfte suchen. Pixel56 aus Koblenz.",
   alternates: { canonical: serviceRoutes.mitarbeitergewinnung },
   openGraph: {
     title: "Mitarbeitergewinnung: Bewerbungen ohne Umweg | Pixel56",
@@ -158,17 +158,16 @@ export default function RecruitingPage() {
           <header className="service-premium-hero">
             <div className="service-premium-glow" aria-hidden="true" />
             <div className="service-premium-copy">
-              <div className="premium-kicker">MITARBEITERGEWINNUNG · KARRIERESEITE · RECRUITING-KAMPAGNEN</div>
+              <div className="premium-kicker">MITARBEITERGEWINNUNG FÜR HANDWERK &amp; BAU · KARRIERESEITE · KAMPAGNEN</div>
               <h1>
                 <span>Offene Stellen.</span>
                 <span className="service-hero-accent">Echte Bewerbungen.</span>
                 <span>Kein Umweg.</span>
               </h1>
               <p>
-                Karriereseiten und Kampagnen, die Bewerbungen genauso ernst
-                nehmen wie Kundenanfragen: Einblick in den Betrieb, Bewerbung
-                in zwei Minuten vom Handy und Anzeigen, die Menschen erreichen,
-                bevor sie aktiv suchen.
+                Gute Leute lesen keine Stellenanzeigen. Sie sehen dein Team im
+                Feed und bewerben sich in zwei Minuten vom Handy. Wir bauen die
+                Karriereseite und die Kampagne dafür.
               </p>
               <div className="premium-actions">
                 <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">

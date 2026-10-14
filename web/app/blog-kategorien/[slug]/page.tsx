@@ -151,7 +151,7 @@ export default async function BlogKategoriePage({ params }: Props) {
                 <li>Ein fester Ansprechpartner von der Analyse bis zur Betreuung</li>
                 <li>Angebot nach dem Erstgespräch, mit Umfang, Ablauf und Preis</li>
                 <li>Website, Konten und Daten laufen auf deinen Namen</li>
-                <li>Aus Bendorf bei Koblenz, für Kunden in ganz Deutschland</li>
+                <li>Aus Koblenz, für Kunden in ganz Deutschland</li>
               </ul>
             </div>
           </div>

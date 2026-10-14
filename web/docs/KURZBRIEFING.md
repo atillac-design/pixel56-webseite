@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 14.10.2026
+# Kurzbriefing — Stand 14.10.2026 (abends)
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -18,16 +18,25 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 - **Kein Standort Bendorf** sichtbar, niemand soll vorbeikommen; „aus
   Koblenz“ ist okay. WhatsApp und E-Mail immer anbieten. Später je
   Leistung ein eigenes Kontaktformular (noch nicht gebaut).
-- **KI-Automatisierung bleibt eine Säule.** Eigene KI-Projekte vorzeigen:
-  Teykto (Bestellplattform, teykto.de), KMU-Webseiten (Formular, Make,
-  MailerLite), Adloc (adloc.io, B2B-Kontaktdaten), Zentrale (Live-Dashboard).
-  **Positionierung entschieden (14.10.):** Inhaber folgt der Empfehlung.
-  Keine Nischen-Spezialisierung, sondern Schärfung nach Kundentyp:
-  inhabergeführte Betriebe, die Anfragen oder Bewerber brauchen. Vier
-  Kernleistungen vorn (Webdesign, Meta Ads, Content & Reels, KI), die vier
-  anderen als Ergänzung („Je nach Ziel ergänzen wir“). Struktur war schon
-  so gebaut; Hero-Absatz nennt jetzt die Zielgruppe, Kicker und Proof-Zeile
-  sagen „Koblenz“ statt „Bendorf bei Koblenz“.
+- **Positionierung (14.10., vom Inhaber beauftragt):** Zielgruppe
+  **Handwerk, Bau und Dienstleister**, Versprechen „Neue Kunden. Neue
+  Mitarbeiter. Planbar statt Zufall.“ Vier Kernleistungen (Webdesign,
+  Meta Ads, Content & Reels, KI) als ein System, vier ergänzende dahinter.
+  Vorbild laut Inhaber: Baulig Consulting (eine Zielgruppe, ein
+  Versprechen, Schmerz vor Lösung, Beweis, Ablauf, „Für wen geeignet“,
+  ein Aufruf). Inhaber will **kurze, hochwertige Texte mit rotem Faden**,
+  keine allgemeinen Floskeln („inhabergeführt“ gestrichen). Startseite
+  komplett neu (15 Abschnitte, Reihenfolge: Kennst du das → vier Sätze →
+  System → Zusammenspiel → Projekte → Google-Bewertungen → Projekt im
+  Detail → drei Schritte → Passt/Passt nicht → Ansprechpartner → KI →
+  Region → Vorlagen → Blog → FAQ → Abschluss). Leistungs-Heros,
+  Leistungsübersicht, Über uns, Fuß und Meta-Beschreibungen angepasst.
+  KI bleibt Säule, eigene KI-Projekte (Teykto, KMU-Webseiten, Adloc,
+  Zentrale) belegen sie.
+- **Standort:** sichtbar nur noch „Koblenz“ (Kicker, Fuß, Über uns,
+  Kontakt, Team, Karriere, Blog-Autorenzeile, OG-Bilder). „Bendorf“ bleibt
+  nur in Impressum, Datenschutz, Schema, Standortkarte und auf den
+  Standortseiten (Entfernungen werden ab Bendorf gerechnet).
 - **Zentrale:** interne Zahlen nie zeigen. Auf der Seite läuft ein
   erfundenes Beispiel (Dachdeckerei Muster, „Dein Unternehmen“ in der
   Mitte), klickbar: Bereiche, Aufgaben abhaken, Verantwortliche,
@@ -57,20 +66,23 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 1. **Vom Inhaber erwartet:** schärfere Desktop-Screenshots von Teykto und
    Adloc (ersetzen `ki-projekt-teykto.webp` und den Adloc-BrowserMock in
    `app/leistungen/ki-automatisierung/page.tsx`, `eigeneProjekte`);
-   weitere Rückmeldung aus dem Durchklicken. Offene Frage an ihn: soll
-   „Bendorf“ auch im Fuß und im Abschnitt „Aus Bendorf bei Koblenz“ der
-   Startseite durch „Koblenz“ ersetzt werden (Stadtseite Bendorf bleibt)?
-2. Kontaktformular je Leistung (Wunsch des Inhabers, noch offen).
-3. Vor dem Livegang: AGB-Platzhalter, Impressum, Datenschutz prüfen;
+   weitere Rückmeldung aus dem Durchklicken, vor allem zur neuen
+   Startseite und den Leistungs-Heros.
+2. Noch nicht auf die Positionierung gezogen: Fließtexte **innerhalb** der
+   acht Leistungsseiten (Abschnitte unter dem Hero), Projekte-Übersicht,
+   Kontakt-Hero, Blog-Teaser. Nächster Schritt, wenn der Inhaber die
+   Richtung bestätigt.
+3. Kontaktformular je Leistung (Wunsch des Inhabers, noch offen).
+4. Vor dem Livegang: AGB-Platzhalter, Impressum, Datenschutz prüfen;
    Env-Variablen in Netlify (MailerLite, Resend, optional Google Places);
    Website-Check live testen; `NEXT_PUBLIC_INDEXABLE=true` erst dann.
-4. Domainumzug pixel56.de von Webflow auf Netlify, danach Sitemap in der
+5. Domainumzug pixel56.de von Webflow auf Netlify, danach Sitemap in der
    Search Console einreichen und alte URLs beobachten.
-5. Medien: Reels Handwerk (M&A Transporte, GM-Dachdecker), echte
+6. Medien: Reels Handwerk (M&A Transporte, GM-Dachdecker), echte
    Vorher-Screenshots, Zuordnung der schematischen Vorher-Varianten bestätigen.
-6. Redaktion: Leistungsseiten ggf. um ca. 30 % kürzen, Wiederholungen
+7. Redaktion: Leistungsseiten ggf. um ca. 30 % kürzen, Wiederholungen
    glätten; 31 alte Blogartikel nachschärfen; Stadttexte gegenlesen.
-7. Standortseiten mit Search-Console-Daten abgleichen (`regionStaedte`).
+8. Standortseiten mit Search-Console-Daten abgleichen (`regionStaedte`).
 
 ## Zuletzt geprüft
 

@@ -77,7 +77,7 @@ const faqs = [
   { q: "Muss ich mich vorbereiten?", a: "Nein. Es hilft, wenn du dein Ziel grob benennen kannst, etwa mehr Anfragen, neue Website oder Mitarbeiter finden. Den Rest sortieren wir gemeinsam." },
   { q: "Mit wem spreche ich?", a: "Mit Atilla Ciftcioglu, dem Gründer von Pixel56. Er führt das Erstgespräch und bleibt während der Zusammenarbeit dein Ansprechpartner." },
   { q: "Treffen wir uns persönlich?", a: "Gern, bei dir im Betrieb: zum Kennenlernen, für Fotos oder einen Dreh. Alles andere läuft per WhatsApp, E-Mail, Telefon oder Video-Call, so bleibt es für beide Seiten schnell. Ein Ladenlokal mit Wartezimmer haben wir nicht." },
-  { q: "Arbeitet ihr auch mit Unternehmen außerhalb der Region?", a: "Ja. Der Sitz ist in Bendorf bei Koblenz, die Zusammenarbeit läuft aber ortsunabhängig per Video-Call, Telefon und WhatsApp." },
+  { q: "Arbeitet ihr auch mit Unternehmen außerhalb der Region?", a: "Ja. Wir arbeiten aus Koblenz, die Zusammenarbeit läuft aber ortsunabhängig per Video-Call, Telefon und WhatsApp." },
 ];
 
 export default function KontaktPage() {
@@ -243,10 +243,10 @@ export default function KontaktPage() {
             <div className="reveal">
               <span className="band-tag">05 — Region &amp; Erreichbarkeit</span>
               <h2 className="band-title">
-                Aus Bendorf bei Koblenz, <em>bei dir im Betrieb</em>
+                Aus Koblenz, <em>bei dir im Betrieb</em>
               </h2>
               <p className="lead">
-                Pixel56 arbeitet aus Bendorf bei Koblenz, ohne Ladenlokal und
+                Pixel56 arbeitet aus Koblenz, ohne Ladenlokal und
                 ohne Wartezimmer. Kennenlernen läuft per Video-Call, Telefon oder
                 WhatsApp, Fotos und Drehs machen wir bei dir im Betrieb. Koblenz,
                 Neuwied und Montabaur sind in wenigen Minuten erreicht.
@@ -261,7 +261,7 @@ export default function KontaktPage() {
               </a>
             </div>
             <div className="region-visual reveal">
-              <Image src={koblenzImage} alt="Koblenz am Rhein, wenige Minuten von Bendorf, der Heimat von Pixel56" fill sizes="(max-width: 900px) 100vw, 50vw" />
+              <Image src={koblenzImage} alt="Koblenz am Rhein, Heimat von Pixel56" fill sizes="(max-width: 900px) 100vw, 50vw" />
             </div>
           </div>
         </section>

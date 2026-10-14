@@ -15,6 +15,27 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 14.10.2026: **Startseite und Heros neu positioniert.** Inhaber fand den
+  ersten Hero-Absatz zu lang und zu allgemein („inhabergeführt – von wem
+  sonst?“) und beauftragte eine echte Positionierung nach dem Muster von
+  Baulig Consulting: eine Zielgruppe, ein Versprechen, roter Faden,
+  Verkaufspsychologie, kurze Texte. Umgesetzt: Zielgruppe Handwerk, Bau,
+  Dienstleister; Hero „Neue Kunden. Neue Mitarbeiter. Planbar statt
+  Zufall. Aus einer Hand.“ mit Google-Stand in der Proof-Zeile; Abfolge
+  Schmerz (vier Sätze aus dem Alltag) → Lösung (vier Bausteine, Texte
+  halbiert) → Zusammenspiel → Beweis (Projekte, Google-Bewertungen direkt
+  dahinter) → Projekt im Detail → drei Schritte statt vier → neuer
+  Abschnitt „Passt das?“ (Passt/Passt nicht, `fit-grid`) → Ansprechpartner
+  → KI mit Link zur Beispiel-Zentrale → Region → Vorlagen → Blog → FAQ
+  (sechs statt neun, neu „Was kostet das?“, „Wie schnell sehe ich
+  Ergebnisse?“) → Abschluss „15 Minuten. Dann weißt du, wo dein größter
+  Hebel liegt.“ Branchen-Raster (sechs Karten) entfernt. Leistungs-Heros
+  (acht Seiten), Leistungsübersicht („Vier Bausteine. Ein System.“), Über
+  uns, Fuß, `layout.tsx`-Beschreibung und Meta-Beschreibungen auf die
+  Zielgruppe gezogen. „Bendorf“ im sichtbaren Text überall durch „Koblenz“
+  ersetzt außer Impressum, Datenschutz, Schema, Standortkarte und
+  Standortseiten. Keine neuen Zahlen oder Versprechen; Google-Stand bleibt
+  die einzige Kennzahl.
 - 14.10.2026: **Positionierung entschieden.** Inhaber wollte eine
   unternehmerische Empfehlung und folgt ihr: keine Spezialisierung auf eine
   Branche (Portfolio und Umsatz sind breit: Gastronomie, Handwerk, Coaching,

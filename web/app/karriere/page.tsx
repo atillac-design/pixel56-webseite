@@ -35,7 +35,7 @@ const arbeitsweise = [
   { b: "Ein Ansprechpartner pro Projekt", small: "Du kennst den Kunden, der Kunde kennt dich. Keine Übergaben zwischen Abteilungen." },
   { b: "Zwischenstände statt Präsentationen", small: "Klickbare Entwürfe, geschnittene Clips, laufende Kampagnen. Feedback kommt am echten Ding." },
   { b: "Ehrlich zum Kunden, ehrlich im Team", small: "Wenn etwas nicht funktioniert, sagen wir es. Auch wenn es unbequem ist." },
-  { b: "Bendorf oder remote", small: "Vor-Ort-Drehs brauchen die Region, alles andere läuft per Video-Call und Chat." },
+  { b: "Koblenz oder remote", small: "Vor-Ort-Drehs brauchen die Region, alles andere läuft per Video-Call und Chat." },
 ];
 
 const bewerbung = [
@@ -99,7 +99,7 @@ export default async function KarrierePage() {
                 </Link>
               </div>
               <div className="premium-proof" aria-label="Arbeiten bei Pixel56">
-                <span>Bendorf &amp; Remote</span>
+                <span>Koblenz &amp; Remote</span>
                 <span>Kurze Wege</span>
                 <span>Echte Projekte</span>
                 <span>Bewerbung ohne Umwege</span>
@@ -129,7 +129,7 @@ export default async function KarrierePage() {
         <section className="service-summary service-summary-premium reveal theme-light" aria-label="Arbeiten bei Pixel56 auf einen Blick">
           <div>
             <span>Region</span>
-            <strong>Bendorf bei Koblenz oder remote</strong>
+            <strong>Koblenz oder remote</strong>
           </div>
           <div>
             <span>Bereiche</span>

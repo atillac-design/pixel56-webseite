@@ -155,7 +155,7 @@ const faqs = [
   { q: "Arbeitet ihr auch mit bestehenden Websites und Werbekonten?", a: "Ja. Wir übernehmen bestehende Konten und Systeme, wenn sie tragfähig sind, und sagen offen, wenn ein Neuaufbau günstiger ist als eine Reparatur." },
   { q: "Wie schnell sehe ich Ergebnisse?", a: "Das hängt vom Baustein ab. Anzeigen liefern innerhalb von Wochen erste Daten, eine neue Website braucht einige Wochen Umsetzung, organische Sichtbarkeit wächst über Monate. Wir nennen realistische Zeiträume, keine Versprechen." },
   { q: "Was kostet das?", a: "Das Angebot entsteht nach dem Erstgespräch aus Umfang und Ziel. Werbebudgets werden getrennt ausgewiesen, laufende Leistungen sind kündbar. Versteckte Posten gibt es nicht." },
-  { q: "Arbeitet ihr nur in der Region Koblenz?", a: "Der Sitz ist in Bendorf bei Koblenz, Vor-Ort-Drehs machen wir in der Region. Alles andere läuft per Video-Call, Telefon und WhatsApp mit Kunden in ganz Deutschland." },
+  { q: "Arbeitet ihr nur in der Region Koblenz?", a: "Wir arbeiten aus Koblenz, Vor-Ort-Drehs machen wir in der Region. Alles andere läuft per Video-Call, Telefon und WhatsApp mit Kunden in ganz Deutschland." },
 ];
 
 export default function DienstleistungenPage() {
@@ -184,17 +184,17 @@ export default function DienstleistungenPage() {
           <header className="service-premium-hero">
             <div className="service-premium-glow" aria-hidden="true" />
             <div className="service-premium-copy">
-              <div className="premium-kicker">LEISTUNGEN · PIXEL56 · KOBLENZ · DEUTSCHLANDWEIT</div>
+              <div className="premium-kicker">LEISTUNGEN FÜR HANDWERK, BAU &amp; DIENSTLEISTER · KOBLENZ · DEUTSCHLANDWEIT</div>
               <h1>
-                <span>Acht Leistungen,</span>
-                <span className="service-hero-accent">ein System.</span>
+                <span>Vier Bausteine.</span>
+                <span className="service-hero-accent">Ein System.</span>
                 <span>Ein Ansprechpartner.</span>
               </h1>
               <p>
-                Websites, Kampagnen, Content und KI-Prozesse, die zusammenpassen,
-                statt nebeneinander zu laufen. Du wählst den Baustein, der dein
-                Ziel am schnellsten erreicht. Alles andere kommt nur dazu, wenn
-                es etwas bringt.
+                Website, Anzeigen, Content und KI-Prozesse, die ineinandergreifen.
+                Du startest mit dem Baustein, der dein Ziel am schnellsten
+                erreicht. Vier ergänzende Leistungen kommen nur dazu, wenn sie
+                etwas bringen.
               </p>
               <div className="premium-actions">
                 <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">
@@ -208,7 +208,7 @@ export default function DienstleistungenPage() {
                 <span>Vier Kernleistungen</span>
                 <span>Vier ergänzende Bausteine</span>
                 <span>Ein Ansprechpartner</span>
-                <span>Bendorf bei Koblenz</span>
+                <span>Koblenz</span>
               </div>
             </div>
 

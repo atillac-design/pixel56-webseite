@@ -22,9 +22,9 @@ import maTransporteImage from "@/public/bilder/projekt-ma-transporte.webp";
 import koblenzImage from "@/public/bilder/koblenz-rhein.webp";
 
 export const metadata: Metadata = {
-  title: "Über uns: Digitalagentur in Bendorf bei Koblenz",
+  title: "Über uns: Digitalagentur in Koblenz",
   description:
-    "Gründergeführte Digitalagentur in Bendorf bei Koblenz: Websites, Meta Ads, Content und KI aus einer Hand, mit einem festen Ansprechpartner.",
+    "Gründergeführte Digitalagentur in Koblenz: Websites, Meta Ads, Content und KI aus einer Hand, mit einem festen Ansprechpartner.",
   alternates: { canonical: routes.about },
   openGraph: {
     title: "Über Pixel56: ein Ansprechpartner, alles aus einer Hand",
@@ -157,7 +157,7 @@ const nichtMachen = [
 const faqs = [
   { q: "Wer ist mein Ansprechpartner während des Projekts?", a: "Atilla Ciftcioglu, von der ersten Anfrage bis zur laufenden Betreuung. Keine wechselnden Projektmanager, kein Neu-Erklären. Wenn Partner für Dreh, Schnitt oder Entwicklung dazukommen, bleibt die Verantwortung bei Pixel56." },
   { q: "Wie groß ist Pixel56?", a: "Bewusst klein. Pixel56 ist gründergeführt und arbeitet mit einem festen Netzwerk aus Spezialisten, die je nach Projekt dazukommen. Dadurch bleiben die Wege kurz und die Preise nachvollziehbar." },
-  { q: "Arbeitet ihr nur in Bendorf und Koblenz?", a: "Der Sitz ist in Bendorf, und lokale Betriebe aus der Region sind uns besonders vertraut. Die Zusammenarbeit läuft aber ortsunabhängig per Video-Call, Telefon und WhatsApp. Wir betreuen Kunden in ganz Deutschland." },
+  { q: "Arbeitet ihr nur in Koblenz?", a: "Wir kommen aus Koblenz, und lokale Betriebe aus der Region sind uns besonders vertraut. Die Zusammenarbeit läuft aber ortsunabhängig per Video-Call, Telefon und WhatsApp. Wir betreuen Kunden in ganz Deutschland." },
   { q: "Treffen wir uns persönlich?", a: "Gern, bei dir im Betrieb: zum Kennenlernen, für Fotos oder einen Dreh. Alles andere läuft per WhatsApp, E-Mail, Telefon oder Video-Call, so bleibt es für beide Seiten schnell. Ein Ladenlokal mit Wartezimmer haben wir nicht." },
   { q: "Übernehmt ihr auch nur Teilleistungen?", a: "Ja. Alles aus einer Hand ist ein Angebot, kein Zwang. Wer nur eine Website, nur Anzeigen oder nur Content braucht, bekommt genau das." },
   { q: "Was kostet das Erstgespräch?", a: "Nichts. Es dient dazu, deine Situation ehrlich einzuschätzen. Erst danach gibt es ein konkretes, auf dich zugeschnittenes Angebot." },
@@ -178,18 +178,17 @@ export default async function UeberUnsPage() {
           <header className="service-premium-hero about-hero">
             <div className="service-premium-glow" aria-hidden="true" />
             <div className="service-premium-copy">
-              <div className="premium-kicker">ÜBER PIXEL56 · BENDORF BEI KOBLENZ</div>
+              <div className="premium-kicker">ÜBER PIXEL56 · KOBLENZ · SEIT 2018</div>
               <h1>
                 <span>Eine Agentur,</span>
                 <span className="service-hero-accent">ein Ansprechpartner.</span>
                 <span>Kein Callcenter.</span>
               </h1>
               <p>
-                Pixel56 ist eine gründergeführte Digitalagentur aus Bendorf bei
-                Koblenz. Wer hier anruft, spricht mit der Person, die das Projekt
-                plant und umsetzt: Websites, Meta Ads, Social Content und
-                KI-Prozesse für Unternehmen, die online Anfragen und Bewerber
-                gewinnen wollen.
+                Pixel56 ist die Digitalagentur von Atilla Ciftcioglu aus Koblenz.
+                Wer hier anruft, spricht mit der Person, die das Projekt plant
+                und umsetzt: Websites, Meta Ads, Reels und KI-Prozesse für
+                Handwerk, Bau und Dienstleister.
               </p>
               <div className="premium-actions">
                 <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">
@@ -201,7 +200,7 @@ export default async function UeberUnsPage() {
               </div>
               <div className="premium-proof" aria-label="Pixel56 auf einen Blick">
                 <span>Gründergeführt seit 2018</span>
-                <span>Bendorf bei Koblenz</span>
+                <span>Koblenz</span>
                 <span>Web, Ads, Content, KI</span>
                 <span>Betreuung nach dem Launch</span>
               </div>
@@ -227,7 +226,7 @@ export default async function UeberUnsPage() {
           </div>
           <div>
             <span>Region</span>
-            <strong>Bendorf bei Koblenz, deutschlandweit</strong>
+            <strong>Koblenz, deutschlandweit</strong>
           </div>
           <div>
             <span>Arbeitsweise</span>
@@ -463,10 +462,10 @@ export default async function UeberUnsPage() {
             <div className="reveal">
               <span className="band-tag">08 — Der Standort</span>
               <h2 className="band-title">
-                Zuhause in Bendorf. <em>Unterwegs in der Region.</em>
+                Zuhause in Koblenz. <em>Unterwegs in der Region.</em>
               </h2>
               <p className="lead">
-                Pixel56 arbeitet aus Bendorf bei Koblenz, ohne Ladenlokal:
+                Pixel56 arbeitet aus Koblenz, ohne Ladenlokal:
                 Kennenlernen per Video-Call oder bei dir im Betrieb. Koblenz liegt
                 wenige Minuten entfernt, Neuwied, Montabaur und der Westerwald
                 sind schnell erreicht.
@@ -478,7 +477,7 @@ export default async function UeberUnsPage() {
               </p>
               <ul className="lines">
                 <li>Vor-Ort-Dreh für Reels und Fotos in Koblenz, Neuwied, Montabaur und Umgebung</li>
-                <li>Kennenlernen in Bendorf oder per Video-Call, wie es dir besser passt</li>
+                <li>Kennenlernen per Video-Call oder bei dir im Betrieb, wie es dir besser passt</li>
                 <li>Lokale Betriebe aus der Region Koblenz sind uns besonders vertraut</li>
                 <li>
                   <Link href={routes.locations}>Webdesign, Ads und SEO in deiner Stadt</Link>
@@ -486,7 +485,7 @@ export default async function UeberUnsPage() {
               </ul>
             </div>
             <div className="region-visual reveal">
-              <Image src={koblenzImage} alt="Koblenz am Rhein, wenige Minuten von Bendorf, der Heimat von Pixel56" fill sizes="(max-width: 900px) 100vw, 50vw" />
+              <Image src={koblenzImage} alt="Koblenz am Rhein, Heimat von Pixel56" fill sizes="(max-width: 900px) 100vw, 50vw" />
             </div>
           </div>
         </section>

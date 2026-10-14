@@ -27,7 +27,7 @@ export type OgDaten = {
   text?: string;
   /** Themengrafik rechts (public/bilder/blog/cover-<motiv>.svg). */
   motiv?: OgMotiv;
-  /** Zeile rechts unten, Standard: Digitalagentur · Bendorf bei Koblenz. */
+  /** Zeile rechts unten, Standard: Digitalagentur · Koblenz. */
   fuss?: string;
 };
 
@@ -94,7 +94,7 @@ export async function ogBild(d: OgDaten): Promise<ImageResponse> {
   const titel = kuerzen(d.titel, 110);
   const text = d.text ? kuerzen(d.text, 150) : "";
   const groesse = titelGroesse(titel);
-  const fuss = d.fuss ?? "Digitalagentur · Bendorf bei Koblenz";
+  const fuss = d.fuss ?? "Digitalagentur · Koblenz";
 
   return new ImageResponse(
     (

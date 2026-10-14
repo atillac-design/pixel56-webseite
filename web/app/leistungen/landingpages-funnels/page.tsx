@@ -28,7 +28,7 @@ import starkDetailImage from "@/public/bilder/projekt-stark-ins-neue-3.webp";
 export const metadata: Metadata = {
   title: "Landingpages & Funnels: Eine Seite, ein Ziel",
   description:
-    "Landingpages und Funnels, die das Versprechen der Anzeige einlösen: klare Struktur, kurzes Formular, sauberes Tracking. Pixel56 aus Bendorf bei Koblenz.",
+    "Landingpages und Funnels, die das Versprechen der Anzeige einlösen: klare Struktur, kurzes Formular, sauberes Tracking. Pixel56 aus Koblenz.",
   alternates: { canonical: serviceRoutes["landingpages-funnels"] },
   openGraph: {
     title: "Landingpages & Funnels: Eine Seite, ein Ziel, mehr Anfragen | Pixel56",
@@ -162,11 +162,10 @@ export default function FunnelsPage() {
                 <span>Keine Ablenkung.</span>
               </h1>
               <p>
-                Eine gute Anzeige verliert die Hälfte ihrer Wirkung, wenn der
-                Klick auf einer Seite ohne klares Ziel landet. Wir bauen
-                Landingpages, die das Versprechen der Anzeige einlösen: ein
-                Angebot, ein kurzes Formular, sauberes Tracking und eine
-                Übergabe, bei der keine Anfrage verloren geht.
+                Die beste Anzeige ist verschenkt, wenn der Klick auf deiner
+                Startseite verpufft. Wir bauen die Seite dahinter: ein Angebot,
+                ein kurzes Formular, sauberes Tracking. Keine Anfrage geht
+                verloren.
               </p>
               <div className="premium-actions">
                 <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">

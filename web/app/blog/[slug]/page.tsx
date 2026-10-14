@@ -213,7 +213,7 @@ export default async function ArtikelPage({ params }: Props) {
             <Image src={atillaImage} alt="Atilla Ciftcioglu" width={72} height={72} />
             <div>
               <b>Atilla Ciftcioglu</b>
-              <span>Gründer von Pixel56, Bendorf bei Koblenz. Schreibt über das, was im Erstgespräch mit Handwerkern, Dienstleistern und Vereinen täglich zur Sprache kommt.</span>
+              <span>Gründer von Pixel56, Koblenz. Schreibt über das, was im Erstgespräch mit Handwerkern, Dienstleistern und Vereinen täglich zur Sprache kommt.</span>
               <Link href="/team/atilla-ciftcioglu">Mehr über Atilla <ArrowIcon /></Link>
             </div>
           </aside>

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Meta Ads Agentur: Facebook & Instagram Werbung, die Anfragen bringt | Pixel56",
     description:
-      "Kampagnen für Kunden- und Mitarbeitergewinnung mit Tracking, Zielseite und laufender Optimierung. Aus Bendorf bei Koblenz, deutschlandweit.",
+      "Meta Ads für Handwerk, Bau und Dienstleister: Kampagnen für Kunden und Bewerber mit Tracking, Zielseite und laufender Optimierung. Pixel56 aus Koblenz.",
     url: serviceRoutes["meta-ads"],
   },
 };
@@ -209,17 +209,17 @@ export default function MetaAdsPage() {
           <header className="service-premium-hero">
             <div className="service-premium-glow" aria-hidden="true" />
             <div className="service-premium-copy">
-              <div className="premium-kicker">META ADS AGENTUR · FACEBOOK &amp; INSTAGRAM · DEUTSCHLANDWEIT</div>
+              <div className="premium-kicker">META ADS FÜR HANDWERK, BAU &amp; DIENSTLEISTER · FACEBOOK &amp; INSTAGRAM</div>
               <h1>
-                <span>Meta Ads, die</span>
-                <span className="service-hero-accent">Anfragen bringen.</span>
-                <span>Nicht nur Reichweite.</span>
+                <span>Anzeigen, die</span>
+                <span className="service-hero-accent">Kunden bringen.</span>
+                <span>Oder Bewerber.</span>
               </h1>
               <p>
-                Facebook und Instagram erreichen Menschen, bevor sie bei Google
-                suchen. Wir bauen Kampagnen für Kunden- und Mitarbeitergewinnung
-                mit sauberem Tracking, einer Zielseite, die das Versprechen der
-                Anzeige einlöst, und laufender Betreuung statt einmaligem Setup.
+                Deine nächsten Kunden und Mitarbeiter scrollen abends durch
+                Instagram. Wir schalten die Anzeigen, die sie dort erreichen,
+                mit Zielseite und Tracking, damit du siehst, was jeder Euro
+                bringt.
               </p>
               <div className="premium-actions">
                 <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">

@@ -158,17 +158,16 @@ export default function SeoPage() {
           <header className="service-premium-hero">
             <div className="service-premium-glow" aria-hidden="true" />
             <div className="service-premium-copy">
-              <div className="premium-kicker">SUCHMASCHINENOPTIMIERUNG · LOKAL UND DEUTSCHLANDWEIT</div>
+              <div className="premium-kicker">SEO FÜR BETRIEBE · LOKAL UND DEUTSCHLANDWEIT</div>
               <h1>
                 <span>Gefunden werden,</span>
                 <span className="service-hero-accent">wenn es zählt.</span>
                 <span>Ohne Klickpreis.</span>
               </h1>
               <p>
-                Sichtbarkeit bei Google, die nicht vom Werbebudget abhängt:
-                technisches Fundament, lokale Optimierung und Inhalte, die
-                Google versteht. Ehrlich eingeordnet, ohne Platz-1-Versprechen,
-                mit einem Relaunch, der bestehende Rankings nicht kostet.
+                Sichtbar bei Google, auch wenn kein Werbebudget läuft: sauberes
+                Fundament, lokale Optimierung, Inhalte, die Google versteht.
+                Ehrlich eingeordnet, ohne Platz-1-Versprechen.
               </p>
               <div className="premium-actions">
                 <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">

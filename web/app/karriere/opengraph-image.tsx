@@ -1,6 +1,6 @@
 import { ogBild, ogContentType, ogGroesse } from "@/lib/og-bild";
 
-export const alt = "Karriere: Jobs bei Pixel56 in Bendorf und remote | Pixel56";
+export const alt = "Karriere: Jobs bei Pixel56 in Koblenz und remote | Pixel56";
 export const size = ogGroesse;
 export const contentType = ogContentType;
 

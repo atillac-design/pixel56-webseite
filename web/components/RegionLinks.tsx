@@ -23,7 +23,7 @@ export default function RegionLinks({ leistung, kurz }: { leistung: string; kurz
           </h2>
         </div>
         <p className="band-note">
-          Im Einzugsgebiet von Bendorf bei Koblenz kommen wir für Kennenlernen,
+          Im Einzugsgebiet von Koblenz kommen wir für Kennenlernen,
           Fotos und Drehs zu dir. Alles andere läuft deutschlandweit per
           Video-Call.
         </p>

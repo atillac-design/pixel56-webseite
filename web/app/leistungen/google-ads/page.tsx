@@ -179,17 +179,17 @@ export default function GoogleAdsPage() {
           <header className="service-premium-hero">
             <div className="service-premium-glow" aria-hidden="true" />
             <div className="service-premium-copy">
-              <div className="premium-kicker">GOOGLE ADS AGENTUR · SUCHKAMPAGNEN · DEUTSCHLANDWEIT</div>
+              <div className="premium-kicker">GOOGLE ADS FÜR HANDWERK, BAU &amp; DIENSTLEISTER · DEUTSCHLANDWEIT</div>
               <h1>
                 <span>Sichtbar, wenn</span>
                 <span className="service-hero-accent">gesucht wird.</span>
                 <span>Nicht erst danach.</span>
               </h1>
               <p>
-                Jemand tippt gerade deine Leistung in Google ein und will
-                handeln. Wir sorgen dafür, dass du dort stehst: mit Keywords, hinter
-                denen ein Auftrag steckt, Tracking vor dem ersten Euro Budget und
-                einer Zielseite, die das Versprechen der Anzeige einlöst.
+                Jemand tippt gerade „Dachdecker Koblenz“ ein und will einen
+                Termin. Wir sorgen dafür, dass du dort stehst: Keywords mit
+                Auftrag dahinter, Tracking vor dem ersten Euro, eine Zielseite,
+                die hält, was die Anzeige verspricht.
               </p>
               <div className="premium-actions">
                 <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">

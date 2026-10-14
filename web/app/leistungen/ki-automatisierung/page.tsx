@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "KI-Automatisierung für Unternehmen | Pixel56",
     description:
-      "Konkrete KI-Workflows statt Tool-Hype, passend zu deinen Abläufen, deinem Team und deinen Daten. Aus Bendorf bei Koblenz.",
+      "KI-Prozesse für Betriebe ohne IT-Abteilung: Anfragen sortieren, Angebote vorbereiten, Berichte schreiben. Mit eigenen Projekten belegt. Pixel56 aus Koblenz.",
     url: serviceRoutes["ki-automatisierung"],
   },
 };
@@ -253,17 +253,16 @@ export default function KiAutomatisierungPage() {
           <header className="service-premium-hero">
             <div className="service-premium-glow" aria-hidden="true" />
             <div className="service-premium-copy">
-              <div className="premium-kicker">KI-AUTOMATISIERUNG · FÜR KLEINE UND MITTLERE UNTERNEHMEN</div>
+              <div className="premium-kicker">KI-AUTOMATISIERUNG FÜR BETRIEBE · OHNE EIGENE IT-ABTEILUNG</div>
               <h1>
                 <span>Weniger Routine.</span>
                 <span className="service-hero-accent">Mehr Zeit.</span>
                 <span>KI mit Aufgabe.</span>
               </h1>
               <p>
-                Wir suchen die Stellen, an denen in deinem Betrieb jeden Tag
-                dieselbe Arbeit anfällt, und bauen dafür KI-Prozesse, die
-                zuverlässig laufen: Anfragen vorsortieren, Angebote vorbereiten,
-                Wissen durchsuchbar machen. Die Entscheidung bleibt beim Menschen.
+                Anfragen sortieren, Angebote vorbereiten, Berichte schreiben:
+                Arbeit, die bei dir jeden Tag gleich anfällt. Wir bauen den
+                KI-Prozess, der sie übernimmt. Die Entscheidung bleibt bei dir.
               </p>
               <div className="premium-actions">
                 <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">

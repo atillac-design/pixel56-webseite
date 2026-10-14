@@ -124,7 +124,7 @@ export default async function RessourcePage({ params }: Props) {
           </div>
           <div>
             <span>Von</span>
-            <strong>Pixel56, Bendorf bei Koblenz</strong>
+            <strong>Pixel56, Koblenz</strong>
           </div>
         </section>
 
@@ -248,7 +248,7 @@ export default async function RessourcePage({ params }: Props) {
             <a className="btn-primary" href="#download">Kostenlos herunterladen <DownloadIcon /></a>
           </section>
           <footer className="footer-slim">
-            <div>© {new Date().getFullYear()} Pixel56 · Bendorf bei Koblenz</div>
+            <div>© {new Date().getFullYear()} Pixel56 · Koblenz</div>
             <div>
               <Link href="/">Startseite</Link>
               <Link href="/impressum">Impressum</Link>

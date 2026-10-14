@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: "%s | Pixel56",
   },
   description:
-    "Pixel56 verbindet Webdesign, Meta Ads, Social Content, Reels und KI-Prozesse für Unternehmen — aus Bendorf bei Koblenz, deutschlandweit im Einsatz.",
+    "Pixel56 verbindet Webdesign, Meta Ads, Social Content, Reels und KI-Prozesse für Handwerk, Bau und Dienstleister. Aus Koblenz, deutschlandweit im Einsatz.",
   openGraph: {
     type: "website",
     locale: "de_DE",

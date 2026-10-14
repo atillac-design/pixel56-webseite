@@ -8,7 +8,7 @@ export default function Image() {
   return ogBild({
     kicker: "Team",
     titel: "Atilla Ciftcioglu: Gründer von Pixel56",
-    text: "Atilla Ciftcioglu, Gründer von Pixel56 in Bendorf bei Koblenz, verantwortet Strategie, Webdesign, Kampagnen und KI-Prozesse selbst.",
+    text: "Atilla Ciftcioglu, Gründer von Pixel56 in Koblenz, verantwortet Strategie, Webdesign, Kampagnen und KI-Prozesse selbst.",
     motiv: "wachstum",
   });
 }

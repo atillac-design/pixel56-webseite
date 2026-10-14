@@ -31,7 +31,7 @@ import maTransporteImage from "@/public/bilder/projekt-ma-transporte.webp";
 export const metadata: Metadata = {
   title: "Reels & Social Content: Schnitt oder Dreh vor Ort",
   description:
-    "Reels und Social-Media-Content für Unternehmen: Schnitt aus deinem Rohmaterial oder Dreh im Betrieb, mit festem Rhythmus. Pixel56 aus Bendorf bei Koblenz.",
+    "Reels und Social-Media-Content für Betriebe: Schnitt aus deinem Rohmaterial oder Dreh vor Ort, mit festem Rhythmus. Pixel56 aus Koblenz.",
   alternates: { canonical: serviceRoutes["content-produktion"] },
   openGraph: {
     title: "Reels & Social-Media-Content erstellen lassen | Pixel56",
@@ -201,17 +201,17 @@ export default function ContentPage() {
           <header className="service-premium-hero">
             <div className="service-premium-glow" aria-hidden="true" />
             <div className="service-premium-copy">
-              <div className="premium-kicker">REELS · SOCIAL CONTENT · VIDEOPRODUKTION · REGION KOBLENZ</div>
+              <div className="premium-kicker">REELS &amp; SOCIAL CONTENT · AUS DEINEM BETRIEB · REGION KOBLENZ</div>
               <h1>
-                <span>Dein Material</span>
-                <span className="service-hero-accent">oder unser Dreh.</span>
-                <span>Content, der echt ist.</span>
+                <span>Zeig, wie ihr arbeitet.</span>
+                <span className="service-hero-accent">Wir filmen und schneiden.</span>
+                <span>Du machst deinen Job.</span>
               </h1>
               <p>
-                Du schickst uns deine Aufnahmen, wir machen daraus Reels, die
-                im Feed stoppen. Oder wir kommen zu dir in den Betrieb,
-                produzieren vor Ort und liefern Videos, Fotos und Beiträge in
-                einem Rhythmus, der ohne dein tägliches Zutun läuft.
+                Baustelle, Werkstatt, Laden: Das echte Material überzeugt mehr
+                als jedes Stockfoto. Wir drehen bei dir vor Ort oder schneiden
+                deine Handyvideos, in einem festen Rhythmus, der ohne dich
+                läuft.
               </p>
               <div className="premium-actions">
                 <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">
