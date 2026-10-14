@@ -15,7 +15,7 @@ import {
 import { services, site } from "@/lib/site";
 import { getFallstudie } from "@/lib/projekte";
 import GoogleBewertungen from "@/components/GoogleBewertungen";
-import { holeGoogleStand } from "@/lib/google-bewertungen";
+import { googleAuswahl, holeGoogleStand } from "@/lib/google-bewertungen";
 import { projectPath, routes } from "@/lib/routes";
 import atillaImage from "@/public/bilder/team-atilla.webp";
 import maTransporteImage from "@/public/bilder/projekt-ma-transporte.webp";
@@ -560,7 +560,7 @@ export default async function UeberUnsPage() {
               Original. Keine erfundenen Bewertungen, keine geschönten Zahlen.
             </p>
           </div>
-          <GoogleBewertungen stand={googleStand} anzahl={9} />
+          <GoogleBewertungen stand={googleStand} bewertungen={googleAuswahl} />
         </section>
 
         <section className="band theme-light" id="faq">

@@ -17,7 +17,7 @@ import { artikel } from "@/lib/blog";
 import { getFallstudie } from "@/lib/projekte";
 import { verifiedReviews } from "@/lib/verified-reviews";
 import GoogleBewertungen from "@/components/GoogleBewertungen";
-import { holeGoogleStand } from "@/lib/google-bewertungen";
+import { googleAuswahl, holeGoogleStand } from "@/lib/google-bewertungen";
 import { projectPath, resourceRoutes, routes, serviceRoutes } from "@/lib/routes";
 import starkImage from "@/public/bilder/projekt-stark-ins-neue.webp";
 import starkDetailImage from "@/public/bilder/projekt-stark-ins-neue-2.webp";
@@ -783,7 +783,7 @@ export default async function HomePage() {
                 Original. Keine erfundenen Bewertungen, keine geschönten Zahlen.
               </p>
             </div>
-            <GoogleBewertungen stand={googleStand} anzahl={6} />
+            <GoogleBewertungen stand={googleStand} bewertungen={googleAuswahl} />
           </section>
 
           <section className="band theme-light" id="ressourcen">

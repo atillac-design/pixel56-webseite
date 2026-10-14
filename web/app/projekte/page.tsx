@@ -18,7 +18,7 @@ import { site } from "@/lib/site";
 import { projectPath, routes } from "@/lib/routes";
 import { verifiedProjectVoices } from "@/lib/verified-reviews";
 import GoogleBewertungen from "@/components/GoogleBewertungen";
-import { holeGoogleStand } from "@/lib/google-bewertungen";
+import { googleAuswahl, holeGoogleStand } from "@/lib/google-bewertungen";
 import starkImage from "@/public/bilder/projekt-stark-ins-neue.webp";
 
 export const metadata: Metadata = {
@@ -419,7 +419,7 @@ export default async function ProjektePage() {
               Echte Google-Bewertungen, wörtlich übernommen, mit Link zum Original.
             </p>
           </div>
-          <GoogleBewertungen stand={googleStand} anzahl={6} />
+          <GoogleBewertungen stand={googleStand} bewertungen={googleAuswahl} />
         </section>
 
         <section className="band theme-light" id="faq">

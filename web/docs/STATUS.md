@@ -521,7 +521,14 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   `lib/verified-reviews.ts`: Margarete Wolf und Nalan Colak auf den
   Google-Wortlaut umgestellt, CurlyAnn und Lernforum als Projektstimmen ergänzt.
   Unsichere Zuordnungen bewusst offen gelassen (Bülent Kaya, Gizem Cömertler,
-  Selcuk Yöndemli, Jasmin Schmolke), beim Inhaber nachgefragt. Kein
+  Selcuk Yöndemli, Jasmin Schmolke). Korrektur nach Rückmeldung des Inhabers:
+  nicht alle Rezensionen zeigen, nur die fünf mit Bild und Projekt auf der
+  Seite (`zeigen: true`, Auswahl `googleAuswahl`: Margarete Wolf, Van den Berg,
+  Angela Wurzel, Nalan Colak, Anna Milossi mit CurlyAnn-Website-Bild statt
+  Porträt); der Rest läuft über den Knopf „Alle Bewertungen auf Google lesen“.
+  Stand laut Inhaber 5,0 bei 27 Bewertungen (`googleAnzahlLautProfil`), die
+  Liste im Repo hat nur 23, weil nicht alle Screenshots geschickt wurden.
+  Komponente ohne Client-State, kein Ausklappen mehr. Kein
   AggregateRating-Schema, weil Google selbst eingetragene Bewertungen auf
   Unternehmensseiten nicht als Rich Result anzeigt.
 

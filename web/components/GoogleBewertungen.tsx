@@ -1,11 +1,8 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
-import { googleBewertungen, type GoogleBewertung, type GoogleStand } from "@/lib/google-bewertungen";
+import { type GoogleBewertung, type GoogleStand } from "@/lib/google-bewertungen";
 import { projectPath } from "@/lib/routes";
 
-/** Google-Bewertungen mit Sternen, Personen im Vordergrund, auf Wunsch ausklappbar. */
+/** Google-Bewertungen mit Sternen: Stand oben, ausgewählte Stimmen mit Bild, alle anderen über den Google-Link. */
 
 const FARBEN = ["#6b5bd6", "#3f80fd", "#f08a2e", "#2f9e8f", "#d82f49", "#8b5cf6", "#e06a8a", "#c48a1a"];
 function farbe(name: string): string {
@@ -42,10 +39,14 @@ function GoogleG() {
 function Karte({ b, profilUrl }: { b: GoogleBewertung; profilUrl: string }) {
   return (
     <article className="gb-karte">
+      {b.projektBild ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img className="gb-projektbild" src={b.projektBild} alt="" loading="lazy" decoding="async" />
+      ) : null}
       <header className="gb-kopf">
         {b.bild ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img className="gb-avatar" src={b.bild} alt="" loading="lazy" decoding="async" />
+          <img className={`gb-avatar${b.bildArt === "logo" ? " logo" : ""}`} src={b.bild} alt="" loading="lazy" decoding="async" />
         ) : (
           <span className="gb-avatar gb-initialen" style={{ background: farbe(b.name) }} aria-hidden="true">{initialen(b.name)}</span>
         )}
@@ -67,10 +68,7 @@ function Karte({ b, profilUrl }: { b: GoogleBewertung; profilUrl: string }) {
   );
 }
 
-export default function GoogleBewertungen({ stand, anzahl = 6 }: { stand: GoogleStand; anzahl?: number }) {
-  const [alle, setAlle] = useState(false);
-  const liste = alle ? googleBewertungen : googleBewertungen.slice(0, anzahl);
-  const rest = googleBewertungen.length - anzahl;
+export default function GoogleBewertungen({ stand, bewertungen }: { stand: GoogleStand; bewertungen: GoogleBewertung[] }) {
   return (
     <div className="gb">
       <div className="gb-stand">
@@ -80,21 +78,18 @@ export default function GoogleBewertungen({ stand, anzahl = 6 }: { stand: Google
           <Sterne n={Math.round(stand.bewertung)} gross />
           <span>
             {stand.anzahl} {stand.anzahl === 1 ? "Bewertung" : "Bewertungen"} bei Google
-            {stand.quelle === "liste" ? ", wörtlich übernommen" : ", Stand live abgerufen"}
           </span>
         </div>
         <a className="btn-text" href={stand.profilUrl} target="_blank" rel="noopener noreferrer">Alle auf Google ansehen ↗</a>
       </div>
       <div className="gb-grid">
-        {liste.map((b) => <Karte key={`${b.name}-${b.jahr}`} b={b} profilUrl={stand.profilUrl} />)}
+        {bewertungen.map((b) => <Karte key={`${b.name}-${b.jahr}`} b={b} profilUrl={stand.profilUrl} />)}
       </div>
-      {rest > 0 && (
-        <div className="gb-mehr">
-          <button type="button" className="gb-knopf" onClick={() => setAlle((v) => !v)} aria-expanded={alle}>
-            {alle ? "Weniger anzeigen" : `Alle ${googleBewertungen.length} Bewertungen anzeigen`}
-          </button>
-        </div>
-      )}
+      <div className="gb-mehr">
+        <a className="gb-knopf" href={stand.profilUrl} target="_blank" rel="noopener noreferrer">
+          Alle {stand.anzahl} Bewertungen auf Google lesen ↗
+        </a>
+      </div>
     </div>
   );
 }
