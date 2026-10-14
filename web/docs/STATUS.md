@@ -15,6 +15,13 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 14.10.2026: **Kurzbriefing statt Chatverlauf.** Inhaber möchte, dass eine
+  neue Sitzung nicht den ganzen Verlauf lesen muss. Neue `CLAUDE.md` in der
+  Repo-Wurzel (wird von Claude Code automatisch geladen: Regeln, Zweig,
+  Prüfschritte, Dateiübersicht) und `docs/KURZBRIEFING.md` (unter 150
+  Zeilen: Entscheidungen des Inhabers, offene Punkte nach Priorität,
+  letzter Prüfstand). Regel: Kurzbriefing nach jedem Arbeitsschritt
+  aktualisieren; STATUS.md bleibt das ausführliche Protokoll.
 - 13.10.2026: **Abschlussrunde ohne Eigentümer-Input.** Leistungsseiten
   verlinken auf die Standortseiten derselben Leistung im Einzugsgebiet
   (`components/RegionLinks.tsx`), Breadcrumb-Schema auf Leistungs-,
