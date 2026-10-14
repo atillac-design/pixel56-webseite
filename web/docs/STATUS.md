@@ -528,7 +528,14 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Porträt); der Rest läuft über den Knopf „Alle Bewertungen auf Google lesen“.
   Stand laut Inhaber 5,0 bei 27 Bewertungen (`googleAnzahlLautProfil`), die
   Liste im Repo hat nur 23, weil nicht alle Screenshots geschickt wurden.
-  Komponente ohne Client-State, kein Ausklappen mehr. Kein
+  Komponente ohne Client-State, kein Ausklappen mehr. Nachtrag: Inhaber hat die
+  vollständige Rezension von Anna Milossi und ihr Foto von curlyann-soulcare.de
+  geliefert; voller Wortlaut als `textVoll` hinterlegt, auf der Karte stehen
+  die ersten beiden Absätze mit „Weiterlesen“, Porträt als
+  `public/bilder/person-anna-milossi.webp` (Ausschnitt aus dem Website-Foto),
+  Projektstimme auf der CurlyAnn-Seite mit dem Satz „Wer eine professionelle,
+  automatisierte und rechtssichere Website sucht, ist hier genau richtig.“
+  Alle Karten haben jetzt ein Website-Bild, damit die Reihen gleich hoch sind. Kein
   AggregateRating-Schema, weil Google selbst eingetragene Bewertungen auf
   Unternehmensseiten nicht als Rich Result anzeigt.
 

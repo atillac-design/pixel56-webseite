@@ -17,6 +17,6 @@ export const verifiedProjectVoices: Record<string, VerifiedReview> = {
   "van-den-berg": verifiedReviews[2],
   "gm-dachdecker": { text: "Top Leistung!!", who: "Granit Osmani · GM-Dachdecker" },
   "cass-schulungen": { text: "Top Unterstützung im Web und Social Media!", who: "Mithat Akgün · CASS Schulungen", img: "/bilder/person-mithat-akguen.webp" },
-  curlyann: { text: "Absolute Empfehlung für kreative Webprojekte!", who: "Anna Milossi · CurlyAnn Soulcare & Art" },
+  curlyann: { text: "Wer eine professionelle, automatisierte und rechtssichere Website sucht, ist hier genau richtig.", who: "Anna Milossi · CurlyAnn Soulcare & Art", img: "/bilder/person-anna-milossi.webp" },
   "lernforum-obertshausen": { text: "Das Team ist kreativ und kompetent, sehr hilfreich und super freundlich und schnell. Preis-Leistungsverhältnis ist top.", who: "Angela Wurzel · Lernforum Obertshausen", img: "/bilder/person-angela-wurzel.webp" },
 };

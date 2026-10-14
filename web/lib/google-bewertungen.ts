@@ -12,6 +12,8 @@ export type GoogleBewertung = {
   jahr: string;
   text: string;
   gekuerzt?: boolean;
+  /** Vollständiger Wortlaut, wenn er vorliegt; auf der Karte steht der Anfang, der Rest über „Weiterlesen“. */
+  textVoll?: string;
   /** Quelle, falls nicht Google selbst (Google zeigt auch Rezensionen anderer Plattformen). */
   quelle?: string;
   /** Personenbild aus dem Repo, sonst Initialen. */
@@ -33,7 +35,19 @@ export const googleAnzahlLautProfil = 27;
 export const googleProfilUrl = "https://www.google.com/maps/search/?api=1&query=pixel56%20Bendorf";
 
 export const googleBewertungen: GoogleBewertung[] = [
-  { name: "Anna Milossi", sterne: 5, jahr: "2026", text: "Absolute Empfehlung für kreative Webprojekte!", gekuerzt: true, projekt: "curlyann", projektBild: "/bilder/projekt-curlyann-1.webp", zeigen: true },
+  {
+    name: "Anna Milossi",
+    sterne: 5,
+    jahr: "2026",
+    text: "Absolute Empfehlung für kreative Webprojekte! Wir haben unsere neue Website für unser Coaching-Business von Atilla (Pixel 56) umsetzen lassen und sind schlichtweg begeistert. Die Seite umfasst drei Unterkategorien sowie ein komplexes Buchungssystem – und alles funktioniert reibungslos.",
+    gekuerzt: true,
+    textVoll:
+      "Absolute Empfehlung für kreative Webprojekte!\n\nWir haben unsere neue Website für unser Coaching-Business von Atilla (Pixel 56) umsetzen lassen und sind schlichtweg begeistert. Die Seite umfasst drei Unterkategorien sowie ein komplexes Buchungssystem – und alles funktioniert reibungslos.\n\nWas uns besonders beeindruckt hat:\n\nRundum-sorglos-Paket: Neben dem Design hat Atilla auch wichtige rechtliche Aspekte wie die Widerrufsbelehrung und den Datenschutz perfekt integriert. Man fühlt sich rechtlich sicher aufgestellt.\n\nVollständige Automatisierung: Dank des Buchungssystems mit automatischen E-Mail-Antworten an unsere Workshop-Teilnehmer haben wir kaum noch Papierkram. Wir müssen uns um nichts kümmern, alles läuft im Hintergrund von allein!\n\nPerfekte Umsetzung: Die Seite sieht exakt so aus, wie ich sie mir im Kopf vorgestellt habe. Er hat ein unglaubliches Gespür für Design.\n\nTop Kommunikation: Die Abstimmung via Zoom war unkompliziert und effizient. Er hat jeden Änderungswunsch sofort verstanden und direkt umgesetzt.\n\nHerausragender Service: Auch nach Abschluss des Projekts ist Atilla immer erreichbar. Egal ob wir Fragen zu den Kursen haben oder mal ein Bild anpassen wollen – sein Support ist weit über dem Durchschnitt.\n\nAtilla ist nicht nur ein Profi auf seinem Gebiet, sondern auch ein extrem sympathischer Mensch. Man merkt, dass man bei ihm in den besten Händen ist. Wer eine professionelle, automatisierte und rechtssichere Website sucht, ist hier genau richtig.\n\nVielen Dank für die tolle Zusammenarbeit!",
+    bild: "/bilder/person-anna-milossi.webp",
+    projekt: "curlyann",
+    projektBild: "/bilder/projekt-curlyann-1.webp",
+    zeigen: true,
+  },
   { name: "Jasmin Schmolke", sterne: 5, jahr: "2026", text: "Ich habe mit Pixel56 im Bereich Marketing-Beratung und Meta-Ads für meine Immobilien-Webseite/ mein Coaching zusammengearbeitet und bin wirklich sehr zufrieden.", gekuerzt: true },
   { name: "Bülent Kaya", sterne: 5, jahr: "2026", text: "Wir haben unsere Offline-Workshop-Seite von Pixel56 umsetzen lassen und sind wirklich froh über diese Entscheidung. Das Team hat verstanden, worauf es uns", gekuerzt: true },
   { name: "Valentin V", sterne: 5, jahr: "2025", text: "Ich kann Pixel56 echt nur empfehlen! Die Zusammenarbeit war super – professionell, aber gleichzeitig auch total entspannt und freundlich. Das Team hat meine", gekuerzt: true },
