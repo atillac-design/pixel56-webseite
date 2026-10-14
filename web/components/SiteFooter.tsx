@@ -12,8 +12,8 @@ export default function SiteFooter() {
             <img src="/bilder/logo-pixel56-180.webp" alt="Pixel56" width={180} height={77} loading="lazy" decoding="async" />
           </Link>
           <p>
-            Pixel56 aus Bendorf bei Koblenz. Digitale Auftritte für KMUs,
-            Coaches, Shops und lokale Betriebe.
+            Pixel56 aus Koblenz. Websites, Meta Ads, Reels und KI-Prozesse
+            für Handwerk, Bau und Dienstleister. Deutschlandweit.
           </p>
         </div>
         <div className="footer-col">

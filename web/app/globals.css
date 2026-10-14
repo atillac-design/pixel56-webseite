@@ -3331,3 +3331,16 @@ body { overflow-x: clip; }
 .work-gallery-anzeigen figcaption { display: none; } /* Die Motive tragen Logo und Botschaft selbst; keine Kachel über dem Button. */
 @media (max-width: 1080px) { .work-gallery-anzeigen { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .work-gallery-anzeigen { grid-template-columns: minmax(0, 360px); justify-content: center; } }
+
+/* Startseite: "Passt das?" – zwei Karten nebeneinander */
+.fit-grid.audience-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.fit-grid .audience-card { min-height: 0; }
+.fit-grid .audience-card .premium-list { margin-top: 18px; }
+.fit-grid .fit-nein > span { color: var(--ink-faint, #716b74); }
+.fit-grid .fit-nein .premium-list li::before { background: var(--ink-faint, #716b74); }
+@media (max-width: 760px) { .fit-grid.audience-grid { grid-template-columns: 1fr; } }
+
+/* Ablauf mit drei Schritten statt vier */
+.premium-process-drei { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1100px) { .premium-process-drei { grid-template-columns: repeat(2, minmax(0, 1fr)); } .premium-process-drei article:last-child { grid-column: 1 / -1; } }
+@media (max-width: 640px) { .premium-process-drei { grid-template-columns: 1fr; } .premium-process-drei article:last-child { grid-column: auto; } }
