@@ -4,6 +4,7 @@ import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import DetailReihe, { type DetailEintrag } from "@/components/DetailReihe";
+import ZentraleSzene from "@/components/ZentraleSzene";
 import AblaufSimulator from "@/components/AblaufSimulator";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
 import PlannedMedia from "@/components/PlannedMedia";
@@ -208,17 +209,16 @@ const eigeneProjekte: DetailEintrag[] = [
   },
   {
     kicker: "Eigenes Werkzeug · Live-Dashboard",
-    titel: "Zentrale: ein Live-Dashboard für den eigenen Betrieb",
-    text: "Alle Projekte, Ziele und offenen Aufgaben auf einer Karte: Jedes Vorhaben ist ein Gebäude, der Fortschritt steht dran, der Stand wird live gespeichert. Ein Klick auf „Was mache ich heute?“ und die KI schlägt die Prioritäten für den Tag vor.",
+    titel: "Zentrale: ein Live-Dashboard für deinen Betrieb",
+    text: "Alle Bereiche deines Betriebs auf einer Karte: Marketing, Website, Funnel, Mitarbeitersuche, Automatisierung, Content. Jeder Bereich ist ein Gebäude, der Fortschritt steht dran, der Stand wird live gespeichert. Ein Klick auf „Was steht heute an?“ und die KI schlägt die nächsten Schritte vor.",
     punkte: [
-      "Hauptziel und Nebenprojekte mit Fortschritt in Prozent und offenen Punkten je Vorhaben",
+      "Hauptziel und alle Bereiche mit Fortschritt und offenen Punkten auf einen Blick",
       "Stand wird live gespeichert, auf dem Handy genauso wie am Rechner",
-      "Tagesplanung per KI: „Was mache ich heute?“ liefert die nächsten Schritte",
-      "Spielerische Motivation mit Level, Erfahrungspunkten und Missionen",
+      "Tagesplanung per KI: „Was steht heute an?“ liefert die nächsten Schritte",
+      "Spielerische Motivation mit Level, Erfahrungspunkten und Missionen, wenn du magst",
     ],
-    bild: "/bilder/ki-projekt-zentrale.webp",
-    bildAlt: "Zentrale: isometrische Projektkarte mit Fortschritt je Vorhaben, Hauptquest Pixel56, KMU-Webseiten und Teykto",
-    hinweis: "Eigenes Werkzeug, als interaktive KI-Anwendung direkt im Chat gebaut, ohne eigenen Server. Für andere Betriebe als Dashboard mit ihren Zahlen umsetzbar.",
+    visual: <ZentraleSzene />,
+    hinweis: "Beispielansicht aus Kundensicht, Werte sind Platzhalter. Das Original läuft bei Pixel56 intern als KI-Anwendung ohne eigenen Server und lässt sich für deinen Betrieb mit deinen Bereichen aufsetzen.",
   },
   {
     kicker: "Eigene Website · Technik & Inhalte",

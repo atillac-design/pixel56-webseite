@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { BrowserMock } from "@/components/ui";
 import { fallstudien, type Fallstudie } from "@/lib/projekte";
@@ -11,6 +12,8 @@ export type DetailEintrag = {
   punkte: string[];
   bild?: string;
   bildAlt?: string;
+  /** Eigene Grafik statt Bild, z. B. eine SVG-Szene. */
+  visual?: ReactNode;
   /** Farb-Variante für das Browser-Mockup, wenn kein Bild vorliegt. */
   variant?: string;
   href?: string;
@@ -68,7 +71,7 @@ export default function DetailReihe({ eintraege, titel = "Weitere Projekte im De
         return (
           <article className="detail-eintrag" key={e.titel}>
             <div className="detail-bild">
-              {e.bild ? (
+              {e.visual ? e.visual : e.bild ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={e.bild} alt={e.bildAlt ?? e.titel} loading="lazy" decoding="async" />
               ) : (

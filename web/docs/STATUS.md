@@ -471,6 +471,18 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   Browser-Mockup statt Bild, schärferer Screenshot erbeten. Zahlen von der
   Adloc-Seite (Kontaktzahl, Prozentwerte) bewusst nicht übernommen. Als
   fünftes eigenes Projekt auf der KI-Seite, vor der Zentrale.
+- 14.10.2026: **Zentrale als Beispiel aus Kundensicht.** Inhaber: interne Zahlen
+  dürfen nicht sichtbar sein, stattdessen ein Beispiel, das zeigt, was für
+  einen Betrieb möglich ist. Screenshot `ki-projekt-zentrale.webp` aus dem Repo
+  entfernt. Neue Komponente `components/ZentraleSzene.tsx`: isometrische
+  SVG-Karte mit „Dein Unternehmen“ in der Mitte und sechs Bereichen als
+  Gebäude (Marketing & Anzeigen, Website & Google, Funnel & Anfragen,
+  Mitarbeitersuche, Automatisierung (KI), Content & Social), je mit
+  Beschriftungskarte, Status und Fortschrittsbalken, Hauptziel-Karte,
+  Live-Pille und „Was steht heute an?“; Fußzeile „Beispielansicht · Werte
+  sind Platzhalter“, animierter Fluss nur ohne reduced-motion. `DetailEintrag`
+  kann jetzt `visual` (ReactNode) statt Bild zeigen. Text des Eintrags auf die
+  Kundensicht umgestellt, Hinweis nennt das Original als internes Werkzeug.
 
 ## Verifiziert am 13.10.2026
 
