@@ -15,6 +15,16 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 14.10.2026: **Positionierung entschieden.** Inhaber wollte eine
+  unternehmerische Empfehlung und folgt ihr: keine Spezialisierung auf eine
+  Branche (Portfolio und Umsatz sind breit: Gastronomie, Handwerk, Coaching,
+  Bildung, Praxen), sondern Schärfung nach Kundentyp und Ergebnis. Vier
+  Kernleistungen vorn, vier ergänzende dahinter; das war in Hero, Tafel,
+  „Vier Disziplinen“ und mobilem Menü bereits so umgesetzt. Änderung auf der
+  Startseite: Hero-Absatz beginnt mit „Für inhabergeführte Betriebe, die
+  mehr Anfragen oder Bewerber brauchen“, Kicker „Koblenz · deutschlandweit“
+  und Proof-Zeile „Koblenz und Region“ statt „Bendorf bei Koblenz“
+  (Wunsch des Inhabers: Standort nicht hervorheben, „aus Koblenz“ ist okay).
 - 14.10.2026: **Kurzbriefing statt Chatverlauf.** Inhaber möchte, dass eine
   neue Sitzung nicht den ganzen Verlauf lesen muss. Neue `CLAUDE.md` in der
   Repo-Wurzel (wird von Claude Code automatisch geladen: Regeln, Zweig,

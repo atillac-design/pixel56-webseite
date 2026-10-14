@@ -9,8 +9,7 @@ Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
 Der Inhaber (Atilla) schaut die Vorschau auf Netlify an und gibt Rückmeldung
 Schritt für Schritt, oft als Sprachnachricht oder Screenshot. Jede Rückmeldung
 wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
-(Zweig `codex/pixel56-neue-seite`). Letzter Commit: `875549f`
-(Google-Bewertungen: Anna Milossi mit vollem Wortlaut und Porträt).
+(Zweig `codex/pixel56-neue-seite`). Letzter Commit: siehe `git log -1`.
 
 ## Entscheidungen des Inhabers (gelten weiter)
 
@@ -22,8 +21,13 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 - **KI-Automatisierung bleibt eine Säule.** Eigene KI-Projekte vorzeigen:
   Teykto (Bestellplattform, teykto.de), KMU-Webseiten (Formular, Make,
   MailerLite), Adloc (adloc.io, B2B-Kontaktdaten), Zentrale (Live-Dashboard).
-  Positionierung „vier Kernleistungen vorn, Rest nachgeordnet“ ist
-  vorgeschlagen, aber **noch nicht entschieden**.
+  **Positionierung entschieden (14.10.):** Inhaber folgt der Empfehlung.
+  Keine Nischen-Spezialisierung, sondern Schärfung nach Kundentyp:
+  inhabergeführte Betriebe, die Anfragen oder Bewerber brauchen. Vier
+  Kernleistungen vorn (Webdesign, Meta Ads, Content & Reels, KI), die vier
+  anderen als Ergänzung („Je nach Ziel ergänzen wir“). Struktur war schon
+  so gebaut; Hero-Absatz nennt jetzt die Zielgruppe, Kicker und Proof-Zeile
+  sagen „Koblenz“ statt „Bendorf bei Koblenz“.
 - **Zentrale:** interne Zahlen nie zeigen. Auf der Seite läuft ein
   erfundenes Beispiel (Dachdeckerei Muster, „Dein Unternehmen“ in der
   Mitte), klickbar: Bereiche, Aufgaben abhaken, Verantwortliche,
@@ -53,7 +57,9 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 1. **Vom Inhaber erwartet:** schärfere Desktop-Screenshots von Teykto und
    Adloc (ersetzen `ki-projekt-teykto.webp` und den Adloc-BrowserMock in
    `app/leistungen/ki-automatisierung/page.tsx`, `eigeneProjekte`);
-   Ja/Nein zur Positionierung; weitere Rückmeldung aus dem Durchklicken.
+   weitere Rückmeldung aus dem Durchklicken. Offene Frage an ihn: soll
+   „Bendorf“ auch im Fuß und im Abschnitt „Aus Bendorf bei Koblenz“ der
+   Startseite durch „Koblenz“ ersetzt werden (Stadtseite Bendorf bleibt)?
 2. Kontaktformular je Leistung (Wunsch des Inhabers, noch offen).
 3. Vor dem Livegang: AGB-Platzhalter, Impressum, Datenschutz prüfen;
    Env-Variablen in Netlify (MailerLite, Resend, optional Google Places);

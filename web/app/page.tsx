@@ -382,7 +382,7 @@ export default async function HomePage() {
           <header className="premium-hero">
             <div className="premium-hero-glow" aria-hidden="true" />
             <div className="premium-hero-copy">
-              <div className="premium-kicker">DIGITALAGENTUR · BENDORF BEI KOBLENZ · DEUTSCHLANDWEIT</div>
+              <div className="premium-kicker">DIGITALAGENTUR · KOBLENZ · DEUTSCHLANDWEIT</div>
               <h1>
                 <span>Websites, Ads,</span>
                 <span>Content, KI.</span>
@@ -390,10 +390,11 @@ export default async function HomePage() {
                 <span>Aus einer Hand.</span>
               </h1>
               <p>
-                Pixel56 baut Websites mit klarer Nutzerführung, schaltet Meta- und
-                Google-Ads mit sauberem Tracking, produziert Reels direkt in deinem
-                Betrieb und richtet KI-Prozesse ein, die wiederkehrende Arbeit
-                abnehmen. Ein Ansprechpartner, von der ersten Idee bis zur
+                Für inhabergeführte Betriebe, die mehr Anfragen oder Bewerber
+                brauchen: Pixel56 baut Websites mit klarer Nutzerführung, schaltet
+                Meta- und Google-Ads mit sauberem Tracking, produziert Reels direkt
+                in deinem Betrieb und richtet KI-Prozesse ein, die wiederkehrende
+                Arbeit abnehmen. Ein Ansprechpartner, von der ersten Idee bis zur
                 Betreuung nach dem Start.
               </p>
               <div className="premium-actions">
@@ -407,7 +408,7 @@ export default async function HomePage() {
               <div className="premium-proof" aria-label="Pixel56 auf einen Blick">
                 <span>Seit 2018</span>
                 <span>Inhabergeführt</span>
-                <span>Bendorf bei Koblenz</span>
+                <span>Koblenz und Region</span>
                 <span>Ein fester Ansprechpartner</span>
               </div>
             </div>
