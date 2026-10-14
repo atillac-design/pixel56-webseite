@@ -1,9 +1,12 @@
-/** Kurze Originalauszüge aus den auf der bisherigen pixel56.de veröffentlichten Kundenstimmen. */
+/**
+ * Kurze Originalauszüge aus Kundenstimmen: Google-Rezensionen (wörtlich, Stand Oktober 2026)
+ * und Aussagen von der bisherigen pixel56.de. Nichts hier ist erfunden oder umformuliert.
+ */
 export type VerifiedReview = { text: string; who: string; img?: string };
 
 export const verifiedReviews: VerifiedReview[] = [
-  { text: "Es macht Spaß, sich mit ihm auszutauschen", who: "Margarete Wolf · Stark ins Neue", img: "/bilder/person-margarita-wolf.webp" },
-  { text: "Ihre Marketing-Tipps sind Gold wert.", who: "Nalan Colak · Colak GmbH", img: "/bilder/person-nalan-colak.webp" },
+  { text: "Atilla unterstützt uns bei einem klaren, zielgruppenspezifischen Onlineauftritt mit Funnel.", who: "Margarete Wolf · Stark ins Neue", img: "/bilder/person-margarita-wolf.webp" },
+  { text: "Wir haben tolle Erfahrung mit pixel56 gemacht.", who: "Nalan Colak · Colak GmbH", img: "/bilder/person-nalan-colak.webp" },
   { text: "Wir freuen uns auf die weitere Zusammenarbeit", who: "Oktay Cömertler · Van den Berg Gruppe", img: "/bilder/person-oktay-coemertler.webp" },
 ];
 
@@ -14,4 +17,6 @@ export const verifiedProjectVoices: Record<string, VerifiedReview> = {
   "van-den-berg": verifiedReviews[2],
   "gm-dachdecker": { text: "Top Leistung!!", who: "Granit Osmani · GM-Dachdecker" },
   "cass-schulungen": { text: "Top Unterstützung im Web und Social Media!", who: "Mithat Akgün · CASS Schulungen", img: "/bilder/person-mithat-akguen.webp" },
+  curlyann: { text: "Absolute Empfehlung für kreative Webprojekte!", who: "Anna Milossi · CurlyAnn Soulcare & Art" },
+  "lernforum-obertshausen": { text: "Das Team ist kreativ und kompetent, sehr hilfreich und super freundlich und schnell. Preis-Leistungsverhältnis ist top.", who: "Angela Wurzel · Lernforum Obertshausen", img: "/bilder/person-angela-wurzel.webp" },
 };

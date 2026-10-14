@@ -502,6 +502,28 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   `app/api/website-check/route.ts` hatte 9 s je Weiterleitung (bis zu 5),
   jetzt ein Gesamtbudget von 8 s inklusive Weiterleitungen und Body, weil
   Netlify-Funktionen nach 10 s abbrechen.
+- 14.10.2026: **Google-Bewertungen mit Sternen auf der Seite.** Inhaber hat sechs
+  Screenshots des Google-Unternehmensprofils geliefert (23 Rezensionen, alle
+  5 Sterne, eine davon aus ÖffnungszeitenBuch). Wörtlich übernommen in
+  `lib/google-bewertungen.ts`; wo Google den Text in der Übersicht abschneidet,
+  endet der Eintrag dort, ist mit `gekuerzt` markiert und verlinkt „Weiterlesen“
+  auf Google. Zeitangaben aus Googles relativen Angaben in Jahre umgerechnet.
+  Neue Client-Komponente `components/GoogleBewertungen.tsx`: Stand-Zeile mit
+  Google-G, Durchschnitt, Sternen und Anzahl, Karten mit Person im Vordergrund
+  (Bild aus dem Repo, sonst farbige Initialen wie bei Google), Sterne, Jahr,
+  Quelle, „Weiterlesen“ und „Zum Projekt“ bei eindeutiger Zuordnung
+  (Margarete Wolf → Stark ins Neue, Van Den Berg Gruppe, Nalan Colak → Colak,
+  Angela Wurzel → Lernforum, Anna Milossi → CurlyAnn), ausklappbar auf alle.
+  Ersetzt `Reviews` auf Startseite (6), Über uns (9) und Projekte (6).
+  `holeGoogleStand()` holt Durchschnitt und Anzahl beim Build live aus der
+  Places API (New), wenn `GOOGLE_PLACES_API_KEY` und `GOOGLE_PLACE_ID` gesetzt
+  sind (siehe `.env.example`), sonst zählt die gepflegte Liste (5,0 · 23).
+  `lib/verified-reviews.ts`: Margarete Wolf und Nalan Colak auf den
+  Google-Wortlaut umgestellt, CurlyAnn und Lernforum als Projektstimmen ergänzt.
+  Unsichere Zuordnungen bewusst offen gelassen (Bülent Kaya, Gizem Cömertler,
+  Selcuk Yöndemli, Jasmin Schmolke), beim Inhaber nachgefragt. Kein
+  AggregateRating-Schema, weil Google selbst eingetragene Bewertungen auf
+  Unternehmensseiten nicht als Rich Result anzeigt.
 
 ## Verifiziert am 13.10.2026
 

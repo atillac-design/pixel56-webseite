@@ -14,7 +14,8 @@ import {
 } from "@/components/ui";
 import { services, site } from "@/lib/site";
 import { getFallstudie } from "@/lib/projekte";
-import { verifiedReviews } from "@/lib/verified-reviews";
+import GoogleBewertungen from "@/components/GoogleBewertungen";
+import { holeGoogleStand } from "@/lib/google-bewertungen";
 import { projectPath, routes } from "@/lib/routes";
 import atillaImage from "@/public/bilder/team-atilla.webp";
 import maTransporteImage from "@/public/bilder/projekt-ma-transporte.webp";
@@ -162,7 +163,8 @@ const faqs = [
   { q: "Was kostet das Erstgespräch?", a: "Nichts. Es dient dazu, deine Situation ehrlich einzuschätzen. Erst danach gibt es ein konkretes, auf dich zugeschnittenes Angebot." },
 ];
 
-export default function UeberUnsPage() {
+export default async function UeberUnsPage() {
+  const googleStand = await holeGoogleStand();
   const spotlight = getFallstudie("ma-transporte");
 
   return (
@@ -554,11 +556,11 @@ export default function UeberUnsPage() {
               </h2>
             </div>
             <p className="band-note">
-              Wir zeigen nur Aussagen, die unsere Kunden so veröffentlicht haben.
-              Keine erfundenen Bewertungen, keine geschönten Zahlen.
+              Echte Google-Bewertungen, wörtlich übernommen, mit Link zum
+              Original. Keine erfundenen Bewertungen, keine geschönten Zahlen.
             </p>
           </div>
-          <Reviews reviews={verifiedReviews} items={verifiedReviews} />
+          <GoogleBewertungen stand={googleStand} anzahl={9} />
         </section>
 
         <section className="band theme-light" id="faq">

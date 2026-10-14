@@ -16,7 +16,9 @@ import {
 import { fallstudien, getFallstudie } from "@/lib/projekte";
 import { site } from "@/lib/site";
 import { projectPath, routes } from "@/lib/routes";
-import { verifiedProjectVoices, verifiedReviews } from "@/lib/verified-reviews";
+import { verifiedProjectVoices } from "@/lib/verified-reviews";
+import GoogleBewertungen from "@/components/GoogleBewertungen";
+import { holeGoogleStand } from "@/lib/google-bewertungen";
 import starkImage from "@/public/bilder/projekt-stark-ins-neue.webp";
 
 export const metadata: Metadata = {
@@ -86,7 +88,8 @@ function tagGroups() {
     .slice(0, 6);
 }
 
-export default function ProjektePage() {
+export default async function ProjektePage() {
+  const googleStand = await holeGoogleStand();
   const spotlight = getFallstudie("cass-schulungen");
   const spotlightVoice = verifiedProjectVoices["cass-schulungen"];
   const gruppen = tagGroups();
@@ -413,10 +416,10 @@ export default function ProjektePage() {
               </h2>
             </div>
             <p className="band-note">
-              Wir zeigen nur Aussagen, die unsere Kunden so veröffentlicht haben.
+              Echte Google-Bewertungen, wörtlich übernommen, mit Link zum Original.
             </p>
           </div>
-          <Reviews reviews={verifiedReviews} items={verifiedReviews} />
+          <GoogleBewertungen stand={googleStand} anzahl={6} />
         </section>
 
         <section className="band theme-light" id="faq">

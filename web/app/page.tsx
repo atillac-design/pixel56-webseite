@@ -16,6 +16,8 @@ import { site } from "@/lib/site";
 import { artikel } from "@/lib/blog";
 import { getFallstudie } from "@/lib/projekte";
 import { verifiedReviews } from "@/lib/verified-reviews";
+import GoogleBewertungen from "@/components/GoogleBewertungen";
+import { holeGoogleStand } from "@/lib/google-bewertungen";
 import { projectPath, resourceRoutes, routes, serviceRoutes } from "@/lib/routes";
 import starkImage from "@/public/bilder/projekt-stark-ins-neue.webp";
 import starkDetailImage from "@/public/bilder/projekt-stark-ins-neue-2.webp";
@@ -367,7 +369,8 @@ const latestArticles = [...artikel]
   .sort((a, b) => b.datum.localeCompare(a.datum))
   .slice(0, 3);
 
-export default function HomePage() {
+export default async function HomePage() {
+  const googleStand = await holeGoogleStand();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -776,11 +779,11 @@ export default function HomePage() {
                 </h2>
               </div>
               <p className="band-note">
-                Wir zeigen nur Aussagen, die unsere Kunden so veröffentlicht haben.
-                Keine erfundenen Bewertungen, keine geschönten Zahlen.
+                Echte Google-Bewertungen, wörtlich übernommen, mit Link zum
+                Original. Keine erfundenen Bewertungen, keine geschönten Zahlen.
               </p>
             </div>
-            <Reviews reviews={verifiedReviews} />
+            <GoogleBewertungen stand={googleStand} anzahl={6} />
           </section>
 
           <section className="band theme-light" id="ressourcen">
