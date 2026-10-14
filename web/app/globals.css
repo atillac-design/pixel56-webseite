@@ -3219,6 +3219,60 @@ body { overflow-x: clip; }
 .reel-wand-einzeln .reel-wand { grid-template-columns: minmax(220px, 300px); }
 .work-gallery-hochkant.work-gallery-pair { grid-template-columns: repeat(2, minmax(0, 420px)); justify-content: center; }
 .work-gallery-hochkant img, .work-gallery-hochkant.work-gallery-pair img { aspect-ratio: 3 / 4; }
+/* Klickbare Beispiel-Zentrale (KI-Seite) */
+.zd { display: grid; gap: 18px; }
+.zd-kopf { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; }
+.zd-kopf small { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+.zd-knopf { font: inherit; font-size: 14.5px; font-weight: 700; color: #fff; background: var(--accent); border: 0; border-radius: 100px; padding: 12px 22px; cursor: pointer; transition: transform 0.2s ease, opacity 0.2s ease; }
+.zd-knopf:hover { transform: translateY(-1px); }
+.zd-knopf:disabled { opacity: 0.7; cursor: wait; }
+.zd-buehne { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr); gap: 20px; align-items: start; }
+.zd-karte { display: grid; gap: 12px; }
+.zd-karte svg { display: block; width: 100%; height: auto; border-radius: 18px; }
+.zd-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.zd-chip { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px solid var(--line-strong); border-radius: 999px; background: rgba(245,244,242,0.04); color: var(--ink-dim); font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; transition: border-color 0.2s ease, color 0.2s ease; }
+.zd-chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+.zd-chip span { font-family: var(--mono); font-size: 11px; padding: 1px 7px; border-radius: 999px; background: rgba(245,244,242,0.1); color: var(--ink); }
+.zd-chip:hover, .zd-chip[aria-pressed="true"] { color: var(--ink); border-color: var(--accent); }
+.zd-panel { position: sticky; top: 24px; display: grid; gap: 14px; padding: 22px 24px; border: 1px solid var(--line-strong); border-radius: 20px; background: var(--card, rgba(14,14,22,0.88)); }
+.zd-kicker { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.zd-panel h3 { margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+.zd-panel p, .zd-plan p { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--ink-dim); }
+.zd-ueberschrift { margin-top: 4px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+.zd-balken { display: block; height: 6px; border-radius: 3px; background: rgba(255,255,255,0.1); overflow: hidden; }
+.zd-balken b { display: block; height: 100%; background: var(--c, var(--accent)); transition: width 0.35s ease; }
+.zd-zeile { display: flex; justify-content: space-between; gap: 10px; margin-top: 8px; font-size: 13px; color: var(--ink-faint); }
+.zd-liste, .zd-aufgaben, .zd-personen { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.zd-liste button { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; width: 100%; text-align: left; padding: 9px 11px; border: 1px solid var(--line); border-radius: 12px; background: transparent; color: var(--ink); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+.zd-liste button:hover { border-color: var(--line-strong); }
+.zd-liste .zd-klein { font-size: 12px; font-weight: 500; color: var(--ink-faint); }
+.zd-liste .zd-balken { grid-column: 1 / -1; height: 4px; }
+.zd-personen li { display: grid; gap: 2px; padding: 9px 11px; border: 1px dashed var(--line-strong); border-radius: 12px; font-size: 14px; line-height: 1.45; color: var(--ink-dim); }
+.zd-personen b { color: var(--ink); }
+.zd-aufgabe { display: flex; align-items: flex-start; gap: 10px; width: 100%; text-align: left; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: rgba(245,244,242,0.03); color: var(--ink); font: inherit; font-size: 15px; line-height: 1.4; cursor: pointer; transition: border-color 0.2s ease; }
+.zd-aufgabe:hover { border-color: var(--line-strong); }
+.zd-aufgabe i { flex: none; width: 18px; height: 18px; margin-top: 2px; border-radius: 6px; border: 1.5px solid var(--line-strong); display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-style: normal; font-weight: 800; }
+.zd-aufgabe small { display: block; margin-top: 2px; font-size: 12.5px; color: var(--ink-faint); }
+.zd-aufgabe.erledigt { color: var(--ink-faint); }
+.zd-aufgabe.erledigt > span { text-decoration: line-through; }
+.zd-aufgabe.erledigt small { text-decoration: none; }
+.zd-aufgabe.erledigt i { background: #3ddc84; border-color: #3ddc84; color: #0d0d14; }
+.zd-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.zd-tag { font-size: 12.5px; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--line-strong); color: var(--ink-dim); }
+.zd-plan { display: grid; gap: 8px; padding: 16px 18px; border: 1px solid rgba(106,53,255,0.5); border-radius: 16px; background: rgba(106,53,255,0.12); }
+.zd-plan .zd-kicker { color: #b79cff; }
+.zd-plan p b { color: var(--ink); }
+.zd-plan ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 15px; color: var(--ink); text-align: left; }
+.zd-plan li { text-align: left; }
+.zd-plan, .zd-panel { text-align: left; }
+.zd-plan ol small { color: var(--ink-faint); font-size: 12.5px; }
+.zd-planlink { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; text-decoration-color: rgba(183,156,255,0.6); text-underline-offset: 3px; cursor: pointer; }
+.zd-plan > small { font-size: 12.5px; line-height: 1.5; color: var(--ink-faint); }
+.zd-fuss { margin: 0; font-size: 13px; line-height: 1.5; color: var(--ink-faint); }
+@media (max-width: 900px) {
+  .zd-buehne { grid-template-columns: 1fr; }
+  .zd-panel { position: static; padding: 18px; }
+}
 /* Mehrere Projekte im Detail: kompakte Reihen mit Bild, Einordnung, Umsetzung in Punkten. */
 .detail-reihe { display: grid; gap: 22px; margin-top: 56px; }
 .detail-reihe-titel { margin: 0 0 4px; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 700; }

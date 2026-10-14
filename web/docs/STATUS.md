@@ -483,6 +483,25 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
   sind Platzhalter“, animierter Fluss nur ohne reduced-motion. `DetailEintrag`
   kann jetzt `visual` (ReactNode) statt Bild zeigen. Text des Eintrags auf die
   Kundensicht umgestellt, Hinweis nennt das Original als internes Werkzeug.
+- 14.10.2026: **Zentrale zum Durchklicken, Website-Check mit Gesamtbudget.**
+  Inhaber: ein Bild reicht nicht, der Kunde muss die Funktion ausprobieren.
+  Neue Client-Komponente `components/ZentraleDemo.tsx` auf der KI-Seite
+  (Abschnitt „11 — Zum Ausprobieren“, Folgeabschnitte 12–15): erfundener
+  Dachdeckerbetrieb mit sieben Bereichen (Unternehmen in der Mitte,
+  Marketing, Website, Funnel, Mitarbeitersuche, Automatisierung, Content),
+  je Bereich Ziel, Verantwortliche, Aufgaben mit Person und Frist (abhakbar,
+  Fortschritt auf der Karte ändert sich live), Anbindungen als Beispiel;
+  Übersicht fürs Unternehmen mit allen Bereichen und „Wer macht was diese
+  Woche“; „Was steht heute an?“ erzeugt einen Tagesplan aus den offenen
+  Aufgaben (Dringlichkeit: heute vor Priorität), mit kurzer Denkpause, ohne
+  bei reduced-motion. Bereiche sind in der SVG-Karte klickbar (Tastatur:
+  Enter/Leertaste) und zusätzlich als Chips. `ZentraleSzene` ist jetzt
+  datengetrieben (`bereiche`, `aktiv`, `onWahl`), die statische Fassung
+  bleibt im Eintrag unter „Eigene Projekte“ und verlinkt auf die Demo.
+  Alle Daten erfunden und so gekennzeichnet. Website-Check:
+  `app/api/website-check/route.ts` hatte 9 s je Weiterleitung (bis zu 5),
+  jetzt ein Gesamtbudget von 8 s inklusive Weiterleitungen und Body, weil
+  Netlify-Funktionen nach 10 s abbrechen.
 
 ## Verifiziert am 13.10.2026
 

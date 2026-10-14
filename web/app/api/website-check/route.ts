@@ -14,7 +14,8 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const MAX_BYTES = 1_500_000;
-const TIMEOUT_MS = 9000;
+/** Gesamtbudget für Laden inklusive Weiterleitungen; Netlify-Funktionen brechen nach 10 s ab. */
+const GESAMT_MS = 8000;
 const MAX_REDIRECTS = 5;
 
 type Status = "gut" | "mittel" | "schlecht";
@@ -60,12 +61,14 @@ async function laden(start: URL): Promise<{ html: string; url: URL; ttfbMs: numb
   let url = start;
   let umleitungen = 0;
   const t0 = performance.now();
+  const frist = Date.now() + GESAMT_MS;
+  const rest = () => Math.max(300, frist - Date.now());
   for (;;) {
     const fehler = await urlErlaubt(url);
     if (fehler) throw new Error(fehler);
     const res = await fetch(url, {
       redirect: "manual",
-      signal: AbortSignal.timeout(TIMEOUT_MS),
+      signal: AbortSignal.timeout(rest()),
       headers: { "User-Agent": "Mozilla/5.0 (compatible; Pixel56-WebsiteCheck/1.0; +https://www.pixel56.de/website-check)", Accept: "text/html,application/xhtml+xml" },
     });
     const ttfbMs = performance.now() - t0;
@@ -90,7 +93,7 @@ async function laden(start: URL): Promise<{ html: string; url: URL; ttfbMs: numb
         if (done || !value) break;
         bytes += value.byteLength;
         teile.push(value);
-        if (bytes > MAX_BYTES) {
+        if (bytes > MAX_BYTES || Date.now() > frist) {
           await reader.cancel();
           break;
         }

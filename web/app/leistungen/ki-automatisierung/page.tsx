@@ -5,6 +5,7 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import DetailReihe, { type DetailEintrag } from "@/components/DetailReihe";
 import ZentraleSzene from "@/components/ZentraleSzene";
+import ZentraleDemo from "@/components/ZentraleDemo";
 import AblaufSimulator from "@/components/AblaufSimulator";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
 import PlannedMedia from "@/components/PlannedMedia";
@@ -218,7 +219,9 @@ const eigeneProjekte: DetailEintrag[] = [
       "Spielerische Motivation mit Level, Erfahrungspunkten und Missionen, wenn du magst",
     ],
     visual: <ZentraleSzene />,
-    hinweis: "Beispielansicht aus Kundensicht, Werte sind Platzhalter. Das Original läuft bei Pixel56 intern als KI-Anwendung ohne eigenen Server und lässt sich für deinen Betrieb mit deinen Bereichen aufsetzen.",
+    href: "#zentrale-demo",
+    linkText: "Demo ausprobieren",
+    hinweis: "Das Original läuft bei Pixel56 intern als KI-Anwendung ohne eigenen Server. Unten kannst du eine Beispiel-Zentrale durchklicken.",
   },
   {
     kicker: "Eigene Website · Technik & Inhalte",
@@ -538,10 +541,27 @@ export default function KiAutomatisierungPage() {
           <DetailReihe eintraege={eigeneProjekte} titel={null} />
         </section>
 
+        <section className="band dark-stage service-dark-stage" id="zentrale-demo">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">11 — Zum Ausprobieren</span>
+              <h2 className="band-title">Die Zentrale, <em>zum Durchklicken</em></h2>
+            </div>
+            <p className="band-note">
+              Ein erfundener Dachdeckerbetrieb, echte Bedienung: Bereich
+              antippen, Aufgaben abhaken, „Was steht heute an?“ fragen. Für
+              deinen Betrieb kommen deine Bereiche, Leute und Programme rein.
+            </p>
+          </div>
+          <div className="reveal">
+            <ZentraleDemo />
+          </div>
+        </section>
+
         <section className="band theme-light" id="einstieg">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">11 — Einstieg &amp; Kosten</span>
+              <span className="band-tag">12 — Einstieg &amp; Kosten</span>
               <h2 className="band-title">Drei Schritte, <em>jeder einzeln entscheidbar</em></h2>
               <p className="lead">
                 Du musst dich nicht für ein großes KI-Projekt entscheiden. Die
@@ -569,7 +589,7 @@ export default function KiAutomatisierungPage() {
         <section className="band theme-light" id="checkliste">
           <div className="split2 reverse">
             <div className="reveal">
-              <span className="band-tag">12 — Selbst prüfen</span>
+              <span className="band-tag">13 — Selbst prüfen</span>
               <h2 className="band-title">Wo spart KI in deinem Betrieb <em>wirklich Zeit?</em></h2>
               <p className="lead">
                 Unsere KI-Agenten-Checkliste hilft dir, das vor dem ersten
@@ -598,7 +618,7 @@ export default function KiAutomatisierungPage() {
         <section className="band dark-stage service-dark-stage" id="zusammenarbeit">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">13 — Zusammenarbeit</span>
+              <span className="band-tag">14 — Zusammenarbeit</span>
               <h2 className="band-title">Dein Ablauf. <em>Ein fester Ansprechpartner.</em></h2>
               <p className="lead">
                 Kein Projektmanager, der weiterreicht. Du sprichst mit der
@@ -629,7 +649,7 @@ export default function KiAutomatisierungPage() {
         <section className="band theme-light" id="faq">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">14 — Häufige Fragen</span>
+              <span className="band-tag">15 — Häufige Fragen</span>
               <h2 className="band-title">Was du vor dem Start <em>wissen solltest</em></h2>
             </div>
           </div>
