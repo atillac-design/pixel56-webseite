@@ -201,14 +201,14 @@ export default function ContentPage() {
           <header className="service-premium-hero">
             <div className="service-premium-glow" aria-hidden="true" />
             <div className="service-premium-copy">
-              <div className="premium-kicker">REELS &amp; SOCIAL CONTENT · AUS DEINEM BETRIEB · REGION KOBLENZ</div>
+              <div className="premium-kicker">REELS &amp; SOCIAL CONTENT · VOR ORT GEDREHT ODER AUS DEINEM MATERIAL</div>
               <h1>
                 <span>Zeig, wie ihr arbeitet.</span>
                 <span className="service-hero-accent">Wir filmen und schneiden.</span>
                 <span>Du machst deinen Job.</span>
               </h1>
               <p>
-                Baustelle, Werkstatt, Laden: Das echte Material überzeugt mehr
+                Baustelle, Praxis, Werkstatt, Laden: Das echte Material überzeugt mehr
                 als jedes Stockfoto. Wir drehen bei dir vor Ort oder schneiden
                 deine Handyvideos, in einem festen Rhythmus, der ohne dich
                 läuft.

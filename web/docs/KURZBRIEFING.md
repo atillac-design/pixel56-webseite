@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 14.10.2026 (abends)
+# Kurzbriefing — Stand 15.10.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -18,21 +18,29 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 - **Kein Standort Bendorf** sichtbar, niemand soll vorbeikommen; „aus
   Koblenz“ ist okay. WhatsApp und E-Mail immer anbieten. Später je
   Leistung ein eigenes Kontaktformular (noch nicht gebaut).
-- **Positionierung (14.10., vom Inhaber beauftragt):** Zielgruppe
-  **Handwerk, Bau und Dienstleister**, Versprechen „Neue Kunden. Neue
-  Mitarbeiter. Planbar statt Zufall.“ Vier Kernleistungen (Webdesign,
-  Meta Ads, Content & Reels, KI) als ein System, vier ergänzende dahinter.
-  Vorbild laut Inhaber: Baulig Consulting (eine Zielgruppe, ein
-  Versprechen, Schmerz vor Lösung, Beweis, Ablauf, „Für wen geeignet“,
-  ein Aufruf). Inhaber will **kurze, hochwertige Texte mit rotem Faden**,
-  keine allgemeinen Floskeln („inhabergeführt“ gestrichen). Startseite
-  komplett neu (15 Abschnitte, Reihenfolge: Kennst du das → vier Sätze →
-  System → Zusammenspiel → Projekte → Google-Bewertungen → Projekt im
-  Detail → drei Schritte → Passt/Passt nicht → Ansprechpartner → KI →
-  Region → Vorlagen → Blog → FAQ → Abschluss). Leistungs-Heros,
-  Leistungsübersicht, Über uns, Fuß und Meta-Beschreibungen angepasst.
-  KI bleibt Säule, eigene KI-Projekte (Teykto, KMU-Webseiten, Adloc,
-  Zentrale) belegen sie.
+- **Positionierung (15.10., mit dem Inhaber abgestimmt):** Zielgruppe
+  „kleine und mittelständische Unternehmen“ (Mittelstand ausdrücklich
+  erwünscht: Team, Standort, Budget), **nicht** nur Handwerk und **nicht**
+  „Selbstständige/kleine“ vorn. Region: „deutschlandweit · DACH-Region“,
+  keine Länderaufzählung, Koblenz nur im Seitentitel, im Region-Abschnitt
+  und im Fuß. Ansprache nach dem Baulig-Muster: Problem vor Zielgruppe,
+  Schmerz vor Lösung, Beweis, Ablauf, „Für wen geeignet“, ein Aufruf.
+  **Keine Preisaussage** auf der Seite (auch nicht „fair“), nur die
+  Qualifizierung „günstigste Baukasten-Lösung passt nicht“. Hero:
+  „Du machst gute Arbeit. Online merkt das keiner. Wir ändern das. Alles
+  aus einer Hand.“ (Klasse `hero-satz`, kleinere Schrift). Vier Sätze nach
+  der Liste des Inhabers (veraltete Website, nur Empfehlung, keine
+  Bewerber, kein Marketing-Wissen/keine Zeit), danach neuer Block
+  „Ohne System / Mit System“ (`#unterschied`, aus der alten Webflow-Seite
+  übernommen, dort „Ohne uns / Mit Pixel56“). Passt/Passt nicht mit
+  Budget-Satz ohne Preis. Kurze, hochwertige Texte mit rotem Faden.
+  Leistungs-Heros, Leistungsübersicht, Über uns, Fuß, Meta-Beschreibungen
+  und Schema (areaServed DE/AT/CH) auf dieselbe Breite gezogen.
+- **Vergleich alt/neu (15.10.):** Alte Webflow-Seite hatte Breite
+  (Handwerk, Coaches, KMU, DACH) und harten Verkaufston, aber keine
+  Beweise, unhaltbare Versprechen („Ergebnisse in 2–4 Wochen“,
+  „Top-Rankings“) und 291 fast identische Standortseiten. Neue Seite:
+  Beweise, Struktur, Technik; Ton und Breite aus der alten übernommen.
 - **Standort:** sichtbar nur noch „Koblenz“ (Kicker, Fuß, Über uns,
   Kontakt, Team, Karriere, Blog-Autorenzeile, OG-Bilder). „Bendorf“ bleibt
   nur in Impressum, Datenschutz, Schema, Standortkarte und auf den
@@ -66,8 +74,8 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 1. **Vom Inhaber erwartet:** schärfere Desktop-Screenshots von Teykto und
    Adloc (ersetzen `ki-projekt-teykto.webp` und den Adloc-BrowserMock in
    `app/leistungen/ki-automatisierung/page.tsx`, `eigeneProjekte`);
-   weitere Rückmeldung aus dem Durchklicken, vor allem zur neuen
-   Startseite und den Leistungs-Heros.
+   Rückmeldung zur neuen Startseite (Hero, Ohne/Mit-Block, Passt-Block)
+   und zu den Leistungs-Heros.
 2. Noch nicht auf die Positionierung gezogen: Fließtexte **innerhalb** der
    acht Leistungsseiten (Abschnitte unter dem Hero), Projekte-Übersicht,
    Kontakt-Hero, Blog-Teaser. Nächster Schritt, wenn der Inhaber die

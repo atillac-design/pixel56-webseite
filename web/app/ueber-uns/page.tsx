@@ -188,7 +188,8 @@ export default async function UeberUnsPage() {
                 Pixel56 ist die Digitalagentur von Atilla Ciftcioglu aus Koblenz.
                 Wer hier anruft, spricht mit der Person, die das Projekt plant
                 und umsetzt: Websites, Meta Ads, Reels und KI-Prozesse für
-                Handwerk, Bau und Dienstleister.
+                kleine und mittelständische Unternehmen, vom Handwerksbetrieb
+                bis zur Praxis. Deutschlandweit und in der DACH-Region.
               </p>
               <div className="premium-actions">
                 <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">

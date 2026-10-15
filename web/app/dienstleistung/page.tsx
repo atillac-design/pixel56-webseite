@@ -184,7 +184,7 @@ export default function DienstleistungenPage() {
           <header className="service-premium-hero">
             <div className="service-premium-glow" aria-hidden="true" />
             <div className="service-premium-copy">
-              <div className="premium-kicker">LEISTUNGEN FÜR HANDWERK, BAU &amp; DIENSTLEISTER · KOBLENZ · DEUTSCHLANDWEIT</div>
+              <div className="premium-kicker">LEISTUNGEN FÜR KLEINE UND MITTELSTÄNDISCHE UNTERNEHMEN · DEUTSCHLANDWEIT · DACH-REGION</div>
               <h1>
                 <span>Vier Bausteine.</span>
                 <span className="service-hero-accent">Ein System.</span>

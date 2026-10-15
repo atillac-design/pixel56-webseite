@@ -15,6 +15,26 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 15.10.2026: **Positionierung nach Abstimmung mit dem Inhaber korrigiert.**
+  Inhaber: nicht nur Handwerk, sondern kleine und mittelständische
+  Unternehmen (Mittelstand ausdrücklich, weil Team, Standort und Budget
+  vorhanden), deutschlandweit und DACH-Region statt Länderaufzählung,
+  keine Preisaussagen (lädt zum Feilschen ein). Vorher Vergleich mit der
+  alten Webflow-Seite aus `data/legacy-locations.json` (trägt den alten
+  Seitentext) und Suchtreffern: alte Seite hatte Breite und harten Ton,
+  aber keine Beweise und unhaltbare Versprechen. Umgesetzt: Kicker „Für
+  kleine und mittelständische Unternehmen · deutschlandweit · DACH-Region“,
+  Hero „Du machst gute Arbeit. Online merkt das keiner. Wir ändern das.
+  Alles aus einer Hand.“ mit eigener Schriftgröße (`hero-satz`, vier
+  Zeilen auf Desktop), Absatz nennt Handwerk, Dienstleister, Praxen,
+  Gastronomie. Vier Sätze nach der Liste des Inhabers, neuer Abschnitt
+  „03 — Der Unterschied: Ohne System / Mit System“ (zwei Karten,
+  `vs-grid`), Passt/Passt nicht mit Team- und Budget-Satz ohne Preis,
+  Region-Abschnitt und FAQ mit DACH, Schema `areaServed` um Österreich und
+  Schweiz ergänzt, Fuß und `layout.tsx` angepasst. Leistungs-Heros: Kicker
+  auf KMU-Breite, Google Ads mit zweitem Beispiel „Zahnarzt Neuwied“,
+  Content mit „Praxis“, Mitarbeitergewinnung „für Betriebe mit Team“.
+  Nummerierung der Startseite jetzt 01 bis 16.
 - 14.10.2026: **Startseite und Heros neu positioniert.** Inhaber fand den
   ersten Hero-Absatz zu lang und zu allgemein („inhabergeführt – von wem
   sonst?“) und beauftragte eine echte Positionierung nach dem Muster von

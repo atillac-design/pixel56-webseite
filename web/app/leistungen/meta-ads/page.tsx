@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Meta Ads Agentur: Facebook & Instagram Werbung, die Anfragen bringt | Pixel56",
     description:
-      "Meta Ads für Handwerk, Bau und Dienstleister: Kampagnen für Kunden und Bewerber mit Tracking, Zielseite und laufender Optimierung. Pixel56 aus Koblenz.",
+      "Meta Ads für kleine und mittelständische Unternehmen: Kampagnen für Kunden und Bewerber mit Tracking, Zielseite und laufender Optimierung. Pixel56, DACH-weit.",
     url: serviceRoutes["meta-ads"],
   },
 };
@@ -209,7 +209,7 @@ export default function MetaAdsPage() {
           <header className="service-premium-hero">
             <div className="service-premium-glow" aria-hidden="true" />
             <div className="service-premium-copy">
-              <div className="premium-kicker">META ADS FÜR HANDWERK, BAU &amp; DIENSTLEISTER · FACEBOOK &amp; INSTAGRAM</div>
+              <div className="premium-kicker">META ADS FÜR KLEINE UND MITTELSTÄNDISCHE UNTERNEHMEN · FACEBOOK &amp; INSTAGRAM</div>
               <h1>
                 <span>Anzeigen, die</span>
                 <span className="service-hero-accent">Kunden bringen.</span>

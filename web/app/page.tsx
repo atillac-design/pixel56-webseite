@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     absolute: "Digitalagentur Koblenz: Webdesign, Ads & KI | Pixel56",
   },
   description:
-    "Pixel56 aus Koblenz: Websites, Meta Ads, Reels und KI-Prozesse für Handwerk, Bau und Dienstleister. Mehr Anfragen, mehr Bewerber. Seit 2018.",
+    "Pixel56: Websites, Meta Ads, Reels und KI-Prozesse für kleine und mittelständische Unternehmen und Handwerk. Deutschlandweit und in der DACH-Region. Seit 2018.",
   alternates: { canonical: "/" },
 };
 
@@ -51,7 +51,7 @@ const jsonLd = {
       foundingDate: "2018",
       name: site.name,
       description:
-        "Digitalagentur für Handwerks-, Bau- und Dienstleistungsbetriebe: Webdesign, Meta Ads, Google Ads, Reels und KI-Prozesse. Region Koblenz, deutschlandweit im Einsatz.",
+        "Digitalagentur für kleine und mittelständische Unternehmen: Webdesign, Meta Ads, Google Ads, Reels und KI-Prozesse. Aus Koblenz, deutschlandweit und in der DACH-Region.",
       founder: { "@type": "Person", name: "Atilla Ciftcioglu" },
       address: {
         "@type": "PostalAddress",
@@ -69,6 +69,8 @@ const jsonLd = {
         { "@type": "City", name: "Neuwied" },
         { "@type": "City", name: "Bendorf" },
         { "@type": "Country", name: "Deutschland" },
+        { "@type": "Country", name: "Österreich" },
+        { "@type": "Country", name: "Schweiz" },
       ],
       url: site.url,
       logo: `${site.url}/bilder/logo-pixel56.webp`,
@@ -134,21 +136,35 @@ const coreServices = [
 
 const frictions = [
   {
-    problem: "Unsere Kunden kommen alle über Empfehlung.",
-    answer: "Gut. Nur nicht planbar. Wir sorgen dafür, dass dich auch die finden, die dich noch nicht kennen.",
+    problem: "Unsere Website ist von damals und bringt nichts.",
+    answer: "Weil sie vorzeigt statt verkauft. Wir bauen sie vom Ziel her: Anruf, Anfrage, Buchung, Bewerbung.",
   },
   {
-    problem: "Die Website ist da, bringt aber nichts.",
-    answer: "Weil sie vorzeigt statt verkauft. Wir bauen sie vom Ziel her: Anruf, Anfrage, Bewerbung.",
+    problem: "Kunden kommen nur über Empfehlung.",
+    answer: "Gut. Nur nicht planbar. Wir sorgen dafür, dass dich auch die finden, die dich noch nicht kennen.",
   },
   {
     problem: "Auf die Stellenanzeige kam niemand Passendes.",
     answer: "Gute Leute suchen nicht, sie werden gefunden. Mit Reels und Anzeigen dort, wo sie abends scrollen.",
   },
   {
-    problem: "Für Marketing habe ich keine Zeit.",
+    problem: "Von Marketing verstehe ich nichts, und Zeit habe ich auch keine.",
     answer: "Musst du auch nicht. Du gibst uns ein Erstgespräch und Freigaben per WhatsApp, den Rest übernehmen wir.",
   },
+];
+
+const ohneSystem = [
+  "Website, Anzeigen und Content laufen bei drei Dienstleistern, die sich gegenseitig die Schuld geben.",
+  "Anzeigen führen auf eine Startseite, die nicht verkauft.",
+  "Content entsteht, wenn gerade Zeit ist. Also selten.",
+  "Niemand kann dir sagen, was das Marketing wirklich bringt.",
+];
+
+const mitSystem = [
+  "Ein Ansprechpartner, ein Plan, ein System.",
+  "Jede Anzeige hat eine Zielseite, die ihr Versprechen einlöst.",
+  "Content im festen Rhythmus, ohne dein tägliches Zutun.",
+  "Zahlen, die du verstehst: was reinkommt und was es kostet.",
 ];
 
 type CaseItem = {
@@ -239,16 +255,16 @@ const processSteps = [
 ];
 
 const passt = [
-  "Du führst einen Handwerks-, Bau- oder Dienstleistungsbetrieb.",
+  "Du führst ein Unternehmen mit Team und willst, dass Sichtbarkeit planbar wird.",
   "Du willst Anfragen und Bewerber, nicht nur Likes.",
-  "Du willst einen Ansprechpartner statt fünf Agenturen.",
-  "Du bist bereit, in Sichtbarkeit zu investieren, mit einem Budget, das zum Ziel passt.",
+  "Du willst einen Ansprechpartner statt drei Agenturen.",
+  "Du hast ein Budget für Marketing und willst sehen, was es bringt.",
 ];
 
 const passtNicht = [
-  "Du suchst die billigste Website aus dem Baukasten.",
+  "Du suchst die günstigste Baukasten-Lösung.",
   "Du erwartest Ergebnisse in einer Woche ohne Werbebudget.",
-  "Marketing soll bei dir ein neues Logo bleiben, ohne Ziel dahinter.",
+  "Du willst ein neues Logo, aber nichts am Ablauf ändern.",
   "Du brauchst eine Agentur für Ausschreibungen mit zwölf Entscheidern.",
 ];
 
@@ -295,7 +311,7 @@ const faqs = [
   },
   {
     q: "Arbeitet ihr nur in der Region Koblenz?",
-    a: "Nein. Für Dreh und Fotos kommen wir in der Region zu dir in den Betrieb. Alles andere läuft per Video-Call, Telefon und WhatsApp, mit Kunden in ganz Deutschland.",
+    a: "Nein. Für Dreh und Fotos kommen wir in der Region zu dir in den Betrieb. Alles andere läuft per Video-Call, Telefon und WhatsApp, deutschlandweit und in der DACH-Region.",
   },
   {
     q: "Ich habe kein Videomaterial. Geht Content trotzdem?",
@@ -327,21 +343,22 @@ export default async function HomePage() {
         <div className="sheet">
           <SiteNav />
 
-          <header className="premium-hero">
+          <header className="premium-hero hero-satz">
             <div className="premium-hero-glow" aria-hidden="true" />
             <div className="premium-hero-copy">
-              <div className="premium-kicker">FÜR HANDWERK, BAU &amp; DIENSTLEISTER · KOBLENZ · DEUTSCHLANDWEIT</div>
+              <div className="premium-kicker">FÜR KLEINE UND MITTELSTÄNDISCHE UNTERNEHMEN · DEUTSCHLANDWEIT · DACH-REGION</div>
               <h1>
-                <span>Neue Kunden.</span>
-                <span>Neue Mitarbeiter.</span>
-                <span className="premium-accent">Planbar statt Zufall.</span>
-                <span>Aus einer Hand.</span>
+                <span>Du machst gute Arbeit.</span>
+                <span>Online merkt das keiner.</span>
+                <span className="premium-accent">Wir ändern das.</span>
+                <span>Alles aus einer Hand.</span>
               </h1>
               <p>
-                Du machst gute Arbeit. Aber Anfragen kommen nur über Empfehlung,
-                und auf Stellenanzeigen meldet sich kaum jemand. Pixel56 baut dir
-                das System, das beides ändert: Website, Meta Ads, Reels und
-                KI-Prozesse, die zusammenarbeiten.
+                Veraltete Website, Anzeigen ohne Plan, Content, der nie entsteht.
+                Meistens fehlt nicht das Können, sondern ein Partner, der alles
+                zusammenhält. Pixel56 baut dir Website, Anzeigen, Content und
+                KI-Prozesse, die ineinandergreifen: für Handwerk, Dienstleister,
+                Praxen, Gastronomie und alle, die online mehr rausholen wollen.
               </p>
               <div className="premium-actions">
                 <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">
@@ -355,7 +372,7 @@ export default async function HomePage() {
                 <span>{googleStand.bewertung.toLocaleString("de-DE", { minimumFractionDigits: 1 })} Sterne bei Google · {googleStand.anzahl} Bewertungen</span>
                 <span>Seit 2018</span>
                 <span>Ein Ansprechpartner</span>
-                <span>Koblenz · deutschlandweit</span>
+                <span>Deutschlandweit · DACH-Region</span>
               </div>
             </div>
 
@@ -413,10 +430,39 @@ export default async function HomePage() {
             </div>
           </section>
 
+          <section className="band theme-light" id="unterschied">
+            <div className="band-head reveal">
+              <div>
+                <span className="band-tag">03 — Der Unterschied</span>
+                <h2 className="band-title">
+                  Ohne System. <em>Mit System.</em>
+                </h2>
+              </div>
+              <p className="band-note">
+                Es liegt selten an der Arbeit. Es liegt an Einzelteilen, die
+                nicht zusammenspielen.
+              </p>
+            </div>
+            <div className="audience-grid fit-grid vs-grid reveal">
+              <article className="audience-card fit-nein">
+                <span>Ohne Pixel56</span>
+                <ul className="premium-list">
+                  {ohneSystem.map((punkt) => <li key={punkt}>{punkt}</li>)}
+                </ul>
+              </article>
+              <article className="audience-card vs-mit">
+                <span>Mit Pixel56</span>
+                <ul className="premium-list">
+                  {mitSystem.map((punkt) => <li key={punkt}>{punkt}</li>)}
+                </ul>
+              </article>
+            </div>
+          </section>
+
           <section className="band theme-light light-services" id="leistungen">
             <div className="band-head reveal">
               <div>
-                <span className="band-tag">03 — Die Lösung</span>
+                <span className="band-tag">04 — Die Lösung</span>
                 <h2 className="band-title">
                   Kein Einzelteil. <em>Ein System.</em>
                 </h2>
@@ -459,7 +505,7 @@ export default async function HomePage() {
           <section className="band system-section dark-stage" id="system">
             <div className="band-head reveal">
               <div>
-                <span className="band-tag">04 — So greift es ineinander</span>
+                <span className="band-tag">05 — So greift es ineinander</span>
                 <h2 className="band-title">
                   Tippe auf einen Baustein. <em>Sieh, was er auslöst.</em>
                 </h2>
@@ -478,14 +524,14 @@ export default async function HomePage() {
           <section className="band theme-light light-work" id="arbeiten">
             <div className="band-head reveal">
               <div>
-                <span className="band-tag">05 — Betriebe, die es gemacht haben</span>
+                <span className="band-tag">06 — Betriebe, die es gemacht haben</span>
                 <h2 className="band-title">
                   Echte Projekte. <em>Keine Vorlagen.</em>
                 </h2>
               </div>
               <p className="band-note">
-                Dachdecker, Abbruch, Transporte, Bildung, Gastronomie: Auftritte,
-                die zum Betrieb passen.
+                Handwerk, Transporte, Bildung, Coaching, Gastronomie: Auftritte,
+                die zum Unternehmen passen, nicht zur Vorlage.
               </p>
             </div>
 
@@ -514,7 +560,7 @@ export default async function HomePage() {
           <section className="band theme-light light-reviews" id="bewertungen">
             <div className="band-head reveal">
               <div>
-                <span className="band-tag">06 — Das sagen Kunden</span>
+                <span className="band-tag">07 — Das sagen Kunden</span>
                 <h2 className="band-title">
                   5,0 Sterne. <em>Wörtlich übernommen.</em>
                 </h2>
@@ -531,7 +577,7 @@ export default async function HomePage() {
             <section className="band theme-light" id="fallstudie">
               <div className="band-head reveal">
                 <div>
-                  <span className="band-tag">07 — Ein Projekt im Detail</span>
+                  <span className="band-tag">08 — Ein Projekt im Detail</span>
                   <h2 className="band-title">
                     {spotlight.kunde}: <em>{spotlight.loesung.titel}</em>
                   </h2>
@@ -588,7 +634,7 @@ export default async function HomePage() {
           <section className="band dark-stage dark-process" id="ablauf">
             <div className="band-head reveal">
               <div>
-                <span className="band-tag">08 — So läuft es</span>
+                <span className="band-tag">09 — So läuft es</span>
                 <h2 className="band-title">
                   Drei Schritte <em>bis das System läuft.</em>
                 </h2>
@@ -613,7 +659,7 @@ export default async function HomePage() {
           <section className="band theme-light" id="passt">
             <div className="band-head reveal">
               <div>
-                <span className="band-tag">09 — Passt das?</span>
+                <span className="band-tag">10 — Passt das?</span>
                 <h2 className="band-title">
                   Für wen Pixel56 <em>die richtige Wahl ist.</em>
                 </h2>
@@ -647,7 +693,7 @@ export default async function HomePage() {
               <span>// ATILLA CIFTCIOGLU · GRÜNDER · STRATEGIE &amp; UMSETZUNG</span>
             </div>
             <div className="founder-copy reveal">
-              <span className="band-tag">10 — Dein Ansprechpartner</span>
+              <span className="band-tag">11 — Dein Ansprechpartner</span>
               <h2 className="band-title">
                 Ein Name. <em>Keine Hotline.</em>
               </h2>
@@ -670,7 +716,7 @@ export default async function HomePage() {
           <section className="band theme-light" id="ki">
             <div className="split2">
               <div className="reveal">
-                <span className="band-tag">11 — KI im Betrieb</span>
+                <span className="band-tag">12 — KI im Betrieb</span>
                 <h2 className="band-title">
                   KI, die Arbeit abnimmt. <em>Nicht Zeit frisst.</em>
                 </h2>
@@ -698,14 +744,15 @@ export default async function HomePage() {
           <section className="band theme-light" id="region">
             <div className="split2 reverse">
               <div className="reveal">
-                <span className="band-tag">12 — Region</span>
+                <span className="band-tag">13 — Region</span>
                 <h2 className="band-title">
-                  Aus Koblenz. <em>Für ganz Deutschland.</em>
+                  Aus Koblenz. <em>Deutschlandweit und DACH.</em>
                 </h2>
                 <p className="lead">
                   Für Dreh und Fotos kommen wir in der Region Koblenz, Neuwied
                   und Westerwald zu dir in den Betrieb. Alles andere läuft per
-                  Video-Call, Telefon und WhatsApp, genauso verbindlich.
+                  Video-Call, Telefon und WhatsApp, in Deutschland, Österreich
+                  und der Schweiz genauso verbindlich.
                 </p>
                 <ul className="lines">
                   <li>Vor-Ort-Dreh für Reels und Fotos in Koblenz, Neuwied, Montabaur und Umgebung</li>
@@ -724,7 +771,7 @@ export default async function HomePage() {
           <section className="band theme-light" id="ressourcen">
             <div className="band-head reveal">
               <div>
-                <span className="band-tag">13 — Zum Selbermachen</span>
+                <span className="band-tag">14 — Zum Selbermachen</span>
                 <h2 className="band-title">
                   Drei Vorlagen <em>aus unserer eigenen Arbeit.</em>
                 </h2>
@@ -753,7 +800,7 @@ export default async function HomePage() {
           <section className="band theme-light" id="wissen">
             <div className="band-head reveal">
               <div>
-                <span className="band-tag">14 — Aus dem Blog</span>
+                <span className="band-tag">15 — Aus dem Blog</span>
                 <h2 className="band-title">
                   Wissen, das <em>Entscheidungen leichter macht.</em>
                 </h2>
@@ -783,7 +830,7 @@ export default async function HomePage() {
           <section className="band theme-light light-faq" id="faq">
             <div className="band-head reveal">
               <div>
-                <span className="band-tag">15 — Häufige Fragen</span>
+                <span className="band-tag">16 — Häufige Fragen</span>
                 <h2 className="band-title">
                   Was Betriebe <em>vor dem Start fragen.</em>
                 </h2>

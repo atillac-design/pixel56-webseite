@@ -158,7 +158,7 @@ export default function RecruitingPage() {
           <header className="service-premium-hero">
             <div className="service-premium-glow" aria-hidden="true" />
             <div className="service-premium-copy">
-              <div className="premium-kicker">MITARBEITERGEWINNUNG FÜR HANDWERK &amp; BAU · KARRIERESEITE · KAMPAGNEN</div>
+              <div className="premium-kicker">MITARBEITERGEWINNUNG FÜR BETRIEBE MIT TEAM · KARRIERESEITE · KAMPAGNEN</div>
               <h1>
                 <span>Offene Stellen.</span>
                 <span className="service-hero-accent">Echte Bewerbungen.</span>

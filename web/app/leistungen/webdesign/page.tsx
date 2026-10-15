@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Webdesign Agentur Koblenz: Websites, die Anfragen bringen | Pixel56",
     description:
-      "Websites für Handwerk, Bau und Dienstleister, die Vertrauen aufbauen und Aufträge bringen. Pixel56 aus Koblenz, für Betriebe in ganz Deutschland.",
+      "Websites für kleine und mittelständische Unternehmen, die Vertrauen aufbauen und Aufträge bringen. Pixel56 aus Koblenz, deutschlandweit und in der DACH-Region.",
     url: serviceRoutes.webdesign,
   },
 };
@@ -273,7 +273,7 @@ export default function WebdesignPage() {
           <header className="service-premium-hero">
             <div className="service-premium-glow" aria-hidden="true" />
             <div className="service-premium-copy">
-              <div className="premium-kicker">WEBDESIGN FÜR HANDWERK, BAU &amp; DIENSTLEISTER · KOBLENZ · DEUTSCHLANDWEIT</div>
+              <div className="premium-kicker">WEBDESIGN FÜR KLEINE UND MITTELSTÄNDISCHE UNTERNEHMEN · DEUTSCHLANDWEIT · DACH-REGION</div>
               <h1>
                 <span>Eine Website, die</span>
                 <span className="service-hero-accent">Aufträge bringt.</span>

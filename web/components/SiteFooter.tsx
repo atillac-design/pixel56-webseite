@@ -13,7 +13,8 @@ export default function SiteFooter() {
           </Link>
           <p>
             Pixel56 aus Koblenz. Websites, Meta Ads, Reels und KI-Prozesse
-            für Handwerk, Bau und Dienstleister. Deutschlandweit.
+            für kleine und mittelständische Unternehmen. Deutschlandweit und
+            in der DACH-Region.
           </p>
         </div>
         <div className="footer-col">
