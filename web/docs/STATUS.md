@@ -15,6 +15,15 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 16.10.2026: **Teykto- und Adloc-Bilder vom Inhaber.** Vier Dateien:
+  Adloc-Gesamtseite (212 px breit, unbrauchbar), Adloc-Laptop-Mockup
+  (2000 px), Teykto-Bestellseite „Test Lieferservice Pizza“ (630 px),
+  Teykto-Landingpage (328 px, unbrauchbar). Adloc-Eintrag auf der KI-Seite
+  zeigt jetzt das Mockup (`ki-projekt-adloc.webp`, 4:3-Ausschnitt um den
+  Laptop) statt des BrowserMocks; Teykto-Bild durch den oberen Teil der
+  Bestellseite ersetzt (gleiche Datei `ki-projekt-teykto.webp`, auch auf
+  der Startseite in der KI-Karte). Hinweis an den Inhaber: Teykto-Quelle
+  ist knapp, ein Desktop-Screenshot mit mindestens 1400 px wäre schärfer.
 - 16.10.2026: **Beispielbilder, Tagesplaner-Bild, längere Passt-Listen.**
   Inhaber nach dem ersten Blick auf die Vorschau: Tagesplaner braucht ein
   Bild (gibt es in Webflow), in den erklärenden Abschnitten fehlen Bilder,

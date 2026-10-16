@@ -83,11 +83,12 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 
 ## Offene Punkte (Reihenfolge = Priorität)
 
-1. **Vom Inhaber erwartet:** schärfere Desktop-Screenshots von Teykto und
-   Adloc (ersetzen `ki-projekt-teykto.webp` und den Adloc-BrowserMock in
-   `app/leistungen/ki-automatisierung/page.tsx`, `eigeneProjekte`);
-   Rückmeldung zur neuen Startseite (Hero, Ohne/Mit-Block, Passt-Block)
-   und zu den Leistungs-Heros.
+1. **Vom Inhaber erwartet:** Rückmeldung zur neuen Startseite (Hero,
+   Ohne/Mit-Block, Beispielbilder, Passt-Block), Entscheidung zum
+   Koblenz-Bild im Hero (Empfehlung: nein, Alternative Porträt). Teykto-
+   und Adloc-Bilder sind da (16.10.): Adloc = Laptop-Mockup
+   `ki-projekt-adloc.webp`, Teykto = Bestellseite `ki-projekt-teykto.webp`
+   (Quelle nur 630 px breit, ein breiterer Screenshot wäre schärfer).
 2. Noch nicht auf die Positionierung gezogen: Fließtexte **innerhalb** der
    acht Leistungsseiten (Abschnitte unter dem Hero), Projekte-Übersicht,
    Kontakt-Hero, Blog-Teaser. Nächster Schritt, wenn der Inhaber die
