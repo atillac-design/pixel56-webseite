@@ -87,7 +87,9 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
    Ohne/Mit-Block, Beispielbilder, Passt-Block), Entscheidung zum
    Koblenz-Bild im Hero (Empfehlung: nein, Alternative Porträt). Teykto-
    und Adloc-Bilder sind da (16.10.): Adloc = Laptop-Mockup
-   `ki-projekt-adloc.webp`, Teykto = Bestellseite `ki-projekt-teykto.webp`, scharf aus dem
+   `ki-projekt-adloc.webp`, Adloc-Texte nach den Screenshots der Produktseite (Credits statt Abo,
+   RLP komplett, 15 Branchen; Zahlen als „laut adloc.io“ gekennzeichnet).
+   Teykto = Bestellseite `ki-projekt-teykto.webp`, scharf aus dem
    lokal gestarteten Teykto-Repo (Demo „Bella Napoli“, 1440 px; Demo hat
    keine Gerichtsfotos, weil Unsplash gesperrt ist). adloc.io und
    teykto.de sind in der Sandbox durch die Netzwerk-Richtlinie gesperrt

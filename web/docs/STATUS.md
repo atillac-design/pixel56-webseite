@@ -15,6 +15,15 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 16.10.2026: **Adloc-Texte nach der echten Produktseite.** Inhaber hat fünf
+  Bildschirmfotos von adloc.io geschickt (Branchen, Bundesländer, Vergleich,
+  Nutzen, FAQ). Eintrag auf der KI-Seite neu: Bundesland für Bundesland
+  (Rheinland-Pfalz verfügbar, alle 202 Gemeinden, NRW folgt), über 50.000
+  Kontakte in RLP, 15 Branchen, Multi-Filter und CSV-Export, Credits statt
+  Abo-Zwang mit drei Paketen und 10 Testkontakten, DSGVO, E-Mail-Abdeckung
+  bis 95 % „laut Adloc“. Alle Zahlen sind Angaben der Produktseite und so
+  gekennzeichnet („Zahlen laut adloc.io, Stand Oktober 2026“). Die frühere
+  Formulierung „Abo zum festen Monatspreis“ war falsch und ist raus.
 - 16.10.2026: **Teykto selbst fotografiert.** Inhaber bat, adloc.io und
   teykto.de direkt zu holen; beide Hosts werden von der Netzwerk-Richtlinie
   der Cloud-Umgebung mit 403 abgelehnt. Umweg: Teykto-Repo
