@@ -15,6 +15,15 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 16.10.2026: **Teykto-Live-Bild, Adloc als Testphase, Hero-Entscheidung.**
+  Inhaber liefert fünf Firefox-Bildschirmfotos von teykto.de und
+  teykto.onrender.com (Startseite „Sparen Sie 15 % Provision“, Speisekarte
+  mit Fotos und Warenkorb, Artikel-Dialog mit Größen und Extras,
+  Bestellabschluss). Speisekarte mit Warenkorb ohne Browserleiste als
+  `ki-projekt-teykto.webp` übernommen (1460×1030; die 4:3-Kachel schneidet
+  per CSS mittig). Adloc ist laut Inhaber noch nicht aktiv (Tests laufen):
+  Kicker „in der Testphase“, Text und Hinweis „noch nicht öffentlich
+  gestartet“. Hero: Inhaber folgt der Empfehlung, kein Koblenz-Bild.
 - 16.10.2026: **Adloc-Texte nach der echten Produktseite.** Inhaber hat fünf
   Bildschirmfotos von adloc.io geschickt (Branchen, Bundesländer, Vergleich,
   Nutzen, FAQ). Eintrag auf der KI-Seite neu: Bundesland für Bundesland

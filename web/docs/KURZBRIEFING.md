@@ -45,9 +45,8 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   „pixel56.de - Tagesplaner PDF.svg“ gerendert und zugeschnitten; Webflow
   nur lesend). Passt/Passt nicht auf acht bzw. sechs Punkte erweitert
   (Selbstständige, Unternehmer, roter Faden, alles aus einer Hand).
-  **Offen:** Inhaber fragt, ob das Koblenz-Bild in den Hero soll wie auf
-  der alten Seite. Empfehlung dagegen (siehe Chat/STATUS), Entscheidung
-  beim Inhaber.
+  **Entschieden (16.10.):** Hero bleibt ohne Koblenz-Bild, Inhaber folgt
+  der Empfehlung.
 - **Vergleich alt/neu (15.10.):** Alte Webflow-Seite hatte Breite
   (Handwerk, Coaches, KMU, DACH) und harten Verkaufston, aber keine
   Beweise, unhaltbare Versprechen („Ergebnisse in 2–4 Wochen“,
@@ -83,15 +82,15 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 
 ## Offene Punkte (Reihenfolge = Priorität)
 
-1. **Vom Inhaber erwartet:** Rückmeldung zur neuen Startseite (Hero,
-   Ohne/Mit-Block, Beispielbilder, Passt-Block), Entscheidung zum
-   Koblenz-Bild im Hero (Empfehlung: nein, Alternative Porträt). Teykto-
+1. **Vom Inhaber erwartet:** weitere Rückmeldung zur Startseite und den
+   Leistungsseiten. **Adloc ist noch nicht öffentlich** (Tests laufen),
+   Eintrag auf der KI-Seite sagt das; bei Start Kicker/Hinweis ändern. Teykto-
    und Adloc-Bilder sind da (16.10.): Adloc = Laptop-Mockup
    `ki-projekt-adloc.webp`, Adloc-Texte nach den Screenshots der Produktseite (Credits statt Abo,
    RLP komplett, 15 Branchen; Zahlen als „laut adloc.io“ gekennzeichnet).
-   Teykto = Bestellseite `ki-projekt-teykto.webp`, scharf aus dem
-   lokal gestarteten Teykto-Repo (Demo „Bella Napoli“, 1440 px; Demo hat
-   keine Gerichtsfotos, weil Unsplash gesperrt ist). adloc.io und
+   Teykto = Live-Screenshot des Inhabers von
+   teykto.onrender.com/r/bella-napoli mit Gerichtsfotos
+   (`ki-projekt-teykto.webp`, Browserleiste abgeschnitten). adloc.io und
    teykto.de sind in der Sandbox durch die Netzwerk-Richtlinie gesperrt
    (403 am Proxy), Inhaber kann sie in den Umgebungs-Einstellungen
    freigeben.

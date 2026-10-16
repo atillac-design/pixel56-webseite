@@ -194,9 +194,9 @@ const eigeneProjekte: DetailEintrag[] = [
     hinweis: "Produkt von Pixel56, mit KI entwickelt und betrieben.",
   },
   {
-    kicker: "Eigenes Produkt · B2B-Daten · Rheinland-Pfalz verfügbar",
+    kicker: "Eigenes Produkt · B2B-Daten · in der Testphase",
     titel: "Adloc: B2B-Kontaktdatenbank, Bundesland für Bundesland",
-    text: "Schluss mit stundenlanger Recherche: Adloc liefert verifizierte Firmenkontakte aus Deutschland, gefiltert nach Bundesland, Stadt und Branche, sofort als CSV fürs CRM. Gestartet mit Rheinland-Pfalz, alle 202 Gemeinden erfasst, Nordrhein-Westfalen folgt. Mit KI-Unterstützung gebaut und betrieben.",
+    text: "Schluss mit stundenlanger Recherche: Adloc liefert verifizierte Firmenkontakte aus Deutschland, gefiltert nach Bundesland, Stadt und Branche, sofort als CSV fürs CRM. Start mit Rheinland-Pfalz, alle 202 Gemeinden erfasst, Nordrhein-Westfalen folgt. Mit KI-Unterstützung gebaut; aktuell laufen die Tests vor dem öffentlichen Start.",
     punkte: [
       "Über 50.000 Kontakte in Rheinland-Pfalz, 15 Branchen von Handwerk bis IT, Abdeckung bis in die Kleinststädte",
       "Multi-Filter nach Bundesland, Stadt und Branche, Sofort-Export als CSV, direkt ins CRM importierbar",
@@ -208,7 +208,7 @@ const eigeneProjekte: DetailEintrag[] = [
     href: "https://adloc.io",
     linkText: "adloc.io ansehen",
     extern: true,
-    hinweis: "Eigenes Produkt von Pixel56. Zahlen laut adloc.io, Stand Oktober 2026.",
+    hinweis: "Eigenes Produkt von Pixel56, noch nicht öffentlich gestartet. Zahlen laut adloc.io, Stand Oktober 2026.",
   },
   {
     kicker: "Eigenes Werkzeug · Live-Dashboard",
