@@ -15,6 +15,27 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 16.10.2026: **Beispielbilder, Tagesplaner-Bild, längere Passt-Listen.**
+  Inhaber nach dem ersten Blick auf die Vorschau: Tagesplaner braucht ein
+  Bild (gibt es in Webflow), in den erklärenden Abschnitten fehlen Bilder,
+  immer ein Beispiel dazu; Passt/Passt nicht darf mehr Punkte haben; Frage,
+  ob das Koblenz-Bild in den Hero soll. Umgesetzt: Webflow-Asset
+  „pixel56.de - Tagesplaner PDF.svg“ (A4-Werbegrafik, 2,5 MB) per
+  lesendem API-Zugriff gefunden, von S3 geladen, mit sharp gerendert und
+  auf die beiden Blätter zugeschnitten → `public/bilder/freebie-tagesplaner.webp`
+  (1200×800, wie die anderen Freebie-Bilder); eingebunden in
+  `lib/ressourcen.ts` (`mockupBild`), Startseite, Blog-Übersicht,
+  Leistungsübersicht und alte Shop-Kategorie. Vier Sätze: vierte Spalte
+  mit Projektbild, Bildunterschrift „Beispiel · …“ und Link zur Fallstudie
+  (`friction-row-beispiel`, `friction-beispiel`; unter 980 px zweispaltig).
+  Leistungskarten: Bild oben mit Beispiel-Unterschrift
+  (`premium-service-bild`). Passt: acht Punkte (neu: selbstständig/
+  Unternehmer/Geschäftsführer, roter Faden, alles aus einer Hand, keine
+  Lust Marketing zu lernen); Passt nicht: sechs (neu: jede Woche neue Idee,
+  nur ausführen ohne hinterfragen). Koblenz-Hero: Empfehlung dagegen, weil
+  die Positionierung jetzt deutschlandweit/DACH ist, das Bild die Seite als
+  Lokalagentur rahmt und die Kernleistungs-Tafel im Hero das System erklärt;
+  Koblenz-Bild bleibt im Region-Abschnitt. Entscheidung beim Inhaber.
 - 15.10.2026: **Positionierung nach Abstimmung mit dem Inhaber korrigiert.**
   Inhaber: nicht nur Handwerk, sondern kleine und mittelständische
   Unternehmen (Mittelstand ausdrücklich, weil Team, Standort und Budget

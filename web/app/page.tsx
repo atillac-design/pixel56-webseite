@@ -26,10 +26,16 @@ import maTransporteImage from "@/public/bilder/projekt-ma-transporte.webp";
 import gmDachdeckerImage from "@/public/bilder/projekt-gm-dachdecker.webp";
 import oktayCoemertlerImage from "@/public/bilder/projekt-oktay-coemertler.webp";
 import colakImage from "@/public/bilder/projekt-colak.webp";
+import vdbBaggerImage from "@/public/bilder/projekt-van-den-berg-anzeige-baggerfahrer.webp";
+import vdbAbbruchImage from "@/public/bilder/projekt-van-den-berg-anzeige-abbruchhelfer.webp";
+import curlyAnnIpadImage from "@/public/bilder/projekt-curlyann-ipad.webp";
+import burgerfabriqImage from "@/public/bilder/projekt-burgerfabriq.webp";
+import teyktoImage from "@/public/bilder/ki-projekt-teykto.webp";
 import atillaImage from "@/public/bilder/team-atilla.webp";
 import koblenzImage from "@/public/bilder/koblenz-rhein.webp";
 import seoFreebieImage from "@/public/bilder/freebie-seo-ebook-transparent.webp";
 import kiFreebieImage from "@/public/bilder/freebie-ki-ebook.webp";
+import tagesplanerImage from "@/public/bilder/freebie-tagesplaner.webp";
 import SystemSzene from "@/components/SystemSzene";
 import { startseiteSzene } from "@/lib/system-szene";
 
@@ -104,6 +110,8 @@ const coreServices = [
     text: "Eine Website, die Besucher zur Anfrage führt. Klar aufgebaut, schnell geladen, bei Google gefunden. Beim Relaunch nehmen wir deine Rankings mit.",
     tags: ["Strategie", "UX & Design", "Entwicklung", "SEO-Basis"],
     outcome: "Aus Besuchern werden Anfragen.",
+    bild: curlyAnnIpadImage,
+    beispiel: "CurlyAnn Soulcare & Art: Website mit Buchung und Online-Zahlung",
   },
   {
     nr: "02",
@@ -113,6 +121,8 @@ const coreServices = [
     text: "Anzeigen auf Facebook und Instagram, die Kunden oder Bewerber bringen. Mit eigener Zielseite und Tracking, damit du siehst, was wirkt.",
     tags: ["Zielgruppen", "Creatives", "Tracking", "Optimierung"],
     outcome: "Aus Reichweite wird Nachfrage.",
+    bild: vdbAbbruchImage,
+    beispiel: "Van den Berg Gruppe: Recruiting-Anzeige für Abbruchhelfer",
   },
   {
     nr: "03",
@@ -122,6 +132,8 @@ const coreServices = [
     text: "Wir drehen bei dir im Betrieb oder schneiden dein Material. Reels, die zeigen, wie ihr arbeitet, in einem festen Rhythmus, der ohne dich läuft.",
     tags: ["Videoschnitt", "Reels", "Vor-Ort-Dreh", "Redaktionsplan"],
     outcome: "Aus Betriebsalltag wird Content.",
+    bild: burgerfabriqImage,
+    beispiel: "Burgerfabriq: Content und Marke aus dem Ladenalltag",
   },
   {
     nr: "04",
@@ -131,6 +143,8 @@ const coreServices = [
     text: "Anfragen vorsortieren, Angebote vorbereiten, Berichte schreiben: Routine, die bei dir jeden Tag anfällt, übernimmt ein KI-Prozess. Zuverlässig, ohne Spielerei.",
     tags: ["Prozessanalyse", "KI-Assistenten", "Workflows", "Anbindung"],
     outcome: "Aus Routine wird Zeit.",
+    bild: teyktoImage,
+    beispiel: "Teykto: eigene Bestellplattform, komplett mit KI gebaut",
   },
 ];
 
@@ -138,18 +152,30 @@ const frictions = [
   {
     problem: "Unsere Website ist von damals und bringt nichts.",
     answer: "Weil sie vorzeigt statt verkauft. Wir bauen sie vom Ziel her: Anruf, Anfrage, Buchung, Bewerbung.",
+    bild: colakImage,
+    beispiel: "Colak GmbH: Trocknungstechnik verständlich erklärt",
+    href: projectPath("colak-gmbh"),
   },
   {
     problem: "Kunden kommen nur über Empfehlung.",
     answer: "Gut. Nur nicht planbar. Wir sorgen dafür, dass dich auch die finden, die dich noch nicht kennen.",
+    bild: starkImage,
+    beispiel: "Stark ins Neue: Landingpage und Meta Ads zur Anmeldung",
+    href: projectPath("stark-ins-neue"),
   },
   {
     problem: "Auf die Stellenanzeige kam niemand Passendes.",
     answer: "Gute Leute suchen nicht, sie werden gefunden. Mit Reels und Anzeigen dort, wo sie abends scrollen.",
+    bild: vdbBaggerImage,
+    beispiel: "Van den Berg Gruppe: Anzeige für Baggerfahrer",
+    href: projectPath("van-den-berg"),
   },
   {
     problem: "Von Marketing verstehe ich nichts, und Zeit habe ich auch keine.",
     answer: "Musst du auch nicht. Du gibst uns ein Erstgespräch und Freigaben per WhatsApp, den Rest übernehmen wir.",
+    bild: maTransporteImage,
+    beispiel: "M&A Transporte: Website und Social Media seit 2019 betreut",
+    href: projectPath("ma-transporte"),
   },
 ];
 
@@ -255,16 +281,22 @@ const processSteps = [
 ];
 
 const passt = [
+  "Du bist selbstständig, Unternehmer oder Geschäftsführer und willst online ernst genommen werden.",
   "Du führst ein Unternehmen mit Team und willst, dass Sichtbarkeit planbar wird.",
   "Du willst Anfragen und Bewerber, nicht nur Likes.",
+  "Du willst einen roten Faden statt Einzelaktionen.",
+  "Du willst Website, Anzeigen, Content und Automatisierung aus einer Hand.",
   "Du willst einen Ansprechpartner statt drei Agenturen.",
   "Du hast ein Budget für Marketing und willst sehen, was es bringt.",
+  "Du hast keine Lust, Marketing selbst zu lernen, und willst es trotzdem richtig gemacht haben.",
 ];
 
 const passtNicht = [
   "Du suchst die günstigste Baukasten-Lösung.",
   "Du erwartest Ergebnisse in einer Woche ohne Werbebudget.",
   "Du willst ein neues Logo, aber nichts am Ablauf ändern.",
+  "Du willst jede Woche eine neue Idee testen, statt eine Strategie durchzuziehen.",
+  "Du suchst jemanden, der nur ausführt und nichts hinterfragt.",
   "Du brauchst eine Agentur für Ausschreibungen mit zwölf Entscheidern.",
 ];
 
@@ -297,6 +329,7 @@ const resources = [
     title: "Tagesplaner",
     text: "Die Planungsvorlage, mit der wir selbst arbeiten: Prioritäten, Zeitblöcke, To-do-Liste.",
     href: resourceRoutes.tagesplaner,
+    image: tagesplanerImage,
   },
 ];
 
@@ -421,10 +454,14 @@ export default async function HomePage() {
             </div>
             <div className="friction-list reveal">
               {frictions.map((item, index) => (
-                <div className="friction-row" key={item.problem}>
+                <div className="friction-row friction-row-beispiel" key={item.problem}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <h3>„{item.problem}“</h3>
                   <p>{item.answer}</p>
+                  <Link className="friction-beispiel" href={item.href}>
+                    <Image src={item.bild} alt={item.beispiel} fill sizes="(max-width: 900px) 100vw, 220px" />
+                    <small>Beispiel · {item.beispiel}</small>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -479,6 +516,10 @@ export default async function HomePage() {
                   <div className="premium-service-top">
                     <span>{service.nr}</span>
                     <i>{service.code}</i>
+                  </div>
+                  <div className="premium-service-bild">
+                    <Image src={service.bild} alt={service.beispiel} fill sizes="(max-width: 900px) 100vw, 45vw" />
+                    <small>Beispiel · {service.beispiel}</small>
                   </div>
                   <h3>{service.title}</h3>
                   <p>{service.text}</p>

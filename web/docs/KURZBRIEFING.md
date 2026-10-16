@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 15.10.2026
+# Kurzbriefing — Stand 16.10.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -36,6 +36,18 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Budget-Satz ohne Preis. Kurze, hochwertige Texte mit rotem Faden.
   Leistungs-Heros, Leistungsübersicht, Über uns, Fuß, Meta-Beschreibungen
   und Schema (areaServed DE/AT/CH) auf dieselbe Breite gezogen.
+- **Bilder in den Abschnitten (16.10., Wunsch des Inhabers):** jede
+  Erklärung bekommt ein echtes Beispiel. Vier Sätze: je ein Projektbild
+  mit Link (Colak, Stark ins Neue, Van den Berg, M&A Transporte);
+  Leistungskarten: je ein Beispielbild (CurlyAnn, Van den Berg, Burgerfabriq,
+  Teykto). Tagesplaner-Freebie hat jetzt ein Bild
+  (`public/bilder/freebie-tagesplaner.webp`, aus der Webflow-Grafik
+  „pixel56.de - Tagesplaner PDF.svg“ gerendert und zugeschnitten; Webflow
+  nur lesend). Passt/Passt nicht auf acht bzw. sechs Punkte erweitert
+  (Selbstständige, Unternehmer, roter Faden, alles aus einer Hand).
+  **Offen:** Inhaber fragt, ob das Koblenz-Bild in den Hero soll wie auf
+  der alten Seite. Empfehlung dagegen (siehe Chat/STATUS), Entscheidung
+  beim Inhaber.
 - **Vergleich alt/neu (15.10.):** Alte Webflow-Seite hatte Breite
   (Handwerk, Coaches, KMU, DACH) und harten Verkaufston, aber keine
   Beweise, unhaltbare Versprechen („Ergebnisse in 2–4 Wochen“,

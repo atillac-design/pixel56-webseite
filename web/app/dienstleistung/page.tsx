@@ -22,6 +22,7 @@ import { verifiedReviews } from "@/lib/verified-reviews";
 import { projectPath, resourceRoutes, routes, serviceRoutes } from "@/lib/routes";
 import seoFreebieImage from "@/public/bilder/freebie-seo-ebook-transparent.webp";
 import kiFreebieImage from "@/public/bilder/freebie-ki-ebook.webp";
+import tagesplanerImage from "@/public/bilder/freebie-tagesplaner.webp";
 
 const canonical = "/dienstleistung";
 
@@ -146,7 +147,7 @@ const kosten = [
 const resources = [
   { tag: "Checkliste · PDF", title: "SEO-Checkliste", text: "30 Prüfpunkte in drei Bereichen, dieselben, die wir bei jedem Kundenprojekt durchgehen. Zum Selbst-Abhaken, ohne Vorkenntnisse.", href: resourceRoutes["seo-checkliste"], image: seoFreebieImage },
   { tag: "Checkliste · PDF", title: "KI-Agenten-Checkliste", text: "Wo KI im Betriebsalltag wirklich Zeit spart und wo sie nur Spielerei ist. Ehrlich eingeordnet, mit konkreten Einsatzfällen.", href: resourceRoutes["ki-agenten-checkliste"], image: kiFreebieImage },
-  { tag: "Vorlage · PDF", title: "Tagesplaner", text: "Ein Blatt pro Tag, drei Prioritäten, feste Zeitblöcke. Die Vorlage, mit der wir selbst arbeiten.", href: resourceRoutes.tagesplaner, image: null },
+  { tag: "Vorlage · PDF", title: "Tagesplaner", text: "Ein Blatt pro Tag, drei Prioritäten, feste Zeitblöcke. Die Vorlage, mit der wir selbst arbeiten.", href: resourceRoutes.tagesplaner, image: tagesplanerImage },
 ];
 
 const faqs = [

@@ -8,6 +8,7 @@ import { ressourcen } from "@/lib/ressourcen";
 import { resourcePath } from "@/lib/routes";
 import seoFreebieImage from "@/public/bilder/freebie-seo-ebook-transparent.webp";
 import kiFreebieImage from "@/public/bilder/freebie-ki-ebook.webp";
+import tagesplanerImage from "@/public/bilder/freebie-tagesplaner.webp";
 
 const canonical = "/category/digitale-produkte";
 
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
 const bilder: Record<string, typeof seoFreebieImage | null> = {
   "seo-checkliste": seoFreebieImage,
   "ki-agenten-checkliste": kiFreebieImage,
-  tagesplaner: null,
+  tagesplaner: tagesplanerImage,
 };
 
 export default function DigitaleProduktePage() {

@@ -154,6 +154,7 @@ export const ressourcen: Ressource[] = [
     ],
     docTag: "Vorlage",
     docPages: "1 SEITE · PDF",
+    mockupBild: "/bilder/freebie-tagesplaner.webp",
     docTitle: "Tagesplaner",
     docRows: [
       { checked: true, text: "Top-3-Prioritäten des Tages" },
