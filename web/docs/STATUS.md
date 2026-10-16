@@ -15,6 +15,16 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 16.10.2026: **Teykto selbst fotografiert.** Inhaber bat, adloc.io und
+  teykto.de direkt zu holen; beide Hosts werden von der Netzwerk-Richtlinie
+  der Cloud-Umgebung mit 403 abgelehnt. Umweg: Teykto-Repo
+  (`/home/user/teykto-claude`) lokal installiert, Demo-Datenbank angelegt,
+  gebaut, auf Port 3400 gestartet und `/r/bella-napoli` mit Playwright in
+  1440×1080 aufgenommen → `ki-projekt-teykto.webp` (1200×900, scharf).
+  Die Demo zeigt Platzhalter statt Gerichtsfotos, weil die Seed-Bilder von
+  Unsplash kommen und das Netz gesperrt ist. Adloc bleibt beim
+  Laptop-Mockup des Inhabers; der Adloc-Code (`leads-finder`) wurde nicht
+  gestartet (Backend mit Daten nötig).
 - 16.10.2026: **Teykto- und Adloc-Bilder vom Inhaber.** Vier Dateien:
   Adloc-Gesamtseite (212 px breit, unbrauchbar), Adloc-Laptop-Mockup
   (2000 px), Teykto-Bestellseite „Test Lieferservice Pizza“ (630 px),
