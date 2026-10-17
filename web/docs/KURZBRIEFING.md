@@ -83,8 +83,10 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 ## Offene Punkte (Reihenfolge = Priorität)
 
 1. **Vom Inhaber erwartet:** weitere Rückmeldung zur Startseite und den
-   Leistungsseiten. **Adloc ist noch nicht öffentlich** (Tests laufen),
-   Eintrag auf der KI-Seite sagt das; bei Start Kicker/Hinweis ändern. Teykto-
+   Leistungsseiten. **Adloc und Teykto sind beide noch in der Testphase** (nicht
+   buchbar), Einträge auf der KI-Seite sagen das; bei Start Kicker/Hinweis
+   ändern. Nächstes Thema laut Inhaber: Kontaktformular je Leistung als
+   Klick-Fragebogen (Vorschlag im Chat vom 17.10., wartet auf „go“). Teykto-
    und Adloc-Bilder sind da (16.10.): Adloc = Laptop-Mockup
    `ki-projekt-adloc.webp`, Adloc-Texte nach den Screenshots der Produktseite (Credits statt Abo,
    RLP komplett, 15 Branchen; Zahlen als „laut adloc.io“ gekennzeichnet).

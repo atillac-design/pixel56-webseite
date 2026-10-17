@@ -160,7 +160,7 @@ const faqs = [
 /** Eigene Produkte und Werkzeuge, mit KI gebaut. Keine Kundenprojekte, dafür vollständig nachprüfbar. */
 const eigeneProjekte: DetailEintrag[] = [
   {
-    kicker: "Eigenes Produkt · Gastronomie · Pilotphase",
+    kicker: "Eigenes Produkt · Gastronomie · in der Testphase",
     titel: "Teykto: Bestellsystem für Gastronomen ohne Provision",
     text: "Lieferportale nehmen pro Bestellung Provision. Teykto gibt jedem Restaurant eine eigene Bestellseite zum festen Monatspreis. Das komplette System haben wir mit KI-Unterstützung entwickelt, vom Warenkorb bis zum Bondrucker.",
     punkte: [
@@ -174,7 +174,7 @@ const eigeneProjekte: DetailEintrag[] = [
     href: "https://teykto.de",
     linkText: "teykto.de ansehen",
     extern: true,
-    hinweis: "Eigenes Produkt von Pixel56, aktuell in der Pilotphase mit dem ersten Betrieb.",
+    hinweis: "Eigenes Produkt von Pixel56, aktuell in der Testphase mit dem ersten Betrieb. Noch nicht buchbar.",
   },
   {
     kicker: "Eigenes Produkt · Lead-Automatisierung",

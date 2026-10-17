@@ -15,6 +15,8 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 17.10.2026: **Teykto ebenfalls Testphase.** Inhaber: auch Teykto ist noch
+  nicht buchbar. Kicker „in der Testphase“, Hinweis „Noch nicht buchbar“.
 - 16.10.2026: **Teykto-Live-Bild, Adloc als Testphase, Hero-Entscheidung.**
   Inhaber liefert fünf Firefox-Bildschirmfotos von teykto.de und
   teykto.onrender.com (Startseite „Sparen Sie 15 % Provision“, Speisekarte
