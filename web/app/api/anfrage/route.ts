@@ -55,6 +55,9 @@ export async function POST(request: Request) {
     .map((a) => bogen.fragen.find((f) => f.frage === a.frage)?.optionen.find((o) => o.text === a.antwort)?.intern)
     .filter((m): m is string => Boolean(m));
   const betreffZusatz = markierungen.length ? ` · ${[...new Set(markierungen)].join(", ")}` : "";
+  // Beim allgemeinen Fragebogen (Kontaktseite) steht das gewählte Thema im Betreff.
+  const thema = bogen.key === "allgemein" ? antworten.find((a) => a.frage === bogen.fragen[0].frage)?.antwort : "";
+  const betreffLeistung = thema ? `${bogen.leistung} · ${thema}` : bogen.leistung;
   const mail = [
     `Neue Anfrage über den Fragebogen „${bogen.leistung}“`,
     "",
@@ -72,7 +75,7 @@ export async function POST(request: Request) {
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ from, to: [to], reply_to: email, subject: `Pixel56 Anfrage ${bogen.leistung}: ${name}${betreffZusatz}`, text: mail }),
+      body: JSON.stringify({ from, to: [to], reply_to: email, subject: `Pixel56 Anfrage ${betreffLeistung}: ${name}${betreffZusatz}`, text: mail }),
       signal: AbortSignal.timeout(10000),
     });
     if (!response.ok) throw new Error(`Resend ${response.status}`);

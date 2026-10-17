@@ -88,52 +88,52 @@ const statusRows = [
 ];
 
 const useCases = [
-  { nr: "01", title: "Anfragen vorsortieren", text: "Eingehende Mails und Formulare nach Anliegen, Dringlichkeit und Region einordnen und einen Antwortentwurf vorbereiten. Du liest, prüfst, schickst ab." },
-  { nr: "02", title: "Angebote vorbereiten", text: "Aus Vorlagen, Preislisten und Projektnotizen entsteht ein erster Angebotsentwurf. Die Freigabe und jede Preisentscheidung bleiben bei dir." },
-  { nr: "03", title: "Internes Wissen", text: "Richtlinien, Abläufe, alte Projekte und häufige Fragen in einem Assistenten, der deinem Team antwortet, statt dass alle den Chef fragen." },
-  { nr: "04", title: "Content-Entwürfe", text: "Aus Baustellenfotos, Stichworten oder Interviews entstehen Beitragsentwürfe im Ton deiner Marke. Bereit zur Freigabe, nicht zur Veröffentlichung." },
-  { nr: "05", title: "Dokumente & Berichte", text: "Besprechungen, Notizen oder lange Unterlagen werden zu Aufgaben, Entscheidungen und einem lesbaren Wochenbericht, ohne Copy-and-paste." },
-  { nr: "06", title: "Übergaben zwischen Systemen", text: "Daten aus Formularen, Postfächern und Tabellen kontrolliert weitergeben, damit niemand mehr dasselbe zweimal eintippt." },
+  { nr: "01", title: "Anfragen vorsortieren", text: "Mails und Formulare nach Anliegen und Dringlichkeit einordnen, Antwortentwurf vorbereiten. Du liest, prüfst, schickst ab." },
+  { nr: "02", title: "Angebote vorbereiten", text: "Aus Vorlagen und Projektnotizen entsteht ein erster Angebotsentwurf. Freigabe und Preis bleiben bei dir." },
+  { nr: "03", title: "Internes Wissen", text: "Abläufe, alte Projekte und häufige Fragen in einem Assistenten, der dem Team antwortet, statt dass alle den Chef fragen." },
+  { nr: "04", title: "Content-Entwürfe", text: "Aus Fotos, Stichworten oder Interviews entstehen Beitragsentwürfe im Ton deiner Marke. Zur Freigabe, nicht zur Veröffentlichung." },
+  { nr: "05", title: "Dokumente & Berichte", text: "Besprechungen und Notizen werden zu Aufgaben, Entscheidungen und einem lesbaren Wochenbericht." },
+  { nr: "06", title: "Übergaben zwischen Systemen", text: "Daten aus Formularen, Postfächern und Tabellen weitergeben, damit niemand dasselbe zweimal eintippt." },
 ];
 
 const audiences = [
-  { tag: "Handwerk & Bau", title: "Anfragen und Angebote", text: "Anfragen kommen per Mail, WhatsApp und Telefon, Angebote entstehen abends am Schreibtisch. KI sortiert vor und bereitet den Entwurf, du entscheidest über Preis und Termin.", hint: "Beispiel: Anfrage-Eingang mit Antwortentwurf" },
-  { tag: "Dienstleistung", title: "Termine und Rückfragen", text: "Dieselben zehn Fragen, jeden Tag. Ein Assistent beantwortet sie auf Basis deiner Unterlagen und übergibt nur das an dich, was wirklich eine Entscheidung braucht.", hint: "Beispiel: FAQ-Assistent mit Übergabe" },
-  { tag: "Bildung & Soziales", title: "Anmeldungen und Unterlagen", text: "Anmeldungen prüfen, fehlende Angaben anfordern, Teilnehmerlisten pflegen. Routine, die Zeit für die eigentliche Arbeit mit Menschen frisst.", hint: "Beispiel: Anmeldestrecke mit Vollständigkeitsprüfung" },
-  { tag: "Immobilien & Bau", title: "Exposés und Interessenten", text: "Objektdaten in Exposé-Entwürfe, Interessentenanfragen nach Budget und Zeitraum vorqualifiziert. Die Besichtigung macht weiter der Mensch.", hint: "Beispiel: Vorqualifizierung von Anfragen" },
-  { tag: "Beratung & Agenturen", title: "Berichte und Wissen", text: "Projektstände, Kampagnenzahlen und Notizen in Berichte übersetzen, die Kunden verstehen. Wissen aus alten Projekten wiederfinden, statt neu zu erarbeiten.", hint: "Beispiel: Wochenbericht aus Rohdaten" },
-  { tag: "Gastronomie & Handel", title: "Bewertungen und Beiträge", text: "Antworten auf Bewertungen, Beitragsentwürfe aus Fotos, Produkttexte aus Lieferantendaten. Schnell, im richtigen Ton, mit Freigabe durch dich.", hint: "Beispiel: Bewertungsantworten mit Freigabe" },
+  { tag: "Handwerk & Bau", title: "Anfragen und Angebote", text: "Anfragen per Mail, WhatsApp, Telefon. Angebote abends am Schreibtisch. KI sortiert vor und bereitet den Entwurf, du entscheidest.", hint: "Beispiel: Anfrage-Eingang mit Antwortentwurf" },
+  { tag: "Dienstleistung", title: "Termine und Rückfragen", text: "Dieselben zehn Fragen, jeden Tag. Ein Assistent beantwortet sie aus deinen Unterlagen und übergibt nur, was eine Entscheidung braucht.", hint: "Beispiel: FAQ-Assistent mit Übergabe" },
+  { tag: "Bildung & Soziales", title: "Anmeldungen und Unterlagen", text: "Anmeldungen prüfen, fehlende Angaben anfordern, Listen pflegen. Routine, die Zeit für die Arbeit mit Menschen frisst.", hint: "Beispiel: Anmeldestrecke mit Vollständigkeitsprüfung" },
+  { tag: "Immobilien & Bau", title: "Exposés und Interessenten", text: "Objektdaten werden zu Exposé-Entwürfen, Anfragen nach Budget und Zeitraum vorsortiert. Die Besichtigung macht der Mensch.", hint: "Beispiel: Vorqualifizierung von Anfragen" },
+  { tag: "Beratung & Agenturen", title: "Berichte und Wissen", text: "Projektstände und Zahlen in Berichte übersetzen, die Kunden verstehen. Wissen aus alten Projekten wiederfinden.", hint: "Beispiel: Wochenbericht aus Rohdaten" },
+  { tag: "Gastronomie & Handel", title: "Bewertungen und Beiträge", text: "Antworten auf Bewertungen, Beitragsentwürfe aus Fotos, Produkttexte aus Lieferantendaten. Im richtigen Ton, mit deiner Freigabe.", hint: "Beispiel: Bewertungsantworten mit Freigabe" },
 ];
 
 const checks = [
-  { problem: "Wiederholt sich die Aufgabe wirklich?", answer: "Nur wenn eine Aufgabe jede Woche in ähnlicher Form anfällt, lohnt sich Automatisierung. Einmalige Sonderfälle bleiben Handarbeit, und das sagen wir auch." },
-  { problem: "Gibt es Beispiele, an denen KI lernen kann?", answer: "Alte Angebote, beantwortete Mails, Vorlagen. Ohne Beispiele rät das System. Mit Beispielen trifft es deinen Ton und deine Regeln." },
-  { problem: "Wer prüft das Ergebnis?", answer: "Jeder Ablauf hat eine Stelle, an der ein Mensch freigibt. Wir legen fest, wer das ist und wie viel Zeit die Prüfung kosten darf." },
-  { problem: "Welche Daten dürfen wohin?", answer: "Kundendaten, Preise, Personalunterlagen: Vor der Umsetzung klären wir, welche Informationen welches System sehen darf und welche gar nicht." },
-  { problem: "Was passiert bei einem Fehler?", answer: "Jeder Entwurf ist nur ein Entwurf. Nichts geht automatisch raus, nichts wird automatisch gelöscht. Fehler bleiben intern und korrigierbar." },
-  { problem: "Was ist der Zeitgewinn, ehrlich gerechnet?", answer: "Wir schätzen vor dem Start, wie viele Stunden pro Woche der Ablauf heute kostet, und messen nach dem Prototyp, ob die Erwartung stimmt." },
+  { problem: "Wiederholt sich die Aufgabe wirklich?", answer: "Nur was jede Woche ähnlich anfällt, lohnt sich. Sonderfälle bleiben Handarbeit, und das sagen wir auch." },
+  { problem: "Gibt es Beispiele, an denen KI lernen kann?", answer: "Alte Angebote, beantwortete Mails, Vorlagen. Ohne Beispiele rät das System, mit Beispielen trifft es deinen Ton." },
+  { problem: "Wer prüft das Ergebnis?", answer: "Jeder Ablauf hat eine Stelle, an der ein Mensch freigibt. Wir legen fest, wer das ist." },
+  { problem: "Welche Daten dürfen wohin?", answer: "Kundendaten, Preise, Personalunterlagen: Vorher ist klar, welches System was sehen darf und was gar nicht." },
+  { problem: "Was passiert bei einem Fehler?", answer: "Nichts geht automatisch raus, nichts wird automatisch gelöscht. Fehler bleiben intern und korrigierbar." },
+  { problem: "Was ist der Zeitgewinn, ehrlich gerechnet?", answer: "Vor dem Start schätzen wir die Stunden pro Woche, nach dem Prototyp messen wir, ob es stimmt." },
 ];
 
 const boundaries = [
-  { title: "Preisentscheidungen", text: "KI bereitet das Angebot vor, den Preis setzt du. Rabatte, Nachlässe und Sonderkonditionen bleiben Chefsache." },
-  { title: "Sensible Kommunikation", text: "Beschwerden, Absagen, schwierige Gespräche: Hier schreibt der Mensch. KI liefert höchstens Fakten und einen Rohentwurf." },
-  { title: "Personalentscheidungen", text: "Bewerbungen strukturieren ja, Bewerber bewerten nein. Die Auswahl bleibt bei dir, nachvollziehbar und fair." },
-  { title: "Rechtliche Zusagen", text: "Fristen, Gewährleistung, Verträge: Nichts davon formuliert ein System verbindlich. Vorlagen ja, Zusagen nein." },
+  { title: "Preisentscheidungen", text: "KI bereitet das Angebot vor, den Preis setzt du. Rabatte bleiben Chefsache." },
+  { title: "Sensible Kommunikation", text: "Beschwerden, Absagen, schwierige Gespräche: Hier schreibt der Mensch." },
+  { title: "Personalentscheidungen", text: "Bewerbungen strukturieren ja, Bewerber bewerten nein. Die Auswahl bleibt bei dir." },
+  { title: "Rechtliche Zusagen", text: "Fristen, Gewährleistung, Verträge: Vorlagen ja, Zusagen nein." },
 ];
 
 const dataFrame = [
-  { title: "Datenarten klären", text: "Welche Informationen fließen in den Ablauf, welche sind sensibel, welche bleiben außen vor? Das steht vor der ersten Zeile Technik fest." },
-  { title: "Anbieter nach Datenart", text: "Nicht jedes KI-Modell darf jede Information sehen. Wir wählen Dienste und Konfiguration passend zur Vertraulichkeit, mit Auftragsverarbeitung, wo nötig." },
-  { title: "Zugriffsrechte", text: "Wer im Team darf was sehen und freigeben? Rollen und Rechte werden eingerichtet, bevor der Prozess live geht." },
-  { title: "Protokoll & Löschung", text: "Was das System getan hat, bleibt nachvollziehbar. Was nicht mehr gebraucht wird, wird nach festen Regeln gelöscht." },
+  { title: "Datenarten klären", text: "Welche Informationen fließen, welche sind sensibel, welche bleiben außen vor? Das steht vor der ersten Zeile Technik fest." },
+  { title: "Anbieter nach Datenart", text: "Nicht jeder Dienst darf jede Information sehen. Auswahl passend zur Vertraulichkeit, mit Auftragsverarbeitung, wo nötig." },
+  { title: "Zugriffsrechte", text: "Wer darf was sehen und freigeben? Rollen und Rechte stehen, bevor der Prozess live geht." },
+  { title: "Protokoll & Löschung", text: "Was das System getan hat, bleibt nachvollziehbar. Was nicht mehr gebraucht wird, wird gelöscht." },
 ];
 
 const steps = [
-  { nr: "01", tag: "Phase 1", title: "Prozess verstehen", text: "Wir schauen auf echte Arbeitsschritte, beteiligte Personen, Daten und Engpässe. Eine Stunde mit den Menschen, die es heute von Hand machen." },
-  { nr: "02", tag: "Phase 2", title: "Hebel auswählen", text: "Priorisierung nach Zeitgewinn, Machbarkeit, Risiko und Nutzen im Alltag. Ein Ablauf zuerst, nicht fünf gleichzeitig." },
-  { nr: "03", tag: "Phase 3", title: "Klein testen", text: "Ein klar begrenzter Prototyp zeigt früh, ob die Idee funktioniert, bevor ein größerer Prozess verändert wird." },
-  { nr: "04", tag: "Phase 4", title: "Sauber integrieren", text: "Der funktionierende Ablauf wird dokumentiert, in bestehende Systeme eingebunden und dem Team erklärt." },
-  { nr: "05", tag: "Phase 5", title: "Messen & verbessern", text: "Qualität und Zeitgewinn werden geprüft, Regeln und Übergaben gezielt angepasst. Dann erst der nächste Ablauf." },
+  { nr: "01", tag: "Phase 1", title: "Prozess verstehen", text: "Eine Stunde mit den Menschen, die es heute von Hand machen. Arbeitsschritte, Daten, Engpässe." },
+  { nr: "02", tag: "Phase 2", title: "Hebel auswählen", text: "Nach Zeitgewinn, Machbarkeit und Risiko. Ein Ablauf zuerst, nicht fünf gleichzeitig." },
+  { nr: "03", tag: "Phase 3", title: "Klein testen", text: "Ein begrenzter Prototyp zeigt früh, ob die Idee funktioniert." },
+  { nr: "04", tag: "Phase 4", title: "Sauber integrieren", text: "Dokumentiert, in bestehende Systeme eingebunden, dem Team erklärt." },
+  { nr: "05", tag: "Phase 5", title: "Messen & verbessern", text: "Qualität und Zeitgewinn prüfen, nachschärfen. Dann erst der nächste Ablauf." },
 ];
 
 const exampleFlow = [
@@ -144,20 +144,18 @@ const exampleFlow = [
 ];
 
 const entry = [
-  { title: "Prozessaufnahme", text: "Ein Termin, in dem wir den Ablauf, die Beteiligten und die Daten verstehen. Daraus entsteht ein Vorschlag für den ersten sinnvollen Schritt, mit Umfang und Preis." },
-  { title: "Prototyp", text: "Ein abgegrenzter Ablauf, der im Alltag läuft und zeigt, ob der Zeitgewinn real ist. Einmalig kalkuliert, ohne langfristige Bindung." },
-  { title: "Integration & Betreuung", text: "Einbindung in bestehende Systeme, Einweisung des Teams und laufende Pflege, wenn sich Regeln oder Werkzeuge ändern. Als Festbetrag, nicht nach Stunden." },
+  { title: "Prozessaufnahme", text: "Ein Termin, in dem wir Ablauf, Beteiligte und Daten verstehen. Daraus entsteht ein Vorschlag für den ersten Schritt mit klarem Umfang." },
+  { title: "Prototyp", text: "Ein abgegrenzter Ablauf, der im Alltag läuft und zeigt, ob der Zeitgewinn real ist. Ohne langfristige Bindung." },
+  { title: "Integration & Betreuung", text: "Einbindung in bestehende Systeme, Einweisung des Teams, laufende Pflege, wenn sich Regeln oder Werkzeuge ändern." },
 ];
 
 const faqs = [
-  { q: "Brauche ich bereits bestimmte KI-Tools?", a: "Nein. Wir beginnen bei deinem Prozess und wählen Werkzeuge erst danach. Vorhandene Systeme werden eingebunden, wenn sie sinnvoll nutzbar sind, statt sie zu ersetzen." },
-  { q: "Welche Prozesse eignen sich für KI-Automatisierung?", a: "Wiederkehrende, klar beschreibbare Aufgaben mit ausreichend Beispielen oder strukturiertem Wissen: Anfragen, Angebote, Berichte, Dokumentation. Entscheidungen mit hoher Verantwortung bleiben beim Menschen und werden höchstens vorbereitet." },
-  { q: "Ersetzt KI Mitarbeiter?", a: "Nein. Ziel ist, Routine zu reduzieren und Informationen vorzubereiten, damit mehr Zeit für Kunden, Entscheidungen und die eigentliche Arbeit bleibt. In kleinen Betrieben ist das oft der Unterschied zwischen Feierabend und Abendschicht." },
-  { q: "Wie geht ihr mit vertraulichen Daten um?", a: "Datenarten, Zugriffsrechte und eingesetzte Dienste werden vor der Umsetzung geklärt und dokumentiert. Sensible Informationen werden nicht ungeprüft an beliebige Tools übertragen. Je nach Anforderung wählen wir einen passenden technischen und vertraglichen Rahmen." },
-  { q: "Kann man mit einem kleinen Test starten?", a: "Ja, das ist der bevorzugte Weg. Ein klar begrenzter Anwendungsfall macht Nutzen, Qualität und Grenzen sichtbar, bevor ein größerer Prozess verändert wird." },
-  { q: "Wie lange dauert ein erster Prototyp?", a: "Das hängt von Datenlage und beteiligten Systemen ab. Ein abgegrenzter Ablauf wie die Vorsortierung von Anfragen steht in der Regel innerhalb weniger Wochen im Alltag. Den konkreten Zeitplan bekommst du nach der Prozessaufnahme." },
-  { q: "Was kostet ein KI-Prozess?", a: "Das hängt davon ab, wie viele Systeme beteiligt sind, wie sauber die Daten vorliegen und wie kritisch der Ablauf ist. Nach der Prozessaufnahme bekommst du einen klaren Vorschlag mit Umfang und Preis für den ersten Schritt, keine offene Stundenabrechnung." },
-  { q: "Was passiert, wenn sich die Werkzeuge ändern?", a: "KI-Dienste entwickeln sich schnell. Deshalb dokumentieren wir jeden Ablauf unabhängig vom Werkzeug und betreuen ihn weiter. Wenn ein besseres oder günstigeres Modell sinnvoll ist, stellen wir um, ohne dass dein Prozess stillsteht." },
+  { q: "Brauche ich bereits bestimmte KI-Tools?", a: "Nein. Wir beginnen bei deinem Prozess und wählen Werkzeuge erst danach. Vorhandene Systeme binden wir ein, statt sie zu ersetzen." },
+  { q: "Welche Prozesse eignen sich?", a: "Wiederkehrende, klar beschreibbare Aufgaben mit Beispielen oder strukturiertem Wissen: Anfragen, Angebote, Berichte, Dokumentation. Entscheidungen mit Verantwortung bleiben beim Menschen." },
+  { q: "Ersetzt KI Mitarbeiter?", a: "Nein. Sie nimmt Routine ab, damit mehr Zeit für Kunden und die eigentliche Arbeit bleibt. In kleinen Betrieben ist das oft der Unterschied zwischen Feierabend und Abendschicht." },
+  { q: "Wie geht ihr mit vertraulichen Daten um?", a: "Datenarten, Zugriffsrechte und Dienste werden vor der Umsetzung geklärt und dokumentiert. Sensible Informationen gehen nicht ungeprüft an beliebige Tools." },
+  { q: "Wie lange dauert ein erster Prototyp?", a: "Ein abgegrenzter Ablauf wie die Vorsortierung von Anfragen steht meist innerhalb weniger Wochen im Alltag. Den Zeitplan bekommst du nach der Prozessaufnahme." },
+  { q: "Was passiert, wenn sich die Werkzeuge ändern?", a: "KI-Dienste entwickeln sich schnell. Deshalb dokumentieren wir jeden Ablauf unabhängig vom Werkzeug. Wenn ein besseres Modell sinnvoll ist, stellen wir um, ohne dass dein Prozess stillsteht." },
 ];
 
 /** Eigene Produkte und Werkzeuge, mit KI gebaut. Keine Kundenprojekte, dafür vollständig nachprüfbar. */
@@ -321,15 +319,10 @@ export default function KiAutomatisierungPage() {
               <span className="band-tag">01 — Ausgangslage</span>
               <h2 className="band-title">KI ist erst wertvoll, wenn sie <em>Arbeit verbessert</em></h2>
               <p className="lead">
-                Ein weiteres Abo löst keinen schlechten Ablauf. Die interessanten
-                Anwendungen für kleine und mittlere Betriebe sind unspektakulär:
-                Sie erledigen Arbeit, die heute jemand von Hand macht, obwohl sie
-                jeden Tag gleich abläuft.
+                Ein weiteres Abo löst keinen schlechten Ablauf. Die wertvollen Anwendungen sind unspektakulär: Sie erledigen Arbeit, die heute jemand von Hand macht, obwohl sie jeden Tag gleich abläuft.
               </p>
               <p className="lead">
-                Deshalb suchen wir zuerst die Stelle, an der Informationen
-                verloren gehen, Arbeit doppelt entsteht oder Wissen nur in
-                einzelnen Köpfen liegt. Erst dann geht es um Technik.
+                Wir suchen zuerst die Stelle, an der Arbeit doppelt entsteht oder Wissen nur in Köpfen liegt. Erst dann geht es um Technik.
               </p>
             </div>
             <div className="reveal">
@@ -345,9 +338,7 @@ export default function KiAutomatisierungPage() {
               <h2 className="band-title">Sechs Abläufe statt <em>allgemeiner Versprechen</em></h2>
             </div>
             <p className="band-note">
-              Welche Anwendung zuerst sinnvoll ist, hängt von deinem Team, deinen
-              Daten und den vorhandenen Systemen ab. Meist ist es die, die heute
-              am meisten nervt.
+              Welche zuerst? Meist die, die heute am meisten nervt.
             </p>
           </div>
           <div className="scope-grid reveal">
@@ -373,8 +364,7 @@ export default function KiAutomatisierungPage() {
               <h2 className="band-title">Kein Tech-Unternehmen nötig. <em>Ein nerviger Ablauf reicht.</em></h2>
             </div>
             <p className="band-note">
-              Sechs Branchen, sechs typische Ansatzpunkte. Die Technik ist
-              überall ähnlich, der Ablauf ist immer deiner.
+              Die Technik ist überall ähnlich, der Ablauf ist immer deiner.
             </p>
           </div>
           <div className="audience-grid reveal">
@@ -389,41 +379,14 @@ export default function KiAutomatisierungPage() {
           </div>
         </section>
 
-        <section className="band dark-stage service-dark-stage" id="kontrolle">
-          <div className="split2">
-            <div className="reveal">
-              <span className="band-tag">04 — Verantwortungsvolle Umsetzung</span>
-              <h2 className="band-title">Automatisieren, ohne <em>Kontrolle abzugeben</em></h2>
-              <p className="lead">
-                KI darf vorbereiten, sortieren und Entwürfe erstellen. Kritische
-                Entscheidungen, Freigaben und sensible Kommunikation bleiben
-                dort beim Menschen, wo Verantwortung notwendig ist.
-              </p>
-              <ul className="lines">
-                <li>Daten und Zugriffsrechte vorab klären.</li>
-                <li>Ergebnisse nachvollziehbar und prüfbar halten.</li>
-                <li>Klare Grenzen für den Anwendungsfall definieren.</li>
-                <li>Team und bestehende Arbeitsweise mitnehmen.</li>
-              </ul>
-            </div>
-            <div className="system-flow reveal" aria-label="Kontrollierter KI-Ablauf">
-              <div><span>01</span><b>Input</b><small>Freigegebene Daten und klare Aufgabe</small></div>
-              <div><span>02</span><b>KI-Vorbereitung</b><small>Struktur, Entwurf oder Vorschlag</small></div>
-              <div><span>03</span><b>Prüfung</b><small>Menschliche Kontrolle und Freigabe</small></div>
-              <div><span>04</span><b>Nächster Schritt</b><small>Dokumentiert und nachvollziehbar</small></div>
-            </div>
-          </div>
-        </section>
-
         <section className="band theme-light" id="pruefung">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">05 — Bevor wir bauen</span>
+              <span className="band-tag">04 — Bevor wir bauen</span>
               <h2 className="band-title">Sechs Fragen, <em>die jeder Ablauf bestehen muss</em></h2>
             </div>
             <p className="band-note">
-              Fällt eine Antwort negativ aus, bauen wir nicht. Lieber ein
-              ehrliches Nein im Erstgespräch als ein Prototyp, den niemand nutzt.
+              Fällt eine Antwort negativ aus, bauen wir nicht. Lieber ein ehrliches Nein als ein Prototyp, den niemand nutzt.
             </p>
           </div>
           <div className="friction-list checklist reveal">
@@ -440,16 +403,13 @@ export default function KiAutomatisierungPage() {
         <section className="band theme-light" id="grenzen">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">06 — Was wir nicht automatisieren</span>
+              <span className="band-tag">05 — Was wir nicht automatisieren</span>
               <h2 className="band-title">Vier Bereiche, <em>die beim Menschen bleiben</em></h2>
               <p className="lead">
-                Die meisten Anbieter erzählen, was KI alles kann. Wir sagen dir
-                auch, wo sie nichts zu suchen hat. Nicht aus Vorsicht, sondern
-                weil dort Vertrauen, Haftung und Beziehung auf dem Spiel stehen.
+                Die meisten Anbieter erzählen, was KI alles kann. Wir sagen dir auch, wo sie nichts zu suchen hat: wo Vertrauen, Haftung und Beziehung auf dem Spiel stehen.
               </p>
               <p className="lead">
-                Innerhalb dieser Grenzen bleibt genug Routine übrig, die sich
-                lohnt. Fast immer mehr, als Betriebe vorher vermuten.
+                Innerhalb dieser Grenzen bleibt mehr Routine übrig, als die meisten vermuten.
               </p>
             </div>
             <div className="mini-grid reveal" aria-label="Grenzen der Automatisierung">
@@ -466,17 +426,13 @@ export default function KiAutomatisierungPage() {
         <section className="band theme-light" id="daten">
           <div className="split2 reverse">
             <div className="reveal">
-              <span className="band-tag">07 — Datenschutz &amp; Technik</span>
+              <span className="band-tag">06 — Datenschutz &amp; Technik</span>
               <h2 className="band-title">Der Rahmen steht, <em>bevor Daten fließen</em></h2>
               <p className="lead">
-                Kundendaten, Preise, Personalunterlagen: Die Frage ist nicht, ob
-                KI damit umgehen kann, sondern ob sie es darf. Deshalb klären
-                wir vor der Umsetzung, welche Information welches System sehen
-                darf, wer freigibt und was protokolliert wird.
+                Kundendaten, Preise, Personalunterlagen: Die Frage ist nicht, ob KI damit umgehen kann, sondern ob sie es darf. Deshalb steht der Rahmen vor der Umsetzung.
               </p>
               <p className="lead">
-                Das Ergebnis ist ein dokumentierter Ablauf, den du auch deinem
-                Steuerberater oder Datenschutzbeauftragten zeigen kannst.
+                Ein dokumentierter Ablauf, den du auch deinem Datenschutzbeauftragten zeigen kannst.
               </p>
             </div>
             <div className="mini-grid reveal" aria-label="Datenrahmen">
@@ -493,12 +449,11 @@ export default function KiAutomatisierungPage() {
         <section className="band theme-light" id="vorgehen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">08 — Vorgehen</span>
+              <span className="band-tag">07 — Vorgehen</span>
               <h2 className="band-title">Vom Engpass zum <em>funktionierenden Ablauf</em></h2>
             </div>
             <p className="band-note">
-              Fünf Phasen, ein Ablauf nach dem anderen. Erst wenn der erste
-              Prozess läuft und misst, kommt der nächste.
+              Ein Ablauf nach dem anderen. Erst wenn der erste läuft, kommt der nächste.
             </p>
           </div>
           <Stepper steps={steps} />
@@ -507,13 +462,11 @@ export default function KiAutomatisierungPage() {
         <section className="band dark-stage service-dark-stage" id="beispiel">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">09 — Ein Beispielablauf</span>
+              <span className="band-tag">08 — Ein Beispielablauf</span>
               <h2 className="band-title">So sieht die Vorsortierung <em>von Anfragen aus</em></h2>
             </div>
             <p className="band-note">
-              Ein typischer erster Prozess für Handwerk und Dienstleistung,
-              schematisch dargestellt. Kein Kundenprojekt, aber genau so bauen
-              wir es.
+              Ein typischer erster Prozess, schematisch. Kein Kundenprojekt, aber genau so bauen wir es.
             </p>
           </div>
           <div className="reveal">
@@ -533,13 +486,11 @@ export default function KiAutomatisierungPage() {
         <section className="band theme-light" id="eigene-projekte">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">10 — Eigene Projekte</span>
+              <span className="band-tag">09 — Eigene Projekte</span>
               <h2 className="band-title">Was wir selbst <em>mit KI gebaut haben</em></h2>
             </div>
             <p className="band-note">
-              Keine Kundenprojekte, sondern eigene Produkte und Werkzeuge. Jedes
-              davon läuft, jedes kannst du anschauen. Genau so bauen wir es auch
-              für dich.
+              Eigene Produkte und Werkzeuge, mit KI gebaut. Genau so bauen wir es auch für dich.
             </p>
           </div>
           <DetailReihe eintraege={eigeneProjekte} titel={null} />
@@ -548,7 +499,7 @@ export default function KiAutomatisierungPage() {
         <section className="band dark-stage service-dark-stage" id="zentrale-demo">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">11 — Zum Ausprobieren</span>
+              <span className="band-tag">10 — Zum Ausprobieren</span>
               <h2 className="band-title">Die Zentrale, <em>zum Durchklicken</em></h2>
             </div>
             <p className="band-note">
@@ -565,18 +516,13 @@ export default function KiAutomatisierungPage() {
         <section className="band theme-light" id="einstieg">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">12 — Einstieg &amp; Kosten</span>
+              <span className="band-tag">11 — Einstieg</span>
               <h2 className="band-title">Drei Schritte, <em>jeder einzeln entscheidbar</em></h2>
               <p className="lead">
-                Du musst dich nicht für ein großes KI-Projekt entscheiden. Die
-                Prozessaufnahme zeigt, ob sich ein Ablauf lohnt. Der Prototyp
-                zeigt, ob der Zeitgewinn real ist. Erst dann geht es um
-                Integration und Betreuung.
+                Kein großes KI-Projekt nötig. Die Prozessaufnahme zeigt, ob sich ein Ablauf lohnt. Der Prototyp zeigt, ob der Zeitgewinn real ist. Erst dann Integration und Betreuung.
               </p>
               <p className="lead">
-                Preise hängen von Systemen, Datenlage und Kritikalität ab und
-                stehen vor jedem Schritt klar im Angebot. Keine offene
-                Stundenabrechnung.
+                Vor jedem Schritt steht der Umfang klar im Angebot. Keine offene Stundenabrechnung.
               </p>
             </div>
             <div className="mini-grid reveal" aria-label="Einstiegsschritte">
@@ -593,13 +539,10 @@ export default function KiAutomatisierungPage() {
         <section className="band theme-light" id="checkliste">
           <div className="split2 reverse">
             <div className="reveal">
-              <span className="band-tag">13 — Selbst prüfen</span>
+              <span className="band-tag">12 — Selbst prüfen</span>
               <h2 className="band-title">Wo spart KI in deinem Betrieb <em>wirklich Zeit?</em></h2>
               <p className="lead">
-                Unsere KI-Agenten-Checkliste hilft dir, das vor dem ersten
-                Gespräch selbst einzuordnen: wo KI sofort hilft, wo es sich
-                noch nicht lohnt und wie du ohne Projektrisiko startest.
-                Kostenlos als PDF.
+                Die KI-Agenten-Checkliste zeigt dir vor dem ersten Gespräch, wo KI sofort hilft und wo es sich noch nicht lohnt. Kostenlos als PDF.
               </p>
               <Link className="body-link" href={resourceRoutes["ki-agenten-checkliste"]}>
                 KI-Agenten-Checkliste herunterladen <ArrowIcon />
@@ -622,13 +565,10 @@ export default function KiAutomatisierungPage() {
         <section className="band dark-stage service-dark-stage" id="zusammenarbeit">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">14 — Zusammenarbeit</span>
+              <span className="band-tag">13 — Zusammenarbeit</span>
               <h2 className="band-title">Dein Ablauf. <em>Ein fester Ansprechpartner.</em></h2>
               <p className="lead">
-                Kein Projektmanager, der weiterreicht. Du sprichst mit der
-                Person, die den Prozess versteht und baut. Änderungen am Ablauf,
-                neue Regeln oder eine zusätzliche Übergabe klärst du direkt per
-                WhatsApp oder im Video-Call.
+                Kein Projektmanager, der weiterreicht. Du sprichst per WhatsApp oder Video-Call mit der Person, die den Prozess baut.
               </p>
               <ul className="lines">
                 <li>Dokumentation, die dein Team versteht, nicht nur Entwickler.</li>
@@ -653,8 +593,8 @@ export default function KiAutomatisierungPage() {
         <section className="band theme-light" id="faq">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">15 — Häufige Fragen</span>
-              <h2 className="band-title">Was du vor dem Start <em>wissen solltest</em></h2>
+              <span className="band-tag">14 — Häufige Fragen</span>
+              <h2 className="band-title">Was Betriebe <em>vor dem Start fragen.</em></h2>
             </div>
           </div>
           <FaqList items={faqs} />
@@ -663,7 +603,7 @@ export default function KiAutomatisierungPage() {
         <section className="band theme-light" id="anfrage">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">16 — In fünf Klicks zur Einschätzung</span>
+              <span className="band-tag">15 — In fünf Klicks zur Einschätzung</span>
               <h2 className="band-title">
                 Sag uns kurz, <em>wo bei dir Zeit verloren geht.</em>
               </h2>

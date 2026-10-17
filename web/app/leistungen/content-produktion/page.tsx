@@ -99,72 +99,72 @@ const audiences = [
   {
     tag: "Handwerk & Bau",
     title: "Die Baustelle als bester Content",
-    text: "Dach, Abbruch, Kanalbau: Arbeit, die man zeigen kann. Kurze Reels vom Alltag und Recruiting-Creatives mit echten Mitarbeitern, nicht mit Models im sauberen Helm.",
+    text: "Dach, Abbruch, Kanalbau: Arbeit, die man zeigen kann. Reels vom Alltag mit echten Mitarbeitern, nicht mit Models im sauberen Helm.",
     refs: "GM-Dachdecker · Oktay Cömertler",
   },
   {
     tag: "Gastronomie",
     title: "Lust machen, bevor man vorbeikommt",
-    text: "Küche, Produkt, Menschen hinter der Theke. Reels direkt aus dem laufenden Betrieb, die Appetit machen und den Laden zur Marke machen.",
+    text: "Küche, Produkt, Menschen hinter der Theke. Reels aus dem laufenden Betrieb, die Appetit machen.",
     refs: "Burgerfabriq",
   },
   {
     tag: "Transport & Logistik",
     title: "Zeigen, was man sonst nicht sieht",
-    text: "Spezialtransporte, Fuhrpark, Team. Laufender Social-Media-Content, der Leistungen erklärt, die aus einem Logo niemand versteht.",
+    text: "Spezialtransporte, Fuhrpark, Team. Content, der Leistungen erklärt, die aus einem Logo niemand versteht.",
     refs: "M&A Transporte",
   },
   {
     tag: "Bildung & Soziales",
     title: "Vertrauen über Gesichter",
-    text: "Kurse, Schulungen, Veranstaltungen: Stories, Eventcover und Kampagnenmotive, die Menschen zeigen und zur Anmeldung führen.",
+    text: "Kurse, Schulungen, Veranstaltungen: Stories und Kampagnenmotive, die Menschen zeigen und zur Anmeldung führen.",
     refs: "Stark ins Neue · CASS Schulungen · Sportler für Kinderherzen",
   },
   {
     tag: "Beauty & Kreativ",
     title: "Handwerk, das man sehen muss",
-    text: "Ateliers, Studios, Workshops: Vorher-nachher, Prozess und Ergebnis. Content, der die eigene Handschrift zeigt und direkt zur Buchung führt.",
+    text: "Ateliers, Studios, Workshops: Vorher-nachher, Prozess, Ergebnis. Content, der zur Buchung führt.",
     refs: "CurlyAnn Soulcare & Art",
   },
   {
     tag: "Dienstleistung",
     title: "Expertise sichtbar machen",
-    text: "Beratung, Technik, Service: Kurzvideos, die ein Problem erklären und zeigen, wer es löst. Als organischer Beitrag oder als Creative für Kampagnen.",
+    text: "Beratung, Technik, Service: Kurzvideos, die ein Problem erklären und zeigen, wer es löst.",
     refs: "Van den Berg Gruppe · Colak GmbH",
   },
 ];
 
 const scope = [
-  { nr: "01", title: "Reels & Kurzvideos", text: "Schnitt, Untertitel, Musik und Formatierung für Instagram, Facebook, TikTok, YouTube Shorts oder LinkedIn. Aus deinem Material oder unserem Dreh." },
-  { nr: "02", title: "Foto & Video vor Ort", text: "Team, Arbeit und Atmosphäre, geplant mit Shotlist und produziert direkt in deinem Betrieb. Ausrüstung bringen wir mit, Models brauchst du nicht." },
-  { nr: "03", title: "Ad-Creatives", text: "Aus demselben Material entstehen Motive und Clips für Meta- und Google-Kampagnen, in mehreren Varianten zum Testen." },
-  { nr: "04", title: "Texte & Hooks", text: "Der erste Satz entscheidet, ob jemand weiterschaut. Wir schreiben Hooks, Captions und Untertitel, die zum Betrieb klingen, nicht zur Agentur." },
-  { nr: "05", title: "Redaktionsplan & Posting", text: "Ein Rhythmus, der durchhaltbar ist, und auf Wunsch die Veröffentlichung auf allen Kanälen. Du gibst frei, wir kümmern uns um den Rest." },
-  { nr: "06", title: "Auswertung", text: "Was Reichweite, Speicherungen und Anfragen bringt, wird ausgebaut. Was nicht funktioniert, fliegt raus. Ohne Zahlenfriedhof, mit klarer Einordnung." },
+  { nr: "01", title: "Reels & Kurzvideos", text: "Schnitt, Untertitel, Musik, Format für Instagram, TikTok, Shorts oder LinkedIn. Aus deinem Material oder unserem Dreh." },
+  { nr: "02", title: "Foto & Video vor Ort", text: "Team, Arbeit, Atmosphäre, direkt in deinem Betrieb. Ausrüstung bringen wir mit, Models brauchst du nicht." },
+  { nr: "03", title: "Ad-Creatives", text: "Aus demselben Material entstehen Motive für Meta- und Google-Kampagnen, in Varianten zum Testen." },
+  { nr: "04", title: "Texte & Hooks", text: "Der erste Satz entscheidet, ob jemand weiterschaut. Hooks und Captions, die nach Betrieb klingen, nicht nach Agentur." },
+  { nr: "05", title: "Redaktionsplan & Posting", text: "Ein Rhythmus, der durchhaltbar ist. Du gibst frei, wir veröffentlichen." },
+  { nr: "06", title: "Auswertung", text: "Was Anfragen bringt, wird ausgebaut. Was nicht funktioniert, fliegt raus." },
 ];
 
 const drehtag = [
-  { title: "Vorbereitung", text: "Wir klären Ziel, Formate und Motive und schicken dir eine kurze Shotlist. Du weißt vorher, was wir drehen und wen wir brauchen." },
-  { title: "Ankommen", text: "Technik aufbauen dauert wenige Minuten. Kein Studio, keine Scheinwerferwand, der Betrieb läuft weiter." },
-  { title: "Dreh während der Arbeit", text: "Die besten Szenen entstehen beim Arbeiten, nicht beim Posieren. Wir folgen dem Alltag und greifen nur ein, wenn Licht oder Ton es brauchen." },
-  { title: "Kurze Interviews", text: "Drei bis fünf Fragen an Inhaber oder Team, locker und ohne Teleprompter. Daraus entstehen die Reels mit den meisten Reaktionen." },
-  { title: "Fotos nebenbei", text: "Aus demselben Termin kommen Fotos für Website, Google-Unternehmensprofil und Beiträge. Ein Termin, mehrere Verwendungen." },
-  { title: "Nachbereitung", text: "Sichtung, Schnitt, Untertitel, Formate. Du bekommst eine Vorschau zur Freigabe, danach geht das Material in den Plan." },
+  { title: "Vorbereitung", text: "Ziel, Formate, Motive und eine kurze Shotlist. Du weißt vorher, was wir drehen und wen wir brauchen." },
+  { title: "Ankommen", text: "Aufbau in wenigen Minuten. Kein Studio, der Betrieb läuft weiter." },
+  { title: "Dreh während der Arbeit", text: "Die besten Szenen entstehen beim Arbeiten, nicht beim Posieren. Wir folgen dem Alltag." },
+  { title: "Kurze Interviews", text: "Drei bis fünf Fragen an Inhaber oder Team, ohne Teleprompter. Daraus entstehen die Reels mit den meisten Reaktionen." },
+  { title: "Fotos nebenbei", text: "Fotos für Website, Google-Profil und Beiträge aus demselben Termin." },
+  { title: "Nachbereitung", text: "Schnitt, Untertitel, Formate. Du gibst die Vorschau frei, dann geht es in den Plan." },
 ];
 
 const steps = [
-  { nr: "01", tag: "Phase 1", title: "Content-Strategie", text: "Welche Formate, welche Kanäle, welcher Rhythmus zu dir passen. Und welches Ziel der Content hat: Anfragen, Bewerber oder Bekanntheit." },
-  { nr: "02", tag: "Phase 2", title: "Material oder Dreh", text: "Du lieferst Rohmaterial mit kurzem Briefing, oder wir produzieren die Aufnahmen bei dir vor Ort." },
-  { nr: "03", tag: "Phase 3", title: "Schnitt & Bearbeitung", text: "Aus dem Material entstehen Reels, Fotos und Creatives in mehreren Formaten. Du siehst alles vor der Veröffentlichung." },
-  { nr: "04", tag: "Phase 4", title: "Veröffentlichung", text: "Inhalte im geplanten Rhythmus, auf Wunsch komplett durch uns. Kein Beitrag bleibt im Ordner liegen." },
-  { nr: "05", tag: "Phase 5", title: "Auswertung", text: "Was ankommt, wird ausgebaut. Alle paar Wochen besprechen wir, welche Formate weiterlaufen und was neu dazukommt." },
+  { nr: "01", tag: "Phase 1", title: "Content-Strategie", text: "Welche Formate, Kanäle und welcher Rhythmus passen. Und welches Ziel: Anfragen, Bewerber oder Bekanntheit." },
+  { nr: "02", tag: "Phase 2", title: "Material oder Dreh", text: "Du lieferst Rohmaterial, oder wir drehen bei dir im Betrieb." },
+  { nr: "03", tag: "Phase 3", title: "Schnitt & Bearbeitung", text: "Reels, Fotos und Creatives in mehreren Formaten. Du siehst alles vor der Veröffentlichung." },
+  { nr: "04", tag: "Phase 4", title: "Veröffentlichung", text: "Im geplanten Rhythmus, auf Wunsch komplett durch uns. Kein Beitrag bleibt im Ordner liegen." },
+  { nr: "05", tag: "Phase 5", title: "Auswertung", text: "Was ankommt, wird ausgebaut. Alle paar Wochen entscheiden wir gemeinsam, was weiterläuft." },
 ];
 
 const packages = [
-  { title: "Schnitt-Paket", text: "Du lieferst Rohmaterial, wir liefern fertige Reels in mehreren Formaten. Der günstigste Einstieg, flexibel planbar." },
-  { title: "Drehtag", text: "Ein Termin bei dir im Betrieb mit Shotlist, Interviews und Fotos. Daraus entsteht Material für mehrere Wochen." },
-  { title: "Monatspaket", text: "Fester Rhythmus aus Produktion, Schnitt und Veröffentlichung, damit Social Media nicht wieder liegen bleibt." },
-  { title: "Ads-Creatives", text: "Motive und Clips für Kampagnen, abgestimmt mit unserer Meta-Ads-Betreuung. In Varianten, damit getestet werden kann." },
+  { title: "Schnitt-Paket", text: "Du lieferst Rohmaterial, wir liefern fertige Reels in mehreren Formaten. Der einfachste Einstieg." },
+  { title: "Drehtag", text: "Ein Termin bei dir im Betrieb. Daraus entsteht Material für mehrere Wochen." },
+  { title: "Monatspaket", text: "Produktion, Schnitt und Veröffentlichung im festen Rhythmus, damit Social Media nicht wieder liegen bleibt." },
+  { title: "Ads-Creatives", text: "Motive und Clips für Kampagnen, abgestimmt mit der Meta-Ads-Betreuung. In Varianten zum Testen." },
 ];
 
 const referenzen: RefItem[] = [
@@ -173,14 +173,12 @@ const referenzen: RefItem[] = [
 ];
 
 const faqs = [
-  { q: "Könnt ihr Videos schneiden, die wir selbst aufgenommen haben?", a: "Ja. Du schickst uns dein Rohmaterial und ein kurzes Briefing. Wir übernehmen Auswahl, Dramaturgie, Schnitt, Untertitel, Musik und die passenden Formate für deine Kanäle. Handyaufnahmen reichen oft aus, wenn Licht und Ton brauchbar sind; worauf du achten solltest, sagen wir dir vorher." },
-  { q: "Müssen wir für den Dreh unseren Alltag unterbrechen?", a: "Möglichst wenig. Wir planen Termine so, dass sie sich in den laufenden Betrieb einfügen. Die besten Aufnahmen entstehen während der normalen Arbeit, nicht in einer gestellten Pause." },
-  { q: "Brauchen wir professionelle Ausrüstung oder Models?", a: "Nein. Die Ausrüstung bringen wir mit. Echte Mitarbeiter und Inhaber wirken auf Social Media glaubwürdiger als gebuchte Models, und genau diese Glaubwürdigkeit bringt die Anfragen." },
-  { q: "Wie oft sollten wir posten?", a: "Wichtiger als die Häufigkeit ist die Regelmäßigkeit. Ein Beitrag pro Woche, der verlässlich kommt, schlägt fünf Beiträge in einer Woche und danach drei Wochen Stille. Im Erstgespräch legen wir einen Rhythmus fest, den du durchhalten kannst." },
-  { q: "Übernehmt ihr auch das Posten selbst?", a: "Ja, im Monatspaket. Du gibst frei, wir veröffentlichen nach Plan auf den vereinbarten Kanälen. Bei Einzelpaketen liefern wir das fertige Material zur eigenen Verwendung." },
-  { q: "Was ist günstiger: eigenes Material oder ein Dreh vor Ort?", a: "Der Schnitt aus gut vorbereitetem Rohmaterial ist in der Regel günstiger, weil Planung, Anfahrt und Produktion entfallen. Ein Drehtag lohnt sich, wenn professionelles Ausgangsmaterial fehlt oder an einem Termin Inhalte für mehrere Wochen entstehen sollen." },
-  { q: "Wem gehört das fertige Material?", a: "Dir. Reels, Fotos und Creatives kannst du auf allen deinen Kanälen nutzen, auch auf der Website oder in Anzeigen. Musik lizenzieren wir so, dass die Nutzung auf den vereinbarten Plattformen sauber ist." },
-  { q: "Was kostet Content-Produktion?", a: "Das hängt von Materialmenge, Videolänge, Anzahl der Formate und einem möglichen Vor-Ort-Termin ab. Du bekommst vorab einen klaren Leistungsumfang, für ein Einzelpaket oder eine laufende Zusammenarbeit. Keine offene Stundenabrechnung." },
+  { q: "Könnt ihr Videos schneiden, die wir selbst aufgenommen haben?", a: "Ja. Du schickst Rohmaterial und ein kurzes Briefing, wir übernehmen Auswahl, Schnitt, Untertitel, Musik und Formate. Handyaufnahmen reichen oft, wenn Licht und Ton brauchbar sind. Worauf du achten solltest, sagen wir dir vorher." },
+  { q: "Müssen wir für den Dreh den Alltag unterbrechen?", a: "Möglichst wenig. Die besten Aufnahmen entstehen während der normalen Arbeit, nicht in einer gestellten Pause." },
+  { q: "Brauchen wir Ausrüstung oder Models?", a: "Nein. Die Ausrüstung bringen wir mit. Echte Mitarbeiter und Inhaber wirken glaubwürdiger als gebuchte Models, und genau das bringt Anfragen." },
+  { q: "Wie oft sollten wir posten?", a: "Regelmäßig schlägt häufig. Ein Beitrag pro Woche, der verlässlich kommt, ist besser als fünf in einer Woche und dann drei Wochen Stille. Wir legen einen Rhythmus fest, den du durchhältst." },
+  { q: "Übernehmt ihr auch das Posten?", a: "Ja, im Monatspaket. Du gibst frei, wir veröffentlichen nach Plan. Bei Einzelpaketen bekommst du das fertige Material zur eigenen Verwendung." },
+  { q: "Wem gehört das fertige Material?", a: "Dir. Reels, Fotos und Creatives kannst du auf allen deinen Kanälen nutzen, auch auf der Website oder in Anzeigen. Musik lizenzieren wir für die vereinbarten Plattformen." },
 ];
 
 const contentVoices = [
@@ -267,14 +265,14 @@ export default function ContentPage() {
                 Sechs Zeichen, dass Content <em>liegen bleibt statt zu wirken</em>
               </h2>
               <p className="lead">
-                Die Arbeit ist gut, aber online kommt davon kaum etwas an. Nicht,
+                Die Arbeit ist gut, online kommt kaum etwas davon an. Nicht,
                 weil nichts zu erzählen wäre, sondern weil im Tagesgeschäft
-                niemand Zeit hat, es zu erzählen.
+                niemand Zeit dafür hat.
               </p>
               <p className="lead">
-                Das Ergebnis kennen die meisten: ein Instagram-Profil, dessen
-                letzter Beitrag von vor vier Monaten ist. Für Kunden und Bewerber
-                sieht das aus wie ein geschlossener Laden.
+                Das Ergebnis: ein Instagram-Profil, dessen letzter Beitrag vier
+                Monate alt ist. Für Kunden und Bewerber sieht das aus wie ein
+                geschlossener Laden.
               </p>
             </div>
             <div className="reveal">
@@ -292,9 +290,7 @@ export default function ContentPage() {
               </h2>
             </div>
             <p className="band-note">
-              Nicht jeder Betrieb braucht einen kompletten Drehtag. Deshalb
-              trennen wir Schnitt-Service und Vor-Ort-Produktion klar, auch im
-              Preis.
+              Nicht jeder Betrieb braucht einen Drehtag. Deshalb trennen wir Schnitt-Service und Vor-Ort-Produktion klar.
             </p>
           </div>
           <div className="content-models reveal">
@@ -318,7 +314,7 @@ export default function ContentPage() {
                 <li>Video, Kurzinterviews und Fotos im echten Arbeitsumfeld</li>
                 <li>Schnitt und Content-Paket für mehrere Wochen nach dem Dreh</li>
               </ul>
-              <strong>Eigenes Bildmaterial, höhere Produktionstiefe, Region Koblenz.</strong>
+              <strong>Eigenes Bildmaterial, höhere Produktionstiefe, bei dir vor Ort.</strong>
             </article>
           </div>
         </section>
@@ -332,8 +328,7 @@ export default function ContentPage() {
               </h2>
             </div>
             <p className="band-note">
-              Sechs Branchen, in denen wir regelmäßig produzieren. Das Prinzip
-              ist überall gleich: echte Arbeit, echte Menschen, fester Rhythmus.
+              Das Prinzip ist überall gleich: echte Arbeit, echte Menschen, fester Rhythmus.
             </p>
           </div>
           <div className="audience-grid reveal">
@@ -357,8 +352,7 @@ export default function ContentPage() {
               </h2>
             </div>
             <p className="band-note">
-              Ob Reel, Foto, Creative oder laufende Betreuung: Alle Formate
-              greifen ineinander, statt isoliert nebeneinander zu laufen.
+              Reel, Foto, Creative, Betreuung: Alles greift ineinander.
             </p>
           </div>
           <div className="scope-grid reveal">
@@ -381,8 +375,7 @@ export default function ContentPage() {
               </h2>
             </div>
             <p className="band-note">
-              Wir drehen dort, wo tatsächlich gearbeitet wird. Kein Studio, kein
-              Stockmaterial, keine gestellten Situationen.
+              Gedreht, wo gearbeitet wird. Kein Studio, kein Stockmaterial.
             </p>
           </div>
           <div className="callout2 reveal">
@@ -421,15 +414,14 @@ export default function ContentPage() {
                 Ein Termin, <em>Material für Wochen</em>
               </h2>
               <p className="lead">
-                Viele Betriebe schieben Content auf, weil sie sich einen
-                Filmdreh wie eine Produktion mit Scheinwerfern und Regieanweisung
-                vorstellen. Bei uns läuft es anders: Wir kommen, der Betrieb
-                arbeitet, wir folgen.
+                Viele stellen sich einen Dreh mit Scheinwerfern und
+                Regieanweisung vor. Bei uns: Wir kommen, der Betrieb arbeitet,
+                wir folgen.
               </p>
               <p className="lead">
-                Am Ende eines Vormittags haben wir in der Regel Material für
-                mehrere Reels, Fotos für Website und Google-Profil und
-                Kurzinterviews, aus denen die stärksten Beiträge entstehen.
+                Ein Vormittag reicht meist für mehrere Reels, Fotos für Website
+                und Google-Profil und Kurzinterviews, aus denen die stärksten
+                Beiträge entstehen.
               </p>
             </div>
             <div className="mini-grid reveal" aria-label="Ablauf eines Drehtags">
@@ -451,9 +443,8 @@ export default function ContentPage() {
                 Ein Dreh. <em>Mehrere Formate.</em>
               </h2>
               <p className="lead">
-                Der teuerste Fehler in der Content-Produktion: ein Drehtag, ein
-                Beitrag, fertig. Wir planen von Anfang an so, dass aus einem
-                Materialpool Inhalte für alle Kanäle entstehen.
+                Der teuerste Fehler: ein Drehtag, ein Beitrag, fertig. Wir
+                planen so, dass aus einem Dreh Inhalte für alle Kanäle entstehen.
               </p>
               <ul className="lines">
                 <li>Echtes Material aus deinem Alltag, kein Studio, kein Stock.</li>
@@ -529,14 +520,13 @@ export default function ContentPage() {
         <section className="band theme-light" id="prozess">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">09 — Der Weg dahin</span>
+              <span className="band-tag">09 — So läuft es</span>
               <h2 className="band-title">
                 Fünf Phasen, <em>laufend produziert</em>
               </h2>
             </div>
             <p className="band-note">
-              Von der Strategie bis zur Auswertung. Du weißt jederzeit, was als
-              Nächstes entsteht und wann es erscheint.
+              Du weißt jederzeit, was als Nächstes entsteht und wann es erscheint.
             </p>
           </div>
           <Stepper steps={steps} />
@@ -569,14 +559,12 @@ export default function ContentPage() {
                 Vier Wege, <em>die sich kombinieren lassen</em>
               </h2>
               <p className="lead">
-                Du musst nicht mit dem Monatspaket starten. Viele Kunden beginnen
-                mit einem Schnitt-Paket oder einem Drehtag und entscheiden danach,
-                ob eine laufende Betreuung sinnvoll ist.
+                Du musst nicht mit dem Monatspaket starten. Viele beginnen mit
+                einem Schnitt-Paket oder einem Drehtag und entscheiden danach.
               </p>
               <p className="lead">
-                Preise hängen von Umfang, Formaten und Anfahrt ab und stehen vor
-                dem Start klar im Angebot. Keine offene Stundenabrechnung, kein
-                Kleingedrucktes.
+                Der Umfang steht vor dem Start klar im Angebot. Keine offene
+                Stundenabrechnung, kein Kleingedrucktes.
               </p>
               <Link className="body-link" href={serviceRoutes["meta-ads"]}>
                 Creatives in Kampagnen einsetzen: Meta Ads <ArrowIcon />
@@ -602,8 +590,7 @@ export default function ContentPage() {
               </h2>
             </div>
             <p className="band-note">
-              Zwei Betriebe, zwei Branchen, dasselbe Prinzip: Content aus dem
-              Alltag, regelmäßig und ohne gestellte Szenen.
+              Zwei Branchen, dasselbe Prinzip: Content aus dem Alltag, regelmäßig.
             </p>
           </div>
           <div className="ref-grid-2 reveal">
@@ -626,9 +613,7 @@ export default function ContentPage() {
                 Dein Content. <em>Ein fester Draht.</em>
               </h2>
               <p className="lead">
-                Kein Ticketsystem, keine Warteschleife. Drehtermine, Freigaben
-                und spontane Ideen stimmst du direkt per WhatsApp mit deinem
-                Ansprechpartner ab, der auch hinter der Kamera steht.
+                Kein Ticketsystem, keine Warteschleife. Du schreibst per WhatsApp mit dem, der auch hinter der Kamera steht.
               </p>
               <ul className="lines">
                 <li>Vorschau jedes Beitrags vor der Veröffentlichung.</li>
@@ -653,15 +638,12 @@ export default function ContentPage() {
         <section className="band theme-light" id="bewertungen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">13 — Kundenstimmen</span>
+              <span className="band-tag">13 — Das sagen Kunden</span>
               <h2 className="band-title">
-                Das sagen <em>Kunden über uns</em>
+                Wörtlich so <em>veröffentlicht.</em>
               </h2>
             </div>
-            <p className="band-note">
-              Nur Aussagen, die unsere Kunden so veröffentlicht haben. Keine
-              erfundenen Bewertungen.
-            </p>
+            <p className="band-note">Nichts erfunden, nichts geschönt.</p>
           </div>
           <Reviews reviews={contentVoices} items={contentVoices} />
         </section>
@@ -673,7 +655,7 @@ export default function ContentPage() {
             <div>
               <span className="band-tag">14 — Häufige Fragen</span>
               <h2 className="band-title">
-                Was du vorher <em>wissen willst</em>
+                Was Betriebe <em>vor dem Start fragen.</em>
               </h2>
             </div>
           </div>

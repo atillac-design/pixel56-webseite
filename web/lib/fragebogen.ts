@@ -473,6 +473,63 @@ export const frageboegen = {
       },
     ],
   },
+  allgemein: {
+    key: "allgemein",
+    leistung: "Kontakt",
+    titel: "Dein Anliegen in fünf Klicks",
+    versprechen: "In zwei Minuten weißt du, wo dein größter Hebel liegt.",
+    einleitung: "Fünf Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, womit du am besten anfängst.",
+    quelle: "anfrage-kontakt",
+    fragen: [
+      {
+        id: "thema",
+        frage: "Worum geht es bei dir?",
+        optionen: [
+          { text: "Website oder Relaunch", reaktion: "Gut. Dann schauen wir zuerst, wo die Seite Anfragen verliert." },
+          { text: "Anzeigen bei Meta oder Google", reaktion: "Dann geht es um Ziel, Zielseite und Messung, bevor Budget fließt." },
+          { text: "Content und Reels", reaktion: "Dann zeigen wir, was du ohnehin jeden Tag machst, nur sichtbar." },
+          { text: "Mitarbeiter finden", reaktion: "Dann bauen wir den Weg zur Bewerbung so kurz wie möglich." },
+          { text: "KI-Prozesse im Betrieb", reaktion: "Dann suchen wir den Ablauf, der heute am meisten Zeit frisst." },
+          { text: "Landingpage oder Funnel", reaktion: "Eine Seite, ein Ziel. Dann wird jeder Klick gezählt." },
+          { text: "Suchmaschinenoptimierung", reaktion: "Dann sehen wir uns zuerst Grundlagen und Google-Profil an." },
+          { text: "Weiß ich noch nicht genau", reaktion: "Kein Problem, genau dafür ist das Erstgespräch da." },
+        ],
+      },
+      {
+        id: "ziel",
+        frage: "Was soll sich vor allem ändern?",
+        optionen: [
+          { text: "Mehr Anfragen und Aufträge", reaktion: "Dann ist jede Maßnahme daran zu messen, nicht an Likes." },
+          { text: "Mehr Bewerbungen", reaktion: "Dann zählt der Weg vom Feed zur Bewerbung." },
+          { text: "Professioneller wirken", reaktion: "Dann geht es um Klarheit und echte Beweise, nicht um Deko." },
+          { text: "Weniger Handarbeit im Alltag", reaktion: "Dann schauen wir, was sich jede Woche wiederholt." },
+        ],
+      },
+      BRANCHE,
+      {
+        id: "zeitpunkt",
+        frage: "Wann soll es losgehen?",
+        optionen: [
+          { text: "So schnell wie möglich", reaktion: "Dann melden wir uns zügig mit einem Terminvorschlag." },
+          { text: "In den nächsten drei Monaten" },
+          { text: "Später im Jahr" },
+          { text: "Ich informiere mich erst" },
+        ],
+      },
+      {
+        id: "budget",
+        frage: "Welcher Rahmen ist für dich realistisch?",
+        erklaerung: "Nur eine grobe Einordnung, damit der Vorschlag zu dir passt. Es gibt keine falsche Antwort.",
+        optionen: [
+          { text: "Erstmal klein anfangen, unter 2.000 €", hinweis: "Auch kleine Schritte sind möglich. Wir sagen dir ehrlich, was dafür realistisch ist.", intern: "kleines Budget" },
+          { text: "2.000 bis 5.000 €" },
+          { text: "5.000 bis 15.000 €" },
+          { text: "Mehr oder laufende Betreuung" },
+          { text: "Weiß ich noch nicht" },
+        ],
+      },
+    ],
+  },
 } satisfies Record<string, Fragebogen>;
 
 export type FragebogenKey = keyof typeof frageboegen;

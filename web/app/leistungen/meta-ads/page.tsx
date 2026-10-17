@@ -99,82 +99,76 @@ const useCases = [
   {
     tag: "Kundengewinnung",
     title: "Anfragen für Dienstleistung und Handwerk",
-    text: "Menschen in deinem Einzugsgebiet sehen dein Angebot, bevor sie bei Google suchen. Für Betriebe, die planbar neue Aufträge brauchen und nicht nur auf Empfehlungen warten wollen.",
+    text: "Dein Angebot erscheint, bevor jemand bei Google sucht. Für Betriebe, die nicht nur auf Empfehlungen warten wollen.",
     refs: "Van den Berg Gruppe · M&A Transporte",
   },
   {
     tag: "Mitarbeitergewinnung",
     title: "Bewerber erreichen, die nicht suchen",
-    text: "Die besten Fachkräfte lesen keine Stellenbörsen. Auf Instagram und Facebook erreichst du sie trotzdem, mit Einblicken in den Betrieb und einem Bewerbungsweg, der in zwei Minuten erledigt ist.",
+    text: "Die besten Fachkräfte lesen keine Stellenbörsen. Im Feed erreichst du sie trotzdem, mit Einblick in den Betrieb und Bewerbung in zwei Minuten.",
     refs: "GM-Dachdecker",
   },
   {
     tag: "Anmeldungen",
     title: "Kurse, Termine und Veranstaltungen",
-    text: "Kampagnen, die auf eine Anmeldestrecke führen statt auf eine allgemeine Seite. Für Bildungsangebote, Events und alles, was einen festen Termin hat.",
+    text: "Kampagnen, die direkt zur Anmeldung führen. Für Bildungsangebote, Events und alles mit festem Termin.",
     refs: "Stark ins Neue · Sportler für Kinderherzen",
   },
   {
     tag: "Regionale Bekanntheit",
     title: "Die Marke, die man schon kennt",
-    text: "Wer dich schon dreimal im Feed gesehen hat, ruft eher an. Reichweitenkampagnen im Umkreis bauen Vertrauen auf, bevor der Bedarf entsteht.",
+    text: "Wer dich dreimal im Feed gesehen hat, ruft eher an. Reichweite im Umkreis baut Vertrauen auf, bevor der Bedarf entsteht.",
     refs: "Oktay Cömertler",
   },
   {
     tag: "Retargeting",
     title: "Besucher zurückholen",
-    text: "Die meisten fragen nicht beim ersten Besuch an. Wer auf deiner Website war, sieht danach die passende Anzeige, mit Angebot, Referenz oder Erinnerung.",
+    text: "Die meisten fragen nicht beim ersten Besuch an. Wer auf deiner Website war, sieht danach die passende Anzeige.",
     refs: "Baustein in laufenden Kampagnen",
   },
   {
     tag: "Produkte & Shops",
     title: "Verkaufen über den Feed",
-    text: "Produktanzeigen mit Katalog, Bewegtbild und direktem Weg in den Shop. Sinnvoll, wenn Marge und Warenkorb die Anzeigenkosten tragen; das prüfen wir vorher ehrlich.",
+    text: "Produktanzeigen mit Katalog und Bewegtbild, direkt in den Shop. Ob sich das rechnet, prüfen wir vorher ehrlich.",
     refs: "Nach Prüfung im Erstgespräch",
   },
 ];
 
 const scope = [
-  { nr: "01", title: "Ziel & Angebot", text: "Bevor Budget fließt, klären wir, welche Aktion zählt und was eine Anfrage wert ist. Daraus entsteht ein Angebot, das in einer Anzeige verständlich ist." },
-  { nr: "02", title: "Tracking-Fundament", text: "Pixel, Conversions API und Einwilligung werden sauber eingerichtet, DSGVO-konform. Erst wenn Anfragen messbar sind, geht die Kampagne live." },
-  { nr: "03", title: "Zielgruppen & Struktur", text: "Umkreis, Interessen, Lookalikes und Retargeting in einer Struktur, die der Algorithmus lernen kann. Nicht zehn Kampagnen, die sich gegenseitig das Budget wegnehmen." },
-  { nr: "04", title: "Creatives", text: "Bilder, kurze Videos und Texte, die im Feed stoppen und zum Angebot passen. Aus deinem Material oder von uns produziert, mit regelmäßigem Wechsel gegen Abnutzung." },
-  { nr: "05", title: "Zielseite", text: "Jede Kampagne bekommt eine Seite, die das Versprechen der Anzeige einlöst. Wenn nötig bauen wir sie, sonst passen wir die bestehende an." },
-  { nr: "06", title: "Optimierung & Reporting", text: "Wöchentliche Auswertung, Budget wandert dahin, wo es wirkt. Du bekommst verständliche Zahlen statt Screenshots aus dem Werbeanzeigenmanager." },
+  { nr: "01", title: "Ziel & Angebot", text: "Welche Aktion zählt, was ist eine Anfrage wert? Daraus entsteht ein Angebot, das in einer Anzeige verständlich ist." },
+  { nr: "02", title: "Tracking-Fundament", text: "Pixel, Conversions API, Einwilligung. Erst wenn Anfragen messbar sind, geht die Kampagne live." },
+  { nr: "03", title: "Zielgruppen & Struktur", text: "Eine Struktur, die der Algorithmus lernen kann. Nicht zehn Kampagnen, die sich gegenseitig das Budget wegnehmen." },
+  { nr: "04", title: "Creatives", text: "Bilder, kurze Videos und Texte, die im Feed stoppen. Aus deinem Material oder von uns produziert, regelmäßig gewechselt." },
+  { nr: "05", title: "Zielseite", text: "Jede Kampagne bekommt eine Seite, die das Versprechen der Anzeige einlöst. Wenn nötig bauen wir sie." },
+  { nr: "06", title: "Optimierung & Reporting", text: "Wöchentlich ausgewertet, Budget wandert dahin, wo es wirkt. Verständliche Zahlen statt Screenshots." },
 ];
 
 const mistakes = [
-  { problem: "Kampagne an, Kampagne aus, je nach Kontostand.", answer: "Ein moderates, konstantes Budget schlägt kurze Ausschläge fast immer. Der Algorithmus braucht Daten, und die entstehen nur im laufenden Betrieb." },
-  { problem: "Die Anzeige führt auf die Startseite.", answer: "Wer auf ein konkretes Angebot klickt, erwartet genau dieses Angebot. Eine Landingpage pro Kampagne, mit einem Ziel und ohne Ablenkung." },
-  { problem: "„Beitrag bewerben“ statt Kampagne.", answer: "Der Boost-Button ist bequem und teuer. Ziele, Zielgruppen und Conversion-Messung gibt es nur im Werbeanzeigenmanager." },
-  { problem: "Es läuft, aber niemand weiß, ob Anfragen daraus kommen.", answer: "Ohne Tracking ist jede Entscheidung Bauchgefühl. Wir messen die Aktion, die zählt, und besprechen offen, was wegen Einwilligung nicht messbar ist." },
-  { problem: "Dasselbe Motiv seit einem halben Jahr.", answer: "Creatives nutzen sich ab. Wir planen den Wechsel von Anfang an ein und testen Varianten, statt zu warten, bis die Kosten pro Anfrage steigen." },
-  { problem: "Zielgruppe so eng, dass niemand übrig bleibt. Oder so breit, dass alle gemeint sind.", answer: "Wir starten mit klaren Hypothesen, lassen den Algorithmus innerhalb sinnvoller Grenzen lernen und engen nach Daten ein, nicht nach Gefühl." },
+  { problem: "Kampagne an, Kampagne aus, je nach Kontostand.", answer: "Konstant schlägt Ausschlag. Der Algorithmus braucht Daten, und die entstehen nur im laufenden Betrieb." },
+  { problem: "Die Anzeige führt auf die Startseite.", answer: "Wer auf ein Angebot klickt, erwartet genau dieses Angebot. Eine Landingpage pro Kampagne, ein Ziel." },
+  { problem: "„Beitrag bewerben“ statt Kampagne.", answer: "Bequem und teuer. Ziele, Zielgruppen und Messung gibt es nur im Werbeanzeigenmanager." },
+  { problem: "Es läuft, aber niemand weiß, ob Anfragen daraus kommen.", answer: "Ohne Tracking ist jede Entscheidung Bauchgefühl. Wir messen die Aktion, die zählt." },
+  { problem: "Dasselbe Motiv seit einem halben Jahr.", answer: "Creatives nutzen sich ab. Wir planen den Wechsel ein, bevor die Kosten pro Anfrage steigen." },
+  { problem: "Zielgruppe so eng, dass niemand übrig bleibt. Oder so breit, dass alle gemeint sind.", answer: "Klare Hypothese, dann lernen lassen und nach Daten eingrenzen, nicht nach Gefühl." },
 ];
 
 const steps = [
-  { nr: "01", tag: "Phase 1", title: "Analyse & Ziel", text: "Angebot, Zielgruppe, bisherige Kampagnen und Website. Wir legen fest, welche Aktion zählt und was sie wert sein darf." },
-  { nr: "02", tag: "Phase 2", title: "Tracking", text: "Pixel, Conversions API, Einwilligung und Messpunkte auf der Zielseite. Getestet, bevor ein Euro fließt." },
-  { nr: "03", tag: "Phase 3", title: "Aufbau", text: "Kampagnenstruktur, Zielgruppen, Creatives und Texte. Du siehst alle Anzeigen vor dem Start." },
-  { nr: "04", tag: "Phase 4", title: "Laufende Optimierung", text: "Wöchentliche Auswertung, Anpassung von Budget, Zielgruppen und Motiven anhand echter Daten." },
-  { nr: "05", tag: "Phase 5", title: "Reporting & Kurs", text: "Verständliche Auswertung, was das Budget bringt, und gemeinsame Entscheidung, wie es weitergeht." },
+  { nr: "01", tag: "Phase 1", title: "Analyse & Ziel", text: "Angebot, Zielgruppe, bisherige Kampagnen. Wir legen fest, welche Aktion zählt." },
+  { nr: "02", tag: "Phase 2", title: "Tracking", text: "Pixel, Conversions API, Einwilligung, Messpunkte. Getestet, bevor ein Euro fließt." },
+  { nr: "03", tag: "Phase 3", title: "Aufbau", text: "Struktur, Zielgruppen, Creatives, Texte. Du siehst alle Anzeigen vor dem Start." },
+  { nr: "04", tag: "Phase 4", title: "Laufende Optimierung", text: "Wöchentlich Budget, Zielgruppen und Motive anhand echter Daten anpassen." },
+  { nr: "05", tag: "Phase 5", title: "Reporting & Kurs", text: "Verständlich, was das Budget bringt. Gemeinsam entscheiden, wie es weitergeht." },
 ];
 
 const weeklyChecks = [
   { title: "Ausgaben gegen Ziel", text: "Läuft das Budget dort, wo die Anfragen entstehen, oder in Anzeigen, die nur Reichweite bringen?" },
-  { title: "Kosten pro Anfrage", text: "Steigen sie, finden wir die Ursache: Creative, Zielgruppe oder Zielseite. Bevor es teuer wird, nicht danach." },
+  { title: "Kosten pro Anfrage", text: "Steigen sie, finden wir die Ursache: Creative, Zielgruppe oder Zielseite. Bevor es teuer wird." },
   { title: "Frequenz", text: "Wie oft hat dieselbe Person die Anzeige gesehen? Ab einem gewissen Punkt braucht es ein neues Motiv." },
   { title: "Zielseite", text: "Kommen Besucher an und tun sie, was sie sollen? Absprünge auf der Seite sind oft kein Anzeigenproblem." },
   { title: "Überschneidungen", text: "Konkurrieren Zielgruppen miteinander und treiben die Preise hoch? Dann wird die Struktur bereinigt." },
-  { title: "Qualität der Anfragen", text: "Deine Rückmeldung, welche Anfragen brauchbar waren, fließt zurück in die Steuerung. Zahlen allein reichen nicht." },
+  { title: "Qualität der Anfragen", text: "Welche Anfragen brauchbar waren, fließt zurück in die Steuerung. Zahlen allein reichen nicht." },
 ];
 
-const costParts = [
-  { title: "Werbebudget", text: "Geht direkt an Meta und bleibt in deinem Werbekonto nachvollziehbar. Wir empfehlen einen Rahmen, der zu Angebot und Region passt." },
-  { title: "Betreuung", text: "Strategie, Aufbau, Optimierung und Reporting durch Pixel56, als monatlicher Festbetrag, getrennt vom Werbebudget ausgewiesen." },
-  { title: "Creatives", text: "Anzeigenmotive aus deinem Material oder produziert vor Ort. Nach Aufwand angeboten, nie versteckt im Betreuungspreis." },
-  { title: "Zielseite", text: "Falls keine passende Seite existiert, bauen wir eine Landingpage. Einmalig, danach gehört sie dir und trägt jede weitere Kampagne." },
-];
 
 const referenzen: RefItem[] = [
   { variant: "ic-3", barWidth: 60, img: "/bilder/projekt-van-den-berg.webp", href: projectPath("van-den-berg"), cat: "Van den Berg Gruppe", title: "Meta Ads mit konstanter Betreuung", text: "Kampagnenstruktur neu aufgebaut, Tracking eingerichtet, Anzeigen auf fokussierte Zielseiten geführt. Konstantes Budget und regelmäßige Auswertung bis 2024.", tag: "Meta Ads · Landingpage · bis 2024" },
@@ -182,17 +176,12 @@ const referenzen: RefItem[] = [
 ];
 
 const faqs = [
-  { q: "Wie viel Budget brauche ich für den Einstieg?", a: "Wichtiger als die Höhe ist Konstanz: Ein moderates, dauerhaftes Budget bringt mehr als kurze, hohe Ausschläge. Welcher Rahmen für dein Angebot und deine Region sinnvoll ist, klären wir im Erstgespräch anhand deiner Ziele, nicht pauschal." },
-  { q: "Facebook oder Instagram, was ist besser?", a: "Beide laufen über dieselbe Kampagnenstruktur bei Meta und lassen sich kombinieren. Welche Plattform mehr bringt, hängt von Zielgruppe und Angebot ab; wir starten meist auf beiden und verteilen das Budget nach Daten." },
-  { q: "Brauche ich professionelle Fotos oder Videos für die Anzeigen?", a: "Hilfreich, aber kein Muss von Anfang an. Echte Aufnahmen aus dem Betrieb wirken auf Meta oft besser als aufwendig produziertes Material. Wenn Material fehlt, schneiden wir aus Vorhandenem oder drehen bei dir vor Ort." },
-  { q: "Was, wenn ich das Budget mal pausieren muss?", a: "Möglich, aber der Lerneffekt geht dabei meist verloren: Nach einer Pause muss der Algorithmus neu lernen. Besser ist ein kleineres, konstantes Budget als ein Stopp." },
-  { q: "Was kostet die Betreuung, getrennt vom Werbebudget?", a: "Das Werbebudget geht direkt an Meta. Die Betreuung deckt Strategie, Aufbau, Optimierung und Reporting ab und wird als monatlicher Festbetrag separat ausgewiesen. Den passenden Umfang klären wir im kostenlosen Erstgespräch." },
-  { q: "Wem gehört das Werbekonto?", a: "Dir. Wir arbeiten in einem Werbekonto, auf das dein Unternehmen vollen Zugriff hat, damit Budget, Daten und Kampagnen jederzeit nachvollziehbar bleiben, auch wenn die Zusammenarbeit irgendwann endet." },
-  { q: "Könnt ihr Creatives und Reels für die Anzeigen erstellen?", a: "Ja. Wir schneiden aus deinem Material Anzeigenmotive und kurze Videos oder planen Aufnahmen vor Ort. Beides wird getrennt nach Aufwand angeboten." },
-  { q: "Wie messt ihr, ob Anfragen aus den Anzeigen kommen?", a: "Wir definieren zuerst, welche Aktion zählt, etwa eine Anfrage, ein Anruf oder eine Terminbuchung. Dann richten wir Pixel, Conversions API und Messpunkte ein und besprechen offen, welche Daten wegen Einwilligung und Plattformgrenzen tatsächlich verfügbar sind." },
-  { q: "Bekomme ich Einblick in die Kampagnenergebnisse?", a: "Ja. Ausgaben, Reichweite, Klicks und messbare Anfragen besprechen wir regelmäßig in verständlicher Form. Außerdem hast du jederzeit Zugriff auf dein Werbekonto." },
-  { q: "Wie lange sollte eine Kampagne laufen?", a: "Das hängt von Ziel, Budget und Datenmenge ab. Wir legen vorab einen Testzeitraum fest, meist einige Wochen, und bewerten danach gemeinsam, ob und wie es weitergeht." },
-  { q: "Bleibst du auch danach erreichbar?", a: "Ja. Per WhatsApp, Telefon oder E-Mail über einen festen Ansprechpartner. Betreuung ist Teil der Zusammenarbeit, kein Zusatzverkauf." },
+  { q: "Wie viel Budget brauche ich für den Einstieg?", a: "Wichtiger als die Höhe ist Konstanz: Ein moderates, dauerhaftes Budget bringt mehr als kurze Ausschläge. Den Rahmen für dein Angebot und deine Region klären wir im Erstgespräch." },
+  { q: "Wie setzt sich die Zusammenarbeit zusammen?", a: "Das Werbebudget geht direkt an Meta und bleibt in deinem Werbekonto. Die Betreuung durch Pixel56 ist ein fester Monatsbetrag, getrennt ausgewiesen. Creatives oder eine Zielseite kommen nur dazu, wenn du sie brauchst. Prozente vom Werbebudget nehmen wir nicht." },
+  { q: "Facebook oder Instagram?", a: "Beide laufen über dieselbe Kampagnenstruktur. Wir starten meist auf beiden und verteilen das Budget nach Daten." },
+  { q: "Brauche ich professionelle Fotos oder Videos?", a: "Hilfreich, kein Muss. Echte Aufnahmen aus dem Betrieb wirken auf Meta oft besser als aufwendig produziertes Material. Fehlt Material, schneiden wir aus Vorhandenem oder drehen bei dir." },
+  { q: "Wem gehört das Werbekonto?", a: "Dir. Budget, Daten und Kampagnen bleiben jederzeit nachvollziehbar, auch wenn die Zusammenarbeit irgendwann endet." },
+  { q: "Wie lange sollte eine Kampagne laufen?", a: "Wir legen vorab einen Testzeitraum fest, meist einige Wochen, und bewerten danach gemeinsam, ob und wie es weitergeht. Pausen kosten Lerneffekt, ein kleineres konstantes Budget ist besser als ein Stopp." },
 ];
 
 const metaVoices = [verifiedReviews[2], verifiedReviews[0], verifiedReviews[1]];
@@ -275,10 +264,9 @@ export default function MetaAdsPage() {
                 Sechs Zeichen, dass Budget <em>verpufft statt wirkt</em>
               </h2>
               <p className="lead">
-                Eine Kampagne laufen zu lassen ist einfach. Eine Kampagne laufen
-                zu lassen, die tatsächlich Anfragen bringt, ist etwas anderes.
-                Die meisten Konten, die wir übernehmen, haben nicht zu wenig
-                Budget, sondern keine Struktur.
+                Anzeigen schalten ist einfach. Anzeigen, die Anfragen bringen,
+                sind etwas anderes. Den meisten Konten fehlt nicht Budget,
+                sondern Struktur.
               </p>
               <p className="lead">
                 Fast immer fehlt eines von drei Dingen: ein messbares Ziel, eine
@@ -300,15 +288,12 @@ export default function MetaAdsPage() {
                 Bekannt werden, <em>bevor gesucht wird</em>
               </h2>
               <p className="lead">
-                Bei Google Ads muss die Absicht schon da sein: Jemand sucht, du
-                erscheinst. Facebook und Instagram arbeiten davor. Sie zeigen
-                dein Angebot Menschen, die zur Zielgruppe passen, aber noch nicht
+                Google holt Nachfrage ab: Jemand sucht, du erscheinst. Meta
+                weckt sie: Dein Angebot erreicht Menschen, die noch nicht
                 wissen, dass sie dich brauchen.
               </p>
               <p className="lead">
-                Deshalb ergänzen sich beide Kanäle: Google holt Nachfrage ab,
-                Meta weckt sie. Welcher zuerst sinnvoll ist, hängt von deinem
-                Angebot ab, und das sagen wir dir ehrlich.
+                Welcher Kanal bei dir zuerst sinnvoll ist, sagen wir dir ehrlich.
               </p>
               <ul className="lines">
                 <li>Ohne Anzeigen erreichst du auf Social Media nur, wer dir schon folgt.</li>
@@ -349,8 +334,7 @@ export default function MetaAdsPage() {
               </h2>
             </div>
             <p className="band-note">
-              Jede Kampagne hat genau ein Ziel und eine Seite, die dieses Ziel
-              einlöst. Alles andere ist Reichweite ohne Ergebnis.
+              Ein Ziel pro Kampagne, eine Seite, die es einlöst. Alles andere ist Reichweite ohne Ergebnis.
             </p>
           </div>
           <div className="audience-grid reveal">
@@ -374,8 +358,7 @@ export default function MetaAdsPage() {
               </h2>
             </div>
             <p className="band-note">
-              Sechs Bausteine, die zusammengehören. Wer einen weglässt, zahlt
-              es über die Kosten pro Anfrage.
+              Wer einen Baustein weglässt, zahlt es über die Kosten pro Anfrage.
             </p>
           </div>
           <div className="scope-grid reveal">
@@ -398,9 +381,7 @@ export default function MetaAdsPage() {
               </h2>
             </div>
             <p className="band-note">
-              Die Motive stammen aus Kampagnen und Formatvorlagen von Pixel56.
-              Kampagnenaufbau, Zielgruppe und Zielseite wurden jeweils auf das
-              Angebot abgestimmt.
+              Motive aus Kampagnen und Formatvorlagen von Pixel56, jeweils auf das Angebot abgestimmt.
             </p>
           </div>
           <div className="work-gallery work-gallery-social reveal">
@@ -489,8 +470,7 @@ export default function MetaAdsPage() {
               </h2>
             </div>
             <p className="band-note">
-              Wir sehen sie in fast jedem Werbekonto, das wir übernehmen. Keiner
-              davon ist peinlich, jeder ist vermeidbar.
+              In fast jedem Werbekonto, das wir übernehmen. Keiner ist peinlich, jeder ist vermeidbar.
             </p>
           </div>
           <div className="friction-list reveal">
@@ -507,14 +487,13 @@ export default function MetaAdsPage() {
         <section className="band theme-light" id="prozess">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">08 — Der Weg dahin</span>
+              <span className="band-tag">08 — So läuft es</span>
               <h2 className="band-title">
                 Fünf Phasen, <em>laufend optimiert</em>
               </h2>
             </div>
             <p className="band-note">
-              Vom ersten Gespräch bis zur laufenden Betreuung. Du weißt
-              jederzeit, was gerade passiert und warum.
+              Du weißt jederzeit, was gerade passiert und warum.
             </p>
           </div>
           <Stepper steps={steps} />
@@ -529,13 +508,12 @@ export default function MetaAdsPage() {
               </h2>
               <p className="lead">
                 Eine Kampagne ist nie fertig. Zielgruppen sättigen sich, Motive
-                nutzen sich ab, Wettbewerber ändern ihre Gebote. Deshalb gibt es
-                bei uns keinen Autopilot, sondern einen festen Rhythmus.
+                nutzen sich ab, Wettbewerber ändern ihre Gebote. Deshalb kein
+                Autopilot, sondern ein fester Rhythmus.
               </p>
               <p className="lead">
-                Du bekommst keine Screenshots aus dem Werbeanzeigenmanager,
-                sondern eine Einordnung: Was lief, was ändern wir, was brauchen
-                wir von dir.
+                Du bekommst eine Einordnung statt Screenshots: Was lief, was
+                ändern wir, was brauchen wir von dir.
               </p>
             </div>
             <div className="mini-grid reveal" aria-label="Wöchentliche Prüfpunkte">
@@ -549,52 +527,16 @@ export default function MetaAdsPage() {
           </div>
         </section>
 
-        <section className="band theme-light" id="kosten">
-          <div className="split2 reverse">
-            <div className="reveal">
-              <span className="band-tag">10 — Budget &amp; Kosten</span>
-              <h2 className="band-title">
-                Woraus sich die Kosten <em>zusammensetzen</em>
-              </h2>
-              <p className="lead">
-                Vier Posten, klar getrennt. Das Werbebudget bleibt immer in
-                deinem Werbekonto, die Betreuung ist ein fester Betrag, und
-                Creatives oder Zielseite werden nur angeboten, wenn du sie
-                brauchst.
-              </p>
-              <p className="lead">
-                Konkrete Zahlen nennen wir im Erstgespräch, weil sie von
-                Angebot, Region und Ziel abhängen. Was wir nicht tun: Prozente
-                vom Werbebudget nehmen. Das belohnt hohes Budget, nicht gute
-                Arbeit.
-              </p>
-            </div>
-            <div className="mini-grid reveal" aria-label="Kostenbestandteile">
-              {costParts.map((item) => (
-                <div key={item.title}>
-                  <b>{item.title}</b>
-                  <small>{item.text}</small>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="reveal">
-            <BudgetPlaner />
-          </div>
-        </section>
-
         <section className="band theme-light" id="branchen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">11 — Worauf es je Branche ankommt</span>
+              <span className="band-tag">10 — Worauf es je Branche ankommt</span>
               <h2 className="band-title">
                 Was in deiner Branche <em>unbedingt nötig ist</em>
               </h2>
             </div>
             <p className="band-note">
-              Aus unserer Arbeit mit Handwerk, Transport, Bildung, Immobilien, Dienstleistern
-              und Gastronomie. Die Richtwerte je Anfrage stammen aus veröffentlichten
-              Benchmarks, nicht aus unseren Kampagnen, und schwanken je nach Quelle stark.
+              Die Richtwerte je Anfrage stammen aus veröffentlichten Benchmarks, nicht aus unseren Kampagnen, und schwanken je nach Quelle stark.
             </p>
           </div>
           <div className="audience-grid audience-grid-cols-3 reveal">
@@ -632,19 +574,18 @@ export default function MetaAdsPage() {
         <section className="band theme-light" id="content">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">12 — Creatives &amp; Reels</span>
+              <span className="band-tag">11 — Creatives &amp; Reels</span>
               <h2 className="band-title">
                 Anzeigen, die <em>im Feed stoppen</em>
               </h2>
               <p className="lead">
                 Die beste Zielgruppe nützt nichts, wenn das Motiv weitergescrollt
-                wird. Kurze Videos aus dem echten Betrieb, klare Bildsprache und
-                ein Satz, der das Angebot trifft, entscheiden über die Kosten pro
-                Anfrage.
+                wird. Kurze Videos aus dem echten Betrieb und ein Satz, der das
+                Angebot trifft, entscheiden über die Kosten pro Anfrage.
               </p>
               <ul className="lines">
                 <li>Schnitt aus deinem vorhandenen Material, mit Untertiteln und Musik.</li>
-                <li>Dreh vor Ort in der Region Koblenz, wenn Material fehlt.</li>
+                <li>Dreh bei dir im Betrieb, wenn Material fehlt.</li>
                 <li>Mehrere Varianten pro Kampagne, damit wir testen statt raten.</li>
                 <li>
                   Mehr dazu unter <Link href={serviceRoutes["content-produktion"]}>Social Content &amp; Reels</Link>
@@ -660,14 +601,13 @@ export default function MetaAdsPage() {
         <section className="band theme-light" id="referenzen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">13 — Referenzen</span>
+              <span className="band-tag">12 — Referenzen</span>
               <h2 className="band-title">
                 Aus der <em>echten Arbeit</em>
               </h2>
             </div>
             <p className="band-note">
-              Zwei Projekte mit unterschiedlichem Ziel: neue Kunden und neue
-              Mitarbeiter. Beide mit Tracking, Zielseite und laufender Betreuung.
+              Zwei Ziele, neue Kunden und neue Mitarbeiter. Beide mit Tracking, Zielseite und laufender Betreuung.
             </p>
           </div>
           <div className="ref-grid-2 reveal">
@@ -685,14 +625,12 @@ export default function MetaAdsPage() {
         <section className="band dark-stage service-dark-stage" id="zusammenarbeit">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">14 — Zusammenarbeit</span>
+              <span className="band-tag">13 — Zusammenarbeit</span>
               <h2 className="band-title">
                 Deine Kampagne. <em>Direkter Draht.</em>
               </h2>
               <p className="lead">
-                Kein Ticketsystem, kein Zwischenmanager. Neue Creatives,
-                Zielgruppen oder Budgetfragen klärst du direkt per WhatsApp mit
-                deinem festen Ansprechpartner, der die Kampagne selbst steuert.
+                Kein Ticketsystem, kein Zwischenmanager. Du schreibst per WhatsApp mit dem, der die Kampagne selbst steuert.
               </p>
               <ul className="lines">
                 <li>Dein Werbekonto, dein Zugriff, deine Daten.</li>
@@ -717,15 +655,12 @@ export default function MetaAdsPage() {
         <section className="band theme-light" id="bewertungen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">15 — Kundenstimmen</span>
+              <span className="band-tag">14 — Das sagen Kunden</span>
               <h2 className="band-title">
-                Das sagen <em>Kunden über uns</em>
+                Wörtlich so <em>veröffentlicht.</em>
               </h2>
             </div>
-            <p className="band-note">
-              Nur Aussagen, die unsere Kunden so veröffentlicht haben. Keine
-              erfundenen Bewertungen, keine geschönten Zahlen.
-            </p>
+            <p className="band-note">Nichts erfunden, nichts geschönt.</p>
           </div>
           <Reviews reviews={metaVoices} items={metaVoices} />
         </section>
@@ -735,9 +670,9 @@ export default function MetaAdsPage() {
         <section className="band theme-light" id="faq">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">16 — Häufige Fragen</span>
+              <span className="band-tag">15 — Häufige Fragen</span>
               <h2 className="band-title">
-                Was du vorher <em>wissen willst</em>
+                Was Betriebe <em>vor dem Start fragen.</em>
               </h2>
             </div>
           </div>
@@ -747,7 +682,7 @@ export default function MetaAdsPage() {
         <section className="band theme-light" id="anfrage">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">17 — In fünf Klicks zur Einschätzung</span>
+              <span className="band-tag">16 — In fünf Klicks zur Einschätzung</span>
               <h2 className="band-title">
                 Sag uns kurz, <em>was die Anzeigen bringen sollen.</em>
               </h2>

@@ -906,6 +906,45 @@ Monate) vorliegt: Seiten außerhalb des Einzugsgebiets mit echten Klicks
 prüfen und bei Bedarf in `regionStaedte` aufnehmen; die Stadt wird dann
 automatisch indexierbar und landet in der Sitemap.
 
+## 17.10.2026 (Nachmittag): Leistungstexte gekürzt, Kontaktseite mit Fragebogen, Livegang-Checkliste
+
+Auftrag des Inhabers: „pass alles an“ zum Vier-Punkte-Plan.
+
+1. **Acht Leistungsseiten unter dem Hero** auf den Ton der Startseite
+   gebracht: kurze Sätze, Schmerz → Lösung → Beweis, Wiederholungen raus,
+   keine Preisaussagen, keine neuen Kennzahlen. Gestrichen: Webdesign
+   „Prüfpunkte“ und Landingpage-Teaser (eigene Seite verlinkt), Meta Ads
+   „Budget & Kosten“, Google Ads „Budget & Kosten“, Mitarbeitergewinnung
+   „Kosten“ (Inhalt sinngemäß als eine FAQ-Antwort „Wie setzt sich die
+   Zusammenarbeit zusammen?“ ohne Zahlen), KI „Verantwortungsvolle
+   Umsetzung“ (Doppelung mit Grenzen/Datenschutz). FAQ je Seite auf sechs
+   Fragen. Abschnittsnummern neu durchgezählt (Webdesign 13, Meta 16,
+   Content 15, KI 15, Landingpages 14, Mitarbeiter 13, Google Ads 13,
+   SEO 14). Koblenz im Fließtext nur noch im Region-Abschnitt der
+   Webdesign-Seite; „Dreh in der Region Koblenz“ → „bei dir im Betrieb“.
+   Die Branchen-Richtwerte auf der Meta-Ads-Seite (veröffentlichte
+   Benchmarks mit Quellen) bleiben, Einleitung gekürzt.
+2. **Kontaktseite:** neuer allgemeiner Fragebogen `frageboegen.allgemein`
+   (Thema → Ziel → Branche → Zeitpunkt → Rahmen) als Abschnitt 01, die
+   erste Antwort (gewählte Leistung) steht im Mail-Betreff
+   („Pixel56 Anfrage Kontakt · Website oder Relaunch: Name“). Hero-Karte
+   rechts immer sichtbar: Termin (Calendly), WhatsApp, E-Mail; das alte
+   `KontaktForm` ist nicht mehr eingebunden. Region-Text ohne
+   „Koblenz, Neuwied und Montabaur in wenigen Minuten“. **Projekte:**
+   Hero-Absatz und Abschnittsköpfe gestrafft.
+3. **Datenschutz** ergänzt: Klick-Fragebogen + Resend (USA,
+   Standardvertragsklauseln), MailerLite-Ablage mit Einwilligung,
+   Website-Check (keine Speicherung).
+4. **`docs/LIVEGANG.md`** neu: exakte Netlify-Variablennamen (Resend
+   Pflicht, MailerLite und Google Places optional), Testablauf, Rechtstexte,
+   Domainumzug Schritt für Schritt, Nacharbeiten.
+
+Geprüft: Build 746 Routen, `seo:check:strict`, Playwright-Screenshots
+(Desktop 1440 / Mobil 390) für Webdesign 01/02/Relaunch/FAQ, Meta Ads 01,
+Kontakt-Hero und -Fragebogen, Projekte-Hero; Klick-/Tastaturtest des
+Kontakt-Fragebogens ohne Seitenfehler. CSS: `.contact-fallback-mail` als
+Block, damit WhatsApp- und E-Mail-Link untereinander stehen.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter

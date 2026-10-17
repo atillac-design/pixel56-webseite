@@ -79,37 +79,37 @@ const statusRows = [
 ];
 
 const principles = [
-  { title: "Sichtbar sein", text: "Wer eine Stelle sucht, googelt den Betrieb. Fehlt die Karriereseite oder ist sie von 2016, ist die Bewerbung schon vorbei, bevor sie begonnen hat." },
-  { title: "Einblick geben", text: "Menschen bewerben sich bei Menschen. Fotos vom Team, Videos von der Baustelle, ein paar ehrliche Sätze zum Alltag schlagen jede Floskel-Liste." },
-  { title: "Bewerbung in zwei Minuten", text: "Name, Telefon, Unterlagen hochladen, fertig. Vom Handy, ohne E-Mail-Programm. Jede weitere Hürde kostet genau die Kandidaten, die du willst." },
-  { title: "Schnell antworten", text: "Wer heute eine Bewerbung schickt, hat morgen zwei weitere Angebote. Eine Antwort innerhalb weniger Tage ist kein Service, sondern Voraussetzung." },
+  { title: "Sichtbar sein", text: "Wer eine Stelle sucht, googelt den Betrieb. Fehlt die Karriereseite oder ist sie von 2016, ist die Bewerbung vorbei, bevor sie begonnen hat." },
+  { title: "Einblick geben", text: "Menschen bewerben sich bei Menschen. Fotos vom Team, Videos von der Baustelle, ehrliche Sätze zum Alltag." },
+  { title: "Bewerbung in zwei Minuten", text: "Name, Telefon, Upload, fertig. Vom Handy, ohne E-Mail-Programm. Jede Hürde kostet genau die Kandidaten, die du willst." },
+  { title: "Schnell antworten", text: "Wer heute eine Bewerbung schickt, hat morgen zwei weitere Angebote. Antwort in wenigen Tagen ist Voraussetzung." },
 ];
 
 const scope = [
-  { nr: "01", title: "Karriereseite", text: "Eine eigene, gepflegte Seite mit Einblick in den Betrieb, den Menschen und den Alltag. Kein Aushang, sondern ein Grund, sich zu bewerben." },
-  { nr: "02", title: "Stellenanzeigen, die man liest", text: "Was man tut, mit wem, zu welchen Bedingungen, in Sätzen statt Stichpunktlisten. Gehalt und Arbeitszeiten offen, wo es geht." },
-  { nr: "03", title: "Bewerbung mit Direkt-Upload", text: "Kurzes Formular, Unterlagen direkt hochladen, sofortige Bestätigung. Auch ohne Lebenslauf möglich, wenn dir das reicht." },
-  { nr: "04", title: "Recruiting-Kampagnen auf Meta", text: "Instagram und Facebook erreichen Menschen, die nicht aktiv suchen. Mit echten Mitarbeitern im Motiv und einem Klick zur Bewerbung." },
-  { nr: "05", title: "Sichtbar in der Google-Suche", text: "Stellen so aufbereitet, dass Google sie als Jobangebot versteht, plus Anzeigen für Suchen wie „Dachdecker Job Koblenz“." },
-  { nr: "06", title: "Arbeitgeberprofil & Bewertungen", text: "Google-Unternehmensprofil, Bewertungen und Social-Media-Profile zeigen, wie der Betrieb wirklich ist. Wir helfen, sie ehrlich zu pflegen." },
+  { nr: "01", title: "Karriereseite", text: "Einblick in Betrieb, Menschen und Alltag. Kein Aushang, sondern ein Grund, sich zu bewerben." },
+  { nr: "02", title: "Stellenanzeigen, die man liest", text: "Was man tut, mit wem, zu welchen Bedingungen. Gehalt und Arbeitszeiten offen, wo es geht." },
+  { nr: "03", title: "Bewerbung mit Direkt-Upload", text: "Kurzes Formular, Upload, sofortige Bestätigung. Auch ohne Lebenslauf, wenn dir das reicht." },
+  { nr: "04", title: "Recruiting-Kampagnen auf Meta", text: "Instagram und Facebook erreichen Menschen, die nicht suchen. Echte Mitarbeiter im Motiv, ein Klick zur Bewerbung." },
+  { nr: "05", title: "Sichtbar in der Google-Suche", text: "Stellen so aufbereitet, dass Google sie als Jobangebot versteht, plus Anzeigen für Suchen wie „Dachdecker Job“ mit Ort." },
+  { nr: "06", title: "Arbeitgeberprofil & Bewertungen", text: "Google-Profil, Bewertungen und Social Media zeigen, wie der Betrieb wirklich ist. Wir helfen, sie ehrlich zu pflegen." },
 ];
 
 const audiences = [
-  { tag: "Dachdecker & Handwerk", title: "Volle Auftragsbücher, leere Bewerbermappe", text: "Die Arbeit ist da, die Hände fehlen. Karriereseite mit Einblick in den Betrieb, Bewerbung vom Handy und Kampagnen, die Gesellen erreichen, die gerade nicht suchen.", refs: "GM-Dachdecker" },
-  { tag: "Bau, Abbruch & Tiefbau", title: "Menschen für harte Arbeit gewinnen", text: "Wer auf dem Bau arbeitet, liest keine Stellenbörse. Kurze Videos und Creatives mit echten Kollegen im Feed, Bewerbung mit einem Klick.", refs: "Oktay Cömertler" },
-  { tag: "Transport & Logistik", title: "Fahrer und Disponenten finden", text: "Fahrer wechseln, wenn Bedingungen besser sind. Stellenanzeigen, die Touren, Fahrzeuge und Zeiten offen nennen, und Kampagnen im Umkreis.", refs: "M&A Transporte" },
-  { tag: "Pflege & Dienstleistung", title: "Bewerber, die Planbarkeit suchen", text: "Dienstpläne, Team und Entwicklung sichtbar machen. Bewerbung ohne Anschreiben, mit Rückruf statt Formularschleife.", refs: "Typischer Einsatz" },
-  { tag: "Gastronomie", title: "Schnell besetzen, ohne Portal", text: "Kurzfristiger Bedarf, hohe Fluktuation. Eine Seite, die immer aktuell ist, und Kampagnen, die in Tagen statt Wochen Bewerbungen bringen.", refs: "Typischer Einsatz" },
-  { tag: "Büro & Verwaltung", title: "Die passenden statt die meisten", text: "Hier zählt Qualifikation. Stellenanzeigen mit klaren Anforderungen und eine Bewerbungsstrecke, die vorqualifiziert, ohne abzuschrecken.", refs: "Typischer Einsatz" },
+  { tag: "Dachdecker & Handwerk", title: "Volle Auftragsbücher, leere Bewerbermappe", text: "Die Arbeit ist da, die Hände fehlen. Karriereseite, Bewerbung vom Handy und Kampagnen, die Gesellen erreichen, die gerade nicht suchen.", refs: "GM-Dachdecker" },
+  { tag: "Bau, Abbruch & Tiefbau", title: "Menschen für harte Arbeit gewinnen", text: "Wer auf dem Bau arbeitet, liest keine Stellenbörse. Kurze Videos mit echten Kollegen im Feed, Bewerbung mit einem Klick.", refs: "Oktay Cömertler" },
+  { tag: "Transport & Logistik", title: "Fahrer und Disponenten finden", text: "Fahrer wechseln, wenn Bedingungen besser sind. Anzeigen, die Touren, Fahrzeuge und Zeiten offen nennen.", refs: "M&A Transporte" },
+  { tag: "Pflege & Dienstleistung", title: "Bewerber, die Planbarkeit suchen", text: "Dienstpläne, Team und Entwicklung sichtbar machen. Bewerbung ohne Anschreiben, Rückruf statt Formularschleife.", refs: "Typischer Einsatz" },
+  { tag: "Gastronomie", title: "Schnell besetzen, ohne Portal", text: "Kurzfristiger Bedarf, hohe Fluktuation. Eine Seite, die immer aktuell ist, und Kampagnen, die in Tagen Bewerbungen bringen.", refs: "Typischer Einsatz" },
+  { tag: "Büro & Verwaltung", title: "Die passenden statt die meisten", text: "Hier zählt Qualifikation. Klare Anforderungen und eine Bewerbungsstrecke, die vorqualifiziert, ohne abzuschrecken.", refs: "Typischer Einsatz" },
 ];
 
 const hurdles = [
-  { problem: "Die Bewerbung geht nur per E-Mail mit Anschreiben.", answer: "Direkt-Upload auf der Karriereseite, ohne E-Mail-Programm. Anschreiben nur, wenn du es wirklich liest. Die meisten Betriebe brauchen es nicht." },
-  { problem: "Die Karriereseite ist eine Liste von Stellentiteln.", answer: "Einblick statt Liste: Team, Arbeitsplatz, Alltag, ein Satz vom Chef. Erst dann die offenen Stellen mit Bedingungen, die man versteht." },
-  { problem: "Die Anzeige verrät weder Gehalt noch Arbeitszeiten.", answer: "Wer Bedingungen verschweigt, bekommt Bewerbungen von Menschen, die danach fragen müssen. Offene Angaben filtern vor und bauen Vertrauen auf." },
+  { problem: "Die Bewerbung geht nur per E-Mail mit Anschreiben.", answer: "Direkt-Upload auf der Karriereseite. Anschreiben nur, wenn du es wirklich liest. Die meisten brauchen es nicht." },
+  { problem: "Die Karriereseite ist eine Liste von Stellentiteln.", answer: "Einblick statt Liste: Team, Arbeitsplatz, Alltag, ein Satz vom Chef. Erst dann die Stellen." },
+  { problem: "Die Anzeige verrät weder Gehalt noch Arbeitszeiten.", answer: "Offene Angaben filtern vor und bauen Vertrauen auf. Wer sie verschweigt, bekommt Rückfragen statt Bewerbungen." },
   { problem: "Die Stelle steht nur auf Portalen, die die Zielgruppe nicht nutzt.", answer: "Handwerker, Fahrer und Köche suchen selten auf Jobbörsen. Sie sehen Instagram, Facebook und Google. Dort muss die Stelle hin." },
-  { problem: "Das Formular funktioniert auf dem Handy nicht.", answer: "Die meisten Bewerbungen aus Kampagnen kommen vom Handy, oft abends. Formular, Upload und Bestätigung werden zuerst dort gebaut und getestet." },
-  { problem: "Nach der Bewerbung passiert zwei Wochen nichts.", answer: "Sofortige Bestätigung, Antwort innerhalb weniger Tage, ein fester Ansprechpartner im Betrieb. Das vereinbaren wir mit dir, bevor die Kampagne startet." },
+  { problem: "Das Formular funktioniert auf dem Handy nicht.", answer: "Die meisten Bewerbungen kommen vom Handy, oft abends. Dort wird zuerst gebaut und getestet." },
+  { problem: "Nach der Bewerbung passiert zwei Wochen nichts.", answer: "Sofortige Bestätigung, Antwort in wenigen Tagen, ein fester Ansprechpartner im Betrieb. Das vereinbaren wir vor dem Start." },
 ];
 
 const steps = [
@@ -121,27 +121,20 @@ const steps = [
 ];
 
 const afterApply = [
-  { title: "Bestätigung sofort", text: "Automatisch, mit Namen und dem nächsten Schritt. Der Bewerber weiß, dass die Unterlagen angekommen sind." },
-  { title: "Antwort in wenigen Tagen", text: "Wir vereinbaren mit dir einen festen Zeitraum und einen Ansprechpartner im Betrieb. Gute Kandidaten warten nicht zwei Wochen." },
-  { title: "Gespräch ohne Hürden", text: "Telefon oder kurzer Besuch im Betrieb statt dreistufigem Auswahlverfahren. Handwerk entscheidet im Gespräch, nicht im Assessment." },
+  { title: "Bestätigung sofort", text: "Automatisch, mit Namen und dem nächsten Schritt." },
+  { title: "Antwort in wenigen Tagen", text: "Fester Zeitraum, fester Ansprechpartner im Betrieb. Gute Kandidaten warten nicht zwei Wochen." },
+  { title: "Gespräch ohne Hürden", text: "Telefon oder kurzer Besuch statt dreistufigem Auswahlverfahren." },
   { title: "Faire Absage", text: "Wer nicht passt, bekommt eine Antwort. Das spricht sich herum, in beide Richtungen." },
 ];
 
-const costParts = [
-  { title: "Karriereseite", text: "Einmalig, als eigene Seite oder Teil der Website. Gehört dir und wird mit jeder neuen Stelle wiederverwendet." },
-  { title: "Kampagnenbudget", text: "Geht direkt an Meta oder Google und bleibt in deinem Konto nachvollziehbar. Die sinnvolle Höhe hängt von Stelle und Region ab." },
-  { title: "Betreuung", text: "Aufbau, Motive, Optimierung und Auswertung der Kampagne als Festbetrag, getrennt vom Werbebudget." },
-  { title: "Kein Vermittlungshonorar", text: "Wir sind keine Personalvermittlung. Du zahlst für Seite und Kampagne, nicht pro eingestelltem Mitarbeiter." },
-];
 
 const faqs = [
-  { q: "Reicht nicht eine Stellenanzeige bei Jobportalen?", a: "Jobportale können ergänzend sinnvoll sein, ersetzen aber keine eigene Karriereseite. Dort entscheidet sich, ob jemand nach dem Klick tatsächlich auf „Bewerben“ drückt. Und viele Zielgruppen im Handwerk, in der Logistik oder Gastronomie nutzen Portale kaum." },
-  { q: "Können Bewerber ihre Unterlagen wirklich ohne E-Mail hochladen?", a: "Ja. Ein Upload-Formular nimmt Unterlagen direkt entgegen, auch vom Handy. Bewerber müssen kein E-Mail-Programm öffnen und kein Anschreiben formulieren. Das senkt die Abbruchquote spürbar." },
-  { q: "Funktioniert das auch für schwer zu besetzende Stellen?", a: "Ein einfacherer Bewerbungsweg löst nicht jeden Fachkräftemangel. Er sorgt aber dafür, dass von den vorhandenen Kandidaten möglichst viele dich sehen und die Bewerbung zu Ende bringen. Oft ist das der Unterschied zwischen null und einigen Bewerbungen im Monat." },
-  { q: "Müssen wir Gehalt und Arbeitszeiten nennen?", a: "Du musst nicht, du solltest. Offene Angaben bringen weniger, aber passendere Bewerbungen. Wenn du eine Spanne nennen kannst, reicht das." },
-  { q: "Was kostet eine Recruiting-Kampagne?", a: "Die Mechanik ist dieselbe wie bei Kampagnen für Kunden: Werbebudget an die Plattform, Betreuung als Festbetrag. Dazu einmalig die Karriereseite, falls keine existiert. Den Umfang klären wir im Erstgespräch." },
-  { q: "Wie schnell ist die Karriereseite fertig?", a: "Je nach Umfang meist innerhalb weniger Wochen. Der Zeitrahmen hängt vor allem davon ab, wie schnell Fotos, Stellenangaben und Freigaben von deiner Seite kommen. Fotos und Videos können wir vor Ort produzieren." },
-  { q: "Bleibst du auch danach erreichbar?", a: "Ja. Per WhatsApp, Telefon oder E-Mail über einen festen Ansprechpartner. Eine neue Stelle einstellen oder eine Anzeige anpassen ist meist am selben Tag erledigt." },
+  { q: "Reicht nicht eine Stellenanzeige bei Jobportalen?", a: "Portale können ergänzen, ersetzen aber keine eigene Karriereseite. Dort entscheidet sich, ob jemand auf „Bewerben“ drückt. Und Handwerk, Logistik und Gastronomie nutzen Portale kaum." },
+  { q: "Können Bewerber ihre Unterlagen ohne E-Mail hochladen?", a: "Ja, direkt auf der Karriereseite, auch vom Handy. Kein E-Mail-Programm, kein Anschreiben. Das senkt die Abbruchquote spürbar." },
+  { q: "Funktioniert das auch für schwer zu besetzende Stellen?", a: "Ein einfacher Bewerbungsweg löst nicht jeden Fachkräftemangel. Er sorgt dafür, dass von den vorhandenen Kandidaten möglichst viele dich sehen und die Bewerbung zu Ende bringen." },
+  { q: "Müssen wir Gehalt und Arbeitszeiten nennen?", a: "Du musst nicht, du solltest. Offene Angaben bringen weniger, aber passendere Bewerbungen. Eine Spanne reicht." },
+  { q: "Wie setzt sich die Zusammenarbeit zusammen?", a: "Karriereseite einmalig, sie gehört dir. Kampagnenbudget geht direkt an Meta oder Google. Betreuung als Festbetrag, getrennt vom Werbebudget. Kein Vermittlungshonorar pro Einstellung." },
+  { q: "Wie schnell ist die Karriereseite fertig?", a: "Meist innerhalb weniger Wochen. Das Tempo hängt davon ab, wie schnell Fotos, Stellenangaben und Freigaben kommen. Fotos und Videos drehen wir bei dir." },
 ];
 
 const recruitingVoices = [verifiedProjectVoices["gm-dachdecker"], verifiedReviews[2], verifiedReviews[1]];
@@ -223,10 +216,7 @@ export default function RecruitingPage() {
                 Sechs Zeichen, dass Stellen <em>unbesetzt bleiben</em>
               </h2>
               <p className="lead">
-                Der Betrieb läuft, aber es fehlen Hände. Der Arbeitsmarkt ist
-                eng, das stimmt. Aber in fast jedem Betrieb, mit dem wir
-                sprechen, geht ein Teil der Bewerber nicht am Markt verloren,
-                sondern im eigenen Bewerbungsweg.
+                Der Betrieb läuft, es fehlen Hände. Der Arbeitsmarkt ist eng, das stimmt. Aber ein Teil der Bewerber geht nicht am Markt verloren, sondern im eigenen Bewerbungsweg.
               </p>
               <p className="lead">
                 Die gute Nachricht: Genau diesen Teil kannst du beeinflussen.
@@ -246,14 +236,10 @@ export default function RecruitingPage() {
                 Bewerber sind auch <em>nur Kunden</em>
               </h2>
               <p className="lead">
-                Wer um Kunden wirbt, gibt sich Mühe: gute Website, klare
-                Leistungen, schnelle Antwort. Bei der Mitarbeitersuche fehlt
-                diese Sorgfalt oft komplett. Dabei gelten dieselben Prinzipien,
-                und die Konkurrenz um Fachkräfte ist härter als die um Kunden.
+                Um Kunden gibt man sich Mühe: gute Website, klare Leistungen, schnelle Antwort. Bei der Mitarbeitersuche fehlt diese Sorgfalt oft komplett. Dabei ist die Konkurrenz um Fachkräfte härter als die um Kunden.
               </p>
               <p className="lead">
                 Vier Dinge entscheiden, ob aus Interesse eine Bewerbung wird.
-                Keines davon ist teuer, alle sind Arbeit.
               </p>
             </div>
             <div className="mini-grid reveal" aria-label="Vier Prinzipien der Mitarbeitergewinnung">
@@ -276,9 +262,7 @@ export default function RecruitingPage() {
               </h2>
             </div>
             <p className="band-note">
-              Karriereseite, Bewerbungsweg und Kampagne greifen ineinander. Du
-              brauchst nicht alle sechs auf einmal, aber die Reihenfolge ist
-              wichtig: erst die Seite, dann die Reichweite.
+              Du brauchst nicht alle sechs auf einmal. Aber die Reihenfolge zählt: erst die Seite, dann die Reichweite.
             </p>
           </div>
           <div className="scope-grid reveal">
@@ -301,8 +285,7 @@ export default function RecruitingPage() {
               </h2>
             </div>
             <p className="band-note">
-              Die Zielgruppen unterscheiden sich, der Mechanismus nicht: sichtbar
-              sein, Einblick geben, Hürden abbauen, schnell antworten.
+              Der Mechanismus ist überall gleich: sichtbar sein, Einblick geben, Hürden abbauen, schnell antworten.
             </p>
           </div>
           <div className="audience-grid reveal">
@@ -386,8 +369,7 @@ export default function RecruitingPage() {
               </h2>
             </div>
             <p className="band-note">
-              Und was wir jeweils dagegen tun. Die meisten Betriebe erkennen
-              sich in mindestens dreien wieder.
+              Die meisten Betriebe erkennen sich in mindestens dreien wieder.
             </p>
           </div>
           <div className="friction-list reveal">
@@ -410,9 +392,7 @@ export default function RecruitingPage() {
               </h2>
             </div>
             <p className="band-note">
-              Die besten Fachkräfte haben einen Job. Sie wechseln, wenn sie
-              ein besseres Angebot sehen. Im Feed, mit echten Kollegen im Bild,
-              nicht auf einer Jobbörse.
+              Die besten Fachkräfte haben einen Job. Sie wechseln, wenn sie im Feed ein besseres Angebot sehen, mit echten Kollegen im Bild.
             </p>
           </div>
           <div className="work-gallery work-gallery-social reveal">
@@ -442,7 +422,7 @@ export default function RecruitingPage() {
         <section className="band theme-light" id="prozess">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">08 — Der Weg dahin</span>
+              <span className="band-tag">08 — So läuft es</span>
               <h2 className="band-title">
                 Fünf Phasen, <em>ein einfacherer Weg</em>
               </h2>
@@ -463,14 +443,10 @@ export default function RecruitingPage() {
                 Was wir <em>mit dir vereinbaren</em>
               </h2>
               <p className="lead">
-                Die beste Karriereseite nützt nichts, wenn Bewerbungen zwei
-                Wochen im Postfach liegen. Deshalb klären wir vor dem Start,
-                was im Betrieb nach einer Bewerbung passiert, und bauen die
-                Technik so, dass es leicht einzuhalten ist.
+                Die beste Karriereseite nützt nichts, wenn Bewerbungen zwei Wochen im Postfach liegen. Deshalb klären wir vor dem Start, was im Betrieb nach einer Bewerbung passiert.
               </p>
               <p className="lead">
-                Das ist der Teil, den keine Agentur für dich übernehmen kann.
-                Aber wir machen ihn so einfach wie möglich.
+                Diesen Teil kann keine Agentur übernehmen. Aber wir machen ihn so einfach wie möglich.
               </p>
             </div>
             <div className="mini-grid reveal" aria-label="Ablauf nach der Bewerbung">
@@ -484,45 +460,15 @@ export default function RecruitingPage() {
           </div>
         </section>
 
-        <section className="band theme-light" id="kosten">
-          <div className="split2 reverse">
-            <div className="reveal">
-              <span className="band-tag">10 — Kosten</span>
-              <h2 className="band-title">
-                Woraus sich die Kosten <em>zusammensetzen</em>
-              </h2>
-              <p className="lead">
-                Vier Posten, klar getrennt. Keine Vermittlungsgebühr pro
-                Einstellung, kein Prozent vom Gehalt. Du zahlst für Seite und
-                Kampagne, beides gehört danach dir.
-              </p>
-              <p className="lead">
-                Konkrete Zahlen nennen wir im Erstgespräch, weil sie von Stelle,
-                Region und vorhandener Website abhängen.
-              </p>
-            </div>
-            <div className="mini-grid reveal" aria-label="Kostenbestandteile">
-              {costParts.map((item) => (
-                <div key={item.title}>
-                  <b>{item.title}</b>
-                  <small>{item.text}</small>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="band dark-stage service-dark-stage" id="zusammenarbeit">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">11 — Zusammenarbeit</span>
+              <span className="band-tag">10 — Zusammenarbeit</span>
               <h2 className="band-title">
                 Deine Stellen. <em>Ein Ansprechpartner.</em>
               </h2>
               <p className="lead">
-                Kein Callcenter, keine Rückrufbitte. Neue Stelle einstellen,
-                Anzeige anpassen oder Bewerberfluss besprechen: direkt per
-                WhatsApp mit dem, der Seite und Kampagne selbst betreut.
+                Kein Callcenter, keine Rückrufbitte. Du schreibst per WhatsApp mit dem, der Seite und Kampagne selbst betreut.
               </p>
               <ul className="lines">
                 <li>Neue Stellen sind meist am selben Tag online.</li>
@@ -547,15 +493,12 @@ export default function RecruitingPage() {
         <section className="band theme-light" id="bewertungen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">12 — Kundenstimmen</span>
+              <span className="band-tag">11 — Das sagen Kunden</span>
               <h2 className="band-title">
-                Das sagen <em>Kunden über uns</em>
+                Wörtlich so <em>veröffentlicht.</em>
               </h2>
             </div>
-            <p className="band-note">
-              Nur Aussagen, die unsere Kunden so veröffentlicht haben. Keine
-              erfundenen Bewertungen, keine geschönten Zahlen.
-            </p>
+            <p className="band-note">Nichts erfunden, nichts geschönt.</p>
           </div>
           <Reviews reviews={recruitingVoices} items={recruitingVoices} />
         </section>
@@ -563,9 +506,9 @@ export default function RecruitingPage() {
         <section className="band theme-light" id="faq">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">13 — Häufige Fragen</span>
+              <span className="band-tag">12 — Häufige Fragen</span>
               <h2 className="band-title">
-                Was du vorher <em>wissen willst</em>
+                Was Betriebe <em>vor dem Start fragen.</em>
               </h2>
             </div>
           </div>
@@ -575,7 +518,7 @@ export default function RecruitingPage() {
         <section className="band theme-light" id="anfrage">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">14 — In fünf Klicks zur Einschätzung</span>
+              <span className="band-tag">13 — In fünf Klicks zur Einschätzung</span>
               <h2 className="band-title">
                 Sag uns kurz, <em>wen du suchst.</em>
               </h2>

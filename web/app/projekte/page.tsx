@@ -129,11 +129,7 @@ export default async function ProjektePage() {
                 <span>Keine Vorlagen.</span>
               </h1>
               <p>
-                Vom Karriereportal für einen Dachdecker-Meisterbetrieb bis zur
-                Spendengala: {fallstudien.length} Projekte aus Handwerk,
-                Transport, Bildung, Immobilien, Gastronomie und Non-Profit. Jede
-                Fallstudie beschreibt die Ausgangslage, die Umsetzung und unseren
-                Beitrag.
+                {fallstudien.length} Projekte aus Handwerk, Transport, Bildung, Immobilien, Gastronomie und Non-Profit. Jede Fallstudie zeigt Ausgangslage, Umsetzung und unseren Beitrag. Keine erfundenen Zahlen.
               </p>
               <div className="premium-actions">
                 <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">
@@ -188,14 +184,10 @@ export default async function ProjektePage() {
             <div>
               <span className="band-tag">01 — Alle Projekte</span>
               <h2 className="band-title">
-                Betriebe, die wir <em>digital sichtbar gemacht haben</em>
+                Betriebe, die online <em>so gut aussehen, wie sie arbeiten.</em>
               </h2>
             </div>
-            <p className="band-note">
-              {fallstudien.length} Projekte aus Handwerk, Bildung, Transport,
-              Immobilien, Handel und Non-Profit. Jede Karte führt zur
-              ausführlichen Fallstudie.
-            </p>
+            <p className="band-note">Jede Karte führt zur ausführlichen Fallstudie.</p>
           </div>
           <div className="reveal">
             <ProjektFilter
@@ -224,8 +216,7 @@ export default async function ProjektePage() {
               </h2>
             </div>
             <p className="band-note">
-              Die meisten Projekte verbinden mehrere Leistungen. Hier siehst du,
-              welche Kunden welche Bausteine bekommen haben.
+              Die meisten Projekte verbinden mehrere Leistungen. Alles aus einer Hand.
             </p>
           </div>
           <div className="mini-grid cols-3 reveal">
@@ -258,8 +249,7 @@ export default async function ProjektePage() {
               </h2>
             </div>
             <p className="band-note">
-              Unterschiedliche Branchen, unterschiedliche Aufgaben. Die
-              Arbeitsweise dahinter ist immer dieselbe.
+              Unterschiedliche Branchen, dieselbe Arbeitsweise.
             </p>
           </div>
           <div className="audience-grid reveal">

@@ -57,6 +57,32 @@ export default function DatenschutzPage() {
         DSGVO (vorvertragliche Maßnahmen) bzw. lit. f DSGVO.
       </p>
 
+      <h3>Klick-Fragebogen und Zustellung per E-Mail (Resend)</h3>
+      <p>
+        Auf den Leistungsseiten und der Kontaktseite kannst du uns dein Anliegen
+        über einen kurzen Klick-Fragebogen schicken. Deine Antworten (z. B.
+        Ziel, Branche, Zeitrahmen, Budgetrahmen) und deine Kontaktdaten (Name,
+        E-Mail-Adresse, optional Telefonnummer und Unternehmen) werden als
+        E-Mail an uns zugestellt. Für den Versand nutzen wir den Dienst{" "}
+        <b>Resend</b> (Resend, Inc., USA); die Übermittlung ist über
+        EU-Standardvertragsklauseln abgesichert. Mit deiner Einwilligung legen
+        wir deine Kontaktdaten und die Antworten zusätzlich als Kontakt in
+        MailerLite ab, um deine Anfrage zu bearbeiten und dich bei Bedarf
+        erneut zu erreichen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a und
+        lit. b DSGVO. Du kannst der Speicherung jederzeit per Nachricht an uns
+        widersprechen.
+      </p>
+
+      <h3>Website-Check</h3>
+      <p>
+        Beim kostenlosen Website-Check gibst du die Adresse einer Website ein.
+        Unser Server ruft diese Adresse einmalig auf und prüft technische
+        Grundlagen (z. B. Verschlüsselung, Antwortzeit, Seitentitel). Die
+        eingegebene Adresse und das Ergebnis werden nicht gespeichert und nicht
+        mit deiner Person verknüpft. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f
+        DSGVO.
+      </p>
+
       <h3>Newsletter und Freebie-Downloads (MailerLite)</h3>
       <p>
         Für den Versand kostenloser Downloads (Checklisten, Vorlagen) und für

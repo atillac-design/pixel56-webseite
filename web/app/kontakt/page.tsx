@@ -3,7 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
-import KontaktForm from "@/components/KontaktForm";
+import LeistungsAnfrage from "@/components/LeistungsAnfrage";
+import { frageboegen } from "@/lib/fragebogen";
+import { googleAnzahlLautProfil, googleBewertungLautProfil } from "@/lib/google-bewertungen";
 import { ArrowIcon, FaqList, Reviews, WaMock } from "@/components/ui";
 import { site } from "@/lib/site";
 import { verifiedReviews } from "@/lib/verified-reviews";
@@ -61,7 +63,7 @@ const ablauf = [
   { nr: "01", title: "Termin wählen", text: "Über Calendly suchst du dir einen freien Slot aus, oder du schreibst kurz per WhatsApp, wann es dir passt.", gets: "Dauer: 2 Minuten" },
   { nr: "02", title: "Ziel in einem Satz", text: "Mehr Anfragen, neue Website, Mitarbeiter finden: Mehr Vorbereitung brauchst du nicht. Den Rest fragen wir im Gespräch.", gets: "Vorbereitung: keine nötig" },
   { nr: "03", title: "Das Gespräch", text: "15 bis 30 Minuten per Telefon oder Video-Call. Wir schauen auf deine Situation, stellen Fragen und geben eine erste ehrliche Einschätzung.", gets: "Kostenlos und unverbindlich" },
-  { nr: "04", title: "Einschätzung & Angebot", text: "Wenn es für beide Seiten passt, bekommst du ein konkretes Angebot mit Umfang, Ablauf und Preis. Wenn nicht, sagen wir das auch.", gets: "Du entscheidest, ob es weitergeht" },
+  { nr: "04", title: "Einschätzung & Angebot", text: "Wenn es für beide Seiten passt, bekommst du ein konkretes Angebot mit klarem Umfang und Ablauf. Wenn nicht, sagen wir das auch.", gets: "Du entscheidest, ob es weitergeht" },
 ];
 
 const vorbereitung = [
@@ -81,7 +83,6 @@ const faqs = [
 ];
 
 export default function KontaktPage() {
-  const formularAktiv = Boolean(process.env.RESEND_API_KEY && process.env.PIXEL56_CONTACT_FROM && process.env.PIXEL56_CONTACT_TO);
 
   return (
     <>
@@ -95,47 +96,56 @@ export default function KontaktPage() {
             <div>
               <div className="hero-eyebrow">KONTAKT · KOSTENLOSES ERSTGESPRÄCH</div>
               <h1>
-                Lass uns <em>reden.</em>
+                15 Minuten. <em>Dann weißt du, wo dein Hebel liegt.</em>
               </h1>
               <p className="hero-sub">
                 Kein Callcenter, kein Ticket-System. Du erreichst direkt die
-                Person, die dein Projekt plant und umsetzt. Such dir den Weg
-                aus, der dir am liebsten ist.
+                Person, die dein Projekt plant und umsetzt. Fünf Klicks unten,
+                oder direkt ein Termin.
               </p>
               <ul className="hero-points">
-                <li>Antwort innerhalb eines Werktags, meist deutlich schneller</li>
+                <li>Antwort innerhalb eines Werktags, meist schneller</li>
                 <li>Ehrliche Einschätzung statt Verkaufsgespräch</li>
                 <li>Kostenlos, unverbindlich, ohne Vorbereitung</li>
               </ul>
             </div>
             <div className="reveal in">
-              {formularAktiv ? <KontaktForm /> : (
-                <div className="kontakt-form contact-fallback">
-                  <span className="band-tag">DIREKT KONTAKT AUFNEHMEN</span>
-                  <h2>Erzähl uns von deinem Projekt.</h2>
-                  <p>Wähle direkt einen Termin für das Erstgespräch oder schreib uns eine E-Mail. Wir melden uns innerhalb eines Werktags.</p>
-                  <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">Erstgespräch buchen →</a>
-                  <a className="contact-fallback-mail" href={`mailto:${site.email}?subject=Projektanfrage%20an%20Pixel56`}>E-Mail an {site.email} →</a>
-                </div>
-              )}
+              <div className="kontakt-form contact-fallback">
+                <span className="band-tag">DIREKT ZUM TERMIN</span>
+                <h2>Erstgespräch buchen.</h2>
+                <p>Such dir einen freien Termin aus. Telefon oder Video-Call, 15 bis 30 Minuten. Oder beantworte unten fünf Fragen, dann melden wir uns.</p>
+                <a className="btn-primary" href={site.calendly} target="_blank" rel="noopener noreferrer">Termin wählen →</a>
+                <a className="contact-fallback-mail" href={site.whatsapp} target="_blank" rel="noopener noreferrer">Per WhatsApp schreiben →</a>
+                <a className="contact-fallback-mail" href={`mailto:${site.email}?subject=Projektanfrage%20an%20Pixel56`}>E-Mail an {site.email} →</a>
+              </div>
             </div>
           </header>
         </div>
 
         <div className="editorial-shell service-editorial">
           <div className="sheet">
-        <section className="band theme-light" id="wege" style={{ paddingTop: 100 }}>
+        <section className="band theme-light" id="anfrage" style={{ paddingTop: 100 }}>
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">01 — Direkte Wege</span>
+              <span className="band-tag">01 — In fünf Klicks zur Einschätzung</span>
               <h2 className="band-title">
-                Oder erreich uns <em>sofort</em>
+                Sag uns kurz, <em>worum es geht.</em>
               </h2>
             </div>
-            <p className="band-note">
-              Drei Wege, eine Person am anderen Ende. Nimm den, der zu deinem
-              Anliegen passt.
-            </p>
+            <p className="band-note">{frageboegen.allgemein.einleitung}</p>
+          </div>
+          <LeistungsAnfrage bogen={frageboegen.allgemein} google={{ bewertung: googleBewertungLautProfil, anzahl: googleAnzahlLautProfil }} />
+        </section>
+
+        <section className="band theme-light" id="wege">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">02 — Direkte Wege</span>
+              <h2 className="band-title">
+                Oder erreich uns <em>sofort.</em>
+              </h2>
+            </div>
+            <p className="band-note">Drei Wege, eine Person am anderen Ende.</p>
           </div>
           <div className="kontakt-kanaele reveal">
             <a className="kanal" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
@@ -159,14 +169,14 @@ export default function KontaktPage() {
         <section className="band theme-light" id="anliegen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">02 — Wobei wir helfen</span>
+              <span className="band-tag">03 — Wobei wir helfen</span>
               <h2 className="band-title">
-                Sechs Anliegen, <em>mit denen Kunden zu uns kommen</em>
+                Sechs Anliegen, <em>mit denen Betriebe kommen.</em>
               </h2>
             </div>
             <p className="band-note">
-              Du musst nicht wissen, welche Leistung du brauchst. Es reicht, wenn
-              du sagst, was sich ändern soll.
+              Du musst nicht wissen, welche Leistung du brauchst. Sag, was sich
+              ändern soll.
             </p>
           </div>
           <div className="mini-grid cols-3 reveal">
@@ -187,14 +197,13 @@ export default function KontaktPage() {
         <section className="band dark-stage service-dark-stage" id="ablauf">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">03 — So läuft das Erstgespräch</span>
+              <span className="band-tag">04 — So läuft das Erstgespräch</span>
               <h2 className="band-title">
                 Vier Schritte <em>bis zur ersten Einschätzung</em>
               </h2>
             </div>
             <p className="band-note">
-              Keine Verkaufsshow, kein Fragebogen mit 40 Feldern. Ein Gespräch,
-              nach dem du weißt, ob und wie wir dir helfen können.
+              Keine Verkaufsshow. Ein Gespräch, nach dem du weißt, ob und wie wir dir helfen können.
             </p>
           </div>
           <div className="premium-process reveal">
@@ -212,14 +221,13 @@ export default function KontaktPage() {
         <section className="band theme-light" id="vorbereitung">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">04 — Das hilft im Gespräch</span>
+              <span className="band-tag">05 — Das hilft im Gespräch</span>
               <h2 className="band-title">
                 Vier Dinge, <em>die das Gespräch besser machen</em>
               </h2>
             </div>
             <p className="band-note">
-              Nichts davon ist Pflicht. Aber wer eines davon mitbringt, bekommt
-              im Gespräch konkretere Antworten.
+              Nichts davon ist Pflicht. Wer etwas mitbringt, bekommt konkretere Antworten.
             </p>
           </div>
           <div className="friction-list prep reveal">
@@ -241,15 +249,14 @@ export default function KontaktPage() {
         <section className="band theme-light" id="standort">
           <div className="split2 reverse">
             <div className="reveal">
-              <span className="band-tag">05 — Region &amp; Erreichbarkeit</span>
+              <span className="band-tag">06 — Region &amp; Erreichbarkeit</span>
               <h2 className="band-title">
-                Aus Koblenz, <em>bei dir im Betrieb</em>
+                Aus Koblenz. <em>Deutschlandweit und DACH.</em>
               </h2>
               <p className="lead">
-                Pixel56 arbeitet aus Koblenz, ohne Ladenlokal und
-                ohne Wartezimmer. Kennenlernen läuft per Video-Call, Telefon oder
-                WhatsApp, Fotos und Drehs machen wir bei dir im Betrieb. Koblenz,
-                Neuwied und Montabaur sind in wenigen Minuten erreicht.
+                Pixel56 arbeitet aus Koblenz, ohne Ladenlokal und ohne
+                Wartezimmer. Kennenlernen per Video-Call, Telefon oder WhatsApp.
+                Fotos und Drehs machen wir bei dir im Betrieb.
               </p>
               <ul className="lines">
                 <li>Kurze Wege per WhatsApp und E-Mail, Antwort meist am selben Tag</li>
@@ -269,15 +276,12 @@ export default function KontaktPage() {
         <section className="band dark-stage service-dark-stage" id="whatsapp">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">06 — So einfach kann der Anfang sein</span>
+              <span className="band-tag">07 — So einfach kann der Anfang sein</span>
               <h2 className="band-title">
                 Ein Ansprechpartner. <em>Ein Kanal.</em>
               </h2>
               <p className="lead">
-                Während der Zusammenarbeit erreichst du deinen festen
-                Ansprechpartner direkt per WhatsApp, für schnelle Fragen genauso
-                wie für große Entscheidungen. Und auch der erste Kontakt darf so
-                unkompliziert sein.
+                Während der Zusammenarbeit erreichst du deinen Ansprechpartner direkt per WhatsApp, für schnelle Fragen wie für große Entscheidungen. Der erste Kontakt darf genauso unkompliziert sein.
               </p>
               <a className="btn-primary" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
                 Per WhatsApp schreiben <ArrowIcon />
@@ -300,14 +304,12 @@ export default function KontaktPage() {
         <section className="band theme-light light-reviews" id="stimmen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">07 — Kundenstimmen</span>
+              <span className="band-tag">08 — Das sagen Kunden</span>
               <h2 className="band-title">
-                Was Kunden <em>über die Zusammenarbeit sagen</em>
+                Wörtlich so <em>veröffentlicht.</em>
               </h2>
             </div>
-            <p className="band-note">
-              Wir zeigen nur Aussagen, die unsere Kunden so veröffentlicht haben.
-            </p>
+            <p className="band-note">Nichts erfunden, nichts geschönt.</p>
           </div>
           <Reviews reviews={verifiedReviews} items={verifiedReviews} />
         </section>
@@ -315,7 +317,7 @@ export default function KontaktPage() {
         <section className="band theme-light" id="faq">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">08 — Häufige Fragen</span>
+              <span className="band-tag">09 — Häufige Fragen</span>
               <h2 className="band-title">
                 Bevor du <em>anfragst</em>
               </h2>

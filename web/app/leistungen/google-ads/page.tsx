@@ -89,84 +89,76 @@ const statusRows = [
 ];
 
 const campaignTypes = [
-  { title: "Suchkampagnen", text: "Der Kern: Textanzeigen für Suchanfragen mit klarer Absicht, etwa „Dachdecker Koblenz Notdienst“. Hier entstehen die meisten Anfragen." },
-  { title: "Lokale Sichtbarkeit", text: "Anzeigen mit Standort, Anruf und Wegbeschreibung, verknüpft mit dem Google-Unternehmensprofil. Für Betriebe, deren Kunden aus dem Umkreis kommen." },
-  { title: "Automatisierte Kampagnen", text: "Google bietet Kampagnen, die vieles selbst steuern. Sie funktionieren nur mit sauberen Conversion-Daten; ohne diese verbrennen sie Budget. Wir setzen sie gezielt ein, nicht standardmäßig." },
-  { title: "Retargeting", text: "Wer deine Website besucht hat, aber nicht angefragt hat, sieht dich später wieder. Günstig, weil die Zielgruppe dich bereits kennt." },
+  { title: "Suchkampagnen", text: "Textanzeigen für Suchen mit klarer Absicht, etwa „Dachdecker Notdienst“ mit Ort. Hier entstehen die meisten Anfragen." },
+  { title: "Lokale Sichtbarkeit", text: "Anzeigen mit Standort, Anruf und Wegbeschreibung, verknüpft mit dem Unternehmensprofil. Für Kunden aus dem Umkreis." },
+  { title: "Automatisierte Kampagnen", text: "Kampagnen, die Google selbst steuert. Funktionieren nur mit sauberen Conversion-Daten, sonst verbrennen sie Budget. Gezielt eingesetzt, nicht standardmäßig." },
+  { title: "Retargeting", text: "Wer deine Website besucht hat, sieht dich später wieder. Günstig, weil die Zielgruppe dich schon kennt." },
 ];
 
 const audiences = [
-  { tag: "Handwerk & Notdienst", title: "Wenn das Problem akut ist", text: "Rohrbruch, Sturmschaden, Schlüssel weg: Wer so sucht, braucht jetzt jemanden. Suchkampagnen mit Anrufoption holen genau diese Nachfrage ab.", hint: "Typisch: hohe Absicht, kurze Entscheidung" },
-  { tag: "Lokale Dienstleister", title: "Im Umkreis gefunden werden", text: "Pflege, Fahrschule, Steuerberatung, Studio: Kunden suchen mit Ortsangabe. Kampagnen mit Standortbezug und passenden Zielseiten pro Leistung.", hint: "Typisch: Umkreis statt Bundesgebiet" },
-  { tag: "B2B & Spezialleistungen", title: "Nischen mit wenig, aber wertvollen Suchen", text: "Spezialtransporte, Trocknungstechnik, Industrieservice: wenige Suchanfragen im Monat, jede einzelne potenziell ein großer Auftrag. Hier zählt Präzision, nicht Volumen.", hint: "Typisch: wenige Klicks, hoher Auftragswert" },
-  { tag: "Bildung & Kurse", title: "Saisonale Nachfrage abholen", text: "Schulungen, Nachhilfe, Weiterbildung: Nachfrage kommt in Wellen. Kampagnen, die zum Anmeldezeitraum laufen und auf eine Anmeldestrecke führen.", hint: "Typisch: Zeitfenster, klare Anmeldung" },
-  { tag: "Immobilien & Bau", title: "Hochpreisig, gut vorqualifiziert", text: "Wer nach „Haus bauen schlüsselfertig“ sucht, ist weit im Entscheidungsprozess. Zielseiten, die Fragen beantworten, statt nur ein Formular zu zeigen.", hint: "Typisch: lange Entscheidung, hoher Wert" },
-  { tag: "Shops & Produkte", title: "Produkte direkt in der Suche", text: "Shopping-Anzeigen mit Bild und Preis für Produkte, die Menschen gezielt suchen. Nur sinnvoll, wenn Marge und Warenkorb die Klickkosten tragen.", hint: "Typisch: Produktfeed, Margenrechnung" },
+  { tag: "Handwerk & Notdienst", title: "Wenn das Problem akut ist", text: "Rohrbruch, Sturmschaden, Schlüssel weg: Wer so sucht, braucht jetzt jemanden. Suchanzeigen mit Anrufoption holen das ab.", hint: "Typisch: hohe Absicht, kurze Entscheidung" },
+  { tag: "Lokale Dienstleister", title: "Im Umkreis gefunden werden", text: "Pflege, Fahrschule, Steuerberatung, Studio: Kunden suchen mit Ort. Kampagnen mit Standortbezug und Zielseite pro Leistung.", hint: "Typisch: Umkreis statt Bundesgebiet" },
+  { tag: "B2B & Spezialleistungen", title: "Nischen mit wenig, aber wertvollen Suchen", text: "Spezialtransporte, Trocknungstechnik, Industrieservice: wenige Suchen, jede ein möglicher großer Auftrag. Präzision statt Volumen.", hint: "Typisch: wenige Klicks, hoher Auftragswert" },
+  { tag: "Bildung & Kurse", title: "Saisonale Nachfrage abholen", text: "Schulungen, Nachhilfe, Weiterbildung: Nachfrage kommt in Wellen. Kampagnen zum Anmeldezeitraum, direkt zur Anmeldung.", hint: "Typisch: Zeitfenster, klare Anmeldung" },
+  { tag: "Immobilien & Bau", title: "Hochpreisig, gut vorqualifiziert", text: "Wer nach „Haus bauen schlüsselfertig“ sucht, ist weit in der Entscheidung. Zielseiten, die Fragen beantworten.", hint: "Typisch: lange Entscheidung, hoher Wert" },
+  { tag: "Shops & Produkte", title: "Produkte direkt in der Suche", text: "Shopping-Anzeigen mit Bild und Preis. Nur sinnvoll, wenn Marge und Warenkorb die Klickkosten tragen.", hint: "Typisch: Produktfeed, Margenrechnung" },
 ];
 
 const scope = [
-  { nr: "01", title: "Keywords mit Absicht", text: "Wir suchen nicht die Begriffe mit dem meisten Volumen, sondern die, hinter denen ein Auftrag steckt. Und wir schließen aus, was nur kostet: Jobsuche, Ausbildung, „kostenlos“, „selber machen“." },
-  { nr: "02", title: "Struktur, die Google versteht", text: "Eine Anzeigengruppe pro Thema, Anzeigen, die zum Suchbegriff passen, Zielseiten, die das Thema einlösen. So entsteht ein guter Qualitätsfaktor und damit ein günstigerer Klickpreis." },
-  { nr: "03", title: "Anzeigentexte & Erweiterungen", text: "Texte, die das Angebot in einer Zeile treffen, plus Anruf, Standort, Sitelinks und Zusatzinfos. Mehr Fläche in der Suche, höhere Klickrate." },
-  { nr: "04", title: "Tracking vor dem Start", text: "Conversion-Messung für Anfragen, Anrufe und Buchungen, eingerichtet mit Einwilligung und getestet, bevor Budget fließt. Ohne Messung keine Optimierung." },
-  { nr: "05", title: "Zielseiten", text: "Jede Kampagne führt auf eine Seite, die das Versprechen der Anzeige erfüllt. Fehlt sie, bauen wir sie. Die Startseite ist fast nie die richtige Adresse." },
-  { nr: "06", title: "Optimierung & Reporting", text: "Wöchentlich: Suchbegriffe prüfen, Negativ-Keywords ergänzen, Gebote und Budget verschieben, Anzeigen testen. Monatlich: verständliche Auswertung, was das Budget gebracht hat." },
+  { nr: "01", title: "Keywords mit Absicht", text: "Nicht die Begriffe mit dem meisten Volumen, sondern die mit Auftrag dahinter. Ausgeschlossen, was nur kostet: Jobsuche, „kostenlos“, „selber machen“." },
+  { nr: "02", title: "Struktur, die Google versteht", text: "Eine Anzeigengruppe pro Thema, passende Anzeigen, Zielseiten, die das Thema einlösen. Das senkt den Klickpreis." },
+  { nr: "03", title: "Anzeigentexte & Erweiterungen", text: "Texte, die das Angebot in einer Zeile treffen, plus Anruf, Standort, Sitelinks. Mehr Fläche, höhere Klickrate." },
+  { nr: "04", title: "Tracking vor dem Start", text: "Messung für Anfragen, Anrufe und Buchungen, getestet, bevor Budget fließt. Ohne Messung keine Optimierung." },
+  { nr: "05", title: "Zielseiten", text: "Jede Kampagne führt auf eine Seite, die das Versprechen der Anzeige erfüllt. Fehlt sie, bauen wir sie." },
+  { nr: "06", title: "Optimierung & Reporting", text: "Wöchentlich Suchbegriffe, Gebote, Budget und Anzeigen pflegen. Monatlich verständlich auswerten." },
 ];
 
 const qualityFactors = [
-  { title: "Anzeigenrelevanz", text: "Wie gut Anzeigentext und Suchbegriff zusammenpassen. Wer „Dachsanierung“ sucht, will keine Anzeige für „Bauunternehmen“." },
-  { title: "Zielseitenerfahrung", text: "Ob die Seite hält, was die Anzeige verspricht: thematisch, technisch, mobil. Ladezeit und Klarheit zählen." },
-  { title: "Erwartete Klickrate", text: "Wie wahrscheinlich es ist, dass genau diese Zielgruppe klickt. Entsteht aus Text, Erweiterungen und Historie." },
+  { title: "Anzeigenrelevanz", text: "Wer „Dachsanierung“ sucht, will keine Anzeige für „Bauunternehmen“." },
+  { title: "Zielseitenerfahrung", text: "Hält die Seite, was die Anzeige verspricht? Thematisch, technisch, mobil." },
+  { title: "Erwartete Klickrate", text: "Wie wahrscheinlich klickt genau diese Zielgruppe? Entsteht aus Text, Erweiterungen und Historie." },
 ];
 
 const mistakes = [
-  { problem: "Breite Keywords ohne Ausschlussliste.", answer: "„Dachdecker“ bringt auch Jobsuchende und Ausbildungsplätze. Wir arbeiten mit passenden Keyword-Optionen und pflegen die Negativliste jede Woche." },
-  { problem: "Die Anzeige führt auf die Startseite.", answer: "Wer nach einer Leistung sucht, will diese Leistung sehen. Eine Zielseite pro Thema, mit Anfrageweg oben, nicht nach drei Mal Scrollen." },
-  { problem: "Kein Conversion-Tracking, nur Klicks.", answer: "Klicks sind Kosten, Anfragen sind Ergebnis. Wir messen die Aktion, die zählt, und steuern danach. Was wegen Einwilligung nicht messbar ist, benennen wir." },
-  { problem: "Empfehlungen aus dem Konto blind übernommen.", answer: "Google schlägt gerne mehr Budget und breitere Keywords vor. Manches ist sinnvoll, vieles nicht. Wir prüfen jede Empfehlung gegen dein Ziel." },
-  { problem: "Anzeigen ohne Erweiterungen.", answer: "Anruf, Standort, Sitelinks, Zusatzinfos: kostenlose Fläche in der Suche, die die Klickrate hebt. Fehlt sie, zahlst du mehr für weniger." },
-  { problem: "Einmal eingerichtet, nie wieder angefasst.", answer: "Suchverhalten, Wettbewerb und Preise ändern sich. Eine Kampagne, die niemand pflegt, wird jeden Monat ein bisschen teurer." },
+  { problem: "Breite Keywords ohne Ausschlussliste.", answer: "„Dachdecker“ bringt auch Jobsuchende. Passende Keyword-Optionen, Negativliste jede Woche gepflegt." },
+  { problem: "Die Anzeige führt auf die Startseite.", answer: "Wer eine Leistung sucht, will diese Leistung sehen. Eine Zielseite pro Thema, Anfrage oben." },
+  { problem: "Kein Conversion-Tracking, nur Klicks.", answer: "Klicks sind Kosten, Anfragen sind Ergebnis. Wir messen die Aktion, die zählt, und steuern danach." },
+  { problem: "Empfehlungen aus dem Konto blind übernommen.", answer: "Google schlägt gern mehr Budget und breitere Keywords vor. Wir prüfen jede Empfehlung gegen dein Ziel." },
+  { problem: "Anzeigen ohne Erweiterungen.", answer: "Anruf, Standort, Sitelinks: kostenlose Fläche, die die Klickrate hebt." },
+  { problem: "Einmal eingerichtet, nie wieder angefasst.", answer: "Suchverhalten und Wettbewerb ändern sich. Eine Kampagne, die niemand pflegt, wird jeden Monat teurer." },
 ];
 
 const steps = [
-  { nr: "01", tag: "Phase 1", title: "Analyse & Keywords", text: "Wonach deine Zielgruppe sucht, was ein Klick in deiner Branche kostet und was eine Anfrage wert sein darf. Vor dem ersten Euro Budget." },
-  { nr: "02", tag: "Phase 2", title: "Tracking", text: "Conversion-Messung für Anfragen, Anrufe und Buchungen, mit Einwilligung und getestet. Sonst bleibt alles Rätselraten." },
-  { nr: "03", tag: "Phase 3", title: "Aufbau", text: "Kampagnen, Anzeigengruppen, Anzeigen, Erweiterungen und Zielseiten. Du siehst alle Texte vor dem Start." },
-  { nr: "04", tag: "Phase 4", title: "Laufende Optimierung", text: "Wöchentliche Pflege anhand echter Daten: Suchbegriffe, Gebote, Budget, Anzeigentests." },
-  { nr: "05", tag: "Phase 5", title: "Reporting & Kurs", text: "Verständliche Auswertung, was das Budget gebracht hat, und gemeinsame Entscheidung, wie es weitergeht." },
+  { nr: "01", tag: "Phase 1", title: "Analyse & Keywords", text: "Wonach deine Zielgruppe sucht, was ein Klick kostet, was eine Anfrage wert sein darf. Vor dem ersten Euro." },
+  { nr: "02", tag: "Phase 2", title: "Tracking", text: "Messung für Anfragen, Anrufe und Buchungen, getestet. Sonst bleibt alles Rätselraten." },
+  { nr: "03", tag: "Phase 3", title: "Aufbau", text: "Kampagnen, Anzeigen, Erweiterungen, Zielseiten. Du siehst alle Texte vor dem Start." },
+  { nr: "04", tag: "Phase 4", title: "Laufende Optimierung", text: "Wöchentlich anhand echter Daten: Suchbegriffe, Gebote, Budget, Anzeigentests." },
+  { nr: "05", tag: "Phase 5", title: "Reporting & Kurs", text: "Verständlich, was das Budget gebracht hat. Gemeinsam entscheiden, wie es weitergeht." },
 ];
 
 const weeklyChecks = [
-  { title: "Suchbegriffe", text: "Wofür wurde die Anzeige wirklich ausgespielt? Unpassende Begriffe wandern in die Negativliste, neue gute Begriffe werden ergänzt." },
+  { title: "Suchbegriffe", text: "Wofür wurde die Anzeige wirklich ausgespielt? Unpassendes in die Negativliste, Gutes ergänzen." },
   { title: "Kosten pro Anfrage", text: "Steigen sie, finden wir die Ursache: Keyword, Anzeige oder Zielseite. Bevor es teuer wird." },
-  { title: "Qualitätsfaktor", text: "Sinkt er, passen Anzeige und Seite nicht mehr zum Suchbegriff. Dann wird nachgeschärft, nicht nachgezahlt." },
-  { title: "Anzeigentests", text: "Zwei Varianten laufen gegeneinander, die bessere bleibt. So wird die Klickrate Woche für Woche besser." },
-  { title: "Zielseite", text: "Kommen Besucher an und fragen sie an? Absprünge sind oft kein Anzeigenproblem, sondern ein Seitenproblem." },
-  { title: "Budgetverteilung", text: "Budget wandert dorthin, wo Anfragen entstehen. Kampagnen ohne Ergebnis werden gedrosselt oder abgeschaltet." },
+  { title: "Qualitätsfaktor", text: "Sinkt er, passen Anzeige und Seite nicht mehr zum Suchbegriff. Nachschärfen statt nachzahlen." },
+  { title: "Anzeigentests", text: "Zwei Varianten gegeneinander, die bessere bleibt." },
+  { title: "Zielseite", text: "Kommen Besucher an und fragen sie an? Absprünge sind oft ein Seitenproblem." },
+  { title: "Budgetverteilung", text: "Budget wandert dorthin, wo Anfragen entstehen. Ohne Ergebnis wird gedrosselt." },
 ];
 
-const costParts = [
-  { title: "Werbebudget", text: "Geht direkt an Google und bleibt in deinem Konto nachvollziehbar. Die sinnvolle Höhe hängt von Klickpreisen in deiner Branche und deiner Region ab." },
-  { title: "Betreuung", text: "Strategie, Aufbau, wöchentliche Optimierung und Reporting als monatlicher Festbetrag, getrennt vom Werbebudget ausgewiesen." },
-  { title: "Zielseite", text: "Falls keine passende Seite existiert, bauen wir eine Landingpage. Einmalig, danach gehört sie dir." },
-  { title: "Kein Prozentmodell", text: "Wir nehmen keinen Anteil vom Werbebudget. Das würde hohes Budget belohnen, nicht gute Arbeit." },
-];
 
 const channelMix = [
-  { title: "Google Ads: sofort sichtbar", text: "Läuft ab dem ersten Tag und holt bestehende Nachfrage ab. Endet, wenn das Budget endet." },
-  { title: "SEO: langfristig sichtbar", text: "Braucht Monate, bringt dann Anfragen ohne Klickkosten. Ads liefern dabei die Daten, welche Begriffe sich lohnen." },
-  { title: "Meta Ads: Nachfrage wecken", text: "Erreicht Menschen, bevor sie suchen. Wer dich dort gesehen hat, klickt in der Suche eher auf deine Anzeige." },
+  { title: "Google Ads: sofort sichtbar", text: "Läuft ab dem ersten Tag, holt Nachfrage ab. Endet mit dem Budget." },
+  { title: "SEO: langfristig sichtbar", text: "Braucht Monate, bringt dann Anfragen ohne Klickkosten. Ads zeigen, welche Begriffe sich lohnen." },
+  { title: "Meta Ads: Nachfrage wecken", text: "Erreicht Menschen, bevor sie suchen. Wer dich kennt, klickt in der Suche eher." },
 ];
 
 const faqs = [
-  { q: "Wie viel Budget brauche ich für den Einstieg?", a: "Das hängt von Branche, Suchvolumen und Wettbewerb ab. Wichtiger als die Höhe ist eine saubere Struktur: Ohne sie verpufft auch ein großes Budget. Im Erstgespräch schätzen wir für deinen Bereich ein, welches Budget genug Daten für Entscheidungen liefert." },
-  { q: "Was kostet ein Klick bei Google Ads?", a: "Das variiert stark je nach Branche und Wettbewerb, von wenigen Cent bis zu mehreren Euro. Ein guter Qualitätsfaktor senkt den Preis spürbar. Wir schätzen die Spanne für deine Keywords vor dem Start ein." },
-  { q: "Brauche ich eine eigene Landingpage für die Anzeigen?", a: "Fast immer ja. Eine fokussierte Seite, die zum Anzeigenversprechen passt, verbessert Anfragequote und Qualitätsfaktor zugleich. Wenn deine Website bereits passende Leistungsseiten hat, reichen diese oft mit kleinen Anpassungen." },
-  { q: "Wie schnell sehe ich erste Ergebnisse?", a: "Erste Daten gibt es innerhalb weniger Tage, belastbare Aussagen nach zwei bis vier Wochen laufender Optimierung. Wir legen vorab einen Testzeitraum fest und bewerten danach gemeinsam." },
-  { q: "Google Ads oder SEO, was ist besser?", a: "Beides hat seinen Platz. Ads wirken sofort und enden mit dem Budget, SEO braucht Monate und bringt dann Anfragen ohne Klickkosten. Oft ist der beste Weg: mit Ads starten, lernen, welche Begriffe Anfragen bringen, und genau dafür die Website ausbauen." },
-  { q: "Wem gehört das Google-Ads-Konto?", a: "Dir. Wir arbeiten in einem Konto, auf das dein Unternehmen vollen Zugriff hat. Budget, Daten und Historie bleiben bei dir, auch wenn die Zusammenarbeit endet." },
-  { q: "Was kostet die Betreuung, getrennt vom Werbebudget?", a: "Das Werbebudget geht direkt an Google. Die Betreuung deckt Strategie, Aufbau, wöchentliche Optimierung und Reporting ab und wird als monatlicher Festbetrag separat ausgewiesen. Den Umfang klären wir im kostenlosen Erstgespräch." },
-  { q: "Bleibst du auch danach erreichbar?", a: "Ja. Per WhatsApp, Telefon oder E-Mail über einen festen Ansprechpartner, der die Kampagne selbst steuert. Betreuung ist Teil der Zusammenarbeit, kein Zusatzverkauf." },
+  { q: "Wie viel Budget brauche ich für den Einstieg?", a: "Das hängt von Branche, Suchvolumen und Wettbewerb ab. Wichtiger als die Höhe ist die Struktur: Ohne sie verpufft auch ein großes Budget. Im Erstgespräch schätzen wir ein, welches Budget genug Daten für Entscheidungen liefert." },
+  { q: "Wie setzt sich die Zusammenarbeit zusammen?", a: "Das Werbebudget geht direkt an Google und bleibt in deinem Konto. Die Betreuung ist ein fester Monatsbetrag, getrennt ausgewiesen. Eine Zielseite kommt nur dazu, wenn sie fehlt. Prozente vom Werbebudget nehmen wir nicht." },
+  { q: "Brauche ich eine eigene Landingpage?", a: "Fast immer ja. Eine Seite, die zum Anzeigenversprechen passt, verbessert Anfragequote und Klickpreis zugleich. Passende Leistungsseiten reichen oft mit kleinen Anpassungen." },
+  { q: "Wie schnell sehe ich erste Ergebnisse?", a: "Erste Daten innerhalb weniger Tage, belastbare Aussagen nach zwei bis vier Wochen Optimierung. Wir legen vorab einen Testzeitraum fest und bewerten danach gemeinsam." },
+  { q: "Google Ads oder SEO?", a: "Beides hat seinen Platz. Ads wirken sofort und enden mit dem Budget, SEO braucht Monate und bringt dann Anfragen ohne Klickkosten. Oft der beste Weg: mit Ads lernen, welche Begriffe Anfragen bringen, und genau dafür die Website ausbauen." },
+  { q: "Wem gehört das Google-Ads-Konto?", a: "Dir. Budget, Daten und Historie bleiben bei dir, auch wenn die Zusammenarbeit endet." },
 ];
 
 export default function GoogleAdsPage() {
@@ -249,14 +241,10 @@ export default function GoogleAdsPage() {
                 Sechs Zeichen, dass Budget <em>verpufft statt wirkt</em>
               </h2>
               <p className="lead">
-                Google Ads ist der ehrlichste Werbekanal: Jeder Klick kostet,
-                und jeder Klick ist messbar. Genau deshalb fällt hier am
-                schnellsten auf, wenn Struktur, Zielseite oder Messung fehlen.
+                Google Ads ist der ehrlichste Werbekanal: Jeder Klick kostet, jeder Klick ist messbar. Deshalb fällt hier am schnellsten auf, wenn Struktur, Zielseite oder Messung fehlen.
               </p>
               <p className="lead">
-                Die meisten Konten, die wir übernehmen, haben nicht zu wenig
-                Budget. Sie zahlen für Klicks, die nie eine Anfrage werden
-                konnten.
+                Den meisten Konten fehlt nicht Budget. Sie zahlen für Klicks, die nie eine Anfrage werden konnten.
               </p>
             </div>
             <div className="reveal">
@@ -273,15 +261,10 @@ export default function GoogleAdsPage() {
                 Der einzige Kanal, der <em>Absicht abholt</em>
               </h2>
               <p className="lead">
-                Bei den meisten Werbeformen weckst du Interesse, das erst
-                entstehen muss. Bei Google Ads ist die Absicht schon da: Jemand
-                sucht aktiv nach deiner Leistung, oft mit Ort und oft mit
-                Dringlichkeit.
+                Bei Google Ads ist die Absicht schon da: Jemand sucht aktiv nach deiner Leistung, oft mit Ort, oft mit Dringlichkeit.
               </p>
               <p className="lead">
-                Dafür ist der Kanal unbarmherzig gegenüber Nachlässigkeit. Wer
-                breit bucht und auf die Startseite schickt, zahlt für Besucher,
-                die nie anfragen wollten.
+                Dafür verzeiht der Kanal keine Nachlässigkeit. Wer breit bucht und auf die Startseite schickt, zahlt für Besucher, die nie anfragen wollten.
               </p>
               <ul className="lines">
                 <li>Ohne Anzeigen bist du im entscheidenden Moment unsichtbar.</li>
@@ -312,9 +295,7 @@ export default function GoogleAdsPage() {
               </h2>
             </div>
             <p className="band-note">
-              Und eine ehrliche Einschränkung: Wenn niemand nach deiner Leistung
-              sucht, bringen Suchanzeigen nichts. Dann empfehlen wir einen
-              anderen Kanal.
+              Ehrliche Einschränkung: Sucht niemand nach deiner Leistung, bringen Suchanzeigen nichts. Dann empfehlen wir einen anderen Kanal.
             </p>
           </div>
           <div className="audience-grid reveal">
@@ -338,8 +319,7 @@ export default function GoogleAdsPage() {
               </h2>
             </div>
             <p className="band-note">
-              Sechs Bausteine, die zusammengehören. Der Qualitätsfaktor von
-              Google belohnt, wenn sie zusammenpassen, mit günstigeren Klicks.
+              Passen die Bausteine zusammen, belohnt Google das mit günstigeren Klicks.
             </p>
           </div>
           <div className="scope-grid reveal">
@@ -362,8 +342,7 @@ export default function GoogleAdsPage() {
               </h2>
             </div>
             <p className="band-note">
-              Google belohnt Anzeigen, die für die suchende Person relevant
-              sind, mit niedrigeren Klickpreisen. Nicht nur den höchsten Bieter.
+              Google belohnt relevante Anzeigen mit niedrigeren Klickpreisen. Nicht nur den höchsten Bieter.
             </p>
           </div>
           <div className="mini-grid cols-3 reveal" aria-label="Bestandteile des Qualitätsfaktors">
@@ -390,8 +369,7 @@ export default function GoogleAdsPage() {
               </h2>
             </div>
             <p className="band-note">
-              Wir sehen sie in fast jedem Konto, das wir übernehmen. Jeder ist
-              vermeidbar, keiner ist peinlich.
+              In fast jedem Konto, das wir übernehmen. Jeder vermeidbar, keiner peinlich.
             </p>
           </div>
           <div className="friction-list reveal">
@@ -408,14 +386,13 @@ export default function GoogleAdsPage() {
         <section className="band theme-light" id="prozess">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">07 — Der Weg dahin</span>
+              <span className="band-tag">07 — So läuft es</span>
               <h2 className="band-title">
                 Fünf Phasen, <em>laufend optimiert</em>
               </h2>
             </div>
             <p className="band-note">
-              Vom ersten Gespräch bis zur laufenden Betreuung. Du weißt
-              jederzeit, was gerade passiert und warum.
+              Du weißt jederzeit, was gerade passiert und warum.
             </p>
           </div>
           <Stepper steps={steps} />
@@ -429,13 +406,10 @@ export default function GoogleAdsPage() {
                 Was wir <em>jede Woche prüfen</em>
               </h2>
               <p className="lead">
-                Eine Google-Ads-Kampagne ist nie fertig. Suchbegriffe ändern
-                sich, Wettbewerber heben Gebote, Google ändert Regeln. Deshalb
-                gibt es bei uns keinen Autopilot, sondern einen festen Rhythmus.
+                Eine Kampagne ist nie fertig. Suchbegriffe ändern sich, Wettbewerber heben Gebote, Google ändert Regeln. Deshalb kein Autopilot, sondern ein fester Rhythmus.
               </p>
               <p className="lead">
-                Du bekommst keine Exporte aus dem Konto, sondern eine
-                Einordnung: Was lief, was ändern wir, was brauchen wir von dir.
+                Du bekommst eine Einordnung statt Exporte: Was lief, was ändern wir, was brauchen wir von dir.
               </p>
             </div>
             <div className="mini-grid reveal" aria-label="Wöchentliche Prüfpunkte">
@@ -449,48 +423,15 @@ export default function GoogleAdsPage() {
           </div>
         </section>
 
-        <section className="band theme-light" id="kosten">
-          <div className="split2 reverse">
-            <div className="reveal">
-              <span className="band-tag">09 — Budget &amp; Kosten</span>
-              <h2 className="band-title">
-                Woraus sich die Kosten <em>zusammensetzen</em>
-              </h2>
-              <p className="lead">
-                Klar getrennt: Das Werbebudget bleibt in deinem Konto, die
-                Betreuung ist ein fester Betrag, eine Zielseite wird nur
-                angeboten, wenn du sie brauchst.
-              </p>
-              <p className="lead">
-                Konkrete Zahlen nennen wir im Erstgespräch, weil Klickpreise und
-                Suchvolumen je nach Branche und Region stark schwanken. Wir
-                sagen dir vorher, ob der Kanal für dein Angebot überhaupt
-                rechnet.
-              </p>
-            </div>
-            <div className="mini-grid reveal" aria-label="Kostenbestandteile">
-              {costParts.map((item) => (
-                <div key={item.title}>
-                  <b>{item.title}</b>
-                  <small>{item.text}</small>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="band theme-light" id="kanalmix">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">10 — Google Ads im Zusammenspiel</span>
+              <span className="band-tag">09 — Google Ads im Zusammenspiel</span>
               <h2 className="band-title">
                 Sofort sichtbar, <em>langfristig gefunden</em>
               </h2>
               <p className="lead">
-                Google Ads liefert ab dem ersten Tag Daten: welche Suchbegriffe
-                Anfragen bringen, welche Zielseiten funktionieren, was eine
-                Anfrage kosten darf. Genau diese Daten machen SEO und Meta Ads
-                besser.
+                Google Ads liefert ab dem ersten Tag Daten: welche Suchbegriffe Anfragen bringen, welche Zielseiten funktionieren. Diese Daten machen SEO und Meta Ads besser.
               </p>
               <ul className="lines">
                 <li>
@@ -518,14 +459,12 @@ export default function GoogleAdsPage() {
         <section className="band dark-stage service-dark-stage" id="zusammenarbeit">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">11 — Zusammenarbeit</span>
+              <span className="band-tag">10 — Zusammenarbeit</span>
               <h2 className="band-title">
                 Dein Budget. <em>Volle Transparenz.</em>
               </h2>
               <p className="lead">
-                Kein Callcenter, keine Rückrufbitte. Zahlen, Klickpreise und
-                Anpassungen besprichst du direkt mit dem, der die Kampagne
-                steuert, per WhatsApp oder im kurzen Call.
+                Kein Callcenter, keine Rückrufbitte. Du sprichst per WhatsApp oder kurzem Call mit dem, der die Kampagne steuert.
               </p>
               <ul className="lines">
                 <li>Dein Konto, dein Zugriff, deine Daten.</li>
@@ -550,14 +489,12 @@ export default function GoogleAdsPage() {
         <section className="band theme-light" id="bewertungen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">12 — Kundenstimmen</span>
+              <span className="band-tag">11 — Das sagen Kunden</span>
               <h2 className="band-title">
-                Das sagen Kunden <em>über die Zusammenarbeit</em>
+                Wörtlich so <em>veröffentlicht.</em>
               </h2>
             </div>
-            <p className="band-note">
-              Nur Aussagen, die unsere Kunden so veröffentlicht haben. Keine
-              erfundenen Bewertungen, keine geschönten Zahlen.
+            <p className="band-note">Nichts erfunden, nichts geschönt.  Zahlen.
             </p>
           </div>
           <Reviews reviews={verifiedReviews} items={verifiedReviews} />
@@ -568,9 +505,9 @@ export default function GoogleAdsPage() {
         <section className="band theme-light" id="faq">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">13 — Häufige Fragen</span>
+              <span className="band-tag">12 — Häufige Fragen</span>
               <h2 className="band-title">
-                Was du vorher <em>wissen willst</em>
+                Was Betriebe <em>vor dem Start fragen.</em>
               </h2>
             </div>
           </div>
@@ -580,7 +517,7 @@ export default function GoogleAdsPage() {
         <section className="band theme-light" id="anfrage">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">14 — In fünf Klicks zur Einschätzung</span>
+              <span className="band-tag">13 — In fünf Klicks zur Einschätzung</span>
               <h2 className="band-title">
                 Sag uns kurz, <em>was passieren soll, wenn jemand sucht.</em>
               </h2>

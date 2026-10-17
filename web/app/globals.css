@@ -673,7 +673,7 @@ select.form-field option { color: #151319; background: #fff; }
 .form-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .contact-fallback h2 { margin: 14px 0; font-size: clamp(24px, 3vw, 34px); line-height: 1.1; }
 .contact-fallback p { margin-bottom: 20px; color: var(--ink-dim); line-height: 1.6; }
-.contact-fallback-mail { display: inline-block; margin-top: 18px; color: var(--ink); text-underline-offset: 4px; }
+.contact-fallback-mail { display: block; width: fit-content; margin-top: 14px; color: var(--ink); text-underline-offset: 4px; }
 .kontakt-form .btn-primary { border: none; cursor: pointer; width: 100%; justify-content: center; margin-top: 0; }
 .kontakt-form .btn-primary:disabled { opacity: 0.6; cursor: wait; transform: none; }
 

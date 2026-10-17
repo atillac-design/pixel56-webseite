@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 16.10.2026
+# Kurzbriefing — Stand 17.10.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -16,8 +16,19 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 - **Schrift:** Figtree, Fließtext kräftiger und größer, keine Serifen-Kursive
   mehr. Vom Inhaber abgenommen („Variante 3“).
 - **Kein Standort Bendorf** sichtbar, niemand soll vorbeikommen; „aus
-  Koblenz“ ist okay. WhatsApp und E-Mail immer anbieten. Später je
-  Leistung ein eigenes Kontaktformular (noch nicht gebaut).
+  Koblenz“ ist okay. WhatsApp und E-Mail immer anbieten.
+- **Leistungsseiten (17.10.):** alle acht unter dem Hero gekürzt (kurze
+  Sätze, Schmerz → Lösung → Beweis, keine Preisaussagen, keine neuen
+  Zahlen). Gestrichen: „Kosten“-Abschnitte (Meta Ads, Google Ads,
+  Mitarbeitergewinnung), Prüfpunkte und Landingpage-Teaser auf Webdesign,
+  „Verantwortungsvolle Umsetzung“ auf KI (Doppelung). FAQ je Seite auf
+  sechs. Kundenstimmen-Kopf überall „Wörtlich so veröffentlicht.“, Prozess
+  „So läuft es“. Koblenz nur noch im Region-Abschnitt (Webdesign), in
+  Suchbeispielen und im Seitentitel.
+- **Kontaktseite (17.10.):** Hero „15 Minuten. Dann weißt du, wo dein
+  Hebel liegt.“, rechts Termin-Karte (Calendly, WhatsApp, E-Mail), darunter
+  Abschnitt 01 = allgemeiner Klick-Fragebogen. Das alte `KontaktForm` ist
+  nicht mehr eingebunden (Datei bleibt).
 - **Positionierung (15.10., mit dem Inhaber abgestimmt):** Zielgruppe
   „kleine und mittelständische Unternehmen“ (Mittelstand ausdrücklich
   erwünscht: Team, Standort, Budget), **nicht** nur Handwerk und **nicht**
@@ -82,60 +93,37 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 
 ## Offene Punkte (Reihenfolge = Priorität)
 
-1. **Vom Inhaber erwartet:** weitere Rückmeldung zur Startseite und den
-   Leistungsseiten. **Adloc und Teykto sind beide noch in der Testphase** (nicht
-   buchbar), Einträge auf der KI-Seite sagen das; bei Start Kicker/Hinweis
-   ändern. **Klick-Fragebogen je Leistung (17.10., „go“ vom Inhaber):** auf allen
-   acht Leistungsseiten (Webdesign, Meta Ads, Content, KI, Landingpages,
-   Mitarbeitergewinnung, Google Ads, SEO) (`lib/fragebogen.ts`, `components/LeistungsAnfrage.tsx`,
-   `app/api/anfrage/route.ts`, Abschnitt `#anfrage` vor dem Abschluss).
-   Hochwertige Fassung (17.10., Inhaber fand die erste zu schlicht):
-   zweispaltige Karte, links dunkle Leiste mit Versprechen, drei
-   Vorteilen, Atilla-Porträt und Google-Stand, rechts Fortschrittsbalken
-   mit Restzeit, Atilla-Reaktion als Sprechblase über der nächsten Frage,
-   Antwortknöpfe mit Zahlentasten (1–5, Enter, Tastatur funktioniert),
-   Haken bei Auswahl, Kontaktschritt mit Antwort-Chips, Danke mit
-   animiertem Haken. Budget: unterste Spanne heißt „Erstmal klein
-   anfangen“, Hinweis weich („Geht, wenn der Umfang klar begrenzt ist“),
-   intern wird die Mail mit „kleines Budget“ markiert (Betreff + Zeile),
-   dem Besucher nicht sichtbar. Spannen sind Vorschläge, Inhaber prüft.
-   Personenzeile „Gründer · antwortet dir persönlich“ (Inhaber fand „liest
-   jede Anfrage selbst“ zu untätig). Je Leistung eigenes Versprechen in der
-   Leiste (`versprechen`) und eigene fünf Fragen nach dem Muster Schmerz →
-   Ziel → Branche → Stand/Zeit → Rahmen, mit Reaktionen. Design vom Inhaber
-   abgenommen, Spannen „passen“.
-   **Pushes sparsam** (Inhaber: Build-Kontingent), Screenshots in den Chat. Mail per Resend
-   (Pflicht), Kontakt mit Feldern in MailerLite (optional,
-   `MAILERLITE_GROUP_KONTAKTANFRAGE`). Ohne `RESEND_API_KEY` zeigt das
-   Formular „derzeit nicht verfügbar“ – in Netlify sind die Schlüssel noch
-   nicht gesetzt. Nach Freigabe: die sechs anderen Leistungen nachziehen. Teykto-
-   und Adloc-Bilder sind da (16.10.): Adloc = Laptop-Mockup
-   `ki-projekt-adloc.webp`, Adloc-Texte nach den Screenshots der Produktseite (Credits statt Abo,
-   RLP komplett, 15 Branchen; Zahlen als „laut adloc.io“ gekennzeichnet).
-   Teykto = Live-Screenshot des Inhabers von
-   teykto.onrender.com/r/bella-napoli mit Gerichtsfotos
-   (`ki-projekt-teykto.webp`, Browserleiste abgeschnitten). adloc.io und
-   teykto.de sind in der Sandbox durch die Netzwerk-Richtlinie gesperrt
-   (403 am Proxy), Inhaber kann sie in den Umgebungs-Einstellungen
-   freigeben.
-2. Noch nicht auf die Positionierung gezogen: Fließtexte **innerhalb** der
-   acht Leistungsseiten (Abschnitte unter dem Hero), Projekte-Übersicht,
-   Kontakt-Hero, Blog-Teaser. Nächster Schritt, wenn der Inhaber die
-   Richtung bestätigt.
-3. Kontaktformular je Leistung (Wunsch des Inhabers, noch offen).
-4. Vor dem Livegang: AGB-Platzhalter, Impressum, Datenschutz prüfen;
-   Env-Variablen in Netlify (MailerLite, Resend, optional Google Places);
-   Website-Check live testen; `NEXT_PUBLIC_INDEXABLE=true` erst dann.
-5. Domainumzug pixel56.de von Webflow auf Netlify, danach Sitemap in der
-   Search Console einreichen und alte URLs beobachten.
-6. Medien: Reels Handwerk (M&A Transporte, GM-Dachdecker), echte
+1. **Vom Inhaber erwartet:** Rückmeldung zu den gekürzten Leistungsseiten,
+   zur neuen Kontaktseite und zur Projekte-Übersicht (17.10., Auftrag „pass
+   alles an“ für den Vier-Punkte-Plan: Leistungstexte, Kontakt + Projekte,
+   Env-Liste, Livegang-Checkliste; alles umgesetzt, siehe STATUS 17.10.).
+   **Adloc und Teykto bleiben in der Testphase** (nicht buchbar); bei Start
+   Kicker/Hinweis auf der KI-Seite ändern.
+2. **Klick-Fragebogen** auf allen acht Leistungsseiten und als Hauptweg auf
+   `/kontakt` (`frageboegen.allgemein`: erste Frage wählt das Thema, der
+   Betreff der Mail trägt es). Technik: `lib/fragebogen.ts`,
+   `components/LeistungsAnfrage.tsx`, `app/api/anfrage/route.ts`. Ohne
+   `RESEND_API_KEY` meldet das Formular „derzeit nicht verfügbar“; in Netlify
+   sind die Schlüssel noch nicht gesetzt. Budget-Spannen sind Vorschläge,
+   unterste Stufe weich („Erstmal klein anfangen“), intern als „kleines
+   Budget“ markiert. Personenzeile „Gründer · antwortet dir persönlich“.
+3. **Nur der Inhaber kann:** Netlify-Variablen setzen (Liste mit exakten
+   Namen in `docs/LIVEGANG.md`, Abschnitt 1), danach einen Fragebogen live
+   testen. Rechtstexte gegenlesen (Impressum, Datenschutz enthält jetzt
+   Fragebogen/Resend und Website-Check; AGB ist noindex-Platzhalter).
+   Domainumzug Webflow → Netlify nach `docs/LIVEGANG.md`, erst danach
+   `NEXT_PUBLIC_INDEXABLE=true`.
+4. **Pushes sparsam** (Netlify-Build-Kontingent), Screenshots in den Chat
+   (`SendUserFile`), nur ein Push pro abgeschlossenem Paket.
+5. Medien: Reels Handwerk (M&A Transporte, GM-Dachdecker), echte
    Vorher-Screenshots, Zuordnung der schematischen Vorher-Varianten bestätigen.
-7. Redaktion: Leistungsseiten ggf. um ca. 30 % kürzen, Wiederholungen
-   glätten; 31 alte Blogartikel nachschärfen; Stadttexte gegenlesen.
-8. Standortseiten mit Search-Console-Daten abgleichen (`regionStaedte`).
+6. Redaktion: 31 alte Blogartikel nachschärfen; Stadttexte gegenlesen;
+   Blog-Teaser auf der Startseite auf den neuen Ton prüfen.
+7. Standortseiten mit Search-Console-Daten abgleichen (`regionStaedte`).
 
-## Zuletzt geprüft
+## Zuletzt geprüft (17.10.)
 
-Build fehlerfrei (745 Seiten), Lighthouse Startseite 100/100 nach
-Schriftwechsel, Playwright-Klicktest der Zentrale-Demo ohne Fehler,
-mobile Überlauf-Prüfung auf 14 Seiten in Ordnung.
+Build fehlerfrei (746 Routen), `seo:check:strict` ohne Befund, Playwright:
+Element-Screenshots Webdesign/Meta Ads/Kontakt/Projekte Desktop + Mobil,
+Klick- und Tastaturtest des Kontakt-Fragebogens (API antwortet erwartungsgemäß
+503 ohne Mail-Schlüssel, keine Seitenfehler).

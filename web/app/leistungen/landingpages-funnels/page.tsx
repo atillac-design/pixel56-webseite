@@ -81,49 +81,49 @@ const statusRows = [
 ];
 
 const funnelTypes = [
-  { title: "Lead-Funnel", text: "Für Angebote, die vor dem Kauf ein Gespräch brauchen. Die Seite erklärt das Angebot, baut Vertrauen auf und endet mit einer kurzen Anfrage. Typisch für Handwerk, Bau und Dienstleistung." },
-  { title: "Termin-Funnel", text: "Vom Klick direkt in den Kalender. Ideal für Erstgespräche, Beratungen und Besichtigungen. Keine Mail-Schleife, kein „wann passt es Ihnen“." },
-  { title: "Anmelde- oder Verkaufs-Funnel", text: "Für Kurse, Veranstaltungen, digitale Produkte oder klar bepreiste Angebote ohne Zwischengespräch. Anmeldung oder Kauf in wenigen Schritten, mit Bestätigung." },
+  { title: "Lead-Funnel", text: "Für Angebote, die vor dem Kauf ein Gespräch brauchen. Die Seite erklärt, baut Vertrauen auf und endet mit einer kurzen Anfrage." },
+  { title: "Termin-Funnel", text: "Vom Klick direkt in den Kalender. Für Erstgespräche, Beratungen, Besichtigungen. Keine Mail-Schleife." },
+  { title: "Anmelde- oder Verkaufs-Funnel", text: "Für Kurse, Veranstaltungen und digitale Produkte. Anmeldung oder Kauf in wenigen Schritten, mit Bestätigung." },
 ];
 
 const audiences = [
-  { tag: "Google- & Meta-Kampagnen", title: "Die Seite hinter der Anzeige", text: "Jede Kampagne braucht eine Zielseite, die genau das aufgreift, was die Anzeige verspricht. Sonst zahlst du für Klicks, die auf der Startseite verloren gehen.", refs: "Van den Berg Gruppe · Stark ins Neue" },
-  { tag: "Kurse & Veranstaltungen", title: "Anmeldung ohne Umwege", text: "Termin, Inhalt, Preis, Anmeldung. Eine Strecke, die in zwei Minuten erledigt ist und sofort bestätigt. Für Bildungsangebote und Events.", refs: "Stark ins Neue · Sportler für Kinderherzen" },
-  { tag: "Erstgespräch & Beratung", title: "Vom Interesse zum Termin", text: "Für Dienstleister, bei denen das Gespräch der erste Schritt ist. Die Seite beantwortet die wichtigsten Fragen und führt direkt in den Kalender.", refs: "Van den Berg Gruppe" },
-  { tag: "Handwerk & Bau", title: "Angebotsanfrage mit den richtigen Angaben", text: "Ein kurzes Formular, das genau die Informationen abfragt, die du für ein Angebot brauchst, inklusive Foto-Upload. Weniger Rückfragen, schnellere Angebote.", refs: "GM-Dachdecker · MDU Bedachungen" },
-  { tag: "Recruiting", title: "Bewerbung in zwei Minuten", text: "Eine Stelle, eine Seite, ein Upload. Bewerber sehen, wer ihr Arbeitgeber wäre, und bewerben sich ohne E-Mail-Programm.", refs: "GM-Dachdecker" },
-  { tag: "Lead-Magnet", title: "Checkliste gegen Kontakt", text: "Ein nützliches PDF gegen eine E-Mail-Adresse. Wir nutzen das selbst für unsere Checklisten, mit automatischem Versand und sauberer Einwilligung.", refs: "Eigene Ressourcen-Seiten von Pixel56" },
+  { tag: "Google- & Meta-Kampagnen", title: "Die Seite hinter der Anzeige", text: "Die Zielseite greift auf, was die Anzeige verspricht. Sonst zahlst du für Klicks, die auf der Startseite verloren gehen.", refs: "Van den Berg Gruppe · Stark ins Neue" },
+  { tag: "Kurse & Veranstaltungen", title: "Anmeldung ohne Umwege", text: "Termin, Inhalt, Anmeldung. In zwei Minuten erledigt, sofort bestätigt.", refs: "Stark ins Neue · Sportler für Kinderherzen" },
+  { tag: "Erstgespräch & Beratung", title: "Vom Interesse zum Termin", text: "Die Seite beantwortet die wichtigsten Fragen und führt direkt in den Kalender.", refs: "Van den Berg Gruppe" },
+  { tag: "Handwerk & Bau", title: "Angebotsanfrage mit den richtigen Angaben", text: "Ein kurzes Formular mit genau den Angaben, die du für ein Angebot brauchst, inklusive Foto-Upload.", refs: "GM-Dachdecker · MDU Bedachungen" },
+  { tag: "Recruiting", title: "Bewerbung in zwei Minuten", text: "Eine Stelle, eine Seite, ein Upload. Bewerbung ohne E-Mail-Programm.", refs: "GM-Dachdecker" },
+  { tag: "Lead-Magnet", title: "Checkliste gegen Kontakt", text: "Ein nützliches PDF gegen eine E-Mail-Adresse. Nutzen wir selbst für unsere Checklisten.", refs: "Eigene Ressourcen-Seiten von Pixel56" },
 ];
 
 const anatomy = [
-  { problem: "Die Überschrift wiederholt das Versprechen der Anzeige.", answer: "Wer auf „Dachsanierung Koblenz“ klickt, muss „Dachsanierung Koblenz“ lesen, nicht „Willkommen bei Firma Müller“. Sonst ist der Besucher in drei Sekunden wieder weg." },
-  { problem: "Der Nutzen steht über dem Falz, nicht die Firmengeschichte.", answer: "Was bekommt der Besucher, bis wann, und was muss er dafür tun? Alles andere kommt danach." },
-  { problem: "Beweise statt Behauptungen.", answer: "Echte Projekte, echte Kundenstimmen, echte Fotos. Keine Stockbilder, keine erfundenen Zahlen. Vertrauen entsteht durch Belegbares." },
-  { problem: "Einwände werden beantwortet, bevor sie gestellt werden.", answer: "Was kostet es, wie lange dauert es, was passiert danach? Eine kurze FAQ auf der Seite räumt die Fragen aus, die sonst zum Absprung führen." },
-  { problem: "Das Formular fragt nur, was für den nächsten Schritt nötig ist.", answer: "Name, Kontakt, eine qualifizierende Frage. Jedes zusätzliche Feld senkt die Abschlussquote. Details klärt das Gespräch." },
-  { problem: "Ein Ziel, mehrfach angeboten.", answer: "Der Button zur Anfrage erscheint oben, in der Mitte und am Ende. Kein Menü, keine Links zu anderen Leistungen, nichts, was ablenkt." },
+  { problem: "Die Überschrift wiederholt das Versprechen der Anzeige.", answer: "Wer auf „Dachsanierung“ klickt, muss „Dachsanierung“ lesen, nicht „Willkommen bei Firma Müller“." },
+  { problem: "Der Nutzen steht über dem Falz, nicht die Firmengeschichte.", answer: "Was bekommt der Besucher, bis wann, was muss er tun? Alles andere kommt danach." },
+  { problem: "Beweise statt Behauptungen.", answer: "Echte Projekte, echte Kundenstimmen, echte Fotos. Keine Stockbilder, keine erfundenen Zahlen." },
+  { problem: "Einwände werden beantwortet, bevor sie gestellt werden.", answer: "Wie lange dauert es, was passiert danach? Eine kurze FAQ räumt die Fragen aus, die sonst zum Absprung führen." },
+  { problem: "Das Formular fragt nur, was für den nächsten Schritt nötig ist.", answer: "Name, Kontakt, eine Frage. Jedes weitere Feld senkt die Abschlussquote." },
+  { problem: "Ein Ziel, mehrfach angeboten.", answer: "Der Button erscheint oben, in der Mitte und am Ende. Kein Menü, nichts, was ablenkt." },
 ];
 
 const friction = [
-  { title: "Felder reduzieren", text: "Drei bis vier Felder statt zehn. Alles, was nicht für den ersten Kontakt nötig ist, fliegt raus und wird im Gespräch geklärt." },
-  { title: "Mobil zuerst", text: "Die meisten Klicks aus Anzeigen kommen vom Handy. Formular, Buttons und Upload werden zuerst dort gebaut und getestet." },
-  { title: "Sofortige Bestätigung", text: "Wer anfragt, bekommt sofort eine Bestätigung mit dem nächsten Schritt. Kein „wir melden uns“, sondern „so geht es weiter“." },
-  { title: "Übergabe ohne Verlust", text: "Anfragen landen dort, wo du arbeitest: Postfach, Kalender, Tabelle oder CRM. Nichts bleibt in einem Formular-Backend liegen." },
+  { title: "Felder reduzieren", text: "Drei bis vier Felder statt zehn. Der Rest wird im Gespräch geklärt." },
+  { title: "Mobil zuerst", text: "Die meisten Klicks kommen vom Handy. Dort wird zuerst gebaut und getestet." },
+  { title: "Sofortige Bestätigung", text: "Sofort eine Bestätigung mit dem nächsten Schritt. Kein „wir melden uns“." },
+  { title: "Übergabe ohne Verlust", text: "Anfragen landen dort, wo du arbeitest: Postfach, Kalender, Tabelle oder CRM." },
 ];
 
 const tracking = [
-  { title: "Conversion-Messung", text: "Jede Anfrage, Buchung oder Anmeldung wird gezählt und der Kampagne zugeordnet. So weißt du, welcher Euro was gebracht hat." },
-  { title: "Einwilligung sauber gelöst", text: "Cookie-Einwilligung und Messung sind so aufgesetzt, dass sie rechtlich halten und trotzdem brauchbare Daten liefern." },
-  { title: "Kalender & Automatisierung", text: "Terminbuchung direkt auf der Seite, automatische Bestätigung und Erinnerung, Übergabe in deinen Kalender." },
-  { title: "Absprünge sichtbar", text: "Wir sehen, an welcher Stelle Besucher aussteigen, und ändern genau dort. Nicht die ganze Seite, nur die schwache Stelle." },
+  { title: "Conversion-Messung", text: "Jede Anfrage wird gezählt und der Kampagne zugeordnet. Du weißt, welcher Euro was gebracht hat." },
+  { title: "Einwilligung sauber gelöst", text: "Einwilligung und Messung halten rechtlich und liefern trotzdem brauchbare Daten." },
+  { title: "Kalender & Automatisierung", text: "Terminbuchung auf der Seite, Bestätigung und Erinnerung automatisch, Übergabe in deinen Kalender." },
+  { title: "Absprünge sichtbar", text: "Wir sehen, wo Besucher aussteigen, und ändern genau dort." },
 ];
 
 const steps = [
   { nr: "01", tag: "Phase 1", title: "Ziel & Angebot", text: "Was am Ende passieren soll und für wen. Davon hängt die gesamte Struktur ab." },
-  { nr: "02", tag: "Phase 2", title: "Struktur & Text", text: "Ein Argument nach dem anderen, ein Call-to-Action, keine Konkurrenz zwischen Angeboten. Du siehst den Text vor dem Design." },
+  { nr: "02", tag: "Phase 2", title: "Struktur & Text", text: "Ein Argument nach dem anderen, ein Call-to-Action. Du siehst den Text vor dem Design." },
   { nr: "03", tag: "Phase 3", title: "Design & Formular", text: "So wenig Reibung wie möglich, klare Führung, mobil zuerst." },
   { nr: "04", tag: "Phase 4", title: "Tracking & Anbindung", text: "Jeder Schritt messbar, Anfragen landen automatisch an der richtigen Stelle." },
-  { nr: "05", tag: "Phase 5", title: "Auswertung", text: "Wo Interessenten abspringen, wird gezielt angepasst. Eine Landingpage ist nach dem Launch nicht fertig." },
+  { nr: "05", tag: "Phase 5", title: "Auswertung", text: "Wo Interessenten abspringen, wird angepasst. Eine Landingpage ist nach dem Launch nicht fertig." },
 ];
 
 const referenzen: RefItem[] = [
@@ -132,13 +132,12 @@ const referenzen: RefItem[] = [
 ];
 
 const faqs = [
-  { q: "Was ist der Unterschied zu einer normalen Website-Seite?", a: "Eine normale Seite bietet viele Wege an: Menü, Leistungen, Über uns, Blog. Eine Landingpage verzichtet bewusst darauf und führt zu genau einem Ziel. Sie ergänzt die Website, sie ersetzt sie nicht." },
-  { q: "Brauche ich dafür schon eine Werbekampagne?", a: "Nein. Eine Landingpage funktioniert auch für organischen Traffic, E-Mail-Verteiler, QR-Codes auf Fahrzeugen oder den Link in der Social-Media-Bio. Mit Kampagne entfaltet sie allerdings die größte Wirkung." },
-  { q: "Wie kurz sollte das Formular wirklich sein?", a: "So kurz wie möglich für das jeweilige Ziel. Oft reichen Name, Kontakt und eine qualifizierende Frage. Jedes weitere Feld senkt die Abschlussquote. Was du für ein Angebot brauchst, klären wir im Gespräch oder in einem zweiten Schritt nach der Anfrage." },
-  { q: "Wie messt ihr, ob die Seite funktioniert?", a: "Wir zählen Anfragen, Buchungen oder Anmeldungen und ordnen sie der Quelle zu. Dazu sehen wir, an welcher Stelle Besucher abspringen. Daraus entstehen konkrete Änderungen, keine Vermutungen." },
-  { q: "Kann ich mehrere Funnels gleichzeitig haben?", a: "Ja, bei unterschiedlichen Angeboten oder Zielgruppen ist das sogar sinnvoll. Jeder Funnel bleibt dabei auf ein Ziel fokussiert. Technisch läuft alles auf derselben Basis." },
-  { q: "Was kostet ein Funnel?", a: "Eine einzelne Landingpage braucht weniger Aufwand als ein mehrstufiger Funnel mit Terminbuchung, Bestätigung und Automatisierung. Vor dem Start bekommst du ein Angebot mit klarem Umfang. Die Seite gehört danach dir und trägt jede weitere Kampagne." },
-  { q: "Bleibst du auch danach erreichbar?", a: "Ja. Per WhatsApp, Telefon oder E-Mail über einen festen Ansprechpartner. Ein Formularfeld kürzen oder einen Text anpassen ist meist am selben Tag erledigt." },
+  { q: "Was ist der Unterschied zu einer normalen Website-Seite?", a: "Eine normale Seite bietet viele Wege: Menü, Leistungen, Über uns. Eine Landingpage führt zu genau einem Ziel. Sie ergänzt die Website, sie ersetzt sie nicht." },
+  { q: "Brauche ich dafür schon eine Werbekampagne?", a: "Nein. Eine Landingpage funktioniert auch für E-Mail-Verteiler, QR-Codes auf Fahrzeugen oder den Link in der Social-Media-Bio. Mit Kampagne wirkt sie am stärksten." },
+  { q: "Wie kurz sollte das Formular sein?", a: "So kurz wie möglich. Oft reichen Name, Kontakt und eine Frage. Jedes weitere Feld senkt die Abschlussquote. Details klären wir im Gespräch oder in einem zweiten Schritt." },
+  { q: "Wie messt ihr, ob die Seite funktioniert?", a: "Wir zählen Anfragen, Buchungen oder Anmeldungen und ordnen sie der Quelle zu. Dazu sehen wir, wo Besucher abspringen. Daraus entstehen Änderungen, keine Vermutungen." },
+  { q: "Kann ich mehrere Funnels gleichzeitig haben?", a: "Ja, bei unterschiedlichen Angeboten oder Zielgruppen ist das sinnvoll. Jeder Funnel bleibt auf ein Ziel fokussiert." },
+  { q: "Wem gehört die Seite danach?", a: "Dir, inklusive aller Inhalte und Daten. Sie trägt jede weitere Kampagne. Änderungen sind meist am selben Tag erledigt." },
 ];
 
 const funnelVoices = [verifiedReviews[0], verifiedReviews[2], verifiedReviews[1]];
@@ -226,14 +225,10 @@ export default function FunnelsPage() {
                 Sechs Gründe, warum <em>Traffic verpufft</em>
               </h2>
               <p className="lead">
-                Besucher sind da, aber die Anfrage bleibt aus. Fast immer liegt
-                es nicht an zu wenig Traffic, sondern an dem, was mit ihm
-                passiert, sobald er ankommt.
+                Besucher sind da, die Anfrage bleibt aus. Fast immer liegt es nicht am Traffic, sondern an dem, was mit ihm passiert, sobald er ankommt.
               </p>
               <p className="lead">
-                Die teuerste Variante: eine gute Kampagne, die auf eine
-                Startseite mit zwölf Menüpunkten führt. Der Besucher sucht, was
-                die Anzeige versprochen hat, findet es nicht und geht.
+                Die teuerste Variante: eine gute Kampagne auf einer Startseite mit zwölf Menüpunkten. Der Besucher sucht, was die Anzeige versprach, findet es nicht und geht.
               </p>
             </div>
             <div className="reveal">
@@ -251,9 +246,7 @@ export default function FunnelsPage() {
               </h2>
             </div>
             <p className="band-note">
-              Eine Website muss vielen Besuchern viele Wege anbieten. Eine
-              Landingpage darf genau das Gegenteil tun und wird dadurch
-              spürbar wirksamer.
+              Eine Website bietet viele Wege. Eine Landingpage genau einen. Darum wirkt sie.
             </p>
           </div>
           <Funnel2
@@ -282,8 +275,7 @@ export default function FunnelsPage() {
               </h2>
             </div>
             <p className="band-note">
-              Überall dort, wo ein konkretes Angebot auf einen konkreten Bedarf
-              trifft, schlägt eine fokussierte Seite die allgemeine Website.
+              Wo ein konkretes Angebot auf konkreten Bedarf trifft, schlägt die fokussierte Seite die allgemeine Website.
             </p>
           </div>
           <div className="audience-grid reveal">
@@ -307,9 +299,7 @@ export default function FunnelsPage() {
               </h2>
             </div>
             <p className="band-note">
-              Keine Geheimnisse, nur Konsequenz. Die meisten Seiten scheitern
-              nicht an fehlendem Wissen, sondern daran, dass eine dieser Regeln
-              aus Bequemlichkeit gebrochen wird.
+              Keine Geheimnisse, nur Konsequenz. Die meisten Seiten scheitern, weil eine dieser Regeln aus Bequemlichkeit gebrochen wird.
             </p>
           </div>
           <div className="friction-list checklist reveal">
@@ -389,13 +379,10 @@ export default function FunnelsPage() {
                 So wenig Reibung <em>wie möglich</em>
               </h2>
               <p className="lead">
-                Das Formular ist die Stelle, an der die meisten Anfragen
-                verloren gehen. Nicht, weil das Angebot nicht passt, sondern
-                weil zehn Felder auf dem Handy niemand ausfüllt.
+                Im Formular gehen die meisten Anfragen verloren. Nicht, weil das Angebot nicht passt, sondern weil zehn Felder auf dem Handy niemand ausfüllt.
               </p>
               <p className="lead">
-                Wir bauen das Formular vom Gespräch her: Was brauchst du
-                wirklich, um zurückzurufen? Alles andere klärt sich danach.
+                Wir bauen das Formular vom Gespräch her: Was brauchst du, um zurückzurufen? Alles andere klärt sich danach.
               </p>
             </div>
             <div className="mini-grid reveal" aria-label="Reibung im Formular senken">
@@ -417,14 +404,10 @@ export default function FunnelsPage() {
                 Jeder Schritt messbar, <em>jede Anfrage am richtigen Ort</em>
               </h2>
               <p className="lead">
-                Eine Landingpage ohne Messung ist eine Vermutung. Wir richten
-                Conversion-Tracking mit Einwilligung ein, verbinden die Seite
-                mit Kalender, Postfach oder CRM und sehen, an welcher Stelle
-                Besucher aussteigen.
+                Eine Landingpage ohne Messung ist eine Vermutung. Conversion-Tracking mit Einwilligung, Anbindung an Kalender, Postfach oder CRM, Blick auf die Absprungstellen.
               </p>
               <p className="lead">
-                Dieselbe Technik trägt unsere eigenen Ressourcen-Seiten:
-                Checkliste anfordern, Einwilligung, automatischer Versand.
+                Dieselbe Technik trägt unsere eigenen Checklisten-Seiten.
               </p>
               <Link className="body-link" href={resourceRoutes["seo-checkliste"]}>
                 Beispiel: unsere SEO-Checkliste-Seite <ArrowIcon />
@@ -444,14 +427,13 @@ export default function FunnelsPage() {
         <section className="band theme-light" id="prozess">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">08 — Der Weg dahin</span>
+              <span className="band-tag">08 — So läuft es</span>
               <h2 className="band-title">
                 Fünf Phasen, <em>ein klarer Weg</em>
               </h2>
             </div>
             <p className="band-note">
-              Vom Ziel bis zur laufenden Auswertung. Du siehst Text und Aufbau,
-              bevor das Design entsteht.
+              Du siehst Text und Aufbau, bevor das Design entsteht.
             </p>
           </div>
           <Stepper steps={steps} />
@@ -466,8 +448,7 @@ export default function FunnelsPage() {
               </h2>
             </div>
             <p className="band-note">
-              Zwei Projekte, zwei Ziele: Anmeldung und Anfrage. Beide mit
-              Kampagne, Zielseite und Tracking als ein System.
+              Zwei Ziele, Anmeldung und Anfrage. Beide mit Kampagne, Zielseite und Tracking als ein System.
             </p>
           </div>
           <div className="ref-grid-2 reveal">
@@ -490,10 +471,7 @@ export default function FunnelsPage() {
                 Die Seite trägt <em>jede weitere Kampagne</em>
               </h2>
               <p className="lead">
-                Eine Landingpage ist kein Einmalprodukt. Einmal gebaut und
-                gemessen, trägt sie Google Ads, Meta Ads, den QR-Code auf dem
-                Firmenwagen und den Link in der Social-Media-Bio. Mit jeder
-                Kampagne wird sie besser, weil wir wissen, wo Besucher abspringen.
+                Einmal gebaut, trägt die Seite Google Ads, Meta Ads, den QR-Code auf dem Firmenwagen und den Link in der Bio. Mit jeder Kampagne wird sie besser.
               </p>
               <ul className="lines">
                 <li>
@@ -527,9 +505,7 @@ export default function FunnelsPage() {
                 Dein Funnel. <em>Kurze Wege.</em>
               </h2>
               <p className="lead">
-                Kein Callcenter, keine Rückrufbitte. Formularfeld kürzen, Text
-                anpassen, neue Variante testen: Du schreibst direkt per WhatsApp,
-                und kleine Änderungen sind meist am selben Tag erledigt.
+                Kein Callcenter, keine Rückrufbitte. Du schreibst per WhatsApp, kleine Änderungen sind meist am selben Tag erledigt.
               </p>
               <ul className="lines">
                 <li>Die Seite gehört dir, inklusive aller Inhalte und Daten.</li>
@@ -554,15 +530,12 @@ export default function FunnelsPage() {
         <section className="band theme-light" id="bewertungen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">12 — Kundenstimmen</span>
+              <span className="band-tag">12 — Das sagen Kunden</span>
               <h2 className="band-title">
-                Das sagen <em>Kunden über uns</em>
+                Wörtlich so <em>veröffentlicht.</em>
               </h2>
             </div>
-            <p className="band-note">
-              Nur Aussagen, die unsere Kunden so veröffentlicht haben. Keine
-              erfundenen Bewertungen, keine geschönten Zahlen.
-            </p>
+            <p className="band-note">Nichts erfunden, nichts geschönt.</p>
           </div>
           <Reviews reviews={funnelVoices} items={funnelVoices} />
         </section>
@@ -572,7 +545,7 @@ export default function FunnelsPage() {
             <div>
               <span className="band-tag">13 — Häufige Fragen</span>
               <h2 className="band-title">
-                Was du vorher <em>wissen willst</em>
+                Was Betriebe <em>vor dem Start fragen.</em>
               </h2>
             </div>
           </div>
