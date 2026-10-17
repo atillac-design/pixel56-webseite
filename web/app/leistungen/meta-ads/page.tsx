@@ -27,6 +27,8 @@ import { getFallstudie } from "@/lib/projekte";
 import { verifiedReviews } from "@/lib/verified-reviews";
 import { projectPath, routes, serviceRoutes } from "@/lib/routes";
 import vanDenBergImage from "@/public/bilder/projekt-van-den-berg.webp";
+import LeistungsAnfrage from "@/components/LeistungsAnfrage";
+import { frageboegen } from "@/lib/fragebogen";
 
 export const metadata: Metadata = {
   title: "Meta Ads Agentur: Werbung, die Anfragen bringt",
@@ -739,6 +741,21 @@ export default function MetaAdsPage() {
             </div>
           </div>
           <FaqList items={faqs} />
+        </section>
+
+        <section className="band theme-light" id="anfrage">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">17 — In fünf Klicks zur Einschätzung</span>
+              <h2 className="band-title">
+                Sag uns kurz, <em>was die Anzeigen bringen sollen.</em>
+              </h2>
+            </div>
+            <p className="band-note">{frageboegen["meta-ads"].einleitung}</p>
+          </div>
+          <div className="reveal">
+            <LeistungsAnfrage bogen={frageboegen["meta-ads"]} />
+          </div>
         </section>
 
           </div>

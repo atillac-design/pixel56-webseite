@@ -15,6 +15,27 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 17.10.2026: **Klick-Fragebogen je Leistung, Start mit Webdesign und Meta
+  Ads.** Inhaber wünscht ein Kontaktformular je Dienstleistung, das sich
+  durchklicken lässt und den Stand des Kunden abfragt (Branche, Budget).
+  Empfehlung umgesetzt: Fragen zuerst, Kontaktdaten zuletzt (höhere
+  Abschlussquote, Antworten ohne Kontakt sind wertlos), Budget als Spanne an
+  fünfter Stelle mit Ausweg „weiß ich noch nicht“ und Hinweis bei kleinem
+  Rahmen statt Ablehnung. Neue Dateien: `lib/fragebogen.ts` (Fragensätze,
+  `frageboegen.webdesign` und `frageboegen["meta-ads"]`),
+  `components/LeistungsAnfrage.tsx` (Client: ein Schritt pro Frage,
+  Fortschrittsbalken, Auto-Weiter nach 260 ms außer bei Hinweis, Zurück,
+  Kontaktschritt mit Zusammenfassungs-Chips, Honeypot, Einwilligung, Danke
+  mit Calendly und WhatsApp), `app/api/anfrage/route.ts` (Validierung,
+  Resend-Mail mit allen Antworten, MailerLite-Kontakt mit Feldern
+  `quelle`, `leistung`, `anfrage_<id>`; MailerLite-Fehler blockieren
+  nicht). CSS-Block `.anfrage*`. Eingebaut als Abschnitt „In fünf Klicks zur
+  Einschätzung“ nach der FAQ auf `/webdesign` (15) und
+  `/facebook-meta-ads` (17). Geprüft mit Playwright (Desktop und Handy,
+  beide Seiten): alle Schritte, Budget-Hinweis, Kontaktschritt, Absenden
+  liefert ohne `RESEND_API_KEY` die erwartete 503-Meldung; API weist
+  unvollständige Daten mit 400 ab. Budget-Spannen (Website 2.000 bis über
+  10.000 €, Meta-Budget 500 bis über 3.000 €/Monat) sind Vorschläge.
 - 17.10.2026: **Teykto ebenfalls Testphase.** Inhaber: auch Teykto ist noch
   nicht buchbar. Kicker „in der Testphase“, Hinweis „Noch nicht buchbar“.
 - 16.10.2026: **Teykto-Live-Bild, Adloc als Testphase, Hero-Entscheidung.**

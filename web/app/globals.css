@@ -3369,3 +3369,47 @@ body { overflow-x: clip; }
   .friction-row-beispiel p { grid-column: 2; }
   .friction-beispiel { grid-column: 2; max-width: 360px; }
 }
+
+/* Klick-Fragebogen je Leistung */
+.anfrage { max-width: 820px; margin: 0 auto; padding: 30px 32px 28px; border: 1px solid var(--card-border); border-radius: 24px; background: var(--card); box-shadow: var(--card-shadow); }
+.anfrage-kopf { display: flex; align-items: center; gap: 18px; margin-bottom: 24px; }
+.anfrage-tag { flex: none; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.anfrage-fortschritt { display: flex; flex: 1; gap: 6px; }
+.anfrage-fortschritt i { flex: 1; height: 6px; border-radius: 3px; background: rgba(127,127,127,0.18); transition: background 0.3s ease; }
+.anfrage-fortschritt i.voll { background: var(--accent); }
+.anfrage-fortschritt i.aktiv { background: rgba(229,61,82,0.45); }
+.anfrage h3 { margin: 0 0 8px; font-size: clamp(24px, 2.6vw, 32px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; }
+.anfrage-erklaerung { margin: 0 0 6px; font-size: 15px; line-height: 1.6; color: var(--ink-dim); }
+.anfrage-optionen { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
+.anfrage-option { display: flex; align-items: center; min-height: 58px; padding: 14px 18px; border: 1px solid var(--line-strong); border-radius: 16px; background: transparent; color: inherit; font: inherit; font-size: 15.5px; font-weight: 600; text-align: left; cursor: pointer; transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease; }
+.anfrage-option:hover { border-color: rgba(229,61,82,0.55); transform: translateY(-1px); }
+.anfrage-option.gewaehlt { background: var(--accent); border-color: var(--accent); color: #fff; }
+.anfrage-hinweis { margin: 14px 0 0; padding: 12px 14px; border-radius: 12px; background: rgba(229,61,82,0.08); font-size: 14px; line-height: 1.55; color: var(--ink); }
+.anfrage-nav { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-top: 22px; }
+.anfrage-zurueck { padding: 0; border: 0; background: none; color: var(--ink-faint); font: inherit; font-size: 14px; cursor: pointer; }
+.anfrage-zurueck:hover { color: var(--ink); }
+.anfrage .btn-primary { border: none; cursor: pointer; }
+.anfrage .btn-primary:disabled { opacity: 0.6; cursor: wait; transform: none; }
+.anfrage-zusammenfassung { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px; padding: 0; list-style: none; }
+.anfrage-zusammenfassung li { padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; color: var(--ink-dim); }
+.anfrage-zusammenfassung li b { color: var(--ink); font-weight: 600; }
+.anfrage-zusammenfassung li span { display: none; }
+.anfrage-felder { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.anfrage-felder label { display: grid; gap: 6px; }
+.anfrage-felder span { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+.anfrage-felder input { width: 100%; padding: 13px 16px; border: 1px solid var(--line-strong); border-radius: 14px; background: rgba(255,255,255,0.6); color: var(--ink); font: inherit; font-size: 15.5px; }
+.anfrage-felder input:focus { outline: 2px solid rgba(229,61,82,0.45); outline-offset: 1px; }
+.anfrage-einwilligung { display: flex; gap: 10px; align-items: flex-start; margin-top: 16px; font-size: 13.5px; line-height: 1.55; color: var(--ink-dim); }
+.anfrage-einwilligung input { margin-top: 4px; accent-color: var(--accent); }
+.anfrage-einwilligung a { color: var(--ink); text-decoration-color: var(--accent); }
+.anfrage-fuss { margin: 14px 0 0; font-size: 12.5px; line-height: 1.6; color: var(--ink-faint); }
+.anfrage-danke p { margin: 0 0 6px; font-size: 16px; line-height: 1.65; color: var(--ink-dim); }
+.anfrage-danke .anfrage-zusammenfassung { flex-direction: column; gap: 6px; }
+.anfrage-danke .anfrage-zusammenfassung li { display: flex; justify-content: space-between; gap: 14px; border-radius: 12px; }
+.anfrage-danke .anfrage-zusammenfassung li span { display: inline; }
+@media (max-width: 720px) {
+  .anfrage { padding: 22px 18px 20px; border-radius: 18px; }
+  .anfrage-optionen, .anfrage-felder { grid-template-columns: 1fr; }
+  .anfrage-nav { flex-wrap: wrap; }
+  .anfrage-nav .btn-primary { width: 100%; justify-content: center; }
+}

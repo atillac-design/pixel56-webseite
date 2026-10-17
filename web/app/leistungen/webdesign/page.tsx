@@ -26,6 +26,8 @@ import { getFallstudie } from "@/lib/projekte";
 import { verifiedProjectVoices, verifiedReviews } from "@/lib/verified-reviews";
 import { projectPath, resourceRoutes, routes, serviceRoutes } from "@/lib/routes";
 import gmDachdeckerImage from "@/public/bilder/projekt-gm-dachdecker.webp";
+import LeistungsAnfrage from "@/components/LeistungsAnfrage";
+import { frageboegen } from "@/lib/fragebogen";
 
 export const metadata: Metadata = {
   title: "Webdesign Koblenz: Websites, die Anfragen bringen",
@@ -796,6 +798,21 @@ export default function WebdesignPage() {
             </div>
           </div>
           <FaqList items={faqs} />
+        </section>
+
+        <section className="band theme-light" id="anfrage">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">15 — In fünf Klicks zur Einschätzung</span>
+              <h2 className="band-title">
+                Sag uns kurz, <em>wo deine Website steht.</em>
+              </h2>
+            </div>
+            <p className="band-note">{frageboegen["webdesign"].einleitung}</p>
+          </div>
+          <div className="reveal">
+            <LeistungsAnfrage bogen={frageboegen["webdesign"]} />
+          </div>
         </section>
 
           </div>

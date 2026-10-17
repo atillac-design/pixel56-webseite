@@ -85,8 +85,16 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 1. **Vom Inhaber erwartet:** weitere Rückmeldung zur Startseite und den
    Leistungsseiten. **Adloc und Teykto sind beide noch in der Testphase** (nicht
    buchbar), Einträge auf der KI-Seite sagen das; bei Start Kicker/Hinweis
-   ändern. Nächstes Thema laut Inhaber: Kontaktformular je Leistung als
-   Klick-Fragebogen (Vorschlag im Chat vom 17.10., wartet auf „go“). Teykto-
+   ändern. **Klick-Fragebogen je Leistung (17.10., „go“ vom Inhaber):** gebaut für
+   Webdesign und Meta Ads (`lib/fragebogen.ts`, `components/LeistungsAnfrage.tsx`,
+   `app/api/anfrage/route.ts`, Abschnitt `#anfrage` vor dem Abschluss).
+   Fünf Fragen mit Knöpfen, dann Kontakt (Name, E-Mail, Telefon, Firma,
+   Einwilligung), Danke mit Calendly. Budget als Spanne mit Hinweis bei
+   kleinem Rahmen (Spannen sind Vorschläge, Inhaber prüft). Mail per Resend
+   (Pflicht), Kontakt mit Feldern in MailerLite (optional,
+   `MAILERLITE_GROUP_KONTAKTANFRAGE`). Ohne `RESEND_API_KEY` zeigt das
+   Formular „derzeit nicht verfügbar“ – in Netlify sind die Schlüssel noch
+   nicht gesetzt. Nach Freigabe: die sechs anderen Leistungen nachziehen. Teykto-
    und Adloc-Bilder sind da (16.10.): Adloc = Laptop-Mockup
    `ki-projekt-adloc.webp`, Adloc-Texte nach den Screenshots der Produktseite (Credits statt Abo,
    RLP komplett, 15 Branchen; Zahlen als „laut adloc.io“ gekennzeichnet).
