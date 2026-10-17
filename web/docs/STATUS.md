@@ -15,6 +15,27 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 17.10.2026: **Fragebogen hochwertig neu gebaut.** Inhaber: erste Fassung
+  „nicht UX- und UI-freundlich“, muss hochwertig und verkaufspsychologisch
+  sein; Budget-Frage: Abgrenzung gut, aber kleine Aufträge kommen vor.
+  Umgesetzt: zweispaltige Karte (`.anfrage-rail` dunkel mit Versprechen
+  „In zwei Minuten weißt du, wo dein größter Hebel liegt“, drei Vorteilen,
+  Atilla-Porträt „liest jede Anfrage selbst“, Google-G mit Sternen und
+  Stand aus `googleBewertungLautProfil/googleAnzahlLautProfil`), rechts
+  Bühne mit Fortschrittsbalken und Restzeit, persönliche Reaktion je
+  Antwort (`reaktion` in `lib/fragebogen.ts`) als Sprechblase über der
+  Folgefrage, Antwortknöpfe mit Tastenkappe und Haken, Tastaturbedienung
+  (Ziffern, Enter), Einblend-Animation je Schritt, Kontaktschritt mit Chips
+  der Antworten und Platzhaltern, Danke mit gezeichnetem Haken und
+  Protokoll, reduced-motion beachtet. Budget-Entscheidung: nicht ablehnen,
+  sondern intern priorisieren. Unterste Option „Erstmal klein anfangen,
+  unter 2.000 €“ bzw. „Erstmal testen, unter 500 € im Monat“ mit weichem
+  Hinweis; `intern: "kleines Budget"` landet im Mail-Betreff und als
+  Hinweiszeile, nie beim Besucher. Playwright auf beiden Seiten, Desktop
+  und Handy: Klick- und Tastaturpfad, Kontakt, 503 ohne Mail-Schlüssel,
+  keine Browserfehler. Inhaber-Hinweis zu Render-Credits geklärt: Pixel56
+  läuft auf Netlify, Teykto auf Render; Pushes kosten Netlify-Build-Minuten,
+  nicht Render-Credits; ab jetzt seltener pushen.
 - 17.10.2026: **Klick-Fragebogen je Leistung, Start mit Webdesign und Meta
   Ads.** Inhaber wünscht ein Kontaktformular je Dienstleistung, das sich
   durchklicken lässt und den Stand des Kunden abfragt (Branche, Budget).

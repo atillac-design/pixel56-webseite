@@ -9,6 +9,10 @@ export type AnfrageOption = {
   text: string;
   /** Kurzer Hinweis, der nach dem Anklicken erscheint (z. B. bei kleinem Budget). */
   hinweis?: string;
+  /** Kurze persönliche Reaktion, die über der nächsten Frage erscheint. */
+  reaktion?: string;
+  /** Interne Markierung für die Mail an Pixel56, dem Besucher nicht sichtbar. */
+  intern?: string;
 };
 
 export type AnfrageFrage = {
@@ -54,20 +58,20 @@ export const frageboegen = {
         id: "stand",
         frage: "Wie steht deine Website heute da?",
         optionen: [
-          { text: "Es gibt noch keine" },
-          { text: "Veraltet, seit Jahren nicht angefasst" },
-          { text: "Okay, bringt aber keine Anfragen" },
-          { text: "Gut, ich brauche nur Einzelnes" },
+          { text: "Es gibt noch keine", reaktion: "Dann bauen wir von Anfang an auf Anfragen, nicht auf Deko." },
+          { text: "Veraltet, seit Jahren nicht angefasst", reaktion: "Kenne ich. Meist sind die Inhalte besser als ihre Verpackung." },
+          { text: "Okay, bringt aber keine Anfragen", reaktion: "Dann liegt es fast immer an Struktur und Führung, nicht am Design." },
+          { text: "Gut, ich brauche nur Einzelnes", reaktion: "Gut, dann schauen wir gezielt hin statt auf alles." },
         ],
       },
       {
         id: "ziel",
         frage: "Was soll die Seite vor allem bringen?",
         optionen: [
-          { text: "Anfragen und Anrufe" },
-          { text: "Buchungen oder Bestellungen" },
-          { text: "Bewerbungen" },
-          { text: "Vertrauen bei Kunden, die mich prüfen" },
+          { text: "Anfragen und Anrufe", reaktion: "Dann wird jede Seite auf die Anfrage hin gebaut." },
+          { text: "Buchungen oder Bestellungen", reaktion: "Dann muss der Weg zur Buchung in zwei Klicks gehen." },
+          { text: "Bewerbungen", reaktion: "Dann zeigen wir dein Team, nicht nur deine Leistung." },
+          { text: "Vertrauen bei Kunden, die mich prüfen", reaktion: "Dann zählen echte Projekte und echte Stimmen." },
         ],
       },
       BRANCHE,
@@ -75,10 +79,10 @@ export const frageboegen = {
         id: "zeit",
         frage: "Wann soll es losgehen?",
         optionen: [
-          { text: "So schnell wie möglich" },
-          { text: "In den nächsten ein bis drei Monaten" },
-          { text: "Später im Jahr" },
-          { text: "Ich informiere mich erst" },
+          { text: "So schnell wie möglich", reaktion: "Dann planen wir in Etappen, damit früh etwas online ist." },
+          { text: "In den nächsten ein bis drei Monaten", reaktion: "Guter Zeitrahmen für ein sauberes Projekt." },
+          { text: "Später im Jahr", reaktion: "Dann lohnt es sich, jetzt schon Inhalte zu sammeln." },
+          { text: "Ich informiere mich erst", reaktion: "Völlig okay. Die Einschätzung ist unverbindlich." },
         ],
       },
       {
@@ -86,7 +90,7 @@ export const frageboegen = {
         frage: "Welcher Rahmen ist für dich realistisch?",
         erklaerung: "Eine ehrliche Spanne hilft uns, dir das Richtige vorzuschlagen. Kein Angebot, keine Festlegung.",
         optionen: [
-          { text: "Unter 2.000 €", hinweis: "In dem Rahmen passen wir meist nicht. Im Erstgespräch sagen wir dir ehrlich, was damit geht." },
+          { text: "Erstmal klein anfangen, unter 2.000 €", hinweis: "Geht, wenn der Umfang klar begrenzt ist. Im Gespräch klären wir, was in dem Rahmen das Wichtigste ist.", intern: "kleines Budget" },
           { text: "2.000 bis 5.000 €" },
           { text: "5.000 bis 10.000 €" },
           { text: "Über 10.000 €" },
@@ -106,30 +110,30 @@ export const frageboegen = {
         id: "ziel",
         frage: "Was sollen die Anzeigen bringen?",
         optionen: [
-          { text: "Neue Kunden" },
-          { text: "Bewerber" },
-          { text: "Beides" },
-          { text: "Bekanntheit in der Region" },
+          { text: "Neue Kunden", reaktion: "Dann zählt am Ende nur eins: Anfragen, die ankommen." },
+          { text: "Bewerber", reaktion: "Dann zeigen die Anzeigen dein Team, nicht ein Stockfoto." },
+          { text: "Beides", reaktion: "Geht, aber nacheinander. Wir starten mit dem, was mehr drückt." },
+          { text: "Bekanntheit in der Region", reaktion: "Dann arbeiten wir mit Reichweite und Wiedererkennung." },
         ],
       },
       {
         id: "stand",
         frage: "Läuft aktuell schon Werbung?",
         optionen: [
-          { text: "Ja, bei Facebook oder Instagram" },
-          { text: "Ja, bei Google" },
-          { text: "Nein, noch nie" },
-          { text: "Früher mal, ohne Erfolg" },
+          { text: "Ja, bei Facebook oder Instagram", reaktion: "Gut, dann schauen wir uns zuerst die Zahlen an." },
+          { text: "Ja, bei Google", reaktion: "Dann ergänzen sich beide Kanäle gut." },
+          { text: "Nein, noch nie", reaktion: "Dann bauen wir es von Anfang an sauber auf, mit Tracking." },
+          { text: "Früher mal, ohne Erfolg", reaktion: "Meist lag es an der Zielseite, nicht an der Anzeige." },
         ],
       },
       {
         id: "zielseite",
         frage: "Wohin sollen die Klicks führen?",
         optionen: [
-          { text: "Auf eine eigene Zielseite, die es schon gibt" },
-          { text: "Nur auf die Startseite" },
-          { text: "Da muss erst etwas entstehen" },
-          { text: "Direkt zu WhatsApp oder Telefon" },
+          { text: "Auf eine eigene Zielseite, die es schon gibt", reaktion: "Sehr gut, das ist die halbe Miete." },
+          { text: "Nur auf die Startseite", reaktion: "Verstanden. Eine eigene Zielseite ist meist der erste Hebel." },
+          { text: "Da muss erst etwas entstehen", reaktion: "Kein Problem, das gehört zur Kampagne dazu." },
+          { text: "Direkt zu WhatsApp oder Telefon", reaktion: "Funktioniert gut, wenn schnell jemand antwortet." },
         ],
       },
       BRANCHE,
@@ -138,7 +142,7 @@ export const frageboegen = {
         frage: "Welches monatliche Werbebudget ist realistisch?",
         erklaerung: "Das Budget geht direkt an Meta. Die Betreuung durch uns kommt separat dazu und wird im Angebot ausgewiesen.",
         optionen: [
-          { text: "Unter 500 € im Monat", hinweis: "Darunter liefert Meta kaum verwertbare Zahlen. Im Gespräch zeigen wir dir, ab wann es sich lohnt." },
+          { text: "Erstmal testen, unter 500 € im Monat", hinweis: "Zum Testen okay, für belastbare Zahlen braucht Meta meist mehr. Im Gespräch zeigen wir dir, ab wann es sich rechnet.", intern: "kleines Budget" },
           { text: "500 bis 1.500 € im Monat" },
           { text: "1.500 bis 3.000 € im Monat" },
           { text: "Über 3.000 € im Monat" },

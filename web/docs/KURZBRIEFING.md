@@ -88,9 +88,17 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
    ändern. **Klick-Fragebogen je Leistung (17.10., „go“ vom Inhaber):** gebaut für
    Webdesign und Meta Ads (`lib/fragebogen.ts`, `components/LeistungsAnfrage.tsx`,
    `app/api/anfrage/route.ts`, Abschnitt `#anfrage` vor dem Abschluss).
-   Fünf Fragen mit Knöpfen, dann Kontakt (Name, E-Mail, Telefon, Firma,
-   Einwilligung), Danke mit Calendly. Budget als Spanne mit Hinweis bei
-   kleinem Rahmen (Spannen sind Vorschläge, Inhaber prüft). Mail per Resend
+   Hochwertige Fassung (17.10., Inhaber fand die erste zu schlicht):
+   zweispaltige Karte, links dunkle Leiste mit Versprechen, drei
+   Vorteilen, Atilla-Porträt und Google-Stand, rechts Fortschrittsbalken
+   mit Restzeit, Atilla-Reaktion als Sprechblase über der nächsten Frage,
+   Antwortknöpfe mit Zahlentasten (1–5, Enter, Tastatur funktioniert),
+   Haken bei Auswahl, Kontaktschritt mit Antwort-Chips, Danke mit
+   animiertem Haken. Budget: unterste Spanne heißt „Erstmal klein
+   anfangen“, Hinweis weich („Geht, wenn der Umfang klar begrenzt ist“),
+   intern wird die Mail mit „kleines Budget“ markiert (Betreff + Zeile),
+   dem Besucher nicht sichtbar. Spannen sind Vorschläge, Inhaber prüft.
+   **Pushes sparsam** (Inhaber: Build-Kontingent), Screenshots in den Chat. Mail per Resend
    (Pflicht), Kontakt mit Feldern in MailerLite (optional,
    `MAILERLITE_GROUP_KONTAKTANFRAGE`). Ohne `RESEND_API_KEY` zeigt das
    Formular „derzeit nicht verfügbar“ – in Netlify sind die Schlüssel noch

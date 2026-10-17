@@ -29,6 +29,7 @@ import { projectPath, routes, serviceRoutes } from "@/lib/routes";
 import vanDenBergImage from "@/public/bilder/projekt-van-den-berg.webp";
 import LeistungsAnfrage from "@/components/LeistungsAnfrage";
 import { frageboegen } from "@/lib/fragebogen";
+import { googleAnzahlLautProfil, googleBewertungLautProfil } from "@/lib/google-bewertungen";
 
 export const metadata: Metadata = {
   title: "Meta Ads Agentur: Werbung, die Anfragen bringt",
@@ -754,7 +755,7 @@ export default function MetaAdsPage() {
             <p className="band-note">{frageboegen["meta-ads"].einleitung}</p>
           </div>
           <div className="reveal">
-            <LeistungsAnfrage bogen={frageboegen["meta-ads"]} />
+            <LeistungsAnfrage bogen={frageboegen["meta-ads"]} google={{ bewertung: googleBewertungLautProfil, anzahl: googleAnzahlLautProfil }} />
           </div>
         </section>
 

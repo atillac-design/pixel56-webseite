@@ -50,6 +50,11 @@ export async function POST(request: Request) {
   }
 
   const zeilen = antworten.map((a) => `${a.frage}\n→ ${a.antwort || "keine Angabe"}`).join("\n\n");
+  // Interne Markierungen (z. B. kleines Budget) nur für Pixel56, nie für den Besucher.
+  const markierungen = antworten
+    .map((a) => bogen.fragen.find((f) => f.frage === a.frage)?.optionen.find((o) => o.text === a.antwort)?.intern)
+    .filter((m): m is string => Boolean(m));
+  const betreffZusatz = markierungen.length ? ` · ${[...new Set(markierungen)].join(", ")}` : "";
   const mail = [
     `Neue Anfrage über den Fragebogen „${bogen.leistung}“`,
     "",
@@ -60,13 +65,14 @@ export async function POST(request: Request) {
     "",
     "Antworten:",
     zeilen,
+    markierungen.length ? `\nHinweis: ${[...new Set(markierungen)].join(", ")}` : "",
   ].join("\n");
 
   try {
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ from, to: [to], reply_to: email, subject: `Pixel56 Anfrage ${bogen.leistung}: ${name}`, text: mail }),
+      body: JSON.stringify({ from, to: [to], reply_to: email, subject: `Pixel56 Anfrage ${bogen.leistung}: ${name}${betreffZusatz}`, text: mail }),
       signal: AbortSignal.timeout(10000),
     });
     if (!response.ok) throw new Error(`Resend ${response.status}`);

@@ -28,6 +28,7 @@ import { projectPath, resourceRoutes, routes, serviceRoutes } from "@/lib/routes
 import gmDachdeckerImage from "@/public/bilder/projekt-gm-dachdecker.webp";
 import LeistungsAnfrage from "@/components/LeistungsAnfrage";
 import { frageboegen } from "@/lib/fragebogen";
+import { googleAnzahlLautProfil, googleBewertungLautProfil } from "@/lib/google-bewertungen";
 
 export const metadata: Metadata = {
   title: "Webdesign Koblenz: Websites, die Anfragen bringen",
@@ -811,7 +812,7 @@ export default function WebdesignPage() {
             <p className="band-note">{frageboegen["webdesign"].einleitung}</p>
           </div>
           <div className="reveal">
-            <LeistungsAnfrage bogen={frageboegen["webdesign"]} />
+            <LeistungsAnfrage bogen={frageboegen["webdesign"]} google={{ bewertung: googleBewertungLautProfil, anzahl: googleAnzahlLautProfil }} />
           </div>
         </section>
 
