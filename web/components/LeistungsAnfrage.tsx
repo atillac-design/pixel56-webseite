@@ -94,7 +94,7 @@ export default function LeistungsAnfrage({ bogen, google }: { bogen: Fragebogen;
     <div className={`anfrage${fertig ? " ist-fertig" : ""}`}>
       <aside className="anfrage-rail">
         <span className="anfrage-rail-tag">Kostenlose Einschätzung</span>
-        <h3>In zwei Minuten weißt du, wo dein größter Hebel liegt.</h3>
+        <h3>{bogen.versprechen}</h3>
         <ul>
           <li>Fünf kurze Fragen, nichts zum Tippen</li>
           <li>Antwort persönlich von Atilla, innerhalb eines Werktags</li>
@@ -104,7 +104,7 @@ export default function LeistungsAnfrage({ bogen, google }: { bogen: Fragebogen;
           <Image src={atillaBild} alt="Atilla Ciftcioglu" width={52} height={52} />
           <div>
             <b>Atilla Ciftcioglu</b>
-            <span>Gründer, liest jede Anfrage selbst</span>
+            <span>Gründer · antwortet dir persönlich</span>
           </div>
         </div>
         {google && (

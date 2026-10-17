@@ -20,6 +20,9 @@ import { SearchMock } from "@/components/mocks";
 import { site } from "@/lib/site";
 import { verifiedReviews } from "@/lib/verified-reviews";
 import { serviceRoutes } from "@/lib/routes";
+import LeistungsAnfrage from "@/components/LeistungsAnfrage";
+import { frageboegen } from "@/lib/fragebogen";
+import { googleAnzahlLautProfil, googleBewertungLautProfil } from "@/lib/google-bewertungen";
 
 export const metadata: Metadata = {
   title: "Google Ads Agentur: Sichtbar, wenn gesucht wird",
@@ -572,6 +575,21 @@ export default function GoogleAdsPage() {
             </div>
           </div>
           <FaqList items={faqs} />
+        </section>
+
+        <section className="band theme-light" id="anfrage">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">14 — In fünf Klicks zur Einschätzung</span>
+              <h2 className="band-title">
+                Sag uns kurz, <em>was passieren soll, wenn jemand sucht.</em>
+              </h2>
+            </div>
+            <p className="band-note">{frageboegen["google-ads"].einleitung}</p>
+          </div>
+          <div className="reveal">
+            <LeistungsAnfrage bogen={frageboegen["google-ads"]} google={{ bewertung: googleBewertungLautProfil, anzahl: googleAnzahlLautProfil }} />
+          </div>
         </section>
 
           </div>

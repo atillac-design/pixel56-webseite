@@ -22,6 +22,9 @@ import { getFallstudie } from "@/lib/projekte";
 import { verifiedProjectVoices, verifiedReviews } from "@/lib/verified-reviews";
 import { projectPath, serviceRoutes } from "@/lib/routes";
 import gmDachdeckerImage from "@/public/bilder/projekt-gm-dachdecker.webp";
+import LeistungsAnfrage from "@/components/LeistungsAnfrage";
+import { frageboegen } from "@/lib/fragebogen";
+import { googleAnzahlLautProfil, googleBewertungLautProfil } from "@/lib/google-bewertungen";
 
 export const metadata: Metadata = {
   title: "Mitarbeitergewinnung: Bewerbungen ohne Umweg",
@@ -567,6 +570,21 @@ export default function RecruitingPage() {
             </div>
           </div>
           <FaqList items={faqs} />
+        </section>
+
+        <section className="band theme-light" id="anfrage">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">14 — In fünf Klicks zur Einschätzung</span>
+              <h2 className="band-title">
+                Sag uns kurz, <em>wen du suchst.</em>
+              </h2>
+            </div>
+            <p className="band-note">{frageboegen["mitarbeitergewinnung"].einleitung}</p>
+          </div>
+          <div className="reveal">
+            <LeistungsAnfrage bogen={frageboegen["mitarbeitergewinnung"]} google={{ bewertung: googleBewertungLautProfil, anzahl: googleAnzahlLautProfil }} />
+          </div>
         </section>
 
           </div>

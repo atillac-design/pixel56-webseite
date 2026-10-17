@@ -24,6 +24,9 @@ import { getFallstudie } from "@/lib/projekte";
 import { verifiedReviews } from "@/lib/verified-reviews";
 import { projectPath, resourceRoutes, routes, serviceRoutes } from "@/lib/routes";
 import starkDetailImage from "@/public/bilder/projekt-stark-ins-neue-3.webp";
+import LeistungsAnfrage from "@/components/LeistungsAnfrage";
+import { frageboegen } from "@/lib/fragebogen";
+import { googleAnzahlLautProfil, googleBewertungLautProfil } from "@/lib/google-bewertungen";
 
 export const metadata: Metadata = {
   title: "Landingpages & Funnels: Eine Seite, ein Ziel",
@@ -574,6 +577,21 @@ export default function FunnelsPage() {
             </div>
           </div>
           <FaqList items={faqs} />
+        </section>
+
+        <section className="band theme-light" id="anfrage">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">14 — In fünf Klicks zur Einschätzung</span>
+              <h2 className="band-title">
+                Sag uns kurz, <em>wofür die Seite arbeiten soll.</em>
+              </h2>
+            </div>
+            <p className="band-note">{frageboegen["landingpages-funnels"].einleitung}</p>
+          </div>
+          <div className="reveal">
+            <LeistungsAnfrage bogen={frageboegen["landingpages-funnels"]} google={{ bewertung: googleBewertungLautProfil, anzahl: googleAnzahlLautProfil }} />
+          </div>
         </section>
 
           </div>

@@ -15,6 +15,21 @@ verändert, auch kein Publish. Lesende API-Zugriffe sind davon nicht betroffen.
 
 ## Was zuletzt passiert ist
 
+- 17.10.2026: **Fragebogen auf alle acht Leistungen ausgerollt.** Inhaber
+  nimmt das Design ab, Spannen passen; „Gründer, liest jede Anfrage selbst“
+  klingt ihm nach Untätigkeit → jetzt „Gründer · antwortet dir persönlich“.
+  Je Leistung eigenes Versprechen in der Leiste und fünf Fragen nach dem
+  Hebel der Unternehmer: Content (Stand Social Media, Wirkung, Branche,
+  Material, Rahmen/Monat), KI (Zeitfresser, wer macht es heute, Branche,
+  Werkzeuge, Startrahmen), Landingpages (Zweck, wohin Klicks heute,
+  Branche, Zeitpunkt, Rahmen), Mitarbeitergewinnung (wen, wie heute,
+  Stellenzahl, Branche, Anzeigenbudget), Google Ads (Ziel bei Suche,
+  Stand, Reichweite, Branche, Klickbudget), SEO (Stand bei Google, Ziel,
+  Website-Stand, Branche, Rahmen). Jede unterste Spanne mit weichem Hinweis
+  und interner Markierung „kleines Budget“. Abschnitte: Content 15, KI 16,
+  Landingpages/Mitarbeiter/Google Ads/SEO 14. Playwright auf allen sechs
+  neuen Seiten, Desktop und Handy: Klick- und Tastaturpfad, Kontakt, 503
+  ohne Mail-Schlüssel, keine Browserfehler.
 - 17.10.2026: **Fragebogen hochwertig neu gebaut.** Inhaber: erste Fassung
   „nicht UX- und UI-freundlich“, muss hochwertig und verkaufspsychologisch
   sein; Budget-Frage: Abgrenzung gut, aber kleine Aufträge kommen vor.

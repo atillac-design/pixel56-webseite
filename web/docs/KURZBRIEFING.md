@@ -85,8 +85,9 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 1. **Vom Inhaber erwartet:** weitere Rückmeldung zur Startseite und den
    Leistungsseiten. **Adloc und Teykto sind beide noch in der Testphase** (nicht
    buchbar), Einträge auf der KI-Seite sagen das; bei Start Kicker/Hinweis
-   ändern. **Klick-Fragebogen je Leistung (17.10., „go“ vom Inhaber):** gebaut für
-   Webdesign und Meta Ads (`lib/fragebogen.ts`, `components/LeistungsAnfrage.tsx`,
+   ändern. **Klick-Fragebogen je Leistung (17.10., „go“ vom Inhaber):** auf allen
+   acht Leistungsseiten (Webdesign, Meta Ads, Content, KI, Landingpages,
+   Mitarbeitergewinnung, Google Ads, SEO) (`lib/fragebogen.ts`, `components/LeistungsAnfrage.tsx`,
    `app/api/anfrage/route.ts`, Abschnitt `#anfrage` vor dem Abschluss).
    Hochwertige Fassung (17.10., Inhaber fand die erste zu schlicht):
    zweispaltige Karte, links dunkle Leiste mit Versprechen, drei
@@ -98,6 +99,11 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
    anfangen“, Hinweis weich („Geht, wenn der Umfang klar begrenzt ist“),
    intern wird die Mail mit „kleines Budget“ markiert (Betreff + Zeile),
    dem Besucher nicht sichtbar. Spannen sind Vorschläge, Inhaber prüft.
+   Personenzeile „Gründer · antwortet dir persönlich“ (Inhaber fand „liest
+   jede Anfrage selbst“ zu untätig). Je Leistung eigenes Versprechen in der
+   Leiste (`versprechen`) und eigene fünf Fragen nach dem Muster Schmerz →
+   Ziel → Branche → Stand/Zeit → Rahmen, mit Reaktionen. Design vom Inhaber
+   abgenommen, Spannen „passen“.
    **Pushes sparsam** (Inhaber: Build-Kontingent), Screenshots in den Chat. Mail per Resend
    (Pflicht), Kontakt mit Feldern in MailerLite (optional,
    `MAILERLITE_GROUP_KONTAKTANFRAGE`). Ohne `RESEND_API_KEY` zeigt das

@@ -27,6 +27,9 @@ import { getFallstudie } from "@/lib/projekte";
 import { verifiedProjectVoices, verifiedReviews } from "@/lib/verified-reviews";
 import { projectPath, routes, serviceRoutes } from "@/lib/routes";
 import maTransporteImage from "@/public/bilder/projekt-ma-transporte.webp";
+import LeistungsAnfrage from "@/components/LeistungsAnfrage";
+import { frageboegen } from "@/lib/fragebogen";
+import { googleAnzahlLautProfil, googleBewertungLautProfil } from "@/lib/google-bewertungen";
 
 export const metadata: Metadata = {
   title: "Reels & Social Content: Schnitt oder Dreh vor Ort",
@@ -675,6 +678,21 @@ export default function ContentPage() {
             </div>
           </div>
           <FaqList items={faqs} />
+        </section>
+
+        <section className="band theme-light" id="anfrage">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">15 — In fünf Klicks zur Einschätzung</span>
+              <h2 className="band-title">
+                Sag uns kurz, <em>wie es bei dir mit Content läuft.</em>
+              </h2>
+            </div>
+            <p className="band-note">{frageboegen["content-produktion"].einleitung}</p>
+          </div>
+          <div className="reveal">
+            <LeistungsAnfrage bogen={frageboegen["content-produktion"]} google={{ bewertung: googleBewertungLautProfil, anzahl: googleAnzahlLautProfil }} />
+          </div>
         </section>
 
           </div>

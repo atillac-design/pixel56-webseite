@@ -22,6 +22,9 @@ import {
 import { site } from "@/lib/site";
 import { resourceRoutes, serviceRoutes } from "@/lib/routes";
 import kiFreebieImage from "@/public/bilder/freebie-ki-ebook.webp";
+import LeistungsAnfrage from "@/components/LeistungsAnfrage";
+import { frageboegen } from "@/lib/fragebogen";
+import { googleAnzahlLautProfil, googleBewertungLautProfil } from "@/lib/google-bewertungen";
 
 export const metadata: Metadata = {
   title: "KI-Automatisierung: Prozesse, die Zeit sparen",
@@ -655,6 +658,21 @@ export default function KiAutomatisierungPage() {
             </div>
           </div>
           <FaqList items={faqs} />
+        </section>
+
+        <section className="band theme-light" id="anfrage">
+          <div className="band-head reveal">
+            <div>
+              <span className="band-tag">16 — In fünf Klicks zur Einschätzung</span>
+              <h2 className="band-title">
+                Sag uns kurz, <em>wo bei dir Zeit verloren geht.</em>
+              </h2>
+            </div>
+            <p className="band-note">{frageboegen["ki-automatisierung"].einleitung}</p>
+          </div>
+          <div className="reveal">
+            <LeistungsAnfrage bogen={frageboegen["ki-automatisierung"]} google={{ bewertung: googleBewertungLautProfil, anzahl: googleAnzahlLautProfil }} />
+          </div>
         </section>
 
           </div>
