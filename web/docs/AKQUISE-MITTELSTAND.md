@@ -197,3 +197,16 @@ Erst nach den ersten zwanzig Gesprächen eine eigene Seite
 „Marketing-Abteilung ohne Festanstellung“ bauen, mit den Sätzen, die in
 den Gesprächen gezogen haben, und dem Köln-Zitat. Bis dahin bleibt die
 Seite, wie sie ist.
+
+## 9. Beilage zum Brief (19.10.)
+
+Entscheidung des Inhabers: Brief auf sechs Sätze gekürzt (siehe Chat vom
+19.10.), dazu ein gestaltetes Blatt als Beilage. Das Blatt handelt vom
+Betrieb, nicht von Pixel56: Vergleich Festanstellung/extern, drei Schritte,
+Beweis (Atilla, Google 5,0 · 27, seit 2018, Köln), Kontakt.
+
+Quelle: `docs/akquise-blatt/blatt.html`. Rendern: Schrift
+`assets/fonts/figtree-latin.woff2`, Bilder `team-atilla-quadrat.webp` und
+`logo-pixel56-dunkel.webp` in denselben Ordner kopieren, dann
+`node render.mjs` (Playwright, A4, eine Seite). Köln-Zitat erst einbauen,
+wenn der Kunde es freigegeben hat.
