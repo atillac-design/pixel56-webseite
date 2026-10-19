@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 17.10.2026
+# Kurzbriefing — Stand 19.10.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -90,6 +90,14 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Bestätigungs-Mail.
 - **Van den Berg Gruppe:** Firma existiert nicht mehr, Zusammenarbeit
   „bis 2024“, drei Meta-Anzeigen in der Galerie, Texte in Vergangenheit.
+
+- **Strategie-Entscheidung (19.10.):** Website bleibt breit. Nach außen ein
+  Speer für den Mittelstand (20 bis 200 Mitarbeiter): „Marketing- und
+  Digitalabteilung ohne Festanstellung, abrufbar, pausierbar“, Auslöser
+  sind Stellenanzeigen für Marketingstellen. Einstiegsangebot, Brief,
+  Anrufleitfaden und Wochenplan stehen in `docs/AKQUISE-MITTELSTAND.md`.
+  Website wird erst nach den ersten Gesprächen angepasst (eigene Seite mit
+  Köln-Zitat). Keine Preise auf der Seite, auch nicht dafür.
 
 ## Offene Punkte (Reihenfolge = Priorität)
 
