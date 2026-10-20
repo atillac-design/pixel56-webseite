@@ -97,7 +97,13 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   sind Stellenanzeigen für Marketingstellen. Einstiegsangebot, Brief,
   Anrufleitfaden und Wochenplan stehen in `docs/AKQUISE-MITTELSTAND.md`.
   Website wird erst nach den ersten Gesprächen angepasst (eigene Seite mit
-  Köln-Zitat). Keine Preise auf der Seite, auch nicht dafür.
+  Köln-Zitat). Keine Preise auf der Seite, auch nicht dafür. Brief auf
+  sechs Sätze gekürzt, Beilage als A4-Blatt (`docs/akquise-blatt/`, vom
+  Inhaber abgenommen nach zwei Runden: weißes Logo, keine Schatten).
+  Erste Zehnerliste mit Betrieben und offener Marketingstelle in
+  `docs/AKQUISE-LISTE-1.md`, Nachverfolgung in `docs/akquise-nachverfolgung.csv`
+  (20.10.). Jobportale sind aus der Sandbox gesperrt, nur Websuche geht:
+  Anzeigen muss der Inhaber vor dem Brief selbst prüfen.
 
 ## Offene Punkte (Reihenfolge = Priorität)
 
