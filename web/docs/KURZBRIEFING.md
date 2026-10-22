@@ -103,7 +103,9 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Erste Zehnerliste mit Betrieben und offener Marketingstelle in
   `docs/AKQUISE-LISTE-1.md`, Nachverfolgung in `docs/akquise-nachverfolgung.csv`
   (20.10.). Jobportale sind aus der Sandbox gesperrt, nur Websuche geht:
-  Anzeigen muss der Inhaber vor dem Brief selbst prüfen.
+  Anzeigen muss der Inhaber vor dem Brief selbst prüfen. **Regel (22.10.):**
+  nichts aus Bendorf und Umgebung anschreiben (schon passiert), Baldus und
+  WEPA gestrichen. Gepflegte Liste = Google-Tabelle im Drive des Inhabers.
 
 ## Offene Punkte (Reihenfolge = Priorität)
 

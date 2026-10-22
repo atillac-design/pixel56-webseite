@@ -1,4 +1,4 @@
-# Akquise-Liste 1: Betriebe mit offener Marketingstelle (Stand 20.10.2026)
+# Akquise-Liste 1: Betriebe mit offener Marketingstelle (Stand 22.10.2026)
 
 Erste Zehnerliste nach dem Wochenplan aus `AKQUISE-MITTELSTAND.md`.
 Quelle sind Stellenbörsen über die Websuche aus der Sandbox; die Anzeigen
@@ -8,10 +8,16 @@ noch online, stimmt der Jobtitel, wer ist aktuell Geschäftsführung
 (Impressum)? Reihenfolge = Passung zu „20 bis 200 Mitarbeiter, Entscheider
 erreichbar, Nähe zu Koblenz“.
 
+**Regel des Inhabers (22.10.):** keine Betriebe aus Bendorf und direkter
+Umgebung (Bendorf, Vallendar, Urbar, Weitersburg, Höhr-Grenzhausen,
+Hillscheid, Sayn), dort wurde bereits angeschrieben. Baldus Medizintechnik
+und WEPA Apothekenbedarf sind deshalb gestrichen. Die gepflegte Fassung der
+Liste ist die Google-Tabelle „Pixel56 Akquise Liste 1“ im Drive des Inhabers
+(Kopie: `Pixel56-Akquise-Liste-1.xlsx`).
+
 | # | Betrieb | Ort | Ausgeschriebene Stelle | Quelle / Datum | Geschäftsführung (prüfen) | Größe | Passung |
 |---|---|---|---|---|---|---|---|
 | 1 | Dr. Goerg GmbH (Bio-Kokos) | Montabaur | Online Marketing & Social Media Manager*in, unbefristet | Bundesagentur für Arbeit | Manfred Görg (Impressum drgoerg.com) | Familienbetrieb, Zahl unbekannt | sehr hoch |
-| 2 | Baldus Medizintechnik GmbH | Urbar bei Koblenz (Anzeige nennt Bendorf) | Marketing Manager (m/w/d) | Indeed | Fabian Baldus | rund 30 (Stand 2020) | sehr hoch |
 | 3 | Magnetfabrik Bonn GmbH | Bonn | Marketing Manager (m/w/d), Schwerpunkt Social Media | StepStone | Dr. Martin Grönefeld (3. Generation) | rund 120 | sehr hoch |
 | 4 | ZEWOTHERM Heating GmbH | Remagen | Social Media Manager, Werkstudent/Teilzeit 10–20 h | Indeed/Glassdoor | Andreas Ziegler (unbestätigt) | über 300, inhabergeführt | hoch: Teilzeit-Ausschreibung heißt „wir wollen keine Vollzeitstelle“, genau unser Modell |
 | 5 | IT Fabrik Systemhaus GmbH & Co. KG | Bitburg | Marketing-Experte (Website, Newsletter) | Indeed | Sven Lübken (CEO laut Messeprofil) | klein, Zahl unbekannt | hoch, aber 1,5 h entfernt |
@@ -19,9 +25,10 @@ erreichbar, Nähe zu Koblenz“.
 | 7 | Aaronia AG (Messtechnik) | Strickscheid bei Bitburg | Marketing-Spezialist Messeplanung | jobs-in-trier, 28.06.2026 | Vorstand prüfen | rund 70, wächst stark | mittel |
 | 8 | Korkindustrie Trier | Trier | Vertriebsinnendienst / Marketing | jobs-in-trier, 21.09.2026 | unbekannt | unbekannt | mittel |
 | 9 | HÖREX Hör-Akustik eG | Kreuztal | Marketing-Manager Kreation & Content | jobs-in-siegen | Vorstand H.-P. Weihmann, Claudia Hellbach (2023) | Genossenschaft | mittel |
-| 10 | WEPA Apothekenbedarf GmbH & Co KG | Hillscheid | Online Marketing Manager (m/w/d) | jobs-in-koblenz, 04.10.2026 | Marketingleitung Dr. Ramona Rauh | rund 450 | niedrig: zu groß, Entscheidung liegt bei der Marketingleitung, Anzeige aber ganz frisch |
 
-**Nachrücker (prüfen):** Feinkost Dittmann, Diez (Junior Marketing Manager;
+**Neu aufgenommen (prüfen):** VRT Region Trier GmbH (Marketing-Fachkraft, Bundesagentur, Oktober 2026) · Gemax Tools GmbH, Trier (Head of Digital Marketing, Juni 2026).
+
+**Weitere Nachrücker (prüfen):** Feinkost Dittmann, Diez (Junior Marketing Manager;
 Gruppe rund 650, GF Timm und Thorsten Reichold, eher zu groß) · „Stephan
 Wenzel“, Buch, 12.08.2026 (Mitarbeiter Social Media & Marketing; Firma
 unklar) · „Leitung Marketing (m/w/d)“ in Altenkirchen ohne Firmennennung.
@@ -39,7 +46,6 @@ in den Umschlag geht.
 | # | Anrede | Betreff |
 |---|---|---|
 | 1 | Sehr geehrter Herr Görg | Ihre Stellenanzeige „Online Marketing & Social Media Manager“ |
-| 2 | Sehr geehrter Herr Baldus | Ihre Stellenanzeige „Marketing Manager“ |
 | 3 | Sehr geehrter Herr Dr. Grönefeld | Ihre Stellenanzeige „Marketing Manager, Schwerpunkt Social Media“ |
 | 4 | Sehr geehrter Herr Ziegler (prüfen) | Ihre Stellenanzeige „Social Media Manager“ |
 | 5 | Sehr geehrter Herr Lübken | Ihre Stellenanzeige „Marketing-Experte“ |
@@ -47,7 +53,6 @@ in den Umschlag geht.
 | 7 | Sehr geehrter Herr Vorstand (Name aus Impressum) | Ihre Stellenanzeige „Marketing-Spezialist Messeplanung“ |
 | 8 | Sehr geehrte Geschäftsführung (Name aus Impressum) | Ihre Stellenanzeige „Vertriebsinnendienst / Marketing“ |
 | 9 | Sehr geehrter Herr Weihmann | Ihre Stellenanzeige „Marketing-Manager Kreation & Content“ |
-| 10 | Sehr geehrte Frau Dr. Rauh | Ihre Stellenanzeige „Online Marketing Manager“ |
 
 Bei Nr. 4 (Teilzeit-Ausschreibung) den zweiten Satz des Briefs anpassen:
 „Sie suchen bewusst keine Vollzeitstelle. Genau dafür ist mein Modell
