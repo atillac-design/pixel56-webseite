@@ -102,7 +102,10 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Inhaber abgenommen nach zwei Runden: weißes Logo, keine Schatten).
   Erste Zehnerliste mit Betrieben und offener Marketingstelle in
   `docs/AKQUISE-LISTE-1.md`, Nachverfolgung in `docs/akquise-nachverfolgung.csv`
-  (20.10.). Jobportale sind aus der Sandbox gesperrt, nur Websuche geht:
+  (20.10.). Angebotsvorlage „Marketing-Start in 90 Tagen“ (zwei Seiten,
+  gelbe Felder je Kunde) und Ablauf nach dem Gespräch mit Mail und
+  Nachfass-Rhythmus in `docs/akquise-angebot/` (23.10.). Jobportale sind
+  aus der Sandbox gesperrt, nur Websuche geht:
   Anzeigen muss der Inhaber vor dem Brief selbst prüfen. **Regel (22.10.):**
   nichts aus Bendorf und Umgebung anschreiben (schon passiert), Baldus und
   WEPA gestrichen. Gepflegte Liste = Google-Tabelle im Drive des Inhabers.
