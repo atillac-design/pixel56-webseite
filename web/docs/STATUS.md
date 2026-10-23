@@ -957,7 +957,7 @@ erreichen den Anteil nie und bleiben bei `opacity: 0`. Playwright-Prüfung
 Oberkante im oder über dem Bildschirm liegt. Nach dem Fix: null
 nicht eingeblendete Abschnitte auf allen drei Seiten. Build 746 Routen.
 Next.js hielt den Build einmal mit einem Sicherheitshinweis an (bekannte
-Lücke in der eingesetzten Version, Upgrade empfohlen); zweiter Lauf fehlerfrei.
+Lücke in der eingesetzten Version, Upgrade empfohlen); zweiter Lauf fehlerfrei. Mit Freigabe des Inhabers anschließend Next.js von 16.4.0 auf 16.4.2 gehoben (`npm install next@16.4.2`, React unverändert 19.2); Build 746 Routen, `seo:check:strict`, Einblend-Test auf drei Seiten, Fragebogen-Klicktests auf /kontakt und /webdesign (Desktop + Mobil, keine Seitenfehler) und Statuscodes der Kernseiten geprüft.
 
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 

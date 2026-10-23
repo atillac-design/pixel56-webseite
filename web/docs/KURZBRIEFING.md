@@ -143,9 +143,9 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Sicherheitsnetz beim Scrollen. Inhaber hatte die leere Projektseite auf dem
   iPhone gemeldet. Netlify-Kontingent seit 22.10. wieder frei, Deploys laufen
   nach jedem Push automatisch.
-- **Hinweis Next.js:** Der Build meldet eine Sicherheitslücke in der
-  eingesetzten Next-Version und empfiehlt `next upgrade`. Noch nicht
-  ausgeführt, Entscheidung des Inhabers steht aus.
+- **Next.js aktualisiert (23.10.):** 16.4.0 → 16.4.2 wegen einer vom
+  Framework gemeldeten Sicherheitslücke. Build, SEO-Prüfung, Einblend-Test,
+  Fragebogen-Klicktests und Statuscodes danach unverändert in Ordnung.
 
 ## Zuletzt geprüft (17.10.)
 
