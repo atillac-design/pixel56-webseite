@@ -65,7 +65,7 @@ export const frageboegen = {
     leistung: "Webdesign",
     titel: "Dein Website-Projekt in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, wo deine Website Anfragen verliert.",
-    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, was bei dir der größte Hebel ist.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Atilla ruft dich in den nächsten Werktagen an, mit einer ehrlichen Einschätzung, was bei dir der größte Hebel ist.",
     quelle: "anfrage-webdesign",
     fragen: [
       {
@@ -121,7 +121,7 @@ export const frageboegen = {
     leistung: "Meta Ads",
     titel: "Deine Kampagne in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, ob Anzeigen sich bei dir rechnen.",
-    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, ob und wie Anzeigen bei dir funktionieren.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Atilla ruft dich in den nächsten Werktagen an, mit einer ehrlichen Einschätzung, ob und wie Anzeigen bei dir funktionieren.",
     quelle: "anfrage-meta-ads",
     fragen: [
       {
@@ -175,7 +175,7 @@ export const frageboegen = {
     leistung: "Social Content & Reels",
     titel: "Dein Content in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, wie Content bei dir läuft, ohne dass du ihn selbst machen musst.",
-    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, welcher Rhythmus und welches Material bei dir Sinn ergeben.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Atilla ruft dich in den nächsten Werktagen an, mit einer ehrlichen Einschätzung, welcher Rhythmus und welches Material bei dir Sinn ergeben.",
     quelle: "anfrage-content",
     fragen: [
       {
@@ -229,7 +229,7 @@ export const frageboegen = {
     leistung: "KI-Prozesse & Automatisierung",
     titel: "Deine Routine in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, welche Routine bei dir zuerst wegfallen kann.",
-    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, welcher Prozess bei dir den größten Hebel hat.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Atilla ruft dich in den nächsten Werktagen an, mit einer ehrlichen Einschätzung, welcher Prozess bei dir den größten Hebel hat.",
     quelle: "anfrage-ki",
     fragen: [
       {
@@ -283,7 +283,7 @@ export const frageboegen = {
     leistung: "Landingpages & Funnels",
     titel: "Deine Zielseite in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, warum aus deinen Klicks keine Anfragen werden.",
-    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, welche Seite dein Angebot braucht.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Atilla ruft dich in den nächsten Werktagen an, mit einer ehrlichen Einschätzung, welche Seite dein Angebot braucht.",
     quelle: "anfrage-landingpage",
     fragen: [
       {
@@ -337,7 +337,7 @@ export const frageboegen = {
     leistung: "Mitarbeitergewinnung",
     titel: "Deine Stellen in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, warum sich die Richtigen bei dir noch nicht bewerben.",
-    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, wie du die Leute erreichst, die gerade nicht suchen.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Atilla ruft dich in den nächsten Werktagen an, mit einer ehrlichen Einschätzung, wie du die Leute erreichst, die gerade nicht suchen.",
     quelle: "anfrage-recruiting",
     fragen: [
       {
@@ -391,7 +391,7 @@ export const frageboegen = {
     leistung: "Google Ads",
     titel: "Deine Suchkampagne in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, ob Google Ads bei dir Aufträge bringen.",
-    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, ob sich Suchanzeigen bei dir rechnen.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Atilla ruft dich in den nächsten Werktagen an, mit einer ehrlichen Einschätzung, ob sich Suchanzeigen bei dir rechnen.",
     quelle: "anfrage-google-ads",
     fragen: [
       {
@@ -445,7 +445,7 @@ export const frageboegen = {
     leistung: "SEO",
     titel: "Deine Sichtbarkeit in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, warum du bei Google noch nicht vorn stehst.",
-    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, was bei dir zuerst zu tun ist.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Atilla ruft dich in den nächsten Werktagen an, mit einer ehrlichen Einschätzung, was bei dir zuerst zu tun ist.",
     quelle: "anfrage-seo",
     fragen: [
       {
@@ -499,7 +499,7 @@ export const frageboegen = {
     leistung: "Kontakt",
     titel: "Dein Anliegen in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, wo dein größter Hebel liegt.",
-    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, womit du am besten anfängst.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Atilla ruft dich in den nächsten Werktagen an, mit einer ehrlichen Einschätzung, womit du am besten anfängst.",
     quelle: "anfrage-kontakt",
     fragen: [
       {

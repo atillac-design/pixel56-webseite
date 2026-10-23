@@ -43,6 +43,10 @@ export async function POST(request: Request) {
   if (!bogen || name.length < 2 || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || !einwilligung) {
     return NextResponse.json({ error: "Bitte Name, E-Mail und die Einwilligung ausfüllen." }, { status: 400 });
   }
+  // Telefon ist Pflicht: Der nächste Schritt ist der Anruf.
+  if (telefon.replace(/\D/g, "").length < 6) {
+    return NextResponse.json({ error: "Bitte eine Telefonnummer für den Rückruf angeben." }, { status: 400 });
+  }
 
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.PIXEL56_CONTACT_FROM;
@@ -65,7 +69,7 @@ export async function POST(request: Request) {
     "",
     `Name: ${name}`,
     `E-Mail: ${email}`,
-    `Telefon: ${telefon || "nicht angegeben"}`,
+    `Telefon: ${telefon}`,
     `Unternehmen: ${firma || "nicht angegeben"}`,
     "",
     "Antworten:",

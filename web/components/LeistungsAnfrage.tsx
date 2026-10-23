@@ -97,7 +97,7 @@ export default function LeistungsAnfrage({ bogen, google }: { bogen: Fragebogen;
         <h3>{bogen.versprechen}</h3>
         <ul>
           <li>Sechs kurze Fragen, nichts zum Tippen</li>
-          <li>Antwort persönlich von Atilla, innerhalb eines Werktags</li>
+          <li>Rückruf von Atilla persönlich, in den nächsten Werktagen</li>
           <li>Kein Newsletter, kein Verkaufsdruck</li>
         </ul>
         <div className="anfrage-person">
@@ -175,7 +175,7 @@ export default function LeistungsAnfrage({ bogen, google }: { bogen: Fragebogen;
             <div className="anfrage-felder">
               <label><span>Name *</span><input type="text" required minLength={2} maxLength={120} autoComplete="name" placeholder="Vor- und Nachname" value={name} onChange={(e) => setName(e.target.value)} /></label>
               <label><span>E-Mail *</span><input type="email" required maxLength={254} autoComplete="email" placeholder="name@firma.de" value={email} onChange={(e) => setEmail(e.target.value)} /></label>
-              <label><span>Telefon <small>für den Rückruf</small></span><input type="tel" maxLength={40} autoComplete="tel" placeholder="+49 …" value={telefon} onChange={(e) => setTelefon(e.target.value)} /></label>
+              <label><span>Telefon * <small>für den Rückruf</small></span><input type="tel" required minLength={6} maxLength={40} autoComplete="tel" placeholder="+49 …" value={telefon} onChange={(e) => setTelefon(e.target.value)} /></label>
               <label><span>Unternehmen</span><input type="text" maxLength={120} autoComplete="organization" placeholder="Optional" value={firma} onChange={(e) => setFirma(e.target.value)} /></label>
             </div>
             <div className="form-honeypot" aria-hidden="true">
@@ -202,7 +202,7 @@ export default function LeistungsAnfrage({ bogen, google }: { bogen: Fragebogen;
               <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" strokeWidth="2.5" /><path d="M14 25l7 7 13-14" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </div>
             <h4>Danke{vorname ? `, ${vorname}` : ""}. Das ist angekommen.</h4>
-            <p className="anfrage-erklaerung">Du bekommst gleich eine Bestätigung per E-Mail. Der schnellste Weg: Such dir direkt 15 Minuten aus, dann besprechen wir, was bei dir sinnvoll ist. Sonst meldet sich Atilla innerhalb eines Werktags.</p>
+            <p className="anfrage-erklaerung">Du bekommst gleich eine Bestätigung per E-Mail. Atilla ruft dich in den nächsten Werktagen an. Soll es schneller gehen? Schreib kurz per WhatsApp, dann findet ihr direkt eine Zeit für das Telefonat.</p>
             <ul className="anfrage-protokoll">
               {zusammenfassung.map((z) => <li key={z.frage}><span>{z.frage}</span><b>{z.antwort}</b></li>)}
             </ul>

@@ -62,7 +62,7 @@ export default function DatenschutzPage() {
         Auf den Leistungsseiten und der Kontaktseite kannst du uns dein Anliegen
         über einen kurzen Klick-Fragebogen schicken. Deine Antworten (z. B.
         Ziel, Branche, Zeitrahmen, Budgetrahmen) und deine Kontaktdaten (Name,
-        E-Mail-Adresse, optional Telefonnummer und Unternehmen) werden als
+        E-Mail-Adresse, Telefonnummer, optional Unternehmen) werden als
         E-Mail an uns zugestellt; du erhältst gleichzeitig eine Bestätigung mit
         deinen Antworten an die angegebene E-Mail-Adresse. Für den Versand
         nutzen wir den Dienst{" "}

@@ -101,12 +101,13 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   **Akquise ruht (23.10.):** Inhaber will erst die Website fertig haben.
   Keine weiteren Akquise-Lieferungen, bis er es ausdrücklich sagt.
 - **Anfrage-Ablauf (23.10.):** Resend läuft (Domain pixel56.de verifiziert,
-  drei Variablen in Netlify, Testmail angekommen). Jeder Besucher bekommt
-  sofort eine Bestätigung (`lib/anfrage-mail.ts`): Reaktionssätze zu seinen
-  Antworten, Calendly als Hauptweg, Rückruf angekündigt, Antworten als
-  Zusammenfassung. **Preis und Angebot nie automatisch**, nur im Gespräch.
-  Regel des Inhabers: Kunde bucht selbst → Termin; sonst bei Telefonnummer
-  werktags anrufen, abends kurze Mail/WhatsApp mit zwei Zeitvorschlägen.
+  drei Variablen in Netlify, Testmail angekommen). **Telefon ist Pflicht**
+  im Fragebogen. Jeder Besucher bekommt sofort eine schlichte Bestätigung
+  (`lib/anfrage-mail.ts`): angekommen, Anruf in den nächsten Werktagen unter
+  seiner Nummer, WhatsApp für Eilige, seine Angaben zur Erinnerung. Keine
+  Reaktionssätze, kein Calendly in der Mail (Inhaber: unverständlich ohne
+  Kontext). **Preis und Angebot nie automatisch**, nur im Telefonat.
+  Ablauf des Inhabers: Mail kommt → er ruft an.
 - **Livegang-Reihenfolge (23.10.):** Resend-Konto und Mail-Schlüssel in
   Netlify → Fragebogen-Test → Domainumzug → Google-Freigabe. Anwaltsprüfung
   der Rechtstexte erst im Nachgang.

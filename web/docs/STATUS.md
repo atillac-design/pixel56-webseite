@@ -1023,6 +1023,18 @@ Antworten, Signatur), Route sendet sie nach der internen Mail mit
 `reply_to` auf das Pixel56-Postfach; Fehler dort blockieren nichts.
 Danke-Seite und Datenschutz angepasst.
 
+## 23.10.2026 (sechster Teil): Bestätigungsmail vereinfacht, Telefon Pflicht
+
+Rückmeldung des Inhabers zur ersten Fassung: Die Reaktionssätze aus dem
+Fragebogen ergeben in der Mail keinen Sinn, der Weg soll der Anruf sein,
+WhatsApp für Eilige, und ohne Telefonnummer kann er nicht anrufen. Umgesetzt:
+Telefon Pflichtfeld (Browser und Server, mindestens sechs Ziffern), Mail auf
+vier Sätze plus Angaben reduziert, Betreff „Deine Anfrage bei Pixel56 ist
+angekommen“, Danke-Seite, Leisten-Text und neun Fragebogen-Einleitungen
+versprechen jetzt den Anruf in den nächsten Werktagen statt „Einschätzung
+innerhalb eines Werktags“. Datenschutz: Telefonnummer nicht mehr optional.
+Du-Form in der Mail beibehalten, weil die ganze Seite duzt.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter
