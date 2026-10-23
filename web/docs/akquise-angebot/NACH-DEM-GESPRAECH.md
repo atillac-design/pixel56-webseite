@@ -42,7 +42,7 @@ Angebot, ein Betrag, ein Startdatum. Wer wählen muss, wählt „später“.
 >
 > Mit freundlichen Grüßen
 > Atilla Ciftcioglu
-> Pixel56 · 02622 9898654 · WhatsApp 0178 5282464
+> Pixel56 · 0178 5282464 (Telefon und WhatsApp)
 
 ## 3. Nachfassen
 

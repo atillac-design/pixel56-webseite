@@ -15,6 +15,9 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 
 - **Schrift:** Figtree, Fließtext kräftiger und größer, keine Serifen-Kursive
   mehr. Vom Inhaber abgenommen („Variante 3“).
+- **Nur die Handynummer 0178 5282464** auf der Seite (auch Impressum,
+  Datenschutz, Schema), Festnetz 02622 entfernt (23.10.): verrät den Standort
+  und Atilla ist mobil erreichbar. Google-Unternehmensprofil angleichen.
 - **Kein Standort Bendorf** sichtbar, niemand soll vorbeikommen; „aus
   Koblenz“ ist okay. WhatsApp und E-Mail immer anbieten.
 - **Leistungsseiten (17.10.):** alle acht unter dem Hero gekürzt (kurze

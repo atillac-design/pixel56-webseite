@@ -25,7 +25,7 @@ export default function DatenschutzPage() {
         Hüttenstraße 100, 56170 Bendorf bei Koblenz
         <br />
         E-Mail: <a href="mailto:info@pixel56.de">info@pixel56.de</a> · Telefon:
-        02622 9898654
+        0178 5282464
       </p>
 
       <h2>2. Hosting</h2>

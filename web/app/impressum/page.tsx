@@ -24,7 +24,7 @@ export default function ImpressumPage() {
 
       <h3>Kontakt</h3>
       <p>
-        Telefon: 02622 9898654
+        Telefon: 0178 5282464
         <br />
         E-Mail: <a href="mailto:info@pixel56.de">info@pixel56.de</a>
       </p>
