@@ -6,6 +6,11 @@ Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
 
 ## Wie wir arbeiten
 
+- **Push-Sperre (23.10.):** Netlify-Credits sind knapp, jeder Push baut die
+  Seite neu. Änderungen lokal sammeln, Screenshots zeigen, erst pushen, wenn
+  der Inhaber das Paket freigibt. Alternative, falls er sie einschaltet:
+  Netlify → Build & deploy → „Stop builds“, dann sind Pushes kostenlos.
+
 Der Inhaber (Atilla) schaut die Vorschau auf Netlify an und gibt Rückmeldung
 Schritt für Schritt, oft als Sprachnachricht oder Screenshot. Jede Rückmeldung
 wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
