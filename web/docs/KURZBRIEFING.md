@@ -137,6 +137,16 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
    Blog-Teaser auf der Startseite auf den neuen Ton prüfen.
 7. Standortseiten mit Search-Console-Daten abgleichen (`regionStaedte`).
 
+- **Einblend-Fehler behoben (23.10.):** `components/Reveal.tsx` blendete
+  Abschnitte erst ab 12 % Sichtbarkeit ein; sehr hohe Abschnitte (Projektliste
+  auf dem Handy, fast 10.000 px) blieben deshalb weiß. Jetzt Schwelle 0 plus
+  Sicherheitsnetz beim Scrollen. Inhaber hatte die leere Projektseite auf dem
+  iPhone gemeldet. Netlify-Kontingent seit 22.10. wieder frei, Deploys laufen
+  nach jedem Push automatisch.
+- **Hinweis Next.js:** Der Build meldet eine Sicherheitslücke in der
+  eingesetzten Next-Version und empfiehlt `next upgrade`. Noch nicht
+  ausgeführt, Entscheidung des Inhabers steht aus.
+
 ## Zuletzt geprüft (17.10.)
 
 Build fehlerfrei (746 Routen), `seo:check:strict` ohne Befund, Playwright:

@@ -17,6 +17,9 @@ export default function Reveal() {
       return;
     }
 
+    // Einblenden, sobald irgendein Teil des Abschnitts im Bild ist. Kein
+    // Mindestanteil: sehr hohe Abschnitte (z. B. die Projektliste auf dem
+    // Handy) erreichen sonst nie die Schwelle und bleiben unsichtbar.
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -26,9 +29,33 @@ export default function Reveal() {
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0, rootMargin: "0px 0px -6% 0px" }
     );
     revealEls.forEach((el) => io.observe(el));
+
+    // Sicherheitsnetz: alles, dessen Oberkante schon im oder über dem
+    // Bildschirm liegt, wird eingeblendet, auch wenn der Beobachter es bei
+    // schnellem Wischen übersprungen hat.
+    let ticking = false;
+    function nachziehen() {
+      ticking = false;
+      const grenze = window.innerHeight * 0.96;
+      revealEls.forEach((el) => {
+        if (el.classList.contains("in")) return;
+        if (el.getBoundingClientRect().top < grenze) {
+          el.classList.add("in");
+          io.unobserve(el);
+        }
+      });
+    }
+    function beiScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(nachziehen);
+    }
+    nachziehen();
+    window.addEventListener("scroll", beiScroll, { passive: true });
+    window.addEventListener("resize", beiScroll, { passive: true });
 
     function animateCount(el: HTMLElement) {
       const raw = el.getAttribute("data-target") ?? "0";
@@ -66,6 +93,8 @@ export default function Reveal() {
     return () => {
       io.disconnect();
       mio.disconnect();
+      window.removeEventListener("scroll", beiScroll);
+      window.removeEventListener("resize", beiScroll);
     };
   }, [pathname]);
 

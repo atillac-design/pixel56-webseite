@@ -945,6 +945,20 @@ Kontakt-Hero und -Fragebogen, Projekte-Hero; Klick-/Tastaturtest des
 Kontakt-Fragebogens ohne Seitenfehler. CSS: `.contact-fallback-mail` als
 Block, damit WhatsApp- und E-Mail-Link untereinander stehen.
 
+## 23.10.2026: Leere Abschnitte auf dem Handy behoben
+
+Inhaber meldete eine weiße Projektseite auf dem iPhone (Netlify-Vorschau).
+Ursache in `components/Reveal.tsx`: IntersectionObserver mit `threshold:
+0.12`; Abschnitte, die höher als rund das Achtfache des Bildschirms sind,
+erreichen den Anteil nie und bleiben bei `opacity: 0`. Playwright-Prüfung
+(390 px breit, durchgescrollt) fand auf /projekte fünf, auf / dreizehn und auf
+/webdesign elf nicht eingeblendete Abschnitte. Fix: `threshold: 0` mit
+`rootMargin`, dazu ein Scroll-Sicherheitsnetz, das alles einblendet, dessen
+Oberkante im oder über dem Bildschirm liegt. Nach dem Fix: null
+nicht eingeblendete Abschnitte auf allen drei Seiten. Build 746 Routen.
+Next.js hielt den Build einmal mit einem Sicherheitshinweis an (bekannte
+Lücke in der eingesetzten Version, Upgrade empfohlen); zweiter Lauf fehlerfrei.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter
