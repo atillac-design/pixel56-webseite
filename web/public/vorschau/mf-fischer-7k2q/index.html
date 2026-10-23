@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>M.F. Fischer Haustechnik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: ruhige Einspalter mit breiten Bildflächen, Tiefblau als Vertrauensfarbe, Kupfer als Wärme-Akzent. Bewusst nur ein (helles) Thema: Marken-Entwurf. */
+:root{
+  --blau:#0F3D5E; --blau-tief:#0A2B43; --kupfer:#C8742B; --kupfer-dunkel:#A85E20;
+  --papier:#F7F5F1; --hell:#ECE9E3; --linie:#DAD6CE; --tinte:#1F2327; --grau:#5B6168; --weiss:#FFFFFF;
+  --display:"Fraunces", Georgia, "Times New Roman", serif; --text:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--papier);color:var(--tinte);font-family:var(--text);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.12;letter-spacing:-.01em;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,3.6vw,40px)} h3{font-size:22px;font-weight:500}
+p{margin:0}
+a{color:inherit}
+.eyebrow{font-family:var(--text);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--kupfer);margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font-family:var(--text);font-size:16px;transition:background .15s,color .15s,border-color .15s}
+.btn-k{background:var(--kupfer);color:#fff} .btn-k:hover{background:var(--kupfer-dunkel)}
+.btn-w{border-color:rgba(255,255,255,.7);color:#fff;background:transparent} .btn-w:hover{background:rgba(255,255,255,.1)}
+.btn-b{background:var(--blau);color:#fff} .btn-b:hover{background:var(--blau-tief)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--kupfer);outline-offset:2px}
+.ph{background:transparent;color:var(--grau);border-bottom:1px dotted var(--grau);font-size:.85em;padding:0 2px}
+/* Entwurfs-Hinweis */
+.entwurf{position:fixed;left:0;bottom:0;z-index:50;margin:0 0 calc(12px + env(safe-area-inset-bottom,0px)) calc(12px + env(safe-area-inset-left,0px));background:#fff;border:1px solid var(--linie);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--grau);box-shadow:0 4px 18px rgba(0,0,0,.08)}
+/* Notdienst-Leiste */
+.topbar{background:var(--kupfer);color:#fff;font-size:14px;font-weight:500}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:40px;padding-block:8px}
+.topbar b{font-weight:700;letter-spacing:.02em}
+/* Header */
+header.site{background:var(--weiss);border-bottom:1px solid var(--linie);position:sticky;top:env(safe-area-inset-top,0px);z-index:40}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--kupfer)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:76px;padding-block:12px}
+.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1.1}
+.logo b{font-family:var(--display);font-size:24px;font-weight:600;color:var(--blau)}
+.logo small{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--grau);margin-top:4px}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-weight:500;font-size:15.5px;color:var(--tinte)} nav a:hover{color:var(--blau)}
+.menu-btn{display:none;background:none;border:1.5px solid var(--linie);border-radius:8px;padding:10px 14px;font:inherit;font-weight:600;cursor:pointer}
+/* Hero */
+.hero{background:var(--blau);color:#fff}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-block:72px}
+.hero h1{font-size:clamp(34px,5vw,58px);margin-bottom:20px}
+.hero .lead{font-size:19px;line-height:1.5;color:rgba(255,255,255,.88);max-width:36em;margin-bottom:30px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.hero .trust{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:rgba(255,255,255,.8)}
+.hero .trust span::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--kupfer);margin-right:9px;vertical-align:2px}
+.illu{background:var(--blau-tief);border-radius:18px;padding:24px;min-height:360px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.illu svg{width:100%;height:auto;max-height:420px}
+.illu figcaption{position:absolute;left:18px;bottom:14px;font-size:12px;color:rgba(255,255,255,.55);letter-spacing:.04em}
+/* Vertrauen */
+.vertrauen{background:var(--weiss);border-bottom:1px solid var(--linie)}
+.vertrauen .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-block:34px}
+.vertrauen div{display:flex;gap:14px;align-items:flex-start}
+.vertrauen svg{flex:none;width:36px;height:36px}
+.vertrauen b{display:block;font-size:17px;margin-bottom:2px} .vertrauen span{color:var(--grau);font-size:14.5px}
+/* Abschnitte */
+section.block .wrap{padding-block:88px}
+.intro{max-width:44em;margin-bottom:44px} .intro p{font-size:18px;color:var(--grau);margin-top:14px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--weiss);border:1px solid var(--linie);border-radius:14px;padding:28px 26px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.card svg{width:40px;height:40px}
+.card h3{font-family:var(--text);font-size:19px;font-weight:600}
+.card p{color:var(--grau);font-size:15.5px}
+.card a{margin-top:auto;font-weight:600;color:var(--blau);text-decoration:none;font-size:15px} .card a:hover{text-decoration:underline}
+/* Warum */
+.warum{background:var(--hell)}
+.warum .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:34px 48px}
+.warum .punkt{border-top:2px solid var(--blau);padding-top:18px}
+.warum .punkt b{display:block;font-family:var(--display);font-size:24px;font-weight:500;margin-bottom:8px}
+.warum .punkt p{color:var(--grau)}
+/* Anwendungsbereiche */
+.bereiche{display:grid;gap:22px}
+.bereich{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;background:var(--weiss);border:1px solid var(--linie);border-radius:16px;overflow:hidden}
+.bereich:nth-child(even) .bild{order:2}
+.bereich .bild{background:linear-gradient(135deg,var(--blau) 0%,var(--blau-tief) 100%);min-height:240px;display:flex;align-items:flex-end;padding:22px;color:rgba(255,255,255,.7);font-size:13px;letter-spacing:.04em}
+.bereich .txt{padding:34px 36px 34px 0} .bereich:nth-child(even) .txt{padding:34px 0 34px 36px}
+.bereich h3{font-family:var(--text);font-size:21px;font-weight:600;margin-bottom:10px} .bereich p{color:var(--grau)}
+/* Über uns */
+.ueber{background:var(--weiss)}
+.ueber .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:start}
+.zeit{list-style:none;margin:0;padding:0;border-left:2px solid var(--linie)}
+.zeit li{position:relative;padding:0 0 26px 28px}
+.zeit li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--kupfer)}
+.zeit b{display:block;font-family:var(--display);font-size:22px;font-weight:500} .zeit p{color:var(--grau)}
+.aside{display:grid;gap:18px}
+.box{border:1px solid var(--linie);border-radius:14px;padding:26px;background:var(--papier)}
+.box h3{font-family:var(--text);font-size:18px;font-weight:600;margin-bottom:8px}
+.box p{color:var(--grau);font-size:15.5px}
+.box.dunkel{background:var(--blau);color:#fff;border-color:var(--blau)} .box.dunkel p{color:rgba(255,255,255,.85)}
+/* Kontakt */
+.kontakt .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+form{background:var(--weiss);border:1px solid var(--linie);border-radius:16px;padding:30px;display:grid;gap:16px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:6px;font-size:14px;font-weight:600;min-width:0}
+input,select,textarea{font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--linie);border-radius:8px;background:#fff;color:var(--tinte);width:100%;min-width:0}
+textarea{min-height:120px;resize:vertical}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;color:var(--grau)} .check input{width:auto;margin-top:3px}
+.danke{display:none;background:var(--hell);border-radius:10px;padding:16px;font-weight:500}
+.not{background:var(--kupfer);color:#fff;border-radius:14px;padding:26px}
+.not b{display:block;font-size:26px;font-family:var(--display);font-weight:600;margin:6px 0}
+.adresse p{margin-bottom:6px}
+.karte{margin-top:18px;border:1px dashed var(--linie);border-radius:14px;min-height:160px;display:flex;align-items:center;justify-content:center;color:var(--grau);font-size:14px;background:var(--weiss)}
+/* Footer */
+footer{background:var(--blau-tief);color:rgba(255,255,255,.75);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-block:28px}
+footer a{color:#fff;text-decoration:none;margin-right:18px}
+/* Mobil */
+.mobilbar{display:none}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;padding-block:48px}
+  .illu{min-height:260px}
+  .vertrauen .wrap{grid-template-columns:1fr 1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .warum .grid{grid-template-columns:1fr}
+  .bereich{grid-template-columns:1fr} .bereich:nth-child(even) .bild{order:0} .bereich .txt,.bereich:nth-child(even) .txt{padding:26px}
+  .ueber .grid,.kontakt .grid{grid-template-columns:1fr}
+  nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--linie);flex-direction:column;gap:0;padding:8px 16px 16px}
+  nav ul li a{display:block;padding:12px 0;border-bottom:1px solid var(--linie)}
+  nav.open ul{display:flex}
+  .menu-btn{display:inline-block}
+  header .btn{display:none}
+  .topbar .wrap{justify-content:center;text-align:center}
+  .topbar .nr{display:none}
+  .mobilbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:45;background:var(--kupfer);color:#fff;justify-content:center;gap:10px;font-weight:700;padding:14px max(16px,env(safe-area-inset-right,0px)) calc(14px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+  .entwurf{bottom:60px}
+  body{padding-bottom:64px}
+}
+@media (max-width:560px){
+  .vertrauen .wrap,.cards,.row2{grid-template-columns:1fr}
+  section.block .wrap{padding-block:60px}
+  .hero h1{font-size:34px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} .btn{transition:none}}
+</style>
+
+<div class="entwurf">Konzeptentwurf von Pixel56 · unverbindlich · nicht beauftragt</div>
+
+<div class="topbar"><div class="wrap"><span><b>Notdienst</b> bei Heizungsausfall und Rohrbruch: 069 30 10 34</span><span class="nr">Bürozeiten Mo–Do 07:15–16:00 · Fr 07:15–14:00 <span class="ph">[bestätigen]</span></span></div></div>
+
+<header class="site"><div class="wrap">
+  <a class="logo" href="#top"><b>M.F. Fischer</b><small>Haustechnik · Frankfurt-Höchst · seit 1880</small></a>
+  <nav id="nav"><button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuList">Menü</button>
+    <ul id="menuList"><li><a href="#leistungen">Leistungen</a></li><li><a href="#waermepumpe">Wärmepumpe</a></li><li><a href="#notdienst">Notdienst</a></li><li><a href="#ueber">Über uns</a></li><li><a href="#karriere">Karriere</a></li><li><a href="#kontakt">Kontakt</a></li></ul>
+  </nav>
+  <a class="btn btn-k" href="#kontakt">Beratung anfragen</a>
+</div></header>
+
+<section class="hero" id="top"><div class="wrap">
+  <div>
+    <h1>Heizung, Bad und Wärmepumpe aus Frankfurt-Höchst – seit 1880 in Familienhand.</h1>
+    <p class="lead">M.F. Fischer plant, installiert und wartet Ihre Haustechnik. Ein Ansprechpartner, eigener Kundendienst, Notdienst bei Heizungsausfall und Rohrbruch.</p>
+    <div class="cta"><a class="btn btn-k" href="#kontakt">Beratungstermin anfragen</a><a class="btn btn-w" href="#notdienst">Notdienst: 069 30 10 34</a></div>
+    <div class="trust"><span>Gegründet 1880</span><span>Familienunternehmen</span><span>Meisterbetrieb <i class="ph">[bestätigen]</i></span><span>Eigener Kundendienst</span></div>
+  </div>
+  <figure class="illu" aria-label="Illustration: Haus mit Wärmepumpe und Heizkreis">
+    <svg viewBox="0 0 520 400" fill="none" stroke="#C8742B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M60 210 L260 70 L460 210" />
+      <path d="M90 190 V340 H430 V190" />
+      <path d="M330 100 V70 H360 V122" />
+      <rect x="150" y="250" width="70" height="46" rx="4" />
+      <path d="M160 258 V288 M172 258 V288 M184 258 V288 M196 258 V288 M208 258 V288" stroke-opacity=".7" />
+      <rect x="300" y="250" width="70" height="46" rx="4" />
+      <path d="M310 258 V288 M322 258 V288 M334 258 V288 M346 258 V288 M358 258 V288" stroke-opacity=".7" />
+      <rect x="30" y="286" width="54" height="54" rx="6" />
+      <circle cx="57" cy="313" r="16" /><path d="M57 297 V329 M41 313 H73 M46 302 L68 324 M68 302 L46 324" stroke-opacity=".8" />
+      <path d="M84 300 H120 V340" /><path d="M84 326 H108 V340" stroke-opacity=".6" />
+      <path d="M120 320 H150" /><path d="M220 273 H300" stroke-dasharray="4 6" />
+      <path d="M185 320 C185 300 205 300 205 320 C205 340 225 340 225 320" stroke-opacity=".5" />
+      <path d="M260 120 V200" stroke-opacity=".35" /><path d="M200 160 H320" stroke-opacity=".35" />
+      <path d="M40 272 C46 262 52 262 58 272 C64 282 70 282 76 272" stroke-opacity=".6" />
+      <path d="M40 256 C46 246 52 246 58 256 C64 266 70 266 76 256" stroke-opacity=".35" />
+      <text x="258" y="378" fill="#C8742B" stroke="none" font-family="Inter, sans-serif" font-size="13" letter-spacing="2" text-anchor="middle" fill-opacity=".8">WÄRMEPUMPE · HEIZKREIS · WARMWASSER</text>
+    </svg>
+    <figcaption>Platzhalter – hier später ein eigenes Foto aus dem Betrieb</figcaption>
+  </figure>
+</div></section>
+
+<section class="vertrauen"><div class="wrap">
+  <div><svg viewBox="0 0 36 36" fill="none" stroke="#0F3D5E" stroke-width="1.8"><circle cx="18" cy="18" r="15"/><path d="M18 9v9l6 4"/></svg><div><b>Seit 1880</b><span>Derselbe Betrieb, dieselbe Familie, derselbe Stadtteil.</span></div></div>
+  <div><svg viewBox="0 0 36 36" fill="none" stroke="#0F3D5E" stroke-width="1.8"><path d="M6 30V14l12-8 12 8v16"/><path d="M14 30v-9h8v9"/></svg><div><b>Familienunternehmen</b><span>In Familienhand, heute in <i class="ph">[X.]</i> Generation.</span></div></div>
+  <div><svg viewBox="0 0 36 36" fill="none" stroke="#0F3D5E" stroke-width="1.8"><path d="M8 20l7 7 13-14"/><circle cx="18" cy="18" r="15"/></svg><div><b>Meisterbetrieb</b><span>Innung SHK Frankfurt <i class="ph">[beides bestätigen]</i></span></div></div>
+  <div><svg viewBox="0 0 36 36" fill="none" stroke="#0F3D5E" stroke-width="1.8"><path d="M9 27l7-7 4 4 7-7"/><path d="M22 17h5v5"/><rect x="5" y="7" width="26" height="24" rx="3"/></svg><div><b>Eigener Kundendienst</b><span>Wartung, Reparatur und Notdienst aus einer Hand.</span></div></div>
+</div></section>
+
+<section class="block" id="leistungen"><div class="wrap">
+  <div class="intro"><div class="eyebrow">Leistungen</div><h2>Alles, was im Haus Wasser und Wärme braucht.</h2><p>Von der neuen Heizung bis zum Rohrbruch um Mitternacht: Wir planen, bauen und halten instand. Mit Leuten, die Ihre Anlage kennen.</p></div>
+  <div class="cards">
+    <div class="card"><svg viewBox="0 0 40 40" fill="none" stroke="#C8742B" stroke-width="1.8"><path d="M20 5c3 6 9 9 9 17a9 9 0 0 1-18 0c0-4 2-7 4-9 0 3 1 5 3 6 0-5 1-10 2-14z"/></svg><h3>Heizung</h3><p>Neue Gas- und Brennwertanlagen, Austausch alter Kessel, hydraulischer Abgleich, Wartung. Wir sagen Ihnen vorher, welche Technik zu Ihrem Haus passt und was sie im Betrieb kostet.</p><a href="#kontakt">Heizung anfragen →</a></div>
+    <div class="card" id="waermepumpe"><svg viewBox="0 0 40 40" fill="none" stroke="#C8742B" stroke-width="1.8"><rect x="5" y="9" width="30" height="22" rx="3"/><circle cx="20" cy="20" r="7"/><path d="M20 13v14M13 20h14"/></svg><h3>Wärmepumpe</h3><p>Prüfung, ob Ihr Gebäude geeignet ist, Auslegung, Förderantrag <i class="ph">[bestätigen]</i>, Einbau und Inbetriebnahme. Auch als Hybridlösung mit bestehender Heizung.</p><a href="#kontakt">Eignung prüfen lassen →</a></div>
+    <div class="card"><svg viewBox="0 0 40 40" fill="none" stroke="#C8742B" stroke-width="1.8"><path d="M8 22h24v4a8 8 0 0 1-8 8h-8a8 8 0 0 1-8-8z"/><path d="M12 22V10a4 4 0 0 1 8 0"/><path d="M24 14h6M27 11v6"/></svg><h3>Bad und Badsanierung</h3><p>Vom barrierefreien Umbau bis zum kompletten Bad: Planung, Sanitärinstallation, Koordination der anderen Gewerke <i class="ph">[bestätigen]</i>, Montage.</p><a href="#kontakt">Bad planen →</a></div>
+    <div class="card"><svg viewBox="0 0 40 40" fill="none" stroke="#C8742B" stroke-width="1.8"><path d="M6 14h14a6 6 0 0 1 6 6v14"/><path d="M6 10v8M30 30h-8"/><circle cx="26" cy="34" r="2"/></svg><h3>Sanitäre Installation</h3><p>Trinkwasser- und Abwasserleitungen, Strangsanierung in Mehrfamilienhäusern, Armaturen, Wasseraufbereitung.</p><a href="#kontakt">Anfrage stellen →</a></div>
+    <div class="card"><svg viewBox="0 0 40 40" fill="none" stroke="#C8742B" stroke-width="1.8"><circle cx="20" cy="20" r="7"/><path d="M20 4v5M20 31v5M4 20h5M31 20h5M8.7 8.7l3.5 3.5M27.8 27.8l3.5 3.5M8.7 31.3l3.5-3.5M27.8 12.2l3.5-3.5"/></svg><h3>Solar und Klima</h3><p>Solarthermie zur Warmwasserbereitung und Heizungsunterstützung, Klimageräte für Wohnung und Büro <i class="ph">[bestätigen]</i>.</p><a href="#kontakt">Beraten lassen →</a></div>
+    <div class="card"><svg viewBox="0 0 40 40" fill="none" stroke="#C8742B" stroke-width="1.8"><path d="M27 7a6 6 0 0 0-7 8L8 27a3 3 0 0 0 4 4l12-12a6 6 0 0 0 8-7l-4 4-3-1-1-3z"/></svg><h3>Kundendienst und Notdienst</h3><p>Wartung mit festem Rhythmus, Reparatur innerhalb von <i class="ph">[Zeitraum]</i> Werktagen. Bei Heizungsausfall oder Rohrbruch: 069 30 10 34.</p><a href="#notdienst">So erreichen Sie uns →</a></div>
+  </div>
+</div></section>
+
+<section class="block warum"><div class="wrap">
+  <div class="intro"><div class="eyebrow">Warum ein Betrieb vor Ort</div><h2>Vier Gründe, warum Höchster Haushalte seit Generationen bei uns bleiben.</h2></div>
+  <div class="grid">
+    <div class="punkt"><b>Ein Ansprechpartner.</b><p>Wer Ihre Anlage plant, kennt sie auch bei der Wartung. Keine Hotline, keine wechselnden Subunternehmer.</p></div>
+    <div class="punkt"><b>Kurze Wege.</b><p>Von der Bolongarostraße sind wir in <i class="ph">[Minuten]</i> Minuten in jedem Stadtteil im Frankfurter Westen und im Main-Taunus-Kreis.</p></div>
+    <div class="punkt"><b>Ehrliche Empfehlung.</b><p>Wir bauen das, was zu Ihrem Haus und Ihrem Verbrauch passt. Nicht das, was gerade beworben wird.</p></div>
+    <div class="punkt"><b>Verlässlichkeit, die man messen kann.</b><p>Seit 1880 am selben Ort. Wenn in zehn Jahren ein Teil fehlt, sind wir noch da.</p></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <div class="intro"><div class="eyebrow">Für wen wir arbeiten</div><h2>Altbau, Mehrfamilienhaus, Eigenheim, Gewerbe.</h2></div>
+  <div class="bereiche">
+    <div class="bereich"><div class="bild">Foto: Heizungskeller im Höchster Altbau</div><div class="txt"><h3>Altbau in Höchst, Nied und Griesheim</h3><p>Alte Leitungen, enge Keller, Denkmalauflagen: Wir kennen die Häuser im Frankfurter Westen und planen die Technik passend zum Bestand.</p></div></div>
+    <div class="bereich"><div class="bild">Foto: Zentralheizung, Mehrfamilienhaus</div><div class="txt"><h3>Mehrfamilienhäuser und Hausverwaltungen</h3><p>Zentralheizung, Strangsanierung, Wartungsverträge mit festen Ansprechpartnern und Dokumentation für die Eigentümerversammlung.</p></div></div>
+    <div class="bereich"><div class="bild">Foto: Wärmepumpe am Einfamilienhaus</div><div class="txt"><h3>Einfamilienhäuser</h3><p>Heizungstausch, Wärmepumpe, Bad: alles aus einer Hand, mit Terminplan und Festpreis <i class="ph">[bestätigen]</i>.</p></div></div>
+    <div class="bereich"><div class="bild">Foto: Praxis oder Büro, Technikraum</div><div class="txt"><h3>Gewerbe und Praxen</h3><p>Warmwasser, Klima, Wartung nach Betriebszeiten. <i class="ph">[Referenz: Branche, Umfang, Jahr – nur mit Zustimmung des Kunden]</i></p></div></div>
+  </div>
+</div></section>
+
+<section class="block ueber" id="ueber"><div class="wrap">
+  <div class="intro"><div class="eyebrow">Über das Unternehmen</div><h2>1880 fing alles an.</h2><p>Fünf Stationen aus 145 Jahren. Die Jahreszahlen übernehmen wir aus Ihrer Historie und stimmen sie mit Ihnen ab.</p></div>
+  <div class="grid">
+    <ul class="zeit">
+      <li><b>1880</b><p>Gründung des Betriebs in Frankfurt <i class="ph">[Gründer, Ort – bestätigen]</i>.</p></li>
+      <li><b><i class="ph">[Jahr]</i></b><p>Umzug an die Bolongarostraße 176 in Höchst.</p></li>
+      <li><b><i class="ph">[Jahr]</i></b><p>Übergabe an die nächste Generation.</p></li>
+      <li><b><i class="ph">[Jahr]</i></b><p>Gründung der M.F. Fischer GmbH.</p></li>
+      <li><b><i class="ph">[Jahr]</i></b><p>Dipl.-Ing. (FH) Mathias Besso übernimmt die Geschäftsführung.</p></li>
+      <li><b>Heute</b><p><i class="ph">[Anzahl]</i> Mitarbeiter, <i class="ph">[Anzahl]</i> Auszubildende, eigener Kundendienst für Frankfurt-West und den Main-Taunus-Kreis.</p></li>
+    </ul>
+    <div class="aside">
+      <div class="box"><h3>Geschäftsführung</h3><p>Dipl.-Ing. (FH) Mathias Besso <i class="ph">[Foto, zwei Sätze zur Person – bestätigen]</i></p></div>
+      <div class="box dunkel" id="karriere"><h3>Karriere: Anlagenmechaniker (m/w/d) gesucht</h3><p>Sanitär-, Heizungs- und Klimatechnik in Frankfurt-Höchst. <i class="ph">[Aufgaben, Arbeitszeiten, Vergütungsrahmen – bestätigen]</i> Bewerbung per E-Mail oder kurz anrufen: 069 30 10 34.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="block kontakt" id="kontakt"><div class="wrap">
+  <div class="intro"><div class="eyebrow">Kontakt und Anfrage</div><h2>Sagen Sie uns, worum es geht. Wir melden uns an Werktagen bis <i class="ph">[Uhrzeit]</i>.</h2></div>
+  <div class="grid">
+    <form id="anfrage" novalidate>
+      <div class="row2">
+        <label for="anliegen">Anliegen<select id="anliegen" name="anliegen"><option>Heizung</option><option>Wärmepumpe</option><option>Bad</option><option>Sanitär</option><option>Solar / Klima</option><option>Wartung</option><option>Sonstiges</option></select></label>
+        <label for="gebaeude">Gebäude<select id="gebaeude" name="gebaeude"><option>Einfamilienhaus</option><option>Mehrfamilienhaus</option><option>Wohnung</option><option>Gewerbe</option></select></label>
+      </div>
+      <div class="row2">
+        <label for="plz">PLZ / Stadtteil<input id="plz" name="plz" placeholder="65929 Höchst"></label>
+        <label for="name">Name<input id="name" name="name" placeholder="Vor- und Nachname"></label>
+      </div>
+      <div class="row2">
+        <label for="tel">Telefon<input id="tel" name="tel" placeholder="069 …"></label>
+        <label for="mail">E-Mail<input id="mail" name="mail" placeholder="name@beispiel.de"></label>
+      </div>
+      <label for="nachricht">Nachricht<textarea id="nachricht" name="nachricht" placeholder="Was ist los, was wünschen Sie sich?"></textarea></label>
+      <label class="check" for="ds"><input type="checkbox" id="ds" name="ds"> Ich habe die Datenschutzerklärung gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</label>
+      <button class="btn btn-b" type="submit" id="senden">Anfrage senden</button>
+      <div class="danke" id="danke">Danke, Ihre Anfrage ist angekommen. Wir melden uns an Werktagen bis <i class="ph">[Uhrzeit]</i>. (Im Entwurf wird nichts versendet.)</div>
+    </form>
+    <div>
+      <div class="not" id="notdienst"><div class="eyebrow" style="color:#fff">Notdienst</div><p>Heizungsausfall oder Rohrbruch:</p><b>069 30 10 34</b><p>Außerhalb der Bürozeiten nennt der Anrufbeantworter die aktuelle Notfallnummer. <i class="ph" style="color:#fff;border-color:#fff">[Hinweis zu Notdienstzuschlägen – bestätigen]</i></p></div>
+      <div class="adresse" style="margin-top:22px"><h3 style="font-family:var(--text);font-size:18px;font-weight:600;margin-bottom:10px">M.F. Fischer GmbH</h3><p>Bolongarostraße 176 · 65929 Frankfurt-Höchst</p><p>Telefon 069 30 10 34 · <i class="ph">[E-Mail]</i></p><p>Bürozeiten Mo–Do 07:15–16:00, Fr 07:15–14:00 <i class="ph">[bestätigen]</i></p></div>
+      <div class="karte">Karte: Bolongarostraße 176 – eingebettet erst nach Einwilligung des Besuchers</div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><div><a href="#top">Impressum</a><a href="#top">Datenschutz</a></div><div>© 2026 M.F. Fischer GmbH · Entwurf: Pixel56, unverbindlich</div></div></footer>
+
+<div class="mobilbar">Notdienst 069 30 10 34</div>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'),btn=document.getElementById('menuBtn');
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false');});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');});});
+  var f=document.getElementById('anfrage');
+  f.addEventListener('submit',function(e){e.preventDefault();document.getElementById('danke').style.display='block';document.getElementById('senden').disabled=true;});
+})();
+</script>
