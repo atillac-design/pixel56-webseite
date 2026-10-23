@@ -100,6 +100,9 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   und Umgebung anschreiben, Baldus und WEPA gestrichen.
   **Akquise ruht (23.10.):** Inhaber will erst die Website fertig haben.
   Keine weiteren Akquise-Lieferungen, bis er es ausdrücklich sagt.
+- **Livegang-Reihenfolge (23.10.):** Resend-Konto und Mail-Schlüssel in
+  Netlify → Fragebogen-Test → Domainumzug → Google-Freigabe. Anwaltsprüfung
+  der Rechtstexte erst im Nachgang.
 
 ## Offene Punkte (Reihenfolge = Priorität)
 

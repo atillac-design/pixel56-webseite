@@ -53,6 +53,9 @@ Domainumzug (Punkt 4), sonst indexiert Google die Netlify-Vorschau.
 
 ## 3. Rechtstexte [Inhaber prüft, Sitzung setzt um]
 
+**Entscheidung 23.10.:** Anwaltsprüfung erst im Nachgang, hält den Livegang
+nicht auf. Reihenfolge: Resend-Schlüssel → Fragebogen-Test → Domainumzug.
+
 - **Impressum** (`app/impressum/page.tsx`): Anschrift, USt-ID, Verantwortlicher.
   Inhaber liest gegen, bestätigt in einem Satz.
 - **Datenschutz** (`app/datenschutz/page.tsx`): enthält Klick-Fragebogen +
