@@ -202,7 +202,7 @@ export default function LeistungsAnfrage({ bogen, google }: { bogen: Fragebogen;
               <svg viewBox="0 0 48 48" width="48" height="48"><circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" strokeWidth="2.5" /><path d="M14 25l7 7 13-14" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </div>
             <h4>Danke{vorname ? `, ${vorname}` : ""}. Das ist angekommen.</h4>
-            <p className="anfrage-erklaerung">Atilla meldet sich innerhalb eines Werktags mit einer ehrlichen Einschätzung. Willst du schneller reden? Dann such dir direkt einen Termin aus.</p>
+            <p className="anfrage-erklaerung">Du bekommst gleich eine Bestätigung per E-Mail. Der schnellste Weg: Such dir direkt 15 Minuten aus, dann besprechen wir, was bei dir sinnvoll ist. Sonst meldet sich Atilla innerhalb eines Werktags.</p>
             <ul className="anfrage-protokoll">
               {zusammenfassung.map((z) => <li key={z.frage}><span>{z.frage}</span><b>{z.antwort}</b></li>)}
             </ul>

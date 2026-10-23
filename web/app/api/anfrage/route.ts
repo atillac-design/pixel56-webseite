@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 import { frageboegen, type FragebogenKey } from "@/lib/fragebogen";
+import { baueKundenMail } from "@/lib/anfrage-mail";
 
 /**
  * Nimmt den Klick-Fragebogen einer Leistung entgegen: Antworten + Kontakt.
- * Zustellung per Resend an Pixel56 (Pflicht), zusätzlich Kontakt in
+ * Zustellung per Resend an Pixel56 (Pflicht), Bestätigung an den Besucher
+ * mit Termin-Link (Fehler dort blockieren nichts), zusätzlich Kontakt in
  * MailerLite mit Feldern (optional, Fehler dort blockieren nichts).
  */
 
@@ -82,6 +84,21 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Anfrage-Zustellung fehlgeschlagen:", error);
     return NextResponse.json({ error: "Senden fehlgeschlagen. Bitte schreib uns direkt per E-Mail oder WhatsApp." }, { status: 502 });
+  }
+
+  // Bestätigung an den Besucher: Antworten, Termin-Link, Ankündigung des Rückrufs.
+  // Antworten darauf landen bei Pixel56. Ein Fehler hier blockiert die Anfrage nicht.
+  try {
+    const kunde = baueKundenMail({ bogen, name, telefon, antworten });
+    const bestaetigung = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ from, to: [email], reply_to: to, subject: kunde.subject, text: kunde.text }),
+      signal: AbortSignal.timeout(6000),
+    });
+    if (!bestaetigung.ok) console.error("Bestätigung an Besucher fehlgeschlagen:", bestaetigung.status);
+  } catch (error) {
+    console.error("Bestätigung an Besucher nicht gesendet:", error);
   }
 
   // MailerLite: Kontakt mit Feldern anlegen, Fehler nur protokollieren.

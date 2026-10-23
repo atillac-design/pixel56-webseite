@@ -63,7 +63,9 @@ export default function DatenschutzPage() {
         über einen kurzen Klick-Fragebogen schicken. Deine Antworten (z. B.
         Ziel, Branche, Zeitrahmen, Budgetrahmen) und deine Kontaktdaten (Name,
         E-Mail-Adresse, optional Telefonnummer und Unternehmen) werden als
-        E-Mail an uns zugestellt. Für den Versand nutzen wir den Dienst{" "}
+        E-Mail an uns zugestellt; du erhältst gleichzeitig eine Bestätigung mit
+        deinen Antworten an die angegebene E-Mail-Adresse. Für den Versand
+        nutzen wir den Dienst{" "}
         <b>Resend</b> (Resend, Inc., USA); die Übermittlung ist über
         EU-Standardvertragsklauseln abgesichert. Mit deiner Einwilligung legen
         wir deine Kontaktdaten und die Antworten zusätzlich als Kontakt in

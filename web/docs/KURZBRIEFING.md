@@ -100,6 +100,13 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   und Umgebung anschreiben, Baldus und WEPA gestrichen.
   **Akquise ruht (23.10.):** Inhaber will erst die Website fertig haben.
   Keine weiteren Akquise-Lieferungen, bis er es ausdrücklich sagt.
+- **Anfrage-Ablauf (23.10.):** Resend läuft (Domain pixel56.de verifiziert,
+  drei Variablen in Netlify, Testmail angekommen). Jeder Besucher bekommt
+  sofort eine Bestätigung (`lib/anfrage-mail.ts`): Reaktionssätze zu seinen
+  Antworten, Calendly als Hauptweg, Rückruf angekündigt, Antworten als
+  Zusammenfassung. **Preis und Angebot nie automatisch**, nur im Gespräch.
+  Regel des Inhabers: Kunde bucht selbst → Termin; sonst bei Telefonnummer
+  werktags anrufen, abends kurze Mail/WhatsApp mit zwei Zeitvorschlägen.
 - **Livegang-Reihenfolge (23.10.):** Resend-Konto und Mail-Schlüssel in
   Netlify → Fragebogen-Test → Domainumzug → Google-Freigabe. Anwaltsprüfung
   der Rechtstexte erst im Nachgang.

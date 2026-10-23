@@ -1007,6 +1007,22 @@ uns und Karriere („in Bendorf“ → „aus Koblenz“ / „Region Koblenz“)
 Herkunftsangabe „aus Bendorf bei Koblenz“ auf den Standortseiten bleibt
 laut Entscheidung vom 13.10.
 
+## 23.10.2026 (fünfter Teil): Resend live, Bestätigungsmail an Besucher
+
+Inhaber hat Resend-Konto angelegt, Domain pixel56.de über IONOS automatisch
+verifiziert (Region Irland), Schlüssel als Secret plus `PIXEL56_CONTACT_FROM`
+und `PIXEL56_CONTACT_TO` (info@pixel56.de) in Netlify gesetzt, Deploy
+ausgelöst, Fragebogen Webdesign getestet: Mail mit Betreff, Antworten und
+Hinweis „kleines Budget“ angekommen. Frage des Inhabers: Was bekommt der
+Kunde? Bisher nichts. Entscheidung: automatische Bestätigung, damit der
+Kunde selbst einen Termin wählt und der Anruf nicht kalt ist; Preis und
+Angebot bleiben dem Gespräch vorbehalten. Umsetzung: `lib/anfrage-mail.ts`
+baut die Mail (Vorname, Thema, bis zu drei Reaktionssätze aus den
+Fragebogen-Optionen, Calendly, Rückruf-Satz je nach Telefonnummer,
+Antworten, Signatur), Route sendet sie nach der internen Mail mit
+`reply_to` auf das Pixel56-Postfach; Fehler dort blockieren nichts.
+Danke-Seite und Datenschutz angepasst.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter

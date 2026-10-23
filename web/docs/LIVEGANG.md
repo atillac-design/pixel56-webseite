@@ -44,9 +44,9 @@ Domainumzug (Punkt 4), sonst indexiert Google die Netlify-Vorschau.
 
 ## 2. Nach dem Setzen testen
 
-- Auf der Vorschau einen Fragebogen (z. B. `/webdesign#anfrage`) komplett
-  durchklicken, eigene Mail-Adresse eintragen, absenden. Erwartet: Danke-Seite
-  und eine Mail mit Betreff „Pixel56 Anfrage Webdesign: …“ im Postfach.
+- ERLEDIGT 23.10.: Variablen gesetzt, Fragebogen Webdesign getestet, Mail
+  angekommen. Noch zu prüfen: die Bestätigung an den Besucher (Betreff
+  „Deine Anfrage bei Pixel56: …“ an die eingetragene Adresse).
 - Kontaktseite `/kontakt#anfrage`: Betreff enthält das gewählte Thema.
 - Freebie `/ressourcen/seo-checkliste` anfordern, Mail von MailerLite prüfen.
 - Website-Check `/website-check` mit der echten Adresse `pixel56.de`.
