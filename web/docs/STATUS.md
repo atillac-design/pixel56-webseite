@@ -1050,6 +1050,20 @@ gesetzt, `NEXT_PUBLIC_INDEXABLE=true` in Netlify, Deploy, robots.txt und
 Sitemap vom Inhaber im Browser bestätigt. Nächster Schritt: Sitemap in der
 Search Console einreichen, zwei Wochen beobachten, dann Webflow kündigen.
 
+## 23.10.2026 (achter Teil): Handynummer, Wegweiser auf der Startseite
+
+Inhaber fragte nach meiner Einschätzung der Seite. Benannt: belegt, technisch
+sauber, Fragebögen stark; Schwächen: zu viel Text vor dem Fragebogen, zu
+wenig Fotos (kann nur er liefern), Startseite sagt nicht in drei Sekunden,
+welche Tür die richtige ist. Auf „verbessern?“ den dritten Punkt umgesetzt:
+Abschnitt 01 der Startseite ist ein Wegweiser mit sechs Situationskarten
+(`wegweiser` in `app/page.tsx`, Stile `.wegweiser*` in `globals.css`), jede
+Karte verlinkt auf `…#anfrage` der passenden Leistung, die letzte dunkle
+Karte auf den Kontakt-Fragebogen. Desktop 3 Spalten, Tablet 2, Handy 1.
+Außerdem Festnetznummer überall durch die Handynummer ersetzt (Vorwahl
+verriet Bendorf). Textkürzung auf den Leistungsseiten bewusst verschoben,
+bis echte Nutzungsdaten zeigen, wo Besucher abspringen.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter

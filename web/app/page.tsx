@@ -366,6 +366,16 @@ const latestArticles = [...artikel]
   .sort((a, b) => b.datum.localeCompare(a.datum))
   .slice(0, 3);
 
+/** Einstieg nach Situation statt nach Leistung: jede Karte führt direkt zum passenden Klick-Fragebogen. */
+const wegweiser = [
+  { satz: "Meine Website ist alt oder bringt keine Anfragen.", ziel: "Webdesign", href: `${serviceRoutes.webdesign}#anfrage` },
+  { satz: "Ich brauche schnell mehr Anfragen.", ziel: "Google Ads", href: `${serviceRoutes["google-ads"]}#anfrage` },
+  { satz: "Ich finde keine Mitarbeiter.", ziel: "Mitarbeitergewinnung", href: `${serviceRoutes.mitarbeitergewinnung}#anfrage` },
+  { satz: "Auf Instagram und Facebook passiert bei mir nichts.", ziel: "Content & Reels", href: `${serviceRoutes["content-produktion"]}#anfrage` },
+  { satz: "Anfragen, Angebote, Nachfassen fressen meine Zeit.", ziel: "KI-Automatisierung", href: `${serviceRoutes["ki-automatisierung"]}#anfrage` },
+  { satz: "Ich weiß nicht, wo ich anfangen soll.", ziel: "Sechs Fragen, dann weißt du es", href: `${routes.contact}#anfrage` },
+];
+
 export default async function HomePage() {
   const googleStand = await holeGoogleStand();
   return (
@@ -433,11 +443,19 @@ export default async function HomePage() {
 
         <div className="editorial-shell" id="editorial">
           <div className="sheet">
-          <section className="premium-statement band reveal theme-light light-opening">
-            <span className="band-tag">01 — Kennst du das?</span>
-            <p>
-              Die Arbeit stimmt. Nur <em>online weiß das keiner.</em>
-            </p>
+          <section className="band reveal theme-light light-opening wegweiser-band" id="wegweiser" aria-labelledby="wegweiser-titel">
+            <span className="band-tag">01 — Wo drückt es bei dir?</span>
+            <h2 className="band-title" id="wegweiser-titel">
+              Ein Klick, <em>und du bist auf der richtigen Seite.</em>
+            </h2>
+            <div className="wegweiser">
+              {wegweiser.map((w) => (
+                <Link className="wegweiser-karte" href={w.href} key={w.href}>
+                  <strong>{w.satz}</strong>
+                  <small>{w.ziel} →</small>
+                </Link>
+              ))}
+            </div>
           </section>
 
           <section className="band theme-light" id="engpaesse">

@@ -15,6 +15,11 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 
 - **Schrift:** Figtree, Fließtext kräftiger und größer, keine Serifen-Kursive
   mehr. Vom Inhaber abgenommen („Variante 3“).
+- **Wegweiser auf der Startseite (23.10.):** Abschnitt 01 ist jetzt „Wo
+  drückt es bei dir?“ mit sechs Situationskarten, jede führt direkt zum
+  passenden Fragebogen (Webdesign, Google Ads, Mitarbeiter, Content, KI,
+  „Weiß nicht“ → Kontakt-Fragebogen). Ersetzt den reinen Satz „Die Arbeit
+  stimmt…“. Grund: Besucher denken in Problemen, nicht in Leistungen.
 - **Nur die Handynummer 0178 5282464** auf der Seite (auch Impressum,
   Datenschutz, Schema), Festnetz 02622 entfernt (23.10.): verrät den Standort
   und Atilla ist mobil erreichbar. Google-Unternehmensprofil angleichen.
