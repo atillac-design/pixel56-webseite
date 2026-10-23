@@ -108,6 +108,12 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Reaktionssätze, kein Calendly in der Mail (Inhaber: unverständlich ohne
   Kontext). **Preis und Angebot nie automatisch**, nur im Telefonat.
   Ablauf des Inhabers: Mail kommt → er ruft an.
+- **LIVE seit 23.10. abends:** www.pixel56.de läuft auf Netlify (IONOS-DNS:
+  A @ → 75.2.60.5, CNAME www → pixel56-neue-seite.netlify.app, MailerLite-
+  Einträge neu angelegt, Post/Resend unberührt). Primär ist www, pixel56.de
+  leitet um, Let's-Encrypt-Zertifikat aktiv. `NEXT_PUBLIC_INDEXABLE=true`
+  gesetzt, robots.txt erlaubt, Sitemap erreichbar. Webflow-Hosting bleibt
+  zwei Wochen als Rückfall, dann kündigen. Anwalt für Rechtstexte im Nachgang.
 - **Livegang-Reihenfolge (23.10.):** Resend-Konto und Mail-Schlüssel in
   Netlify → Fragebogen-Test → Domainumzug → Google-Freigabe. Anwaltsprüfung
   der Rechtstexte erst im Nachgang.

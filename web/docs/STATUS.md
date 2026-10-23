@@ -1035,6 +1035,21 @@ versprechen jetzt den Anruf in den nächsten Werktagen statt „Einschätzung
 innerhalb eines Werktags“. Datenschutz: Telefonnummer nicht mehr optional.
 Du-Form in der Mail beibehalten, weil die ganze Seite duzt.
 
+## 23.10.2026 (siebter Teil): Livegang auf www.pixel56.de
+
+Inhaber hat die Domain selbst umgezogen, Schritt für Schritt begleitet:
+Netlify Domain management (pixel56.de + www), IONOS-DNS: A-Eintrag `@` von
+198.202.211.1 auf 75.2.60.5, CNAME `www` von cdn.webflow.com auf
+pixel56-neue-seite.netlify.app. IONOS hat dabei den „Third Party Service“
+(Webflow + MailerLite) deaktiviert; die drei MailerLite-Einträge (SPF
+`v=spf1 a mx include:_spf.mlsend.com ~all`, CNAME litesrv._domainkey,
+TXT mailerlite-domain-verification) wurden vorher gesichert und neu
+angelegt. Alte Zeilen `_webflow` und `cloudflare-verify` bleiben, stören
+nicht. Zertifikat nach etwa 20 Minuten ausgestellt, www als primäre Domain
+gesetzt, `NEXT_PUBLIC_INDEXABLE=true` in Netlify, Deploy, robots.txt und
+Sitemap vom Inhaber im Browser bestätigt. Nächster Schritt: Sitemap in der
+Search Console einreichen, zwei Wochen beobachten, dann Webflow kündigen.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter

@@ -1,4 +1,4 @@
-# Livegang-Checkliste (Stand 17.10.2026)
+# Livegang-Checkliste (Stand 23.10.2026, Seite ist LIVE)
 
 Was vor dem Umzug von pixel56.de auf die neue Seite passieren muss, in der
 Reihenfolge, in der es sinnvoll ist. Punkte mit **[Inhaber]** kann nur Atilla
@@ -70,6 +70,9 @@ nicht auf. Reihenfolge: Resend-Schlüssel → Fragebogen-Test → Domainumzug.
   Livegang von einem Anwalt gegenlesen lassen.
 
 ## 4. Domainumzug pixel56.de: Webflow → Netlify [Inhaber]
+
+**ERLEDIGT 23.10.** Schritte 1 bis 4 durch, Punkt 5 (Search Console) offen,
+Punkt 6 ab 6.11. möglich.
 
 Reihenfolge wichtig, sonst ist die Seite zwischendurch nicht erreichbar:
 
