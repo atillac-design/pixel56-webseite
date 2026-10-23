@@ -217,7 +217,7 @@ export default function StandorteUebersicht() {
               <div><b>Telefon</b><small>{site.phone}, Mo bis Fr, direkt mit Atilla</small></div>
               <div><b>WhatsApp</b><small>Kurze Frage, schnelle Antwort, auch für Terminabsprachen</small></div>
               <div><b>Video-Call</b><small>Für Kennenlernen und Abstimmungen, egal wo du sitzt</small></div>
-              <div><b>Vor Ort</b><small>Nach Terminabsprache in Bendorf oder bei dir im Betrieb</small></div>
+              <div><b>Vor Ort</b><small>Bei dir im Betrieb, nach Terminabsprache in der Region</small></div>
             </div>
           </div>
         </section>

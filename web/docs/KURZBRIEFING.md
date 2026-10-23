@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 19.10.2026
+# Kurzbriefing — Stand 23.10.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -109,6 +109,8 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Anzeigen muss der Inhaber vor dem Brief selbst prüfen. **Regel (22.10.):**
   nichts aus Bendorf und Umgebung anschreiben (schon passiert), Baldus und
   WEPA gestrichen. Gepflegte Liste = Google-Tabelle im Drive des Inhabers.
+  **Akquise ruht (23.10.):** Inhaber will erst die Website fertig haben.
+  Keine weiteren Akquise-Lieferungen, bis er es ausdrücklich sagt.
 
 ## Offene Punkte (Reihenfolge = Priorität)
 
@@ -162,9 +164,13 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Framework gemeldeten Sicherheitslücke. Build, SEO-Prüfung, Einblend-Test,
   Fragebogen-Klicktests und Statuscodes danach unverändert in Ordnung.
 
-## Zuletzt geprüft (17.10.)
+## Zuletzt geprüft (23.10.)
 
-Build fehlerfrei (746 Routen), `seo:check:strict` ohne Befund, Playwright:
-Element-Screenshots Webdesign/Meta Ads/Kontakt/Projekte Desktop + Mobil,
-Klick- und Tastaturtest des Kontakt-Fragebogens (API antwortet erwartungsgemäß
-503 ohne Mail-Schlüssel, keine Seitenfehler).
+Build fehlerfrei (746 Routen), `seo:check:strict` ohne Befund. Playwright-
+Prüflauf über 19 Seiten (Desktop + Mobil): keine Skriptfehler, kein Überlauf,
+keine kaputten Bilder, je eine h1. Metadaten-Prüfung derselben Seiten plus
+404: Titel unter 62 Zeichen, Beschreibungen unter 165, canonical und
+OG-Bild vorhanden, keine doppelten Titel (Webdesign-Seite heißt jetzt
+„Webdesign Agentur: …“, die Koblenz-Standortseite behält „Webdesign
+Koblenz: …“). Besuchs-Hinweise auf Bendorf („persönlich in Bendorf“) aus
+Standortseiten und Schnellsuche entfernt.

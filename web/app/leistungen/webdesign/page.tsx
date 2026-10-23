@@ -30,7 +30,7 @@ import { frageboegen } from "@/lib/fragebogen";
 import { googleAnzahlLautProfil, googleBewertungLautProfil } from "@/lib/google-bewertungen";
 
 export const metadata: Metadata = {
-  title: "Webdesign Koblenz: Websites, die Anfragen bringen",
+  title: "Webdesign Agentur: Websites, die Anfragen bringen",
   description:
     "Individuelle Websites für Unternehmen in Koblenz und deutschlandweit: klare Struktur, Texte mit Suchintention, schnelle Technik, Relaunch ohne Verlust.",
   alternates: { canonical: serviceRoutes.webdesign },

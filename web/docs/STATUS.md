@@ -990,6 +990,23 @@ Netlify-Header); der Inhaber wollte sie nicht in diesem Projekt, beide
 Änderungen per neuem Commit entfernt. Regel: Kunden-Entwürfe gehören in ein
 eigenes Repository, nicht auf diesen Zweig.
 
+## 23.10.2026 (vierter Teil): Akquise pausiert, Metadaten geprüft
+
+Inhaber: „nicht mit der Akquise starten, erst die Seite fertig machen“.
+Akquise-Dateien bleiben als Doku im Repo, es kommt nichts Neues dazu.
+Metadaten-Prüflauf (Playwright, 19 Seiten + 404): einzige Befunde waren der
+doppelte Seitentitel von `/webdesign` und `/locations/koblenz` (Leistungs-
+seite heißt jetzt „Webdesign Agentur: Websites, die Anfragen bringen“, wie
+die Schwesterseiten „Meta Ads Agentur“, „Google Ads Agentur“) und die
+Standard-Beschreibung im Grundgerüst mit 174 Zeichen (jetzt 160). Nebenbei
+drei Reste gegen die Regel „niemand kommt nach Bendorf“ gefunden und
+umformuliert: Standorte-Übersicht („Vor Ort: Nach Terminabsprache in
+Bendorf“ → „Bei dir im Betrieb“), Standortseiten-Kachel „Abstimmung …
+persönlich in Bendorf“ → „bei dir im Betrieb“, Schnellsuche-Einträge Über
+uns und Karriere („in Bendorf“ → „aus Koblenz“ / „Region Koblenz“).
+Herkunftsangabe „aus Bendorf bei Koblenz“ auf den Standortseiten bleibt
+laut Entscheidung vom 13.10.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter

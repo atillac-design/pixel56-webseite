@@ -19,10 +19,10 @@ const seiten: SuchEintrag[] = [
   { typ: "Seite", titel: "Website-Check", text: "Kostenlos: Adresse eingeben und zwölf Grundlagen deiner Startseite prüfen lassen.", href: "/website-check" },
   { typ: "Seite", titel: "Kundenprojekte", text: "Websites, Branding und Kampagnen für Handwerk, Dienstleister, Bildung und Vereine.", href: routes.projects },
   { typ: "Seite", titel: "Blog", text: "Marketing-Wissen für kleine Unternehmen und Handwerk, aus der Praxis geschrieben.", href: routes.blog },
-  { typ: "Seite", titel: "Über Pixel56", text: "Gründergeführte Digitalagentur in Bendorf bei Koblenz, seit 2018.", href: routes.about },
+  { typ: "Seite", titel: "Über Pixel56", text: "Gründergeführte Digitalagentur aus Koblenz, seit 2018.", href: routes.about },
   { typ: "Seite", titel: "Kontakt und Erstgespräch", text: "Kostenloses Erstgespräch, Telefon, WhatsApp, E-Mail.", href: routes.contact },
   { typ: "Seite", titel: "Standorte rund um Koblenz", text: "13 Städte im Einzugsgebiet, deutschlandweit im Einsatz.", href: routes.locations },
-  { typ: "Seite", titel: "Karriere bei Pixel56", text: "Offene Stellen, Initiativbewerbung, Arbeiten in Bendorf und remote.", href: routes.careers },
+  { typ: "Seite", titel: "Karriere bei Pixel56", text: "Offene Stellen, Initiativbewerbung, Arbeiten remote und in der Region Koblenz.", href: routes.careers },
   { typ: "Seite", titel: "Impressum", text: "Anbieterkennzeichnung von Pixel56.", href: routes.imprint },
   { typ: "Seite", titel: "Datenschutz", text: "Datenschutzerklärung von Pixel56.", href: routes.privacy },
 ];

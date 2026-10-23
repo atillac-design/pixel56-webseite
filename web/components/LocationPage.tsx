@@ -91,7 +91,7 @@ export default function LocationPage({ location }: { location: LegacyLocation })
         { b: "Entfernung", small: region.entfernungKm === 0 ? "Unser Sitz, mitten in Bendorf" : `Rund ${region.entfernungKm} km ab Bendorf, etwa ${region.fahrzeitMin} Minuten` },
         { b: "Vor Ort", small: "Kennenlernen, Fotos und Drehs bei dir im Betrieb, ohne Reisekosten" },
         { b: "Region", small: region.landkreis },
-        { b: "Abstimmung", small: "Telefon, WhatsApp, Video-Call oder persönlich in Bendorf" },
+        { b: "Abstimmung", small: "Telefon, WhatsApp, Video-Call oder persönlich bei dir im Betrieb" },
       ]
     : [
         { b: "Zusammenarbeit", small: "Per Video-Call, Telefon und WhatsApp, mit festen Terminen" },
