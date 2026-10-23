@@ -60,8 +60,11 @@ Domainumzug (Punkt 4), sonst indexiert Google die Netlify-Vorschau.
   Fehlt noch: Google Places (nur serverseitig, ohne Nutzerdaten) sobald die
   Variablen gesetzt sind. Empfehlung: einmal von einem Anwalt oder einem
   Generator (z. B. eRecht24) gegenlesen lassen; die Seite nennt alle Dienste.
-- **AGB** (`app/agb/page.tsx`): aktuell `noindex`-Platzhalter. Entweder echte
-  AGB vom Anwalt einsetzen oder Seite bis dahin aus dem Fuß nehmen.
+- **AGB** (`app/agb/page.tsx`): seit 23.10. vollständig (13 Abschnitte, nur
+  für Unternehmer, 50 % Anzahlung, 14 Tage Zahlungsziel, laufende Leistungen
+  4 Wochen zum Monatsende kündbar, pausierbar, Nutzungsrechte nach
+  vollständiger Zahlung, Referenzrecht, Gerichtsstand Koblenz). Vor dem
+  Livegang von einem Anwalt gegenlesen lassen.
 
 ## 4. Domainumzug pixel56.de: Webflow → Netlify [Inhaber]
 

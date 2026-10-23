@@ -126,7 +126,9 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 3. **Nur der Inhaber kann:** Netlify-Variablen setzen (Liste mit exakten
    Namen in `docs/LIVEGANG.md`, Abschnitt 1), danach einen Fragebogen live
    testen. Rechtstexte gegenlesen (Impressum, Datenschutz enthält jetzt
-   Fragebogen/Resend und Website-Check; AGB ist noindex-Platzhalter).
+   Fragebogen/Resend und Website-Check; AGB seit 23.10. vollständig nach
+   den Vorgaben des Inhabers: 50 % Anzahlung, 14 Tage, 4 Wochen Kündigung,
+   Referenzrecht; Anwalt soll gegenlesen).
    Domainumzug Webflow → Netlify nach `docs/LIVEGANG.md`, erst danach
    `NEXT_PUBLIC_INDEXABLE=true`.
 4. **Pushes sparsam** (Netlify-Build-Kontingent), Screenshots in den Chat
