@@ -978,6 +978,18 @@ kaputte Bilder, H1-Anzahl und Status. Einziger Treffer war der Testpfad
 Preisangaben außerhalb des Tagesplaner-Produkts, kein „inhabergeführt“,
 Bendorf nur in Schema/Impressum/Datenschutz/Standorten.
 
+## 23.10.2026 (dritter Teil): AGB, fremder Commit entfernt
+
+AGB nach Vorgaben des Inhabers geschrieben (50 % Anzahlung, 14 Tage
+Zahlungsziel, laufende Leistungen 4 Wochen zum Monatsende kündbar und
+pausierbar, Nutzungsrechte nach vollständiger Zahlung, Referenzrecht,
+Gerichtsstand Koblenz), 13 Abschnitte, noindex wie Impressum. Anwalt soll
+gegenlesen. Beim Push lagen zwei Commits aus einem anderen Chat auf dem
+Zweig (Vorschau-Ordner `web/public/vorschau/mf-fischer-…` plus
+Netlify-Header); der Inhaber wollte sie nicht in diesem Projekt, beide
+Änderungen per neuem Commit entfernt. Regel: Kunden-Entwürfe gehören in ein
+eigenes Repository, nicht auf diesen Zweig.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter

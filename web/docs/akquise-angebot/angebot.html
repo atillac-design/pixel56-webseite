@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Angebot · Marketing-Start in 90 Tagen</title>
+<style>
+  @font-face { font-family: "Figtree"; src: url("figtree-latin.woff2") format("woff2"); font-weight: 300 900; font-display: block; }
+  @page { size: A4; margin: 0; }
+  :root { --ink: #151319; --dim: #4f4b55; --faint: #8a8591; --line: #e8e5ec; --accent: #ff3951; --accent2: #d82f49; --soft: #fff1f3; --paper: #f7f6f4; --dark: #121118; --feld: #fff3b0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 794px; background: #fff; }
+  body { font-family: "Figtree", system-ui, sans-serif; color: var(--ink); font-size: 13.5px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
+  .seite { width: 794px; height: 1123px; display: flex; flex-direction: column; overflow: hidden; page-break-after: always; }
+  .seite:last-child { page-break-after: auto; }
+  .seite > * { flex: 0 0 auto; }
+  .pad { padding-left: 56px; padding-right: 56px; }
+  /* Platzhalter, die Atilla je Kunde ersetzt */
+  .f { background: var(--feld); border-radius: 3px; padding: 0 3px; }
+
+  .kopf { background: var(--dark); color: #fff; padding: 34px 56px 30px; position: relative; overflow: hidden; }
+  .kopf::before { content: ""; position: absolute; right: -140px; top: -180px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(255,57,81,0.38) 0%, rgba(255,57,81,0) 65%); }
+  .kopf > * { position: relative; }
+  .kopf-zeile { display: flex; justify-content: space-between; align-items: center; margin-bottom: 26px; }
+  .kopf-zeile img { height: 28px; display: block; }
+  .pill { font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: #fff; border: 1px solid rgba(255,255,255,0.28); border-radius: 99px; padding: 6px 12px; }
+  .kicker { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; color: #ff6073; margin-bottom: 8px; }
+  h1 { font-size: 32px; line-height: 1.08; letter-spacing: -0.025em; font-weight: 800; }
+  h1 .a { color: var(--accent); }
+  .sub { margin-top: 12px; font-size: 14.5px; color: #d6d2dd; max-width: 600px; }
+  .sub b { color: #fff; }
+  .meta { margin-top: 18px; display: flex; gap: 28px; font-size: 12px; color: #c9c5d2; }
+  .meta b { color: #fff; font-weight: 700; display: block; font-size: 13px; }
+
+  .block { padding-top: 24px; }
+  .ueber { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; color: var(--accent2); margin-bottom: 8px; }
+  h2 { font-size: 20px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.15; margin-bottom: 10px; }
+  p.lead { font-size: 14px; color: var(--dim); max-width: 640px; }
+  .lines { list-style: none; }
+  .lines li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; padding: 6px 0; border-top: 1px solid var(--line); }
+  .lines li:first-child { border-top: 0; }
+  .ok { width: 18px; height: 18px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+  .ok svg { width: 10px; height: 10px; }
+  .x { width: 18px; height: 18px; border-radius: 50%; background: #dcd9df; color: #5e5a66; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+  .x svg { width: 10px; height: 10px; }
+
+  .hebel { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .hebel article { border: 1.5px solid rgba(255,57,81,0.35); background: var(--soft); border-radius: 14px; padding: 16px 16px 14px; }
+  .hebel .nr { width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+  .hebel strong { display: block; font-size: 15px; font-weight: 800; margin-bottom: 4px; letter-spacing: -0.01em; }
+  .hebel p { font-size: 12.5px; color: var(--dim); }
+  .hebel small { display: block; margin-top: 8px; font-size: 11px; color: var(--faint); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  .zeit { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; position: relative; }
+  .zeit::before { content: ""; position: absolute; left: 14px; right: 14px; top: 14px; height: 2px; background: var(--line); }
+  .zeit div { position: relative; }
+  .zeit b.p { width: 28px; height: 28px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; outline: 6px solid #fff; }
+  .zeit small { display: block; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); font-weight: 800; margin-bottom: 2px; }
+  .zeit strong { display: block; font-size: 14px; font-weight: 800; margin-bottom: 3px; }
+  .zeit p { font-size: 12px; color: var(--dim); }
+
+  .zwei { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .karte { background: var(--paper); border-radius: 14px; padding: 16px 18px 12px; }
+  .karte h3 { font-size: 14px; font-weight: 800; margin-bottom: 6px; }
+  .karte .lines li { padding: 5px 0; font-size: 12.5px; }
+
+  .invest { margin-top: 24px; border: 1.5px solid rgba(255,57,81,0.35); border-radius: 16px; padding: 20px 22px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; background: var(--soft); }
+  .invest h3 { font-size: 16px; font-weight: 800; margin-bottom: 4px; }
+  .invest p { font-size: 12.5px; color: var(--dim); max-width: 440px; }
+  .invest .summe { text-align: right; }
+  .invest .summe b { display: block; font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .invest .summe span { display: block; font-size: 11px; color: var(--faint); margin-top: 3px; }
+
+  .beweis { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 250px 1fr 1fr 1fr; gap: 18px; align-items: center; }
+  .person { display: flex; align-items: center; gap: 12px; }
+  .person img { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; border: 2px solid var(--line); }
+  .person b { display: block; font-size: 14px; font-weight: 800; }
+  .person span { display: block; font-size: 11.5px; color: var(--dim); line-height: 1.3; }
+  .fakt b { display: block; font-size: 18px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.1; white-space: nowrap; }
+  .fakt .sterne { color: #f4b400; font-size: 13px; display: block; margin: 2px 0 1px; }
+  .fakt span { display: block; font-size: 11.5px; color: var(--dim); line-height: 1.3; }
+  .cta { margin-top: auto; background: var(--dark); color: #fff; padding: 22px 56px 26px; display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; }
+  .cta .ueber { color: #ff6073; }
+  .cta h3 { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .cta h3 .a { color: var(--accent); }
+  .cta p { font-size: 12.5px; color: #c9c5d2; max-width: 460px; }
+  .cta .wege { display: flex; gap: 22px; margin-top: 12px; font-size: 13px; font-weight: 800; }
+  .cta .wege span { display: block; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8591; font-weight: 700; margin-bottom: 2px; }
+  .unterschrift { border: 1px dashed rgba(255,255,255,0.35); border-radius: 12px; padding: 14px 18px; min-width: 220px; font-size: 11px; color: #c9c5d2; }
+  .unterschrift b { display: block; color: #fff; font-size: 12px; margin-bottom: 26px; }
+  .fuss { padding: 10px 56px 16px; font-size: 10px; color: var(--faint); display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<!-- SEITE 1 -->
+<div class="seite">
+  <header class="kopf">
+    <div class="kopf-zeile">
+      <img src="logo-pixel56.webp" alt="Pixel56">
+      <span class="pill">Angebot · gültig 14 Tage</span>
+    </div>
+    <div class="kicker">Marketing-Start in 90 Tagen</div>
+    <h1>Ihr Marketing läuft.<br><span class="a">Ab <span class="f">[Startdatum]</span>, ohne Festanstellung.</span></h1>
+    <p class="sub">Für <b><span class="f">[Firma]</span></b>: drei konkrete Hebel aus unserem Gespräch, in 90 Tagen umgesetzt. Danach entscheiden Sie, ob es weitergeht.</p>
+    <div class="meta">
+      <div>Für<b><span class="f">[Vorname Nachname, Funktion]</span></b></div>
+      <div>Datum<b><span class="f">[TT.MM.JJJJ]</span></b></div>
+      <div>Angebot<b><span class="f">[Nr.]</span></b></div>
+      <div>Ansprechpartner<b>Atilla Ciftcioglu</b></div>
+    </div>
+  </header>
+
+  <section class="block pad">
+    <div class="ueber">Ihre Situation, wie ich sie verstanden habe</div>
+    <ul class="lines">
+      <li><span class="x"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div><span class="f">[Punkt 1 aus dem Gespräch, z. B. „Die Stelle Online-Marketing ist seit Juli offen, Website und Social Media stehen still.“]</span></div></li>
+      <li><span class="x"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div><span class="f">[Punkt 2, z. B. „Anfragen kommen fast nur über Empfehlungen, Google-Profil ohne Pflege.“]</span></div></li>
+      <li><span class="x"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div><span class="f">[Punkt 3, z. B. „Zwei Stellen im Lager unbesetzt, Bewerbung nur per E-Mail.“]</span></div></li>
+    </ul>
+  </section>
+
+  <section class="block pad">
+    <div class="ueber">Die drei Hebel für die ersten 90 Tage</div>
+    <h2>Was wir konkret umsetzen</h2>
+    <div class="hebel">
+      <article><div class="nr">1</div><strong><span class="f">[Hebel 1, z. B. Landingpage für Anfragen]</span></strong><p><span class="f">[Zwei Sätze: Was entsteht, was es bringt.]</span></p><small>Woche 2 bis 5</small></article>
+      <article><div class="nr">2</div><strong><span class="f">[Hebel 2, z. B. Google-Profil und lokale Sichtbarkeit]</span></strong><p><span class="f">[Zwei Sätze.]</span></p><small>Woche 3 bis 8</small></article>
+      <article><div class="nr">3</div><strong><span class="f">[Hebel 3, z. B. Bewerbungsweg vom Handy]</span></strong><p><span class="f">[Zwei Sätze.]</span></p><small>Woche 6 bis 12</small></article>
+    </div>
+  </section>
+
+  <section class="block pad">
+    <div class="ueber">So läuft es</div>
+    <div class="zeit">
+      <div><b class="p">1</b><small>Woche 1</small><strong>Bestandsaufnahme</strong><p>Website, Google-Profil, Werbekonten, Anfrageweg. Zwei Stunden mit Ihnen.</p></div>
+      <div><b class="p">2</b><small>Woche 2 bis 12</small><strong>Umsetzung</strong><p>Die drei Hebel werden gebaut und gemessen.</p></div>
+      <div><b class="p">3</b><small>Alle 2 Wochen</small><strong>Status</strong><p>20 Minuten per Telefon oder Video. Sie wissen jederzeit, was läuft.</p></div>
+      <div><b class="p">4</b><small>Woche 12</small><strong>Entscheidung</strong><p>Was hat gewirkt, was kommt als Nächstes. Weiter, pausieren oder übergeben.</p></div>
+    </div>
+  </section>
+
+  <div class="fuss"><span>Pixel56 · Atilla Ciftcioglu · Koblenz · pixel56.de</span><span>Seite 1 von 2</span></div>
+</div>
+
+<!-- SEITE 2 -->
+<div class="seite">
+  <section class="block pad" style="padding-top: 44px;">
+    <div class="ueber">Klar abgegrenzt</div>
+    <div class="zwei">
+      <div class="karte">
+        <h3>Enthalten</h3>
+        <ul class="lines">
+          <li><span class="ok"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5l2.8 2.8L10 3.5"/></svg></span><div>Bestandsaufnahme mit schriftlicher Prioritätenliste</div></li>
+          <li><span class="ok"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5l2.8 2.8L10 3.5"/></svg></span><div>Umsetzung der drei Hebel inklusive Texten, Design und Technik</div></li>
+          <li><span class="ok"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5l2.8 2.8L10 3.5"/></svg></span><div>Messung: Sie sehen, was ankommt</div></li>
+          <li><span class="ok"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5l2.8 2.8L10 3.5"/></svg></span><div>Sechs Statusgespräche, Erreichbarkeit per WhatsApp und Telefon</div></li>
+          <li><span class="ok"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5l2.8 2.8L10 3.5"/></svg></span><div>Alles im Eigentum von <span class="f">[Firma]</span>: Seiten, Konten, Inhalte</div></li>
+        </ul>
+      </div>
+      <div class="karte">
+        <h3>Nicht enthalten</h3>
+        <ul class="lines">
+          <li><span class="x"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div>Werbebudgets an Meta oder Google (laufen über Ihr Konto)</div></li>
+          <li><span class="x"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div>Foto- und Videodreh vor Ort (auf Wunsch als eigener Block)</div></li>
+          <li><span class="x"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div>IT-Administration, Warenwirtschaft, Buchhaltungssysteme</div></li>
+          <li><span class="x"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7"/></svg></span><div>Lizenzen Dritter (Schriften, Tools, Stockmaterial), falls nötig</div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block pad">
+    <div class="ueber">Nach den 90 Tagen</div>
+    <h2>Weiter nur so viel, wie Sie brauchen</h2>
+    <p class="lead">Kleine Grundpauschale für Erreichbarkeit, Pflege von Website und Google-Profil und einen Monatsbericht. Dazu Aufgabenblöcke, die Sie abrufen, wenn etwas ansteht. Monatlich kündbar, jederzeit pausierbar. Oder Sie übergeben alles an Ihre neue Kraft, sauber dokumentiert.</p>
+  </section>
+
+  <div class="pad">
+    <div class="invest">
+      <div>
+        <h3>Investition für die 90 Tage</h3>
+        <p>Pauschale, zahlbar in drei Raten: bei Auftrag, nach Woche 6, bei Abschluss. Zum Vergleich: eine Marketingstelle kostet mit Nebenkosten und Einarbeitung ein Vielfaches, jeden Monat, ob Arbeit da ist oder nicht.</p>
+      </div>
+      <div class="summe"><b><span class="f">[Betrag] €</span></b><span>zzgl. USt. · drei Raten à <span class="f">[Betrag/3] €</span></span></div>
+    </div>
+  </div>
+
+  <section class="beweis pad">
+    <div class="person">
+      <img src="team-atilla-quadrat.webp" alt="Atilla Ciftcioglu">
+      <div><b>Atilla Ciftcioglu</b><span>Gründer Pixel56, Koblenz</span><span>Sie sprechen immer mit mir.</span></div>
+    </div>
+    <div class="fakt"><b>5,0 bei Google</b><span class="sterne">★★★★★</span><span>27 Bewertungen</span></div>
+    <div class="fakt"><b>Seit 2018</b><span>Websites, Anzeigen, Content, KI-Abläufe</span></div>
+    <div class="fakt"><b>Zuletzt: Köln</b><span>Großhändler mit rund 200 Mitarbeitern</span></div>
+  </section>
+
+  <footer class="cta">
+    <div>
+      <div class="ueber">Nächster Schritt</div>
+      <h3>Ein „Ja“ per E-Mail reicht. <span class="a">Start am <span class="f">[Startdatum]</span>.</span></h3>
+      <p>Nach Ihrer Zusage schicke ich die Terminbestätigung für die Bestandsaufnahme und eine kurze Liste, was ich dafür von Ihnen brauche. Es gelten die AGB unter pixel56.de/agb.</p>
+      <div class="wege">
+        <div><span>Telefon</span>02622 9898654</div>
+        <div><span>WhatsApp</span>0178 5282464</div>
+        <div><span>E-Mail</span>info@pixel56.de</div>
+      </div>
+    </div>
+    <div class="unterschrift"><b>Angenommen</b>Datum, Unterschrift <span class="f">[Firma]</span></div>
+  </footer>
+  <div class="fuss"><span>Pixel56 · Atilla Ciftcioglu · Hüttenstraße 100 · 56170 Bendorf · USt-IdNr. DE316853316</span><span>Seite 2 von 2</span></div>
+</div>
+
+</body>
+</html>

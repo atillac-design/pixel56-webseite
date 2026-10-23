@@ -1,0 +1,10 @@
+import { createRequire } from "node:module";
+const { chromium } = createRequire(import.meta.url)("/opt/node22/lib/node_modules/playwright");
+const browser = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
+const page = await browser.newPage();
+await page.goto("file://" + process.cwd() + "/angebot.html", { waitUntil: "networkidle" });
+await page.evaluate(() => document.fonts.ready);
+const h = await page.evaluate(() => [...document.querySelectorAll(".seite")].map(s => s.scrollHeight));
+console.log("Seitenhöhen px:", h, "(A4 = 1123)");
+await page.pdf({ path: "Pixel56-Angebot-Marketing-Start.pdf", format: "A4", printBackground: true, preferCSSPageSize: true });
+await browser.close();
