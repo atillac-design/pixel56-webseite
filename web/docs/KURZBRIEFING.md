@@ -91,24 +91,13 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 - **Van den Berg Gruppe:** Firma existiert nicht mehr, Zusammenarbeit
   „bis 2024“, drei Meta-Anzeigen in der Galerie, Texte in Vergangenheit.
 
-- **Strategie-Entscheidung (19.10.):** Website bleibt breit. Nach außen ein
-  Speer für den Mittelstand (20 bis 200 Mitarbeiter): „Marketing- und
-  Digitalabteilung ohne Festanstellung, abrufbar, pausierbar“, Auslöser
-  sind Stellenanzeigen für Marketingstellen. Einstiegsangebot, Brief,
-  Anrufleitfaden und Wochenplan stehen in `docs/AKQUISE-MITTELSTAND.md`.
-  Website wird erst nach den ersten Gesprächen angepasst (eigene Seite mit
-  Köln-Zitat). Keine Preise auf der Seite, auch nicht dafür. Brief auf
-  sechs Sätze gekürzt, Beilage als A4-Blatt (`docs/akquise-blatt/`, vom
-  Inhaber abgenommen nach zwei Runden: weißes Logo, keine Schatten).
-  Erste Zehnerliste mit Betrieben und offener Marketingstelle in
-  `docs/AKQUISE-LISTE-1.md`, Nachverfolgung in `docs/akquise-nachverfolgung.csv`
-  (20.10.). Angebotsvorlage „Marketing-Start in 90 Tagen“ (zwei Seiten,
-  gelbe Felder je Kunde) und Ablauf nach dem Gespräch mit Mail und
-  Nachfass-Rhythmus in `docs/akquise-angebot/` (23.10.). Jobportale sind
-  aus der Sandbox gesperrt, nur Websuche geht:
-  Anzeigen muss der Inhaber vor dem Brief selbst prüfen. **Regel (22.10.):**
-  nichts aus Bendorf und Umgebung anschreiben (schon passiert), Baldus und
-  WEPA gestrichen. Gepflegte Liste = Google-Tabelle im Drive des Inhabers.
+- **Strategie-Entscheidung (19.10.):** Website bleibt breit, keine Preise.
+  Nach außen ein Speer für den Mittelstand (20 bis 200 Mitarbeiter):
+  „Marketing- und Digitalabteilung ohne Festanstellung, abrufbar,
+  pausierbar“. Alles dazu liegt fertig in `docs/AKQUISE-MITTELSTAND.md`,
+  `docs/AKQUISE-LISTE-1.md`, `docs/akquise-blatt/`, `docs/akquise-angebot/`
+  und der Google-Tabelle im Drive des Inhabers. Regel: nichts aus Bendorf
+  und Umgebung anschreiben, Baldus und WEPA gestrichen.
   **Akquise ruht (23.10.):** Inhaber will erst die Website fertig haben.
   Keine weiteren Akquise-Lieferungen, bis er es ausdrücklich sagt.
 
