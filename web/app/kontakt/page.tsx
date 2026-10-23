@@ -127,7 +127,7 @@ export default function KontaktPage() {
         <section className="band theme-light" id="anfrage" style={{ paddingTop: 100 }}>
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">01 — In fünf Klicks zur Einschätzung</span>
+              <span className="band-tag">01 — In sechs Klicks zur Einschätzung</span>
               <h2 className="band-title">
                 Sag uns kurz, <em>worum es geht.</em>
               </h2>

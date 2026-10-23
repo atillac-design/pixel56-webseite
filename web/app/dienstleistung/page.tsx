@@ -249,7 +249,7 @@ export default function DienstleistungenPage() {
           </div>
           <div>
             <span>Für wen</span>
-            <strong>Handwerk, Mittelstand, Dienstleister, Vereine</strong>
+            <strong>Kleine und mittelständische Unternehmen, Handwerk, Vereine</strong>
           </div>
           <div>
             <span>Arbeitsweise</span>
@@ -464,9 +464,9 @@ export default function DienstleistungenPage() {
         <section className="band theme-light light-reviews" id="stimmen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">09 — Kundenstimmen</span>
+              <span className="band-tag">09 — Das sagen Kunden</span>
               <h2 className="band-title">
-                Was Kunden <em>über die Zusammenarbeit sagen</em>
+                Wörtlich so <em>veröffentlicht.</em>
               </h2>
             </div>
             <p className="band-note">

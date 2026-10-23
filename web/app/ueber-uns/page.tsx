@@ -235,7 +235,7 @@ export default async function UeberUnsPage() {
           </div>
           <div>
             <span>Kunden</span>
-            <strong>Handwerk, Mittelstand, Vereine, Selbstständige</strong>
+            <strong>Kleine und mittelständische Unternehmen, Handwerk, Vereine</strong>
           </div>
         </section>
 
@@ -550,9 +550,9 @@ export default async function UeberUnsPage() {
         <section className="band theme-light light-reviews" id="stimmen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">11 — Kundenstimmen</span>
+              <span className="band-tag">11 — Das sagen Kunden</span>
               <h2 className="band-title">
-                Was Kunden <em>über die Zusammenarbeit sagen</em>
+                Wörtlich so <em>veröffentlicht.</em>
               </h2>
             </div>
             <p className="band-note">

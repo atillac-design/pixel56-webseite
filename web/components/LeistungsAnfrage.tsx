@@ -96,7 +96,7 @@ export default function LeistungsAnfrage({ bogen, google }: { bogen: Fragebogen;
         <span className="anfrage-rail-tag">Kostenlose Einschätzung</span>
         <h3>{bogen.versprechen}</h3>
         <ul>
-          <li>Fünf kurze Fragen, nichts zum Tippen</li>
+          <li>Sechs kurze Fragen, nichts zum Tippen</li>
           <li>Antwort persönlich von Atilla, innerhalb eines Werktags</li>
           <li>Kein Newsletter, kein Verkaufsdruck</li>
         </ul>

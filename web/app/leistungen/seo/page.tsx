@@ -564,7 +564,7 @@ export default function SeoPage() {
         <section className="band theme-light" id="anfrage">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">14 — In fünf Klicks zur Einschätzung</span>
+              <span className="band-tag">14 — In sechs Klicks zur Einschätzung</span>
               <h2 className="band-title">
                 Sag uns kurz, <em>wo du bei Google stehst.</em>
               </h2>

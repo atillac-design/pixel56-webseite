@@ -665,7 +665,7 @@ export default function ContentPage() {
         <section className="band theme-light" id="anfrage">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">15 — In fünf Klicks zur Einschätzung</span>
+              <span className="band-tag">15 — In sechs Klicks zur Einschätzung</span>
               <h2 className="band-title">
                 Sag uns kurz, <em>wie es bei dir mit Content läuft.</em>
               </h2>

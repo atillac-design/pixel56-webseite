@@ -400,9 +400,9 @@ export default async function ProjektePage() {
         <section className="band theme-light light-reviews" id="bewertungen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">08 — Kundenstimmen</span>
+              <span className="band-tag">08 — Das sagen Kunden</span>
               <h2 className="band-title">
-                Was Kunden <em>über die Zusammenarbeit sagen</em>
+                Wörtlich so <em>veröffentlicht.</em>
               </h2>
             </div>
             <p className="band-note">

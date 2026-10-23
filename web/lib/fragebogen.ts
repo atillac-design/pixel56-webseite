@@ -1,5 +1,5 @@
 /**
- * Klick-Fragebögen je Leistung: fünf Fragen mit Antwortknöpfen, danach die
+ * Klick-Fragebögen je Leistung: sechs Fragen mit Antwortknöpfen, danach die
  * Kontaktdaten. Die Antworten gehen als lesbare Zusammenfassung per Mail an
  * Pixel56 und als Kontakt mit Feldern in MailerLite (siehe /api/anfrage).
  * Budget-Spannen sind Vorschläge; der Inhaber passt sie an.
@@ -48,13 +48,24 @@ const BRANCHE: AnfrageFrage = {
   ],
 };
 
+const GROESSE: AnfrageFrage = {
+  id: "groesse",
+  frage: "Wie groß ist dein Betrieb?",
+  optionen: [
+    { text: "Ich allein oder zu zweit", reaktion: "Dann muss alles mit wenig Aufwand für dich laufen." },
+    { text: "3 bis 10 Mitarbeiter", reaktion: "Die klassische Größe, bei der Marketing nebenbei liegen bleibt." },
+    { text: "11 bis 50 Mitarbeiter", reaktion: "Dann lohnt sich ein System, das ohne dich weiterläuft." },
+    { text: "Über 50 Mitarbeiter", reaktion: "Dann geht es um Abläufe und Zuständigkeiten, nicht nur um Design." },
+  ],
+};
+
 export const frageboegen = {
   webdesign: {
     key: "webdesign",
     leistung: "Webdesign",
-    titel: "Dein Website-Projekt in fünf Klicks",
+    titel: "Dein Website-Projekt in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, wo deine Website Anfragen verliert.",
-    einleitung: "Fünf Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, was bei dir der größte Hebel ist.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, was bei dir der größte Hebel ist.",
     quelle: "anfrage-webdesign",
     fragen: [
       {
@@ -75,17 +86,20 @@ export const frageboegen = {
           { text: "Buchungen oder Bestellungen", reaktion: "Dann muss der Weg zur Buchung in zwei Klicks gehen." },
           { text: "Bewerbungen", reaktion: "Dann zeigen wir dein Team, nicht nur deine Leistung." },
           { text: "Vertrauen bei Kunden, die mich prüfen", reaktion: "Dann zählen echte Projekte und echte Stimmen." },
+          { text: "Einfach professionell dastehen, wie eine Visitenkarte", reaktion: "Geht, bleibt aber schlank: klar, schnell, ohne Ballast." },
         ],
       },
+      GROESSE,
       BRANCHE,
       {
-        id: "zeit",
-        frage: "Wann soll es losgehen?",
+        id: "umfang",
+        frage: "Was brauchst du?",
         optionen: [
-          { text: "So schnell wie möglich", reaktion: "Dann planen wir in Etappen, damit früh etwas online ist." },
-          { text: "In den nächsten ein bis drei Monaten", reaktion: "Guter Zeitrahmen für ein sauberes Projekt." },
-          { text: "Später im Jahr", reaktion: "Dann lohnt es sich, jetzt schon Inhalte zu sammeln." },
-          { text: "Ich informiere mich erst", reaktion: "Völlig okay. Die Einschätzung ist unverbindlich." },
+          { text: "Eine einzelne Seite, die auf den Punkt kommt", reaktion: "Landingpage. Ein Ziel, kein Umweg." },
+          { text: "Mehrere Unterseiten: Leistungen, Über uns, Kontakt", reaktion: "Die klassische Unternehmenswebsite, jede Seite mit einer Aufgabe." },
+          { text: "Website plus Funnel, Buchung oder Bewerbung", reaktion: "Dann bauen wir den Weg zum Ziel gleich mit." },
+          { text: "Einen Shop", reaktion: "Dann zählen Produktdarstellung, Checkout und Anbindungen." },
+          { text: "Weiß ich noch nicht", reaktion: "Kein Problem, das klären wir im Gespräch in fünf Minuten." },
         ],
       },
       {
@@ -105,9 +119,9 @@ export const frageboegen = {
   "meta-ads": {
     key: "meta-ads",
     leistung: "Meta Ads",
-    titel: "Deine Kampagne in fünf Klicks",
+    titel: "Deine Kampagne in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, ob Anzeigen sich bei dir rechnen.",
-    einleitung: "Fünf Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, ob und wie Anzeigen bei dir funktionieren.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, ob und wie Anzeigen bei dir funktionieren.",
     quelle: "anfrage-meta-ads",
     fragen: [
       {
@@ -140,6 +154,7 @@ export const frageboegen = {
           { text: "Direkt zu WhatsApp oder Telefon", reaktion: "Funktioniert gut, wenn schnell jemand antwortet." },
         ],
       },
+      GROESSE,
       BRANCHE,
       {
         id: "budget",
@@ -158,9 +173,9 @@ export const frageboegen = {
   "content-produktion": {
     key: "content-produktion",
     leistung: "Social Content & Reels",
-    titel: "Dein Content in fünf Klicks",
+    titel: "Dein Content in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, wie Content bei dir läuft, ohne dass du ihn selbst machen musst.",
-    einleitung: "Fünf Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, welcher Rhythmus und welches Material bei dir Sinn ergeben.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, welcher Rhythmus und welches Material bei dir Sinn ergeben.",
     quelle: "anfrage-content",
     fragen: [
       {
@@ -183,6 +198,7 @@ export const frageboegen = {
           { text: "Marke und Qualität sichtbar machen", reaktion: "Dann arbeiten wir mit Einblicken hinter die Kulissen." },
         ],
       },
+      GROESSE,
       BRANCHE,
       {
         id: "material",
@@ -211,9 +227,9 @@ export const frageboegen = {
   "ki-automatisierung": {
     key: "ki-automatisierung",
     leistung: "KI-Prozesse & Automatisierung",
-    titel: "Deine Routine in fünf Klicks",
+    titel: "Deine Routine in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, welche Routine bei dir zuerst wegfallen kann.",
-    einleitung: "Fünf Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, welcher Prozess bei dir den größten Hebel hat.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, welcher Prozess bei dir den größten Hebel hat.",
     quelle: "anfrage-ki",
     fragen: [
       {
@@ -236,6 +252,7 @@ export const frageboegen = {
           { text: "Bleibt oft liegen", reaktion: "Genau da entstehen verlorene Aufträge. Das ändern wir." },
         ],
       },
+      GROESSE,
       BRANCHE,
       {
         id: "werkzeuge",
@@ -264,9 +281,9 @@ export const frageboegen = {
   "landingpages-funnels": {
     key: "landingpages-funnels",
     leistung: "Landingpages & Funnels",
-    titel: "Deine Zielseite in fünf Klicks",
+    titel: "Deine Zielseite in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, warum aus deinen Klicks keine Anfragen werden.",
-    einleitung: "Fünf Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, welche Seite dein Angebot braucht.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, welche Seite dein Angebot braucht.",
     quelle: "anfrage-landingpage",
     fragen: [
       {
@@ -289,6 +306,7 @@ export const frageboegen = {
           { text: "Auf ein Formular ohne Nachfassen", reaktion: "Dann geht die Hälfte der Anfragen verloren. Das lösen wir mit." },
         ],
       },
+      GROESSE,
       BRANCHE,
       {
         id: "zeit",
@@ -317,9 +335,9 @@ export const frageboegen = {
   mitarbeitergewinnung: {
     key: "mitarbeitergewinnung",
     leistung: "Mitarbeitergewinnung",
-    titel: "Deine Stellen in fünf Klicks",
+    titel: "Deine Stellen in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, warum sich die Richtigen bei dir noch nicht bewerben.",
-    einleitung: "Fünf Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, wie du die Leute erreichst, die gerade nicht suchen.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, wie du die Leute erreichst, die gerade nicht suchen.",
     quelle: "anfrage-recruiting",
     fragen: [
       {
@@ -352,6 +370,7 @@ export const frageboegen = {
           { text: "Laufend, wir wachsen" },
         ],
       },
+      GROESSE,
       BRANCHE,
       {
         id: "budget",
@@ -370,9 +389,9 @@ export const frageboegen = {
   "google-ads": {
     key: "google-ads",
     leistung: "Google Ads",
-    titel: "Deine Suchkampagne in fünf Klicks",
+    titel: "Deine Suchkampagne in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, ob Google Ads bei dir Aufträge bringen.",
-    einleitung: "Fünf Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, ob sich Suchanzeigen bei dir rechnen.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, ob sich Suchanzeigen bei dir rechnen.",
     quelle: "anfrage-google-ads",
     fragen: [
       {
@@ -405,6 +424,7 @@ export const frageboegen = {
           { text: "Deutschland, Österreich, Schweiz" },
         ],
       },
+      GROESSE,
       BRANCHE,
       {
         id: "budget",
@@ -423,9 +443,9 @@ export const frageboegen = {
   seo: {
     key: "seo",
     leistung: "SEO",
-    titel: "Deine Sichtbarkeit in fünf Klicks",
+    titel: "Deine Sichtbarkeit in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, warum du bei Google noch nicht vorn stehst.",
-    einleitung: "Fünf Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, was bei dir zuerst zu tun ist.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, was bei dir zuerst zu tun ist.",
     quelle: "anfrage-seo",
     fragen: [
       {
@@ -458,6 +478,7 @@ export const frageboegen = {
           { text: "Es gibt keine" },
         ],
       },
+      GROESSE,
       BRANCHE,
       {
         id: "budget",
@@ -476,9 +497,9 @@ export const frageboegen = {
   allgemein: {
     key: "allgemein",
     leistung: "Kontakt",
-    titel: "Dein Anliegen in fünf Klicks",
+    titel: "Dein Anliegen in sechs Klicks",
     versprechen: "In zwei Minuten weißt du, wo dein größter Hebel liegt.",
-    einleitung: "Fünf Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, womit du am besten anfängst.",
+    einleitung: "Sechs Fragen, dann deine Kontaktdaten. Du bekommst innerhalb eines Werktags eine ehrliche Einschätzung, womit du am besten anfängst.",
     quelle: "anfrage-kontakt",
     fragen: [
       {
@@ -505,6 +526,7 @@ export const frageboegen = {
           { text: "Weniger Handarbeit im Alltag", reaktion: "Dann schauen wir, was sich jede Woche wiederholt." },
         ],
       },
+      GROESSE,
       BRANCHE,
       {
         id: "zeitpunkt",

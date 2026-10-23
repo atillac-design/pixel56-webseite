@@ -143,6 +143,16 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Sicherheitsnetz beim Scrollen. Inhaber hatte die leere Projektseite auf dem
   iPhone gemeldet. Netlify-Kontingent seit 22.10. wieder frei, Deploys laufen
   nach jedem Push automatisch.
+- **Fragebogen auf sechs Fragen (23.10., Wunsch des Inhabers):** überall
+  neue Frage „Wie groß ist dein Betrieb?“ (allein, 3–10, 11–50, über 50),
+  Webdesign zusätzlich „Was brauchst du?“ (einzelne Seite, mehrere
+  Unterseiten, Website plus Funnel/Buchung/Bewerbung, Shop) statt der
+  Zeitfrage und Ziel-Option „wie eine Visitenkarte“. Texte „fünf Klicks“ →
+  „sechs Klicks“. Zusammenfassungen auf Über uns, Leistungsübersicht und
+  Karriere auf „Kleine und mittelständische Unternehmen, Handwerk, Vereine“,
+  Kundenstimmen-Köpfe überall „Wörtlich so veröffentlicht.“ Prüflauf über
+  19 Seiten (Desktop + Handy): keine JS-Fehler, kein Überlauf, keine
+  kaputten Bilder, je genau eine H1.
 - **Next.js aktualisiert (23.10.):** 16.4.0 → 16.4.2 wegen einer vom
   Framework gemeldeten Sicherheitslücke. Build, SEO-Prüfung, Einblend-Test,
   Fragebogen-Klicktests und Statuscodes danach unverändert in Ordnung.

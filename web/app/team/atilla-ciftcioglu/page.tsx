@@ -236,9 +236,9 @@ export default function AtillaCiftciogluPage() {
         <section className="band theme-light light-reviews" id="stimmen">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">04 — Kundenstimmen</span>
+              <span className="band-tag">04 — Das sagen Kunden</span>
               <h2 className="band-title">
-                Was Kunden <em>über die Zusammenarbeit sagen</em>
+                Wörtlich so <em>veröffentlicht.</em>
               </h2>
             </div>
             <p className="band-note">

@@ -137,7 +137,7 @@ export default async function KarrierePage() {
           </div>
           <div>
             <span>Kunden</span>
-            <strong>Handwerk, Mittelstand, Vereine</strong>
+            <strong>Kleine und mittelständische Unternehmen, Handwerk, Vereine</strong>
           </div>
           <div>
             <span>Bewerbung</span>

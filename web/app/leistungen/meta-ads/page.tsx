@@ -34,7 +34,7 @@ import { googleAnzahlLautProfil, googleBewertungLautProfil } from "@/lib/google-
 export const metadata: Metadata = {
   title: "Meta Ads Agentur: Werbung, die Anfragen bringt",
   description:
-    "Meta Ads für Handwerk, Mittelstand und Dienstleister: Facebook- und Instagram-Kampagnen mit Tracking, Zielseite und Betreuung. Pixel56 bei Koblenz.",
+    "Meta Ads für kleine und mittelständische Unternehmen: Facebook- und Instagram-Kampagnen mit Tracking, Zielseite und Betreuung. Pixel56 bei Koblenz.",
   alternates: { canonical: serviceRoutes["meta-ads"] },
   openGraph: {
     title: "Meta Ads Agentur: Facebook & Instagram Werbung, die Anfragen bringt | Pixel56",
@@ -682,7 +682,7 @@ export default function MetaAdsPage() {
         <section className="band theme-light" id="anfrage">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">16 — In fünf Klicks zur Einschätzung</span>
+              <span className="band-tag">16 — In sechs Klicks zur Einschätzung</span>
               <h2 className="band-title">
                 Sag uns kurz, <em>was die Anzeigen bringen sollen.</em>
               </h2>

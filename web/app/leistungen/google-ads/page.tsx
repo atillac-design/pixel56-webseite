@@ -517,7 +517,7 @@ export default function GoogleAdsPage() {
         <section className="band theme-light" id="anfrage">
           <div className="band-head reveal">
             <div>
-              <span className="band-tag">13 — In fünf Klicks zur Einschätzung</span>
+              <span className="band-tag">13 — In sechs Klicks zur Einschätzung</span>
               <h2 className="band-title">
                 Sag uns kurz, <em>was passieren soll, wenn jemand sucht.</em>
               </h2>

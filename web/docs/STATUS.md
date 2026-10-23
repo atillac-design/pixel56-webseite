@@ -959,6 +959,25 @@ nicht eingeblendete Abschnitte auf allen drei Seiten. Build 746 Routen.
 Next.js hielt den Build einmal mit einem Sicherheitshinweis an (bekannte
 Lücke in der eingesetzten Version, Upgrade empfohlen); zweiter Lauf fehlerfrei. Mit Freigabe des Inhabers anschließend Next.js von 16.4.0 auf 16.4.2 gehoben (`npm install next@16.4.2`, React unverändert 19.2); Build 746 Routen, `seo:check:strict`, Einblend-Test auf drei Seiten, Fragebogen-Klicktests auf /kontakt und /webdesign (Desktop + Mobil, keine Seitenfehler) und Statuscodes der Kernseiten geprüft.
 
+## 23.10.2026 (zweiter Teil): Fragebogen erweitert, Prüflauf über die Seite
+
+Inhaber fragte nach einem Klick-Formular je Leistung mit Fragen nach
+Unternehmensgröße, Umfang (Landingpage oder mehrere Unterseiten, Funnel),
+Ziel (verkaufen oder Visitenkarte) und Budget. Das Formular gab es bereits
+auf allen acht Leistungsseiten; ergänzt wurde die gemeinsame Frage
+`GROESSE` in allen neun Bögen (sechs statt fünf Fragen), bei Webdesign die
+Frage `umfang` anstelle der Zeitfrage und die Ziel-Option „wie eine
+Visitenkarte“. Meta Ads fragte Kunden/Bewerber und Budget schon ab.
+Testskript `anfrage-test2.mjs` läuft jetzt bis zum Kontaktschritt, egal wie
+viele Fragen; fünf Seiten ohne Seitenfehler, API antwortet wie erwartet 503
+ohne Mail-Schlüssel. Neues Prüfskript `crawl-check.mjs`: 19 Seiten in zwei
+Breiten, geprüft auf JS-Fehler, Konsolenfehler, horizontalen Überlauf,
+kaputte Bilder, H1-Anzahl und Status. Einziger Treffer war der Testpfad
+`/ressourcen`, den es als Seite nicht gibt (Ressourcen liegen unter
+`/ressourcen/<slug>`), kein Fehler der Seite. Textprüfung: keine
+Preisangaben außerhalb des Tagesplaner-Produkts, kein „inhabergeführt“,
+Bendorf nur in Schema/Impressum/Datenschutz/Standorten.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter
