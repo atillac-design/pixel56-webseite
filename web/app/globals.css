@@ -3466,3 +3466,45 @@ body { overflow-x: clip; }
 @media (max-width: 560px) {
   .wegweiser { grid-template-columns: 1fr; }
 }
+
+/* Schaubilder (Anzeige-Anatomie, lokale Suche) und Fotokarte */
+.schema-figur { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 28px; align-items: start; margin: 40px 0 0; padding: 26px; border: 1px solid var(--card-border); border-radius: 22px; background: var(--card); box-shadow: var(--card-shadow); }
+.schema-figur figcaption { grid-column: 1 / -1; font-size: 13px; color: var(--ink-faint); }
+.schema-serp { position: relative; padding: 18px; border-radius: 16px; background: #0f0e14; color: #ece9f1; font-size: 13.5px; line-height: 1.5; }
+.schema-suche { display: flex; align-items: center; gap: 10px; position: relative; padding: 10px 14px; border-radius: 999px; background: #1b1a23; border: 1px solid rgba(255,255,255,0.08); margin-bottom: 14px; }
+.schema-suche i { width: 12px; height: 12px; border: 2px solid #8f8aa3; border-radius: 50%; flex: none; }
+.schema-suche span { color: #fff; }
+.schema-anzeige, .schema-zielseite, .schema-block { position: relative; padding: 14px 16px; border-radius: 12px; background: #16151d; border: 1px solid rgba(255,255,255,0.07); }
+.schema-anzeige { border-color: rgba(255,57,81,0.45); }
+.schema-zeile-klein { font-size: 12px; color: #9b96ad; margin-bottom: 4px; }
+.schema-zeile-klein b { color: #ece9f1; font-weight: 700; }
+.schema-titel { position: relative; color: #8ab4ff; font-size: 16px; font-weight: 600; margin-bottom: 4px; padding-right: 30px; }
+.schema-text { position: relative; color: #c9c5d6; padding-right: 30px; }
+.schema-erweiterungen { position: relative; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; padding-right: 30px; }
+.schema-erweiterungen span { font-size: 12px; color: #8ab4ff; }
+.schema-erweiterungen .schema-anruf { padding: 2px 10px; border-radius: 999px; border: 1px solid #8ab4ff; }
+.schema-pfeil { width: 2px; height: 22px; margin: 6px auto; background: linear-gradient(var(--accent), transparent); }
+.schema-balken { height: 9px; border-radius: 5px; background: #2a2834; margin: 8px 0; width: 62%; }
+.schema-balken.lang { width: 88%; }
+.schema-balken.kurz { width: 42%; }
+.schema-formular { position: relative; display: inline-block; margin-top: 10px; padding: 8px 14px; border-radius: 10px; background: var(--accent); color: #fff; font-weight: 700; font-size: 13px; padding-right: 36px; }
+.schema-block + .schema-block { margin-top: 10px; }
+.schema-block.gedimmt { opacity: 0.55; }
+.schema-block.hervorgehoben { border-color: rgba(255,57,81,0.45); }
+.schema-karte { height: 54px; border-radius: 8px; margin: 6px 0 10px; background: repeating-linear-gradient(135deg, #1f2b3a 0 10px, #233141 10px 20px); }
+.schema-lokal { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-top: 1px solid rgba(255,255,255,0.06); font-size: 12.5px; }
+.schema-lokal b { color: #fff; font-weight: 600; }
+.schema-lokal span { color: #9b96ad; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.schema-marke { position: absolute; right: 10px; top: 10px; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: #fff; font-style: normal; font-size: 12px; font-weight: 700; display: grid; place-items: center; }
+.schema-suche .schema-marke { position: static; margin-left: auto; }
+.schema-legende { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
+.schema-legende li { display: grid; grid-template-columns: 24px 1fr; gap: 12px; align-items: start; }
+.schema-legende li > span { width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; display: grid; place-items: center; margin-top: 1px; }
+.schema-legende b { display: block; font-size: 15px; margin-bottom: 2px; }
+.schema-legende small { display: block; font-size: 14px; line-height: 1.55; color: var(--ink-dim); }
+.foto-karte { margin: 0 0 14px; border-radius: 18px; overflow: hidden; border: 1px solid var(--card-border); background: var(--card); }
+.foto-karte img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.foto-karte figcaption { padding: 10px 16px; font-size: 13px; color: var(--ink-faint); }
+@media (max-width: 900px) {
+  .schema-figur { grid-template-columns: 1fr; padding: 18px; gap: 18px; }
+}

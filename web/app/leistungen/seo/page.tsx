@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LokaleSucheSchema } from "@/components/Schemata";
 import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
@@ -289,6 +290,9 @@ export default function SeoPage() {
                 </div>
               ))}
             </div>
+          </div>
+          <div className="reveal">
+            <LokaleSucheSchema />
           </div>
         </section>
 

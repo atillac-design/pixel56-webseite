@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
+import { AnzeigenSchema } from "@/components/Schemata";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
 import RegionLinks from "@/components/RegionLinks";
-import PlannedMedia from "@/components/PlannedMedia";
 import {
   ArrowIcon,
   ClientMarquee,
@@ -353,11 +353,7 @@ export default function GoogleAdsPage() {
               </div>
             ))}
           </div>
-          <PlannedMedia
-            title="Einblick in eine echte Google-Ads-Kampagne"
-            description="Hier passt später ein freigegebener, anonymisierter Screenshot von Kampagnenstruktur und Auswertung hinein, mit echten Daten statt erfundener Ergebnisse."
-            format="16:9"
-          />
+          <AnzeigenSchema />
         </section>
 
         <section className="band theme-light" id="fehler">

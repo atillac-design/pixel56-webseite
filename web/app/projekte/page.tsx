@@ -88,6 +88,12 @@ function tagGroups() {
     .slice(0, 6);
 }
 
+/** Projekte mit Galerie und Stimme zuerst, Projekte mit nur einem Bild ans Ende; sonst Reihenfolge wie gepflegt. */
+function nachBildstaerke(liste: typeof fallstudien) {
+  const gewicht = (p: (typeof fallstudien)[number]) => (p.galerie?.length ?? 0) + (p.stimme ? 1 : 0);
+  return [...liste].sort((a, b) => gewicht(b) - gewicht(a));
+}
+
 export default async function ProjektePage() {
   const googleStand = await holeGoogleStand();
   const spotlight = getFallstudie("cass-schulungen");
@@ -191,7 +197,7 @@ export default async function ProjektePage() {
           </div>
           <div className="reveal">
             <ProjektFilter
-              projekte={fallstudien.map((p) => ({
+              projekte={nachBildstaerke(fallstudien).map((p) => ({
                 slug: p.slug,
                 href: projectPath(p.slug),
                 kunde: p.kunde,

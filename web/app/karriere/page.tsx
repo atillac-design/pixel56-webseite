@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import koblenzImage from "@/public/bilder/koblenz-rhein.webp";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { ArrowIcon, ClientMarquee, ContactStrip, FaqList, WaMock } from "@/components/ui";
@@ -78,7 +80,7 @@ export default async function KarrierePage() {
           <header className="service-premium-hero">
             <div className="service-premium-glow" aria-hidden="true" />
             <div className="service-premium-copy">
-              <div className="premium-kicker">KARRIERE · BENDORF BEI KOBLENZ · REMOTE</div>
+              <div className="premium-kicker">KARRIERE · REGION KOBLENZ · REMOTE</div>
               <h1>
                 <span>Arbeite an Dingen,</span>
                 <span className="service-hero-accent">die live gehen.</span>
@@ -191,13 +193,19 @@ export default async function KarrierePage() {
                 Mehr über Pixel56 <ArrowIcon />
               </Link>
             </div>
-            <div className="mini-grid reveal" aria-label="Arbeitsweise">
+            <div className="reveal">
+              <figure className="foto-karte">
+                <Image src={koblenzImage} alt="Koblenz am Rhein, Deutsches Eck" sizes="(max-width: 980px) 100vw, 50vw" />
+                <figcaption>Remote, mit Treffen in der Region Koblenz</figcaption>
+              </figure>
+              <div className="mini-grid" aria-label="Arbeitsweise">
               {arbeitsweise.map((item) => (
                 <div key={item.b}>
                   <b>{item.b}</b>
                   <small>{item.small}</small>
                 </div>
               ))}
+              </div>
             </div>
           </div>
         </section>

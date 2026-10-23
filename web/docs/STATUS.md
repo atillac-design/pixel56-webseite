@@ -1064,6 +1064,24 @@ Außerdem Festnetznummer überall durch die Handynummer ersetzt (Vorwahl
 verriet Bendorf). Textkürzung auf den Leistungsseiten bewusst verschoben,
 bis echte Nutzungsdaten zeigen, wo Besucher abspringen.
 
+## 23.10.2026 (neunter Teil, lokal, noch nicht gepusht): Bildpaket ohne Fotos
+
+Inhaber: keine Arbeitsfotos möglich (kein Büro, allein am PC), KI-Bilder
+vorgeschlagen, abgelehnt wegen Kennzeichnungspflicht und Wirkung; Stock aus
+dem Internet wegen Lizenz abgelehnt. Stattdessen eigene Schaubilder
+(`components/Schemata.tsx`): Google Ads Abschnitt 05 zeigt die Anatomie
+einer Suchanzeige mit fünf Marken (ersetzt den sichtbaren PlannedMedia-
+Platzhalter), SEO Abschnitt 03 die drei Plätze einer lokalen Suche
+(Anzeige, Kartenansicht, organisch). Beide als Schema gekennzeichnet,
+Betriebe erfunden. Karriere: Kicker „Bendorf bei Koblenz“ → „Region
+Koblenz“ (Regelverstoß), Koblenz-Foto im Abschnitt 02. Projekte-Übersicht
+sortiert jetzt nach Galerie und Stimme, die vier Ein-Bild-Projekte stehen
+hinten. Webflow-Assetbibliothek (463 Dateien) und Portfolio-CMS geprüft:
+für MDU, CASS, Cavar, Dema gibt es dort keine weiteren Bilder; Downloads
+aus der Sandbox ohnehin gesperrt (Status 000). Offen: Platzhalter „Ein
+KI-Workflow aus der Praxis“ auf der KI-Seite, Screenshots der vier Projekte
+vom Inhaber, Handyfoto am Schreibtisch. Push erst nach Freigabe (Credits).
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter
