@@ -1112,6 +1112,16 @@ an und liegt nicht als Datei vor; Inhaber soll es erneut schicken. Geplante
 Stelle: Über uns, Abschnitt 06 (dunkel) als Figur über den vier Schritten.
 Build 748 Seiten, SEO-Check sauber.
 
+## 24.10.2026 (lokal): Teykto-Mockup auf der Startseite, Stark ins Neue erweitert
+
+Inhaber schickte Teykto-Mockups (Handy, Laptop) und ein Café-Laptop-Mockup
+der Starkmacher-Landingpage (Stark ins Neue, Margarete Wolf). Teykto-Laptop
+ersetzt auf der Startseite das Beispielbild in „Was wir jede Woche hören“
+(`ki-projekt-teykto-laptop.webp`); die KI-Seite behält den echten
+Bestellseiten-Screenshot, weil er das Produkt zeigt. Stark ins Neue bekommt
+den Café-Ausschnitt als drittes Galeriebild. Handy-Mockup von Teykto nicht
+verwendet (kein freier Platz, Doppelung).
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter

@@ -30,7 +30,7 @@ import vdbBaggerImage from "@/public/bilder/projekt-van-den-berg-anzeige-baggerf
 import vdbAbbruchImage from "@/public/bilder/projekt-van-den-berg-anzeige-abbruchhelfer.webp";
 import curlyAnnIpadImage from "@/public/bilder/projekt-curlyann-ipad.webp";
 import burgerfabriqImage from "@/public/bilder/projekt-burgerfabriq.webp";
-import teyktoImage from "@/public/bilder/ki-projekt-teykto.webp";
+import teyktoImage from "@/public/bilder/ki-projekt-teykto-laptop.webp";
 import atillaImage from "@/public/bilder/team-atilla.webp";
 import koblenzImage from "@/public/bilder/koblenz-rhein.webp";
 import seoFreebieImage from "@/public/bilder/freebie-seo-ebook-transparent.webp";

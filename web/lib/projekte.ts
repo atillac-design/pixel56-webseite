@@ -63,7 +63,7 @@ export const fallstudien: Fallstudie[] = [
     jahr: "2025",
     tags: ["Meta Ads", "Landingpage", "Webdesign"],
     bild: "/bilder/projekt-stark-ins-neue.webp",
-    galerie: ["/bilder/projekt-stark-ins-neue-2.webp", "/bilder/projekt-stark-ins-neue-3.webp"],
+    galerie: ["/bilder/projekt-stark-ins-neue-2.webp", "/bilder/projekt-stark-ins-neue-3.webp", "/bilder/projekt-stark-ins-neue-4.webp"],
     logo: "/bilder/kunde-stark-ins-neue.webp",
     variant: "ic-3",
     titel: "Vertrauen und Wirkung für eine Bildungsinitiative",
