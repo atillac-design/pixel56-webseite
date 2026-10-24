@@ -1135,6 +1135,41 @@ als „Symbolbild“ gekennzeichnet, Dateien `foto-*.webp`, 21:9-Karte
 (`.foto-breit`). BNE-Broschüre: Jahr 2026 laut Inhaber. Kein PlannedMedia
 mehr auf der Seite.
 
+## 24.10.2026 (lokal): 65 Standortseiten mit eigenen Texten
+
+Der Inhaber hatte den Verdacht, die Standortseiten seien bis auf den
+Stadtnamen gleich. Messung bestätigte das: `/locations/andernach-seo` und
+`/locations/neuwied-seo` teilten 54 von 71 Sätzen (76 %), die Stadtseiten
+61 von 79 (77 %). Vorgabe des Inhabers: Aufbau darf gleich bleiben, Texte
+höchstens 10 % identisch, Projekte passend einfügen, Schmerz und Lösung je
+Stadt erzählen, Ziel ist Sichtbarkeit in jeder Stadt.
+
+Umsetzung: neues Datenmodell `lib/standort-texte/typen.ts`, eine Datei je
+Stadt (`koblenz.ts`, `neuwied.ts`, `andernach.ts`, `vallendar.ts`,
+`bendorf.ts`, `hoehr-grenzhausen.ts`, `ransbach-baumbach.ts`,
+`montabaur.ts`, `lahnstein.ts`, `muelheim-kaerlich.ts`, `weissenthurm.ts`,
+`mayen.ts`, `limburg.ts`) mit je fünf Seiten. Jede Seite hat eigenen
+Titel, Meta, Hero, Abschnitt 01 (Stadt, Wirtschaft, Einzugsgebiet mit vier
+Fakten), 02 (Schmerz und vier Lösungs-Punkte), 03 (vier konkrete Karten),
+04 (drei passende Projekte mit Begründung), 05 (Querverlinkung), 06 (zwei
+Kundenstimmen aus `verifiedProjectVoices`, je Seite anders), 07 (vier
+FAQ). `components/StandortSeite.tsx` rendert das im Layout der
+Leistungsseiten; `app/standorte/[slug]/page.tsx` nimmt Titel und Meta aus
+den Texten. Die 226 noindex-Städte laufen weiter über `LocationPage.tsx`.
+
+Qualitätssicherung: Prüfskript (Scratchpad `pruefe-texte.cjs`) zählt
+Satz-Dubletten über alle 65 Seiten, prüft Titel ≤ 50 und Meta ≤ 155
+Zeichen, Projekt-Slugs, Stimmen-Schlüssel und Bendorf-Nennungen. Nach dem
+ersten Durchgang gab es 169 mehrfach genutzte Sätze (Durchschnitt 19 %
+geteilt je Seite); über eine Variantentabelle (330 Ersetzungen) sind es
+jetzt 0 geteilte Sätze. Inhaltsregeln: keine Zahlen, keine Versprechen,
+Kundennamen nur dort, wo der Ortsbezug belegt ist (CurlyAnn Koblenz, Van
+den Berg Andernach-Stellen, Lernforum Hessen), sonst „passende Projekte“.
+Stadtfakten beschränkt auf Bekanntes (Geysir, WHU, Kannenbäckerland, ICE
+Montabaur, Burg Lahneck, Raiffeisenbrücke, Basalt in Mayen, Limburger
+Dom, Stadtteile, Autobahnen). Sichtbar steht „Region Koblenz“ statt
+Bendorf. Nicht gepusht (Push-Sperre), wartet auf „push“ des Inhabers.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter

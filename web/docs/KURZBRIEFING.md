@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 23.10.2026
+# Kurzbriefing — Stand 24.10.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -81,8 +81,23 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Beweise, Struktur, Technik; Ton und Breite aus der alten übernommen.
 - **Standort:** sichtbar nur noch „Koblenz“ (Kicker, Fuß, Über uns,
   Kontakt, Team, Karriere, Blog-Autorenzeile, OG-Bilder). „Bendorf“ bleibt
-  nur in Impressum, Datenschutz, Schema, Standortkarte und auf den
-  Standortseiten (Entfernungen werden ab Bendorf gerechnet).
+  nur in Impressum, Datenschutz, Schema und Standortkarte. Auf den
+  Standortseiten steht seit 24.10. „aus der Region Koblenz“ und die
+  Fahrzeit, kein Bendorf mehr (außer auf den Bendorf-Seiten selbst).
+- **Standortseiten individuell (24.10., Auftrag des Inhabers):** Die 65
+  indexierbaren Standortseiten (13 Städte × Webdesign, Google Ads, Meta Ads,
+  SEO, Social Media) haben eigene Texte in `lib/standort-texte/<stadt>.ts`
+  (Hero, Lage und Wirtschaft der Stadt, Schmerz und Lösung, vier konkrete
+  Punkte, passende Projekte, zwei Kundenstimmen, vier FAQ). Vorher waren
+  76 % der Sätze zwischen zwei Seiten identisch, Vorgabe des Inhabers:
+  höchstens 10 %. Jetzt 0 % im Inhalt, Prüfskript meldet Dubletten, Titel
+  über 50 und Meta über 155 Zeichen. Gerendert von
+  `components/StandortSeite.tsx`; `LocationPage.tsx` bleibt nur für die 226
+  noindex-Städte. Regeln dabei: keine erfundenen Zahlen, Kundennamen nur
+  mit Beleg (CurlyAnn = Koblenz, Van den Berg = Stellen in Andernach,
+  Lernforum = Hessen), Stadtfakten nur allgemein bekannte (Sehenswürdig-
+  keiten, Stadtteile, Verkehr, Branchenstruktur). Neue Stadt = neue Datei
+  plus Eintrag in `lib/standorte.ts`.
 - **Zentrale:** interne Zahlen nie zeigen. Auf der Seite läuft ein
   erfundenes Beispiel (Dachdeckerei Muster, „Dein Unternehmen“ in der
   Mitte), klickbar: Bereiche, Aufgaben abhaken, Verantwortliche,
