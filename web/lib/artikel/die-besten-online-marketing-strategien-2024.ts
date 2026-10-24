@@ -36,8 +36,8 @@ const artikel: Artikel = {
     { typ: "h2", text: "Fazit" },
     {
       typ: "p",
-      text: "Gutes Online-Marketing ist kein Feuerwerk aus allen Kanälen, sondern eine Reihenfolge: Fundament, Inhalte, Reichweite, Messung. Wer sie einhält, bekommt planbar Anfragen statt Zufallstreffer. Wenn du wissen willst, wo dein Betrieb gerade steht und was als Nächstes dran ist, melde dich für ein kostenloses Erstgespräch. Wir arbeiten von Bendorf bei Koblenz aus für Betriebe in der Region und darüber hinaus.",
-      html: "Gutes Online-Marketing ist kein Feuerwerk aus allen Kanälen, sondern eine Reihenfolge: Fundament, Inhalte, Reichweite, Messung. Wer sie einhält, bekommt planbar Anfragen statt Zufallstreffer. Wenn du wissen willst, wo dein Betrieb gerade steht und was als Nächstes dran ist, melde dich für ein <a href=\"/kontakt\">kostenloses Erstgespräch</a>. Wir arbeiten von Bendorf bei Koblenz aus für Betriebe in der Region und darüber hinaus.",
+      text: "Gutes Online-Marketing ist kein Feuerwerk aus allen Kanälen, sondern eine Reihenfolge: Fundament, Inhalte, Reichweite, Messung. Wer sie einhält, bekommt planbar Anfragen statt Zufallstreffer. Wenn du wissen willst, wo dein Betrieb gerade steht und was als Nächstes dran ist, melde dich für ein kostenloses Erstgespräch. Wir arbeiten aus der Region Koblenz für Betriebe in der Region und darüber hinaus.",
+      html: "Gutes Online-Marketing ist kein Feuerwerk aus allen Kanälen, sondern eine Reihenfolge: Fundament, Inhalte, Reichweite, Messung. Wer sie einhält, bekommt planbar Anfragen statt Zufallstreffer. Wenn du wissen willst, wo dein Betrieb gerade steht und was als Nächstes dran ist, melde dich für ein <a href=\"/kontakt\">kostenloses Erstgespräch</a>. Wir arbeiten aus der Region Koblenz für Betriebe in der Region und darüber hinaus.",
     },
   ],
 };

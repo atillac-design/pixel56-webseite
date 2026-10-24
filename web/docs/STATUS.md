@@ -1197,6 +1197,29 @@ jeweils einen längeren Zwilling zum selben Thema (Google-Rezensionen,
 langsame Website, SEO-Dauer, Meta-Ads-Budget). Empfehlung: kurze Fassung
 auf die lange weiterleiten oder zusammenführen. Entscheidung offen.
 
+## 24.10.2026 (lokal): Abschluss-Check vor dem Push
+
+Auf Wunsch des Inhabers vor dem Push ein vollständiger Prüflauf über den
+Build: `npm run qa:crawl` (153 Seiten, 0 kaputte Links, 0 Titel über 60,
+0 Beschreibungen über 160, überall genau eine H1, alle Bilder mit Alt,
+alle Canonicals), `seo:check:strict` grün, 70 Bilder per HEAD geprüft,
+Playwright auf 18 Seiten bei 390 und 1440 px (kein Überlauf, keine
+Konsolenfehler, keine Fehlanfragen), Inhaltsregeln über alle 151
+Sitemap-Seiten (Sie-Form, KI-Namen, MDU, Straße, „Powered by“, JSON-LD,
+OG-Tags, doppelte Titel und Beschreibungen).
+
+Gefunden und behoben: zwei doppelte Seitentitel im Blog, weil die
+automatische Kürzung am Doppelpunkt „SEO für Handwerker“ und „Warum eine
+langsame Website Kunden kostet“ zweimal erzeugte (jetzt eigene Suchtitel
+über `seoTitelUeberschreibung` in `app/blog/[slug]/page.tsx`); „Aus Bendorf
+bei Koblenz“ im Webdesign-Block der Blogseiten, in zwei Artikeln und in
+den Vorlagen der 226 noindex-Städte (`LocationPage.tsx`,
+`standort-inhalte.ts`) durch „Region Koblenz“ und Fahrzeit ersetzt;
+Projektseite DEMA ohne eigenes Bild bekommt das Standard-OG-Bild.
+Bleibt bewusst: Preise im Budget-Planer (Meta Ads, belegte Richtwerte)
+und 3,90 € auf der Produktseite des Tagesplaners; „Bendorf“ als
+Städtename in Nachbarschafts-Links und auf `/standorte` (Standortkarte).
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter

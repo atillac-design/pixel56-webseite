@@ -63,6 +63,13 @@ function truncateSeoText(value: string, maxLength: number): string {
 }
 
 /** Seitentitel: bei langen Überschriften den Teil vor Doppelpunkt oder Gedankenstrich nehmen, sonst an der Wortgrenze kürzen. */
+/** Suchtitel für Altartikel, deren Titel vor dem Doppelpunkt gleich lauten. Höchstens 50 Zeichen. */
+const seoTitelUeberschreibung: Record<string, string> = {
+  "seo-dauer-bis-ergebnisse": "SEO-Dauer für Handwerker: realistische Zeiträume",
+  "seo-fur-handwerker-steigere-deine-sichtbarkeit": "SEO für Handwerker: Sichtbarkeit steigern",
+  "warum-langsame-website-kunden-kostet": "Langsame Website: so kostet sie Kunden",
+};
+
 function seoTitel(titel: string, maxLength: number): string {
   if (titel.length <= maxLength) return titel;
   const trenner = [": ", " – ", " — ", " | ", "? "];
@@ -90,7 +97,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = await resolveArtikel(slug);
   if (!a) return {};
-  const seoTitle = a.seoTitel ?? seoTitel(a.titel, 50);
+  const seoTitle = a.seoTitel ?? seoTitelUeberschreibung[a.slug] ?? seoTitel(a.titel, 50);
   const seoDescription = truncateSeoText(a.teaser, 155);
   return {
     title: seoTitle,

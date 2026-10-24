@@ -39,8 +39,8 @@ const webdesign: StandortLeistung = {
   heroLine: "Websites, die Anfragen bringen.",
   titleShort: "Websites mit Wirkung",
   heroText: (stadt) =>
-    `Pixel56 entwickelt Websites für Unternehmen in ${stadt}, die online gefunden und angefragt werden wollen: klare Struktur, Texte mit Suchintention, schnelle Technik und ein Relaunch, der bestehende Rankings schützt. Aus Bendorf bei Koblenz, mit einem festen Ansprechpartner.`,
-  metaText: (stadt) => `Webdesign für Unternehmen in ${stadt}: klare Struktur, schnelle Technik, Texte mit Suchintention. Pixel56 aus Bendorf bei Koblenz.`,
+    `Pixel56 entwickelt Websites für Unternehmen in ${stadt}, die online gefunden und angefragt werden wollen: klare Struktur, Texte mit Suchintention, schnelle Technik und ein Relaunch, der bestehende Rankings schützt. Aus der Region Koblenz, mit einem festen Ansprechpartner.`,
+  metaText: (stadt) => `Webdesign für Unternehmen in ${stadt}: klare Struktur, schnelle Technik, Texte mit Suchintention. Pixel56 aus der Region Koblenz.`,
   proof: ["Individuelles Design", "Technik, die schnell lädt", "Relaunch ohne Rankingverlust", "Ein Ansprechpartner"],
   boardTop: "PIXEL56 · WEBSITE",
   flow: [

@@ -92,7 +92,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${f.kunde}: ${f.titel} | Pixel56`,
       description: kuerzen(f.teaser, 200),
       url: projectPath(f.slug),
-      ...(f.bild ? { images: [{ url: `${site.url}${f.bild}` }] } : {}),
+      images: [{ url: f.bild ? `${site.url}${f.bild}` : `${site.url}/bilder/og-pixel56-premium.png` }],
     },
   };
 }

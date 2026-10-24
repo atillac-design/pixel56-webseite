@@ -25,9 +25,9 @@ import { verifiedReviews } from "@/lib/verified-reviews";
 import { locationPath, projectPath, routes } from "@/lib/routes";
 import { site } from "@/lib/site";
 
-/** Sachliche Korrekturen an alten CMS-Texten: Pixel56 sitzt in Bendorf, nicht in Koblenz. */
+/** Sachliche Korrekturen an alten CMS-Texten: kein Sitz in der jeweiligen Stadt behaupten. */
 const korrekturen: [string, string][] = [
-  ["und ist Sitz von Pixel56", "und liegt rund 10 km von unserem Sitz in Bendorf entfernt"],
+  ["und ist Sitz von Pixel56", "und liegt nur wenige Minuten von uns entfernt"],
 ];
 
 /** Der stadtspezifische Absatz der alten Seite (Block 3, CMS-Feld lokaler-content). */
@@ -81,21 +81,21 @@ export default function LocationPage({ location }: { location: LegacyLocation })
   const faqs = [
     ...leistung.faqs(stadt),
     region
-      ? { q: `Habt ihr ein Büro in ${stadt}?`, a: region.entfernungKm === 0 ? `Pixel56 arbeitet aus Bendorf, ohne Ladenlokal. Kennenlernen läuft per Video-Call, Telefon oder WhatsApp, für Fotos und Drehs kommen wir zu dir in den Betrieb.` : `Nein, unser Sitz ist in Bendorf bei Koblenz, rund ${region.entfernungKm} km von ${stadt} entfernt. Für Kennenlernen, Fotos oder Drehs kommen wir zu dir, alles andere läuft per Video-Call, Telefon und WhatsApp.` }
-      : { q: `Habt ihr ein Büro in ${stadt}?`, a: `Nein. Pixel56 sitzt in Bendorf bei Koblenz und arbeitet mit Unternehmen in ganz Deutschland. Die Zusammenarbeit mit Kunden in ${stadt} läuft per Video-Call, Telefon und WhatsApp, mit denselben festen Terminen wie vor Ort.` },
+      ? { q: `Habt ihr ein Büro in ${stadt}?`, a: region.entfernungKm === 0 ? `Pixel56 arbeitet aus der Region Koblenz, ohne Ladenlokal. Kennenlernen läuft per Video-Call, Telefon oder WhatsApp, für Fotos und Drehs kommen wir zu dir in den Betrieb.` : `Nein, wir arbeiten aus der Region Koblenz, rund ${region.fahrzeitMin} Minuten von ${stadt} entfernt. Für Kennenlernen, Fotos oder Drehs kommen wir zu dir, alles andere läuft per Video-Call, Telefon und WhatsApp.` }
+      : { q: `Habt ihr ein Büro in ${stadt}?`, a: `Nein. Pixel56 arbeitet aus der Region Koblenz mit Unternehmen in ganz Deutschland. Die Zusammenarbeit mit Kunden in ${stadt} läuft per Video-Call, Telefon und WhatsApp, mit denselben festen Terminen wie vor Ort.` },
     { q: "Was kostet das Erstgespräch?", a: "Nichts. Es ist unverbindlich und dient dazu, deine Situation ehrlich einzuschätzen. Erst danach gibt es ein konkretes Angebot." },
   ];
 
   const fakten = region
     ? [
-        { b: "Entfernung", small: region.entfernungKm === 0 ? "Unser Sitz, mitten in Bendorf" : `Rund ${region.entfernungKm} km ab Bendorf, etwa ${region.fahrzeitMin} Minuten` },
+        { b: "Entfernung", small: region.entfernungKm === 0 ? "Direkt vor der Haustür" : `Etwa ${region.fahrzeitMin} Minuten aus der Region Koblenz` },
         { b: "Vor Ort", small: "Kennenlernen, Fotos und Drehs bei dir im Betrieb, ohne Reisekosten" },
         { b: "Region", small: region.landkreis },
         { b: "Abstimmung", small: "Telefon, WhatsApp, Video-Call oder persönlich bei dir im Betrieb" },
       ]
     : [
         { b: "Zusammenarbeit", small: "Per Video-Call, Telefon und WhatsApp, mit festen Terminen" },
-        { b: "Sitz", small: "Bendorf bei Koblenz, Rheinland-Pfalz" },
+        { b: "Sitz", small: "Region Koblenz, Rheinland-Pfalz" },
         { b: "Vor Ort", small: "Drehtage und Workshops nach Absprache und Aufwand" },
         { b: "Kunden", small: "Betriebe aus der Region Koblenz und aus ganz Deutschland" },
       ];
@@ -166,7 +166,7 @@ export default function LocationPage({ location }: { location: LegacyLocation })
           </div>
           <div>
             <span>Agentur</span>
-            <strong>{region && region.entfernungKm > 0 ? `Bendorf bei Koblenz, rund ${region.entfernungKm} km entfernt` : "Pixel56, Bendorf bei Koblenz"}</strong>
+            <strong>{region && region.entfernungKm > 0 ? `Region Koblenz, rund ${region.fahrzeitMin} Minuten entfernt` : "Pixel56, Region Koblenz"}</strong>
           </div>
           <div>
             <span>Zusammenarbeit</span>
@@ -177,7 +177,7 @@ export default function LocationPage({ location }: { location: LegacyLocation })
         <section className="band theme-light" id="vor-ort">
           <div className="split2">
             <div className="reveal">
-              <span className="band-tag">01 — {region ? `Pixel56 und ${stadt}` : `Für ${stadt}, aus Bendorf bei Koblenz`}</span>
+              <span className="band-tag">01 — {region ? `Pixel56 und ${stadt}` : `Für ${stadt}, aus der Region Koblenz`}</span>
               <h2 className="band-title">
                 {region ? <>Nah genug, um <em>vorbeizukommen</em></> : <>Ehrlich gesagt: <em>Wir sitzen nicht in {stadt}</em></>}
               </h2>
@@ -186,14 +186,14 @@ export default function LocationPage({ location }: { location: LegacyLocation })
                   <p className="lead">{region.kontext}</p>
                   <p className="lead">
                     {region.entfernungKm === 0
-                      ? "Wer aus Bendorf kommt, kann einfach vorbeischauen. Für Fotos, Drehs oder einen Workshop kommen wir genauso gern zu dir in den Betrieb."
-                      : `Von Bendorf nach ${stadt} sind es rund ${region.entfernungKm} km. Für Kennenlernen, Fotos oder einen Drehtag kommen wir zu dir, ohne Reisekosten. Die laufende Abstimmung läuft per Telefon, WhatsApp oder Video-Call, wie es dir besser passt.`}
+                      ? "Wir sind direkt vor Ort. Für Kennenlernen, Fotos, Drehs oder einen Workshop kommen wir zu dir in den Betrieb."
+                      : `Nach ${stadt} sind es für uns etwa ${region.fahrzeitMin} Minuten. Für Kennenlernen, Fotos oder einen Drehtag kommen wir zu dir, ohne Reisekosten. Die laufende Abstimmung läuft per Telefon, WhatsApp oder Video-Call, wie es dir besser passt.`}
                   </p>
                 </>
               ) : (
                 <>
                   <p className="lead">
-                    Pixel56 hat keinen Standort in {stadt}, und wir behaupten auch keinen. Unser Sitz ist in Bendorf bei Koblenz. Von dort arbeiten wir mit Unternehmen in ganz Deutschland, per Video-Call, Telefon und WhatsApp, mit festen Terminen und einem Ansprechpartner.
+                    Pixel56 hat keinen Standort in {stadt}, und wir behaupten auch keinen. Wir arbeiten aus der Region Koblenz. Von dort arbeiten wir mit Unternehmen in ganz Deutschland, per Video-Call, Telefon und WhatsApp, mit festen Terminen und einem Ansprechpartner.
                   </p>
                   <p className="lead">
                     Für {leistung.kurz} spielt der Ort selten eine Rolle: Struktur, Texte, Kampagnen und Auswertung entstehen ortsunabhängig. Wo ein Drehtag oder Workshop vor Ort sinnvoll ist, planen wir ihn nach Aufwand.
