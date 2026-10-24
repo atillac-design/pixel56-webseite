@@ -41,6 +41,8 @@ export const clients = [
   "Schlüsselfertig-Immobilien",
   "DEMA Bedachungen",
   "Burgerfabriq",
+  "BNE AG",
+  "Benjamin Hassan",
 ];
 
 export type Service = {

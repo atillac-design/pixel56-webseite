@@ -679,6 +679,70 @@ export const fallstudien: Fallstudie[] = [
       img: "/bilder/person-nalan-colak.webp",
     },
   },
+  {
+    slug: "bne-ag-broschuere",
+    kunde: "BNE AG",
+    branche: "Finanzen & Beratung",
+    jahr: "Printprojekt",
+    tags: ["Print", "Broschüre", "Branding"],
+    bild: "/bilder/projekt-bne-cover.webp",
+    galerie: ["/bilder/projekt-bne-aufgeklappt.webp"],
+    galerieAlt: ["Aufgeklappte Broschüre der BNE AG mit Innenseiten und Rückseite"],
+    variant: "ic-2",
+    titel: "Eine Broschüre, die man gern in die Hand nimmt",
+    teaser:
+      "Akquise-Broschüre für ein Schweizer Unternehmen: Konzept, Gestaltung und Druckdaten für ein beratungsintensives Angebot, das im Gespräch übergeben wird.",
+    problem: {
+      titel: "Ein erklärungsbedürftiges Angebot auf wenigen Seiten",
+      text: "Das Angebot der BNE AG ist beratungsintensiv und richtet sich an eine anspruchsvolle Zielgruppe. Die Broschüre sollte im persönlichen Gespräch übergeben werden und danach für sich allein stehen: ruhig, hochwertig, ohne Werbesprache.",
+      punkte: [
+        "Komplexes Thema, wenig Platz, hoher Anspruch an die Anmutung",
+        "Lesereihenfolge muss ohne Erklärung funktionieren",
+        "Druckfähige Daten mit Falz und Veredelung",
+      ],
+    },
+    loesung: {
+      titel: "Dunkles Blau, Gold, viel Luft",
+      text: "Wir haben eine dreiteilige Falzbroschüre gestaltet: ein Cover mit einem Satz, Innenseiten mit klarer Lesereihenfolge und eine Vorteilsseite zum Abschluss. Typografie, Farbwelt und Bildsprache sind auf Vertrauen und Ruhe ausgelegt, die Druckdaten kamen fertig aus unserer Hand.",
+      punkte: [
+        "Konzept und Text-Struktur für drei Falzseiten",
+        "Gestaltung mit Goldakzenten und reduzierter Typografie",
+        "Druckfertige Daten inklusive Falzmarken",
+      ],
+    },
+    stimme: undefined,
+  },
+  {
+    slug: "benjamin-hassan",
+    kunde: "Benjamin Hassan",
+    branche: "Sport",
+    jahr: "2022",
+    tags: ["Print", "Broschüre"],
+    bild: "/bilder/projekt-hassan-broschuere.webp",
+    variant: "ic-3",
+    titel: "Eine Broschüre für Sponsoren und Turniere",
+    teaser:
+      "Broschüre für einen Profi-Tennisspieler: Vorstellung, Turnierplanung 2022 und Platz für Partner, gestaltet für Gespräche mit Sponsoren.",
+    problem: {
+      titel: "Ein Sportler braucht Partner, Partner brauchen Unterlagen",
+      text: "Wer als Profi-Tennisspieler Sponsoren anspricht, braucht etwas zum Dalassen: eine Broschüre, die den Spieler vorstellt, die Saison zeigt und seriös wirkt, ohne wie ein Fan-Flyer auszusehen.",
+      punkte: [
+        "Vorstellung des Spielers mit Bild und Einordnung",
+        "Turnierplanung für die Saison 2022 übersichtlich",
+        "Format, das in Sponsorengesprächen übergeben werden kann",
+      ],
+    },
+    loesung: {
+      titel: "Platzgrün, kräftige Schrift, klare Seiten",
+      text: "Wir haben eine mehrseitige Broschüre im Format des Sports gestaltet: Cover mit Spielerfoto, Innenseiten mit Turnierplan nach Monaten, kräftige Typografie und eine Farbwelt aus Platzgrün und Gelb.",
+      punkte: [
+        "Cover mit Bildbearbeitung und Spielername als Marke",
+        "Turnierplan nach Monaten und Ländern strukturiert",
+        "Druckfertige Daten für kleine Auflage",
+      ],
+    },
+    stimme: undefined,
+  },
 ];
 
 export function getFallstudie(slug: string): Fallstudie | undefined {

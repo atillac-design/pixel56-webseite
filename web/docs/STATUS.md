@@ -1098,6 +1098,20 @@ Logo (Inhaber: „Mockup ist da“). Build 746 Seiten, `seo:check:strict`
 sauber, Weiterleitung geprüft. Offen: KI-Seite Platzhalter, Foto am
 Schreibtisch. Push erst nach Freigabe.
 
+## 24.10.2026 (lokal): Zwei Print-Projekte aus Mockups des Inhabers
+
+Neu in `lib/projekte.ts`: `bne-ag-broschuere` (Akquise-Broschüre für ein
+Schweizer Unternehmen, Cover als Hero, aufgeklappte Ansicht als Galerie,
+Jahr unbekannt → „Printprojekt“) und `benjamin-hassan` (Sponsoren-/
+Turnierbroschüre eines Profi-Tennisspielers, 2022 laut Broschüre). Texte
+beschreiben nur die Gestaltungsaufgabe; die Aussagen aus der BNE-Broschüre
+(Kapitalanlage, Preis, Steuer) werden bewusst nicht wiederholt. Beide in
+der Kundenliste (`site.ts`). CASS-Mockup war identisch mit dem vorhandenen
+Bild. Schachbild für „Strategie“ kam als Chat-Bild mitten im Arbeitsschritt
+an und liegt nicht als Datei vor; Inhaber soll es erneut schicken. Geplante
+Stelle: Über uns, Abschnitt 06 (dunkel) als Figur über den vier Schritten.
+Build 748 Seiten, SEO-Check sauber.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter
