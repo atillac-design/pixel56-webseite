@@ -118,7 +118,7 @@ const zielgruppen = [
     tag: "Handwerk & Bau",
     title: "Betriebe mit vollen Auftragsbüchern und leerer Bewerbermappe",
     text: "Dachdecker, Abbruch, Tiefbau, Trocknungstechnik. Hier geht es um Vertrauen, Erreichbarkeit und darum, die richtigen Leute zu finden.",
-    refs: "GM-Dachdecker, MDU Bedachungen, DEMA Bedachungen, Oktay Cömertler, Colak GmbH",
+    refs: "GM-Dachdecker, DEMA Bedachungen, Oktay Cömertler, Colak GmbH",
   },
   {
     tag: "Transport, Technik & Dienstleistung",

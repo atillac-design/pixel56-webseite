@@ -119,7 +119,7 @@ const projectTypes = [
     tag: "Unternehmenswebsite",
     title: "Der komplette Auftritt",
     text: "Startseite, Leistungen, Über uns, Referenzen, Kontakt. Für Betriebe, die online so professionell wirken wollen, wie sie arbeiten.",
-    refs: "M&A Transporte · Colak GmbH · MDU Bedachungen",
+    refs: "M&A Transporte · Colak GmbH · GM-Dachdecker",
   },
   {
     tag: "Relaunch",

@@ -20,6 +20,9 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 
 - **Schrift:** Figtree, Fließtext kräftiger und größer, keine Serifen-Kursive
   mehr. Vom Inhaber abgenommen („Variante 3“).
+- **Dachdecker-Projekt anonym (24.10.):** Inhaber will den Betrieb (früher
+  MDU) nicht nennen. Slug `dachdecker-region-koblenz`, kein Name, keine
+  Logos in Bildern. Nirgends wieder einführen.
 - **Wegweiser auf der Startseite (23.10.):** Abschnitt 01 ist jetzt „Wo
   drückt es bei dir?“ mit sechs Situationskarten, jede führt direkt zum
   passenden Fragebogen (Webdesign, Google Ads, Mitarbeiter, Content, KI,

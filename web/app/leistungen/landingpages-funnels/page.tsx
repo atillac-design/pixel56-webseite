@@ -90,7 +90,7 @@ const audiences = [
   { tag: "Google- & Meta-Kampagnen", title: "Die Seite hinter der Anzeige", text: "Die Zielseite greift auf, was die Anzeige verspricht. Sonst zahlst du für Klicks, die auf der Startseite verloren gehen.", refs: "Van den Berg Gruppe · Stark ins Neue" },
   { tag: "Kurse & Veranstaltungen", title: "Anmeldung ohne Umwege", text: "Termin, Inhalt, Anmeldung. In zwei Minuten erledigt, sofort bestätigt.", refs: "Stark ins Neue · Sportler für Kinderherzen" },
   { tag: "Erstgespräch & Beratung", title: "Vom Interesse zum Termin", text: "Die Seite beantwortet die wichtigsten Fragen und führt direkt in den Kalender.", refs: "Van den Berg Gruppe" },
-  { tag: "Handwerk & Bau", title: "Angebotsanfrage mit den richtigen Angaben", text: "Ein kurzes Formular mit genau den Angaben, die du für ein Angebot brauchst, inklusive Foto-Upload.", refs: "GM-Dachdecker · MDU Bedachungen" },
+  { tag: "Handwerk & Bau", title: "Angebotsanfrage mit den richtigen Angaben", text: "Ein kurzes Formular mit genau den Angaben, die du für ein Angebot brauchst, inklusive Foto-Upload.", refs: "GM-Dachdecker · DEMA Bedachungen" },
   { tag: "Recruiting", title: "Bewerbung in zwei Minuten", text: "Eine Stelle, eine Seite, ein Upload. Bewerbung ohne E-Mail-Programm.", refs: "GM-Dachdecker" },
   { tag: "Lead-Magnet", title: "Checkliste gegen Kontakt", text: "Ein nützliches PDF gegen eine E-Mail-Adresse. Nutzen wir selbst für unsere Checklisten.", refs: "Eigene Ressourcen-Seiten von Pixel56" },
 ];

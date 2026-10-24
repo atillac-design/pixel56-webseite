@@ -34,7 +34,6 @@ export const clients = [
   "M&A Transporte",
   "Colak GmbH",
   "Van den Berg Gruppe",
-  "MDU Bedachungen",
   "Lernforum Obertshausen",
   "CurlyAnn Soulcare & Art",
   "Cavar Home",

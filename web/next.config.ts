@@ -37,6 +37,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       { source: "/home", destination: "/", permanent: true },
+      // Projekt auf Wunsch des Kunden anonymisiert (23.10.2026).
+      { source: "/portfolio/mdu-bedachungen", destination: "/portfolio/dachdecker-region-koblenz", permanent: true },
       { source: "/ueber-uns", destination: "/uber-uns", permanent: true },
       { source: "/leistungen/webdesign", destination: "/webdesign", permanent: true },
       { source: "/leistungen/ki-automatisierung", destination: "/ki-automatisierung", permanent: true },

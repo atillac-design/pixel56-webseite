@@ -232,20 +232,23 @@ export const fallstudien: Fallstudie[] = [
     },
   },
   {
-    slug: "mdu-bedachungen",
+    slug: "dachdecker-region-koblenz",
     vorherArt: "keine-website",
-    kunde: "MDU Bedachungen",
+    kunde: "Dachdeckerbetrieb aus der Region Koblenz",
     branche: "Handwerk & Bau",
     jahr: "2024",
     tags: ["Webdesign"],
-    bild: "/bilder/projekt-mdu-bedachungen.webp",
+    bild: "/bilder/projekt-dachdecker-leistungen.webp",
+    galerie: ["/bilder/projekt-dachdecker-start.webp", "/bilder/projekt-dachdecker-projekte.webp"],
+    galerieAlt: ["Startseite der Dachdecker-Website: Einstieg mit Foto, Kurzvorstellung und Leistungsübersicht", "Projektgalerie der Dachdecker-Website mit Fotos von Steildach, Flachdach und Gauben"],
+    galerieHinweis: "Der Betrieb möchte nicht namentlich genannt werden, deshalb zeigen wir Ausschnitte ohne Logo.",
     variant: "ic-4",
     titel: "Ein Dachdecker-Auftritt, der Vertrauen baut",
     teaser:
       "Neue Website für einen Dachdeckerbetrieb — klare Leistungsdarstellung, starke Bildsprache und ein direkter Weg zur Anfrage.",
     problem: {
       titel: "Ohne Auftritt keine Vergleichbarkeit",
-      text: "Wer einen Dachdecker sucht, vergleicht online — und entscheidet in Sekunden. MDU Bedachungen fehlte ein Auftritt, der die Qualität der Arbeit sichtbar macht und Anfragen einsammelt.",
+      text: "Wer einen Dachdecker sucht, vergleicht online — und entscheidet in Sekunden. Dem Betrieb fehlte ein Auftritt, der die Qualität der Arbeit sichtbar macht und Anfragen einsammelt.",
       punkte: [
         "Keine zeitgemäße Website als Anlaufstelle",
         "Leistungen für Interessenten nicht auf einen Blick erkennbar",
@@ -309,6 +312,8 @@ export const fallstudien: Fallstudie[] = [
     jahr: "2023",
     tags: ["Branding", "Webdesign", "Social Media"],
     bild: "/bilder/projekt-cass.webp",
+    galerie: ["/bilder/projekt-cass-start.webp", "/bilder/projekt-cass-ueber-uns.webp"],
+    galerieAlt: ["Startseite von CASS Schulungen mit Schulungsraum und Kursleiste", "Abschnitt „Über uns“ der CASS-Website mit Text und Schulungsraum"],
     variant: "ic-6",
     titel: "Bildung und Sicherheit digital vereint",
     teaser:
@@ -448,6 +453,8 @@ export const fallstudien: Fallstudie[] = [
     jahr: "2023",
     tags: ["Onlineshop", "Webdesign"],
     bild: "/bilder/projekt-cavar.webp",
+    galerie: ["/bilder/projekt-cavar-start.webp", "/bilder/projekt-cavar-sortiment.webp", "/bilder/projekt-cavar-sets.webp"],
+    galerieAlt: ["Startseite des Onlineshops mit Neuheiten und Topsellern", "Sortimentsbereich mit Handtüchern, Bademänteln und Wohntextilien", "Geschenksets und Bademäntel im Shop"],
     variant: "ic-8",
     titel: "Ein Onlineshop, der zum Stöbern einlädt",
     teaser:

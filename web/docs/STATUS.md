@@ -1082,6 +1082,22 @@ aus der Sandbox ohnehin gesperrt (Status 000). Offen: Platzhalter „Ein
 KI-Workflow aus der Praxis“ auf der KI-Seite, Screenshots der vier Projekte
 vom Inhaber, Handyfoto am Schreibtisch. Push erst nach Freigabe (Credits).
 
+## 24.10.2026 (lokal, noch nicht gepusht): Galerien aus Screenshots, Dachdecker anonymisiert
+
+Inhaber lieferte Screenshots: Dachdecker (Startseite, Über-uns-Mockup), Cavar
+Home (ganze Shop-Startseite), CASS (Startseite, Über uns). Wunsch: den
+Dachdecker **nicht namentlich nennen**. Umgesetzt: Slug `mdu-bedachungen` →
+`dachdecker-region-koblenz` (308-Weiterleitung in `next.config.ts`), Kunde
+„Dachdeckerbetrieb aus der Region Koblenz“, Name aus Texten, Referenzlisten
+(Über uns, Webdesign, Landingpages) und `site.ts` entfernt, altes Hero-Bild
+mit Logo gelöscht, neue Ausschnitte ohne Logo (Leistungsraster als Hero,
+Startseite und Projektfotos als Galerie), `galerieHinweis` erklärt die
+Anonymisierung. Cavar: drei Galerie-Ausschnitte (Quelle nur 599 px breit,
+daher weich). CASS: zwei Galeriebilder in voller Breite. Dema bleibt beim
+Logo (Inhaber: „Mockup ist da“). Build 746 Seiten, `seo:check:strict`
+sauber, Weiterleitung geprüft. Offen: KI-Seite Platzhalter, Foto am
+Schreibtisch. Push erst nach Freigabe.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter
