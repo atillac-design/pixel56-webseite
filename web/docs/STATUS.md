@@ -1122,6 +1122,19 @@ Bestellseiten-Screenshot, weil er das Produkt zeigt. Stark ins Neue bekommt
 den Café-Ausschnitt als drittes Galeriebild. Handy-Mockup von Teykto nicht
 verwendet (kein freier Platz, Doppelung).
 
+## 24.10.2026 (lokal): Drei Pexels-Fotos, KI-Platzhalter ersetzt, BNE-Jahr
+
+Inhaber lieferte drei Pexels-Bilder (frei nutzbar, Büro-Laptop von
+cottonbro): Schach → Über uns Abschnitt 06 „So läuft die Zusammenarbeit“
+(Bildunterschrift „Erst der Plan, dann der Zug: Strategie vor Umsetzung“),
+Glühbirne → Dienstleistung über dem Leistungs-Finder, Büro-Laptop bei
+Nacht → KI-Seite Abschnitt 02, ersetzt den letzten sichtbaren
+PlannedMedia-Platzhalter („Ein KI-Workflow aus der Praxis“), Unterschrift
+„Routine läuft weiter, wenn niemand mehr am Schreibtisch sitzt“. Alle drei
+als „Symbolbild“ gekennzeichnet, Dateien `foto-*.webp`, 21:9-Karte
+(`.foto-breit`). BNE-Broschüre: Jahr 2026 laut Inhaber. Kein PlannedMedia
+mehr auf der Seite.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter

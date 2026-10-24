@@ -683,7 +683,7 @@ export const fallstudien: Fallstudie[] = [
     slug: "bne-ag-broschuere",
     kunde: "BNE AG",
     branche: "Finanzen & Beratung",
-    jahr: "Printprojekt",
+    jahr: "2026",
     tags: ["Print", "Broschüre", "Branding"],
     bild: "/bilder/projekt-bne-cover.webp",
     galerie: ["/bilder/projekt-bne-aufgeklappt.webp"],

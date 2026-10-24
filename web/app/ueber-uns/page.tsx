@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import strategieImage from "@/public/bilder/foto-strategie-schach.webp";
 import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
@@ -393,6 +394,10 @@ export default async function UeberUnsPage() {
               und was es kostet.
             </p>
           </div>
+          <figure className="foto-karte foto-breit reveal">
+            <Image src={strategieImage} alt="Eine Hand setzt eine Schachfigur auf einem Brett im Dunkeln" sizes="(max-width: 1080px) 92vw, 1100px" />
+            <figcaption>Erst der Plan, dann der Zug: Strategie vor Umsetzung. Symbolbild.</figcaption>
+          </figure>
           <div className="premium-process reveal">
             {ablauf.map((step) => (
               <article key={step.nr}>

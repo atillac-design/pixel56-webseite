@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import abendImage from "@/public/bilder/foto-abend-laptop.webp";
 import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
@@ -8,7 +9,6 @@ import ZentraleSzene from "@/components/ZentraleSzene";
 import ZentraleDemo from "@/components/ZentraleDemo";
 import AblaufSimulator from "@/components/AblaufSimulator";
 import BreadcrumbLd from "@/components/BreadcrumbLd";
-import PlannedMedia from "@/components/PlannedMedia";
 import {
   ArrowIcon,
   ClientMarquee,
@@ -350,11 +350,10 @@ export default function KiAutomatisierungPage() {
               </article>
             ))}
           </div>
-          <PlannedMedia
-            title="Ein KI-Workflow aus der Praxis"
-            description="Hier kommt eine freigegebene Prozessansicht oder ein anonymisierter Bildschirm aus einem echten Projekt hin, vom Eingang bis zur menschlichen Freigabe."
-            format="16:9"
-          />
+          <figure className="foto-karte foto-breit reveal">
+            <Image src={abendImage} alt="Eine Person sitzt abends allein an einem Schreibtisch, der Laptop leuchtet" sizes="(max-width: 1080px) 92vw, 1100px" />
+            <figcaption>Routine läuft weiter, wenn niemand mehr am Schreibtisch sitzt: KI-Prozesse arbeiten nachts und am Wochenende. Symbolbild.</figcaption>
+          </figure>
         </section>
 
         <section className="band theme-light" id="branchen">

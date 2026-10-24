@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ideeImage from "@/public/bilder/foto-idee-gluehbirne.webp";
 import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
@@ -382,6 +383,10 @@ export default function DienstleistungenPage() {
               von Kontaktdaten.
             </p>
           </div>
+          <figure className="foto-karte foto-breit reveal">
+            <Image src={ideeImage} alt="Eine einzelne Glühbirne leuchtet im Dunkeln" sizes="(max-width: 1080px) 92vw, 1100px" />
+            <figcaption>Vier Fragen, eine klare Empfehlung. Symbolbild.</figcaption>
+          </figure>
           <div className="reveal">
             <LeistungsFinder />
           </div>
