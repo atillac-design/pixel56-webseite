@@ -21,6 +21,7 @@ import { fallstudien, getFallstudie, type Fallstudie } from "@/lib/projekte";
 import { site } from "@/lib/site";
 import { projectPath, routes, serviceRoutes } from "@/lib/routes";
 import { verifiedProjectVoices } from "@/lib/verified-reviews";
+import { getProjektFragen } from "@/lib/projekt-fragen";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -61,12 +62,6 @@ const tagZuLeistung: Record<string, { href: string; titel: string; text: string 
   Karriereportal: { href: serviceRoutes.mitarbeitergewinnung, titel: "Karriereportal", text: "Bewerbung in wenigen Minuten, direkt auf der Website, ohne E-Mail-Programm." },
 };
 
-const ablauf = [
-  { nr: "01", title: "Zuhören", text: "Was macht den Betrieb besonders, wer sind die Kunden, wo gehen Anfragen verloren? Daraus entsteht die Aufgabe.", gets: "Ergebnis: ein klares Ziel" },
-  { nr: "02", title: "Konzept", text: "Struktur, Botschaften, Kampagnenlogik. Als klickbarer Entwurf, nicht als PDF.", gets: "Ergebnis: ein Entwurf zum Prüfen" },
-  { nr: "03", title: "Umsetzung", text: "Design, Texte, Technik, Creatives. Mit festen Zwischenständen und Feedback direkt an die Person, die baut.", gets: "Ergebnis: ein Auftritt, der zum Betrieb passt" },
-  { nr: "04", title: "Start & Betreuung", text: "Livegang mit sauberer Migration, dann beobachten, auswerten, anpassen. So lange, wie es dem Ziel dient.", gets: "Ergebnis: ein Projekt, das weiterläuft" },
-];
 
 function weitereProjekte(aktuell: Fallstudie): Fallstudie[] {
   const andere = fallstudien.filter((p) => p.slug !== aktuell.slug);
@@ -115,7 +110,8 @@ export default async function FallstudiePage({ params }: Props) {
     href: projectPath(p.slug),
     cat: p.kunde,
     title: p.titel,
-    text: p.teaser,
+    // Branche statt Teaser: Der Teaser wiederholt sich sonst auf jeder Projektseite.
+    text: p.branche,
     tag: `${p.tags.join(" · ")} · ${p.jahr}`,
   }));
 
@@ -133,10 +129,10 @@ export default async function FallstudiePage({ params }: Props) {
     keywords: f.tags.join(", "),
   };
 
-  const faqs = [
-    { q: "Kann ich ein ähnliches Projekt für meinen Betrieb bekommen?", a: `Wenn dein Ziel dem von ${f.kunde} ähnelt, ja. Die Umsetzung sieht trotzdem anders aus, weil jedes Projekt aus dem Betrieb heraus entsteht und keine Vorlage ist. Im Erstgespräch klären wir, was bei dir den größten Hebel hat.` },
-    { q: "Was kostet ein Projekt in dieser Größenordnung?", a: "Das hängt vom Umfang ab: Anzahl der Seiten, Kampagnen, Content, Funktionen. Du bekommst nach dem Erstgespräch ein konkretes Angebot mit Umfang, Ablauf und Preis. Werbebudgets werden getrennt ausgewiesen." },
-    { q: "Warum stehen hier keine Prozentzahlen?", a: "Weil wir nur Kennzahlen nennen, die der Kunde freigegeben hat und die wir belegen können. Wo das nicht der Fall ist, beschreiben wir die umgesetzte Arbeit, statt einen Erfolg zu behaupten." },
+  // Fragen je Projekt (lib/projekt-fragen.ts); Rückfall auf allgemeine Fragen nur, falls ein neues Projekt noch keine hat.
+  const faqs = getProjektFragen(f.slug) ?? [
+    { q: "Kann ich ein ähnliches Projekt für meinen Betrieb bekommen?", a: `Wenn dein Ziel dem von ${f.kunde} ähnelt, ja. Die Umsetzung sieht trotzdem anders aus, weil jedes Projekt aus dem Betrieb heraus entsteht. Im Erstgespräch klären wir, was bei dir den größten Hebel hat.` },
+    { q: "Was kostet ein Projekt in dieser Größenordnung?", a: "Das hängt vom Umfang ab. Du bekommst nach dem Erstgespräch ein konkretes Angebot mit Umfang, Ablauf und Preis." },
   ];
 
   return (
@@ -359,14 +355,7 @@ export default async function FallstudiePage({ params }: Props) {
                   Das sagt <em>der Kunde</em>
                 </h2>
                 <p className="lead">
-                  Ein fester Ansprechpartner von der ersten Idee bis zur
-                  Betreuung, erreichbar per Telefon, WhatsApp und Video-Call.
-                  So arbeiten wir mit jedem Kunden.
-                </p>
-                <p className="lead">
-                  Die Aussage stammt aus den auf der bisherigen Website
-                  veröffentlichten Kundenstimmen. Wir zeigen nur, was Kunden so
-                  gesagt haben.
+                  Wörtlich so veröffentlicht von {f.kunde}, nicht von uns formuliert.
                 </p>
               </div>
               <div className="reveal">
@@ -416,31 +405,6 @@ export default async function FallstudiePage({ params }: Props) {
             <Link className="body-link" href={routes.projects}>
               Alle Kundenprojekte ansehen <ArrowIcon />
             </Link>
-          </div>
-        </section>
-
-        <section className="band dark-stage service-dark-stage" id="ablauf">
-          <div className="band-head reveal">
-            <div>
-              <span className="band-tag">So arbeiten wir in jedem Projekt</span>
-              <h2 className="band-title">
-                Vier Schritte, <em>vom Gespräch zum Livegang</em>
-              </h2>
-            </div>
-            <p className="band-note">
-              Auch dieses Projekt ist so entstanden: mit festen Zwischenständen
-              und einem Ansprechpartner von Anfang bis Ende.
-            </p>
-          </div>
-          <div className="premium-process reveal">
-            {ablauf.map((step) => (
-              <article key={step.nr}>
-                <span>{step.nr}</span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-                <small>{step.gets}</small>
-              </article>
-            ))}
           </div>
         </section>
 

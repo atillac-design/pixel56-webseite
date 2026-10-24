@@ -69,7 +69,7 @@ export default async function BlogKategoriePage({ params }: Props) {
                 <span>{beitraege.length === 1 ? "Ein Artikel," : `${beitraege.length} Artikel,`}</span>
                 <span>ohne Floskeln.</span>
               </h1>
-              <p>{kategorie.beschreibung} Geschrieben aus der Praxis mit Handwerkern, Dienstleistern und Vereinen, nicht aus der Theorie.</p>
+              <p>{kategorie.intro}</p>
               <div className="premium-actions">
                 <Link className="btn-primary" href="#artikel">
                   Artikel lesen <ArrowIcon />
@@ -112,10 +112,7 @@ export default async function BlogKategoriePage({ params }: Props) {
                 Fragen, die uns <em>dazu erreichen</em>
               </h2>
             </div>
-            <p className="band-note">
-              Nach Datum sortiert. Jeder Artikel beantwortet eine Frage, die so
-              oder ähnlich im Erstgespräch gestellt wurde.
-            </p>
+            <p className="band-note">Nach Datum sortiert, neueste zuerst.</p>
           </div>
           <div className="blog-grid reveal">
             {beitraege.map((beitrag) => (

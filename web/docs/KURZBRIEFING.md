@@ -97,7 +97,11 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   mit Beleg (CurlyAnn = Koblenz, Van den Berg = Stellen in Andernach,
   Lernforum = Hessen), Stadtfakten nur allgemein bekannte (Sehenswürdig-
   keiten, Stadtteile, Verkehr, Branchenstruktur). Neue Stadt = neue Datei
-  plus Eintrag in `lib/standorte.ts`.
+  plus Eintrag in `lib/standorte.ts`. Danach auch Projektseiten entschlackt
+  (eigene FAQ je Projekt in `lib/projekt-fragen.ts`, kein geteilter
+  Ablauf-Block mehr) und Blog-Themenseiten mit eigenem Einstieg (`intro`).
+  Offen: sechs kurze Blogartikel haben längere Zwillinge zum selben Thema,
+  Vorschlag Weiterleitung, Inhaber entscheidet.
 - **Zentrale:** interne Zahlen nie zeigen. Auf der Seite läuft ein
   erfundenes Beispiel (Dachdeckerei Muster, „Dein Unternehmen“ in der
   Mitte), klickbar: Bereiche, Aufgaben abhaken, Verantwortliche,

@@ -1170,6 +1170,33 @@ Montabaur, Burg Lahneck, Raiffeisenbrücke, Basalt in Mayen, Limburger
 Dom, Stadtteile, Autobahnen). Sichtbar steht „Region Koblenz“ statt
 Bendorf. Nicht gepusht (Push-Sperre), wartet auf „push“ des Inhabers.
 
+## 24.10.2026 (lokal): Doppeltexte auf Projekt- und Blogseiten reduziert
+
+Auf Wunsch des Inhabers wurden nach den Standortseiten auch alle 86
+übrigen Sitemap-Seiten Satz für Satz verglichen (Scratchpad
+`sim-rest.mjs`, Inhalt ohne Menü und Fuß). Leistungsseiten, Startseite,
+Über uns, Kontakt lagen bei 1 bis 19 % geteilten Sätzen, in Ordnung.
+Problem waren die 17 Projektseiten mit 57 bis 76 %: gleicher
+Vier-Schritte-Ablauf, gleiche drei FAQ, gleiche Teaser in den
+Projektkarten, gleiche zwei Absätze bei der Kundenstimme.
+
+Umsetzung: `lib/projekt-fragen.ts` mit drei eigenen Fragen je Projekt
+(ohne Zahlen, aus Ausgangslage und Umsetzung abgeleitet), Ablauf-Block von
+der Detailseite entfernt (steht auf `/kundenprojekte` und den
+Leistungsseiten), Projektkarten zeigen Branche statt Teaser,
+Kundenstimme mit einem Satz („Wörtlich so veröffentlicht von …“).
+Ergebnis: Projektseiten 10 bis 30 %. Blog-Themenseiten bekamen je einen
+eigenen Einstieg (`intro` in `lib/blog.ts`), Blogartikel zeigen nur noch
+die zum Thema passende Checkliste mit themenbezogenem Satz. Blogartikel
+liegen bei 7 bis 50 % (Median 28 %), der Rest ist Autorenbox,
+Weiterlesen-Teaser und Kontaktleiste. Themenseiten bleiben bei rund 60 %,
+weil sie Listen aus Artikel-Teasern sind.
+
+Auffällig für den Inhaber: sechs kurze Artikel (300 bis 450 Wörter) haben
+jeweils einen längeren Zwilling zum selben Thema (Google-Rezensionen,
+langsame Website, SEO-Dauer, Meta-Ads-Budget). Empfehlung: kurze Fassung
+auf die lange weiterleiten oder zusammenführen. Entscheidung offen.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter
