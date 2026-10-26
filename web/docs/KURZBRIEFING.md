@@ -18,6 +18,13 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 
 ## Entscheidungen des Inhabers (gelten weiter)
 
+- **Hosting (26.10.):** Netlify-Free-Guthaben (300 Credits) war nach dem
+  Livegang aufgebraucht, Produktions-Deploys pausiert. Inhaber nimmt den
+  Personal-Plan (rund 9 $/Monat, 1.000 Credits). IONOS-Webspace bleibt nur
+  Notlösung (Inhaber mag es nicht, außerdem laufen dort Anfrage-API und
+  Website-Check nicht ohne Node-Server). Späterer Spar-Kandidat: Umzug auf
+  Cloudflare, erst wenn Netlify-Kosten steigen. Pushes weiter gebündelt.
+
 - **Schrift:** Figtree, Fließtext kräftiger und größer, keine Serifen-Kursive
   mehr. Vom Inhaber abgenommen („Variante 3“).
 - **Dachdecker-Projekt anonym (24.10.):** Inhaber will den Betrieb (früher
