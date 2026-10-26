@@ -1245,6 +1245,25 @@ und `wrangler.jsonc` ins Repo, Build-Befehl `opennextjs-cloudflare
 deploy`. Puffer schaffen: `legacy-locations.json` liegt zweimal im
 Bündel (rund 140 KiB gzip), schlanke Fassung ohne `body` würde reichen.
 
+## 26.10.2026 (lokal): Aufblitzen beim Laden, Schrift ins Stylesheet eingebettet
+
+Inhaber: Beim Aufruf von pixel56.de erscheint für einen Augenblick „eine
+kaputte Seite“, dann die richtige. Lokal mit gedrosselter Verbindung
+nachgestellt: Die Seite zeichnet beim ersten Besuch in der Ersatzschrift
+(`font-display: swap` von `next/font/local`), dann kommt Figtree nach, und
+die Hero-Überschrift springt am Desktop von 454 auf 389 px Höhe, weil sie
+anders umbricht. Das passt zum beschriebenen Aufblitzen; eine Ferndiagnose
+der Live-Seite ist aus der Sandbox nicht möglich.
+
+Lösung: Figtree (20 KB woff2) als Base64 in `app/schrift.css`, vor
+`globals.css` eingebunden, `next/font/local` und die Klasse am `<html>`
+entfernt, `--font-figtree` in `:root` gesetzt. Damit ist die Schrift beim
+ersten Zeichnen da, kein Schriftwechsel, kein Sprung, eine Anfrage weniger.
+Kosten: rund 20 KB mehr im ersten Stylesheet (gzip). Geprüft: keine
+woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
+hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
+Nicht gepusht, wartet auf „push“ des Inhabers.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter
