@@ -1220,6 +1220,31 @@ Bleibt bewusst: Preise im Budget-Planer (Meta Ads, belegte Richtwerte)
 und 3,90 € auf der Produktseite des Tagesplaners; „Bendorf“ als
 Städtename in Nachbarschafts-Links und auf `/standorte` (Standortkarte).
 
+## 26.10.2026 (lokal): Cloudflare-Test als kostenlose Alternative zu Netlify
+
+Anlass: Netlify-Free-Guthaben aufgebraucht, Inhaber bucht vorerst
+Personal (monatlich kündbar) und will prüfen, ob Cloudflare kostenlos
+reicht. Test in einer Kopie im Scratchpad (`cf-test`), am Repo nichts
+geändert. Adapter `@opennextjs/cloudflare` 1.20.13, `wrangler` 4.152.0,
+Konfiguration mit R2-Cache (Vorlage des Adapters).
+
+Ergebnis: Build läuft durch, `wrangler deploy --dry-run` meldet
+3.040 KiB gzip für den Server-Teil (Free-Grenze laut Doku 3 MB, laut
+Bericht vom Oktober 2026 inzwischen 64 MB unkomprimiert, nicht
+offiziell bestätigt). Lokal in der Cloudflare-Laufzeit geprüft: alle
+Seitentypen 200, neue Standorttexte da, Weiterleitungen 308, 404-Seite,
+Sitemap, robots, Suchindex, next/image, Vorschaubilder (nach
+`populateCache`), Anfrage-API inklusive Telefon-Pflicht. Website-Check
+nutzt `node:dns`, das in der Sandbox ohne Netz nicht testbar ist.
+
+Für einen Umzug nötig: Cloudflare-Konto des Inhabers, Domain zu
+Cloudflare (Nameserver bei IONOS umstellen, alle DNS-Einträge inkl.
+Mail, MailerLite und Resend vorher übernehmen), R2-Bucket anlegen,
+Variablen (Resend, Places) in Cloudflare setzen, `open-next.config.ts`
+und `wrangler.jsonc` ins Repo, Build-Befehl `opennextjs-cloudflare
+deploy`. Puffer schaffen: `legacy-locations.json` liegt zweimal im
+Bündel (rund 140 KiB gzip), schlanke Fassung ohne `body` würde reichen.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter
