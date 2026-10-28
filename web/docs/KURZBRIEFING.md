@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 24.10.2026
+# Kurzbriefing — Stand 28.10.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -24,6 +24,12 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Notlösung (Inhaber mag es nicht, außerdem laufen dort Anfrage-API und
   Website-Check nicht ohne Node-Server). Späterer Spar-Kandidat: Umzug auf
   Cloudflare, erst wenn Netlify-Kosten steigen. Pushes weiter gebündelt.
+- **Freebie-Downloads laufen (28.10.):** MailerLite-Schlüssel und drei
+  Gruppen in Netlify gesetzt (IDs in `docs/LIVEGANG.md`, Abschnitt 1), die
+  Automationen starten über „Subscriber joins a group“. Alle drei Downloads
+  vom Inhaber live getestet, PDFs kommen an. Noch offen: prüfen, ob die
+  SEO- und KI-PDFs zu den Versprechen auf den Seiten passen („30 Prüfpunkte,
+  12 Seiten“ / „10 Seiten“); Inhaber schickt die PDFs aus dem File manager.
 
 - **Schrift:** Figtree, Fließtext kräftiger und größer, keine Serifen-Kursive
   mehr. Vom Inhaber abgenommen („Variante 3“).
@@ -171,19 +177,16 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 2. **Klick-Fragebogen** auf allen acht Leistungsseiten und als Hauptweg auf
    `/kontakt` (`frageboegen.allgemein`: erste Frage wählt das Thema, der
    Betreff der Mail trägt es). Technik: `lib/fragebogen.ts`,
-   `components/LeistungsAnfrage.tsx`, `app/api/anfrage/route.ts`. Ohne
-   `RESEND_API_KEY` meldet das Formular „derzeit nicht verfügbar“; in Netlify
-   sind die Schlüssel noch nicht gesetzt. Budget-Spannen sind Vorschläge,
+   `components/LeistungsAnfrage.tsx`, `app/api/anfrage/route.ts`. Resend-
+   Schlüssel seit 23.10. in Netlify gesetzt, Fragebogen live getestet. Budget-Spannen sind Vorschläge,
    unterste Stufe weich („Erstmal klein anfangen“), intern als „kleines
    Budget“ markiert. Personenzeile „Gründer · antwortet dir persönlich“.
-3. **Nur der Inhaber kann:** Netlify-Variablen setzen (Liste mit exakten
-   Namen in `docs/LIVEGANG.md`, Abschnitt 1), danach einen Fragebogen live
-   testen. Rechtstexte gegenlesen (Impressum, Datenschutz enthält jetzt
+3. **Nur der Inhaber kann:** Rechtstexte gegenlesen (Impressum, Datenschutz enthält jetzt
    Fragebogen/Resend und Website-Check; AGB seit 23.10. vollständig nach
    den Vorgaben des Inhabers: 50 % Anzahlung, 14 Tage, 4 Wochen Kündigung,
    Referenzrecht; Anwalt soll gegenlesen).
-   Domainumzug Webflow → Netlify nach `docs/LIVEGANG.md`, erst danach
-   `NEXT_PUBLIC_INDEXABLE=true`.
+   Domainumzug ist seit 23.10. durch, Seite ist live und indexierbar.
+   Webflow-Hosting ab 6.11. kündigen (zwei Wochen stabil).
 4. **Pushes sparsam** (Netlify-Build-Kontingent), Screenshots in den Chat
    (`SendUserFile`), nur ein Push pro abgeschlossenem Paket.
 5. Medien: Reels Handwerk (M&A Transporte, GM-Dachdecker), echte

@@ -1,4 +1,4 @@
-# Livegang-Checkliste (Stand 23.10.2026, Seite ist LIVE)
+# Livegang-Checkliste (Stand 28.10.2026, Seite ist LIVE)
 
 Was vor dem Umzug von pixel56.de auf die neue Seite passieren muss, in der
 Reihenfolge, in der es sinnvoll ist. Punkte mit **[Inhaber]** kann nur Atilla
@@ -19,17 +19,28 @@ Mails verschicken:
 | `PIXEL56_CONTACT_FROM` | Absender, Domain muss bei Resend verifiziert sein | `Pixel56 <anfragen@pixel56.de>` |
 | `PIXEL56_CONTACT_TO` | Postfach, in dem Anfragen landen sollen | `info@pixel56.de` |
 
-Optional, damit Anfragen und Freebie-Anmeldungen als Kontakte in MailerLite
-landen (ohne diese Werte funktionieren die Freebie-Formulare nicht):
+Pflicht für die drei Freebie-Formulare unter `/ressourcen/*` (ohne diese
+Werte zeigt das Formular „Der Versand ist noch nicht eingerichtet“).
+**ERLEDIGT 28.10.:** Schlüssel und Gruppen gesetzt, Deploy ausgelöst, alle
+drei Downloads live getestet, Mails mit PDF kommen an.
 
-| Variable | Woher |
+| Variable | Wert / Woher |
 |---|---|
-| `MAILERLITE_API_KEY` | MailerLite → Integrations → Developer API |
-| `MAILERLITE_GROUP_ID` | allgemeine Gruppe (Fallback) |
-| `MAILERLITE_GROUP_SEO_CHECKLISTE` | Gruppe, die die SEO-Checkliste verschickt |
-| `MAILERLITE_GROUP_KI_AGENTEN_CHECKLISTE` | Gruppe für die KI-Agenten-Checkliste |
-| `MAILERLITE_GROUP_TAGESPLANER` | Gruppe für den Tagesplaner |
-| `MAILERLITE_GROUP_KONTAKTANFRAGE` | Gruppe für Anfragen aus den Fragebögen |
+| `MAILERLITE_API_KEY` | MailerLite → Integrations → Developer API. Nur in Netlify eintragen, nie in Chat oder Repo. |
+| `MAILERLITE_GROUP_ID` | `150394406990513854` („Free PDF Download Leads“, Fallback) |
+| `MAILERLITE_GROUP_TAGESPLANER` | `150394406990513854` (dieselbe Gruppe) |
+| `MAILERLITE_GROUP_SEO_CHECKLISTE` | `202594152733476609` |
+| `MAILERLITE_GROUP_KI_AGENTEN_CHECKLISTE` | `202594209013696234` |
+| `MAILERLITE_GROUP_KONTAKTANFRAGE` | optional, Gruppe für Anfragen aus den Fragebögen (noch nicht gesetzt) |
+
+So hängt es zusammen: `app/api/lead/route.ts` legt den Besucher per API in
+der Gruppe an, die zum Freebie passt (Quelle = Slug aus `lib/ressourcen.ts`).
+Die drei MailerLite-Automationen („Tagesplaner & To Do List“, „Lokales SEO“,
+„KI-Agent“) starten mit dem Auslöser **„Subscriber joins a group“**, nicht
+mehr über MailerLite-Formulare (ein Workflow darf im kostenlosen Plan nur
+einen Auslöser haben, deshalb wurde der Formular-Auslöser ersetzt). Neue
+Gruppe oder neues Freebie: Variable `MAILERLITE_GROUP_<SLUG in Großbuchstaben,
+Bindestrich → Unterstrich>` anlegen, Automation mit Gruppen-Auslöser bauen.
 
 Optional, damit Google-Sterne und Anzahl live aus dem Unternehmensprofil
 kommen (sonst gilt der gepflegte Stand 5,0 · 27):
@@ -48,7 +59,8 @@ Domainumzug (Punkt 4), sonst indexiert Google die Netlify-Vorschau.
   angekommen. Noch zu prüfen: die Bestätigung an den Besucher (Betreff
   „Deine Anfrage bei Pixel56: …“ an die eingetragene Adresse).
 - Kontaktseite `/kontakt#anfrage`: Betreff enthält das gewählte Thema.
-- Freebie `/ressourcen/seo-checkliste` anfordern, Mail von MailerLite prüfen.
+- ERLEDIGT 28.10.: alle drei Freebies (`tagesplaner`, `seo-checkliste`,
+  `ki-agenten-checkliste`) live angefordert, MailerLite-Mails mit PDF kamen an.
 - Website-Check `/website-check` mit der echten Adresse `pixel56.de`.
 
 ## 3. Rechtstexte [Inhaber prüft, Sitzung setzt um]

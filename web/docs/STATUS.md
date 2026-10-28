@@ -1264,6 +1264,28 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 28.10.2026: Freebie-Downloads mit MailerLite in Betrieb
+
+Ausgangslage: Die drei Download-Formulare unter `/ressourcen/*` meldeten live
+„Der Versand ist noch nicht eingerichtet“, weil `MAILERLITE_API_KEY` in
+Netlify fehlte. Außerdem lösten die MailerLite-Automationen bisher nur über
+MailerLite-eigene Formulare aus, die die neue Seite nicht mehr nutzt.
+
+Umsetzung (alles Inhaber-Seite, kein Code geändert):
+
+- Netlify: `MAILERLITE_API_KEY`, `MAILERLITE_GROUP_ID` und die drei
+  Gruppen-Variablen gesetzt (Tagesplaner = „Free PDF Download Leads“, SEO
+  und KI je eigene Gruppe, IDs in `LIVEGANG.md`), danach Trigger deploy.
+- MailerLite: In allen drei Workflows den Formular-Auslöser durch
+  „Subscriber joins a group“ ersetzt. Mehrere Auslöser pro Workflow wären
+  nur im Pro-Plan möglich, deshalb Ersatz statt Ergänzung.
+- Test durch den Inhaber (Sandbox erreicht die Live-Seite nicht): alle
+  drei Formulare zeigen die Danke-Meldung, Mails mit PDF kommen an.
+
+Offen: SEO- und KI-PDF inhaltlich gegen die Seitenversprechen prüfen
+(Prüfpunkte, Seitenzahl); Mail „KI-Agent Formular Workflow“ sah im Editor
+nach Platzhalter aus. Die Datenschutzerklärung nennt MailerLite bereits.
+
 ## Webflow-Altstand zum Nachschlagen (13.10.2026)
 
 Ein Workspace, eine Site: `pixel56.de` und `www.pixel56.de`. Letzter
