@@ -23,7 +23,7 @@ const seiten: SuchEintrag[] = [
   { typ: "Seite", titel: "Kontakt und Erstgespräch", text: "Kostenloses Erstgespräch, Telefon, WhatsApp, E-Mail.", href: routes.contact },
   { typ: "Seite", titel: "Standorte rund um Koblenz", text: "13 Städte im Einzugsgebiet, deutschlandweit im Einsatz.", href: routes.locations },
   { typ: "Seite", titel: "Karriere bei Pixel56", text: "Offene Stellen, Initiativbewerbung, Arbeiten remote und in der Region Koblenz.", href: routes.careers },
-  { typ: "Seite", titel: "Vertriebspartner auf Provisionsbasis", text: "Freiberuflich Kunden gewinnen für Pixel56: Kaltakquise, Erstgespräche, Provision über Branchenniveau.", href: "/vertriebspartner" },
+  { typ: "Seite", titel: "Partnerprogramm", text: "Empfehlungs-, Vertriebs- und Gebietspartner: freiberuflich, am Auftrag beteiligt, mit Onboarding und schriftlichem Vertrag.", href: "/partner" },
   { typ: "Seite", titel: "Impressum", text: "Anbieterkennzeichnung von Pixel56.", href: routes.imprint },
   { typ: "Seite", titel: "Datenschutz", text: "Datenschutzerklärung von Pixel56.", href: routes.privacy },
 ];

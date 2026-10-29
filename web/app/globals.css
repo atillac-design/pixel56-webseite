@@ -2764,6 +2764,7 @@ a.audience-card { color: inherit; text-decoration: none; }
 .premium-process.cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
 @media (max-width: 900px) { .premium-process.cols-3 { grid-template-columns: 1fr; } }
 .friction-list.plain .friction-row p::before { content: "Konkret heißt das"; }
+.friction-list.stufen .friction-row p::before { content: "Rolle und Beteiligung"; }
 .friction-list.plain .friction-row h3 { font-family: var(--sans); font-style: normal; font-weight: 700; font-size: 18px; }
 
 /* Mobil: lange Wörter in Hero-Überschriften dürfen die Seite nicht verbreitern */

@@ -24,15 +24,16 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Notlösung (Inhaber mag es nicht, außerdem laufen dort Anfrage-API und
   Website-Check nicht ohne Node-Server). Späterer Spar-Kandidat: Umzug auf
   Cloudflare, erst wenn Netlify-Kosten steigen. Pushes weiter gebündelt.
-- **Vertriebspartner-Seite (29.10.):** `/vertriebspartner` sucht offen
-  freiberufliche Vertriebler auf Provisionsbasis (Handelsvertreter,
-  Kaltakquise, Erstgespräche, Umsetzung durch Pixel56, langfristig).
-  Entscheidung mit dem Inhaber: Modell offen nennen, keine internen Zahlen,
-  kein „dringend“-Ton. Provisionssatz steht NICHT auf der Seite, bis der
-  Inhaber eine Zahl nennt (`provisionsSatz` oben in
-  `app/vertriebspartner/page.tsx`, dann erscheint sie automatisch). Offen
-  vom Inhaber: Satz, Folgeprovision auf laufende Leistungen, Exklusivität.
-  Verlinkt von `/karriere`, der alten Vertriebsprofi-Stelle, Sitemap,
+- **Partnerprogramm `/partner` (29.10.):** Vertrieb über freiberufliche
+  Partner, als Programm erzählt, nicht als Stellenanzeige (Inhaber fand den
+  ersten Entwurf „du bringst Auftrag, wir zahlen“ zu räudig). Drei Stufen:
+  Empfehlungspartner, Vertriebspartner, Gebietspartner (Folgeaufträge,
+  eigene Region). Ton: Entscheidung, nicht Notlösung („wächst über Partner
+  statt Vertriebsabteilung“, „lieber drei Partner eng als zwanzig lose“).
+  Keine internen Zahlen, kein „Kaltakquise“ als Hauptwort. Beteiligungssätze
+  stehen NICHT auf der Seite, bis der Inhaber Zahlen nennt (`provision` oben
+  in `app/partner/page.tsx`, erscheint dann je Stufe). `/vertriebspartner`
+  leitet weiter. Verlinkt von `/karriere`, Vertriebsprofi-Stelle, Sitemap,
   Schnellsuche. Lokal committet, Push auf Freigabe.
 - **Freebie-Downloads laufen (28.10.):** MailerLite-Schlüssel und drei
   Gruppen in Netlify gesetzt (IDs in `docs/LIVEGANG.md`, Abschnitt 1), die

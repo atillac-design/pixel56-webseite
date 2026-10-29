@@ -56,6 +56,7 @@ const nextConfig: NextConfig = {
       { source: "/ressourcen/tagesplaner", destination: "/kostenloser-tagesplaner-to-do-liste-als-pdf-vorlage", permanent: true },
       { source: "/dein-kostenloses-beratungsgesprach", destination: "/kontakt", permanent: true },
       { source: "/stellenangebote", destination: "/karriere", permanent: true },
+      { source: "/vertriebspartner", destination: "/partner", permanent: true },
       {
         source: "/stellenangebote/remote-freelancer-videograph-reels-experte-fur-pixel56",
         destination: "/karriere",

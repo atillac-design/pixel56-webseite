@@ -1264,6 +1264,37 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 29.10.2026 (lokal): Umbau zum Partnerprogramm `/partner`
+
+Rückmeldung des Inhabers zum ersten Entwurf: Der Ton „du bringst den Auftrag,
+wir geben dir das Geld“ wirkt abhängig und unprofessionell; gute Agenturen
+suchen nicht sichtbar nach Vertrieblern. Einschätzung: Das Problem ist die
+Sprache, nicht das Provisionsmodell. Beratungen und Agenturen lösen das als
+Partnerprogramm (Stufen, Onboarding, Material, Auswahl) und erzählen das
+Modell als Entscheidung. Inhaber: „ok mach das so“.
+
+Umsetzung:
+
+- Route `app/vertriebspartner` → `app/partner`, Weiterleitung 308 in
+  `next.config.ts`. Breadcrumb „Unternehmen / Partnerprogramm“ statt
+  Karriere, kein „(m/w/d)“ mehr im Titel.
+- Hero „Du bringst das Netzwerk. Wir bringen die Umsetzung.“, Kicker
+  „Partnerprogramm · freiberuflich · beteiligt“, Board zeigt die drei Stufen.
+- 01 Warum Partner (Haltung: klein bleiben, Vertrauen verkauft, wenige
+  Partner eng), 02 Die drei Stufen (Empfehlungs-, Vertriebs-, Gebietspartner,
+  Label „Rolle und Beteiligung“ als neue CSS-Variante `friction-list.stufen`),
+  03 Was Partner bekommen (sechs Karten: Belege, acht Leistungen, Onboarding
+  und Material, Vertrag und monatliche Abrechnung, Atilla im Hintergrund,
+  Freiheit), 04 Wen wir aufnehmen, 05 Vier Schritte, 06 Partnergespräch
+  (WhatsApp zuerst, E-Mail darunter), 07 acht FAQ.
+- Entfernte Formulierungen: „Du bekommst den Anteil“, „was fehlt, ist
+  jemand, der die Tür öffnet“, „Kaltakquise“ als Hauptwort.
+- Beteiligung je Stufe vorbereitet (`provision.empfehlung/vertrieb`), leer
+  bis zur Freigabe; Gebietspartner bekommt laut Seite Beteiligung an
+  Folgeaufträgen (vom Inhaber mit dem Vorschlag freigegeben, Satz offen).
+- Prüfung: Build fehlerfrei, `seo:check:strict` grün, Playwright 390/1280:
+  kein Überlauf, eine h1, keine Fehler, interne Links 200, Redirect geprüft.
+
 ## 29.10.2026 (lokal): Seite „Vertriebspartner auf Provisionsbasis“
 
 Auftrag des Inhabers: eine zusätzliche Seite für die Suche nach Vertrieblern
