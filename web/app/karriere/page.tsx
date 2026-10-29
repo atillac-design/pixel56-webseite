@@ -52,7 +52,7 @@ const faqs = [
   { q: "Brauche ich ein klassisches Anschreiben?", a: "Nein. Lebenslauf plus Arbeitsproben sagen mehr als jede Floskel-Seite. Wenn du uns etwas mitgeben willst, reichen drei ehrliche Sätze." },
   { q: "Wie schnell bekomme ich eine Antwort?", a: "Wir melden uns nach Sichtung deiner Nachricht bei dir. Schreib uns gern direkt, wenn du eine zeitkritische Frage hast." },
   { q: "Nehmt ihr auch Quereinsteiger?", a: "Wenn die Arbeitsproben überzeugen, ja. Was du kannst, zählt mehr als wo du es gelernt hast." },
-  { q: "Gibt es auch Praktika oder freie Mitarbeit?", a: "Beides ist möglich, wenn die Aufgabe passt. Schreib uns, was du suchst, dann sagen wir ehrlich, ob wir gerade etwas Passendes haben." },
+  { q: "Gibt es auch Praktika oder freie Mitarbeit?", a: "Beides ist möglich, wenn die Aufgabe passt. Im Vertrieb suchen wir gezielt freiberufliche Partner auf Provisionsbasis, alles dazu steht auf der Seite Vertriebspartner. Für andere Bereiche schreib uns, was du suchst, dann sagen wir ehrlich, ob wir gerade etwas Passendes haben." },
 ];
 
 export default async function KarrierePage() {
@@ -219,7 +219,7 @@ export default async function KarrierePage() {
               </h2>
             </div>
             <p className="band-note">
-              {stellen.length ? "Aktuelle Positionen, remote mit Treffen in der Region Koblenz." : "Aktuell ist keine feste Stelle ausgeschrieben. Im Vertrieb sind wir offen für Gespräche, und Initiativbewerbungen sind ausdrücklich willkommen."}
+              {stellen.length ? "Aktuelle Positionen, remote mit Treffen in der Region Koblenz." : "Aktuell ist keine feste Stelle ausgeschrieben. Im Vertrieb suchen wir freiberufliche Partner auf Provisionsbasis, und Initiativbewerbungen sind ausdrücklich willkommen."}
             </p>
           </div>
           {stellen.length > 0 ? (
@@ -240,6 +240,11 @@ export default async function KarrierePage() {
               <b>Vertriebsprofi/in (m/w/d)</b>
               <small>Du verstehst die Herausforderungen kleiner Betriebe, hörst genauer zu, als du verkaufst, und erklärst digitale Leistungen verständlich. Region Koblenz, Umfang nach Absprache.</small>
               <Link className="body-link" href={vertriebsStelle}>Zur Stellenbeschreibung <ArrowIcon /></Link>
+            </div>
+            <div>
+              <b>Vertriebspartner auf Provisionsbasis (m/w/d)</b>
+              <small>Freiberuflich, Kaltakquise und Erstgespräche für acht Leistungen, Umsetzung durch Pixel56. Provision deutlich über dem Üblichen, auf Dauer angelegt.</small>
+              <Link className="body-link" href="/vertriebspartner">Zur Partnerschaft <ArrowIcon /></Link>
             </div>
             <div>
               <b>Initiativbewerbung</b>

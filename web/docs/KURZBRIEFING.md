@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 28.10.2026
+# Kurzbriefing — Stand 29.10.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -24,6 +24,16 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Notlösung (Inhaber mag es nicht, außerdem laufen dort Anfrage-API und
   Website-Check nicht ohne Node-Server). Späterer Spar-Kandidat: Umzug auf
   Cloudflare, erst wenn Netlify-Kosten steigen. Pushes weiter gebündelt.
+- **Vertriebspartner-Seite (29.10.):** `/vertriebspartner` sucht offen
+  freiberufliche Vertriebler auf Provisionsbasis (Handelsvertreter,
+  Kaltakquise, Erstgespräche, Umsetzung durch Pixel56, langfristig).
+  Entscheidung mit dem Inhaber: Modell offen nennen, keine internen Zahlen,
+  kein „dringend“-Ton. Provisionssatz steht NICHT auf der Seite, bis der
+  Inhaber eine Zahl nennt (`provisionsSatz` oben in
+  `app/vertriebspartner/page.tsx`, dann erscheint sie automatisch). Offen
+  vom Inhaber: Satz, Folgeprovision auf laufende Leistungen, Exklusivität.
+  Verlinkt von `/karriere`, der alten Vertriebsprofi-Stelle, Sitemap,
+  Schnellsuche. Lokal committet, Push auf Freigabe.
 - **Freebie-Downloads laufen (28.10.):** MailerLite-Schlüssel und drei
   Gruppen in Netlify gesetzt (IDs in `docs/LIVEGANG.md`, Abschnitt 1), die
   Automationen starten über „Subscriber joins a group“. Alle drei Downloads

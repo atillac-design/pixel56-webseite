@@ -1264,6 +1264,37 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 29.10.2026 (lokal): Seite „Vertriebspartner auf Provisionsbasis“
+
+Auftrag des Inhabers: eine zusätzliche Seite für die Suche nach Vertrieblern
+auf Provisionsbasis, Provision höher als üblich, langfristige Partnerschaft.
+Seine Frage, ob man „freiberuflich / Provision“ offen preisgeben soll:
+Empfehlung ja. Wer so arbeitet, sucht genau danach; Ehrlichkeit filtert
+Bewerber vor; das Modell klar als Handelsvertreter zu benennen ist rechtlich
+sauberer als eine Stelle, die wie Anstellung wirkt, aber nur Provision zahlt.
+
+Umsetzung:
+
+- Neue Route `app/vertriebspartner/page.tsx`, gleiche Bauteile wie Karriere
+  (Hero mit Stellen-Mock, Kurzübersicht, 01 Warum, 02 Aufgaben, 03 Was du
+  bekommst, 04 Wer passt, 05 Vier Schritte, 06 dunkle Kennenlern-Bühne mit
+  WhatsApp-Mock, 07 FAQ mit acht Fragen: Festanstellung, Fixum, Höhe,
+  Gewerbe, Region, Leads, Vertragspartner, nebenberuflich). CTA WhatsApp
+  zuerst, E-Mail als Alternative. Kein JobPosting-Schema (Google verlangt
+  Vergütungsangaben), WebPage-Schema wie bei der Vertriebsprofi-Stelle.
+- Belege statt Behauptungen: Projektzahl aus `fallstudien.length`, Google-
+  Stand über `holeGoogleStand()`. Keine internen Zahlen, keine Lead-Zahlen,
+  keine Kundennamen aus der Akquise.
+- Provisionssatz bewusst leer (`provisionsSatz = null`): Seite sagt „deutlich
+  über dem Üblichen, Zahl im ersten Gespräch, schriftlich im Vertrag“. Sobald
+  der Inhaber eine Zahl freigibt, wird sie eingetragen und erscheint in
+  Kurzübersicht und Abschnitt 03.
+- Verlinkung: Karte auf `/karriere` (Abschnitt Offene Stellen), FAQ dort und
+  auf der alten Vertriebsprofi-Stelle, Sitemap, Schnellsuche.
+- Prüfung: Build 749 Routen fehlerfrei, `seo:check:strict` grün, Playwright
+  auf 390/1280 px: kein Überlauf, eine h1, keine Skriptfehler, alle
+  internen Links 200. Screenshots an den Inhaber.
+
 ## 28.10.2026: Freebie-Downloads mit MailerLite in Betrieb
 
 Ausgangslage: Die drei Download-Formulare unter `/ressourcen/*` meldeten live

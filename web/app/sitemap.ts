@@ -22,6 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/website-check",
     "/team/atilla-ciftcioglu",
     "/stellenangebote/pixel56-marketing-agentur-in-koblenz-sucht-vertriebsprofi-in",
+    "/vertriebspartner",
     "/category/digitale-produkte",
     "/product/tagesplaner-to-do-liste-set",
     ...[

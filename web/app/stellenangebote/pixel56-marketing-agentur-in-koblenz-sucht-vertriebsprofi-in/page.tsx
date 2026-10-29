@@ -33,7 +33,7 @@ const passt = [
 ];
 
 const faqs = [
-  { q: "Ist das eine Festanstellung, freie Mitarbeit oder Provision?", a: "Das klären wir im Gespräch. Wir sind offen für verschiedene Modelle und sagen dir ehrlich, was aktuell möglich ist und was nicht." },
+  { q: "Ist das eine Festanstellung, freie Mitarbeit oder Provision?", a: "Aktuell suchen wir vor allem freiberufliche Vertriebspartner auf Provisionsbasis. Was das genau heißt, steht auf unserer Seite Vertriebspartner. Andere Modelle besprechen wir offen im Gespräch." },
   { q: "Muss ich in Koblenz wohnen?", a: "Nein, aber die Region ist von Vorteil, weil viele Erstgespräche und Kennenlerntermine vor Ort stattfinden. Vieles läuft auch per Video-Call." },
   { q: "Brauche ich Marketing-Erfahrung?", a: "Hilfreich, aber wichtiger ist, dass du Betriebe verstehst und erklären kannst. Die Leistungen bringen wir dir bei, Zuhören und Ehrlichkeit nicht." },
   { q: "Wie läuft die Bewerbung?", a: "E-Mail mit Lebenslauf oder kurzem Profil und drei Sätzen zu dir. Dann ein Gespräch, per Video-Call oder bei einem Kaffee in Koblenz. Kein Anschreiben, kein Portal." },
@@ -199,6 +199,7 @@ export default function VertriebsprofiPage() {
             </div>
             <div className="reveal">
               <ul className="lines">
+                <li><Link href="/vertriebspartner">Vertriebspartner auf Provisionsbasis</Link>: unser bevorzugtes Modell, mit allen Details</li>
                 <li>Kein Anschreiben, kein Bewerbungsportal, keine Pflichtfelder</li>
                 <li>Antwort nach Sichtung, auch ein Nein kommt mit Begründung</li>
                 <li>Gespräch auf Augenhöhe statt Assessment-Center</li>
