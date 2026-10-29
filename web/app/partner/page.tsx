@@ -17,7 +17,7 @@ const whatsapp = "https://wa.me/491785282464?text=Hallo%20Atilla%2C%20ich%20inte
  * keine Zahlen freigibt, bleiben sie leer und die Seite verweist auf das
  * Partnergespräch. Keine Zahl erfinden.
  */
-const provision = { empfehlung: null as string | null, vertrieb: null as string | null };
+const provision = { empfehlung: "bis zu 25 %" as string | null, vertrieb: "bis zu 35 %" as string | null };
 
 export const metadata: Metadata = {
   title: "Partnerprogramm: Vertriebspartner werden",
@@ -41,7 +41,7 @@ const haltung = [
 const stufen = [
   { nr: "Stufe 01", name: "Empfehlungspartner", wer: "Für Steuerberater, Handwerker, Berater, Vereinsvorstände: Menschen mit Kontakten, die keine Vertriebsarbeit machen wollen.", was: "Du stellst den Kontakt her, Pixel56 führt das Gespräch. Kommt ein Auftrag zustande, bekommst du eine Empfehlungsprovision.", provision: provision.empfehlung },
   { nr: "Stufe 02", name: "Vertriebspartner", wer: "Für Menschen mit Vertriebserfahrung, die Betriebe ansprechen, Erstgespräche führen und Kunden gewinnen wollen.", was: "Du führst die Gespräche selbst, bereitest mit Atilla das Angebot vor und bleibst Ansprechpartner. Dafür die volle Provision am Auftrag.", provision: provision.vertrieb },
-  { nr: "Stufe 03", name: "Gebietspartner", wer: "Für Vertriebspartner, die geliefert haben und eine Region dauerhaft verantworten wollen.", was: "Eigenes Gebiet, Beteiligung auch an Folgeaufträgen deiner Kunden, Mitsprache bei Angebot und Ausbau. Die langfristige Form der Zusammenarbeit.", provision: null },
+  { nr: "Stufe 03", name: "Gebietspartner", wer: "Für Vertriebspartner, die geliefert haben und eine Region dauerhaft verantworten wollen.", was: "Eigenes Gebiet, Beteiligung auch an Folgeaufträgen deiner Kunden, Mitsprache bei Angebot und Ausbau. Die langfristige Form der Zusammenarbeit.", provision: provision.vertrieb },
 ];
 
 const bekommst = [
@@ -69,7 +69,7 @@ const ablauf = [
 
 const faqs = [
   { q: "Ist das eine Festanstellung?", a: "Nein. Das Partnerprogramm ist für Selbstständige: rechtlich Handelsvertreter, vergütet über eine Beteiligung am Auftrag. Wer ein festes Gehalt braucht, ist hier nicht richtig, und das sagen wir lieber vorher als nach drei Wochen." },
-  { q: "Wie hoch ist die Beteiligung?", a: "Sie liegt deutlich über dem, was in der Branche üblich ist, und unterscheidet sich je nach Stufe. Die genauen Sätze besprechen wir im Partnergespräch und halten sie im Vertrag fest." },
+  { q: "Wie hoch ist die Beteiligung?", a: "Empfehlungspartner erhalten bis zu 25 Prozent, Vertriebs- und Gebietspartner bis zu 35 Prozent vom Netto-Auftragswert. Wo genau du innerhalb dieser Spanne startest, hängt von Erfahrung, Zusammenarbeit und Qualität der Kontakte ab. Das besprechen wir im Partnergespräch und halten es im Vertrag fest." },
   { q: "Gibt es ein Fixum?", a: "Nein. Partner werden am Auftrag beteiligt, nicht pauschal bezahlt. Dafür gibt es keine Quoten, keine Stechuhr und keine Mindeststunden." },
   { q: "Brauche ich ein Gewerbe?", a: "Für Vertriebs- und Gebietspartner ja, als Handelsvertreter. Empfehlungspartner, die ohnehin selbstständig sind, rechnen über ihr bestehendes Unternehmen ab. Was im Einzelfall nötig ist, klären wir im Gespräch." },
   { q: "Muss ich in der Region Koblenz sein?", a: "Nein. Die meisten Kunden sitzen bislang in der Region Koblenz, Pixel56 arbeitet aber deutschlandweit. Wer in seiner eigenen Region Betriebe kennt, bringt genau das mit, was das Programm braucht." },
@@ -128,7 +128,7 @@ export default async function PartnerPage() {
               </div>
               <div className="premium-proof" aria-label="Programm auf einen Blick">
                 <span>Drei Partnerstufen</span>
-                <span>Beteiligung über Branchenniveau</span>
+                <span>Bis zu 35 % Beteiligung</span>
                 <span>Schriftlicher Vertrag</span>
                 <span>Deutschlandweit</span>
               </div>
@@ -168,7 +168,7 @@ export default async function PartnerPage() {
           </div>
           <div>
             <span>Vergütung</span>
-            <strong>Beteiligung am Auftrag, über Branchenniveau</strong>
+            <strong>Bis zu 25 % bzw. 35 % vom Auftrag</strong>
           </div>
           <div>
             <span>Belege</span>
@@ -225,7 +225,7 @@ export default async function PartnerPage() {
                 <h3>{s.name}</h3>
                 <p>
                   <strong>{s.wer}</strong> {s.was}
-                  {s.provision ? ` Beteiligung: ${s.provision} vom Netto-Auftragswert.` : ""}
+                  {s.provision ? ` Beteiligung: ${s.provision} vom Netto-Auftragswert, abhängig von Zusammenarbeit und Qualität.` : ""}
                 </p>
               </div>
             ))}

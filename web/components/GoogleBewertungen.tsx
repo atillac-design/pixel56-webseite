@@ -17,7 +17,7 @@ function initialen(name: string): string {
 
 function Sterne({ n, gross }: { n: number; gross?: boolean }) {
   return (
-    <span className={`gb-sterne${gross ? " gross" : ""}`} aria-label={`${n} von 5 Sternen`}>
+    <span className={`gb-sterne${gross ? " gross" : ""}`} role="img" aria-label={`${n} von 5 Sternen`}>
       {[1, 2, 3, 4, 5].map((i) => (
         <svg key={i} viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.4 5.9.8-4.3 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.5 7.8l5.9-.8z" fill={i <= n ? "#fbbc04" : "rgba(128,128,128,0.3)"} /></svg>
       ))}
@@ -62,7 +62,7 @@ function Karte({ b, profilUrl }: { b: GoogleBewertung; profilUrl: string }) {
       <footer className="gb-fuss">
         <span className="gb-quelle">{b.quelle ? `Rezension aus ${b.quelle}` : "Rezension auf Google"}</span>
         {b.gekuerzt && <a href={profilUrl} target="_blank" rel="noopener noreferrer">Weiterlesen ↗</a>}
-        {b.projekt && <Link href={projectPath(b.projekt)}>Zum Projekt →</Link>}
+        {b.projekt && <Link href={projectPath(b.projekt)} aria-label={`Zum Projekt von ${b.name}`}>Zum Projekt →</Link>}
       </footer>
     </article>
   );

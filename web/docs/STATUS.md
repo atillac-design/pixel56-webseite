@@ -1264,6 +1264,42 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 29.10.2026: PageSpeed-Auswertung, Beteiligungssätze, llms.txt
+
+Inhaber schickte PageSpeed Insights für www.pixel56.de (mobil): Leistung 89
+(FCP 1,4 s, LCP 2,5 s, TBT 290 ms, CLS 0,003, Speed Index 3,6 s),
+Barrierefreiheit 97, Best Practices 100, SEO 100, Agentisches Browsing 1/2.
+Rote Hinweise: Render-blockierende Anfragen (~170 ms), veraltetes JavaScript
+(15 KiB), ungenutztes CSS (42 KiB) und JavaScript (23 KiB), ein ARIA-Fehler.
+
+Lokal mit Lighthouse 12 nachgestellt (Performance-Zahlen in der Sandbox
+nicht aussagekräftig, Audits schon):
+
+- `aria-prohibited-attr`: `span.gb-sterne` trug `aria-label` ohne Rolle
+  (`components/GoogleBewertungen.tsx`). Jetzt `role="img"`. Dazu bekommen
+  die „Zum Projekt“-Links je Rezension ein `aria-label` mit dem Namen
+  (Best-Practice-Hinweis „identische Links“). Barrierefreiheit lokal 100.
+- Ungenutztes CSS: `globals.css` (34 KiB minifiziert) trägt die Regeln
+  aller Seitentypen; die Schrift-Datei (27 KiB Base64) zählt Lighthouse als
+  „ungenutzt“. Aufteilen pro Seite lohnt den Aufwand nicht; Option für
+  später: `experimental.inlineCss` (kein Extra-Request, dafür ~55 KiB mehr
+  HTML je Seite).
+- Veraltetes JavaScript: Polyfills (`Array.prototype.at` u. a.) in einem
+  Abhängigkeits-Chunk, nicht aus unserem Code; Next-Ziele sind bereits
+  modern (Chrome/Edge/Firefox 111, Safari 16.4). Nicht angefasst.
+- Logo `logo-pixel56-180.webp` wird 70 px breit angezeigt: 5 KiB Potenzial,
+  vernachlässigbar.
+- Agentisches Browsing: experimentelle Kategorie (Lighthouse 13.3), prüft
+  laut Erfahrungsberichten Accessibility-Tree, CLS und eine `llms.txt`.
+  `public/llms.txt` angelegt: Kurzbeschreibung, Leistungen, Belege,
+  kostenlose Angebote, Kontakt, Partnerprogramm, Rechtliches.
+
+Partnerprogramm: Inhaber nennt Beteiligung „Empfehlungspartner bis zu 25 %,
+kann auch 30 bis 35 % sein, abhängig von Zusammenarbeit und Qualität“.
+Umgesetzt als Empfehlungspartner bis zu 25 %, Vertriebs- und Gebietspartner
+bis zu 35 %, jeweils „vom Netto-Auftragswert, abhängig von Zusammenarbeit
+und Qualität“; FAQ „Wie hoch ist die Beteiligung?“ nennt beide Spannen.
+
 ## 29.10.2026 (lokal): Freebie-Seiten gegen die echten PDFs geprüft
 
 Inhaber schickte die beiden PDFs aus dem MailerLite File manager.

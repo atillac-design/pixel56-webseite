@@ -30,15 +30,24 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Empfehlungspartner, Vertriebspartner, Gebietspartner (Folgeaufträge,
   eigene Region). Ton: Entscheidung, nicht Notlösung („wächst über Partner
   statt Vertriebsabteilung“, „lieber drei Partner eng als zwanzig lose“).
-  Keine internen Zahlen, kein „Kaltakquise“ als Hauptwort. Beteiligungssätze
-  stehen NICHT auf der Seite, bis der Inhaber Zahlen nennt (`provision` oben
-  in `app/partner/page.tsx`, erscheint dann je Stufe). `/vertriebspartner`
+  Keine internen Zahlen, kein „Kaltakquise“ als Hauptwort. Beteiligung laut
+  Inhaber (29.10.): Empfehlungspartner bis zu 25 %, Vertriebs- und
+  Gebietspartner bis zu 35 %, „abhängig von Zusammenarbeit und Qualität“
+  (`provision` oben in `app/partner/page.tsx`). `/vertriebspartner`
   leitet weiter. Verlinkt von `/karriere`, Vertriebsprofi-Stelle, Sitemap,
   Schnellsuche. Lokal committet, Push auf Freigabe.
 - **Freebie-Downloads laufen (28.10.):** MailerLite-Schlüssel und drei
   Gruppen in Netlify gesetzt (IDs in `docs/LIVEGANG.md`, Abschnitt 1), die
   Automationen starten über „Subscriber joins a group“. Alle drei Downloads
   vom Inhaber live getestet, PDFs kommen an.
+- **PageSpeed (29.10., Inhaber-Screenshot, mobil, Startseite):** Leistung 89,
+  Barrierefreiheit 97, Best Practices 100, SEO 100, „Agentisches Browsing“
+  1/2. Lokal mit Lighthouse nachgestellt: Barrierefreiheits-Fehler war
+  `aria-label` auf einem `span` (Sterne), jetzt `role="img"` → 100.
+  `public/llms.txt` angelegt (Lighthouse-Kategorie Agentic Browsing prüft
+  u. a. llms.txt). Rest sind Hinweise ohne großen Hebel: ungenutztes CSS
+  (globals.css gilt für alle Seiten), 13 KiB Polyfills aus einem
+  Abhängigkeits-Chunk, Logo 180 px bei 70 px Anzeige. Nicht angefasst.
 - **Freebie-Texte an die echten PDFs angepasst (29.10.):** Die SEO-PDF ist
   „Lokales SEO für Handwerker“ (6 Seiten, 7 Schritte, 25 Prüfpunkte,
   Wochenplan), die KI-PDF „KI-Agenten für Selbstständige einrichten“
