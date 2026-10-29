@@ -1264,6 +1264,44 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 29.10.2026 (lokal): Freebie-Seiten gegen die echten PDFs geprüft
+
+Inhaber schickte die beiden PDFs aus dem MailerLite File manager.
+
+**SEO-PDF** „Lokales SEO für Handwerker – Dein Weg zu Google Seite 1“
+(Canva, April 2025): 6 Seiten, 7 Schritte (Unternehmensprofil, Keywords,
+Website lokal, Bewertungen, Backlinks/Verzeichnisse, mobil, dranbleiben),
+25 Kästchen plus 7 Tipp-Boxen, Wochenplan, Calendly-Link. Inhaltlich deckt
+sie, was die Seite verspricht; falsch waren nur „12 Seiten“ und „30
+Prüfpunkte in drei Bereichen“. Schwächen: „Google My Business“ (alter Name),
+„über 90 % suchen online“ ohne Quelle, „auf Handwerksbetriebe
+spezialisiert“ (Seite ist breiter aufgestellt).
+
+**KI-PDF** „KI-Agenten für Selbstständige einrichten: 7-Schritte-Anleitung“
+(Canva, April 2025): 18 Seiten, Tool-Tutorial (ManyChat, Twilio, Dialogflow,
+Chatfuel, Flow XO) mit Beispielen für Coach/Fotograf/Therapeut, Notizfeldern,
+Bonus zu DSGVO/Eskalation/CRM, Links auf Blog `ki-agenten-fuer-selbststaendige`
+(existiert als Altartikel), Calendly, `/dienstleistung`. Passt NICHT zum
+Versprechen „ehrliche Einordnung, wo KI hilft und wo nicht, für Betriebe“:
+Ton ist Hype („unverzichtbar 2025“, „revolutionieren“, HubSpot-80-%-Zahl),
+Zielgruppe Solo-Selbstständige statt KMU/Handwerk, Preise und Jahreszahl
+veraltet.
+
+Umsetzung: `lib/ressourcen.ts` (Hero, Dokument-Mock, „Was drin ist“,
+„Für wen“, Schritte, FAQ) und alle Teaser in `app/page.tsx`, `app/blog/
+page.tsx`, `app/blog/[slug]/page.tsx`, `app/dienstleistung/page.tsx`,
+`app/leistungen/seo/page.tsx`, `app/leistungen/ki-automatisierung/page.tsx`,
+`app/website-check/page.tsx` beschreiben jetzt die echten Inhalte („sieben
+Schritte, 25 Prüfpunkte, Wochenplan“ / „ersten KI-Agenten in sieben
+Schritten einrichten“). Kurznamen „SEO-Checkliste“ und „KI-Agenten-
+Checkliste“ bleiben, weil beide PDFs Kästchen zum Abhaken haben. Build,
+`seo:check:strict`, Playwright (kein Überlauf, keine Fehler, Links 200) ok.
+
+Empfehlung: KI-PDF neu erstellen, passend zur KI-Seite (Prozess zuerst,
+Beispiele aus Handwerk/KMU, Freigabe beim Menschen), im Design der neuen
+Seite; die Sitzung kann sie als PDF bauen, der Inhaber lädt sie in MailerLite
+hoch. SEO-PDF optional auffrischen (Unternehmensprofil-Begriff, Quelle).
+
 ## 29.10.2026 (lokal): Umbau zum Partnerprogramm `/partner`
 
 Rückmeldung des Inhabers zum ersten Entwurf: Der Ton „du bringst den Auftrag,

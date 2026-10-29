@@ -539,9 +539,9 @@ export default function KiAutomatisierungPage() {
           <div className="split2 reverse">
             <div className="reveal">
               <span className="band-tag">12 — Selbst prüfen</span>
-              <h2 className="band-title">Wo spart KI in deinem Betrieb <em>wirklich Zeit?</em></h2>
+              <h2 className="band-title">Den ersten KI-Agenten <em>selbst einrichten</em></h2>
               <p className="lead">
-                Die KI-Agenten-Checkliste zeigt dir vor dem ersten Gespräch, wo KI sofort hilft und wo es sich noch nicht lohnt. Kostenlos als PDF.
+                Die KI-Agenten-Checkliste führt dich in sieben Schritten zum ersten eigenen Agenten: Ziel, Werkzeug, Ablauf, Test, Livegang. Kostenlos als PDF.
               </p>
               <Link className="body-link" href={resourceRoutes["ki-agenten-checkliste"]}>
                 KI-Agenten-Checkliste herunterladen <ArrowIcon />
@@ -554,7 +554,7 @@ export default function KiAutomatisierungPage() {
                 </div>
                 <span>Checkliste · PDF</span>
                 <h3>KI-Agenten-Checkliste</h3>
-                <p>Wo KI im Betriebsalltag tatsächlich Zeit spart und wo sie nur Spielerei ist. Ehrlich eingeordnet, mit konkreten Beispielen.</p>
+                <p>Deinen ersten KI-Agenten in sieben Schritten einrichten: Ziel, Werkzeug, Ablauf, Test, Livegang. Mit Beispielen und Notizfeldern, ohne Vorwissen.</p>
                 <em>Kostenlos herunterladen <ArrowIcon /></em>
               </Link>
             </div>

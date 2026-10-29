@@ -168,8 +168,8 @@ export default function WebsiteCheckPage() {
                 </article>
                 <Link className="audience-card" href={resourceRoutes["seo-checkliste"]}>
                   <span>Checkliste</span>
-                  <h3>30 Prüfpunkte zum Abhaken</h3>
-                  <p>Die kostenlose SEO-Checkliste geht deutlich tiefer: Technik, Inhalte und lokale Sichtbarkeit, ohne Vorkenntnisse verständlich.</p>
+                  <h3>Sieben Schritte zum Abhaken</h3>
+                  <p>Die kostenlose SEO-Checkliste geht deutlich tiefer: Google-Profil, Keywords, Website, Bewertungen und ein Wochenplan, ohne Vorkenntnisse verständlich.</p>
                   <small>Kostenlos als PDF →</small>
                 </Link>
                 <Link className="audience-card" href={serviceRoutes.webdesign}>

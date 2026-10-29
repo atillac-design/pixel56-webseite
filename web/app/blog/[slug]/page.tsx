@@ -121,8 +121,8 @@ export default async function ArtikelPage({ params }: Props) {
   const kategorie = kategorieVonArtikel(a);
   // Eine Checkliste je Thema statt derselben zwei Karten unter jedem Artikel.
   const checkliste = ["kunstliche-intelligenz", "marketing-tools"].includes(kategorie.slug)
-    ? { titel: "KI-Agenten-Checkliste", text: "Wo KI im Betrieb wirklich Zeit spart und wo nicht.", href: resourceRoutes["ki-agenten-checkliste"], lead: `Zum Thema ${kategorie.label} passt unsere Checkliste für KI im Betrieb: die Fragen, die wir vor jedem Automatisierungsprojekt stellen, als PDF zum Abhaken.` }
-    : { titel: "SEO-Checkliste", text: "30 Prüfpunkte für Technik, lokale Sichtbarkeit und Inhalte.", href: resourceRoutes["seo-checkliste"], lead: `Zum Thema ${kategorie.label} passt unsere SEO-Checkliste: die Prüfpunkte, die wir bei jeder Website durchgehen, als PDF ohne Vorkenntnisse nutzbar.` };
+    ? { titel: "KI-Agenten-Checkliste", text: "Deinen ersten KI-Agenten in sieben Schritten einrichten.", href: resourceRoutes["ki-agenten-checkliste"], lead: `Zum Thema ${kategorie.label} passt unsere KI-Agenten-Checkliste: sieben Schritte vom Ziel bis zum laufenden Agenten, als PDF mit Notizfeldern.` }
+    : { titel: "SEO-Checkliste", text: "Lokales SEO für Handwerker: sieben Schritte, 25 Prüfpunkte, Wochenplan.", href: resourceRoutes["seo-checkliste"], lead: `Zum Thema ${kategorie.label} passt unsere SEO-Checkliste: die Prüfpunkte für lokale Sichtbarkeit, die wir bei jeder Website durchgehen, als PDF ohne Vorkenntnisse nutzbar.` };
   const weitere = aehnlicheArtikel(a, 3);
   const abschnitte = a.body.map((b, i) => (b.typ === "h2" ? { id: abschnittId(i), text: b.text } : null)).filter((x): x is { id: string; text: string } => Boolean(x));
   const wortzahl = [a.intro, ...a.body.map((b) => (b.typ === "ul" ? b.items.join(" ") : b.text))].join(" ").split(/\s+/).length;

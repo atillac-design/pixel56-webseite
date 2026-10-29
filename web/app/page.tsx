@@ -313,14 +313,14 @@ const resources = [
   {
     tag: "Checkliste · PDF",
     title: "SEO-Checkliste",
-    text: "30 Prüfpunkte, die wir bei jedem Kundenprojekt durchgehen. Technik, lokale Sichtbarkeit, Inhalte.",
+    text: "Lokales SEO für Handwerker in sieben Schritten: Google-Profil, Keywords, Website, Bewertungen, Wochenplan.",
     href: resourceRoutes["seo-checkliste"],
     image: seoFreebieImage,
   },
   {
     tag: "Checkliste · PDF",
     title: "KI-Agenten-Checkliste",
-    text: "Wo KI im Betrieb wirklich Zeit spart und wo sie Spielerei bleibt. Mit Beispielen für kleine Unternehmen.",
+    text: "Deinen ersten KI-Agenten in sieben Schritten einrichten. Mit Beispielen für Anfragen, Termine und Website-Chat.",
     href: resourceRoutes["ki-agenten-checkliste"],
     image: kiFreebieImage,
   },

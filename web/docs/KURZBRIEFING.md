@@ -38,9 +38,19 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 - **Freebie-Downloads laufen (28.10.):** MailerLite-Schlüssel und drei
   Gruppen in Netlify gesetzt (IDs in `docs/LIVEGANG.md`, Abschnitt 1), die
   Automationen starten über „Subscriber joins a group“. Alle drei Downloads
-  vom Inhaber live getestet, PDFs kommen an. Noch offen: prüfen, ob die
-  SEO- und KI-PDFs zu den Versprechen auf den Seiten passen („30 Prüfpunkte,
-  12 Seiten“ / „10 Seiten“); Inhaber schickt die PDFs aus dem File manager.
+  vom Inhaber live getestet, PDFs kommen an.
+- **Freebie-Texte an die echten PDFs angepasst (29.10.):** Die SEO-PDF ist
+  „Lokales SEO für Handwerker“ (6 Seiten, 7 Schritte, 25 Prüfpunkte,
+  Wochenplan), die KI-PDF „KI-Agenten für Selbstständige einrichten“
+  (18 Seiten, 7-Schritte-Tool-Anleitung mit ManyChat/Twilio/Dialogflow,
+  Zielgruppe Coach/Fotograf/Therapeut, Stand April 2025). Seite versprach
+  vorher „30 Prüfpunkte, 12 Seiten“ bzw. „ehrliche Einordnung, wo KI nicht
+  lohnt, 10 Seiten“. Alle Teaser (Start, Blog, Leistungen, Website-Check,
+  Kontakt-Blog-Kasten) beschreiben jetzt die echten Inhalte. Empfehlung an
+  den Inhaber: KI-PDF neu machen (passt nicht zur KMU-Positionierung, Hype-
+  Ton, 2025-Datierung, Tool-Preise veraltet); bis dahin bleibt sie ehrlich
+  beschrieben. Beide Canva-PDFs sagen „Google My Business“ (heißt seit 2021
+  Google-Unternehmensprofil).
 
 - **Schrift:** Figtree, Fließtext kräftiger und größer, keine Serifen-Kursive
   mehr. Vom Inhaber abgenommen („Variante 3“).

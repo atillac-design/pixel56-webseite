@@ -146,8 +146,8 @@ const kosten = [
 ];
 
 const resources = [
-  { tag: "Checkliste · PDF", title: "SEO-Checkliste", text: "30 Prüfpunkte in drei Bereichen, dieselben, die wir bei jedem Kundenprojekt durchgehen. Zum Selbst-Abhaken, ohne Vorkenntnisse.", href: resourceRoutes["seo-checkliste"], image: seoFreebieImage },
-  { tag: "Checkliste · PDF", title: "KI-Agenten-Checkliste", text: "Wo KI im Betriebsalltag wirklich Zeit spart und wo sie nur Spielerei ist. Ehrlich eingeordnet, mit konkreten Einsatzfällen.", href: resourceRoutes["ki-agenten-checkliste"], image: kiFreebieImage },
+  { tag: "Checkliste · PDF", title: "SEO-Checkliste", text: "Lokales SEO für Handwerker: sieben Schritte, 25 Prüfpunkte und ein Wochenplan. Dieselben Punkte, die wir bei Kundenprojekten durchgehen, zum Selbst-Abhaken.", href: resourceRoutes["seo-checkliste"], image: seoFreebieImage },
+  { tag: "Checkliste · PDF", title: "KI-Agenten-Checkliste", text: "Deinen ersten KI-Agenten in sieben Schritten einrichten: Ziel, Werkzeug, Ablauf, Test, Livegang. Mit Beispielen und Notizfeldern, ohne Vorwissen.", href: resourceRoutes["ki-agenten-checkliste"], image: kiFreebieImage },
   { tag: "Vorlage · PDF", title: "Tagesplaner", text: "Ein Blatt pro Tag, drei Prioritäten, feste Zeitblöcke. Die Vorlage, mit der wir selbst arbeiten.", href: resourceRoutes.tagesplaner, image: tagesplanerImage },
 ];
 

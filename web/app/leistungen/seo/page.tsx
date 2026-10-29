@@ -359,7 +359,7 @@ export default function SeoPage() {
               </h2>
             </div>
             <p className="band-note">
-              Die vollständige Checkliste hat 30 Prüfpunkte. Diese sechs kannst du in zehn Minuten selbst prüfen.
+              Die vollständige Anleitung hat sieben Schritte mit 25 Prüfpunkten. Diese sechs kannst du in zehn Minuten selbst prüfen.
             </p>
           </div>
           <div className="friction-list checklist reveal">
@@ -378,7 +378,7 @@ export default function SeoPage() {
               </div>
               <span>Checkliste · PDF</span>
               <h3>SEO-Checkliste</h3>
-              <p>30 Prüfpunkte in drei Bereichen, dieselben, die wir bei jedem Kundenprojekt durchgehen. Zum Selbst-Abhaken, ohne Vorkenntnisse.</p>
+              <p>Lokales SEO für Handwerker: sieben Schritte, 25 Prüfpunkte und ein Wochenplan. Dieselben Punkte, die wir bei Kundenprojekten durchgehen, zum Selbst-Abhaken.</p>
               <em>Kostenlos herunterladen <ArrowIcon /></em>
             </Link>
           </div>
