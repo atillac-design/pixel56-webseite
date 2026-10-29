@@ -1264,6 +1264,50 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 29.10.2026 (lokal): KI-Agenten-Checkliste neu als eigene PDF
+
+Inhaber: „Wenn du es besser bauen kannst, mit Mehrwert und besserem Design.“
+
+Quelle und Bau: `freebies/ki-agenten-checkliste/index.html` (A4-Seiten als
+HTML, Figtree aus `app/schrift.css`, Farben der Website, dunkle Titelseite,
+helle Innenseiten), `scripts/freebie-pdf.mjs <name>` rendert mit dem
+Sandbox-Chromium ein PDF (A4, Hintergründe) und ein Titelbild, prüft jede
+Seite auf Überlauf. Ergebnis `freebies/ki-agenten-checkliste.pdf`, 10
+Seiten, rund 1 MB (eingebettete Schrift).
+
+Inhalt (du-Form, keine Werkzeugnamen, keine erfundenen Zahlen):
+
+1. Titel: „Wo spart KI in deinem Betrieb wirklich Zeit?“, 22 Prüfpunkte,
+   Selbsttest, 4-Wochen-Plan.
+2. Drei Regeln (Prozess vor Werkzeug, Freigabe beim Menschen, klein
+   anfangen) + Nutzung + Inhaltsverzeichnis.
+3.–4. Teil 1: acht Aufgaben, je Heute / Mit KI / Freigabe, Notizfelder,
+   Faustregel (wöchentlich, Beispiele, Prüfung unter einer Minute).
+5. Teil 2: sechs Fälle, die sich nicht lohnen, je Warum nicht / Stattdessen.
+6. Teil 3: Selbsttest-Tabelle (wie oft, Minuten, wer, Beispiele, Regeln),
+   Formel Stunden/Woche, Vier-Felder-Einordnung.
+7. Teil 4: acht Punkte zu Daten und Rahmen (Datenarten, AV-Vertrag, keine
+   Privatkonten, Zugriffe, Freigabe-Stelle, Datenschutzerklärung,
+   Dokumentation, Aus-Schalter).
+8. Teil 5: vier Wochen, was man misst, Stolpersteine, realistische
+   Erwartung (Formulierung von der KI-Seite).
+9. Vier eigene Abläufe von Pixel56 (kmu-webseiten.de, Zentrale, Teykto-
+   Import, diese Website), wörtlich an den belegten Texten der KI-Seite.
+10. Erstgespräch (WhatsApp, E-Mail, Calendly), Über Pixel56, Arbeitsweise,
+    Weiterlesen, Nutzungshinweis. Kein Bendorf, keine Preise.
+
+Website: `lib/ressourcen.ts` (Titel wieder „Wo spart KI … wirklich Zeit?“,
+10 Seiten, 22 Prüfpunkte, Teile, Für wen, Schritte, FAQ), Teaser auf Start,
+Blog, Dienstleistung, KI-Seite, Blog-Artikel-Kasten und `llms.txt`
+angeglichen. Neues Vorschaubild `public/bilder/freebie-ki-ebook.webp`
+(Titelseite leicht gedreht mit Schatten, 1200×801, per PIL aus dem
+Titelbild). Build, `seo:check:strict`, Screenshot der Freebie-Seite ok.
+
+Offen beim Inhaber: PDF in MailerLite hochladen (File manager) und in der
+Automation „KI-Agent Formular Workflow“ den Anhang bzw. Link tauschen,
+danach Push, damit Seite und Versand zusammenpassen. Die alte PDF kann
+danach gelöscht werden.
+
 ## 29.10.2026: PageSpeed-Auswertung, Beteiligungssätze, llms.txt
 
 Inhaber schickte PageSpeed Insights für www.pixel56.de (mobil): Leistung 89

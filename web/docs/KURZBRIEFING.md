@@ -55,11 +55,20 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Zielgruppe Coach/Fotograf/Therapeut, Stand April 2025). Seite versprach
   vorher „30 Prüfpunkte, 12 Seiten“ bzw. „ehrliche Einordnung, wo KI nicht
   lohnt, 10 Seiten“. Alle Teaser (Start, Blog, Leistungen, Website-Check,
-  Kontakt-Blog-Kasten) beschreiben jetzt die echten Inhalte. Empfehlung an
-  den Inhaber: KI-PDF neu machen (passt nicht zur KMU-Positionierung, Hype-
-  Ton, 2025-Datierung, Tool-Preise veraltet); bis dahin bleibt sie ehrlich
-  beschrieben. Beide Canva-PDFs sagen „Google My Business“ (heißt seit 2021
-  Google-Unternehmensprofil).
+  Kontakt-Blog-Kasten) beschreiben die echten Inhalte. Die SEO-PDF sagt
+  „Google My Business“ (heißt seit 2021 Google-Unternehmensprofil).
+- **KI-Checkliste neu gebaut (29.10.):** Alte Canva-PDF (Tool-Tutorial für
+  Coaches, Hype-Ton, 2025) ersetzt durch eigene 10-seitige PDF im Website-
+  Design: `freebies/ki-agenten-checkliste/index.html` → `node
+  scripts/freebie-pdf.mjs ki-agenten-checkliste` erzeugt
+  `freebies/ki-agenten-checkliste.pdf` plus Titelbild. Inhalt: 3 Regeln,
+  8 Aufgaben (Heute/Mit KI/Freigabe), 6 „lohnt nicht“, Selbsttest-Tabelle,
+  8 Datenpunkte, 4-Wochen-Plan, 4 eigene Pixel56-Abläufe, Erstgespräch.
+  Nur belegte Inhalte (Beispiele von der KI-Seite), keine Werkzeugnamen.
+  Vorschaubild `public/bilder/freebie-ki-ebook.webp` neu. Seitentexte
+  (`lib/ressourcen.ts`, Teaser) beschreiben die neue PDF. **Reihenfolge
+  beim Livegang: Inhaber lädt die PDF in MailerLite hoch (Automation
+  „KI-Agent“, Anhang/Link tauschen), erst dann Push.**
 
 - **Schrift:** Figtree, Fließtext kräftiger und größer, keine Serifen-Kursive
   mehr. Vom Inhaber abgenommen („Variante 3“).

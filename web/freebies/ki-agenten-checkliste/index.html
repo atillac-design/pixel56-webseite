@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>KI-Agenten-Checkliste · Pixel56</title>
+<link rel="stylesheet" href="../../app/schrift.css">
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --ground: #07070c; --paper: #f7f4ee; --card: #fffdf9;
+    --ink: #151319; --ink-dim: #4f4b55; --ink-faint: #716b74;
+    --line: rgba(21,19,25,0.12); --line-strong: rgba(21,19,25,0.22);
+    --accent: #ff3951; --accent-text: #d82f49;
+    --sans: "Figtree", -apple-system, "Segoe UI", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #fff; }
+  body { font-family: var(--sans); font-weight: 450; color: var(--ink); -webkit-font-smoothing: antialiased; font-size: 11.2pt; line-height: 1.5; }
+  .page { position: relative; width: 210mm; height: 297mm; overflow: hidden; padding: 16mm 17mm 18mm; background: var(--paper); page-break-after: always; break-after: page; }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  .page.dark { background: var(--ground); color: #f5f4f2; --ink: #f5f4f2; --ink-dim: #b3afbe; --ink-faint: #8a85a0; --line: rgba(245,244,242,0.1); --line-strong: rgba(245,244,242,0.2); --card: rgba(245,244,242,0.05); --accent-text: #ff3951; }
+  .glow { position: absolute; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(255,57,81,0.42), transparent 62%); filter: blur(20px); pointer-events: none; }
+  .foot { position: absolute; left: 17mm; right: 17mm; bottom: 9mm; display: flex; justify-content: space-between; font-size: 8.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+  .foot b { font-weight: 600; color: var(--ink-dim); }
+  .tag { display: block; font-size: 9pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-text); font-weight: 600; margin-bottom: 10px; }
+  h1 { font-size: 34pt; line-height: 1.02; letter-spacing: -0.03em; font-weight: 800; margin: 0 0 16px; }
+  h1 em, h2 em { font-style: normal; color: var(--accent); }
+  h2 { font-size: 22pt; line-height: 1.08; letter-spacing: -0.025em; font-weight: 800; margin: 0 0 8px; }
+  h3 { font-size: 12pt; font-weight: 700; margin: 0 0 4px; letter-spacing: -0.01em; }
+  p { margin: 0 0 8px; }
+  .lead { font-size: 12pt; color: var(--ink-dim); max-width: 150mm; }
+  .note { font-size: 9.5pt; color: var(--ink-faint); }
+  .mark { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 13pt; letter-spacing: -0.01em; }
+  .mark .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px 2px rgba(255,57,81,0.55); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .chips span { font-size: 9pt; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 12px; border: 1px solid var(--line-strong); border-radius: 100px; color: var(--ink-dim); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  .card .k { font-size: 8.5pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-text); font-weight: 600; display: block; margin-bottom: 5px; }
+  .card p { font-size: 10pt; color: var(--ink-dim); margin: 0; }
+  .box { width: 14px; height: 14px; border: 1.6px solid var(--ink-dim); border-radius: 4px; flex: none; margin-top: 3px; }
+  .box.on { background: var(--accent); border-color: var(--accent); position: relative; }
+  .box.on::after { content: ""; position: absolute; left: 4px; top: 1px; width: 4px; height: 8px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  .row { display: flex; gap: 10px; align-items: flex-start; }
+  .list { display: grid; gap: 8px; }
+  .list .card { padding: 10px 14px; }
+  .case { display: grid; grid-template-columns: 24px 1fr; gap: 10px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 13px 16px; }
+  .case h3 { margin-bottom: 6px; }
+  .case .cols { display: grid; grid-template-columns: 1fr 1fr 0.7fr; gap: 12px; font-size: 10.2pt; color: var(--ink-dim); line-height: 1.42; }
+  .case .cols b { display: block; font-size: 8pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 2px; font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; font-size: 9.6pt; }
+  th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 8pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; }
+  td.blank { height: 38px; }
+  .formula { background: var(--ground); color: #f5f4f2; border-radius: 12px; padding: 14px 16px; font-size: 10.5pt; }
+  .formula b { color: var(--accent); }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .steps .card b { display: block; font-size: 10.5pt; margin-bottom: 4px; }
+  .steps .card span { font-size: 8.5pt; letter-spacing: 0.1em; color: var(--accent-text); text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 4px; }
+  .quad { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .quad .card { min-height: 60px; }
+  .quad .card.hot { border-color: var(--accent); }
+  .sec { margin-top: 18px; }
+  .toc { display: grid; gap: 6px; margin-top: 12px; }
+  .toc div { display: grid; grid-template-columns: 28px 1fr auto; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 10.5pt; }
+  .toc div span:first-child { color: var(--accent-text); font-weight: 700; }
+  .toc div span:last-child { color: var(--ink-faint); }
+  .cta { background: var(--ground); color: #f5f4f2; border-radius: 16px; padding: 20px 22px; position: relative; overflow: hidden; }
+  .cta .glow { width: 300px; height: 300px; right: -80px; top: -120px; }
+  .cta h2 { color: #f5f4f2; }
+  .cta p { color: #b3afbe; }
+  .cta .btn { display: inline-block; margin-top: 6px; background: var(--accent); color: #fff; font-weight: 700; padding: 10px 18px; border-radius: 100px; font-size: 10.5pt; text-decoration: none; }
+  a { color: inherit; }
+  .lines { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 10.2pt; color: var(--ink-dim); }
+  .lines li { padding-left: 16px; position: relative; }
+  .notes { border: 1.5px dashed var(--line-strong); border-radius: 12px; padding: 12px 14px; }
+  .notes .k { font-size: 8.5pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; display: block; margin-bottom: 6px; }
+  .notes i { display: block; height: 22px; border-bottom: 1px solid var(--line); }
+  .lines li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 1.5px; background: var(--accent); }
+</style>
+</head>
+<body>
+
+<!-- 1 Titel -->
+<section class="page dark">
+  <div class="glow" style="right:-140px; top:-120px;"></div>
+  <div class="glow" style="left:-220px; bottom:-200px; opacity:0.5;"></div>
+  <div class="mark"><span class="dot"></span>Pixel56</div>
+  <div style="margin-top:62mm;">
+    <span class="tag">KI-Agenten-Checkliste · Für Handwerk, Dienstleister und Mittelstand</span>
+    <h1>Wo spart KI in deinem Betrieb <em>wirklich Zeit?</em></h1>
+    <p class="lead" style="font-size:13pt;">Eine Liste zum Durchgehen, nicht zum Studieren. Acht Aufgaben, die KI heute zuverlässig abnimmt. Sechs, bei denen du dir das Geld sparst. Ein Selbsttest für deinen Betrieb und ein Plan für die ersten vier Wochen.</p>
+    <div class="chips"><span>22 Prüfpunkte</span><span>Selbsttest</span><span>4-Wochen-Plan</span><span>Ohne Vorkenntnisse</span></div>
+  </div>
+  <div class="foot"><span>www.pixel56.de/ki-automatisierung</span><span>Stand Oktober 2026</span></div>
+</section>
+
+<!-- 2 Bevor du anfängst -->
+<section class="page">
+  <span class="tag">Bevor du anfängst</span>
+  <h2>Drei Regeln, <em>die teure Umwege sparen</em></h2>
+  <p class="lead">Die meisten KI-Projekte in kleinen Betrieben scheitern nicht an der Technik. Sie scheitern daran, dass mit dem Werkzeug angefangen wird statt mit der Aufgabe.</p>
+  <div class="grid3 sec">
+    <div class="card"><span class="k">Regel 01</span><h3>Prozess vor Werkzeug</h3><p>Erst aufschreiben, was heute Schritt für Schritt passiert und wer es macht. Dann erst fragen, welches Werkzeug den Ablauf übernimmt. Andersherum kaufst du Lizenzen, die niemand nutzt.</p></div>
+    <div class="card"><span class="k">Regel 02</span><h3>Freigabe beim Menschen</h3><p>KI bereitet vor: sortiert, entwirft, fasst zusammen. Abschicken, Preis nennen, Zusagen machen bleibt bei dir. Jeder Ablauf braucht genau eine Stelle, an der jemand draufschaut.</p></div>
+    <div class="card"><span class="k">Regel 03</span><h3>Klein anfangen, messen, ausbauen</h3><p>Eine Aufgabe, vier Wochen, Minuten vorher und nachher zählen. Was sich rechnet, wird ausgebaut. Was nicht, wird abgeschaltet, ohne dass jemand das Gesicht verliert.</p></div>
+  </div>
+  <div class="sec">
+    <span class="tag">So nutzt du die Liste</span>
+    <ul class="lines">
+      <li>Teil 1 und 2 liest du einmal durch und hakst ab, was auf deinen Betrieb zutrifft.</li>
+      <li>Teil 3 füllst du aus, am besten mit der Person, die den Büroalltag kennt. Dauer: eine halbe Stunde.</li>
+      <li>Teil 4 gehst du durch, bevor irgendein Werkzeug Kundendaten sieht.</li>
+      <li>Teil 5 ist dein Plan für die ersten vier Wochen. Danach entscheidest du mit Zahlen, nicht mit Bauchgefühl.</li>
+    </ul>
+  </div>
+  <div class="sec">
+    <span class="tag">Inhalt</span>
+    <div class="toc">
+      <div><span>1</span><span>Wo KI sofort hilft: acht Aufgaben aus dem Betriebsalltag</span><span>Seite 3 bis 4</span></div>
+      <div><span>2</span><span>Wo es sich (noch) nicht lohnt: sechs ehrliche Warnungen</span><span>Seite 5</span></div>
+      <div><span>3</span><span>Selbsttest: Welche Aufgabe in deinem Betrieb zuerst?</span><span>Seite 6</span></div>
+      <div><span>4</span><span>Daten und Rahmen: acht Punkte vor dem Start</span><span>Seite 7</span></div>
+      <div><span>5</span><span>Die ersten vier Wochen und was du misst</span><span>Seite 8</span></div>
+      <div><span>6</span><span>So sieht das bei Pixel56 aus: vier eigene Abläufe</span><span>Seite 9</span></div>
+      <div><span>7</span><span>Nächster Schritt</span><span>Seite 10</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>Pixel56 · KI-Agenten-Checkliste</span><b>2</b></div>
+</section>
+
+<!-- 3 Teil 1a -->
+<section class="page">
+  <span class="tag">Teil 1 — Wo KI sofort hilft</span>
+  <h2>Acht Aufgaben, <em>die sich heute schon lohnen</em></h2>
+  <p class="lead">Gemeinsam ist allen: Sie wiederholen sich jede Woche, es gibt Beispiele aus der Vergangenheit, und am Ende prüft ein Mensch. Hak ab, was bei dir anfällt.</p>
+  <div class="list sec">
+    <div class="case"><div class="box"></div><div><h3>01 · Anfragen vorsortieren</h3><div class="cols"><div><b>Heute</b>Mails, Formulare, WhatsApp kommen gemischt an. Jemand liest alles, verteilt, antwortet abends.</div><div><b>Mit KI</b>Jede Anfrage wird nach Anliegen und Dringlichkeit eingeordnet, ein Antwortentwurf liegt bereit.</div><div><b>Freigabe</b>Du liest, änderst, schickst ab.</div></div></div></div>
+    <div class="case"><div class="box"></div><div><h3>02 · Angebote vorbereiten</h3><div class="cols"><div><b>Heute</b>Angebote entstehen am Schreibtisch nach Feierabend, aus alten Angeboten per Kopieren und Anpassen.</div><div><b>Mit KI</b>Aus Vorlage, Projektnotizen und Aufmaß entsteht ein erster Entwurf mit Positionen und Texten.</div><div><b>Freigabe</b>Preis und Zusage bleiben bei dir.</div></div></div></div>
+    <div class="case"><div class="box"></div><div><h3>03 · Dieselben zehn Fragen beantworten</h3><div class="cols"><div><b>Heute</b>Öffnungszeiten, Anfahrt, Preise, Lieferzeit, Unterlagen: jeden Tag dieselben Fragen am Telefon und per Mail.</div><div><b>Mit KI</b>Ein Assistent antwortet aus deinen Unterlagen und übergibt nur, was eine Entscheidung braucht.</div><div><b>Freigabe</b>Übergabe an einen Menschen bei allem Unklaren.</div></div></div></div>
+    <div class="case"><div class="box"></div><div><h3>04 · Termine erinnern und bestätigen</h3><div class="cols"><div><b>Heute</b>Termine platzen, weil niemand erinnert. Rückfragen kosten Zeit, Ausfälle kosten Geld.</div><div><b>Mit KI</b>Erinnerung am Vortag per SMS oder WhatsApp, Kunde bestätigt mit einem Wort, Absagen landen in der Liste.</div><div><b>Freigabe</b>Neue Terminvorschläge macht der Mensch.</div></div></div></div>
+  </div>
+  <div class="notes sec" style="margin-top:14px;">
+    <span class="k">Notizen: Welche dieser vier Aufgaben kostet dich jede Woche am meisten Zeit, und wer macht sie heute?</span>
+    <i></i><i></i><i></i><i></i>
+  </div>
+  <div class="foot"><span>Pixel56 · KI-Agenten-Checkliste</span><b>3</b></div>
+</section>
+
+<!-- 4 Teil 1b -->
+<section class="page">
+  <span class="tag">Teil 1 — Wo KI sofort hilft</span>
+  <h2>Vier weitere, <em>die oft übersehen werden</em></h2>
+  <div class="list sec">
+    <div class="case"><div class="box"></div><div><h3>05 · Besprechungen zu Aufgaben machen</h3><div class="cols"><div><b>Heute</b>Nach der Besprechung weiß jeder etwas anderes. Entscheidungen stehen auf einem Zettel oder nirgends.</div><div><b>Mit KI</b>Aus Notizen oder Aufnahme entstehen Aufgaben, Zuständige und ein lesbarer Wochenbericht.</div><div><b>Freigabe</b>Wer leitet, prüft und verteilt.</div></div></div></div>
+    <div class="case"><div class="box"></div><div><h3>06 · Daten zwischen Systemen übergeben</h3><div class="cols"><div><b>Heute</b>Formular, Postfach, Tabelle, Buchhaltung: dieselben Daten werden drei Mal eingetippt.</div><div><b>Mit KI</b>Ein Eintrag wandert automatisch weiter, Pflichtfelder werden geprüft, Fehlendes wird nachgefragt.</div><div><b>Freigabe</b>Stichproben, keine Dauerkontrolle.</div></div></div></div>
+    <div class="case"><div class="box"></div><div><h3>07 · Bewertungen und Beiträge entwerfen</h3><div class="cols"><div><b>Heute</b>Bewertungen bleiben unbeantwortet, Projektfotos liegen auf dem Handy und werden nie gepostet.</div><div><b>Mit KI</b>Antwortentwürfe im Ton deines Betriebs, Beitragsentwürfe aus Fotos und Stichworten.</div><div><b>Freigabe</b>Veröffentlichen tust du.</div></div></div></div>
+    <div class="case"><div class="box"></div><div><h3>08 · Internes Wissen abfragbar machen</h3><div class="cols"><div><b>Heute</b>Alle fragen den Chef: Wie war das beim letzten Mal, wo liegt die Vorlage, welcher Lieferant?</div><div><b>Mit KI</b>Abläufe, alte Projekte und häufige Fragen in einem Assistenten, der dem Team antwortet.</div><div><b>Freigabe</b>Inhalte pflegt eine benannte Person.</div></div></div></div>
+  </div>
+  <div class="card sec" style="border-color: var(--accent);">
+    <span class="k">Faustregel</span>
+    <p style="font-size:10.5pt; color: var(--ink);">Eine Aufgabe eignet sich, wenn du alle drei Fragen mit Ja beantwortest: Fällt sie jede Woche ähnlich an? Gibt es Beispiele, an denen das System lernen kann (alte Angebote, beantwortete Mails, Vorlagen)? Kann ein Mensch das Ergebnis in unter einer Minute prüfen?</p>
+  </div>
+  <div class="notes sec" style="margin-top:14px;">
+    <span class="k">Notizen: Welche Beispiele (alte Angebote, Mails, Vorlagen) hast du schon, an denen ein System lernen könnte?</span>
+    <i></i><i></i>
+  </div>
+  <div class="foot"><span>Pixel56 · KI-Agenten-Checkliste</span><b>4</b></div>
+</section>
+
+<!-- 5 Teil 2 -->
+<section class="page">
+  <span class="tag">Teil 2 — Wo es sich (noch) nicht lohnt</span>
+  <h2>Sechs Fälle, <em>in denen du dir das Geld sparst</em></h2>
+  <p class="lead">Nicht jede Aufgabe gehört an eine KI. Diese sechs kosten in kleinen Betrieben meist mehr, als sie bringen. Hak ab, wo du gerade stehst.</p>
+  <div class="list sec">
+    <div class="case"><div class="box"></div><div><h3>Preise und Zusagen ohne Freigabe</h3><div class="cols" style="grid-template-columns:1.3fr 1fr;"><div><b>Warum nicht</b>Ein falsch genannter Preis oder ein versprochener Termin ist ein Vertrag. Das Risiko trägt der Betrieb, nicht das Werkzeug.</div><div><b>Stattdessen</b>Entwurf durch KI, Freigabe durch dich. Dauert zehn Sekunden pro Fall.</div></div></div></div>
+    <div class="case"><div class="box"></div><div><h3>Seltene Sonderfälle</h3><div class="cols" style="grid-template-columns:1.3fr 1fr;"><div><b>Warum nicht</b>Was zweimal im Jahr vorkommt, kostet mehr Einrichtung als Handarbeit. Und beim dritten Mal ist es wieder anders.</div><div><b>Stattdessen</b>Handarbeit mit guter Vorlage. KI nur für das, was wöchentlich anfällt.</div></div></div></div>
+    <div class="case"><div class="box"></div><div><h3>Aufgaben ohne Beispiele</h3><div class="cols" style="grid-template-columns:1.3fr 1fr;"><div><b>Warum nicht</b>Ohne alte Angebote, Mails oder Vorlagen rät das System. Es trifft deinen Ton nicht und erfindet Details.</div><div><b>Stattdessen</b>Erst zwanzig gute Beispiele sammeln. Das ist oft die eigentliche Arbeit.</div></div></div></div>
+    <div class="case"><div class="box"></div><div><h3>Das Kundengespräch selbst</h3><div class="cols" style="grid-template-columns:1.3fr 1fr;"><div><b>Warum nicht</b>Beratung, Einwände, Vertrauen: Dafür rufen Kunden bei einem kleinen Betrieb an. Ein Bot am Telefon kostet genau das.</div><div><b>Stattdessen</b>KI bereitet das Gespräch vor (Historie, offene Punkte), führen tust du es.</div></div></div></div>
+    <div class="case"><div class="box"></div><div><h3>Chaos in den Daten</h3><div class="cols" style="grid-template-columns:1.3fr 1fr;"><div><b>Warum nicht</b>Liegen Kundendaten in fünf Tabellen mit drei Schreibweisen, automatisiert KI das Chaos. Schneller, aber immer noch Chaos.</div><div><b>Stattdessen</b>Erst eine Quelle festlegen, dann automatisieren. Aufräumen ist der erste Schritt.</div></div></div></div>
+    <div class="case"><div class="box"></div><div><h3>„Weil alle KI machen“</h3><div class="cols" style="grid-template-columns:1.3fr 1fr;"><div><b>Warum nicht</b>Fünf Werkzeuge im Abo, keins im Alltag. Das Problem war nie das Werkzeug, sondern dass niemand wusste, wofür.</div><div><b>Stattdessen</b>Teil 3 ausfüllen. Eine Aufgabe mit Zahl dahinter schlägt jede Demo.</div></div></div></div>
+  </div>
+  <div class="foot"><span>Pixel56 · KI-Agenten-Checkliste</span><b>5</b></div>
+</section>
+
+<!-- 6 Teil 3 Selbsttest -->
+<section class="page">
+  <span class="tag">Teil 3 — Selbsttest</span>
+  <h2>Welche Aufgabe <em>in deinem Betrieb zuerst?</em></h2>
+  <p class="lead">Trag die Aufgaben ein, die bei dir jede Woche gleich ablaufen. Die erste Zeile ist ein Beispiel. Rechne pro Aufgabe die Stunden pro Woche aus und beantworte die zwei Fragen rechts.</p>
+  <table class="sec">
+    <thead><tr><th style="width:34%">Aufgabe</th><th>Wie oft pro Woche</th><th>Minuten je Mal</th><th>Wer macht es</th><th>Beispiele vorhanden?</th><th>Läuft nach Regeln?</th></tr></thead>
+    <tbody>
+      <tr style="color: var(--ink-faint);"><td>Beispiel: Anfragen per Mail beantworten</td><td>25</td><td>8</td><td>Büro</td><td>ja, alte Mails</td><td>ja</td></tr>
+      <tr><td class="blank"></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="blank"></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="blank"></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="blank"></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="blank"></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="blank"></td><td></td><td></td><td></td><td></td><td></td></tr>
+      <tr><td class="blank"></td><td></td><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="formula sec">Stunden pro Woche = <b>wie oft</b> × <b>Minuten je Mal</b> ÷ 60. &nbsp; Im Beispiel: 25 × 8 ÷ 60 = gut 3 Stunden pro Woche, über 150 Stunden im Jahr. Für eine einzige Aufgabe.</div>
+  <div class="sec">
+    <span class="tag">Und dann: einordnen</span>
+    <div class="quad">
+      <div class="card hot"><span class="k">Viele Stunden · Beispiele und Regeln vorhanden</span><p><b>Zuerst.</b> Das ist dein erster Ablauf. Hier rechnet sich jede Woche.</p></div>
+      <div class="card"><span class="k">Viele Stunden · keine Beispiele oder Regeln</span><p><b>Vorbereiten.</b> Erst Beispiele sammeln und den Ablauf aufschreiben, dann automatisieren.</p></div>
+      <div class="card"><span class="k">Wenige Stunden · Beispiele und Regeln vorhanden</span><p><b>Später.</b> Lohnt sich als zweiter oder dritter Ablauf, wenn der erste läuft.</p></div>
+      <div class="card"><span class="k">Wenige Stunden · keine Beispiele oder Regeln</span><p><b>Lassen.</b> Handarbeit mit guter Vorlage ist hier günstiger.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Pixel56 · KI-Agenten-Checkliste</span><b>6</b></div>
+</section>
+
+<!-- 7 Teil 4 Daten -->
+<section class="page">
+  <span class="tag">Teil 4 — Daten und Rahmen</span>
+  <h2>Acht Punkte, <em>bevor ein Werkzeug Kundendaten sieht</em></h2>
+  <p class="lead">Keine Juristerei, sondern die Fragen, die du auch deinem Steuerberater oder Datenschutzbeauftragten beantworten können solltest. Alle acht sollten ein Häkchen haben, bevor es losgeht.</p>
+  <div class="list sec">
+    <div class="card row"><div class="box"></div><div><h3>Welche Daten fließen überhaupt?</h3><p>Kundendaten, Preise, Personalunterlagen, Gesundheitsdaten: Schreib auf, was der Ablauf sehen muss und was nicht. Weniger ist fast immer möglich.</p></div></div>
+    <div class="card row"><div class="box"></div><div><h3>Vertrag zur Auftragsverarbeitung mit dem Anbieter</h3><p>Verarbeitet ein Dienst personenbezogene Daten für dich, braucht es diesen Vertrag. Seriöse Anbieter stellen ihn als Standard bereit; fehlt er, ist das ein Ausschlusskriterium.</p></div></div>
+    <div class="card row"><div class="box"></div><div><h3>Keine Kundendaten in private oder kostenlose Konten</h3><p>Ein privat angelegtes Gratis-Konto ist kein Betriebswerkzeug. Geschäftskonto, geschäftliche Bedingungen, Verarbeitung nach Möglichkeit in der EU.</p></div></div>
+    <div class="card row"><div class="box"></div><div><h3>Zugriffsrechte sind festgelegt</h3><p>Wer darf den Ablauf ändern, wer sieht Ergebnisse, wer bekommt Fehlermeldungen? Drei Namen, keine Sammel-Zugänge.</p></div></div>
+    <div class="card row"><div class="box"></div><div><h3>Die Freigabe-Stelle ist benannt</h3><p>Jeder Ablauf hat genau eine Stelle, an der ein Mensch prüft, bevor etwas den Betrieb verlässt. Name und Vertretung stehen fest.</p></div></div>
+    <div class="card row"><div class="box"></div><div><h3>Die Datenschutzerklärung ist ergänzt</h3><p>Kunden erfahren, dass Anfragen mit Unterstützung eines KI-Dienstes bearbeitet werden und welcher Anbieter beteiligt ist. Ein Absatz reicht meist.</p></div></div>
+    <div class="card row"><div class="box"></div><div><h3>Der Ablauf ist dokumentiert, unabhängig vom Werkzeug</h3><p>Eine Seite: Auslöser, Schritte, Daten, Freigabe, Verantwortliche. Wenn der Anbieter wechselt oder jemand kündigt, steht der Prozess weiter.</p></div></div>
+    <div class="card row"><div class="box"></div><div><h3>Es gibt einen Aus-Schalter</h3><p>Wer kann den Ablauf in fünf Minuten stoppen, und was passiert dann mit den Anfragen? Ohne Antwort läuft nichts an.</p></div></div>
+  </div>
+  <div class="foot"><span>Pixel56 · KI-Agenten-Checkliste</span><b>7</b></div>
+</section>
+
+<!-- 8 Teil 5 Plan -->
+<section class="page">
+  <span class="tag">Teil 5 — So startest du</span>
+  <h2>Die ersten vier Wochen, <em>ohne Projektrisiko</em></h2>
+  <p class="lead">Ein Ablauf, ein Ziel, ein Monat. Danach entscheidest du mit Zahlen. So laufen auch unsere eigenen Projekte.</p>
+  <div class="steps sec">
+    <div class="card"><span>Woche 1</span><b>Messen, wie es heute ist</b><p>Aufgabe aus Teil 3 wählen. Eine Woche lang zählen: wie oft, wie viele Minuten, wie viele Fehler oder Rückfragen. Beispiele sammeln.</p></div>
+    <div class="card"><span>Woche 2</span><b>Bauen, mit Freigabe</b><p>Ablauf aufschreiben, Werkzeug wählen, Freigabe-Stelle einbauen. Mit zwanzig alten Fällen testen, bevor ein echter Kunde beteiligt ist.</p></div>
+    <div class="card"><span>Woche 3</span><b>Parallel laufen lassen</b><p>Der Ablauf arbeitet mit, der Mensch prüft jeden Fall. Jede Korrektur wird notiert: Das sind die Regeln, die noch fehlen.</p></div>
+    <div class="card"><span>Woche 4</span><b>Auswerten und entscheiden</b><p>Minuten vorher und nachher, Fehlerquote, Antwortzeit. Rechnet es sich: ausbauen. Rechnet es sich nicht: abschalten, ohne Drama.</p></div>
+  </div>
+  <div class="grid2 sec">
+    <div>
+      <span class="tag">Was du misst</span>
+      <ul class="lines">
+        <li><b>Minuten je Fall</b>, vorher und nachher. Die einzige Zahl, die am Ende zählt.</li>
+        <li><b>Korrekturen je zehn Fälle.</b> Unter eins ist gut. Über drei heißt: Regeln fehlen.</li>
+        <li><b>Antwortzeit</b> an den Kunden, vorher und nachher. Oft der größte sichtbare Gewinn.</li>
+        <li><b>Wer hat gestöhnt?</b> Ein Ablauf, den das Team umgeht, ist gescheitert, egal was die Zahlen sagen.</li>
+      </ul>
+    </div>
+    <div>
+      <span class="tag">Typische Stolpersteine</span>
+      <ul class="lines">
+        <li>Zu groß angefangen: drei Abläufe gleichzeitig statt einem.</li>
+        <li>Keine Freigabe eingebaut, erster Fehler beim Kunden, Vertrauen weg.</li>
+        <li>Niemand zuständig: Der Ablauf läuft, bis er stillsteht, und keiner merkt es.</li>
+        <li>Werkzeug gekauft, Ablauf nie aufgeschrieben. Beim Anbieterwechsel beginnt alles von vorn.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card sec" style="border-color: var(--accent);">
+    <span class="k">Realistische Erwartung</span>
+    <p style="font-size:10.5pt; color: var(--ink);">Ein abgegrenzter Ablauf wie die Vorsortierung von Anfragen steht meist innerhalb weniger Wochen im Alltag. Der zweite geht schneller, weil Daten, Freigaben und Dokumentation dann schon stehen. Wer dir nach einem Gespräch „den ganzen Betrieb automatisieren“ verspricht, hat Teil 2 nicht gelesen.</p>
+  </div>
+  <div class="foot"><span>Pixel56 · KI-Agenten-Checkliste</span><b>8</b></div>
+</section>
+
+<!-- 9 Beispiele -->
+<section class="page">
+  <span class="tag">So sieht das bei Pixel56 aus</span>
+  <h2>Vier Abläufe, <em>die bei uns selbst laufen</em></h2>
+  <p class="lead">Keine Kundenprojekte, dafür vollständig nachprüfbar: eigene Produkte und Werkzeuge, mit KI gebaut und im Alltag im Einsatz.</p>
+  <div class="grid2 sec">
+    <div class="card"><span class="k">Lead-Automatisierung · kmu-webseiten.de</span><h3>Vom Formular zum fertigen Entwurf</h3><p>Ein Interessent füllt vier Felder aus. Danach läuft alles automatisch: interne Benachrichtigung, Kontakt im Newsletter-System, Eingangsbestätigung per E-Mail. Aus einem Datensatz entsteht ein kompletter Website-Entwurf im Look des Betriebs. Schutzfilter gegen leere Bot-Anfragen inklusive.</p></div>
+    <div class="card"><span class="k">Tagesplanung · interne Zentrale</span><h3>„Was steht heute an?“</h3><p>Alle Bereiche des Betriebs auf einer Karte, der Stand wird live gespeichert. Ein Klick, und die KI schlägt die nächsten Schritte vor. Entschieden wird am Schreibtisch, nicht vom System. Eine Beispiel-Zentrale kannst du auf unserer KI-Seite durchklicken.</p></div>
+    <div class="card"><span class="k">Datenübernahme · Bestellsystem Teykto</span><h3>Knapp 100 Artikel in Minuten</h3><p>Für ein Restaurant wurde die komplette Speisekarte mit Optionen per Skript importiert statt von Hand eingetippt. Dasselbe Prinzip wie Punkt 06 in Teil 1: Daten wandern, niemand tippt doppelt. Das Bestellsystem selbst ist mit KI-Unterstützung entwickelt.</p></div>
+    <div class="card"><span class="k">Inhalte · diese Website</span><h3>Über 700 Seiten, geprüft von Menschen</h3><p>Die Website von Pixel56 ist mit KI-Unterstützung gebaut: Standortseiten aus einer Datenbasis mit eigenen Texten je Stadt, Vorschaubilder, Werkzeuge wie der Website-Check. Jede Seite wurde von Menschen geprüft und freigegeben. Genau die Freigabe-Stelle aus Regel 02.</p></div>
+  </div>
+  <div class="card sec">
+    <span class="k">Was alle vier gemeinsam haben</span>
+    <p style="font-size:10.5pt; color: var(--ink);">Sie haben mit einer einzigen, wiederkehrenden Aufgabe angefangen. Jeder Ablauf ist unabhängig vom Werkzeug dokumentiert. Und an einer Stelle prüft ein Mensch, bevor etwas nach draußen geht.</p>
+  </div>
+  <div class="note sec">Details und Links zu allen Beispielen: www.pixel56.de/ki-automatisierung</div>
+  <div class="foot"><span>Pixel56 · KI-Agenten-Checkliste</span><b>9</b></div>
+</section>
+
+<!-- 10 Nächster Schritt -->
+<section class="page">
+  <span class="tag">Nächster Schritt</span>
+  <h2>Du hast eine Aufgabe gefunden? <em>Dann reden wir.</em></h2>
+  <p class="lead">Im kostenlosen Erstgespräch gehen wir deinen Selbsttest durch und sagen dir ehrlich, ob sich die Aufgabe lohnt und was ein erster Ablauf braucht. Kein Verkaufsgespräch, keine Verpflichtung.</p>
+  <div class="cta sec">
+    <div class="glow"></div>
+    <h2 style="font-size:18pt;">Kostenloses Erstgespräch, <em>15 Minuten</em></h2>
+    <p>Per WhatsApp an <b style="color:#f5f4f2;">0178 5282464</b>, per E-Mail an <b style="color:#f5f4f2;">info@pixel56.de</b> oder direkt einen Termin wählen:</p>
+    <a class="btn" href="https://calendly.com/pixel56/15min">calendly.com/pixel56/15min</a>
+  </div>
+  <div class="grid2 sec">
+    <div class="card"><span class="k">Über Pixel56</span><p>Digitalagentur aus der Region Koblenz, gegründet 2018 und geführt von Atilla Ciftcioglu. Websites, Kampagnen, Content und KI-Prozesse für Handwerk, Dienstleister und Mittelstand. Ein Ansprechpartner pro Projekt, deutschlandweit im Einsatz.</p></div>
+    <div class="card"><span class="k">So arbeiten wir bei KI-Prozessen</span><p>Wir beginnen bei deinem Prozess und wählen Werkzeuge erst danach. Vorhandene Systeme binden wir ein, statt sie zu ersetzen. Jeder Ablauf wird unabhängig vom Werkzeug dokumentiert, und Entscheidungen mit Verantwortung bleiben beim Menschen.</p></div>
+  </div>
+  <div class="sec">
+    <span class="tag">Weiterlesen</span>
+    <ul class="lines">
+      <li>KI-Automatisierung bei Pixel56, mit Beispiel-Zentrale zum Durchklicken: www.pixel56.de/ki-automatisierung</li>
+      <li>Website-Check, kostenlos: www.pixel56.de/website-check</li>
+      <li>Lokales SEO für Handwerker, die zweite Checkliste: www.pixel56.de/checkliste-seo</li>
+    </ul>
+  </div>
+  <div class="note sec">Diese Checkliste darf im eigenen Betrieb frei verwendet und weitergegeben werden. Sie ersetzt keine Rechtsberatung. Pixel56 · www.pixel56.de · Stand Oktober 2026.</div>
+  <div class="foot"><span>Pixel56 · KI-Agenten-Checkliste</span><b>10</b></div>
+</section>
+
+</body>
+</html>

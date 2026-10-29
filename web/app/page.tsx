@@ -320,7 +320,7 @@ const resources = [
   {
     tag: "Checkliste · PDF",
     title: "KI-Agenten-Checkliste",
-    text: "Deinen ersten KI-Agenten in sieben Schritten einrichten. Mit Beispielen für Anfragen, Termine und Website-Chat.",
+    text: "Wo KI im Betrieb wirklich Zeit spart und wo nicht. 22 Prüfpunkte, Selbsttest, Vier-Wochen-Plan.",
     href: resourceRoutes["ki-agenten-checkliste"],
     image: kiFreebieImage,
   },
