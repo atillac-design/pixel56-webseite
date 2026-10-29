@@ -77,27 +77,38 @@
   .notes { border: 1.5px dashed var(--line-strong); border-radius: 12px; padding: 12px 14px; }
   .notes .k { font-size: 8.5pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; display: block; margin-bottom: 6px; }
   .notes i { display: block; height: 22px; border-bottom: 1px solid var(--line); }
+  .logo { position: absolute; top: 13mm; right: 17mm; height: 9mm; width: auto; }
+  .logo.gross { position: static; height: 12mm; margin-bottom: 20mm; }
+  .num { position: absolute; top: 9mm; left: 15mm; font-size: 84pt; font-weight: 800; letter-spacing: -0.05em; line-height: 1; color: rgba(21,19,25,0.045); pointer-events: none; }
+  .cover-img { position: absolute; left: 0; top: 0; width: 210mm; height: 205mm; object-fit: cover; object-position: center top; }
+  .cover-fade { position: absolute; left: 0; top: 0; width: 210mm; height: 210mm; background: linear-gradient(to bottom, rgba(7,7,12,0) 30%, rgba(7,7,12,0.55) 62%, rgba(7,7,12,0.96) 88%, #07070c 100%); }
+  .cover-fade-left { position: absolute; left: 0; top: 0; width: 210mm; height: 210mm; background: linear-gradient(to right, rgba(7,7,12,0.35) 0%, rgba(7,7,12,0) 45%); }
+  .cover-copy { position: absolute; left: 17mm; right: 17mm; bottom: 24mm; }
+  .cover-copy h1 { font-size: 36pt; }
+  .pill { display: inline-block; background: rgba(245,244,242,0.92); border-radius: 100px; padding: 9px 16px; }
+  .shot { width: 100%; height: 54mm; object-fit: cover; object-position: top; border-radius: 10px; border: 1px solid var(--line); display: block; margin-bottom: 10px; }
   .lines li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 1.5px; background: var(--accent); }
 </style>
 </head>
 <body>
 
 <!-- 1 Titel -->
-<section class="page dark">
-  <div class="glow" style="right:-140px; top:-120px;"></div>
-  <div class="glow" style="left:-220px; bottom:-200px; opacity:0.5;"></div>
-  <div class="mark"><span class="dot"></span>Pixel56</div>
-  <div style="margin-top:62mm;">
+<section class="page dark" style="padding:0;">
+  <img class="cover-img" src="titelbild.jpg" alt="">
+  <div class="cover-fade-left"></div>
+  <div class="cover-fade"></div>
+  <div style="position:absolute; left:17mm; top:14mm;"><span class="pill"><img src="../../public/bilder/logo-pixel56-dunkel.webp" alt="Pixel56" style="height:8mm; width:auto; display:block;"></span></div>
+  <div class="cover-copy">
     <span class="tag">KI-Agenten-Checkliste · Für Handwerk, Dienstleister und Mittelstand</span>
     <h1>Wo spart KI in deinem Betrieb <em>wirklich Zeit?</em></h1>
-    <p class="lead" style="font-size:13pt;">Eine Liste zum Durchgehen, nicht zum Studieren. Acht Aufgaben, die KI heute zuverlässig abnimmt. Sechs, bei denen du dir das Geld sparst. Ein Selbsttest für deinen Betrieb und ein Plan für die ersten vier Wochen.</p>
+    <p class="lead" style="font-size:12.5pt; color:#d9d6de; max-width:160mm;">Acht Aufgaben, die KI heute zuverlässig abnimmt. Sechs, bei denen du dir das Geld sparst. Ein Selbsttest für deinen Betrieb und ein Plan für die ersten vier Wochen. Zum Durchgehen, nicht zum Studieren.</p>
     <div class="chips"><span>22 Prüfpunkte</span><span>Selbsttest</span><span>4-Wochen-Plan</span><span>Ohne Vorkenntnisse</span></div>
   </div>
   <div class="foot"><span>www.pixel56.de/ki-automatisierung</span><span>Stand Oktober 2026</span></div>
 </section>
 
 <!-- 2 Bevor du anfängst -->
-<section class="page">
+<section class="page"><img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
   <span class="tag">Bevor du anfängst</span>
   <h2>Drei Regeln, <em>die teure Umwege sparen</em></h2>
   <p class="lead">Die meisten KI-Projekte in kleinen Betrieben scheitern nicht an der Technik. Sie scheitern daran, dass mit dem Werkzeug angefangen wird statt mit der Aufgabe.</p>
@@ -131,7 +142,7 @@
 </section>
 
 <!-- 3 Teil 1a -->
-<section class="page">
+<section class="page"><img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
   <span class="tag">Teil 1 — Wo KI sofort hilft</span>
   <h2>Acht Aufgaben, <em>die sich heute schon lohnen</em></h2>
   <p class="lead">Gemeinsam ist allen: Sie wiederholen sich jede Woche, es gibt Beispiele aus der Vergangenheit, und am Ende prüft ein Mensch. Hak ab, was bei dir anfällt.</p>
@@ -149,7 +160,7 @@
 </section>
 
 <!-- 4 Teil 1b -->
-<section class="page">
+<section class="page"><img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
   <span class="tag">Teil 1 — Wo KI sofort hilft</span>
   <h2>Vier weitere, <em>die oft übersehen werden</em></h2>
   <div class="list sec">
@@ -170,7 +181,7 @@
 </section>
 
 <!-- 5 Teil 2 -->
-<section class="page">
+<section class="page"><img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
   <span class="tag">Teil 2 — Wo es sich (noch) nicht lohnt</span>
   <h2>Sechs Fälle, <em>in denen du dir das Geld sparst</em></h2>
   <p class="lead">Nicht jede Aufgabe gehört an eine KI. Diese sechs kosten in kleinen Betrieben meist mehr, als sie bringen. Hak ab, wo du gerade stehst.</p>
@@ -186,7 +197,7 @@
 </section>
 
 <!-- 6 Teil 3 Selbsttest -->
-<section class="page">
+<section class="page"><img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
   <span class="tag">Teil 3 — Selbsttest</span>
   <h2>Welche Aufgabe <em>in deinem Betrieb zuerst?</em></h2>
   <p class="lead">Trag die Aufgaben ein, die bei dir jede Woche gleich ablaufen. Die erste Zeile ist ein Beispiel. Rechne pro Aufgabe die Stunden pro Woche aus und beantworte die zwei Fragen rechts.</p>
@@ -217,7 +228,7 @@
 </section>
 
 <!-- 7 Teil 4 Daten -->
-<section class="page">
+<section class="page"><img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
   <span class="tag">Teil 4 — Daten und Rahmen</span>
   <h2>Acht Punkte, <em>bevor ein Werkzeug Kundendaten sieht</em></h2>
   <p class="lead">Keine Juristerei, sondern die Fragen, die du auch deinem Steuerberater oder Datenschutzbeauftragten beantworten können solltest. Alle acht sollten ein Häkchen haben, bevor es losgeht.</p>
@@ -235,7 +246,7 @@
 </section>
 
 <!-- 8 Teil 5 Plan -->
-<section class="page">
+<section class="page"><img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
   <span class="tag">Teil 5 — So startest du</span>
   <h2>Die ersten vier Wochen, <em>ohne Projektrisiko</em></h2>
   <p class="lead">Ein Ablauf, ein Ziel, ein Monat. Danach entscheidest du mit Zahlen. So laufen auch unsere eigenen Projekte.</p>
@@ -273,26 +284,21 @@
 </section>
 
 <!-- 9 Beispiele -->
-<section class="page">
+<section class="page"><img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
   <span class="tag">So sieht das bei Pixel56 aus</span>
   <h2>Vier Abläufe, <em>die bei uns selbst laufen</em></h2>
   <p class="lead">Keine Kundenprojekte, dafür vollständig nachprüfbar: eigene Produkte und Werkzeuge, mit KI gebaut und im Alltag im Einsatz.</p>
   <div class="grid2 sec">
-    <div class="card"><span class="k">Lead-Automatisierung · kmu-webseiten.de</span><h3>Vom Formular zum fertigen Entwurf</h3><p>Ein Interessent füllt vier Felder aus. Danach läuft alles automatisch: interne Benachrichtigung, Kontakt im Newsletter-System, Eingangsbestätigung per E-Mail. Aus einem Datensatz entsteht ein kompletter Website-Entwurf im Look des Betriebs. Schutzfilter gegen leere Bot-Anfragen inklusive.</p></div>
-    <div class="card"><span class="k">Tagesplanung · interne Zentrale</span><h3>„Was steht heute an?“</h3><p>Alle Bereiche des Betriebs auf einer Karte, der Stand wird live gespeichert. Ein Klick, und die KI schlägt die nächsten Schritte vor. Entschieden wird am Schreibtisch, nicht vom System. Eine Beispiel-Zentrale kannst du auf unserer KI-Seite durchklicken.</p></div>
-    <div class="card"><span class="k">Datenübernahme · Bestellsystem Teykto</span><h3>Knapp 100 Artikel in Minuten</h3><p>Für ein Restaurant wurde die komplette Speisekarte mit Optionen per Skript importiert statt von Hand eingetippt. Dasselbe Prinzip wie Punkt 06 in Teil 1: Daten wandern, niemand tippt doppelt. Das Bestellsystem selbst ist mit KI-Unterstützung entwickelt.</p></div>
-    <div class="card"><span class="k">Inhalte · diese Website</span><h3>Über 700 Seiten, geprüft von Menschen</h3><p>Die Website von Pixel56 ist mit KI-Unterstützung gebaut: Standortseiten aus einer Datenbasis mit eigenen Texten je Stadt, Vorschaubilder, Werkzeuge wie der Website-Check. Jede Seite wurde von Menschen geprüft und freigegeben. Genau die Freigabe-Stelle aus Regel 02.</p></div>
+    <div class="card"><img class="shot" src="../../public/bilder/ki-projekt-kmu-webseiten.webp" alt=""><span class="k">Lead-Automatisierung · kmu-webseiten.de</span><h3>Vom Formular zum fertigen Entwurf</h3><p>Vier Felder, danach läuft alles automatisch: Benachrichtigung, Kontakt im Newsletter-System, Eingangsbestätigung. Aus dem Datensatz entsteht ein kompletter Website-Entwurf im Look des Betriebs.</p></div>
+    <div class="card"><img class="shot" src="../../public/bilder/ki-projekt-teykto-laptop.webp" alt=""><span class="k">Datenübernahme · Bestellsystem Teykto</span><h3>Knapp 100 Artikel in Minuten</h3><p>Die komplette Speisekarte eines Restaurants mit Optionen per Skript importiert statt von Hand eingetippt. Dasselbe Prinzip wie Punkt 06 in Teil 1: Daten wandern, niemand tippt doppelt.</p></div>
+    <div class="card"><img class="shot" src="../../public/bilder/ki-projekt-pixel56-website.webp" alt=""><span class="k">Inhalte · diese Website</span><h3>Über 700 Seiten, geprüft von Menschen</h3><p>Standortseiten aus einer Datenbasis mit eigenen Texten je Stadt, Vorschaubilder, Werkzeuge wie der Website-Check. Jede Seite von Menschen geprüft und freigegeben: die Freigabe-Stelle aus Regel 02.</p></div>
+    <div class="card"><span class="k">Tagesplanung · interne Zentrale</span><h3>„Was steht heute an?“</h3><p>Alle Bereiche des Betriebs auf einer Karte, der Stand wird live gespeichert. Ein Klick, und die KI schlägt die nächsten Schritte vor. Entschieden wird am Schreibtisch, nicht vom System. Eine Beispiel-Zentrale kannst du auf unserer KI-Seite durchklicken: www.pixel56.de/ki-automatisierung</p><div class="formula" style="margin-top:10px; font-size:9.5pt;">Gemeinsam ist allen vier: <b>eine</b> wiederkehrende Aufgabe als Start, Ablauf unabhängig vom Werkzeug dokumentiert, Freigabe durch einen Menschen.</div></div>
   </div>
-  <div class="card sec">
-    <span class="k">Was alle vier gemeinsam haben</span>
-    <p style="font-size:10.5pt; color: var(--ink);">Sie haben mit einer einzigen, wiederkehrenden Aufgabe angefangen. Jeder Ablauf ist unabhängig vom Werkzeug dokumentiert. Und an einer Stelle prüft ein Mensch, bevor etwas nach draußen geht.</p>
-  </div>
-  <div class="note sec">Details und Links zu allen Beispielen: www.pixel56.de/ki-automatisierung</div>
   <div class="foot"><span>Pixel56 · KI-Agenten-Checkliste</span><b>9</b></div>
 </section>
 
 <!-- 10 Nächster Schritt -->
-<section class="page">
+<section class="page"><img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
   <span class="tag">Nächster Schritt</span>
   <h2>Du hast eine Aufgabe gefunden? <em>Dann reden wir.</em></h2>
   <p class="lead">Im kostenlosen Erstgespräch gehen wir deinen Selbsttest durch und sagen dir ehrlich, ob sich die Aufgabe lohnt und was ein erster Ablauf braucht. Kein Verkaufsgespräch, keine Verpflichtung.</p>
@@ -314,7 +320,7 @@
       <li>Lokales SEO für Handwerker, die zweite Checkliste: www.pixel56.de/checkliste-seo</li>
     </ul>
   </div>
-  <div class="note sec">Diese Checkliste darf im eigenen Betrieb frei verwendet und weitergegeben werden. Sie ersetzt keine Rechtsberatung. Pixel56 · www.pixel56.de · Stand Oktober 2026.</div>
+  <div class="note sec">Diese Checkliste darf im eigenen Betrieb frei verwendet und weitergegeben werden. Sie ersetzt keine Rechtsberatung. Titelbild KI-generiert. Pixel56 · www.pixel56.de · Stand Oktober 2026.</div>
   <div class="foot"><span>Pixel56 · KI-Agenten-Checkliste</span><b>10</b></div>
 </section>
 

@@ -1303,6 +1303,16 @@ angeglichen. Neues Vorschaubild `public/bilder/freebie-ki-ebook.webp`
 (Titelseite leicht gedreht mit Schatten, 1200×801, per PIL aus dem
 Titelbild). Build, `seo:check:strict`, Screenshot der Freebie-Seite ok.
 
+Rückmeldung des Inhabers zur ersten Fassung: Titelseite ohne Bild und ohne
+Logo wirkt nicht professionell; das Bild der alten Titelseite soll bleiben
+und besser werden. Umsetzung: Roboter-Bild aus der alten Canva-PDF
+extrahiert (`freebies/ki-agenten-checkliste/titelbild.jpg`, KI-generiert,
+auf der letzten Seite gekennzeichnet), Titelseite jetzt Bild oben mit
+Verlauf in den dunklen Textblock, echtes Logo (`logo-pixel56-dunkel.webp`)
+oben links auf heller Pille; auf jeder Innenseite das Logo oben rechts;
+Seite 9 mit den Screenshots der eigenen Produkte (kmu-webseiten, Teykto-
+Laptop, Website-Check). PDF rund 4 MB wegen der Bilder.
+
 Offen beim Inhaber: PDF in MailerLite hochladen (File manager) und in der
 Automation „KI-Agent Formular Workflow“ den Anhang bzw. Link tauschen,
 danach Push, damit Seite und Versand zusammenpassen. Die alte PDF kann
