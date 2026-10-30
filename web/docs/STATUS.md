@@ -1304,10 +1304,11 @@ Bilder wurden über die Canva-Anbindung des Inhabers erzeugt (Dachdecker am
 Transporter mit Handy, Kundin am Küchentisch, Büro-Szene; Medien-IDs
 MAHZfK8_0Co, MAHZfNlExa0, MAHZfFFEP80 im Canva-Konto), lassen sich aus der
 Sandbox aber nur als Mini-Vorschau laden (canva.com gesperrt). Deshalb
-umgesetzt mit vorhandenem Material: Titel = Foto aus dem Kundenprojekt
-GM-Dachdecker (`public/bilder/gm-dachdecker-bewertung.webp`, Mitarbeiter
-am Firmenwagen), darüber eine kleine Beispiel-Antwort; Seite 4 =
-`foto-abend-laptop.webp` (Stock, bereits auf der KI-Seite); Seite 6 und 13
+umgesetzt mit vorhandenem Material: Titel zunächst mit dem Foto aus dem
+Kundenprojekt GM-Dachdecker; Inhaber: kein Kundenfoto als Hauptcover, keine
+Werbung für Kunden im E-Book. Daher Titel = `foto-abend-laptop.webp`
+(Stockfoto, bereits auf der KI-Seite; Person fragt abends am Laptop),
+darüber eine kleine Beispiel-Antwort; Seite 4 = `foto-idee-gluehbirne.webp`; Seite 6 und 13
 = echte Screenshots von pixel56.de (Bewertungsblock, FAQ-Abschnitt,
 `freebies/ki-suche/shot-*.png`). Bildnachweis auf Seite 14. Falls der
 Inhaber lieber das erzeugte Dachdecker-Bild will: aus Canva herunterladen,
