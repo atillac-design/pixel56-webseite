@@ -1299,6 +1299,20 @@ zeigt den Leitfaden statt des Tagesplaners, `llms.txt` ergänzt,
 `LIVEGANG.md` nennt die neue Variable `MAILERLITE_GROUP_KI_SUCHE`. Build,
 `seo:check:strict`, Playwright (kein Überlauf, keine Fehler) ok.
 
+Nachtrag (Inhaber: „mehr Bilder, vor allem ein passendes Cover“): Drei
+Bilder wurden über die Canva-Anbindung des Inhabers erzeugt (Dachdecker am
+Transporter mit Handy, Kundin am Küchentisch, Büro-Szene; Medien-IDs
+MAHZfK8_0Co, MAHZfNlExa0, MAHZfFFEP80 im Canva-Konto), lassen sich aus der
+Sandbox aber nur als Mini-Vorschau laden (canva.com gesperrt). Deshalb
+umgesetzt mit vorhandenem Material: Titel = Foto aus dem Kundenprojekt
+GM-Dachdecker (`public/bilder/gm-dachdecker-bewertung.webp`, Mitarbeiter
+am Firmenwagen), darüber eine kleine Beispiel-Antwort; Seite 4 =
+`foto-abend-laptop.webp` (Stock, bereits auf der KI-Seite); Seite 6 und 13
+= echte Screenshots von pixel56.de (Bewertungsblock, FAQ-Abschnitt,
+`freebies/ki-suche/shot-*.png`). Bildnachweis auf Seite 14. Falls der
+Inhaber lieber das erzeugte Dachdecker-Bild will: aus Canva herunterladen,
+in den Chat geben, dann wird es getauscht.
+
 Offen beim Inhaber: MailerLite-Gruppe und Automation für die PDF anlegen,
 Variable in Netlify setzen, dann Push. Ohne Variable landet die Anmeldung
 in der Fallback-Gruppe (Tagesplaner) und der Kunde bekäme die falsche Mail.
