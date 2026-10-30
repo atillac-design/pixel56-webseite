@@ -1264,6 +1264,45 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 30.10.2026 (lokal): Neues E-Book „Gefunden werden, wenn Kunden die KI fragen“
+
+Inhaber: „Kannst du ein neues E-Book erstellen zu einem aktuellen Thema?“
+Themenwahl: KI-Suche (Googles KI-Übersichten und KI-Modus, ChatGPT) für
+Handwerk und Mittelstand. Passt zu SEO und KI bei Pixel56, ist 2026 das
+Thema mit den meisten Kundenfragen und wird für diese Zielgruppe kaum
+erklärt. Alternativen, die offen bleiben: Barrierefreiheit (BFSG),
+Mitarbeitergewinnung über Karriereseite und Social Recruiting, WhatsApp
+Business im Handwerk.
+
+Recherche per Websuche, nur belegte Zahlen (Quellen auf Seite 14):
+Sistrix (rund 20 % der deutschen Suchanfragen mit KI-Übersicht, 2026),
+Start des KI-Modus in Deutschland Oktober 2025, OpenAI 900 Mio. wöchentliche
+ChatGPT-Nutzer (Februar 2026), Search Console (KI-Klicks seit Juni 2025 im
+Leistungsbericht, Bericht „Generative KI“ mit Impressionen 2026 schrittweise),
+OpenAI-Bots (OAI-SearchBot für Suche, GPTBot für Training).
+
+Aufbau (`freebies/ki-suche/index.html`, 14 Seiten, rund 1,8 MB): 1 Titel
+mit zwei gestalteten Beispiel-Antworten (Google KI-Modus, ChatGPT; Betrieb
+erfunden, gekennzeichnet), 2 Zahlen und Inhalt, 3 wie KI-Antworten entstehen
+(gelerntes Wissen, Live-Suche, Google-Daten; eindeutig/belegt/antwortfähig),
+4 Selbsttest mit sechs Fragen in drei Systemen und Auswertung, 5–9 fünf
+Hebel mit 28 Prüfpunkten (eindeutig sein, Bewertungen mit Inhalt,
+antwortfähige Website, Belege von außen, technisch erreichbar inkl.
+robots.txt-Entscheidung), 10 sechs Irrtümer, 11 Messen, 12 30-Tage-Plan mit
+Zuständigkeiten, 13 pixel56.de als Beispiel (FAQ-Schema, LocalBusiness,
+Bewertungen im Wortlaut, llms.txt, PageSpeed), 14 Quellen und Erstgespräch.
+
+Website: neue Ressource `ki-suche` in `lib/ressourcen.ts` (Seite
+`/ressourcen/ki-suche` entsteht automatisch, Sitemap und Schnellsuche
+ebenfalls), Vorschaubild `public/bilder/freebie-ki-suche.webp`, Startseite
+zeigt den Leitfaden statt des Tagesplaners, `llms.txt` ergänzt,
+`LIVEGANG.md` nennt die neue Variable `MAILERLITE_GROUP_KI_SUCHE`. Build,
+`seo:check:strict`, Playwright (kein Überlauf, keine Fehler) ok.
+
+Offen beim Inhaber: MailerLite-Gruppe und Automation für die PDF anlegen,
+Variable in Netlify setzen, dann Push. Ohne Variable landet die Anmeldung
+in der Fallback-Gruppe (Tagesplaner) und der Kunde bekäme die falsche Mail.
+
 ## 30.10.2026 (lokal): SEO-Checkliste neu als eigene PDF
 
 Inhaber nach Abnahme der KI-Checkliste: „Richtig gut, dann bearbeite die

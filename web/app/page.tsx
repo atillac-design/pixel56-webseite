@@ -17,7 +17,7 @@ import { getFallstudie } from "@/lib/projekte";
 import { verifiedReviews } from "@/lib/verified-reviews";
 import GoogleBewertungen from "@/components/GoogleBewertungen";
 import { googleAuswahl, holeGoogleStand } from "@/lib/google-bewertungen";
-import { projectPath, resourceRoutes, routes, serviceRoutes } from "@/lib/routes";
+import { projectPath, resourcePath, resourceRoutes, routes, serviceRoutes } from "@/lib/routes";
 import starkImage from "@/public/bilder/projekt-stark-ins-neue.webp";
 import starkDetailImage from "@/public/bilder/projekt-stark-ins-neue-2.webp";
 import vanDenBergImage from "@/public/bilder/projekt-van-den-berg.webp";
@@ -35,7 +35,7 @@ import atillaImage from "@/public/bilder/team-atilla.webp";
 import koblenzImage from "@/public/bilder/koblenz-rhein.webp";
 import seoFreebieImage from "@/public/bilder/freebie-seo-ebook-transparent.webp";
 import kiFreebieImage from "@/public/bilder/freebie-ki-ebook.webp";
-import tagesplanerImage from "@/public/bilder/freebie-tagesplaner.webp";
+import kiSucheImage from "@/public/bilder/freebie-ki-suche.webp";
 import SystemSzene from "@/components/SystemSzene";
 import { startseiteSzene } from "@/lib/system-szene";
 
@@ -325,12 +325,13 @@ const resources = [
     image: kiFreebieImage,
   },
   {
-    tag: "Vorlage · PDF",
-    title: "Tagesplaner",
-    text: "Die Planungsvorlage, mit der wir selbst arbeiten: Prioritäten, Zeitblöcke, To-do-Liste.",
-    href: resourceRoutes.tagesplaner,
-    image: tagesplanerImage,
+    tag: "Leitfaden · PDF",
+    title: "KI-Suche: gefunden werden, wenn Kunden die KI fragen",
+    text: "Googles KI-Übersichten, KI-Modus, ChatGPT: Selbsttest, fünf Hebel, 28 Prüfpunkte, 30-Tage-Plan.",
+    href: resourcePath("ki-suche"),
+    image: kiSucheImage,
   },
+
 ];
 
 const faqs = [

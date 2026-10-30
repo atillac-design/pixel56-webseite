@@ -25,6 +25,7 @@
 - [Website-Check](https://www.pixel56.de/website-check): Zwölf Grundlagen der eigenen Startseite prüfen lassen.
 - [SEO-Checkliste](https://www.pixel56.de/checkliste-seo): Lokales SEO für Handwerker, sieben Schritte und 30 Prüfpunkte mit Vorlagen und Selbsttest, als PDF.
 - [KI-Agenten-Checkliste](https://www.pixel56.de/checkliste-ki-agenten): Wo KI im Betrieb wirklich Zeit spart, 22 Prüfpunkte mit Selbsttest, als PDF.
+- [Leitfaden KI-Suche](https://www.pixel56.de/ressourcen/ki-suche): Gefunden werden, wenn Kunden die KI fragen. Selbsttest, fünf Hebel, 28 Prüfpunkte, als PDF.
 - [Tagesplaner](https://www.pixel56.de/kostenloser-tagesplaner-to-do-liste-als-pdf-vorlage): Vorlage für einen klaren Tag, als PDF.
 - [Blog](https://www.pixel56.de/blog): Marketing-Wissen für kleine Unternehmen und Handwerk.
 

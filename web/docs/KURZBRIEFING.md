@@ -57,6 +57,18 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   lohnt, 10 Seiten“. Alle Teaser (Start, Blog, Leistungen, Website-Check,
   Kontakt-Blog-Kasten) beschreiben die echten Inhalte. Die SEO-PDF sagt
   „Google My Business“ (heißt seit 2021 Google-Unternehmensprofil).
+- **Neues E-Book „KI-Suche“ (30.10.):** Inhaber wollte ein E-Book zu einem
+  aktuellen Thema; Wahl: „Gefunden werden, wenn Kunden die KI fragen“
+  (`freebies/ki-suche/`, 14 Seiten, Titel ohne Foto, dafür zwei gestaltete
+  Beispiel-Antworten mit erfundenem Betrieb). Zahlen belegt und auf Seite 14
+  mit Quellen: Sistrix ~20 % Suchanfragen mit KI-Übersicht in DE, KI-Modus in
+  DE seit Okt. 2025, OpenAI 900 Mio. Wochennutzer (Feb. 2026), Search-Console-
+  Berichte. Neue Ressourcen-Seite `/ressourcen/ki-suche` (Daten in
+  `lib/ressourcen.ts`, Vorschaubild `freebie-ki-suche.webp`), auf der
+  Startseite ersetzt der Leitfaden den Tagesplaner-Teaser. **Vor dem Push
+  muss der Inhaber in MailerLite eine Gruppe + Automation für die PDF
+  anlegen und `MAILERLITE_GROUP_KI_SUCHE` in Netlify setzen** (sonst
+  Fallback auf `MAILERLITE_GROUP_ID` = Tagesplaner-Gruppe, falsche Mail).
 - **SEO-Checkliste neu gebaut (30.10.):** Gleiche Technik
   (`freebies/seo-checkliste/index.html`, gemeinsames `freebies/freebie.css`,
   `node scripts/freebie-pdf.mjs seo-checkliste`). 12 Seiten: Wie Google
