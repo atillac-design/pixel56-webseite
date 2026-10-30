@@ -313,7 +313,7 @@ const resources = [
   {
     tag: "Checkliste · PDF",
     title: "SEO-Checkliste",
-    text: "Lokales SEO für Handwerker in sieben Schritten: Google-Profil, Keywords, Website, Bewertungen, Wochenplan.",
+    text: "Lokales SEO für Handwerker: sieben Schritte, 30 Prüfpunkte, Vorlagen für Bewertungen, Selbsttest, Wochenplan.",
     href: resourceRoutes["seo-checkliste"],
     image: seoFreebieImage,
   },

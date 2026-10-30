@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 type Karte = { cover: string; tag: string; title: string; text: string; meta: string; slug: string; datum: string };
 
 const resources = [
-  { tag: "Checkliste · PDF", title: "SEO-Checkliste", text: "Lokales SEO für Handwerker: sieben Schritte, 25 Prüfpunkte und ein Wochenplan. Dieselben Punkte, die wir bei Kundenprojekten durchgehen, zum Selbst-Abhaken.", href: resourceRoutes["seo-checkliste"], image: seoFreebieImage },
+  { tag: "Checkliste · PDF", title: "SEO-Checkliste", text: "Lokales SEO für Handwerker: sieben Schritte, 30 Prüfpunkte, Textvorlagen für Bewertungen, Selbsttest und ein Wochenplan mit 30 Minuten. Ehrlich eingeordnet, ohne Platz-1-Versprechen.", href: resourceRoutes["seo-checkliste"], image: seoFreebieImage },
   { tag: "Checkliste · PDF", title: "KI-Agenten-Checkliste", text: "Wo KI im Betriebsalltag wirklich Zeit spart und wo du dir das Geld sparst. 22 Prüfpunkte, Selbsttest für deinen Betrieb, Plan für die ersten vier Wochen.", href: resourceRoutes["ki-agenten-checkliste"], image: kiFreebieImage },
   { tag: "Vorlage · PDF", title: "Tagesplaner", text: "Ein Blatt pro Tag, drei Prioritäten, feste Zeitblöcke. Die Vorlage, mit der wir selbst arbeiten.", href: resourceRoutes.tagesplaner, image: tagesplanerImage },
 ];

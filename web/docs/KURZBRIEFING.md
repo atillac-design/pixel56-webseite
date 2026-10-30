@@ -57,6 +57,17 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   lohnt, 10 Seiten“. Alle Teaser (Start, Blog, Leistungen, Website-Check,
   Kontakt-Blog-Kasten) beschreiben die echten Inhalte. Die SEO-PDF sagt
   „Google My Business“ (heißt seit 2021 Google-Unternehmensprofil).
+- **SEO-Checkliste neu gebaut (30.10.):** Gleiche Technik
+  (`freebies/seo-checkliste/index.html`, gemeinsames `freebies/freebie.css`,
+  `node scripts/freebie-pdf.mjs seo-checkliste`). 12 Seiten: Wie Google
+  lokal entscheidet (Relevanz, Entfernung, Bekanntheit) + Zeiträume aus dem
+  Blog, 7 Schritte mit 30 Prüfpunkten (Profil, Suchbegriffe mit Tabelle,
+  Website mit Titel-Vorlage, Bewertungen mit 3 Textvorlagen, Einträge,
+  Technik + Website-Check, Wochenplan), Selbsttest mit Auswertung, Messen,
+  Erstgespräch. Titelfoto = Handwerker-Stockfoto der alten Canva-PDF.
+  Vorschaubild `freebie-seo-ebook-transparent.webp` neu. Seitentexte auf
+  „30 Prüfpunkte, 12 Seiten“. **Beide PDFs zuerst in MailerLite tauschen,
+  dann Push.**
 - **KI-Checkliste neu gebaut (29.10.):** Alte Canva-PDF (Tool-Tutorial für
   Coaches, Hype-Ton, 2025) ersetzt durch eigene 10-seitige PDF im Website-
   Design: `freebies/ki-agenten-checkliste/index.html` → `node

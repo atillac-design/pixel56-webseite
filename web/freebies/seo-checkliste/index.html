@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>SEO-Checkliste · Lokales SEO für Handwerker · Pixel56</title>
+<link rel="stylesheet" href="../../app/schrift.css">
+<link rel="stylesheet" href="../freebie.css">
+<style>
+  .step { display: grid; grid-template-columns: 24px 1fr; gap: 10px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 11px 14px; }
+  .step h3 { margin-bottom: 3px; font-size: 11.5pt; }
+  .step p { font-size: 10pt; color: var(--ink-dim); margin: 0; }
+  .tip { border-left: 3px solid var(--accent); padding: 8px 14px; background: var(--card); border-radius: 0 10px 10px 0; font-size: 10pt; color: var(--ink-dim); }
+  .tip b { color: var(--ink); }
+  .vorlage { background: var(--ground); color: #f5f4f2; border-radius: 12px; padding: 12px 16px; font-size: 10pt; }
+  .vorlage .k { color: var(--accent); font-size: 8.5pt; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 4px; }
+  .vorlage code { font-family: var(--sans); background: rgba(245,244,242,0.1); padding: 2px 6px; border-radius: 5px; }
+  .score { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .score .card b { display: block; font-size: 16pt; letter-spacing: -0.02em; margin-bottom: 2px; }
+  .ja-nein { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 10.5pt; }
+  .ja-nein span { font-size: 8.5pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); display: flex; align-items: center; gap: 6px; }
+  .ja-nein .box { margin-top: 0; }
+  .timeline { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .timeline .card span { display: block; font-size: 8.5pt; letter-spacing: 0.1em; color: var(--accent-text); text-transform: uppercase; font-weight: 600; margin-bottom: 4px; }
+  .timeline .card b { display: block; font-size: 11pt; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<!-- 1 Titel -->
+<section class="page dark" style="padding:0;">
+  <img class="cover-img" src="titelbild.jpg" alt="" style="height:200mm; object-position: center 30%;">
+  <div class="cover-fade-left"></div>
+  <div class="cover-fade"></div>
+  <div style="position:absolute; left:17mm; top:14mm;"><span class="pill"><img src="../../public/bilder/logo-pixel56-dunkel.webp" alt="Pixel56" style="height:8mm; width:auto; display:block;"></span></div>
+  <div class="cover-copy">
+    <span class="tag">SEO-Checkliste · Lokales SEO für Handwerker</span>
+    <h1>In deiner Stadt gefunden werden, <em>Schritt für Schritt.</em></h1>
+    <p class="lead" style="font-size:12.5pt; color:#d9d6de; max-width:160mm;">Sieben Schritte vom Google-Unternehmensprofil bis zur Website, 30 Prüfpunkte zum Abhaken, Textvorlagen für Bewertungen, ein Selbsttest und ein Wochenplan mit 30 Minuten. Ohne Fachchinesisch, ohne Platz-1-Versprechen.</p>
+    <div class="chips"><span>7 Schritte</span><span>30 Prüfpunkte</span><span>Selbsttest</span><span>Wochenplan</span></div>
+  </div>
+  <div class="foot"><span>www.pixel56.de/suchmaschinenoptimierung</span><span>Stand Oktober 2026</span></div>
+</section>
+
+<!-- 2 Bevor du anfängst -->
+<section class="page">
+  <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
+  <span class="tag">Bevor du anfängst</span>
+  <h2>Wie Google entscheidet, <em>wer lokal gezeigt wird</em></h2>
+  <p class="lead">Wenn jemand „Dachdecker Koblenz“ sucht, zeigt Google oben einen Kartenkasten mit drei Betrieben, darunter die normalen Ergebnisse. Für den Kasten gelten drei Kriterien, die Google selbst so benennt.</p>
+  <div class="grid3 sec">
+    <div class="card"><span class="k">Kriterium 01</span><h3>Relevanz</h3><p>Passt dein Profil zur Suche? Das entscheiden Kategorie, Leistungen, Beschreibung und die Begriffe auf deiner Website. Schritte 1 bis 3.</p></div>
+    <div class="card"><span class="k">Kriterium 02</span><h3>Entfernung</h3><p>Wie nah bist du am Suchenden oder am gesuchten Ort? Daran änderst du wenig. Was zählt: ein korrekt eingestelltes Einzugsgebiet. Schritt 1.</p></div>
+    <div class="card"><span class="k">Kriterium 03</span><h3>Bekanntheit</h3><p>Wie bekannt ist der Betrieb im Netz? Bewertungen, Einträge in Verzeichnissen, Erwähnungen und Links. Schritte 4 und 5.</p></div>
+  </div>
+  <div class="sec">
+    <span class="tag">Realistische Zeiträume</span>
+    <div class="timeline">
+      <div class="card"><span>Tage</span><b>Unternehmensprofil</b><p>Vollständige Angaben, Fotos, Öffnungszeiten wirken oft schon nach wenigen Tagen.</p></div>
+      <div class="card"><span>4 bis 6 Wochen</span><b>Website-Änderungen</b><p>Google muss neue oder überarbeitete Seiten erst lesen und einordnen. Sichtbar passiert in dieser Zeit wenig.</p></div>
+      <div class="card"><span>Monat 2 bis 4</span><b>Erste Bewegung</b><p>Zuerst bei sehr konkreten Begriffen („Flachdach sanieren Neuwied“), die umkämpften folgen später.</p></div>
+    </div>
+    <p class="note" style="margin-top:8px;">Wer nach zwei Monaten aufgibt, hört genau dann auf, wenn sich die Grundlagen festigen. Wer schnelle Plätze verspricht, arbeitet meist mit Methoden, die Google eher bestraft.</p>
+  </div>
+  <div class="sec">
+    <span class="tag">Inhalt</span>
+    <div class="toc">
+      <div><span>1</span><span>Google-Unternehmensprofil: der schnellste Hebel</span><span>Seite 3</span></div>
+      <div><span>2</span><span>Suchbegriffe: wonach deine Kunden wirklich suchen</span><span>Seite 4</span></div>
+      <div><span>3</span><span>Website: lokal lesbar für Google und Menschen</span><span>Seite 5</span></div>
+      <div><span>4</span><span>Bewertungen: bitten, beantworten, nicht kaufen</span><span>Seite 6</span></div>
+      <div><span>5</span><span>Einträge und Links: dieselben Daten überall</span><span>Seite 7</span></div>
+      <div><span>6</span><span>Technik und Handy: unter drei Sekunden</span><span>Seite 8</span></div>
+      <div><span>7</span><span>Dranbleiben: der 30-Minuten-Wochenplan</span><span>Seite 9</span></div>
+      <div><span>+</span><span>Selbsttest, Messen, nächster Schritt</span><span>Seite 10 bis 12</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>Pixel56 · SEO-Checkliste</span><b>2</b></div>
+</section>
+
+<!-- 3 Schritt 1 -->
+<section class="page">
+  <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
+  <span class="tag">Schritt 1 — Google-Unternehmensprofil</span>
+  <h2>Der schnellste Hebel, <em>und der am meisten vernachlässigte</em></h2>
+  <p class="lead">Das Profil erscheint über den normalen Ergebnissen und vor den Anzeigen. Es ist kostenlos. Sechs Punkte, die ein halbleeres Profil von einem unterscheiden, das Anrufe bringt.</p>
+  <div class="list sec">
+    <div class="step"><div class="box"></div><div><h3>01 · Inhaberschaft bestätigt, Name exakt wie am Firmenschild</h3><p>Kein „Müller Dach Koblenz Dachdecker Meisterbetrieb“. Zusätze im Namen verstoßen gegen die Richtlinien und können das Profil sperren. Der Ort gehört in die Beschreibung, nicht in den Namen.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>02 · Hauptkategorie und Nebenkategorien gesetzt</h3><p>Die Hauptkategorie entscheidet, bei welchen Suchen du überhaupt in Frage kommst. Nebenkategorien für alles, was du wirklich anbietest, nicht mehr.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>03 · Leistungen eingetragen, Beschreibung mit Ortsbezug</h3><p>Jede Leistung einzeln anlegen. In der Beschreibung in zwei Sätzen, was du für wen in welcher Region machst. Kein Werbetext, keine Aufzählung von Städten.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>04 · Öffnungszeiten aktuell, inklusive Feiertage und Notdienst</h3><p>Falsche Zeiten sind der häufigste Grund für schlechte Bewertungen, die gar nichts mit deiner Arbeit zu tun haben.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>05 · Mindestens zehn echte Fotos</h3><p>Team, Fahrzeuge, Baustellen, fertige Projekte. Profile mit echten Fotos bekommen mehr Klicks als solche mit Stockbildern oder ohne. Alle paar Wochen ein neues.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>06 · Anruf-, Nachrichten- und Fragen-Funktion aktiv und beantwortet</h3><p>Trag die fünf häufigsten Kundenfragen selbst unter „Fragen und Antworten“ ein. Nachrichten innerhalb eines Tages beantworten, sonst schaltet Google die Funktion ab.</p></div></div>
+  </div>
+  <div class="grid2 sec">
+    <div class="tip"><b>Ohne Ladenlokal?</b> Wer Kunden nur vor Ort besucht, verbirgt die Adresse im Profil und trägt stattdessen das Einzugsgebiet ein (Städte oder Umkreis). Sonst riskierst du eine Sperre, und Kunden stehen vor deiner Haustür.</div>
+    <div class="tip"><b>Der übersehene Bereich:</b> „Beiträge“. Ein kurzer Beitrag pro Woche mit Foto (abgeschlossenes Projekt, Saison-Hinweis, freie Termine) zeigt Google und Kunden, dass der Betrieb lebt. Kostet fünf Minuten.</div>
+  </div>
+  <div class="notes sec" style="margin-top:14px;">
+    <span class="k">Notizen: Was fehlt in deinem Profil heute? Wer pflegt es ab jetzt?</span>
+    <i></i>
+  </div>
+  <div class="foot"><span>Pixel56 · SEO-Checkliste</span><b>3</b></div>
+</section>
+
+<!-- 4 Schritt 2 -->
+<section class="page">
+  <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
+  <span class="tag">Schritt 2 — Suchbegriffe</span>
+  <h2>Wonach deine Kunden <em>wirklich suchen</em></h2>
+  <p class="lead">Niemand sucht „innovative Dachlösungen“. Gesucht wird „Dachdecker Koblenz“, „Dach undicht Notdienst“ oder „Flachdach sanieren Kosten“. Vier Punkte, dann hast du deine Liste.</p>
+  <div class="list sec">
+    <div class="step"><div class="box"></div><div><h3>07 · Zehn Begriffe nach dem Muster Leistung + Ort notiert</h3><p>Für jede Hauptleistung und jede Stadt, in der du wirklich arbeitest. Die Tabelle unten ist dafür da.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>08 · Google-Vorschläge und „Weitere Fragen“ geprüft</h3><p>Tipp deine Leistung bei Google ein und lies, was Google ergänzt. Der Kasten „Weitere Fragen“ zeigt, was Kunden wissen wollen. Beides kostenlos und ehrlicher als jedes Werkzeug.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>09 · Drei Kunden gefragt: „Wie hast du uns gefunden, was hast du eingetippt?“</h3><p>Die Antworten überraschen fast immer. Kunden benutzen andere Wörter als Handwerker: „Heizung kaputt“ statt „Heizungsstörung beheben“.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>10 · Notdienst-, Saison- und Kostenbegriffe ergänzt</h3><p>„Notdienst“, „Wochenende“, „Kosten“, „Preis“, „Erfahrungen“, „in der Nähe“: Wer so sucht, will jetzt beauftragen. Diese Begriffe brauchen eine Antwort auf deiner Website.</p></div></div>
+  </div>
+  <table class="sec">
+    <thead><tr><th style="width:40%">Suchbegriff (Leistung + Ort)</th><th>Woher (Vorschlag, Kunde, Idee)</th><th>Eigene Seite dafür?</th><th>Rang heute</th></tr></thead>
+    <tbody>
+      <tr style="color: var(--ink-faint);"><td>Beispiel: Dachdecker Koblenz</td><td>Google-Vorschlag</td><td>Startseite</td><td>Seite 2</td></tr>
+      <tr style="color: var(--ink-faint);"><td>Beispiel: Flachdach sanieren Neuwied</td><td>Kunde Hr. K.</td><td>noch keine</td><td>nicht zu finden</td></tr>
+      <tr><td class="blank"></td><td></td><td></td><td></td></tr>
+      <tr><td class="blank"></td><td></td><td></td><td></td></tr>
+      <tr><td class="blank"></td><td></td><td></td><td></td></tr>
+      <tr><td class="blank"></td><td></td><td></td><td></td></tr>
+      <tr><td class="blank"></td><td></td><td></td><td></td></tr>
+      <tr><td class="blank"></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="tip sec" style="margin-top:12px;"><b>Rang prüfen, ohne dich selbst zu täuschen:</b> Im privaten Fenster suchen oder am Handy mit mobilen Daten, nicht im eingeloggten Browser. Google zeigt dir sonst, was du schon kennst.</div>
+  <div class="foot"><span>Pixel56 · SEO-Checkliste</span><b>4</b></div>
+</section>
+
+<!-- 5 Schritt 3 -->
+<section class="page">
+  <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
+  <span class="tag">Schritt 3 — Website</span>
+  <h2>Lokal lesbar, <em>für Google und für Menschen</em></h2>
+  <p class="lead">Google muss auf deiner Seite in Sekunden erkennen: Welche Leistung, welcher Ort, welcher Betrieb. Sechs Punkte, die genau das klären.</p>
+  <div class="list sec">
+    <div class="step"><div class="box"></div><div><h3>11 · Jede Seite hat einen eigenen Titel nach dem Muster „Leistung in Stadt | Betrieb“</h3><p>Der Titel ist die blaue Zeile bei Google. „Startseite“ oder „Willkommen“ verschenkt sie. Unter 60 Zeichen, Ort drin, Betrieb hinten.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>12 · Eine Überschrift (H1) pro Seite, die Leistung und Ort nennt</h3><p>Darunter H2 und H3 in Reihenfolge. Google liest die Struktur, Besucher auch.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>13 · Eine eigene Seite je Hauptleistung</h3><p>Dachsanierung, Flachdach, Dachfenster, Notdienst: je eine Seite mit Text, Fotos und Anfrageweg. Eine Sammelseite „Leistungen“ rankt für nichts.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>14 · Stadtseiten nur für Orte, in denen du wirklich arbeitest, mit eigenem Text</h3><p>Fünf ehrliche Seiten schlagen fünfzig Kopien mit ausgetauschtem Stadtnamen. Nenn Projekte, Anfahrt, Besonderheiten vor Ort.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>15 · Name, Adresse, Telefon überall identisch, dazu Betriebsdaten für Google hinterlegt</h3><p>Im Fuß jeder Seite, im Impressum, im Unternehmensprofil und in Verzeichnissen dieselbe Schreibweise. Technisch als LocalBusiness-Auszeichnung; das macht deine Agentur in zehn Minuten.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>16 · Projektfotos mit Ortsbezug und Bildbeschreibung</h3><p>„Dachsanierung Einfamilienhaus in Vallendar, 2026“ als Bildtext statt „IMG_4711“. Google liest Bildtexte, Besucher glauben Fotos.</p></div></div>
+  </div>
+  <div class="vorlage sec">
+    <span class="k">Vorlage Seitentitel und Beschreibung</span>
+    Titel: <code>Dachdecker in Koblenz | Müller Bedachungen</code> &nbsp; Beschreibung: <code>Dachsanierung, Flachdach und Notdienst in Koblenz und Umgebung. Meisterbetrieb seit 1998, Angebot innerhalb von 48 Stunden. Jetzt anfragen.</code> &nbsp; Die Beschreibung bringt keinen Rang, aber den Klick: unter 155 Zeichen, ein Grund, dich zu wählen, eine Aufforderung.
+  </div>
+  <div class="foot"><span>Pixel56 · SEO-Checkliste</span><b>5</b></div>
+</section>
+
+<!-- 6 Schritt 4 -->
+<section class="page">
+  <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
+  <span class="tag">Schritt 4 — Bewertungen</span>
+  <h2>Bitten, beantworten, <em>nicht kaufen</em></h2>
+  <p class="lead">Zufriedene Kunden bewerten selten von allein. Nicht aus Unzufriedenheit, sie vergessen es. Ab etwa 15 bis 20 Bewertungen mit gutem Schnitt verändert sich spürbar, wie vertrauenswürdig ein Profil wirkt.</p>
+  <div class="list sec">
+    <div class="step"><div class="box"></div><div><h3>17 · Direkter Bewertungslink erstellt, als QR-Code auf Rechnung oder Karte</h3><p>Google stellt den Link im Unternehmensprofil bereit. Kurzlink oder QR daraus machen, auf Rechnung, Visitenkarte, Fahrzeug.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>18 · Bitte kommt direkt nach dem Auftrag, persönlich, mit Link</h3><p>Der beste Moment ist die Abnahme, nicht eine Rundmail Wochen später. Vorlage unten.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>19 · Jede Bewertung wird beantwortet, auch die guten, mit Ortsbezug</h3><p>Antworten liest jeder, der dein Profil prüft. Sie zeigen, wie du mit Menschen umgehst, und sie nennen nebenbei Leistung und Ort.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>20 · Keine Belohnung, keine gekauften Bewertungen, keine Bewertungs-Terminals nur für Zufriedene</h3><p>Verstößt gegen die Google-Richtlinien und kann das ganze Profil kosten. Freundlich fragen reicht.</p></div></div>
+  </div>
+  <div class="grid3 sec">
+    <div class="vorlage"><span class="k">Vorlage: die Bitte</span>„Hallo Frau Weber, danke für den Auftrag. Falls Sie mit unserer Arbeit zufrieden waren, würde uns eine kurze Google-Bewertung sehr helfen, dauert eine Minute: [Link]. Viele Grüße, Thomas Müller“</div>
+    <div class="vorlage"><span class="k">Vorlage: Antwort auf 5 Sterne</span>„Vielen Dank, Frau Weber! Die Dachsanierung in Vallendar hat auch uns Freude gemacht. Wenn das Dachfenster im Frühjahr ansteht, melden Sie sich gern. Ihr Team von Müller Bedachungen“</div>
+    <div class="vorlage"><span class="k">Vorlage: Antwort auf Kritik</span>„Danke für die offene Rückmeldung, das tut uns leid. So soll es nicht laufen. Ich melde mich heute persönlich bei Ihnen, um das zu klären: 0261 …, Thomas Müller, Inhaber.“ Ruhig, sachlich, ohne Rechtfertigung, mit Angebot.</div>
+  </div>
+  <div class="notes sec" style="margin-top:14px;">
+    <span class="k">Dein Ablauf: Wer fragt wann nach der Bewertung, und wo steht der Link oder QR-Code?</span>
+    <i></i><i></i><i></i>
+  </div>
+  <div class="foot"><span>Pixel56 · SEO-Checkliste</span><b>6</b></div>
+</section>
+
+<!-- 7 Schritt 5 -->
+<section class="page">
+  <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
+  <span class="tag">Schritt 5 — Einträge und Links</span>
+  <h2>Dieselben Daten überall, <em>Empfehlungen von Menschen, die es wissen</em></h2>
+  <p class="lead">Google gleicht deine Betriebsdaten über das ganze Netz ab. Widersprüche kosten Vertrauen. Und jede ehrliche Erwähnung von außen zählt als Empfehlung.</p>
+  <div class="list sec">
+    <div class="step"><div class="box"></div><div><h3>21 · In den wichtigen Verzeichnissen eingetragen, mit identischen Daten</h3><p>Das Örtliche, Gelbe Seiten, 11880, Handwerkskammer und Innung, dazu die Portale, die du ohnehin nutzt. Name, Adresse, Telefon Zeichen für Zeichen wie im Unternehmensprofil.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>22 · Doppelte und alte Einträge aufgeräumt</h3><p>Alte Adresse, zweite Telefonnummer, ein verwaistes Profil vom Vorgänger: Google weiß dann nicht, welcher Betrieb du bist. Einmal suchen, löschen oder zusammenführen lassen.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>23 · Drei Partner um eine Verlinkung gebeten</h3><p>Baustoffhändler, Architekten, Hausverwaltungen, Hersteller mit Partnerliste. Ein Link von einer echten Partnerseite ist mehr wert als hundert aus Linklisten.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>24 · Lokale Erwähnungen gesammelt</h3><p>Verein, den du sponserst, Lokalpresse, Stadtfest, Ausbildungsmesse: Jede Erwähnung mit Link oder Nennung stärkt die Bekanntheit in deiner Stadt.</p></div></div>
+  </div>
+  <div class="grid2 sec">
+    <div class="tip"><b>Finger weg von gekauften Links</b> und „500 Backlinks für 99 Euro“. Google erkennt die Muster, und die Strafe trifft den Betrieb, nicht den Verkäufer. Lieber drei echte Partner als eine Liste.</div>
+    <div class="tip"><b>Schnellprüfung:</b> Such deinen Betriebsnamen in Anführungszeichen bei Google. Alles, was erscheint, sollte dieselbe Adresse und Nummer zeigen. Was abweicht, kommt auf die Aufräumliste.</div>
+  </div>
+  <div class="notes sec" style="margin-top:14px;">
+    <span class="k">Aufräumliste: Welche Einträge zeigen falsche oder alte Daten? Welche drei Partner fragst du?</span>
+    <i></i><i></i><i></i>
+  </div>
+  <div class="foot"><span>Pixel56 · SEO-Checkliste</span><b>7</b></div>
+</section>
+
+<!-- 8 Schritt 6 -->
+<section class="page">
+  <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
+  <span class="tag">Schritt 6 — Technik und Handy</span>
+  <h2>Unter drei Sekunden, <em>mit dem Daumen bedienbar</em></h2>
+  <p class="lead">Die meisten Kunden suchen Handwerker am Handy, oft mit dem Problem vor Augen. Eine langsame oder unbedienbare Seite kostet Anfragen, bevor jemand den Text liest.</p>
+  <div class="list sec">
+    <div class="step"><div class="box"></div><div><h3>25 · Ladezeit unter drei Sekunden, am Handy gemessen</h3><p>Kostenlos prüfen mit Google PageSpeed Insights. Häufigste Ursache: unkomprimierte Fotos direkt von der Kamera. Vor dem Hochladen auf unter 300 Kilobyte bringen.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>26 · Daumen-Test bestanden</h3><p>Am eigenen Handy: Ist die Telefonnummer antippbar? Erreicht man das Anfrageformular in zwei Tipps? Sind Knöpfe groß genug, Texte ohne Zoom lesbar? Keine Pop-ups, die den Bildschirm verdecken.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>27 · Verschlüsselt und ohne Fehlerseiten</h3><p>Adresse beginnt mit https, kein Browser-Warnhinweis. In der Google Search Console unter „Seiten“ prüfen, ob es Fehler oder nicht gefundene Seiten gibt, und Weiterleitungen setzen.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>28 · Wichtige Seiten intern verlinkt, Impressum und Datenschutz vollständig</h3><p>Startseite zu Leistungen, Leistungen zu Projekten und zurück. Was nicht verlinkt ist, gilt als unwichtig. Impressum und Datenschutz sind Pflicht und ein Vertrauenssignal.</p></div></div>
+  </div>
+  <div class="cta sec">
+    <div class="glow"></div>
+    <h2 style="font-size:16pt;">In 30 Sekunden prüfen lassen: <em>der kostenlose Website-Check</em></h2>
+    <p>Adresse eingeben, zwölf Grundlagen deiner Startseite werden geprüft: Ladezeit, Titel, Beschreibung, Überschriften, Verschlüsselung, mobile Darstellung und mehr. Ohne Anmeldung.</p>
+    <a class="btn" href="https://www.pixel56.de/website-check">www.pixel56.de/website-check</a>
+  </div>
+  <div class="foot"><span>Pixel56 · SEO-Checkliste</span><b>8</b></div>
+</section>
+
+<!-- 9 Schritt 7 -->
+<section class="page">
+  <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
+  <span class="tag">Schritt 7 — Dranbleiben</span>
+  <h2>30 Minuten pro Woche, <em>mehr braucht es nicht</em></h2>
+  <p class="lead">Google bevorzugt Betriebe, bei denen sich etwas tut. Nicht viel, aber regelmäßig. Die letzten zwei Prüfpunkte und ein Plan, der in jede Woche passt.</p>
+  <div class="list sec">
+    <div class="step"><div class="box"></div><div><h3>29 · Ein Beitrag oder Foto pro Woche im Unternehmensprofil</h3><p>Fertiges Projekt, Saison-Hinweis („Dachcheck vor dem Winter“), freie Termine, neues Teammitglied. Mit Ortsangabe.</p></div></div>
+    <div class="step"><div class="box"></div><div><h3>30 · Einmal im Quartal: Website-Inhalte prüfen und ergänzen</h3><p>Neues Projekt mit Fotos auf die passende Leistungsseite, veraltete Angaben raus, eine Kundenfrage als Absatz beantwortet.</p></div></div>
+  </div>
+  <table class="sec">
+    <thead><tr><th style="width:18%">Tag</th><th>Aufgabe</th><th style="width:14%">Dauer</th><th style="width:22%">Erledigt (Woche 1 bis 4)</th></tr></thead>
+    <tbody>
+      <tr><td><b>Montag</b></td><td>Einen Kunden der letzten Woche um eine Bewertung bitten (Vorlage Seite 6)</td><td>5 Min.</td><td><span class="row" style="gap:6px;"><i class="box"></i><i class="box"></i><i class="box"></i><i class="box"></i></span></td></tr>
+      <tr><td><b>Dienstag</b></td><td>Beitrag oder Foto im Unternehmensprofil veröffentlichen</td><td>10 Min.</td><td><span class="row" style="gap:6px;"><i class="box"></i><i class="box"></i><i class="box"></i><i class="box"></i></span></td></tr>
+      <tr><td><b>Mittwoch</b></td><td>Neue Bewertungen, Fragen und Nachrichten beantworten</td><td>5 Min.</td><td><span class="row" style="gap:6px;"><i class="box"></i><i class="box"></i><i class="box"></i><i class="box"></i></span></td></tr>
+      <tr><td><b>Donnerstag</b></td><td>Ein Projektfoto mit Bildtext auf die passende Leistungsseite</td><td>5 Min.</td><td><span class="row" style="gap:6px;"><i class="box"></i><i class="box"></i><i class="box"></i><i class="box"></i></span></td></tr>
+      <tr><td><b>Freitag</b></td><td>Zahlen anschauen: Anrufe und Routen im Profil, Klicks in der Search Console (Seite 11)</td><td>5 Min.</td><td><span class="row" style="gap:6px;"><i class="box"></i><i class="box"></i><i class="box"></i><i class="box"></i></span></td></tr>
+    </tbody>
+  </table>
+  <div class="grid2 sec">
+    <div class="tip"><b>Einmal im Monat:</b> Öffnungszeiten prüfen, Suchbegriff-Liste (Seite 4) um neue Kundenfragen ergänzen, einen Verzeichniseintrag kontrollieren.</div>
+    <div class="tip"><b>Wer macht es?</b> Eine Person, fester Termin im Kalender. „Macht das Büro, wenn Zeit ist“ heißt: macht niemand.</div>
+  </div>
+  <div class="foot"><span>Pixel56 · SEO-Checkliste</span><b>9</b></div>
+</section>
+
+<!-- 10 Selbsttest -->
+<section class="page">
+  <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
+  <span class="tag">Selbsttest</span>
+  <h2>Wo steht dein Betrieb <em>heute?</em></h2>
+  <p class="lead">Zehn Fragen, ehrlich beantwortet. Zähl die Ja-Antworten und lies unten, womit du anfängst.</p>
+  <div class="sec">
+    <div class="ja-nein"><div>1. Hat dein Unternehmensprofil mindestens zehn echte Fotos und beantwortete Bewertungen?</div><span><i class="box"></i> Ja</span><span><i class="box"></i> Nein</span></div>
+    <div class="ja-nein"><div>2. Findest du deinen Betrieb im privaten Fenster bei „Leistung + Stadt“ auf der ersten Seite?</div><span><i class="box"></i> Ja</span><span><i class="box"></i> Nein</span></div>
+    <div class="ja-nein"><div>3. Hat jede Seite deiner Website einen eigenen Titel mit Leistung und Ort?</div><span><i class="box"></i> Ja</span><span><i class="box"></i> Nein</span></div>
+    <div class="ja-nein"><div>4. Gibt es für jede Hauptleistung eine eigene Seite mit Text und Fotos?</div><span><i class="box"></i> Ja</span><span><i class="box"></i> Nein</span></div>
+    <div class="ja-nein"><div>5. Hast du mehr als 15 Google-Bewertungen und einen festen Ablauf, neue zu bekommen?</div><span><i class="box"></i> Ja</span><span><i class="box"></i> Nein</span></div>
+    <div class="ja-nein"><div>6. Stehen Name, Adresse und Telefon überall im Netz in derselben Schreibweise?</div><span><i class="box"></i> Ja</span><span><i class="box"></i> Nein</span></div>
+    <div class="ja-nein"><div>7. Lädt deine Startseite am Handy in unter drei Sekunden?</div><span><i class="box"></i> Ja</span><span><i class="box"></i> Nein</span></div>
+    <div class="ja-nein"><div>8. Ist die Telefonnummer am Handy mit einem Tipp wählbar und das Formular in zwei Tipps erreichbar?</div><span><i class="box"></i> Ja</span><span><i class="box"></i> Nein</span></div>
+    <div class="ja-nein"><div>9. Veröffentlichst du mindestens alle zwei Wochen etwas im Unternehmensprofil?</div><span><i class="box"></i> Ja</span><span><i class="box"></i> Nein</span></div>
+    <div class="ja-nein"><div>10. Schaust du einmal im Monat in Search Console oder Profil-Statistik?</div><span><i class="box"></i> Ja</span><span><i class="box"></i> Nein</span></div>
+  </div>
+  <div class="score sec">
+    <div class="card" style="border-color: var(--accent);"><span class="k">0 bis 3 mal Ja</span><b>Grundlagen fehlen</b><p>Gute Nachricht: Hier wirkt jede Stunde. Fang mit Schritt 1 an, dann 4, dann 6. Alles andere kann warten.</p></div>
+    <div class="card"><span class="k">4 bis 7 mal Ja</span><b>Solide Basis</b><p>Jetzt entscheidet Konsequenz. Schritt 2 und 3 sauber umsetzen, Wochenplan starten, nach drei Monaten vergleichen.</p></div>
+    <div class="card"><span class="k">8 bis 10 mal Ja</span><b>Feinschliff</b><p>Du bist weiter als die meisten. Jetzt lohnen Stadtseiten mit echtem Inhalt, Partner-Links und das Messen aus Seite 11.</p></div>
+  </div>
+  <div class="foot"><span>Pixel56 · SEO-Checkliste</span><b>10</b></div>
+</section>
+
+<!-- 11 Messen -->
+<section class="page">
+  <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
+  <span class="tag">Messen</span>
+  <h2>Woran du merkst, <em>dass es wirkt</em></h2>
+  <p class="lead">Nicht am Bauchgefühl und nicht daran, ob du dich selbst findest. Zwei kostenlose Werkzeuge reichen, fünf Minuten pro Woche.</p>
+  <div class="grid2 sec">
+    <div class="card"><span class="k">Google Search Console</span><h3>Was deine Website bei Google macht</h3><ul class="lines" style="margin-top:6px;"><li><b>Impressionen:</b> Wie oft du angezeigt wirst. Steigt zuerst, lange bevor Klicks kommen.</li><li><b>Klicks und Position</b> je Suchbegriff: Welche Begriffe bewegen sich? Erst die konkreten, dann die umkämpften.</li><li><b>Seiten mit Fehlern:</b> Nicht gefundene Seiten, Weiterleitungen, mobile Probleme.</li></ul></div>
+    <div class="card"><span class="k">Unternehmensprofil → Leistung</span><h3>Was dein Profil bringt</h3><ul class="lines" style="margin-top:6px;"><li><b>Anrufe, Routenanfragen, Website-Klicks:</b> die Zahlen, die am Ende Aufträge sind.</li><li><b>Suchbegriffe,</b> über die Kunden dein Profil gefunden haben: Abgleich mit deiner Liste aus Schritt 2.</li><li><b>Fotoaufrufe:</b> Steigen nach jedem neuen Beitrag. Ein guter Frühindikator.</li></ul></div>
+  </div>
+  <div class="sec">
+    <span class="tag">Realistischer Fahrplan</span>
+    <div class="timeline">
+      <div class="card"><span>Woche 1 bis 6</span><b>Grundlagen</b><p>Profil vollständig, Bewertungsablauf läuft, Titel und Überschriften korrigiert. Sichtbar: mehr Profilaufrufe, erste Bewertungen.</p></div>
+      <div class="card"><span>Monat 2 bis 4</span><b>Erste Bewegung</b><p>Konkrete Begriffe („Flachdach sanieren Neuwied“) tauchen auf. Impressionen steigen, Klicks folgen. Nicht aufgeben, jetzt festigt sich alles.</p></div>
+      <div class="card"><span>Monat 4 bis 6</span><b>Umkämpfte Begriffe</b><p>„Dachdecker Koblenz“ bewegt sich, je nach Konkurrenz. In kleineren Städten schneller als in großen. Das ist normal, nicht dein Fehler.</p></div>
+    </div>
+  </div>
+  <div class="grid2 sec">
+    <div class="tip"><b>Warnzeichen bei Anbietern:</b> „Platz 1 garantiert“, „in zwei Wochen oben“, Ergebnisse ohne Zugang zu deiner Search Console. Seriöse Arbeit zeigt dir ihre Zahlen.</div>
+    <div class="tip"><b>Übergangslösung:</b> Wer sofort Anfragen braucht, überbrückt die Aufbauphase mit Google Ads auf dieselben Begriffe. SEO baut im Hintergrund das Fundament, das bleibt, wenn das Anzeigenbudget aus ist.</div>
+  </div>
+  <div class="foot"><span>Pixel56 · SEO-Checkliste</span><b>11</b></div>
+</section>
+
+<!-- 12 Nächster Schritt -->
+<section class="page">
+  <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
+  <span class="tag">Nächster Schritt</span>
+  <h2>Mehr offene Punkte, <em>als du selbst angehen willst?</em></h2>
+  <p class="lead">Im kostenlosen Erstgespräch gehen wir deinen Selbsttest durch und sagen dir ehrlich, was du in einer Stunde selbst erledigst und wo sich Hilfe lohnt. Kein Verkaufsgespräch, keine Verpflichtung.</p>
+  <div class="cta sec">
+    <div class="glow"></div>
+    <h2 style="font-size:18pt;">Kostenloses Erstgespräch, <em>15 Minuten</em></h2>
+    <p>Per WhatsApp an <b style="color:#f5f4f2;">0178 5282464</b>, per E-Mail an <b style="color:#f5f4f2;">info@pixel56.de</b> oder direkt einen Termin wählen:</p>
+    <a class="btn" href="https://calendly.com/pixel56/15min">calendly.com/pixel56/15min</a>
+  </div>
+  <div class="grid2 sec">
+    <div class="card"><span class="k">Über Pixel56</span><p>Digitalagentur aus der Region Koblenz, gegründet 2018 und geführt von Atilla Ciftcioglu. Websites, Kampagnen, Content und KI-Prozesse für Handwerk, Dienstleister und Mittelstand. Ein Ansprechpartner pro Projekt, deutschlandweit im Einsatz.</p></div>
+    <div class="card"><span class="k">So arbeiten wir bei SEO</span><p>Technik zuerst, dann lokale Sichtbarkeit, dann Inhalte. Ehrlich eingeordnet, ohne Platz-1-Versprechen, mit Zugang zu deinen Zahlen. Wir arbeiten die Liste mit dir ab, nicht an dir vorbei.</p></div>
+  </div>
+  <div class="sec">
+    <span class="tag">Weiterlesen</span>
+    <ul class="lines">
+      <li>SEO-Grundlagen bei Pixel56: www.pixel56.de/suchmaschinenoptimierung</li>
+      <li>Website-Check, kostenlos in 30 Sekunden: www.pixel56.de/website-check</li>
+      <li>Blog: Google-Unternehmensprofil optimieren, mehr Google-Rezensionen bekommen, wie lange SEO dauert: www.pixel56.de/blog</li>
+      <li>Die zweite Checkliste: Wo spart KI in deinem Betrieb wirklich Zeit? www.pixel56.de/checkliste-ki-agenten</li>
+    </ul>
+  </div>
+  <div class="note sec">Diese Checkliste darf im eigenen Betrieb frei verwendet und weitergegeben werden. Sie ersetzt keine Rechtsberatung. Namen in den Vorlagen sind erfunden. Titelfoto: Stockfoto. Pixel56 · www.pixel56.de · Stand Oktober 2026.</div>
+  <div class="foot"><span>Pixel56 · SEO-Checkliste</span><b>12</b></div>
+</section>
+
+</body>
+</html>

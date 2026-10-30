@@ -1264,6 +1264,46 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 30.10.2026 (lokal): SEO-Checkliste neu als eigene PDF
+
+Inhaber nach Abnahme der KI-Checkliste: „Richtig gut, dann bearbeite die
+andere PDF auch besser, auch vom Inhalt mehr Mehrwert.“
+
+Bau: `freebies/seo-checkliste/index.html`; die gemeinsamen Stile liegen
+jetzt in `freebies/freebie.css` (auch von der KI-Checkliste genutzt).
+Titelfoto ist das Handwerker-Stockfoto aus der alten Canva-PDF
+(`freebies/seo-checkliste/titelbild.jpg`), Logo oben links auf heller
+Pille, Logo auf jeder Innenseite. 12 Seiten, rund 1,5 MB.
+
+Inhalt, abgestimmt auf SEO-Seite und Blog (keine Platz-1-Versprechen,
+Zeiträume wie im Artikel „SEO-Dauer“, Bewertungsregeln wie im Artikel
+„Mehr Google-Rezensionen“):
+
+1. Titel. 2. Wie Google lokal entscheidet (Relevanz, Entfernung,
+Bekanntheit), realistische Zeiträume (Tage / 4–6 Wochen / Monat 2–4),
+Inhalt. 3. Schritt 1 Unternehmensprofil (6 Punkte, Hinweis ohne
+Ladenlokal, Beiträge). 4. Schritt 2 Suchbegriffe (4 Punkte, Tabelle zum
+Ausfüllen, Rang-Prüfung im privaten Fenster). 5. Schritt 3 Website (6
+Punkte, Vorlage Titel/Beschreibung). 6. Schritt 4 Bewertungen (4 Punkte,
+drei Textvorlagen: Bitte, Antwort auf 5 Sterne, Antwort auf Kritik).
+7. Schritt 5 Einträge und Links (4 Punkte, Warnung vor gekauften Links,
+Schnellprüfung). 8. Schritt 6 Technik und Handy (4 Punkte, Kasten
+Website-Check). 9. Schritt 7 Dranbleiben (2 Punkte, Wochenplan-Tabelle mit
+Abhak-Kästchen für vier Wochen, Monatsroutine). 10. Selbsttest zehn Fragen
+mit drei Auswertungsstufen. 11. Messen (Search Console, Profil-Leistung,
+Fahrplan über sechs Monate, Warnzeichen bei Anbietern, Google Ads als
+Brücke). 12. Erstgespräch, Über Pixel56, Weiterlesen, Hinweis (Namen in
+Vorlagen erfunden, Titelfoto Stockfoto).
+
+Website: `lib/ressourcen.ts` (12 Seiten, 30 Prüfpunkte, Teile, Schritte),
+Teaser auf Start, Blog, Dienstleistung, SEO-Seite, Website-Check, Blog-
+Artikel-Kasten, `llms.txt`. Neues transparentes Vorschaubild
+`public/bilder/freebie-seo-ebook-transparent.webp`. Build,
+`seo:check:strict`, Screenshot ok.
+
+Offen beim Inhaber: beide PDFs in MailerLite hochladen und in den
+Automationen „Lokales SEO“ und „KI-Agent“ tauschen, dann Push.
+
 ## 29.10.2026 (lokal): KI-Agenten-Checkliste neu als eigene PDF
 
 Inhaber: „Wenn du es besser bauen kannst, mit Mehrwert und besserem Design.“
