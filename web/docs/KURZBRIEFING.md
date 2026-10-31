@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 29.10.2026
+# Kurzbriefing — Stand 31.10.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -228,62 +228,50 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Netlify → Fragebogen-Test → Domainumzug → Google-Freigabe. Anwaltsprüfung
   der Rechtstexte erst im Nachgang.
 
-## Offene Punkte (Reihenfolge = Priorität)
+## Offene Punkte (Reihenfolge = Priorität, Stand 31.10.)
 
-1. **Vom Inhaber erwartet:** Rückmeldung zu den gekürzten Leistungsseiten,
-   zur neuen Kontaktseite und zur Projekte-Übersicht (17.10., Auftrag „pass
-   alles an“ für den Vier-Punkte-Plan: Leistungstexte, Kontakt + Projekte,
-   Env-Liste, Livegang-Checkliste; alles umgesetzt, siehe STATUS 17.10.).
-   **Adloc und Teykto bleiben in der Testphase** (nicht buchbar); bei Start
-   Kicker/Hinweis auf der KI-Seite ändern.
-2. **Klick-Fragebogen** auf allen acht Leistungsseiten und als Hauptweg auf
-   `/kontakt` (`frageboegen.allgemein`: erste Frage wählt das Thema, der
-   Betreff der Mail trägt es). Technik: `lib/fragebogen.ts`,
-   `components/LeistungsAnfrage.tsx`, `app/api/anfrage/route.ts`. Resend-
-   Schlüssel seit 23.10. in Netlify gesetzt, Fragebogen live getestet. Budget-Spannen sind Vorschläge,
-   unterste Stufe weich („Erstmal klein anfangen“), intern als „kleines
-   Budget“ markiert. Personenzeile „Gründer · antwortet dir persönlich“.
-3. **Nur der Inhaber kann:** Rechtstexte gegenlesen (Impressum, Datenschutz enthält jetzt
-   Fragebogen/Resend und Website-Check; AGB seit 23.10. vollständig nach
-   den Vorgaben des Inhabers: 50 % Anzahlung, 14 Tage, 4 Wochen Kündigung,
-   Referenzrecht; Anwalt soll gegenlesen).
-   Domainumzug ist seit 23.10. durch, Seite ist live und indexierbar.
-   Webflow-Hosting ab 6.11. kündigen (zwei Wochen stabil).
-4. **Pushes sparsam** (Netlify-Build-Kontingent), Screenshots in den Chat
-   (`SendUserFile`), nur ein Push pro abgeschlossenem Paket.
-5. Medien: Reels Handwerk (M&A Transporte, GM-Dachdecker), echte
-   Vorher-Screenshots, Zuordnung der schematischen Vorher-Varianten bestätigen.
-6. Redaktion: 31 alte Blogartikel nachschärfen; Stadttexte gegenlesen;
-   Blog-Teaser auf der Startseite auf den neuen Ton prüfen.
-7. Standortseiten mit Search-Console-Daten abgleichen (`regionStaedte`).
+**Sofort, nur der Inhaber kann es (dann „Push“):**
 
-- **Einblend-Fehler behoben (23.10.):** `components/Reveal.tsx` blendete
-  Abschnitte erst ab 12 % Sichtbarkeit ein; sehr hohe Abschnitte (Projektliste
-  auf dem Handy, fast 10.000 px) blieben deshalb weiß. Jetzt Schwelle 0 plus
-  Sicherheitsnetz beim Scrollen. Inhaber hatte die leere Projektseite auf dem
-  iPhone gemeldet. Netlify-Kontingent seit 22.10. wieder frei, Deploys laufen
-  nach jedem Push automatisch.
-- **Fragebogen auf sechs Fragen (23.10., Wunsch des Inhabers):** überall
-  neue Frage „Wie groß ist dein Betrieb?“ (allein, 3–10, 11–50, über 50),
-  Webdesign zusätzlich „Was brauchst du?“ (einzelne Seite, mehrere
-  Unterseiten, Website plus Funnel/Buchung/Bewerbung, Shop) statt der
-  Zeitfrage und Ziel-Option „wie eine Visitenkarte“. Texte „fünf Klicks“ →
-  „sechs Klicks“. Zusammenfassungen auf Über uns, Leistungsübersicht und
-  Karriere auf „Kleine und mittelständische Unternehmen, Handwerk, Vereine“,
-  Kundenstimmen-Köpfe überall „Wörtlich so veröffentlicht.“ Prüflauf über
-  19 Seiten (Desktop + Handy): keine JS-Fehler, kein Überlauf, keine
-  kaputten Bilder, je genau eine H1.
-- **Next.js aktualisiert (23.10.):** 16.4.0 → 16.4.2 wegen einer vom
-  Framework gemeldeten Sicherheitslücke. Build, SEO-Prüfung, Einblend-Test,
-  Fragebogen-Klicktests und Statuscodes danach unverändert in Ordnung.
+1. MailerLite: Gruppe + Automation („Subscriber joins a group“) für das
+   neue E-Book `web/freebies/ki-suche.pdf` anlegen; Gruppen-Nummer als
+   `MAILERLITE_GROUP_KI_SUCHE` in Netlify eintragen, Trigger deploy.
+2. MailerLite: in den Automationen „Lokales SEO“ und „KI-Agent“ die alten
+   Canva-PDFs gegen `web/freebies/seo-checkliste.pdf` und
+   `web/freebies/ki-agenten-checkliste.pdf` tauschen (File manager).
+3. Danach „Push“: Seitentexte beschreiben bereits die neuen PDFs.
 
-## Zuletzt geprüft (23.10.)
+**Danach, in der Sitzung:**
 
-Build fehlerfrei (746 Routen), `seo:check:strict` ohne Befund. Playwright-
-Prüflauf über 19 Seiten (Desktop + Mobil): keine Skriptfehler, kein Überlauf,
-keine kaputten Bilder, je eine h1. Metadaten-Prüfung derselben Seiten plus
-404: Titel unter 62 Zeichen, Beschreibungen unter 165, canonical und
-OG-Bild vorhanden, keine doppelten Titel (Webdesign-Seite heißt jetzt
-„Webdesign Agentur: …“, die Koblenz-Standortseite behält „Webdesign
-Koblenz: …“). Besuchs-Hinweise auf Bendorf („persönlich in Bendorf“) aus
-Standortseiten und Schnellsuche entfernt.
+4. E-Book KI-Suche von 7 auf 10 (Inhaber-Ziel): Ein-Seiten-Kurzfassung
+   (Selbsttest + fünf Hebel) als Beilage; Titelbild ggf. gegen das in Canva
+   erzeugte Dachdecker-Bild tauschen (Inhaber lädt es hoch, dann
+   „KI-generiert“ im Nachweis); Praxisbeispiel aus einem echten Betrieb
+   nachliefern, sobald ein Kunde die Hebel umgesetzt hat (Selbsttest vorher/
+   nachher, 2–3 Monate); Zahlen halbjährlich prüfen.
+5. Partnerprogramm: Inhaber prüft Ton live unter `/partner`; falls auch
+   Empfehlungspartner bis 35 % bekommen sollen, eine Zahl ändern.
+6. Webflow-Hosting ab 6.11. kündigen (Seite seit 23.10. live und stabil).
+7. Rechtstexte (Impressum, Datenschutz, AGB) von Anwalt/Generator
+   gegenlesen lassen; Datenschutz um Google Places ergänzen, falls die
+   Variablen gesetzt werden.
+8. Search Console Mitte November: Abdeckung der 13 Standortseiten, 404,
+   Klicks; „5 Gründe“-Artikel; Standortseiten mit Daten abgleichen.
+9. Inhaber-Entscheidungen offen: sechs kurze Blog-Zwillinge zusammenlegen?
+   „Bendorf“ auf `/standorte`-Übersicht lassen? Cloudflare-Umzug (nur bei
+   steigenden Netlify-Kosten)?
+10. Medien und Redaktion: Reels Handwerk, echte Vorher-Screenshots, 31
+    alte Blogartikel nachschärfen, Adloc/Teykto-Hinweise bei Start ändern.
+
+**Technik-Merkzettel:** Freebie-PDFs bauen mit
+`node scripts/freebie-pdf.mjs <ki-agenten-checkliste|seo-checkliste|ki-suche>`
+(HTML in `freebies/<name>/index.html`, Stile `freebies/freebie.css`,
+Vorschaubilder per PIL aus `<name>-titel.png`). Canva/Higgsfield-Bilder sind
+aus der Sandbox nicht in voller Größe ladbar; der Inhaber lädt sie hoch.
+
+## Zuletzt geprüft (30.10.)
+
+Build fehlerfrei (750 Routen), `seo:check:strict` ohne Befund, Playwright
+auf 390/1280 px für `/partner`, Freebie-Seiten, Start, Karriere: kein
+Überlauf, keine Skriptfehler, interne Links 200. PageSpeed live (29.10.,
+mobil): Leistung 89, Barrierefreiheit 97 → lokal 100 nach ARIA-Fix, Best
+Practices 100, SEO 100.
