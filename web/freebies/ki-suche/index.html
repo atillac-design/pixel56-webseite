@@ -33,6 +33,28 @@
   .myth .n p { color: var(--ink); font-weight: 600; }
   .src-list { font-size: 9pt; color: var(--ink-dim); display: grid; gap: 5px; }
   .src-list div { padding-left: 14px; position: relative; }
+  .fill { font-size: 10pt; line-height: 1.9; color: var(--ink); margin: 0; }
+  .zeile { display: flex; gap: 8px; align-items: flex-end; font-size: 9.6pt; color: var(--ink-dim); margin-top: 9px; }
+  .zeile i { flex: 1; border-bottom: 1px solid var(--line-strong); height: 14px; }
+  .fill u { text-decoration: none; display: inline-block; min-width: 30mm; border-bottom: 1px solid var(--line-strong); vertical-align: baseline; }
+  .fill u.kurz { min-width: 18mm; } .fill u.lang { min-width: 48mm; }
+  .branche { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
+  .branche b { display: block; font-size: 10.5pt; margin-bottom: 4px; letter-spacing: -0.01em; }
+  .branche p { font-size: 9pt; color: var(--ink-dim); margin: 0 0 3px; padding-left: 12px; position: relative; line-height: 1.4; }
+  .branche p::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 1.5px; background: var(--accent); }
+  .kurz-block { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 9px 12px 7px; }
+  .kurz-block .k { font-size: 8.5pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-text); font-weight: 600; display: block; margin-bottom: 5px; }
+  .kurz-block .k small { color: var(--ink-faint); letter-spacing: 0.06em; font-weight: 500; }
+  .kurz-block div.i { display: grid; grid-template-columns: 14px 1fr; gap: 8px; align-items: start; font-size: 9.3pt; line-height: 1.3; padding: 2.5px 0; border-bottom: 1px solid var(--line); }
+  .kurz-block div.i:last-child { border-bottom: 0; }
+  .kurz-block div.i .box { margin-top: 1px; width: 13px; height: 13px; }
+  .kurz-block div.i span b { color: var(--ink-faint); font-weight: 600; margin-right: 3px; }
+  .score { display: grid; gap: 4px; margin-top: 4px; }
+  .score div { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 5px 9px; font-size: 9.2pt; color: var(--ink-dim); line-height: 1.35; }
+  .score div b { color: var(--accent-text); font-weight: 700; margin-right: 4px; }
+  .glossar { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .glossar div { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 6px 9px; font-size: 8.8pt; color: var(--ink-dim); line-height: 1.3; }
+  .glossar div b { display: block; color: var(--ink); font-size: 9.8pt; margin-bottom: 1px; }
   .src-list div::before { content: ""; position: absolute; left: 0; top: 7px; width: 7px; height: 1.5px; background: var(--accent); }
 </style>
 </head>
@@ -54,8 +76,8 @@
   <div class="cover-copy">
     <span class="tag">Leitfaden · KI-Suche für Handwerk und Mittelstand</span>
     <h1>Gefunden werden, wenn Kunden <em>die KI fragen.</em></h1>
-    <p class="lead" style="font-size:12.5pt; color:#d9d6de; max-width:160mm;">Immer mehr Kunden googeln nicht mehr, sie fragen. Google antwortet mit KI-Übersichten und KI-Modus, dazu ChatGPT und Co. Dieser Leitfaden zeigt, woher die Antworten kommen, wie du prüfst, ob dein Betrieb vorkommt, und welche fünf Hebel das ändern. Mit Selbsttest, Vorlagen und 30-Tage-Plan.</p>
-    <div class="chips"><span>5 Hebel</span><span>28 Prüfpunkte</span><span>Selbsttest</span><span>30-Tage-Plan</span></div>
+    <p class="lead" style="font-size:12.5pt; color:#d9d6de; max-width:160mm;">Immer mehr Kunden googeln nicht mehr, sie fragen. Google antwortet mit KI-Übersichten und KI-Modus, dazu ChatGPT und Co. Dieser Leitfaden zeigt, woher die Antworten kommen, wie du prüfst, ob dein Betrieb vorkommt, und welche fünf Hebel das ändern. Mit Selbsttest, Vorlagen, 30-Tage-Plan und einer Kurzfassung zum Ausdrucken.</p>
+    <div class="chips"><span>5 Hebel</span><span>28 Prüfpunkte</span><span>Selbsttest</span><span>30-Tage-Plan</span><span>Vorlagen</span><span>Kurzfassung</span></div>
   </div>
   <div class="foot"><span>www.pixel56.de/suchmaschinenoptimierung</span><span>Stand Oktober 2026</span></div>
 </section>
@@ -67,7 +89,7 @@
   <h2>Die Suche hat sich verändert, <em>die Kunden auch</em></h2>
   <p class="lead">Drei Zahlen, die den Unterschied zu 2023 ausmachen. Keine Panik nötig, aber ein klarer Blick.</p>
   <div class="grid3 sec">
-    <div class="stat"><b>~ 20 %</b><p>der Google-Suchanfragen in Deutschland zeigen oben eine KI-Übersicht, bei Fragen und seltenen Begriffen deutlich mehr.</p><small>Sistrix, Auswertung von über 100 Mio. Suchbegriffen, 2026</small></div>
+    <div class="stat"><b>~ 20 %</b><p>der Google-Suchanfragen in Deutschland zeigen oben eine KI-Übersicht, bei Fragen und seltenen Begriffen deutlich mehr.</p><small>Sistrix, über 100 Mio. Suchbegriffe, Anfang 2026. Im August 2025 waren es 17 %.</small></div>
     <div class="stat"><b>Okt. 2025</b><p>Seitdem gibt es in Deutschland den KI-Modus in der Google-Suche: ein eigener Reiter, der ganze Gespräche statt Trefferlisten liefert.</p><small>Google, Start in Deutschland und weiteren EU-Ländern</small></div>
     <div class="stat"><b>900 Mio.</b><p>Menschen nutzen ChatGPT jede Woche. Viele davon fragen dort nach Handwerkern, Preisen und Erfahrungen, statt zu googeln.</p><small>OpenAI, Februar 2026</small></div>
   </div>
@@ -78,12 +100,13 @@
   <div class="sec">
     <span class="tag">Inhalt</span>
     <div class="toc">
-      <div><span>1</span><span>Wie KI-Antworten entstehen, in einfachen Worten</span><span>Seite 3</span></div>
+      <div><span>1</span><span>Wie KI-Antworten entstehen, sechs Begriffe in je einem Satz</span><span>Seite 3</span></div>
       <div><span>2</span><span>Selbsttest: Kommt dein Betrieb vor? Sechs Fragen an die KI</span><span>Seite 4</span></div>
       <div><span>3</span><span>Hebel 1 bis 5: eindeutig, belegt, antwortfähig, bestätigt, erreichbar</span><span>Seite 5 bis 9</span></div>
       <div><span>4</span><span>Was nicht funktioniert: sechs Irrtümer</span><span>Seite 10</span></div>
-      <div><span>5</span><span>Messen, 30-Tage-Plan, so haben wir es selbst gemacht</span><span>Seite 11 bis 13</span></div>
-      <div><span>6</span><span>Quellen und nächster Schritt</span><span>Seite 14</span></div>
+      <div><span>5</span><span>Messen und 30-Tage-Plan mit Zuständigkeiten</span><span>Seite 11 bis 12</span></div>
+      <div><span>6</span><span>Vorlagen zum Ausfüllen, Fragen für sechs Branchen, Kurzfassung zum Ausdrucken</span><span>Seite 13 bis 14</span></div>
+      <div><span>7</span><span>So haben wir es selbst gemacht, Quellen, nächster Schritt</span><span>Seite 15 bis 16</span></div>
     </div>
   </div>
   <div class="foot"><span>Pixel56 · KI-Suche</span><b>2</b></div>
@@ -112,6 +135,17 @@
     <div class="tip"><b>Warum die Antworten schwanken:</b> Dieselbe Frage, zwei Minuten später, andere Betriebe. Das ist normal. KI-Antworten sind keine feste Rangliste. Ziel ist, regelmäßig vorzukommen, nicht jedes Mal.</div>
     <div class="tip"><b>Was du nicht beeinflussen kannst:</b> Welche Quellen ein System bevorzugt, wie es Bewertungen gewichtet, wann es Daten aktualisiert. Deshalb: breit aufstellen statt auf einen Trick setzen.</div>
   </div>
+  <div style="margin-top:9px;">
+    <span class="tag" style="margin-bottom:7px;">Sechs Begriffe, je ein Satz</span>
+    <div class="glossar">
+      <div><b>KI-Übersicht</b>Googles Antwortkasten oben über den Treffern, mit Links zu den Quellen.</div>
+      <div><b>KI-Modus</b>Eigener Reiter in der Google-Suche: nachfragen wie im Chat, Antworten statt Trefferliste.</div>
+      <div><b>Unternehmensprofil</b>Dein kostenloser Google-Eintrag mit Adresse, Fotos, Bewertungen. Früher „Google My Business“.</div>
+      <div><b>Strukturierte Daten</b>Unsichtbare Angaben im Seitencode: Das ist ein Betrieb, seine Adresse, seine Fragen und Antworten.</div>
+      <div><b>robots.txt</b>Kleine Textdatei auf deiner Website: Welche Programme dürfen deine Seiten lesen?</div>
+      <div><b>Impression</b>Deine Seite wurde in einer Antwort oder Trefferliste gezeigt, auch ohne Klick.</div>
+    </div>
+  </div>
   <div class="foot"><span>Pixel56 · KI-Suche</span><b>3</b></div>
 </section>
 
@@ -132,7 +166,7 @@
       <tr><td>Vergleich: die besten [Gewerk] in [Stadt] und Umgebung</td><td class="blank"></td><td></td><td></td><td></td></tr>
     </tbody>
   </table>
-  <p class="note" style="margin-top:8px;">Eintragen: „ja“, „nein“ oder „Wettbewerber X“. In der letzten Spalte die Quellen, die die KI anzeigt: Unternehmensprofil, bestimmte Websites, Portale, Presse. Genau dort musst du vorkommen.</p>
+  <p class="note" style="margin-top:8px;">Eintragen: „ja“, „nein“ oder „Wettbewerber X“. In der letzten Spalte die Quellen, die die KI anzeigt: Unternehmensprofil, bestimmte Websites, Portale, Presse. Genau dort musst du vorkommen. Kein Handwerk? Auf Seite 13 stehen die Fragen für sechs weitere Branchen.</p>
   <div class="grid3 sec">
     <div class="card" style="border-color: var(--accent);"><span class="k">Du wirst genannt</span><p>Gut. Sichere das ab: Schau, welche Quelle dich getragen hat, und stärke sie (Hebel 2 und 4). Wiederhole den Test monatlich.</p></div>
     <div class="card"><span class="k">Wettbewerber werden genannt, du nicht</span><p>Öffne deren Quellen. Meist siehst du sofort: mehr Bewertungen mit Text, eine Seite, die die Frage beantwortet, ein Innungs- oder Presseeintrag. Das ist deine Liste.</p></div>
@@ -270,7 +304,7 @@
   <h2>Woran du merkst, <em>dass es wirkt</em></h2>
   <p class="lead">Die Werkzeuge hinken der Technik hinterher. Was heute messbar ist, in fünf Minuten pro Woche.</p>
   <div class="grid2 sec">
-    <div class="card"><span class="k">Google Search Console</span><h3>Klicks und KI-Impressionen</h3><ul class="lines" style="margin-top:6px;"><li>Klicks aus KI-Übersichten und KI-Modus zählen seit Juni 2025 im normalen Leistungsbericht mit, ohne eigenen Filter.</li><li>Ein neuer Bericht „Generative KI“ zeigt Impressionen in KI-Übersichten und KI-Modus getrennt. Er ist 2026 schrittweise gestartet und noch nicht in jedem Konto sichtbar.</li><li>Wichtig: Impressionen steigen oft, während Klicks bei Wissensfragen sinken. Das ist kein Alarm, solange Anfragen kommen.</li></ul></div>
+    <div class="card"><span class="k">Google Search Console</span><h3>Klicks und KI-Impressionen</h3><ul class="lines" style="margin-top:6px;"><li>Klicks aus KI-Übersichten und KI-Modus zählen seit Juni 2025 im normalen Leistungsbericht mit, ohne eigenen Filter.</li><li>Seit Juni 2026 zeigt der Bericht „Generative KI“ Impressionen aus KI-Übersichten und KI-Modus getrennt, nach Seite, Land und Gerät. Klicks enthält er nicht; er ist noch in der Testphase und fehlt in Konten mit wenigen KI-Impressionen.</li><li>Wichtig: Impressionen steigen oft, während Klicks bei Wissensfragen sinken. Das ist kein Alarm, solange Anfragen kommen.</li></ul></div>
     <div class="card"><span class="k">Website-Statistik</span><h3>Besucher aus KI-Systemen</h3><ul class="lines" style="margin-top:6px;"><li>In Analytics, Matomo oder der Netlify-/Hoster-Statistik nach Verweisen von chatgpt.com, perplexity.ai, copilot.microsoft.com, gemini.google.com filtern.</li><li>Die Zahlen sind klein, aber die Besucher sind warm: Sie kommen mit einer Empfehlung.</li><li>Beobachte, welche Seiten sie landen lassen. Das sind die Seiten, die zitiert werden.</li></ul></div>
   </div>
   <div class="grid2 sec">
@@ -300,7 +334,7 @@
     <div>
       <span class="tag">Danach, jeden Monat</span>
       <ul class="lines">
-        <li>Selbsttest wiederholen, Ergebnis in die Tabelle.</li>
+        <li>Selbsttest wiederholen, Ergebnis in die Tabelle (Seite 14).</li>
         <li>Eine weitere Leistungsseite antwortfähig machen.</li>
         <li>Vier Bewertungen mit Inhalt, vier Antworten.</li>
         <li>Eine Erwähnung von außen anstoßen: Presse, Verein, Partner, Video.</li>
@@ -323,7 +357,112 @@
   <div class="foot"><span>Pixel56 · KI-Suche</span><b>12</b></div>
 </section>
 
-<!-- 13 Pixel56 selbst -->
+<!-- 13 Vorlagen und Branchen -->
+<section class="page">
+  <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
+  <span class="tag">Vorlagen zum Ausfüllen</span>
+  <h2>Deine Sätze, <em>einmal festgelegt</em></h2>
+  <p class="lead">Vier Texte, die in Hebel 1 bis 4 immer wieder gebraucht werden. Einmal festlegen, dann überall gleich verwenden.</p>
+  <div class="grid2 sec">
+    <div class="notes"><span class="k">Dein Beschreibungssatz · Hebel 1, Punkt 02</span>
+      <p style="font-size:9.6pt; color:var(--ink-dim); margin:0;">„[Betrieb] ist ein [Gewerk]-Meisterbetrieb in [Stadt], spezialisiert auf [Leistung 1] und [Leistung 2], seit [Jahr]. Wir arbeiten in [Region] und Umgebung.“</p>
+      <i></i><i></i><i></i>
+    </div>
+    <div class="notes"><span class="k">Über-uns-Gerüst · Hebel 1, Punkt 03</span>
+      <div class="zeile"><span>Inhaber/in, Qualifikation</span><i></i></div>
+      <div class="zeile"><span>Gegründet, Teamgröße</span><i></i></div>
+      <div class="zeile"><span>Kammer, Innung</span><i></i></div>
+      <div class="zeile"><span>Einzugsgebiet</span><i></i></div>
+    </div>
+  </div>
+  <div class="grid2 sec">
+    <div class="vorlage"><span class="k">Kurzmeldung für Lokalzeitung, Stadtportal, Verein · Hebel 4, Punkt 20</span>„[Betrieb] aus [Stadt] bildet ab August [zwei] neue [Gewerk]-Lehrlinge aus. Der Meisterbetrieb, seit [Jahr] in [Stadt], ist auf [Leistung] spezialisiert. Inhaber [Name]: ‚[Ein Satz, warum ihr ausbildet].‘ Mehr unter [Website].“ Dazu ein Foto mit Namen und der Link zur Website. Geht genauso für Jubiläum, neue Leistung, Spende, Messe.</div>
+    <div class="vorlage"><span class="k">Video-Titel und Beschreibung · Hebel 4, Punkt 21</span>Titel: „[Gewerk] in [Stadt]: So arbeitet [Betrieb]“. Beschreibung: dein Beschreibungssatz von oben, Telefon, Website, Einzugsgebiet. Inhalt: Inhaber stellt sich vor, eine Baustelle, das Team, ein Satz zum Ablauf. Zwei Minuten am Handy reichen.</div>
+  </div>
+  <div class="sec">
+    <span class="tag">Die sechs Fragen in deiner Branche</span>
+    <p class="note" style="margin-bottom:8px;">Der Selbsttest von Seite 4 gilt für jede Branche. So klingen die Fragen dort. Orte und Leistungen austauschen, dann in die Tabelle.</p>
+    <div class="grid3">
+      <div class="branche"><b>Heizung und Sanitär</b><p>Wer tauscht in [Stadt] eine Gasheizung gegen eine Wärmepumpe, und was kostet das ungefähr?</p><p>Notdienst bei Rohrbruch in [Stadt], wer kommt heute?</p></div>
+      <div class="branche"><b>Steuerberatung</b><p>Welcher Steuerberater in [Stadt] betreut Handwerksbetriebe und kennt sich mit Bauabzugsteuer aus?</p><p>Was kostet die laufende Buchhaltung für eine GmbH mit zehn Mitarbeitern?</p></div>
+      <div class="branche"><b>Physiotherapie</b><p>Welche Praxis in [Stadt] hat kurzfristig Termine und behandelt Rückenschmerzen nach Bandscheibenvorfall?</p><p>Physiotherapie [Stadt] Erfahrungen</p></div>
+      <div class="branche"><b>Kfz-Werkstatt</b><p>Freie Werkstatt in [Stadt] für [Marke] mit Garantieerhalt bei der Inspektion?</p><p>Was kostet ein Bremsenwechsel in [Stadt] ungefähr?</p></div>
+      <div class="branche"><b>Maschinenbau, Zulieferer</b><p>Welcher Lohnfertiger in [Region] fräst Kleinserien aus Aluminium mit kurzer Lieferzeit?</p><p>Sondermaschinenbau [Region] mit Referenzen aus der Lebensmittelindustrie</p></div>
+      <div class="branche"><b>Pflegedienst</b><p>Welcher ambulante Pflegedienst in [Stadt] hat freie Kapazität und übernimmt Pflegegrad 3?</p><p>Was zahlt die Pflegekasse bei [Leistung], und wer berät in [Stadt] kostenlos?</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Pixel56 · KI-Suche</span><b>13</b></div>
+</section>
+
+<!-- 14 Kurzfassung -->
+<section class="page">
+  <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
+  <span class="tag">Kurzfassung zum Ausdrucken</span>
+  <h2>28 Prüfpunkte <em>auf einer Seite</em></h2>
+  <p class="lead">Für die Pinnwand im Büro. Haken nur, was heute wirklich erledigt ist, dann zählen und unten ablesen.</p>
+  <div class="grid2 sec">
+    <div class="kurz-block"><span class="k">Hebel 1 · Eindeutig <small>· Seite 5</small></span>
+      <div class="i"><div class="box"></div><span><b>01</b>Name, Adresse, Telefon überall gleich</span></div>
+      <div class="i"><div class="box"></div><span><b>02</b>Ein Beschreibungssatz, überall derselbe</span></div>
+      <div class="i"><div class="box"></div><span><b>03</b>Über-uns mit Namen, Qualifikation, Jahreszahlen</span></div>
+      <div class="i"><div class="box"></div><span><b>04</b>Gewerk, Leistungen und Orte als Text</span></div>
+      <div class="i"><div class="box"></div><span><b>05</b>Unternehmensdaten maschinenlesbar hinterlegt</span></div>
+      <div class="i"><div class="box"></div><span><b>06</b>Alte Namen und Doppelprofile aufgeräumt</span></div>
+    </div>
+    <div class="kurz-block"><span class="k">Hebel 2 · Bewertungen mit Inhalt <small>· Seite 6</small></span>
+      <div class="i"><div class="box"></div><span><b>07</b>Kunden um Bewertungen mit Inhalt gebeten</span></div>
+      <div class="i"><div class="box"></div><span><b>08</b>Jede Antwort nennt Leistung und Ort</span></div>
+      <div class="i"><div class="box"></div><span><b>09</b>Bewertungen kommen stetig, nicht in Schüben</span></div>
+      <div class="i"><div class="box"></div><span><b>10</b>Zweite Plattform mit demselben Bild</span></div>
+      <div class="i"><div class="box"></div><span><b>11</b>Keine gekauften oder eigenen Bewertungen</span></div>
+    </div>
+    <div class="kurz-block"><span class="k">Hebel 3 · Antwortfähige Website <small>· Seite 7</small></span>
+      <div class="i"><div class="box"></div><span><b>12</b>Fünf Kundenfragen je Leistungsseite, als FAQ</span></div>
+      <div class="i"><div class="box"></div><span><b>13</b>Kosten ehrlich eingeordnet</span></div>
+      <div class="i"><div class="box"></div><span><b>14</b>Ablauf, Dauer, Einzugsgebiet als Text</span></div>
+      <div class="i"><div class="box"></div><span><b>15</b>Datum und Verantwortlicher je Seite</span></div>
+      <div class="i"><div class="box"></div><span><b>16</b>Projekte mit Ort, Aufgabe, Lösung, Dauer</span></div>
+      <div class="i"><div class="box"></div><span><b>17</b>Überschriften als Fragen, Antwort zuerst</span></div>
+    </div>
+    <div class="kurz-block"><span class="k">Hebel 4 · Belege von außen <small>· Seite 8</small></span>
+      <div class="i"><div class="box"></div><span><b>18</b>Kammer, Innung, Verzeichnisse, gleiche Daten</span></div>
+      <div class="i"><div class="box"></div><span><b>19</b>Auf den Partnerlisten der Hersteller</span></div>
+      <div class="i"><div class="box"></div><span><b>20</b>Eine lokale Erwähnung pro Halbjahr</span></div>
+      <div class="i"><div class="box"></div><span><b>21</b>Kurzes Video mit Betrieb, Ort, Leistung</span></div>
+      <div class="i"><div class="box"></div><span><b>22</b>Dieselben zwei Sätze in jeder Quelle</span></div>
+    </div>
+    <div class="kurz-block"><span class="k">Hebel 5 · Technisch erreichbar <small>· Seite 9</small></span>
+      <div class="i"><div class="box"></div><span><b>23</b>KI-Zugriffe bewusst entschieden (robots.txt)</span></div>
+      <div class="i"><div class="box"></div><span><b>24</b>Alles Wichtige als Text, nicht nur als Bild</span></div>
+      <div class="i"><div class="box"></div><span><b>25</b>Strukturierte Daten für Betrieb und FAQ</span></div>
+      <div class="i"><div class="box"></div><span><b>26</b>Ladezeit unter drei Sekunden, mobil</span></div>
+      <div class="i"><div class="box"></div><span><b>27</b>Eine H1, Fragen als H2, klare Seitentitel</span></div>
+      <div class="i"><div class="box"></div><span><b>28</b>Optional: llms.txt angelegt</span></div>
+    </div>
+    <div class="kurz-block" style="border-color: var(--accent);"><span class="k">Auswertung <small>· Haken zählen</small></span>
+      <p class="fill" style="line-height:1.7; margin-bottom:4px;">Mein Stand am <u class="kurz"></u>: <u class="kurz"></u> von 28</p>
+      <div class="score">
+        <div><b>0 bis 9</b>Fundament fehlt, die KI erkennt dich noch nicht sicher. Woche 1 und 2 des Plans zuerst.</div>
+        <div><b>10 bis 19</b>Solide Basis. Hebel 3 und 4 bringen jetzt die Nennungen.</div>
+        <div><b>20 bis 28</b>Weit vorn. Monatlich messen, Bewertungen und Erwähnungen am Laufen halten.</div>
+      </div>
+    </div>
+  </div>
+  <div class="sec">
+    <span class="tag">Monatstest: wie oft genannt?</span>
+    <p class="note" style="margin-bottom:6px;">Sechs Fragen in drei Systemen (Seite 4) sind 18 Antworten. Eintragen, in wie vielen dein Betrieb vorkommt. Derselbe Tag im Monat.</p>
+    <table>
+      <thead><tr><th style="width:26%">&nbsp;</th><th>Monat 1</th><th>Monat 2</th><th>Monat 3</th><th>Monat 4</th><th>Monat 5</th><th>Monat 6</th></tr></thead>
+      <tbody>
+        <tr><td>Genannt in … von 18</td><td class="blank" style="height:26px;"></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Neue Bewertungen mit Inhalt</td><td class="blank" style="height:26px;"></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="foot"><span>Pixel56 · KI-Suche</span><b>14</b></div>
+</section>
+
+<!-- 15 Pixel56 selbst -->
 <section class="page">
   <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
   <span class="tag">So haben wir es selbst gemacht</span>
@@ -342,15 +481,15 @@
     <span class="k">Was wir dabei gelernt haben</span>
     <p style="font-size:10.5pt; color: var(--ink);">Die Technik ist der kleinste Teil. Die meiste Zeit ging in ehrliche Antworten auf echte Fragen und in das Aufräumen von Daten, die über Jahre auseinandergelaufen waren. Genau das gilt auch für einen Handwerksbetrieb: zwei Nachmittage Aufräumen, dann jede Woche eine halbe Stunde.</p>
   </div>
-  <div class="foot"><span>Pixel56 · KI-Suche</span><b>13</b></div>
+  <div class="foot"><span>Pixel56 · KI-Suche</span><b>15</b></div>
 </section>
 
-<!-- 14 Quellen + Nächster Schritt -->
+<!-- 16 Quellen + Nächster Schritt -->
 <section class="page">
   <img class="logo" src="../../public/bilder/logo-pixel56-dunkel.webp" alt="">
   <span class="tag">Nächster Schritt</span>
   <h2>Du willst wissen, <em>wo dein Betrieb steht?</em></h2>
-  <p class="lead">Im kostenlosen Erstgespräch gehen wir deinen Selbsttest durch und sagen dir, welcher Hebel bei dir zuerst wirkt. Kein Verkaufsgespräch, keine Verpflichtung.</p>
+  <p class="lead">Im kostenlosen Erstgespräch gehen wir deinen Selbsttest und deine Kurzfassung von Seite 14 durch und sagen dir, welcher Hebel bei dir zuerst wirkt. Kein Verkaufsgespräch, keine Verpflichtung.</p>
   <div class="cta sec">
     <div class="glow"></div>
     <h2 style="font-size:18pt;">Kostenloses Erstgespräch, <em>15 Minuten</em></h2>
@@ -364,15 +503,15 @@
   <div class="sec">
     <span class="tag">Quellen</span>
     <div class="src-list">
-      <div>Sistrix: Anteil der Suchanfragen mit KI-Übersicht in Deutschland, Auswertung von über 100 Millionen Suchbegriffen, Stand 2026. sistrix.de/frag-sistrix/ai-grundlagen/ai-overviews</div>
+      <div>Sistrix: Anteil der Suchanfragen mit KI-Übersicht in Deutschland, Auswertung von über 100 Millionen Suchbegriffen: rund 17 % im August 2025, rund 20 % Anfang 2026. sistrix.de/frag-sistrix/ai-grundlagen/ai-overviews</div>
       <div>Google: Start des KI-Modus in Deutschland und weiteren europäischen Ländern, Oktober 2025. Berichte u. a. bei onlinemarketing.de und winfuture.de</div>
       <div>OpenAI: über 900 Millionen wöchentlich aktive Nutzer von ChatGPT, Mitteilung vom Februar 2026.</div>
-      <div>Google Search Console: Klicks aus KI-Übersichten im Leistungsbericht seit Juni 2025 enthalten; Bericht „Generative KI“ mit Impressionen, 2026 schrittweise eingeführt. Google-Hilfe, Berichte u. a. bei omr.com</div>
+      <div>Google Search Console: Klicks aus KI-Übersichten im Leistungsbericht seit Juni 2025 enthalten; Bericht „Generative KI“ mit Impressionen seit Juni 2026 (Testphase). Google-Hilfe zur Search Console, Berichte u. a. bei searchenginejournal.com und omr.com</div>
       <div>Google: Kriterien der lokalen Suche (Relevanz, Entfernung, Bekanntheit), Hilfe zum Unternehmensprofil. OpenAI: Übersicht der Zugriffe (OAI-SearchBot, GPTBot), platform.openai.com/docs/bots</div>
     </div>
   </div>
   <div class="note sec">Dieser Leitfaden darf im eigenen Betrieb frei verwendet und weitergegeben werden. Er ersetzt keine Rechtsberatung. Betriebsnamen in Beispielen und Vorlagen sind erfunden. Fotos auf Titel und Seite 4: Stockfotos. Pixel56 · www.pixel56.de · Stand Oktober 2026.</div>
-  <div class="foot"><span>Pixel56 · KI-Suche</span><b>14</b></div>
+  <div class="foot"><span>Pixel56 · KI-Suche</span><b>16</b></div>
 </section>
 
 </body>

@@ -1264,6 +1264,51 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 31.10.2026 (lokal): E-Book KI-Suche von 14 auf 16 Seiten, Kurzfassung und Vorlagen
+
+Ausgangslage: Der Inhaber hatte das E-Book mit 7 von 10 bewertet bekommen
+und will eine 10. Die vorige Sitzung lag nicht auf GitHub (sieben lokale
+Commits); der Inhaber hat sie im alten Chat gepusht, Netlify hat wegen
+„[skip netlify]“ nicht gebaut. Diese Sitzung hat das Repo frisch geholt.
+
+Was fehlte, aus Sicht eines Betriebs, der das PDF liest: etwas zum
+Ausdrucken und Abhaken, fertige Texte zum Ausfüllen, Beispiele außerhalb
+des Dachdecker-Falls (Positionierung Mittelstand), und Begriffe, die ein
+Nicht-Techniker nicht kennt. Umgesetzt in `freebies/ki-suche/index.html`:
+
+- Seite 3: Kasten „Sechs Begriffe, je ein Satz“ (KI-Übersicht, KI-Modus,
+  Unternehmensprofil, strukturierte Daten, robots.txt, Impression).
+- Neue Seite 13 „Vorlagen zum Ausfüllen“: Beschreibungssatz mit
+  Schreiblinien, Über-uns-Gerüst, Kurzmeldung für Lokalzeitung/Stadtportal
+  (Hebel 4), Video-Titel und -Beschreibung; dazu die sechs Selbsttest-Fragen
+  für Heizung/Sanitär, Steuerberatung, Physiotherapie, Kfz-Werkstatt,
+  Maschinenbau/Zulieferer und Pflegedienst. Alle Namen bleiben Platzhalter.
+- Neue Seite 14 „Kurzfassung zum Ausdrucken“: alle 28 Prüfpunkte in fünf
+  Blöcken mit Kästchen, Auswertung in drei Stufen (0–9 Fundament fehlt,
+  10–19 solide Basis, 20–28 weit vorn), Tabelle für den Monatstest
+  (genannt in … von 18 Antworten, neue Bewertungen) über sechs Monate.
+- Titel: Chips „Vorlagen“ und „Kurzfassung“, Lead ergänzt.
+  Inhaltsverzeichnis auf sieben Einträge, Seitenzahlen 15/16 für die
+  alten Seiten 13/14, Verweise auf Seite 13/14 im Selbsttest, im
+  Monatsplan und im Erstgespräch-Text.
+- Zahlen per WebSearch nachgeprüft: Sistrix 17 % (Aug. 2025) → rund 20 %
+  (Anfang 2026), ChatGPT 900 Mio. wöchentlich (OpenAI, 27.2.2026),
+  Search-Console-Bericht „Generative KI“ seit Juni 2026 (Testphase, nur
+  Impressionen, nach Seite/Land/Gerät). Texte auf Seite 2, 11 und in den
+  Quellen entsprechend präzisiert.
+- Neue Stile im Seitenkopf der HTML-Datei (`.kurz-block`, `.score`,
+  `.glossar`, `.branche`, `.zeile`, `.fill`); `freebie.css` unverändert.
+- Build: `node scripts/freebie-pdf.mjs ki-suche` (Playwright-Fallback ohne
+  festen Chromium-Pfad, weil die Sandbox Chromium 1243 hat). Drei
+  Überlauf-Runden (Seite 3, 13, 14), danach ohne Befund. 16 Seiten,
+  rund 3,5 MB. Alle Seiten als Kontaktbogen gesichtet.
+- Website: `lib/ressourcen.ts` (Eintrag `ki-suche`) sagt 16 Seiten, nennt
+  Kurzfassung, Vorlagen, Branchenfragen und Begriffe.
+
+Nicht gemacht, weil nur mit dem Inhaber möglich: Titelbild-Tausch
+(Canva-Bild), Praxisbeispiel aus einem echten Betrieb (keine erfundenen
+Kunden). Nach dem Push muss die neue PDF in MailerLite hochgeladen werden.
+
 ## 30.10.2026 (lokal): Neues E-Book „Gefunden werden, wenn Kunden die KI fragen“
 
 Inhaber: „Kannst du ein neues E-Book erstellen zu einem aktuellen Thema?“

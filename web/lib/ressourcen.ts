@@ -149,11 +149,11 @@ export const ressourcen: Ressource[] = [
       "Immer mehr Kunden googeln nicht mehr, sie fragen: Googles KI-Übersichten und KI-Modus, ChatGPT und Co. Der Leitfaden zeigt, woher die Antworten kommen, wie du prüfst, ob dein Betrieb vorkommt, und welche fünf Hebel das ändern. Kostenlos als PDF.",
     heroPoints: [
       "Selbsttest: sechs Fragen an die KI, mit Tabelle zum Eintragen",
-      "Fünf Hebel mit 28 Prüfpunkten, Vorlagen und 30-Tage-Plan",
+      "Fünf Hebel mit 28 Prüfpunkten, Vorlagen, 30-Tage-Plan und Kurzfassung zum Ausdrucken",
       "Belegte Zahlen statt Hype, für Handwerk und Mittelstand",
     ],
     docTag: "Leitfaden",
-    docPages: "14 SEITEN · PDF",
+    docPages: "16 SEITEN · PDF",
     docTitle: "Leitfaden KI-Suche",
     docRows: [
       { checked: true, text: "Selbsttest in Google KI-Modus und ChatGPT gemacht" },
@@ -166,11 +166,11 @@ export const ressourcen: Ressource[] = [
     inhaltTag: "01 — Was drin ist",
     inhaltTitle: "Fünf Hebel, ",
     inhaltTitleEm: "28 Prüfpunkte, ein Selbsttest",
-    inhaltNote: "Keine Theorie-Abhandlung — ein Leitfaden zum Durcharbeiten, mit Tabelle, Vorlagen, Irrtümern und einem Plan für die ersten 30 Tage.",
+    inhaltNote: "Keine Theorie-Abhandlung — ein Leitfaden zum Durcharbeiten, mit Tabelle, Vorlagen, Irrtümern, einem Plan für die ersten 30 Tage und einer Kurzfassung für die Pinnwand.",
     teile: [
-      { fl: "Seite 2 bis 4", title: "Verstehen und prüfen", text: "Drei belegte Zahlen zur Suche 2026, wie KI-Antworten entstehen, und ein Selbsttest mit sechs Fragen in drei Systemen: Kommt dein Betrieb vor, und welche Quellen nennt die KI?" },
+      { fl: "Seite 2 bis 4", title: "Verstehen und prüfen", text: "Drei belegte Zahlen zur Suche 2026, wie KI-Antworten entstehen, sechs Begriffe in je einem Satz, und ein Selbsttest mit sechs Fragen in drei Systemen: Kommt dein Betrieb vor, und welche Quellen nennt die KI?" },
       { fl: "Seite 5 bis 9", title: "Fünf Hebel", text: "Eindeutig sein, Bewertungen mit Inhalt, antwortfähige Website, Belege von außen, technisch erreichbar. Jeder Hebel mit Prüfpunkten, Vorlagen und Schnelltest." },
-      { fl: "Seite 10 bis 14", title: "Irrtümer, Messen, Plan", text: "Sechs Versprechen, die Geld kosten. Was heute messbar ist (Search Console, KI-Besucher, Profil). 30-Tage-Plan mit Zuständigkeiten und wie wir es bei pixel56.de selbst gemacht haben." },
+      { fl: "Seite 10 bis 16", title: "Irrtümer, Messen, Plan, Vorlagen", text: "Sechs Versprechen, die Geld kosten. Was heute messbar ist (Search Console, KI-Besucher, Profil). 30-Tage-Plan mit Zuständigkeiten, Vorlagen zum Ausfüllen, Beispielfragen für sechs Branchen, alle 28 Prüfpunkte auf einer Seite zum Ausdrucken, und wie wir es bei pixel56.de selbst gemacht haben." },
     ],
     fuerWen: [
       { tag: "Inhaber", title: "Du willst wissen, ob dein Betrieb in KI-Antworten vorkommt", text: "Der Selbsttest auf Seite 4 beantwortet das in zwanzig Minuten, mit den Quellen, die die KI tatsächlich nennt." },

@@ -242,12 +242,22 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 
 **Danach, in der Sitzung:**
 
-4. E-Book KI-Suche von 7 auf 10 (Inhaber-Ziel): Ein-Seiten-Kurzfassung
-   (Selbsttest + fünf Hebel) als Beilage; Titelbild ggf. gegen das in Canva
-   erzeugte Dachdecker-Bild tauschen (Inhaber lädt es hoch, dann
-   „KI-generiert“ im Nachweis); Praxisbeispiel aus einem echten Betrieb
-   nachliefern, sobald ein Kunde die Hebel umgesetzt hat (Selbsttest vorher/
-   nachher, 2–3 Monate); Zahlen halbjährlich prüfen.
+4. E-Book KI-Suche von 7 auf 10 (Inhaber-Ziel). **Umgesetzt 31.10.
+   (lokal, Push auf Freigabe):** jetzt 16 Seiten. Neu: Seite 3 sechs
+   Begriffe in je einem Satz; Seite 13 Vorlagen zum Ausfüllen
+   (Beschreibungssatz, Über-uns-Gerüst, Pressemeldung, Video-Titel) und
+   die sechs Selbsttest-Fragen für sechs weitere Branchen (SHK,
+   Steuerberatung, Physiotherapie, Kfz, Maschinenbau, Pflege); Seite 14
+   Kurzfassung zum Ausdrucken (28 Prüfpunkte, Auswertung 0–9/10–19/20–28,
+   Monatstest über sechs Monate). Zahlen nachgeprüft und präzisiert
+   (Sistrix 17 % Aug. 2025 → 20 % Anfang 2026, Search-Console-Bericht
+   „Generative KI“ seit Juni 2026). Website-Seite `/ki-suche` sagt
+   16 Seiten. **Noch offen, nur mit Inhaber:** Titelbild ggf. gegen das
+   Canva-Dachdecker-Bild tauschen (er lädt es hoch, dann „KI-generiert“ im
+   Nachweis); Praxisbeispiel aus einem echten Betrieb, sobald ein Kunde die
+   Hebel umgesetzt hat (Selbsttest vorher/nachher, 2–3 Monate); Zahlen
+   halbjährlich prüfen. Nach Push: neue PDF in der MailerLite-Automation
+   „KI-Suche“ hochladen (ersetzt die 14-Seiten-Fassung).
 5. Partnerprogramm: Inhaber prüft Ton live unter `/partner`; falls auch
    Empfehlungspartner bis 35 % bekommen sollen, eine Zahl ändern.
 6. Webflow-Hosting ab 6.11. kündigen (Seite seit 23.10. live und stabil).
@@ -268,7 +278,14 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 Vorschaubilder per PIL aus `<name>-titel.png`). Canva/Higgsfield-Bilder sind
 aus der Sandbox nicht in voller Größe ladbar; der Inhaber lädt sie hoch.
 
-## Zuletzt geprüft (30.10.)
+## Zuletzt geprüft (31.10.)
+
+E-Book KI-Suche neu gebaut (`node scripts/freebie-pdf.mjs ki-suche`), 16
+Seiten, Überlauf-Prüfung ohne Befund, alle Seiten als Bild gesichtet.
+Website-Build nach der Textänderung in `lib/ressourcen.ts`: siehe STATUS
+31.10.
+
+### Davor (30.10.)
 
 Build fehlerfrei (750 Routen), `seo:check:strict` ohne Befund, Playwright
 auf 390/1280 px für `/partner`, Freebie-Seiten, Start, Karriere: kein
