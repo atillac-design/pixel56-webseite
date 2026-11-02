@@ -28,3 +28,9 @@ Heute:
 3. Dann: das E-Book „Gefunden werden, wenn Kunden die KI fragen“ von einer
    7 auf eine 10 bringen. Vorschläge liegen im Kurzbriefing (Punkt 4).
    Mach einen konkreten Plan, dann setz um, was ohne mich geht.
+
+Hinweis für den Chat selbst: Falls die Sitzung nicht im Repository
+`pixel56-webseite` startet (zum Beispiel in `AI-Agent`), zuerst das richtige
+Repository mit Schreibrecht an die Sitzung hängen (`add_repo`, Zweig
+`codex/pixel56-neue-seite`), sonst scheitert später der Push. Die Live-Seite
+www.pixel56.de ist aus der Sandbox per curl erreichbar, Live-Tests gehen.

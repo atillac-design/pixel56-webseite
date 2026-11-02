@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 31.10.2026
+# Kurzbriefing — Stand 2.11.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -230,16 +230,19 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 
 ## Offene Punkte (Reihenfolge = Priorität, Stand 31.10.)
 
-**Sofort, nur der Inhaber kann es (dann „Push“):**
-
-1. MailerLite: Gruppe für das E-Book KI-Suche ist angelegt (2.11., ID
-   `203059250002396418`, in `LIVEGANG.md`). Offen: Automation („Subscriber
-   joins a group“) mit der 16-Seiten-PDF, Variable `MAILERLITE_GROUP_KI_SUCHE`
-   in Netlify, Trigger deploy.
-2. MailerLite: in den Automationen „Lokales SEO“ und „KI-Agent“ die alten
-   Canva-PDFs gegen `web/freebies/seo-checkliste.pdf` und
-   `web/freebies/ki-agenten-checkliste.pdf` tauschen (File manager).
-3. Danach „Push“: Seitentexte beschreiben bereits die neuen PDFs.
+**Erledigt 2.11. (MailerLite und Push):** Gruppe `KI-Suche E-Book`
+(ID `203059250002396418`) und Automation „KI-Suche E-Book“ („Subscriber
+joins a group“, Mail mit Titelbild und 16-Seiten-PDF, Anrede „Hallo,“ ohne
+{$name}, weil das Formular keinen Namen abfragt) vom Inhaber angelegt und
+aktiviert; PDFs in „Lokales SEO“ und „KI-Agent“ getauscht; Variable
+`MAILERLITE_GROUP_KI_SUCHE` in Netlify gesetzt. Push 2.11. (17de170),
+Netlify hat gebaut, `/ressourcen/ki-suche` zeigt die 16-Seiten-Fassung.
+Testanmeldung über `/api/lead` mit `quelle: ki-suche` → `{ok:true}`;
+Inhaber bestätigt 2.11.: Mail mit der neuen PDF ist angekommen. Alle vier
+Freebie-Downloads laufen.
+Hinweis: Die Live-Seite ist aus dieser Sandbox erreichbar (curl auf
+www.pixel56.de geht), Live-Tests sind also möglich. „[skip netlify]“ im
+Commit hat den Build offenbar nicht verhindert.
 
 **Danach, in der Sitzung:**
 

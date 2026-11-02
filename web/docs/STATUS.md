@@ -1264,6 +1264,32 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 2.11.2026: MailerLite für das E-Book KI-Suche, Push, Live-Test
+
+Inhaber-Seite, Schritt für Schritt begleitet: Gruppe „KI-Suche E-Book“
+(ID 203059250002396418) angelegt; Automation ohne Vorlage gebaut, Auslöser
+„When subscriber joins a group“, E-Mail-Schritt mit Absender
+info@pixel56.de, Sprache Deutsch. Als Mailvorlage diente die SEO-Mail;
+geändert: Anrede „Hallo, vielen Dank für deine Anmeldung!“ statt
+„Hi {$name}“ (das Website-Formular fragt keinen Namen ab), Titelbild des
+E-Books als JPG (aus `ki-suche-titel.png`, 1200 px breit), Link als
+File-Upload auf die 16-Seiten-PDF. In „Lokales SEO“ und „KI-Agent“ die
+Canva-PDFs gegen `seo-checkliste.pdf` und `ki-agenten-checkliste.pdf`
+getauscht. Netlify-Variable `MAILERLITE_GROUP_KI_SUCHE` gesetzt.
+
+Push auf Freigabe („push“): zwei Commits (E-Book 16 Seiten, Doku). Dafür
+musste das Repo in der Sitzung mit Schreibrecht angehängt werden (die
+Sitzung war mit dem falschen Repo gestartet). Beobachtung: Die Seite
+`/ressourcen/ki-suche` war schon vor dem Push live (14-Seiten-Text), der
+Vermerk „[skip netlify]“ hat den Build also nicht verhindert oder ein
+„Trigger deploy“ hat ihn ausgelöst. Etwa eine Minute nach dem Push zeigte
+die Seite „16 SEITEN“.
+
+Live-Test aus der Sandbox (erreichbar, anders als in CLAUDE.md vermerkt):
+POST `/api/lead` mit `{email: info@pixel56.de, quelle: ki-suche}` →
+`{ok:true}`, HTTP 200. Inhaber bestätigt: Mail mit der 16-Seiten-PDF ist angekommen („hat
+geklappt“). Damit laufen alle vier Freebie-Downloads über MailerLite.
+
 ## 31.10.2026 (lokal): E-Book KI-Suche von 14 auf 16 Seiten, Kurzfassung und Vorlagen
 
 Ausgangslage: Der Inhaber hatte das E-Book mit 7 von 10 bewertet bekommen
