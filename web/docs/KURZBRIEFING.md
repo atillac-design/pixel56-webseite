@@ -240,6 +240,13 @@ Netlify hat gebaut, `/ressourcen/ki-suche` zeigt die 16-Seiten-Fassung.
 Testanmeldung über `/api/lead` mit `quelle: ki-suche` → `{ok:true}`;
 Inhaber bestätigt 2.11.: Mail mit der neuen PDF ist angekommen. Alle vier
 Freebie-Downloads laufen.
+**Verlinkung des E-Books (2.11., lokal, Push auf Freigabe):** Fuß der
+Website („Leitfaden KI-Suche“ unter Ressourcen, `lib/site.ts`), Übersicht
+`/category/digitale-produkte` mit Bild, Freebie-Dreierreihe auf `/blog` und
+`/dienstleistung` (Leitfaden ersetzt dort den Tagesplaner), zweite Karte
+neben der SEO-Checkliste auf `/suchmaschinenoptimierung`. Build 751
+Seiten, Screenshots geprüft. Inhaber hatte gefragt, ob die Seite im Fuß
+steht: vorher nein, jetzt ja.
 Hinweis: Die Live-Seite ist aus dieser Sandbox erreichbar (curl auf
 www.pixel56.de geht), Live-Tests sind also möglich. „[skip netlify]“ im
 Commit hat den Build offenbar nicht verhindert.

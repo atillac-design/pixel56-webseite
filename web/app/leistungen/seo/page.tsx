@@ -23,6 +23,7 @@ import { site } from "@/lib/site";
 import { verifiedReviews } from "@/lib/verified-reviews";
 import { resourceRoutes, routes, serviceRoutes } from "@/lib/routes";
 import seoFreebieImage from "@/public/bilder/freebie-seo-ebook-transparent.webp";
+import kiSucheImage from "@/public/bilder/freebie-ki-suche.webp";
 import LeistungsAnfrage from "@/components/LeistungsAnfrage";
 import { frageboegen } from "@/lib/fragebogen";
 import { googleAnzahlLautProfil, googleBewertungLautProfil } from "@/lib/google-bewertungen";
@@ -371,7 +372,7 @@ export default function SeoPage() {
               </div>
             ))}
           </div>
-          <div className="resource-grid reveal" style={{ gridTemplateColumns: "minmax(0, 360px)", justifyContent: "center", marginTop: 28 }}>
+          <div className="resource-grid reveal" style={{ gridTemplateColumns: "repeat(2, minmax(0, 360px))", justifyContent: "center", marginTop: 28 }}>
             <Link className="resource-card" href={resourceRoutes["seo-checkliste"]}>
               <div className="resource-mockup">
                 <Image src={seoFreebieImage} alt="" fill sizes="360px" />
@@ -379,6 +380,15 @@ export default function SeoPage() {
               <span>Checkliste · PDF</span>
               <h3>SEO-Checkliste</h3>
               <p>Lokales SEO für Handwerker: sieben Schritte, 30 Prüfpunkte, Textvorlagen für Bewertungen, Selbsttest und ein Wochenplan mit 30 Minuten. Ehrlich eingeordnet, ohne Platz-1-Versprechen.</p>
+              <em>Kostenlos herunterladen <ArrowIcon /></em>
+            </Link>
+            <Link className="resource-card" href="/ressourcen/ki-suche">
+              <div className="resource-mockup">
+                <Image src={kiSucheImage} alt="" fill sizes="360px" />
+              </div>
+              <span>Leitfaden · PDF</span>
+              <h3>Leitfaden KI-Suche</h3>
+              <p>Gefunden werden, wenn Kunden die KI fragen: Selbsttest in Google KI-Modus und ChatGPT, fünf Hebel, 28 Prüfpunkte, Vorlagen und eine Kurzfassung zum Ausdrucken. 16 Seiten.</p>
               <em>Kostenlos herunterladen <ArrowIcon /></em>
             </Link>
           </div>

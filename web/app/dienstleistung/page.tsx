@@ -23,7 +23,7 @@ import { verifiedReviews } from "@/lib/verified-reviews";
 import { projectPath, resourceRoutes, routes, serviceRoutes } from "@/lib/routes";
 import seoFreebieImage from "@/public/bilder/freebie-seo-ebook-transparent.webp";
 import kiFreebieImage from "@/public/bilder/freebie-ki-ebook.webp";
-import tagesplanerImage from "@/public/bilder/freebie-tagesplaner.webp";
+import kiSucheImage from "@/public/bilder/freebie-ki-suche.webp";
 
 const canonical = "/dienstleistung";
 
@@ -148,7 +148,7 @@ const kosten = [
 const resources = [
   { tag: "Checkliste · PDF", title: "SEO-Checkliste", text: "Lokales SEO für Handwerker: sieben Schritte, 30 Prüfpunkte, Textvorlagen für Bewertungen, Selbsttest und ein Wochenplan mit 30 Minuten. Ehrlich eingeordnet, ohne Platz-1-Versprechen.", href: resourceRoutes["seo-checkliste"], image: seoFreebieImage },
   { tag: "Checkliste · PDF", title: "KI-Agenten-Checkliste", text: "Wo KI im Betriebsalltag wirklich Zeit spart und wo du dir das Geld sparst. 22 Prüfpunkte, Selbsttest für deinen Betrieb, Plan für die ersten vier Wochen.", href: resourceRoutes["ki-agenten-checkliste"], image: kiFreebieImage },
-  { tag: "Vorlage · PDF", title: "Tagesplaner", text: "Ein Blatt pro Tag, drei Prioritäten, feste Zeitblöcke. Die Vorlage, mit der wir selbst arbeiten.", href: resourceRoutes.tagesplaner, image: tagesplanerImage },
+  { tag: "Leitfaden · PDF", title: "Leitfaden KI-Suche", text: "Gefunden werden, wenn Kunden die KI fragen: Selbsttest, fünf Hebel, 28 Prüfpunkte, Vorlagen, 30-Tage-Plan und Kurzfassung zum Ausdrucken. 16 Seiten.", href: "/ressourcen/ki-suche", image: kiSucheImage },
 ];
 
 const faqs = [

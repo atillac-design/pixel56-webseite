@@ -1264,6 +1264,30 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 2.11.2026 (lokal): E-Book KI-Suche überall verlinkt
+
+Frage des Inhabers: Steht die Freebie-Seite auch im Fuß? Befund: Die Seite
+`/ressourcen/ki-suche` war nur von der Startseite, der Sitemap und den
+anderen Freebie-Seiten („Weitere Ressourcen“) verlinkt. Ergänzt:
+
+- `lib/site.ts`: Fuß-Navigation „Leitfaden KI-Suche“ (Pfad direkt
+  `/ressourcen/ki-suche`, weil `resourceRoutes` nur die drei Kurz-URLs
+  der alten Freebies kennt; eine Kurz-URL wie `/leitfaden-ki-suche` wäre
+  ein eigener Schritt mit Weiterleitung).
+- `app/category/digitale-produkte/page.tsx`: Bild `freebie-ki-suche.webp`
+  in der Bilder-Zuordnung (Karte war schon da, aber ohne Bild).
+- `app/blog/page.tsx`, `app/dienstleistung/page.tsx`: In der Dreierreihe
+  ersetzt der Leitfaden den Tagesplaner (Raster hat drei Spalten; der
+  Tagesplaner bleibt im Fuß und auf der Produktübersicht).
+- `app/leistungen/seo/page.tsx`: zweite Karte neben der SEO-Checkliste,
+  Raster auf zwei Spalten à 360 px.
+
+Geprüft: `tsc` ohne Fehler, Build 751 Seiten, `npm run start` auf Port
+3077, Playwright-Screenshots von Fuß, Produktübersicht, Blog-Reihe und
+SEO-Karten, keine Skriptfehler. Hinweis: Die Vorschaubilder von KI-Agenten
+und KI-Suche haben einen grauen Hintergrund, die SEO-Vorschau ist
+transparent; das war schon vorher so.
+
 ## 2.11.2026: MailerLite für das E-Book KI-Suche, Push, Live-Test
 
 Inhaber-Seite, Schritt für Schritt begleitet: Gruppe „KI-Suche E-Book“

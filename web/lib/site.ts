@@ -81,6 +81,7 @@ export const footerNav = {
   ressourcen: [
     { label: "SEO-Checkliste", href: resourceRoutes["seo-checkliste"] },
     { label: "KI-Agenten-Checkliste", href: resourceRoutes["ki-agenten-checkliste"] },
+    { label: "Leitfaden KI-Suche", href: "/ressourcen/ki-suche" },
     { label: "Tagesplaner PDF", href: resourceRoutes.tagesplaner },
   ],
 };
