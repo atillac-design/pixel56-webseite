@@ -232,9 +232,10 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
 
 **Sofort, nur der Inhaber kann es (dann „Push“):**
 
-1. MailerLite: Gruppe + Automation („Subscriber joins a group“) für das
-   neue E-Book `web/freebies/ki-suche.pdf` anlegen; Gruppen-Nummer als
-   `MAILERLITE_GROUP_KI_SUCHE` in Netlify eintragen, Trigger deploy.
+1. MailerLite: Gruppe für das E-Book KI-Suche ist angelegt (2.11., ID
+   `203059250002396418`, in `LIVEGANG.md`). Offen: Automation („Subscriber
+   joins a group“) mit der 16-Seiten-PDF, Variable `MAILERLITE_GROUP_KI_SUCHE`
+   in Netlify, Trigger deploy.
 2. MailerLite: in den Automationen „Lokales SEO“ und „KI-Agent“ die alten
    Canva-PDFs gegen `web/freebies/seo-checkliste.pdf` und
    `web/freebies/ki-agenten-checkliste.pdf` tauschen (File manager).

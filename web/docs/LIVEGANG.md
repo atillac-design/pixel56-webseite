@@ -31,6 +31,7 @@ drei Downloads live getestet, Mails mit PDF kommen an.
 | `MAILERLITE_GROUP_TAGESPLANER` | `150394406990513854` (dieselbe Gruppe) |
 | `MAILERLITE_GROUP_SEO_CHECKLISTE` | `202594152733476609` |
 | `MAILERLITE_GROUP_KI_AGENTEN_CHECKLISTE` | `202594209013696234` |
+| `MAILERLITE_GROUP_KI_SUCHE` | `203059250002396418` (Gruppe für das E-Book KI-Suche, angelegt 2.11.) |
 | `MAILERLITE_GROUP_KI_SUCHE` | NEU (30.10.): Gruppe für den Leitfaden KI-Suche, in MailerLite anlegen, Automation „Subscriber joins a group“ mit der PDF `web/freebies/ki-suche.pdf` |
 | `MAILERLITE_GROUP_KONTAKTANFRAGE` | optional, Gruppe für Anfragen aus den Fragebögen (noch nicht gesetzt) |
 
