@@ -23,6 +23,7 @@ export default function LeistungsAnfrage({ bogen, google }: { bogen: Fragebogen;
   const [firma, setFirma] = useState("");
   const [einwilligung, setEinwilligung] = useState(false);
   const [website, setWebsite] = useState("");
+  const [geladen] = useState(() => Date.now()); // Mindestzeit bis zum Absenden
   const [status, setStatus] = useState<Status>("idle");
   const [fehler, setFehler] = useState("");
 
@@ -67,7 +68,7 @@ export default function LeistungsAnfrage({ bogen, google }: { bogen: Fragebogen;
         body: JSON.stringify({
           leistung: bogen.key,
           antworten: bogen.fragen.map((f, i) => ({ frage: f.frage, antwort: antworten[i] === null ? "" : f.optionen[antworten[i] as number].text })),
-          name, email, telefon, firma, einwilligung, website,
+          name, email, telefon, firma, einwilligung, website, t: geladen,
         }),
       });
       const data = await res.json().catch(() => ({}));

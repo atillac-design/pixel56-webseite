@@ -240,6 +240,20 @@ Netlify hat gebaut, `/ressourcen/ki-suche` zeigt die 16-Seiten-Fassung.
 Testanmeldung über `/api/lead` mit `quelle: ki-suche` → `{ok:true}`;
 Inhaber bestätigt 2.11.: Mail mit der neuen PDF ist angekommen. Alle vier
 Freebie-Downloads laufen.
+**Bot-Schutz der Formulare (3.11., lokal, Push auf Freigabe):** Anlass war
+eine Beschwerde-Mail: Ein Fremder hatte die MailerLite-Bestätigungsmail
+bekommen, weil jemand seine Adresse in ein Download-Formular eingetragen
+hatte. Double-Opt-in in MailerLite ist aktiv (gut), die Formulare hatten
+aber keinen Bot-Schutz. Jetzt in `lib/formschutz.ts` für `/api/lead` und
+`/api/anfrage`: Herkunft (Origin/Referer nur pixel56.de, Netlify-Vorschau,
+localhost), Mindestzeit 2 s ab Formular-Aktivierung (`t` im Body),
+Honigfalle `website` (Fragebogen hatte sie schon, Freebie-Formular neu),
+Drossel 5 Absendungen je IP und 10 Minuten (je Funktionsinstanz, grob).
+`/api/lead` legt zusätzlich keine Adresse neu an, die in MailerLite noch
+„unconfirmed“ ist, damit Fremde nicht mehrfach die Bestätigungsmail
+bekommen. Stufe 3 (Cloudflare Turnstile) nur, falls Spam weitergeht.
+Offen beim Inhaber: MailerLite-Bestätigungsmail auf du-Form und eigenes
+Design umstellen (Subscribers → Einstellungen → Double opt-in).
 **Verlinkung des E-Books (2.11., lokal, Push auf Freigabe):** Fuß der
 Website („Leitfaden KI-Suche“ unter Ressourcen, `lib/site.ts`), Übersicht
 `/category/digitale-produkte` mit Bild, Freebie-Dreierreihe auf `/blog` und

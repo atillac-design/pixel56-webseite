@@ -9,6 +9,8 @@ export default function FreebieForm({ quelle, label }: { quelle: string; label: 
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const [website, setWebsite] = useState(""); // Honigfalle, bleibt bei Menschen leer
+  const [geladen] = useState(() => Date.now()); // Mindestzeit bis zum Absenden
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -19,7 +21,7 @@ export default function FreebieForm({ quelle, label }: { quelle: string; label: 
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, quelle }),
+        body: JSON.stringify({ email, quelle, website, t: geladen }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
@@ -65,6 +67,9 @@ export default function FreebieForm({ quelle, label }: { quelle: string; label: 
           <path d="M8 2v9M4 7l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
+      <div className="form-honeypot" aria-hidden="true">
+        <label>Website<input type="text" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} /></label>
+      </div>
       {status === "error" && <div className="form-error" role="alert">{error}</div>}
       <div className="form-privacy">
         Kein Spam. Abmeldung jederzeit mit einem Klick. Datenschutz gilt.

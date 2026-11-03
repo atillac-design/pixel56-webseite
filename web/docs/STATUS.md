@@ -1264,6 +1264,51 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 3.11.2026 (lokal): Bot-Schutz für Download-Formulare und Fragebogen
+
+Anlass: Screenshot des Inhabers, eine Mail von einem Fremden an
+info@pixel56.de („Someone is trying to steal my identity and scam you“),
+darunter die MailerLite-Bestätigungsmail an seine Gmail-Adresse. Jemand
+hatte die Adresse in ein Freebie-Formular eingetragen. Double-Opt-in ist
+aktiv, die Person war also nie angemeldet und hat keine PDF bekommen.
+Befund im Code: `/api/lead` ohne jeden Schutz, `/api/anfrage` nur mit
+Honigfalle. Der Fragebogen schickt per Resend eine Bestätigung an die
+eingetragene Adresse, war also für Spam im Namen von pixel56.de nutzbar.
+
+Umsetzung (Inhaber: „Mach“), neue Datei `lib/formschutz.ts`, von beiden
+Routen vor jeder weiteren Verarbeitung aufgerufen (`pruefeFormular`):
+
+1. Honigfalle `website`: gefüllt → Antwort `ok`, aber nichts passiert.
+2. Herkunft: Origin oder Referer muss auf www.pixel56.de, pixel56.de, die
+   Netlify-Vorschau (auch Deploy-Previews `*--pixel56-neue-seite.netlify.app`)
+   oder localhost zeigen, sonst 403. Browser senden bei fetch-POST immer
+   Origin; curl/Bots ohne Header fallen raus.
+3. Mindestzeit: Formulare senden `t` (Zeitstempel beim Aktivieren des
+   Formulars im Browser, `useState(() => Date.now())`). Unter 2 s oder
+   älter als 24 h → 400 „Bitte lade die Seite neu“. Erst 3 s, auf 2 s
+   gesenkt: Die Uhr startet bei der Hydration, die im Test 1,4 s nach dem
+   Laden lag; bei Autofill könnten 3 s echte Besucher treffen.
+4. Drossel: 5 Absendungen je IP (`x-nf-client-connection-ip`) in 10 Minuten,
+   im Speicher der Funktionsinstanz, danach 429. Grob, aber kostenlos.
+5. Nur `/api/lead`: Vor dem Anlegen `GET /api/subscribers/{email}`; Status
+   „unconfirmed“ → `ok` ohne neuen POST, also keine zweite
+   Bestätigungsmail an eine Adresse, die ein Bot schon eingetragen hat.
+
+Formulare: `FreebieForm.tsx` bekommt Honigfalle (`.form-honeypot`, wie im
+Fragebogen) und `t`; `LeistungsAnfrage.tsx` nur `t`.
+
+Tests lokal (`npm run build`, `npm run start` auf 3077): curl ohne Origin
+403, fremde Origin 403, zu schnell 400, Honigfalle 200 `ok`, sechste
+Absendung 429, Fragebogen ohne Origin 403 und zu schnell 400. Playwright:
+Formular sofort abgeschickt → „Bitte lade die Seite neu“; nach 4 s →
+kommt bis zur MailerLite-Stufe (lokal 503, weil kein Schlüssel).
+Honigfalle liegt bei x = -9300 px, unsichtbar. Keine Skriptfehler.
+
+Hinweise: `pkill -f "next start"` killt die eigene Shell (Code 144),
+Server besser als Hintergrund-Aufgabe starten und per TaskStop beenden.
+Nicht gemacht: Cloudflare Turnstile (Stufe 3), braucht Schlüssel vom
+Inhaber; nur wenn Spam trotz Stufe 1 und 2 weitergeht.
+
 ## 3.11.2026 (lokal): Vorschaubilder der KI-Freebies freigestellt
 
 Die Vorschauen der KI-Agenten-Checkliste und des Leitfadens KI-Suche hatten

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { frageboegen, type FragebogenKey } from "@/lib/fragebogen";
 import { baueKundenMail } from "@/lib/anfrage-mail";
+import { pruefeFormular } from "@/lib/formschutz";
 
 /**
  * Nimmt den Klick-Fragebogen einer Leistung entgegen: Antworten + Kontakt.
@@ -26,7 +27,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Ungültige Anfrage." }, { status: 400 });
   }
 
-  if (text(body.website, 100)) return NextResponse.json({ ok: true });
+  // Bot-Schutz (Honigfalle, Herkunft, Mindestzeit, Drossel), siehe lib/formschutz.ts.
+  const schutz = pruefeFormular(request, body);
+  if (schutz === "stumm") return NextResponse.json({ ok: true });
+  if (schutz) return NextResponse.json({ error: schutz.error }, { status: schutz.status });
 
   const key = text(body.leistung, 40) as FragebogenKey;
   const bogen = frageboegen[key];
