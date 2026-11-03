@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 2.11.2026
+# Kurzbriefing — Stand 3.11.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -240,7 +240,7 @@ Netlify hat gebaut, `/ressourcen/ki-suche` zeigt die 16-Seiten-Fassung.
 Testanmeldung über `/api/lead` mit `quelle: ki-suche` → `{ok:true}`;
 Inhaber bestätigt 2.11.: Mail mit der neuen PDF ist angekommen. Alle vier
 Freebie-Downloads laufen.
-**Bot-Schutz der Formulare (3.11., lokal, Push auf Freigabe):** Anlass war
+**Bot-Schutz der Formulare (3.11., gepusht 298f287, live geprüft):** Anlass war
 eine Beschwerde-Mail: Ein Fremder hatte die MailerLite-Bestätigungsmail
 bekommen, weil jemand seine Adresse in ein Download-Formular eingetragen
 hatte. Double-Opt-in in MailerLite ist aktiv (gut), die Formulare hatten
@@ -252,9 +252,14 @@ Drossel 5 Absendungen je IP und 10 Minuten (je Funktionsinstanz, grob).
 `/api/lead` legt zusätzlich keine Adresse neu an, die in MailerLite noch
 „unconfirmed“ ist, damit Fremde nicht mehrfach die Bestätigungsmail
 bekommen. Stufe 3 (Cloudflare Turnstile) nur, falls Spam weitergeht.
-Offen beim Inhaber: MailerLite-Bestätigungsmail auf du-Form und eigenes
-Design umstellen (Subscribers → Einstellungen → Double opt-in).
-**Verlinkung des E-Books (2.11., lokal, Push auf Freigabe):** Fuß der
+MailerLite-Bestätigungsmail am 3.11. vom Inhaber auf du-Form umgestellt
+(Account settings → Subscribe settings → Double opt-in emails); Ziel nach
+dem Bestätigen: `https://www.pixel56.de/bestaetigt` (war `/danke`, das ist
+die Seite für Anfragen). Entscheidung: kein Namensfeld im Download-Formular
+(ein Feld = mehr Downloads; Name kommt später über Fragebogen/Gespräch).
+Live-Test nach dem Push: ohne Herkunft 403, fremde Herkunft 403, zu
+schnell 400, Honigfalle 200 ok, Fragebogen ohne Herkunft 403.
+**Verlinkung des E-Books (2.11., gepusht 3.11., live im Fuß):** Fuß der
 Website („Leitfaden KI-Suche“ unter Ressourcen, `lib/site.ts`), Übersicht
 `/category/digitale-produkte` mit Bild, Freebie-Dreierreihe auf `/blog` und
 `/dienstleistung` (Leitfaden ersetzt dort den Tagesplaner), zweite Karte
@@ -280,9 +285,8 @@ Commit hat den Build offenbar nicht verhindert.
    Monatstest über sechs Monate). Zahlen nachgeprüft und präzisiert
    (Sistrix 17 % Aug. 2025 → 20 % Anfang 2026, Search-Console-Bericht
    „Generative KI“ seit Juni 2026). Website-Seite `/ki-suche` sagt
-   16 Seiten. **Noch offen, nur mit Inhaber:** Titelbild ggf. gegen das
-   Canva-Dachdecker-Bild tauschen (er lädt es hoch, dann „KI-generiert“ im
-   Nachweis); Praxisbeispiel aus einem echten Betrieb, sobald ein Kunde die
+   16 Seiten. **Entschieden 3.11.:** Titelblatt bleibt das Stockfoto, der Canva-Bild-
+   Gedanke ist gestrichen. **Noch offen:** Praxisbeispiel aus einem echten Betrieb, sobald ein Kunde die
    Hebel umgesetzt hat (Selbsttest vorher/nachher, 2–3 Monate); Zahlen
    halbjährlich prüfen. Nach Push: neue PDF in der MailerLite-Automation
    „KI-Suche“ hochladen (ersetzt die 14-Seiten-Fassung).
