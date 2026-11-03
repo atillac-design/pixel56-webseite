@@ -228,6 +228,56 @@ wird umgesetzt, gebaut, mit Screenshot geprüft, committet und gepusht
   Netlify → Fragebogen-Test → Domainumzug → Google-Freigabe. Anwaltsprüfung
   der Rechtstexte erst im Nachgang.
 
+## Blog-Woche (seit 3.11., Auftrag des Inhabers)
+
+**Ziel:** jede Woche zwei Blog-Stücke, die Besucher und Anfragen bringen:
+ein neuer Artikel plus ein alter Artikel überarbeitet oder mit seinem
+Zwilling zusammengelegt. Nach vier Wochen Search Console prüfen, dann
+entscheiden, ob zwei neue pro Woche. Artikel müssen Bilder oder Grafiken
+haben (Inhaber-Wunsch, „nicht nur Text“), CTA, Links auf Leistungen und
+Freebies, und 10/10 im Prüfskript erreichen.
+
+**Termin:** Scheduled Task „Pixel56 Blog-Woche“ (trig_014VswRwcvyAebSAqigZmibp),
+montags 4:49 Uhr, feuert in diese Sitzung (session_0113S7McJJiqw7FD5TxABsQ9).
+Er schreibt beide Stücke, baut, prüft, macht Screenshots, committet lokal
+und bittet um „Push“. Der Inhaber antwortet möglichst am selben Tag, sonst
+können lokale Commits mit dem Container verloren gehen.
+
+**Technik (3.11. gebaut):** Blocktypen `bild`, `grafik`, `faq`, `cta` in
+`lib/blog-typen.ts`, Darstellung in `app/blog/[slug]/page.tsx` (FAQ auch
+als FAQPage-Schema, erstes Bild als Artikelbild im Schema, Quellenliste
+über `quellen`). Grafiken in `components/BlogGrafik.tsx` (SVG, CSS-animiert,
+still bei „Bewegung reduzieren“): `ki-antwort`, `klick-verlauf`. Stile am
+Ende von `app/globals.css`. Prüfskript `npm run blog:check [slug]` auf dem
+Build: Titel 20–60, Beschreibung 70–160, eine H1 und ≥3 H2, ≥900 Wörter,
+FAQ-Schema, Bild/Grafik, Alt-Texte, ≥2 Leistungs- und ≥1 Freebie-Link,
+Zwischen-CTA, du-Form plus Quellen bei Zahlen. Neue Artikel als Datei in
+`lib/artikel/<slug>.ts`, Eintrag in `lib/artikel/index.ts`.
+
+**Stand:** Alle 36 Artikel im Build liegen im Schnitt bei 4,9/10; die 16
+alten (2024/25) und die Rohfassungen aus Webflow bei 4–5. Muster-Artikel
+`ki-uebersichten-weniger-klicks-mehr-kunden` (3.11.) hat 10/10.
+
+**Themen (abhaken, Reihenfolge = Vorschlag):**
+- [x] Googles KI-Übersichten: weniger Klicks heißt nicht weniger Kunden (3.11.)
+- [ ] Mitarbeiter finden über Social Media: so läuft eine Bewerberkampagne
+- [ ] Karriereseite, die Bewerbungen bringt
+- [ ] Google Ads oder Meta Ads: was passt zu welchem Betrieb?
+- [ ] Website-Relaunch ohne Rankingverlust: die Checkliste
+- [ ] Landingpage oder Website: wann lohnt sich was?
+- [ ] Auf Google-Bewertungen antworten: Vorlagen für Betriebe
+- [ ] WhatsApp als Kundenkanal: Einrichtung, Regeln, Datenschutz
+- [ ] Lokales SEO für Dienstleister, nicht nur Handwerk
+- [ ] Was ein KI-Agent im Betrieb wirklich übernimmt, und was nicht
+- [ ] Reels für Handwerker: zehn Ideen ohne Schauspielerei
+- [ ] Erstgespräch mit einer Agentur: welche Fragen du stellen solltest
+Dazu Fragen, die der Inhaber am Telefon hört (noch nicht geliefert).
+
+**Alte Artikel, Kandidaten für Überarbeitung oder Zusammenlegung:** die
+Zwillinge (Google-Rezensionen, SEO-Dauer, Meta-Ads-Budget, langsame
+Website, je kurz und lang), Tool-Listen von 2024 (KI-Schreibtools, „8
+bessere KI-Tools“, Calendly-Alternativen 2023, Grok vs. DeepSeek, Skool).
+
 ## Offene Punkte (Reihenfolge = Priorität, Stand 31.10.)
 
 **Erledigt 2.11. (MailerLite und Push):** Gruppe `KI-Suche E-Book`

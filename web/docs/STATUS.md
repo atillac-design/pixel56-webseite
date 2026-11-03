@@ -1264,6 +1264,37 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 3.11.2026 (lokal): Blog-Woche eingerichtet, Artikel mit Bildern, Grafiken, FAQ und Prüfskript
+
+Auftrag des Inhabers: zwei Blogartikel pro Woche für Reichweite und
+Anfragen, feste Wochentermine, Bilder und Grafiken statt nur Text, vor
+jeder Veröffentlichung prüfen, ob der Artikel 10/10 ist (SEO, CTA, Links auf
+Leistungen und E-Books). Umgesetzt:
+
+- Blocktypen `bild` (Foto mit Alt, Unterschrift, Quelle), `grafik`
+  (benannte SVG-Komponente), `faq` (Klappliste plus FAQPage-Schema) und
+  `cta` (Zwischenruf mit Knopf) in `lib/blog-typen.ts`; Feld `quellen`.
+  Darstellung in `app/blog/[slug]/page.tsx`, erstes Bild als `image` im
+  BlogPosting-Schema, Quellenliste unter dem Text.
+- `components/BlogGrafik.tsx`: zwei animierte Grafiken (`ki-antwort`: drei
+  Quellen fließen in eine Antwort, Punkte laufen per animateMotion;
+  `klick-verlauf`: Wissensfrage vs. lokale Frage, fließende Pfeile). CSS am
+  Ende von `globals.css`, Animation aus bei `prefers-reduced-motion`.
+- `scripts/blog-check.mjs` (`npm run blog:check [slug]`): zehn Prüfungen
+  auf dem gebauten HTML, Score je Artikel, Exit 2 bei genanntem Slug unter
+  10. Ergebnis für den Bestand: 36 Artikel, Schnitt 4,9/10.
+- Muster-Artikel `lib/artikel/ki-uebersichten-weniger-klicks-mehr-kunden.ts`
+  (SEO, 1.400 Wörter, Foto, zwei Grafiken, Zwischen-CTA zum E-Book
+  KI-Suche, vier FAQ, fünf Quellen, Links auf SEO, Website-Check,
+  Webdesign). Erst 9/10 (Titel 62 Zeichen), seoTitel gekürzt, dann 10/10.
+  Playwright: Desktop und Handy, kein Überlauf, keine Skriptfehler.
+- Scheduled Task „Pixel56 Blog-Woche“ (montags 4:49 Uhr Berlin, feuert in
+  diese Sitzung) mit vollständiger Anleitung im Prompt; Abschnitt
+  „Blog-Woche“ im Kurzbriefing mit Themenliste und Regeln.
+
+Offen: Der Inhaber liefert die Fragen, die er am Telefon hört. Push der
+Blog-Technik und des ersten Artikels auf Freigabe.
+
 ## 3.11.2026 (lokal): Bot-Schutz für Download-Formulare und Fragebogen
 
 Anlass: Screenshot des Inhabers, eine Mail von einem Fremden an

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { cache } from "react";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import BlogGrafik from "@/components/BlogGrafik";
 import { ArrowIcon, CloseCta, ContactStrip } from "@/components/ui";
 import { aehnlicheArtikel, artikel, coverKlasse, getArtikel, kategorieVonArtikel, relativeLinks, type Artikel, type Block } from "@/lib/blog";
 import { getBlogBeitrag } from "@/lib/sanity";
@@ -125,7 +126,23 @@ export default async function ArtikelPage({ params }: Props) {
     : { titel: "SEO-Checkliste", text: "Lokales SEO für Handwerker: sieben Schritte, 30 Prüfpunkte, Selbsttest, Wochenplan.", href: resourceRoutes["seo-checkliste"], lead: `Zum Thema ${kategorie.label} passt unsere SEO-Checkliste: die Prüfpunkte für lokale Sichtbarkeit, die wir bei jeder Website durchgehen, als PDF ohne Vorkenntnisse nutzbar.` };
   const weitere = aehnlicheArtikel(a, 3);
   const abschnitte = a.body.map((b, i) => (b.typ === "h2" ? { id: abschnittId(i), text: b.text } : null)).filter((x): x is { id: string; text: string } => Boolean(x));
-  const wortzahl = [a.intro, ...a.body.map((b) => (b.typ === "ul" ? b.items.join(" ") : b.text))].join(" ").split(/\s+/).length;
+  const blockText = (b: Block): string => {
+    if (b.typ === "ul") return b.items.join(" ");
+    if (b.typ === "faq") return b.items.map((f) => `${f.q} ${f.a}`).join(" ");
+    if (b.typ === "cta") return `${b.titel} ${b.text}`;
+    if (b.typ === "bild" || b.typ === "grafik") return b.text ?? "";
+    return b.text;
+  };
+  const wortzahl = [a.intro, ...a.body.map(blockText)].join(" ").split(/\s+/).length;
+  const faqs = a.body.flatMap((b) => (b.typ === "faq" ? b.items : []));
+  const faqLd = faqs.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+      }
+    : null;
+  const erstesBild = a.body.find((b): b is Extract<Block, { typ: "bild" }> => b.typ === "bild");
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -150,6 +167,7 @@ export default async function ArtikelPage({ params }: Props) {
       logo: { "@type": "ImageObject", url: `${site.url}/bilder/logo-pixel56.webp` },
     },
     mainEntityOfPage: `${site.url}/blog/${a.slug}`,
+    ...(erstesBild ? { image: `${site.url}${erstesBild.src}` } : {}),
   };
 
   const breadcrumbLd = {
@@ -166,6 +184,7 @@ export default async function ArtikelPage({ params }: Props) {
     <main className="service-premium article-premium">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd).replace(/</g, "\\u003c") }} />
+      {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd).replace(/</g, "\\u003c") }} />}
       <div className="sheet">
         <SiteNav crumb={{ section: "Blog", page: kategorie.label }} />
       </div>
@@ -213,12 +232,61 @@ export default async function ArtikelPage({ params }: Props) {
                   ))}
                 </ul>
               );
+            if (b.typ === "bild")
+              return (
+                <figure key={i} className="article-figure">
+                  <Image src={b.src} alt={b.alt} width={b.breite ?? 1200} height={b.hoehe ?? 800} sizes="(max-width: 760px) 100vw, 720px" />
+                  {(b.text || b.quelle) && (
+                    <figcaption>
+                      {b.text}
+                      {b.quelle && <small>{b.quelle}</small>}
+                    </figcaption>
+                  )}
+                </figure>
+              );
+            if (b.typ === "grafik")
+              return (
+                <figure key={i} className="article-figure article-grafik">
+                  <BlogGrafik name={b.name} />
+                  {b.text && <figcaption>{b.text}</figcaption>}
+                </figure>
+              );
+            if (b.typ === "faq")
+              return (
+                <div key={i} className="article-faq">
+                  {b.items.map((f) => (
+                    <details key={f.q} className="article-faq-item">
+                      <summary>{f.q}<span className="fplus" aria-hidden="true" /></summary>
+                      <p>{f.a}</p>
+                    </details>
+                  ))}
+                </div>
+              );
+            if (b.typ === "cta")
+              return (
+                <aside key={i} className="article-inline-cta">
+                  <b>{b.titel}</b>
+                  <p>{b.text}</p>
+                  <Link className="btn-primary" href={b.href}>{b.label} <ArrowIcon /></Link>
+                </aside>
+              );
             return b.html ? (
               <p key={i} dangerouslySetInnerHTML={{ __html: relativeLinks(b.html) }} />
             ) : (
               <p key={i}>{b.text}</p>
             );
           })}
+
+          {a.quellen && a.quellen.length > 0 && (
+            <aside className="article-quellen">
+              <span>Quellen</span>
+              <ul>
+                {a.quellen.map((q) => (
+                  <li key={q.text}>{q.url ? <a href={q.url} target="_blank" rel="noopener noreferrer">{q.text}</a> : q.text}</li>
+                ))}
+              </ul>
+            </aside>
+          )}
 
           <aside className="article-author">
             <Image src={atillaImage} alt="Atilla Ciftcioglu" width={72} height={72} />

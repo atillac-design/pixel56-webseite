@@ -14,7 +14,8 @@
     "seo:check": "node scripts/check-seo-migration.mjs",
     "seo:check:strict": "node scripts/check-seo-migration.mjs --strict",
     "seo:check:http": "node scripts/check-http-migration.mjs",
-    "qa:crawl": "node scripts/qa-crawl.mjs"
+    "qa:crawl": "node scripts/qa-crawl.mjs",
+    "blog:check": "node scripts/blog-check.mjs"
   },
   "dependencies": {
     "@sanity/client": "^8.0.0",

@@ -18,7 +18,9 @@ import a13 from "./revolution-durch-ki-fuer-kleine-und-mittelstandische-unterneh
 import a14 from "./skool-die-neue-plattform-fur-community-building-und-lernen";
 import a15 from "./warum-ihre-website-im-jahr-2024-mobil-first-sein-sollte";
 import a16 from "./warum-ist-eine-neue-webseite-so-wichtig-fuer-unternehmer";
+// Neue Artikel ab November 2026 liegen ebenfalls hier als eigene Datei.
+import n1 from "./ki-uebersichten-weniger-klicks-mehr-kunden";
 
-const dateien: Artikel[] = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16];
+const dateien: Artikel[] = [n1, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16];
 
 export const ueberarbeiteteArtikel: Artikel[] = dateien;

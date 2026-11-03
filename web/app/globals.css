@@ -3513,3 +3513,48 @@ body { overflow-x: clip; }
 .foto-breit { margin: 28px 0; }
 .foto-breit img { aspect-ratio: 21 / 9; }
 @media (max-width: 700px) { .foto-breit img { aspect-ratio: 16 / 10; } }
+
+/* ============ BLOG: Bilder, Grafiken, FAQ, Zwischen-CTA, Quellen ============ */
+.article-figure { margin: 28px 0 30px; }
+.article-figure img { width: 100%; height: auto; display: block; border-radius: 16px; border: 1px solid var(--line-strong); }
+.article-figure figcaption { font-size: 14px; line-height: 1.55; color: var(--ink-faint); margin-top: 10px; }
+.article-figure figcaption small { display: block; font-size: 12px; margin-top: 2px; }
+.article-grafik svg { width: 100%; height: auto; display: block; border-radius: 16px; border: 1px solid var(--line-strong); background: var(--card); padding: 10px; }
+.article-grafik rect { fill: var(--card); stroke: var(--line-strong); stroke-width: 1.2; }
+.article-grafik .bgka-t1 { font: 700 15px var(--sans); fill: var(--ink); }
+.article-grafik .bgka-t2 { font: 500 12.5px var(--sans); fill: var(--ink-dim); }
+.article-grafik .bgka-t3 { font: 600 12px var(--sans); fill: var(--accent); }
+.article-grafik .bgka-linie { fill: none; stroke: var(--line-strong); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.article-grafik .bgka-punkt { fill: var(--accent); filter: drop-shadow(0 0 6px rgba(255,57,81,0.7)); }
+.article-grafik .bgka-ki rect { stroke: var(--accent); stroke-width: 1.6; animation: bgka-puls 2.4s ease-in-out infinite; }
+.article-grafik .bgka-antwort rect { fill: rgba(255,57,81,0.06); stroke: var(--accent); }
+.article-grafik .bgkv-box { fill: rgba(255,255,255,0.02); }
+.article-grafik .bgkv-blass { opacity: 0.45; }
+.article-grafik .bgkv-stark { stroke: var(--accent); stroke-width: 1.6; }
+.article-grafik .bgkv-pfeil { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 5; animation: bgkv-fluss 1.2s linear infinite; }
+.article-grafik .bgkv-schwach { stroke: var(--line-strong); animation-duration: 3s; }
+@keyframes bgka-puls { 0%, 100% { stroke-opacity: 0.45; } 50% { stroke-opacity: 1; } }
+@keyframes bgkv-fluss { to { stroke-dashoffset: -22; } }
+@media (prefers-reduced-motion: reduce) {
+  .article-grafik * { animation: none !important; }
+  .article-grafik .bgka-punkt { display: none; }
+}
+.article-faq { display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin: 24px 0 30px; }
+.article-faq-item { background: var(--card); }
+.article-faq-item summary { list-style: none; cursor: pointer; padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 17px; font-weight: 600; color: var(--ink); }
+.article-faq-item summary::-webkit-details-marker { display: none; }
+.article-faq-item summary .fplus { width: 18px; height: 18px; position: relative; flex-shrink: 0; }
+.article-faq-item summary .fplus::before, .article-faq-item summary .fplus::after { content: ""; position: absolute; background: var(--ink-dim); transition: opacity 0.25s ease, transform 0.25s ease; }
+.article-faq-item summary .fplus::before { top: 8px; left: 2px; right: 2px; height: 1.5px; }
+.article-faq-item summary .fplus::after { left: 8px; top: 2px; bottom: 2px; width: 1.5px; }
+.article-faq-item[open] summary .fplus::after { opacity: 0; transform: rotate(90deg); }
+.article-faq-item[open] summary { color: var(--accent); }
+.article-faq-item p { margin: 0; padding: 0 22px 20px; font-size: 16.5px; line-height: 1.7; }
+.article-inline-cta { margin: 30px 0; padding: 22px 24px; border: 1px solid var(--accent); border-radius: 16px; background: linear-gradient(135deg, rgba(255,57,81,0.08), transparent 60%); }
+.article-inline-cta b { display: block; font-size: 18px; letter-spacing: -0.01em; margin-bottom: 6px; }
+.article-inline-cta p { margin: 0 0 14px; font-size: 16px; }
+.article-quellen { margin: 36px 0 8px; padding-top: 18px; border-top: 1px solid var(--line); }
+.article-quellen span { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); display: block; margin-bottom: 8px; }
+.article-quellen ul { margin: 0; padding-left: 18px; }
+.article-quellen li { font-size: 14px; line-height: 1.6; color: var(--ink-dim); margin-bottom: 4px; }
+.article-quellen a { color: inherit; }
