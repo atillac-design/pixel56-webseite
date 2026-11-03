@@ -1264,6 +1264,25 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 3.11.2026 (lokal): Vorschaubilder der KI-Freebies freigestellt
+
+Die Vorschauen der KI-Agenten-Checkliste und des Leitfadens KI-Suche hatten
+einen grauen Kasten hinter dem Mockup, die SEO-Vorschau war transparent.
+Beide neu aus `freebies/<name>-titel.png` erzeugt, gleicher Stil wie SEO.
+Inhaber hatte „Ok“ auf das Angebot gesagt. Rezept (PIL), damit es beim
+nächsten Freebie nicht wieder ad hoc entsteht:
+
+```python
+cover = Image.open(titel_png).convert("RGBA")            # auf 660 px Höhe skalieren
+mask: rounded_rectangle(16)  -> cover.putalpha(mask)       # Ecken
+Schatten: rounded_rectangle 18 px tiefer, alpha 110, GaussianBlur(26)
+Karte rotate(-4, expand=True), zentriert in 1200×800 transparent
+save WEBP quality 88
+```
+
+Dateien: `public/bilder/freebie-ki-ebook.webp`, `freebie-ki-suche.webp`
+(jetzt 1200×800 RGBA statt 1200×801 RGB). Vergleichsbild geprüft.
+
 ## 2.11.2026 (lokal): E-Book KI-Suche überall verlinkt
 
 Frage des Inhabers: Steht die Freebie-Seite auch im Fuß? Befund: Die Seite

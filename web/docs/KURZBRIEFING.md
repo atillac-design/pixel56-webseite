@@ -247,6 +247,9 @@ Website („Leitfaden KI-Suche“ unter Ressourcen, `lib/site.ts`), Übersicht
 neben der SEO-Checkliste auf `/suchmaschinenoptimierung`. Build 751
 Seiten, Screenshots geprüft. Inhaber hatte gefragt, ob die Seite im Fuß
 steht: vorher nein, jetzt ja.
+Vorschaubilder `freebie-ki-ebook.webp` und `freebie-ki-suche.webp` am 3.11.
+wie die SEO-Vorschau freigestellt (1200×800 transparent, 660 px hoch, Ecken
+16 px, -4°, Schatten); Rezept jetzt als Code in STATUS 3.11.
 Hinweis: Die Live-Seite ist aus dieser Sandbox erreichbar (curl auf
 www.pixel56.de geht), Live-Tests sind also möglich. „[skip netlify]“ im
 Commit hat den Build offenbar nicht verhindert.
