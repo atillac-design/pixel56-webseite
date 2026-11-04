@@ -1264,6 +1264,23 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 4.11.2026 (lokal): Sicherheitsnetz gegen Seite ohne Stylesheet nach einem Build
+
+Inhaber-Screenshot vom Handy: Seite ohne jedes Design. Live geprüft: beide
+CSS-Dateien 200, Startseite und Artikel in Playwright sauber. Ursache ist
+das Build-Fenster: eine bereits geladene oder zwischengespeicherte Seite
+verweist nach dem Deploy auf CSS-Dateinamen, die es nicht mehr gibt (Next
+vergibt pro Build neue Hashes, Netlify räumt alte Dateien weg). Kopfzeilen
+live: HTML `max-age=0, must-revalidate`, CSS `max-age=31536000, immutable`.
+
+Gegenmittel in `app/layout.tsx`: Inline-Skript nach `load`, Prüfung über
+`getComputedStyle(document.body).fontFamily` auf „Figtree“. Erste Fassung
+prüfte `document.styleSheets` auf `/_next/static/`-Einträge, das greift
+nicht: Chrome legt auch für eine 404-Antwort ein Sheet mit 0 Regeln an.
+Zweite Fassung mit Schriftprüfung getestet (Playwright, CSS per Route auf
+404 gesetzt): normal 1 Ladevorgang, ohne Stil genau 2, Merker `p56-stil`
+verhindert Schleifen und wird bei Erfolg gelöscht.
+
 ## 3.11.2026 (lokal): Blog-Woche eingerichtet, Artikel mit Bildern, Grafiken, FAQ und Prüfskript
 
 Auftrag des Inhabers: zwei Blogartikel pro Woche für Reichweite und

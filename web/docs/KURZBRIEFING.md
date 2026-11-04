@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 3.11.2026
+# Kurzbriefing — Stand 4.11.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -290,6 +290,16 @@ Netlify hat gebaut, `/ressourcen/ki-suche` zeigt die 16-Seiten-Fassung.
 Testanmeldung über `/api/lead` mit `quelle: ki-suche` → `{ok:true}`;
 Inhaber bestätigt 2.11.: Mail mit der neuen PDF ist angekommen. Alle vier
 Freebie-Downloads laufen.
+**Stil-Sicherheitsnetz (4.11., lokal):** Inhaber sah die Seite kurz ohne
+Design (Screenshot: nackter Text, riesige Symbole). Ursache: Seite war
+während des Builds offen, alter Seitenaufbau zeigte auf eine CSS-Datei mit
+altem Namen. HTML wird immer neu geprüft (max-age=0), CSS ein Jahr unter
+eindeutigem Namen; betroffen ist nur das Minutenfenster eines Builds.
+Gegenmittel: Inline-Skript am Ende von `app/layout.tsx` prüft nach `load`,
+ob die Schrift Figtree am `body` ankommt; wenn nicht, einmaliges
+`location.reload()` mit sessionStorage-Merker `p56-stil` (kein Loop).
+Playwright-Test: normal 1 Ladevorgang, bei 404 auf CSS genau 2, danach
+Merker gelöscht. Builds weiter zu ruhigen Zeiten (Montag früh).
 **Bot-Schutz der Formulare (3.11., gepusht 298f287, live geprüft):** Anlass war
 eine Beschwerde-Mail: Ein Fremder hatte die MailerLite-Bestätigungsmail
 bekommen, weil jemand seine Adresse in ein Download-Formular eingetragen

@@ -52,6 +52,15 @@ export default function RootLayout({
         <CookieConsent />
         <Reveal />
         <Interaktiv />
+        {/* Sicherheitsnetz: Fehlt nach einem Build die Stil-Datei (alte Seite im
+            Browser-Speicher zeigt auf einen Dateinamen, den es nicht mehr gibt),
+            lädt die Seite sich einmal selbst neu statt ohne Design zu bleiben. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "window.addEventListener('load',function(){try{var ok=getComputedStyle(document.body).fontFamily.indexOf('Figtree')>-1;if(ok){sessionStorage.removeItem('p56-stil');return;}if(sessionStorage.getItem('p56-stil'))return;sessionStorage.setItem('p56-stil','1');location.reload();}catch(e){}});",
+          }}
+        />
       </body>
     </html>
   );
