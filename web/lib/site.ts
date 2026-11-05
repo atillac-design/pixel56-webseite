@@ -76,6 +76,7 @@ export const footerNav = {
     { label: "Blog", href: routes.blog },
     { label: "Standorte", href: routes.locations },
     { label: "Karriere", href: routes.careers },
+    { label: "Partner werden", href: "/partner" },
     { label: "Kontakt", href: routes.contact },
   ],
   ressourcen: [

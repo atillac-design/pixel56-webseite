@@ -290,6 +290,10 @@ Netlify hat gebaut, `/ressourcen/ki-suche` zeigt die 16-Seiten-Fassung.
 Testanmeldung über `/api/lead` mit `quelle: ki-suche` → `{ok:true}`;
 Inhaber bestätigt 2.11.: Mail mit der neuen PDF ist angekommen. Alle vier
 Freebie-Downloads laufen.
+**Fuß (5.11., lokal):** „Partner werden“ (`/partner`) unter „Unternehmen“
+neben Karriere, auf Nachfrage des Inhabers; Empfehlung: ja, unauffällig,
+von jeder Seite erreichbar, hilft Google.
+
 **Stil-Sicherheitsnetz (4.11., lokal):** Inhaber sah die Seite kurz ohne
 Design (Screenshot: nackter Text, riesige Symbole). Ursache: Seite war
 während des Builds offen, alter Seitenaufbau zeigte auf eine CSS-Datei mit
