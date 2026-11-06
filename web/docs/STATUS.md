@@ -1264,6 +1264,44 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 6.11.2026: Erster Search-Console-Export ausgewertet
+
+Inhaber hat den Export (Leistung, Web, letzte 3 Monate, 5.8. bis 6.11.)
+hochgeladen; die CSV-Dateien bleiben außerhalb des Repos (Regel 6).
+Kernzahlen: 120 Klicks, 57.009 Impressionen, 141 Seiten mit Impressionen,
+1.000 Suchanfragen, Position im Schnitt 32; Computer 71 Klicks bei
+Position 33, Mobil 45 bei 27. Monatsverlauf flach (31/35/36 Klicks).
+
+Was Klicks bringt: Tagesplaner-Seite 41 Klicks (Position 14,4; „tagesplaner
+vorlage kostenlos pdf“ 418 Impressionen auf 7,9), Startseite 16 plus 12
+über die Variante ohne www, Bonn-Stadtseite 9, Vertriebsprofi-Stelle 5.
+
+Reichweite ohne Klicks (Hebel): `/webdesign` 7.013 Impressionen auf 56,7;
+„webdesign koblenz“ 1.931 auf 33,5; „wie lange dauert seo“ 1.163 auf 27,9
+und „wann wirkt seo“ 13,5, „seo dauer“ 12,2, „wann sehe ich erste
+ergebnisse durch seo?“ 5,8 (Zwillinge `seo-dauer-bis-ergebnisse` 3.306
+Impressionen Position 30 und `seo-wie-lange-dauert-es`); „mehr anfragen
+bekommen handwerksbetrieb“ 5,7 und „mehr anfragen“ 7,8 auf den alten
+Artikel „5 einfache Tipps“ (2.498 Impressionen, 0 Klicks); „ki für
+selbstständige“ 15,6, „ki tools für selbstständige“ 14 auf die Rohfassung
+`ki-agenten-fuer-selbststaendige` (3.763 Impressionen, 5 Klicks);
+„facebook werbung für handwerker“ 15,5; „markenaufbau handwerk“ 10,9;
+„seo checkliste für kleine unternehmen“ 16,2; kurios „grok seo“ 12,8.
+
+Alte Stadtseiten `/locations/*` liefern 200 mit `noindex, follow` und
+eigenem Canonical, bekommen aber noch viel Sichtbarkeit: Bonn 6.253
+Impressionen („webdesign bonn“ 1.021 auf 20,4, „webagentur bonn“, „google
+ads agentur bonn“), Mainz Google-Ads-Begriffe auf 10 bis 13 (adwords
+agentur mainz 326 Impressionen), Karlsruhe, Mönchengladbach, Dortmund,
+Graz. Mit dem noindex fällt das weg. Vorschlag an den Inhaber: Bonn und
+Mainz als indexierbare Städte mit eigenem Text nach dem Muster der 13
+Regionstädte, wenn er dort Kunden will.
+
+Mehrere Titel erscheinen im Suchergebnis abgeschnitten („SEO: Wie lange
+dauert es wirklich bis zu… | Pixel56“), weil der seoTitel fehlt und der
+Titel bei 50 Zeichen gekürzt wird. Blog-Reihenfolge im Kurzbriefing nach
+diesen Daten umgestellt: zuerst die alten Stücke mit Reichweite.
+
 ## 4.11.2026 (lokal): Sicherheitsnetz gegen Seite ohne Stylesheet nach einem Build
 
 Inhaber-Screenshot vom Handy: Seite ohne jedes Design. Live geprüft: beide

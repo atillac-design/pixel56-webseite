@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 4.11.2026
+# Kurzbriefing — Stand 6.11.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -257,6 +257,42 @@ Zwischen-CTA, du-Form plus Quellen bei Zahlen. Neue Artikel als Datei in
 **Stand:** Alle 36 Artikel im Build liegen im Schnitt bei 4,9/10; die 16
 alten (2024/25) und die Rohfassungen aus Webflow bei 4–5. Muster-Artikel
 `ki-uebersichten-weniger-klicks-mehr-kunden` (3.11.) hat 10/10.
+
+**Search-Console-Befund (Export 6.11., letzte 3 Monate, Zahlen liegen
+nicht im Repo):** 120 Klicks, 57.000 Impressionen, Schnitt Position 32.
+Klicks kommen fast nur vom Tagesplaner (41, Position 14, „tagesplaner
+vorlage kostenlos pdf“ Position 8) und der Startseite. Große Reichweite
+ohne Klicks: „webdesign koblenz“ 1.931 Impressionen auf Position 33,
+`/webdesign` 7.000 Impressionen auf Position 57, „wie lange dauert seo“
+1.163 Impressionen auf Position 28 (zwei Zwillingsartikel teilen sich die
+Kraft; „wann sehe ich erste ergebnisse durch seo?“ steht schon auf 5,8).
+„mehr anfragen bekommen handwerksbetrieb“ Position 5,7 und „mehr anfragen“
+7,8 zeigen auf den alten Artikel „5 einfache Tipps“ (2.500 Impressionen,
+0 Klicks, Titel im Suchergebnis abgeschnitten). „ki für selbstständige“
+15,6 und „ki tools für selbstständige“ 14 auf die Rohfassung
+`/blog/ki-agenten-fuer-selbststaendige` (3.760 Impressionen). Alte
+Stadtseiten unter `/locations/*` sind noindex, bekommen aber noch
+Impressionen: Bonn 6.250 („webdesign bonn“ Position 20), Mainz Google Ads
+Position 10–13, Karlsruhe, Mönchengladbach, Graz. Die werden mit dem
+noindex verschwinden. **Entscheidung des Inhabers nötig:** Bonn und Mainz
+als eigene indexierbare Städte mit eigenem Text anlegen (Nachfrage ist
+belegt), oder bewusst nur die Region Koblenz?
+
+**Reihenfolge nach Daten (zuerst die alten Stücke mit Reichweite):**
+- [ ] SEO-Dauer: die beiden Zwillinge zu einem Artikel zusammenlegen
+  (Ziel „wie lange dauert seo“, „wann wirkt seo“, „seo dauer“; FAQ mit
+  „wann sehe ich erste ergebnisse“), Weiterleitung vom schwächeren Slug.
+- [ ] „5 einfache Tipps … Kundenanfragen als Handwerker“: neu schreiben,
+  Titel kurz („Mehr Anfragen als Handwerksbetrieb: …“), Ziel „mehr anfragen
+  bekommen handwerksbetrieb“.
+- [ ] KI für Selbstständige: Rohfassung `ki-agenten-fuer-selbststaendige`
+  neu schreiben, Ziel „ki für selbstständige“, „ki tools für
+  selbstständige“, CTA KI-Agenten-Checkliste.
+- [ ] Tagesplaner-Seite: Titel und Beschreibung auf „Tagesplaner Vorlage
+  kostenlos als PDF“ schärfen, kurzer Fragen-Block; Position 8 → 3 ist
+  der schnellste Klick-Gewinn der Seite.
+- [ ] Titel mit „…“ im Suchergebnis beseitigen (seoTitel setzen): SEO-Dauer,
+  5 Tipps, weitere per `npm run blog:check`.
 
 **Themen (abhaken, Reihenfolge = Vorschlag):**
 - [x] Googles KI-Übersichten: weniger Klicks heißt nicht weniger Kunden (3.11.)
