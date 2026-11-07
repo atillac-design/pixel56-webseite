@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 6.11.2026
+# Kurzbriefing — Stand 7.11.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -277,6 +277,20 @@ Position 10–13, Karlsruhe, Mönchengladbach, Graz. Die werden mit dem
 noindex verschwinden. **Entscheidung des Inhabers nötig:** Bonn und Mainz
 als eigene indexierbare Städte mit eigenem Text anlegen (Nachfrage ist
 belegt), oder bewusst nur die Region Koblenz?
+
+**Entschieden 7.11.:** Schritt für Schritt, nicht alle 84 Städte. Bonn
+und Mainz sind jetzt indexierbare Städte mit eigenen Texten
+(`lib/standort-texte/bonn.ts`, `mainz.ts`, je vier Seiten: Webdesign,
+Google Ads, Meta Ads, SEO; keine Social-Media-Seite, weil es dafür keine
+alte URL gibt). Eintrag in `regionStaedte` (Bonn 70 km/55 min, Mainz
+100 km/70 min, Fahrzeiten gerundet). Neues Prüfskript
+`npm run standort:check [stadt]`: Titel ≤ 50, Meta ≤ 155, Anteil
+identischer Sätze zu jeder anderen Seite (Grenze 10 %); Bonn/Mainz jetzt
+höchstens 2 %. Jetzt 15 Städte, 73 indexierbare Standortseiten, 218
+noindex. Der Inhaber schickt alle zwei Wochen einen Search-Console-Export;
+weitere Städte (Karlsruhe, Bielefeld, Essen) nur bei belegter Nachfrage.
+Nach dem Push: in der Search Console die acht neuen Adressen per
+„URL-Prüfung → Indexierung beantragen“ anstoßen (Inhaber).
 
 **Reihenfolge nach Daten (zuerst die alten Stücke mit Reichweite):**
 - [ ] SEO-Dauer: die beiden Zwillinge zu einem Artikel zusammenlegen

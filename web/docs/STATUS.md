@@ -1264,6 +1264,44 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 7.11.2026: Bonn und Mainz als indexierbare Städte mit eigenen Texten
+
+Nachfrage des Inhabers: Haben die übrigen Städte noch gleiche Texte, und
+ist das nicht schädlich? Befund: 291 alte Seiten für 84 Städte, davon 65
+mit eigenen Texten (13 Regionsstädte), 226 mit altem Einheitstext (57 bis
+60 Prozent identische Sätze), aber `noindex, follow` und nicht in der
+Sitemap. Kein Schaden, aber auch keine Sichtbarkeit; die noch sichtbaren
+Impressionen stammen aus der Zeit vor dem 23.10. und laufen aus, sobald
+Google die Seiten neu besucht. Entscheidung: Schritt für Schritt nach
+Search-Console-Daten, zuerst Bonn und Mainz.
+
+Umsetzung:
+- `lib/standort-texte/bonn.ts` und `mainz.ts`, je vier Seiten nach dem
+  Muster von Limburg (Stadt, Bedarf, vier Karten, Referenzen, Stimmen,
+  vier FAQ). Stadtfakten allgemein bekannt (Bonn: Bundesstadt, UN, vier
+  Stadtbezirke, Rhein-Sieg-Kreis, Wettbewerb aus Köln; Mainz:
+  Landeshauptstadt, Universität, Medien, Biotech, Rheinhessen, Wettbewerb
+  aus Wiesbaden und Frankfurt). Keine Kunden aus den Städten behauptet,
+  Referenzen nach Branche (Lernforum als Projekt aus dem Rhein-Main-Gebiet).
+- `lib/standorte.ts`: Bonn und Mainz in `regionStaedte`, Kommentar
+  angepasst. `lib/standort-texte/index.ts` registriert beide.
+- Neues Skript `scripts/standort-check.mjs` (`npm run standort:check`):
+  liest die TypeScript-Dateien als Text, prüft Titel ≤ 50, Meta ≤ 155,
+  „..“ in Metas, und den Anteil identischer Sätze zu jeder anderen Seite.
+  Erster Lauf: Metas 157 bis 163 Zeichen und 24 bis 35 Prozent identische
+  Sätze zwischen Bonn und Mainz (die Mainz-Texte waren zu nah am Bonn-
+  Muster), danach 10 bis 11 Prozent zwischen Bonn und Limburg. Sätze
+  umformuliert, Metas gekürzt, Ergebnis: alle acht Seiten höchstens 2
+  Prozent, Metas 133 bis 147.
+- Build 753 Seiten, `seo:check:strict`: 73 indexierbar (15 Städte), 218
+  noindex. Lokal tragen alle Seiten „noindex, nofollow“, weil
+  `NEXT_PUBLIC_INDEXABLE` nur in Netlify gesetzt ist; live geprüft an
+  Koblenz: kein robots-Meta, also indexierbar.
+
+Zum Google-Ads-Wunsch des Inhabers (2.000 bis 3.000 Euro, wenn das Drei-
+bis Vierfache zurückkommt): Antwort im Chat, Entscheidung offen; erst
+Website-Hebel, dann Test mit kleinem Budget auf eine Leistung.
+
 ## 6.11.2026: Erster Search-Console-Export ausgewertet
 
 Inhaber hat den Export (Leistung, Web, letzte 3 Monate, 5.8. bis 6.11.)

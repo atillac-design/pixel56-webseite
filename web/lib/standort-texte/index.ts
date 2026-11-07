@@ -1,10 +1,12 @@
 import type { StadtTexte, StandortText } from "./typen";
 import { andernach } from "./andernach";
 import { bendorf } from "./bendorf";
+import { bonn } from "./bonn";
 import { hoehrGrenzhausen } from "./hoehr-grenzhausen";
 import { koblenz } from "./koblenz";
 import { lahnstein } from "./lahnstein";
 import { limburg } from "./limburg";
+import { mainz } from "./mainz";
 import { mayen } from "./mayen";
 import { montabaur } from "./montabaur";
 import { muelheimKaerlich } from "./muelheim-kaerlich";
@@ -19,10 +21,12 @@ export type { StandortText } from "./typen";
 const alle: StadtTexte = {
   ...andernach,
   ...bendorf,
+  ...bonn,
   ...hoehrGrenzhausen,
   ...koblenz,
   ...lahnstein,
   ...limburg,
+  ...mainz,
   ...mayen,
   ...montabaur,
   ...muelheimKaerlich,

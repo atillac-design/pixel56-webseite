@@ -2,8 +2,9 @@
  * Datenschicht für die Standortseiten (/locations/<slug>).
  *
  * Alle 291 alten Standort-URLs bleiben 1:1 erreichbar (siehe
- * data/legacy-locations.json). Indexiert werden aber nur die Städte im echten
- * Einzugsgebiet von Bendorf bei Koblenz: Für sie liegen lokale Fakten vor, und
+ * data/legacy-locations.json). Indexiert werden nur die Städte im echten
+ * Einzugsgebiet von Bendorf bei Koblenz sowie Städte mit belegter Nachfrage
+ * aus der Search Console (Bonn, Mainz seit 7.11.2026): Für sie liegen lokale Fakten vor, und
  * nur dort kann Pixel56 Vor-Ort-Termine glaubwürdig anbieten. Alle anderen
  * Städte (Hamburg, Wien, Zürich …) werden mit `noindex, follow` ausgeliefert
  * und stehen nicht in der Sitemap. Das vermeidet Doorway-/Thin-Content-Signale.
@@ -42,6 +43,9 @@ export const regionStaedte: RegionStadt[] = [
   { stadt: "Weissenthurm", anzeige: "Weißenthurm", landkreis: "Landkreis Mayen-Koblenz", entfernungKm: 12, fahrzeitMin: 18, kontext: "Weißenthurm liegt am linken Rheinufer gegenüber von Neuwied, mit Gewerbe entlang der B9. Viele Betriebe hier arbeiten für Kunden auf beiden Rheinseiten." },
   { stadt: "Mayen", landkreis: "Landkreis Mayen-Koblenz", entfernungKm: 32, fahrzeitMin: 30, kontext: "Mayen am Rand der Eifel ist Mittelzentrum für ein großes Umland. Handwerk, Bau und regionale Dienstleister sind hier stark vertreten und werden meist lokal gesucht." },
   { stadt: "Limburg", landkreis: "Landkreis Limburg-Weilburg (Hessen)", entfernungKm: 50, fahrzeitMin: 40, kontext: "Limburg an der Lahn ist Kreisstadt mit ICE-Anschluss und ein eigener Wirtschaftsraum zwischen Westerwald und Taunus. Die Zusammenarbeit läuft hier meist per Video-Call, Vor-Ort-Termine sind nach Absprache möglich." },
+  // Seit 7.11.2026 nach Search-Console-Daten: belegte Nachfrage, eigene Texte in lib/standort-texte.
+  { stadt: "Bonn", landkreis: "Kreisfreie Stadt Bonn (Nordrhein-Westfalen)", entfernungKm: 70, fahrzeitMin: 55, kontext: "Bonn ist Bundesstadt, UN-Standort und Universitätsstadt mit vier Stadtbezirken und dem Rhein-Sieg-Kreis als Umland. Praxen, Kanzleien, Handwerk und Mittelstand stehen online im Wettbewerb mit Anbietern aus Köln." },
+  { stadt: "Mainz", landkreis: "Kreisfreie Stadt Mainz", entfernungKm: 100, fahrzeitMin: 70, kontext: "Mainz ist Landeshauptstadt, Universitäts- und Medienstadt im Rhein-Main-Gebiet, mit Rheinhessen als Umland. Betriebe konkurrieren online mit Anbietern aus Wiesbaden und Frankfurt." },
 ];
 
 const regionByStadt = new Map(regionStaedte.map((r) => [r.stadt, r]));
