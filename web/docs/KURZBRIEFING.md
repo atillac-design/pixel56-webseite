@@ -289,8 +289,12 @@ identischer Sätze zu jeder anderen Seite (Grenze 10 %); Bonn/Mainz jetzt
 höchstens 2 %. Jetzt 15 Städte, 73 indexierbare Standortseiten, 218
 noindex. Der Inhaber schickt alle zwei Wochen einen Search-Console-Export;
 weitere Städte (Karlsruhe, Bielefeld, Essen) nur bei belegter Nachfrage.
-Nach dem Push: in der Search Console die acht neuen Adressen per
-„URL-Prüfung → Indexierung beantragen“ anstoßen (Inhaber).
+Gepusht 7.11. (2b1771f), live geprüft: alle acht Seiten unter
+`/locations/<slug>` (die alten Google-bekannten Adressen bleiben die
+echten URLs, `/standorte/...` leitet dorthin), ohne robots-Meta, in der
+Sitemap, alle Abschnitte sichtbar, keine Skriptfehler. Offen beim Inhaber:
+in der Search Console die acht Adressen per „URL-Prüfung → Indexierung
+beantragen“ anstoßen.
 
 **Reihenfolge nach Daten (zuerst die alten Stücke mit Reichweite):**
 - [ ] SEO-Dauer: die beiden Zwillinge zu einem Artikel zusammenlegen
