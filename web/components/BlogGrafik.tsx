@@ -79,9 +79,70 @@ function KlickVerlauf() {
   );
 }
 
+
+function SeoZeitverlauf() {
+  // Schematische Kurven über zwölf Monate: Technik schnell, Inhalte mittel, Vertrauen langsam.
+  const monate = [0, 2, 4, 6, 8, 10, 12];
+  const x = (m: number) => 60 + (m / 12) * 620;
+  return (
+    <svg className="bg-seo-zeit" viewBox="0 0 720 260" role="img" aria-label="Schema: Technische Verbesserungen wirken in den ersten Wochen, Inhalte nach Monaten, Vertrauen baut sich über ein Jahr auf.">
+      <line x1="60" y1="210" x2="690" y2="210" className="bgsz-achse" />
+      <line x1="60" y1="30" x2="60" y2="210" className="bgsz-achse" />
+      {monate.map((m) => (
+        <g key={m}>
+          <line x1={x(m)} y1="210" x2={x(m)} y2="215" className="bgsz-achse" />
+          <text x={x(m)} y="232" textAnchor="middle" className="bgka-t2">{m === 0 ? "Start" : `Monat ${m}`}</text>
+        </g>
+      ))}
+      <text x="60" y="20" className="bgka-t2">Wirkung</text>
+      <path className="bgsz-kurve bgsz-technik" d="M60 200 C 110 120, 150 95, 200 90 S 500 80, 690 78" />
+      <path className="bgsz-kurve bgsz-inhalt" d="M60 205 C 160 205, 220 190, 300 150 S 500 95, 690 70" />
+      <path className="bgsz-kurve bgsz-vertrauen" d="M60 207 C 250 205, 400 180, 520 140 S 650 95, 690 85" />
+      <g className="bgsz-legende">
+        <rect x="470" y="22" width="220" height="62" rx="10" />
+        <line x1="482" y1="38" x2="506" y2="38" className="bgsz-kurve bgsz-technik bgsz-mini" /><text x="514" y="42" className="bgka-t2">Technik: Wochen</text>
+        <line x1="482" y1="56" x2="506" y2="56" className="bgsz-kurve bgsz-inhalt bgsz-mini" /><text x="514" y="60" className="bgka-t2">Inhalte: Monate</text>
+        <line x1="482" y1="74" x2="506" y2="74" className="bgsz-kurve bgsz-vertrauen bgsz-mini" /><text x="514" y="78" className="bgka-t2">Vertrauen: ein Jahr</text>
+      </g>
+      <g className="bgsz-marke">
+        <line x1={x(3)} y1="30" x2={x(3)} y2="210" />
+        <text x={x(3) + 6} y="46" className="bgka-t3">Hier geben die meisten auf</text>
+      </g>
+    </svg>
+  );
+}
+
+function BewerberWeg() {
+  const schritte = [
+    { x: 10, t1: "Anzeige", t2: "echte Kollegen, klarer Ort" },
+    { x: 192, t1: "Kurzformular", t2: "fünf Felder, in der App" },
+    { x: 374, t1: "Rückruf", t2: "am selben Tag" },
+    { x: 556, t1: "Kennenlernen", t2: "Probetag, Entscheidung" },
+  ];
+  return (
+    <svg className="bg-bewerber-weg" viewBox="0 0 720 200" role="img" aria-label="Vier Schritte einer Bewerberkampagne: Anzeige, Kurzformular, Rückruf am selben Tag, Kennenlernen. Zwischen den Schritten gehen Bewerber verloren, wenn der nächste Schritt zu lange dauert.">
+      {schritte.map((s, i) => (
+        <g key={s.t1}>
+          <rect x={s.x} y="60" width="154" height="70" rx="14" className={i === 2 ? "bgbw-box bgbw-wichtig" : "bgbw-box"} />
+          <text x={s.x + 16} y="88" className="bgka-t1">{s.t1}</text>
+          <text x={s.x + 16} y="110" className="bgka-t2">{s.t2}</text>
+          {i < 3 && <path className="bgbw-pfeil" d={`M${s.x + 156} 95 L${s.x + 190} 95`} />}
+          {i < 3 && <text x={s.x + 173} y="152" textAnchor="middle" className="bgka-t3">{i === 1 ? "hier verlieren viele" : "Abbruch möglich"}</text>}
+        </g>
+      ))}
+      <circle className="bgka-punkt" r="6">
+        <animateMotion dur="4s" repeatCount="indefinite" path="M20 95 L 700 95" />
+      </circle>
+      <text x="360" y="30" textAnchor="middle" className="bgka-t2">Vom Scrollen zum Probearbeiten, jeder Schritt gemessen</text>
+    </svg>
+  );
+}
+
 const grafiken: Record<string, () => React.JSX.Element> = {
   "ki-antwort": KiAntwort,
   "klick-verlauf": KlickVerlauf,
+  "seo-zeitverlauf": SeoZeitverlauf,
+  "bewerber-weg": BewerberWeg,
 };
 
 export const grafikNamen = Object.keys(grafiken);

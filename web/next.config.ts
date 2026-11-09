@@ -67,6 +67,8 @@ const nextConfig: NextConfig = {
         destination: "/stellenangebote/pixel56-marketing-agentur-in-koblenz-sucht-vertriebsprofi-in",
         permanent: true,
       },
+      // Blog-Zwilling zusammengelegt (9.11.2026): der schwächere Slug zeigt auf den Artikel mit Google-Historie.
+      { source: "/blog/seo-wie-lange-dauert-es", destination: "/blog/seo-dauer-bis-ergebnisse", permanent: true },
       { source: "/locations", destination: "/standorte", permanent: true },
       { source: "/standorte/:slug", destination: "/locations/:slug", permanent: true },
     ];

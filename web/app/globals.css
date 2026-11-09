@@ -3533,6 +3533,19 @@ body { overflow-x: clip; }
 .article-grafik .bgkv-stark { stroke: var(--accent); stroke-width: 1.6; }
 .article-grafik .bgkv-pfeil { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 5; animation: bgkv-fluss 1.2s linear infinite; }
 .article-grafik .bgkv-schwach { stroke: var(--line-strong); animation-duration: 3s; }
+.article-grafik .bgsz-achse { stroke: var(--line-strong); stroke-width: 1.2; }
+.article-grafik .bgsz-kurve { fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-dasharray: 900; stroke-dashoffset: 900; animation: bgsz-zeichnen 3.5s ease-out forwards; }
+.article-grafik .bgsz-technik { stroke: var(--accent); }
+.article-grafik .bgsz-inhalt { stroke: #6a35ff; animation-delay: 0.4s; }
+.article-grafik .bgsz-vertrauen { stroke: var(--ink-dim); animation-delay: 0.8s; }
+.article-grafik .bgsz-mini { stroke-dasharray: none; stroke-dashoffset: 0; animation: none; }
+.article-grafik .bgsz-legende rect { fill: var(--card); }
+.article-grafik .bgsz-marke line { stroke: var(--accent); stroke-width: 1.2; stroke-dasharray: 3 4; }
+.article-grafik .bgbw-box { fill: rgba(255,255,255,0.02); }
+.article-grafik .bgbw-wichtig { stroke: var(--accent); stroke-width: 1.6; }
+.article-grafik .bgbw-pfeil { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 5; animation: bgkv-fluss 1.2s linear infinite; }
+@keyframes bgsz-zeichnen { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) { .article-grafik .bgsz-kurve { stroke-dasharray: none; stroke-dashoffset: 0; } }
 @keyframes bgka-puls { 0%, 100% { stroke-opacity: 0.45; } 50% { stroke-opacity: 1; } }
 @keyframes bgkv-fluss { to { stroke-dashoffset: -22; } }
 @media (prefers-reduced-motion: reduce) {

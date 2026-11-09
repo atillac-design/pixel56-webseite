@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 7.11.2026
+# Kurzbriefing — Stand 9.11.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -254,7 +254,12 @@ FAQ-Schema, Bild/Grafik, Alt-Texte, ≥2 Leistungs- und ≥1 Freebie-Link,
 Zwischen-CTA, du-Form plus Quellen bei Zahlen. Neue Artikel als Datei in
 `lib/artikel/<slug>.ts`, Eintrag in `lib/artikel/index.ts`.
 
-**Stand:** Alle 36 Artikel im Build liegen im Schnitt bei 4,9/10; die 16
+**Stand 9.11.:** erster automatischer Termin gelaufen, zwei Stücke lokal
+committet, Push offen. Grafiken jetzt vier: `ki-antwort`, `klick-verlauf`,
+`seo-zeitverlauf`, `bewerber-weg`. Lernpunkt fürs Prüfskript: Sätze, die
+mit „Sie“ (= sie, Plural) beginnen, zählen als Sie-Form; beim Schreiben
+vermeiden. Nächste Woche: neu „Karriereseite, die Bewerbungen bringt“, alt
+„5 einfache Tipps … Handwerker“ neu schreiben. Vorher: Alle 36 Artikel im Build lagen im Schnitt bei 4,9/10; die 16
 alten (2024/25) und die Rohfassungen aus Webflow bei 4–5. Muster-Artikel
 `ki-uebersichten-weniger-klicks-mehr-kunden` (3.11.) hat 10/10.
 
@@ -297,9 +302,11 @@ in der Search Console die acht Adressen per „URL-Prüfung → Indexierung
 beantragen“ anstoßen.
 
 **Reihenfolge nach Daten (zuerst die alten Stücke mit Reichweite):**
-- [ ] SEO-Dauer: die beiden Zwillinge zu einem Artikel zusammenlegen
-  (Ziel „wie lange dauert seo“, „wann wirkt seo“, „seo dauer“; FAQ mit
-  „wann sehe ich erste ergebnisse“), Weiterleitung vom schwächeren Slug.
+- [x] SEO-Dauer (9.11.): Zwillinge zusammengelegt in
+  `lib/artikel/seo-dauer-bis-ergebnisse.ts` (Slug mit Google-Historie, 10/10,
+  1.260 Wörter, Grafik `seo-zeitverlauf`, Googles „vier Monate bis ein Jahr“
+  als Quelle); `seo-wie-lange-dauert-es` aus `lib/blog.ts` entfernt und in
+  `next.config.ts` dauerhaft weitergeleitet.
 - [ ] „5 einfache Tipps … Kundenanfragen als Handwerker“: neu schreiben,
   Titel kurz („Mehr Anfragen als Handwerksbetrieb: …“), Ziel „mehr anfragen
   bekommen handwerksbetrieb“.
@@ -314,7 +321,9 @@ beantragen“ anstoßen.
 
 **Themen (abhaken, Reihenfolge = Vorschlag):**
 - [x] Googles KI-Übersichten: weniger Klicks heißt nicht weniger Kunden (3.11.)
-- [ ] Mitarbeiter finden über Social Media: so läuft eine Bewerberkampagne
+- [x] Mitarbeiter finden über Social Media: Wie läuft eine Bewerberkampagne? (9.11.,
+  `mitarbeiter-finden-social-media`, 10/10, 1.290 Wörter, Grafik `bewerber-weg`,
+  Anzeigenmotiv aus dem Van-den-Berg-Projekt als Bild, CTA Mitarbeitergewinnung)
 - [ ] Karriereseite, die Bewerbungen bringt
 - [ ] Google Ads oder Meta Ads: was passt zu welchem Betrieb?
 - [ ] Website-Relaunch ohne Rankingverlust: die Checkliste

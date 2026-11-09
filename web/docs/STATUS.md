@@ -1264,6 +1264,38 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 9.11.2026 (lokal): Blog-Woche 1, zwei Artikel
+
+Erster Lauf des Scheduled Tasks „Pixel56 Blog-Woche“ (4:49 Uhr, in diese
+Sitzung). Nach der Datenreihenfolge im Kurzbriefing:
+
+- Alt: SEO-Dauer-Zwillinge zusammengelegt. Behalten wurde
+  `seo-dauer-bis-ergebnisse` (3.306 Impressionen in der Search Console),
+  neu geschrieben als `lib/artikel/seo-dauer-bis-ergebnisse.ts`: Titel als
+  Frage, Googles eigene Spanne „vier Monate bis ein Jahr“ (Search Central,
+  „Do you need an SEO?“) als Anker, Zeitstrahl-Grafik `seo-zeitverlauf`
+  (drei Kurven: Technik, Inhalte, Vertrauen, mit Markierung „Hier geben die
+  meisten auf“), Schachfoto (Stock, 1600×900), CTA SEO-Checkliste, FAQ mit
+  „Wann sehe ich erste Ergebnisse durch SEO?“ (Position 5,8 laut Export),
+  Links auf Website-Check, Google Ads, SEO-Betreuung, Unternehmensprofil-
+  Artikel. `seo-wie-lange-dauert-es` aus `neueArtikel` in `lib/blog.ts`
+  entfernt, Redirect 308 in `next.config.ts` (lokal geprüft).
+- Neu: `mitarbeiter-finden-social-media` (Kategorie Meta-Ads), 1.290
+  Wörter, Grafik `bewerber-weg` (vier Schritte, laufender Punkt,
+  Abbruchstellen markiert), Bild `ads-recruiting-kampagne.webp`
+  (Anzeigenmotiv aus dem Van-den-Berg-Projekt, als Kundenprojekt
+  gekennzeichnet, Zusammenarbeit bis 2024), CTA `/mitarbeitergewinnung`,
+  Links auf Google Ads, Webdesign, KI-Agenten-Checkliste. Keine Zahlen zu
+  Kosten oder Bewerberquoten, bewusst: „konkrete Zahl nach dem
+  Erstgespräch“. Erster Prüflauf 9/10, weil drei Sätze mit „Sie“ (Plural)
+  begannen; umformuliert, dann 10/10.
+- Build 753 Seiten, `seo:check:strict` ohne Befund (73 indexierbare
+  Standortseiten unverändert), Playwright: beide Artikel Desktop und Handy,
+  kein Überlauf, keine Skriptfehler, Grafiken animiert sichtbar.
+
+Beitragstexte für LinkedIn, Instagram und MailerLite im Chat geliefert.
+Push offen (Inhaber).
+
 ## 7.11.2026: Bonn und Mainz als indexierbare Städte mit eigenen Texten
 
 Nachfrage des Inhabers: Haben die übrigen Städte noch gleiche Texte, und

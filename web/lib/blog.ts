@@ -150,30 +150,6 @@ const neueArtikel: Artikel[] = [
       { typ: "p", text: "Wichtiger als eine Mindestsumme ist, dass Tracking und Zielseite stimmen. Wer Anzeigen auf eine allgemeine Startseite schickt, verbrennt einen Teil des Budgets. Mit sauberem Tracking und einer passenden Landingpage lässt sich schon mit einem überschaubaren, konstanten Budget viel erreichen — und vor allem messen." },
     ],
   },
-  {
-    slug: "seo-wie-lange-dauert-es",
-    cover: "c6",
-    kategorie: "SEO",
-    titel: "SEO: Wie lange dauert es wirklich bis zu Ergebnissen?",
-    teaser:
-      "Realistische Zeiträume für Suchmaschinenoptimierung — und warum die meisten viel zu früh aufgeben.",
-    lesezeit: 7,
-    datum: "2026-05-16",
-    intro:
-      "SEO ist kein Schalter, den man umlegt. Es ist ein Prozess, der aufeinander aufbaut — und der genau in dem Moment abgebrochen wird, in dem er anfangen würde zu wirken. Hier ist eine ehrliche Einordnung, womit du rechnen kannst.",
-    body: [
-      { typ: "h2", text: "Die ersten Wochen: wenig Sichtbares" },
-      { typ: "p", text: "In den ersten vier bis sechs Wochen passiert vor allem im Hintergrund etwas: technische Grundlagen, Struktur, erste Inhalte. Nach außen sieht man davon oft noch wenig. Genau hier verlieren viele die Geduld — und brechen ab, bevor die Arbeit greifen kann." },
-      { typ: "h2", text: "Monat zwei bis vier: erste Bewegung" },
-      { typ: "p", text: "Bei weniger umkämpften Begriffen zeigen sich jetzt erste Verbesserungen. Rankings bewegen sich, Klicks nehmen langsam zu. Das ist der Punkt, an dem man merkt, dass es in die richtige Richtung geht — auch wenn die großen Effekte noch fehlen." },
-      { typ: "h2", text: "Ab Monat sechs bis zwölf: spürbare Effekte" },
-      { typ: "p", text: "Bei den wichtigen, umkämpften Suchbegriffen zeigt sich echte Wirkung meist in diesem Zeitraum. SEO baut auf jedem Monat davor auf — je länger und konstanter, desto stärker der Effekt." },
-      { typ: "h2", text: "Warum SEO und Ads zusammengehören" },
-      { typ: "p", text: "Der klügste Weg, die Anfangsphase zu überbrücken: Google Ads. Während SEO im Hintergrund aufbaut, sorgen bezahlte Anzeigen sofort für Sichtbarkeit. Läuft SEO an, kann man das Werbebudget schrittweise zurückfahren — der Übergang ist oft so fließend, dass man ihn kaum merkt." },
-      { typ: "h2", text: "Der häufigste Fehler" },
-      { typ: "p", text: "SEO nach zwei, drei Monaten als gescheitert abzuschreiben — genau in der Phase, in der sich die Grundlagen erst festigen. Wer durchhält, baut eine Sichtbarkeit auf, die bleibt, auch ohne laufendes Werbebudget." },
-    ],
-  },
 ];
 
 const migrierteArtikel = legacyBlog as Artikel[];
