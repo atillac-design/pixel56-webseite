@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 9.11.2026
+# Kurzbriefing — Stand 11.11.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -356,6 +356,12 @@ Freebie-Downloads laufen.
 **Fuß (5.11., lokal):** „Partner werden“ (`/partner`) unter „Unternehmen“
 neben Karriere, auf Nachfrage des Inhabers; Empfehlung: ja, unauffällig,
 von jeder Seite erreichbar, hilft Google.
+
+**Search-Console-Meldung „Händlereinträge, Feld image fehlt“ (11.11., lokal):**
+Betraf die einzige Seite mit Produkt-Schema, `/product/tagesplaner-to-do-liste-set`
+(Canva-Set, 3,90 €). `image` im Product-Schema ergänzt und dasselbe Bild
+(`freebie-tagesplaner.webp`) sichtbar in Abschnitt 01 eingebaut. Nach dem Push
+in der Search Console unter „Händlereinträge“ auf „Fehlerbehebung prüfen“.
 
 **Stil-Sicherheitsnetz (4.11., lokal):** Inhaber sah die Seite kurz ohne
 Design (Screenshot: nackter Text, riesige Symbole). Ursache: Seite war

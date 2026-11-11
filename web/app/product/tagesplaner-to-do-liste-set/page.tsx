@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import { ArrowIcon, CloseCta, ContactStrip, FaqList } from "@/components/ui";
 import { resourceRoutes } from "@/lib/routes";
 import { site } from "@/lib/site";
+import setBild from "@/public/bilder/freebie-tagesplaner.webp";
 
 const canonical = "/product/tagesplaner-to-do-liste-set";
 
@@ -20,6 +22,8 @@ const jsonLd = {
   "@type": "Product",
   name: "Produktivitäts-Set: Tagesplaner und To-do-Liste",
   description: "Zwei editierbare und druckbare Canva-Vorlagen für mehr Struktur im Alltag.",
+  // Google verlangt für Händlereinträge ein Produktbild (Search Console, 11.11.2026).
+  image: `${site.url}/bilder/freebie-tagesplaner.webp`,
   brand: { "@type": "Brand", name: site.name },
   offers: {
     "@type": "Offer",
@@ -105,10 +109,18 @@ export default function ProduktivitaetsSetPage() {
                 unser kostenloser Tagesplaner, nur anpassbar.
               </p>
             </div>
-            <div className="mini-grid reveal">
-              {inhalt.map((item) => (
-                <div key={item.b}><b>{item.b}</b><small>{item.small}</small></div>
-              ))}
+            <div className="reveal">
+              <Image
+                src={setBild}
+                alt="Tagesplaner und To-do-Liste als ausgedruckte Vorlagen nebeneinander"
+                sizes="(max-width: 900px) 100vw, 520px"
+                style={{ width: "100%", height: "auto", borderRadius: 16, border: "1px solid var(--line-strong)", marginBottom: 18 }}
+              />
+              <div className="mini-grid">
+                {inhalt.map((item) => (
+                  <div key={item.b}><b>{item.b}</b><small>{item.small}</small></div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
