@@ -301,6 +301,18 @@ Sitemap, alle Abschnitte sichtbar, keine Skriptfehler. Offen beim Inhaber:
 in der Search Console die acht Adressen per „URL-Prüfung → Indexierung
 beantragen“ anstoßen.
 
+**Zweiter Export (11.11., Daten bis 9.11.):** Woche ab 2.11. mit 27 Klicks
+die stärkste im Drei-Monats-Fenster (davor 5 bis 15 pro Woche),
+Impressionen pro Woche von 2.800 (Ende September) auf 5.800 gestiegen,
+Durchschnittsposition dabei von 25 auf 40 (mehr breite Begriffe weit hinten,
+normales Wachstumsmuster). Bonn-Seite 16 Klicks (vorher 9), vor allem
+„bonn it agentur“ und „bonn webdesign“. Eigene Testaufrufe Anfang November
+können einen Teil der Klicks erklären. Wirkung der Änderungen vom 7.11.
+(Bonn/Mainz) und 11.11. (Blog, Produktbild) ist darin noch nicht enthalten:
+Zielbegriffe unverändert (SEO-Dauer 27,7, „wann sehe ich erste Ergebnisse“
+6,1, „webdesign bonn“ 21, Mainz-Ads-Begriffe 9 bis 11, Tagesplaner 8,0).
+Nächster Vergleich Ende November.
+
 **Reihenfolge nach Daten (zuerst die alten Stücke mit Reichweite):**
 - [x] SEO-Dauer (9.11.): Zwillinge zusammengelegt in
   `lib/artikel/seo-dauer-bis-ergebnisse.ts` (Slug mit Google-Historie, 10/10,
