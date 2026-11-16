@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 11.11.2026
+# Kurzbriefing — Stand 16.11.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -258,8 +258,12 @@ Zwischen-CTA, du-Form plus Quellen bei Zahlen. Neue Artikel als Datei in
 committet, Push offen. Grafiken jetzt vier: `ki-antwort`, `klick-verlauf`,
 `seo-zeitverlauf`, `bewerber-weg`. Lernpunkt fürs Prüfskript: Sätze, die
 mit „Sie“ (= sie, Plural) beginnen, zählen als Sie-Form; beim Schreiben
-vermeiden. Nächste Woche: neu „Karriereseite, die Bewerbungen bringt“, alt
-„5 einfache Tipps … Handwerker“ neu schreiben. Vorher: Alle 36 Artikel im Build lagen im Schnitt bei 4,9/10; die 16
+vermeiden. Blog-Woche 2 (16.11.) lokal committet, Push offen. Nächste Woche: neu
+„Google Ads oder Meta Ads: was passt zu welchem Betrieb?“, alt
+`ki-agenten-fuer-selbststaendige` neu schreiben (Ziel „ki für
+selbstständige“, Position 15). Grafiken jetzt sechs. Screenshot-Hinweis:
+Handy-Aufnahmen mit eigenem Kontext und weggeklicktem Cookie-Banner
+machen, sonst kommen leere Bilder. Vorher: Alle 36 Artikel im Build lagen im Schnitt bei 4,9/10; die 16
 alten (2024/25) und die Rohfassungen aus Webflow bei 4–5. Muster-Artikel
 `ki-uebersichten-weniger-klicks-mehr-kunden` (3.11.) hat 10/10.
 
@@ -319,9 +323,10 @@ Nächster Vergleich Ende November.
   1.260 Wörter, Grafik `seo-zeitverlauf`, Googles „vier Monate bis ein Jahr“
   als Quelle); `seo-wie-lange-dauert-es` aus `lib/blog.ts` entfernt und in
   `next.config.ts` dauerhaft weitergeleitet.
-- [ ] „5 einfache Tipps … Kundenanfragen als Handwerker“: neu schreiben,
-  Titel kurz („Mehr Anfragen als Handwerksbetrieb: …“), Ziel „mehr anfragen
-  bekommen handwerksbetrieb“.
+- [x] „5 einfache Tipps“ (16.11.): neu geschrieben unter altem Slug, Titel
+  „Mehr Anfragen als Handwerksbetrieb: Welche 5 Hebel wirken zuerst?“,
+  seoTitel ohne Abschneiden, 10/10, Grafik `anfrage-hebel` (vier Stationen,
+  schrumpfender Balken), Foto GM-Dachdecker (Kundenprojekt), CTA SEO-Checkliste.
 - [ ] KI für Selbstständige: Rohfassung `ki-agenten-fuer-selbststaendige`
   neu schreiben, Ziel „ki für selbstständige“, „ki tools für
   selbstständige“, CTA KI-Agenten-Checkliste.
@@ -336,7 +341,8 @@ Nächster Vergleich Ende November.
 - [x] Mitarbeiter finden über Social Media: Wie läuft eine Bewerberkampagne? (9.11.,
   `mitarbeiter-finden-social-media`, 10/10, 1.290 Wörter, Grafik `bewerber-weg`,
   Anzeigenmotiv aus dem Van-den-Berg-Projekt als Bild, CTA Mitarbeitergewinnung)
-- [ ] Karriereseite, die Bewerbungen bringt
+- [x] Karriereseite, die Bewerbungen bringt (16.11., `karriereseite-die-bewerbungen-bringt`,
+  10/10, Grafik `karriereseite-aufbau`, Google for Jobs mit JobPosting-Quelle)
 - [ ] Google Ads oder Meta Ads: was passt zu welchem Betrieb?
 - [ ] Website-Relaunch ohne Rankingverlust: die Checkliste
 - [ ] Landingpage oder Website: wann lohnt sich was?

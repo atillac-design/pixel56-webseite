@@ -22,7 +22,8 @@ import a16 from "./warum-ist-eine-neue-webseite-so-wichtig-fuer-unternehmer";
 import n1 from "./ki-uebersichten-weniger-klicks-mehr-kunden";
 import n2 from "./mitarbeiter-finden-social-media";
 import n3 from "./seo-dauer-bis-ergebnisse";
+import n4 from "./karriereseite-die-bewerbungen-bringt";
 
-const dateien: Artikel[] = [n1, n2, n3, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16];
+const dateien: Artikel[] = [n1, n2, n3, n4, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16];
 
 export const ueberarbeiteteArtikel: Artikel[] = dateien;

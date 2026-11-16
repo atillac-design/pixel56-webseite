@@ -1264,6 +1264,27 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 16.11.2026 (lokal): Blog-Woche 2, zwei Artikel
+
+- Neu: `karriereseite-die-bewerbungen-bringt` (Kategorie Website), Gegenstück
+  zur Bewerberkampagne vom 9.11. Inhalt: was oben stehen muss, Stellen-
+  beschreibung, echte Kollegen statt Stockfotos, Bewerbung in zwei Minuten,
+  Google for Jobs über JobPosting (Quelle: Google Search Central), typische
+  Fehler. Grafik `karriereseite-aufbau` (Handy-Rahmen, Abschnitte blenden
+  nacheinander ein). Links: Mitarbeitergewinnung (CTA), Webdesign,
+  Website-Check, KI-Agenten-Checkliste, Bewerberkampagnen-Artikel. Ein
+  Beispielname („Thomas“) als Beispiel gekennzeichnet.
+- Alt neu geschrieben: `5-einfache-tipps-um-mehr-kundenanfragen-als-handwerker-zu-bekommen`
+  (Slug bleibt, Search Console: „mehr anfragen bekommen handwerksbetrieb“
+  5,7, rund 2.500 Impressionen, 0 Klicks, Titel abgeschnitten). Neuer Titel
+  als Frage, seoTitel 45 Zeichen, fünf Hebel in Reihenfolge (Profil,
+  Bewertungen, Handy, Kontakt, Antworttempo), Grafik `anfrage-hebel` (erst
+  mit schrumpfenden Kästen, Beschriftung lief über, dann gleich breite
+  Kästen mit schrumpfendem Balken darunter), Foto `gm-dachdecker-bewertung.webp`
+  als Kundenprojekt gekennzeichnet, Quelle Google-Hilfe zum lokalen Ranking.
+- Build 755 Seiten, `blog:check` beide 10/10, `seo:check:strict` ohne
+  Befund, Playwright Desktop und Handy ohne Überlauf, keine Skriptfehler.
+
 ## 9.11.2026 (lokal): Blog-Woche 1, zwei Artikel
 
 Erster Lauf des Scheduled Tasks „Pixel56 Blog-Woche“ (4:49 Uhr, in diese

@@ -138,11 +138,74 @@ function BewerberWeg() {
   );
 }
 
+function KarriereseiteAufbau() {
+  // Handy-Rahmen mit den Abschnitten einer Karriereseite, nacheinander eingeblendet.
+  const teile = [
+    { t1: "Offene Stellen, Ort, Weg", t2: "in drei Sekunden klar" },
+    { t1: "Eine Seite pro Stelle", t2: "Titel, Alltag, Angebot" },
+    { t1: "Echte Kollegen", t2: "Video und Fotos vom Alltag" },
+    { t1: "Bewerbung in 2 Minuten", t2: "Name, Telefon, Stelle" },
+  ];
+  return (
+    <svg className="bg-karriere" viewBox="0 0 720 300" role="img" aria-label="Aufbau einer Karriereseite auf dem Handy: oben offene Stellen und Ort, dann je Stelle eine Seite, dann echte Kollegen, unten die Bewerbung in zwei Minuten, mit fester Kontaktleiste.">
+      <rect x="250" y="8" width="220" height="284" rx="28" className="bgkr-handy" />
+      <rect x="300" y="18" width="120" height="8" rx="4" className="bgkr-kerbe" />
+      {teile.map((t, i) => (
+        <g key={t.t1} className="bgkr-teil" style={{ animationDelay: `${i * 0.5}s` }}>
+          <rect x="266" y={38 + i * 52} width="188" height="44" rx="10" className={i === 3 ? "bgkr-box bgkr-ziel" : "bgkr-box"} />
+          <text x="278" y={56 + i * 52} className="bgkr-t1">{t.t1}</text>
+          <text x="278" y={72 + i * 52} className="bgkr-t2">{t.t2}</text>
+        </g>
+      ))}
+      <rect x="266" y="250" width="188" height="30" rx="15" className="bgkr-leiste" />
+      <text x="360" y="270" textAnchor="middle" className="bgkr-leiste-t">Anrufen · WhatsApp</text>
+      <text x="20" y="70" className="bgka-t1">Was Bewerber</text>
+      <text x="20" y="90" className="bgka-t1">zuerst sehen</text>
+      <text x="20" y="114" className="bgka-t2">Stelle, Ort, Weg zur Bewerbung.</text>
+      <text x="20" y="132" className="bgka-t2">Kein Leitbild, keine Chronik.</text>
+      <text x="500" y="210" className="bgka-t1">Kontakt immer</text>
+      <text x="500" y="230" className="bgka-t1">in Reichweite</text>
+      <text x="500" y="254" className="bgka-t2">Feste Leiste unten,</text>
+      <text x="500" y="272" className="bgka-t2">Rückruf am selben Tag.</text>
+    </svg>
+  );
+}
+
+function AnfrageHebel() {
+  const stationen = [
+    { x: 10, t: "Gefunden werden", h: "Hebel 1 · Profil" },
+    { x: 190, t: "Überzeugen", h: "Hebel 2 · Bewertungen" },
+    { x: 370, t: "Kontakt aufnehmen", h: "Hebel 3 + 4 · Handy, Kontakt" },
+    { x: 550, t: "Antwort bekommen", h: "Hebel 5 · Tempo" },
+  ];
+  // Schematisch: Wer übrig bleibt, wird von Station zu Station weniger.
+  const rest = [140, 112, 84, 56];
+  return (
+    <svg className="bg-anfrage" viewBox="0 0 720 240" role="img" aria-label="Vier Stationen bis zur Anfrage, gefunden werden, überzeugen, Kontakt aufnehmen, Antwort bekommen. An jeder Station steigen Menschen aus, die fünf Hebel holen sie zurück.">
+      <text x="360" y="30" textAnchor="middle" className="bgka-t2">Von der Suche bis zum Anruf: an jeder Station steigen Menschen aus</text>
+      {stationen.map((s, i) => (
+        <g key={s.t}>
+          <rect x={s.x + 2} y="52" width="156" height="58" rx="12" className={i === 3 ? "bgah-box bgah-ziel" : "bgah-box"} />
+          <text x={s.x + 80} y="78" textAnchor="middle" className="bgka-t1">{s.t}</text>
+          <text x={s.x + 80} y="97" textAnchor="middle" className="bgka-t2">Station {i + 1}</text>
+          {i < 3 && <path className="bgah-pfeil" d={`M${s.x + 162} 81 L${s.x + 188} 81`} />}
+          <rect x={s.x + 80 - rest[i] / 2} y="126" width={rest[i]} height="12" rx="6" className="bgah-rest" />
+          <text x={s.x + 80} y="170" textAnchor="middle" className="bgka-t3">{s.h}</text>
+        </g>
+      ))}
+      <text x="10" y="156" className="bgka-t2" style={{ fontSize: 10.5 }}>übrig</text>
+      <text x="360" y="222" textAnchor="middle" className="bgka-t2">Erst die Stationen schließen, dann Reichweite kaufen.</text>
+    </svg>
+  );
+}
+
 const grafiken: Record<string, () => React.JSX.Element> = {
   "ki-antwort": KiAntwort,
   "klick-verlauf": KlickVerlauf,
   "seo-zeitverlauf": SeoZeitverlauf,
   "bewerber-weg": BewerberWeg,
+  "karriereseite-aufbau": KarriereseiteAufbau,
+  "anfrage-hebel": AnfrageHebel,
 };
 
 export const grafikNamen = Object.keys(grafiken);

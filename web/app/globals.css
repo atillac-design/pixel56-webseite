@@ -3544,6 +3544,21 @@ body { overflow-x: clip; }
 .article-grafik .bgbw-box { fill: rgba(255,255,255,0.02); }
 .article-grafik .bgbw-wichtig { stroke: var(--accent); stroke-width: 1.6; }
 .article-grafik .bgbw-pfeil { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 5; animation: bgkv-fluss 1.2s linear infinite; }
+.article-grafik .bgkr-handy { fill: var(--card); stroke: var(--ink-dim); stroke-width: 2; }
+.article-grafik .bgkr-kerbe { fill: var(--line-strong); stroke: none; }
+.article-grafik .bgkr-box { fill: rgba(255,255,255,0.03); }
+.article-grafik .bgkr-ziel { stroke: var(--accent); stroke-width: 1.6; }
+.article-grafik .bgkr-t1 { font: 700 12.5px var(--sans); fill: var(--ink); }
+.article-grafik .bgkr-t2 { font: 500 11px var(--sans); fill: var(--ink-dim); }
+.article-grafik .bgkr-leiste { fill: var(--accent); stroke: none; }
+.article-grafik .bgkr-leiste-t { font: 700 12px var(--sans); fill: #fff; }
+.article-grafik .bgkr-teil { opacity: 0; animation: bgkr-ein 0.6s ease-out forwards; }
+.article-grafik .bgah-box { fill: rgba(255,255,255,0.02); }
+.article-grafik .bgah-ziel { stroke: var(--accent); stroke-width: 1.6; }
+.article-grafik .bgah-pfeil { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 5; animation: bgkv-fluss 1.2s linear infinite; }
+.article-grafik .bgah-rest { fill: var(--accent); stroke: none; opacity: 0.75; }
+@keyframes bgkr-ein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .article-grafik .bgkr-teil { opacity: 1; } }
 @keyframes bgsz-zeichnen { to { stroke-dashoffset: 0; } }
 @media (prefers-reduced-motion: reduce) { .article-grafik .bgsz-kurve { stroke-dasharray: none; stroke-dashoffset: 0; } }
 @keyframes bgka-puls { 0%, 100% { stroke-opacity: 0.45; } 50% { stroke-opacity: 1; } }
