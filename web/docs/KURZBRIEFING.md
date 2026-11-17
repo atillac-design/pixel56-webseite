@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 16.11.2026
+# Kurzbriefing — Stand 17.11.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -237,8 +237,11 @@ entscheiden, ob zwei neue pro Woche. Artikel müssen Bilder oder Grafiken
 haben (Inhaber-Wunsch, „nicht nur Text“), CTA, Links auf Leistungen und
 Freebies, und 10/10 im Prüfskript erreichen.
 
-**Termin:** Scheduled Task „Pixel56 Blog-Woche“ (trig_014VswRwcvyAebSAqigZmibp),
-montags 4:49 Uhr, feuert in diese Sitzung (session_0113S7McJJiqw7FD5TxABsQ9).
+**Termin:** Scheduled Task „Pixel56 Blog-Woche“ (trig_018sFUYqPmQpkTZYzma9T7nz),
+montags 4:49 Uhr Berlin, feuert in den Chat 3.0 (session_0113S7MdAHKAucSgoQM6wtPw).
+Umgezogen am 17.11.: alter Termin aus dem Vorgänger-Chat gelöscht, gleicher
+Text. Der Vorgänger-Chat konnte nicht mehr pushen (GitHub blockiert), seine
+beiden Commits kamen als Git-Bundle in den neuen Chat.
 Er schreibt beide Stücke, baut, prüft, macht Screenshots, committet lokal
 und bittet um „Push“. Der Inhaber antwortet möglichst am selben Tag, sonst
 können lokale Commits mit dem Container verloren gehen.
@@ -258,7 +261,12 @@ Zwischen-CTA, du-Form plus Quellen bei Zahlen. Neue Artikel als Datei in
 committet, Push offen. Grafiken jetzt vier: `ki-antwort`, `klick-verlauf`,
 `seo-zeitverlauf`, `bewerber-weg`. Lernpunkt fürs Prüfskript: Sätze, die
 mit „Sie“ (= sie, Plural) beginnen, zählen als Sie-Form; beim Schreiben
-vermeiden. Blog-Woche 2 (16.11.) lokal committet, Push offen. Nächste Woche: neu
+vermeiden. Blog-Woche 2 (16.11.) am 17.11. im Chat 3.0 geprüft (Build, beide
+Artikel 10/10, SEO-Check); Push vom Inhaber freigegeben, aber GitHub lehnt
+den Push mit 403 ab („Claude doesn't have GitHub access … for your
+organization“). Fix durch den Inhaber: Claude-GitHub-App auf dem Repo
+installieren oder GitHub in den claude.ai-Connectors neu verbinden, dann
+`git push -u origin codex/pixel56-neue-seite` wiederholen. Nächste Woche: neu
 „Google Ads oder Meta Ads: was passt zu welchem Betrieb?“, alt
 `ki-agenten-fuer-selbststaendige` neu schreiben (Ziel „ki für
 selbstständige“, Position 15). Grafiken jetzt sechs. Screenshot-Hinweis:
