@@ -262,11 +262,11 @@ committet, Push offen. Grafiken jetzt vier: `ki-antwort`, `klick-verlauf`,
 `seo-zeitverlauf`, `bewerber-weg`. Lernpunkt fürs Prüfskript: Sätze, die
 mit „Sie“ (= sie, Plural) beginnen, zählen als Sie-Form; beim Schreiben
 vermeiden. Blog-Woche 2 (16.11.) am 17.11. im Chat 3.0 geprüft (Build, beide
-Artikel 10/10, SEO-Check); Push vom Inhaber freigegeben, aber GitHub lehnt
-den Push mit 403 ab („Claude doesn't have GitHub access … for your
-organization“). Fix durch den Inhaber: Claude-GitHub-App auf dem Repo
-installieren oder GitHub in den claude.ai-Connectors neu verbinden, dann
-`git push -u origin codex/pixel56-neue-seite` wiederholen. Nächste Woche: neu
+Artikel 10/10, SEO-Check). Push am 17.11. zunächst mit 403 abgelehnt
+(„Claude doesn't have GitHub access … for your organization“), am 18.11.
+nach Freigabe des Inhabers erfolgreich (34cf10b). Falls das wieder
+passiert: Claude-GitHub-App auf dem Repo installieren oder GitHub in den
+claude.ai-Connectors neu verbinden. Nächste Woche: neu
 „Google Ads oder Meta Ads: was passt zu welchem Betrieb?“, alt
 `ki-agenten-fuer-selbststaendige` neu schreiben (Ziel „ki für
 selbstständige“, Position 15). Grafiken jetzt sechs. Screenshot-Hinweis:
