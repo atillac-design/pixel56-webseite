@@ -267,7 +267,7 @@ Artikel 10/10, SEO-Check). Push am 17.11. zunächst mit 403 abgelehnt
 nach Freigabe des Inhabers erfolgreich (34cf10b). Falls das wieder
 passiert: Claude-GitHub-App auf dem Repo installieren oder GitHub in den
 claude.ai-Connectors neu verbinden.
-**Blog-Woche 3 (23.11., lokal committet, Push offen):** neu
+**Blog-Woche 3 (23.11., gepusht b2072b2 nach Freigabe am selben Tag):** neu
 `google-ads-oder-meta-ads` (10/10, Grafik `kanal-wahl`, Van-den-Berg-Motiv),
 alt `ki-agenten-fuer-selbststaendige` komplett neu geschrieben unter altem
 Slug (10/10, Grafik `ki-freigabe`, Bitkom-Zahl vom 14.9.2026 als Quelle,
