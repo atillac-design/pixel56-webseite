@@ -335,6 +335,59 @@ Zielbegriffe unverändert (SEO-Dauer 27,7, „wann sehe ich erste Ergebnisse“
 6,1, „webdesign bonn“ 21, Mainz-Ads-Begriffe 9 bis 11, Tagesplaner 8,0).
 Nächster Vergleich Ende November.
 
+**Dritter Export (23.11., Daten 22.8. bis 21.11., Dateien nur im Chat, nicht
+im Repo):** 111 Klicks, 52.800 Impressionen in drei Monaten. Wochen: 2.11.
+27 Klicks (Ausreißer, eigene Tests), 9.11. 3, 16.11. 9; Impressionen pro
+Woche 4.300 bis 5.700, Niveau gehalten. Desktop 40.400 Impressionen,
+Mobil 12.000 (Agentur-Begriffe werden am Rechner gesucht). Befund je Baustelle:
+- Tagesplaner weiter die einzige Klickquelle: 37 Klicks, Position 14,7;
+  „tagesplaner vorlage kostenlos pdf“ Position 8,0 mit 388 Impressionen,
+  aber nur 1 % Klickrate → Titel/Snippet-Aufgabe bestätigt (schnellster Gewinn).
+- Bonn: 15 Klicks, 5.180 Impressionen, Position 39; „bonn webdesign“ 21,8
+  (4 Klicks), „webdesign bonn“ 22,2 (760 Impressionen, 0 Klicks), „bonn it
+  agentur“ 7 Klicks bei 24 Impressionen. Bonn ist nach dem Tagesplaner die
+  zweitstärkste Seite.
+- Mainz: Google zeigt für „adwords/ads agentur mainz“ (Positionen 10 bis 13)
+  noch die Meta-Ads-Seite (3.641 Impressionen, Position 38), die neue
+  Google-Ads-Seite erst 155 Impressionen auf 19. Abwarten, Umschwenken dauert.
+- Blog mit Reichweite ohne Klicks: `ki-agenten-fuer-selbststaendige` 4
+  Klicks, 3.352 Impressionen, Position 19 („ki für selbstständige“ 15,5,
+  „ki tools für selbstständige“ 14,8) → heute neu geschrieben.
+  `5-einfache-tipps` 3.018 Impressionen, 0 Klicks, Position 23,5 („mehr
+  anfragen bekommen handwerksbetrieb“ 6,0, „handwerker mehr anfragen
+  bekommen“ 5,4) → seit 18.11. neu, Wirkung frühestens Mitte Dezember.
+  `seo-dauer-bis-ergebnisse` 3.232 Impressionen, Position 27 („wie lange
+  dauert seo“ 26,7, vorher 27,7; „wann sehe ich erste ergebnisse“ 6,5), der
+  alte Zwilling bekommt noch 158 Impressionen. `meta-ads-mehr-kunden-fur-
+  handwerker-kmu` 3 Klicks, 1.032 Impressionen, Position 22, „meta ads
+  handwerk“ Position 3,95 → nächster Kandidat zum Neuschreiben.
+- **Koblenz-Kernbegriffe stehen auf Seite 5:** „webdesign koblenz“ 1.376
+  Impressionen Position 50,7 (6.11. noch 33), „webdesigner koblenz“ 52,
+  „webdesign agentur koblenz“ 49,6, „suchmaschinenoptimierung koblenz“ 60,
+  „seo koblenz“ 66. `/webdesign` 5.041 Impressionen Position 57, Startseite
+  4.387 auf 57. Die eigene Seite `/locations/koblenz` („Webdesign Koblenz:
+  Websites, die anfragen lassen“) taucht im Export gar nicht auf, also 0
+  Impressionen: Google bewertet sie nicht, sondern zeigt `/webdesign` und
+  die Startseite weit hinten. Mitursache gefunden: Startseite und
+  `/webdesign` verlinken die Koblenz-Seite nicht, nur die Standort-Übersicht
+  tut es. Bonn und Mainz haben dasselbe Muster, ranken aber, weil dort
+  weniger Wettbewerb ist. **Vorschlag für den Inhaber:** Koblenz-Seite von
+  Startseite (Region-Abschnitt), `/webdesign` und Fuß verlinken, Projekte
+  aus Koblenz (CurlyAnn) dort zeigen, live prüfen, ob die Seite im Index
+  ist (Search Console, URL-Prüfung). Erst danach entscheiden, ob
+  `/webdesign` selbst stärker auf Koblenz ausgerichtet wird.
+- Weitere Nachfrage ohne Seite: „webdesign bielefeld“ 513 Impressionen
+  (Seite noindex, 1 Klick), „google ads agentur karlsruhe“ 273 (Seite
+  noindex, 987 Impressionen auf 17,9). Bleibt bei der Regel: nur bei
+  weiter belegter Nachfrage als eigene Stadt.
+- Google for Jobs: die Vertriebsprofi-Stelle erscheint als „Stellenangebot“
+  (56 Impressionen, 2 Klicks, Position 8,8). Produkt-Snippets 2 Impressionen.
+  Österreich 1.606 und Schweiz 1.121 Impressionen, je 1 Klick.
+Konsequenz für die Blog-Reihenfolge: nächste Woche alt = Meta-Ads-Zwillinge
+(`meta-ads-mehr-kunden-fur-handwerker-kmu` neu schreiben, Budget-Zwillinge
+`meta-ads-budget-realistisch` und `meta-ads-budget-handwerksbetrieb`
+zusammenführen), Google-Rezensionen danach. Nächster Export Anfang Dezember.
+
 **Reihenfolge nach Daten (zuerst die alten Stücke mit Reichweite):**
 - [x] SEO-Dauer (9.11.): Zwillinge zusammengelegt in
   `lib/artikel/seo-dauer-bis-ergebnisse.ts` (Slug mit Google-Historie, 10/10,
