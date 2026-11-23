@@ -1,0 +1,8 @@
+{
+  "name": "pixel56-instagram-baukasten",
+  "private": true,
+  "dependencies": {
+    "@fontsource/bricolage-grotesque": "*",
+    "@fontsource/dm-sans": "*"
+  }
+}

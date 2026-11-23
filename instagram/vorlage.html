@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><title>Pixel56 Woche 1</title>
+<style>
+@font-face{font-family:Brico;font-weight:800;src:url(node_modules/@fontsource/bricolage-grotesque/files/bricolage-grotesque-latin-800-normal.woff2)}
+@font-face{font-family:Brico;font-weight:700;src:url(node_modules/@fontsource/bricolage-grotesque/files/bricolage-grotesque-latin-700-normal.woff2)}
+@font-face{font-family:DM;font-weight:400;src:url(node_modules/@fontsource/dm-sans/files/dm-sans-latin-400-normal.woff2)}
+@font-face{font-family:DM;font-weight:400;font-style:italic;src:url(node_modules/@fontsource/dm-sans/files/dm-sans-latin-400-italic.woff2)}
+@font-face{font-family:DM;font-weight:500;src:url(node_modules/@fontsource/dm-sans/files/dm-sans-latin-500-normal.woff2)}
+@font-face{font-family:DM;font-weight:700;src:url(node_modules/@fontsource/dm-sans/files/dm-sans-latin-700-normal.woff2)}
+:root{--red:#ff4242;--ink:#1e0a12;--plum:#55283a;--card:#fbf6ef;--soft:#efe5d9}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#d4b896}
+.slide{position:absolute;inset:0;overflow:hidden;font-family:DM;color:var(--ink);--tx:var(--ink);--mut:var(--plum);--cd:#fbf6ef;--cdt:var(--ink);--ln:rgba(30,10,18,.14);
+  background:radial-gradient(900px 700px at 100% 0%,#e2cdb4 0%,rgba(226,205,180,0) 70%),radial-gradient(800px 600px at 0% 100%,#c7a989 0%,rgba(199,169,137,0) 70%),#d4b591}
+.slide.dark{color:#fbf6ef;--tx:#fbf6ef;--mut:#d7bfae;--cd:#2c1520;--cdt:#fbf6ef;--ln:rgba(251,246,239,.14);
+  background:radial-gradient(900px 700px at 100% 0%,#3d1c2a 0%,rgba(61,28,42,0) 70%),radial-gradient(700px 600px at 0% 100%,#140509 0%,rgba(20,5,9,0) 70%),#1e0a12}
+.abs{position:absolute}
+.kick{position:absolute;left:84px;top:88px;display:flex;align-items:center;gap:16px;font:500 25px DM;letter-spacing:.3em;white-space:nowrap}
+.kick .ln{height:3px;background:var(--red);width:34px}
+.count{position:absolute;right:84px;top:84px;font:500 25px DM;letter-spacing:.06em;color:var(--mut)}
+.foot{position:absolute;left:84px;top:1225px;font:700 33px DM;display:flex;gap:18px;align-items:center}
+.swipe{position:absolute;right:84px;top:1233px;font:400 26px DM;color:var(--mut);display:flex;gap:12px;align-items:center}
+.prog{position:absolute;left:0;bottom:0;height:5px;background:var(--red);width:0}
+.mask{overflow:hidden;display:block;padding-bottom:.1em;margin-bottom:-.1em}
+.mask>span{display:block}
+.red{color:var(--red)}
+.H{position:absolute;left:84px;font:800 108px/0.98 Brico;letter-spacing:-.035em;width:930px}
+.h{position:absolute;left:84px;top:170px;font:800 72px/1.02 Brico;letter-spacing:-.035em;width:920px}
+.sub{position:absolute;left:84px;font:400 32px/1.45 DM;color:var(--mut);width:912px}
+.card{position:absolute;background:var(--cd);color:var(--cdt);border-radius:26px;box-shadow:0 24px 60px -24px rgba(40,15,10,.45);overflow:hidden}
+.dark .card{box-shadow:0 0 0 1.5px rgba(251,246,239,.06),0 24px 60px -24px rgba(0,0,0,.6)}
+.chip{display:inline-flex;align-items:center;height:40px;padding:0 18px;border-radius:20px;font:700 19px DM;letter-spacing:.12em;white-space:nowrap}
+.items{position:absolute;left:84px;width:912px}
+.it{display:flex;gap:28px;padding:30px 34px;border-radius:24px;background:var(--cd);color:var(--cdt);margin-bottom:20px}
+.dark .it{box-shadow:0 0 0 1.5px rgba(251,246,239,.06)}
+.it .n{font:800 40px Brico;color:var(--red);min-width:62px;letter-spacing:-.03em}
+.it .t{font:800 36px/1.12 Brico;letter-spacing:-.02em}
+.it .s{font:400 27px/1.42 DM;margin-top:8px;opacity:.86}
+.src{position:absolute;left:84px;font:400 22px/1.4 DM;color:var(--mut);width:912px}
+.prompt{position:absolute;left:84px;width:912px;border-radius:26px;background:#140509;color:#fbf6ef;padding:34px 38px;border:1.5px solid rgba(255,66,66,.45)}
+.prompt .lb{font:700 20px DM;letter-spacing:.16em;color:var(--red);margin-bottom:16px;display:flex;justify-content:space-between}
+.prompt .tx{font:400 27px/1.5 DM;white-space:pre-wrap}
+.prompt .tx i{font-style:normal;color:#ff8a7a}
+.tip{position:absolute;left:84px;width:912px;padding:28px 34px;border-radius:24px;background:var(--red);color:#fff}
+.tip .lb{font:700 19px DM;letter-spacing:.16em;margin-bottom:8px;opacity:.85}
+.tip .tx{font:500 28px/1.4 DM}
+.photo{position:absolute;left:616px;top:88px;width:380px;height:380px}
+.photo img{position:absolute;left:-10px;top:-10px;width:400px;height:400px;clip-path:circle(45% at 50% 50%)}
+.photo svg{position:absolute;inset:0}
+.btn{position:absolute;left:84px;top:1059px;height:91px;padding:0 40px;border-radius:46px;background:var(--red);color:#fff;font:700 33px Brico;display:flex;align-items:center;gap:22px;overflow:hidden;transform-origin:left center}
+.ripple{position:absolute;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.45);opacity:0}
+.finger{position:absolute;width:64px;height:64px;border-radius:50%;background:rgba(30,10,18,.18);border:3px solid rgba(255,255,255,.9);opacity:0;box-shadow:0 10px 30px rgba(30,10,18,.3);z-index:20}
+.stars{display:flex;gap:4px}
+.ph{height:14px;border-radius:7px;background:#e6dacb}
+.img{position:absolute;overflow:hidden;border-radius:22px;box-shadow:0 24px 60px -22px rgba(40,15,10,.5)}
+.img img{width:100%;height:100%;object-fit:cover;display:block}
+.qt{font:italic 400 36px/1.45 DM}
+</style></head><body>
+<script>
+const ARR='<span class="arr" style="display:inline-block"><svg width="0.85em" height="0.85em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>';
+const STARP='M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z';
+const stars=(n,sz=30,c='#ff4242')=>`<div class="stars">${Array(5).fill(0).map((_,i)=>`<svg width="${sz}" height="${sz}" viewBox="0 0 24 24"><path class="sp" d="${STARP}" fill="${i<n?c:'#d9c7b3'}"/></svg>`).join('')}</div>`;
+const CHECK='<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+const CROSS='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+const H=(lines,red,top,cls='h',style='')=>`<div class="${cls}" data-m=".35" style="top:${top}px;${style}">${lines.map((l,i)=>`<span class="mask"><span class="${i>=red?'red':''}">${l}</span></span>`).join('')}</div>`;
+const items=(arr,top,start=1)=>`<div class="items" style="top:${top}px">${arr.map((x,i)=>`<div class="it" data-up="${.6+i*.15}"><div class="n">${String(start+i).padStart(2,'0')}</div><div><div class="t">${x[0]}</div><div class="s">${x[1]}</div></div></div>`).join('')}</div>`;
+const CTA=(o)=>`<div class="photo"><img src="img/team-atilla.webp"><svg viewBox="0 0 380 380"><circle cx="190" cy="190" r="185" fill="none" stroke="#ff4242" stroke-width="8" stroke-linecap="round" transform="rotate(-90 190 190)"/></svg></div>
+  ${H(o.h,o.red??99,555,'H','font-size:92px;line-height:1.0')}
+  <div class="sub" data-up="1.4" style="top:${o.subTop||790}px;font-size:33px">${o.sub}</div>
+  <div class="abs" data-up="1.8" style="left:84px;top:935px;font:700 35px DM">Atilla Ciftcioglu</div>
+  <div class="abs" data-up="1.9" style="left:84px;top:985px;font:400 28px DM;color:var(--mut)">Gründer Pixel56 · Websites, Ads, Content, KI</div>
+  <div class="btn"><span>${o.btn||'Schreib Atilla · DM oder pixel56.de'}</span>${ARR}<div class="ripple"></div></div>`;
+
+/* ======================= POSTS ======================= */
+const MK=(pos)=>pos.map((m,i)=>`<div class="mk3" style="position:absolute;left:${m[0]*100}%;top:${m[1]*100}%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:#ff4242;color:#fff;font:800 26px Brico;display:flex;align-items:center;justify-content:center;border:4px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.35)">${m[2]||i+1}</div>`).join('');
+const ABBPOS=[[.73,.58],[.62,.24],[.52,.09],[.73,.935],[.2,.86]];
+const REV=(o)=>`
+  <div class="img" style="left:84px;top:170px;width:912px;height:470px;background:${o.m?'#fff':'#1e0a12'}">${o.m?`<img src="img/${o.m}" style="object-position:${o.pos||'50% 50%'};object-fit:${o.fit||'cover'}">`:`<div style="padding:60px;color:#fbf6ef"><div style="font:800 190px/0.8 Brico;color:var(--red);height:110px">„</div><div style="margin-top:40px">${stars(5,74)}</div><div style="font:800 54px Brico;margin-top:34px">5 von 5 Sternen</div><div style="font:400 28px DM;opacity:.75;margin-top:8px">${o.s.replace('Google, ','Google-Bewertung · ')}</div></div>`}</div>
+  <div class="chip abs" style="left:110px;top:196px;background:#1e0a12;color:#fff;${o.m?'':'left:auto;right:110px;background:#fbf6ef;color:#1e0a12'}">${o.c}</div>
+  <div class="abs" style="left:84px;top:680px;display:flex;align-items:center;gap:24px">
+   <div style="width:110px;height:110px;border-radius:50%;overflow:hidden;border:4px solid var(--red);background:#fff">${o.p?`<img src="img/${o.p}" style="width:100%;height:100%;object-fit:${o.pfit||'cover'}">`:`<div style="width:100%;height:100%;background:${o.col};color:#fff;font:800 40px Brico;display:flex;align-items:center;justify-content:center">${o.ini}</div>`}</div>
+   <div><div style="font:800 36px Brico">${o.n}</div><div style="font:400 25px DM;color:var(--mut);margin-top:2px">${o.r} · ${o.s}</div><div style="margin-top:8px">${stars(5,26)}</div></div></div>
+  <div class="qt abs" style="left:84px;top:840px;width:912px;font-size:${o.q.length>100?40:o.q.length>40?46:58}px">„${o.q}“</div>`;
+const RECAP=(rows,next)=>`${H(['Diese Woche','zum Nachlesen.'],1,170)}
+  <div class="abs" style="left:84px;top:380px;width:912px">${rows.map(x=>`<div style="display:flex;align-items:center;gap:26px;padding:20px 0;border-bottom:1.5px solid var(--ln)"><div style="font:800 30px Brico;color:var(--red);width:60px">${x[0]}</div><div style="font:500 30px DM">${x[1]}</div></div>`).join('')}</div>
+  <div class="tip" data-up="1.0" style="top:1010px"><div class="lb">NÄCHSTE WOCHE</div><div class="tx">${next}</div></div>`;
+
+const MK2=(pos)=>pos.map((m,i)=>`<div class="mk3" style="position:absolute;left:${m[0]*100}%;top:${m[1]*100}%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:#ff4242;color:#fff;font:800 26px Brico;display:flex;align-items:center;justify-content:center;border:4px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.35);z-index:5">${m[2]||i+1}</div>`).join('');
+const ADPOS=[[-.02,.3],[.96,.24],[.78,.08],[-.02,.86],[.97,.95]];
+const AD=(sz,marks)=>`<div style="position:relative;width:${sz}px;height:${sz}px"><div style="position:absolute;left:0;top:0;width:500px;height:500px;transform:scale(${sz/500});transform-origin:0 0;border-radius:22px;overflow:hidden;background:#f3efe9;box-shadow:0 30px 70px -20px rgba(0,0,0,.6);font-family:DM">
+  <div style="position:absolute;left:22px;top:22px;display:flex;gap:8px"><div style="background:#fff;border-radius:8px;padding:6px 10px;font:700 15px DM;color:#1f9d55">✓ UNBEFRISTET</div><div style="background:#fff;border-radius:8px;padding:6px 10px;font:700 15px DM;color:#c0392b">● IN DEINER REGION</div></div>
+  <div style="position:absolute;right:0;top:110px;width:200px;height:290px;background:linear-gradient(160deg,#cfd8dc,#9fb0b9);display:flex;flex-direction:column;align-items:center;justify-content:center">
+   <svg width="120" height="150" viewBox="0 0 24 30" fill="rgba(255,255,255,.75)"><circle cx="12" cy="8" r="6"/><path d="M0 30a12 12 0 0 1 24 0z"/></svg>
+   <div style="font:700 13px DM;letter-spacing:.1em;color:#fff;margin-top:8px;text-align:center">ECHTES FOTO<br>AUS DEM TEAM</div></div>
+  <div style="position:absolute;left:24px;top:110px;width:270px;font:800 44px/1.02 Brico;color:#12305a;letter-spacing:-.02em">Du baust Bäder, die man zeigen will?</div>
+  <div style="position:absolute;left:0;right:0;bottom:0;height:120px;background:#12305a;padding:18px 24px;color:#fff">
+   <div style="font:500 16px DM;opacity:.8">Wir suchen dich als</div>
+   <div style="font:800 26px Brico;margin-top:2px">Anlagenmechaniker SHK (m/w/d)</div>
+   <div style="position:absolute;right:20px;bottom:16px;background:#ffd23f;color:#12305a;border-radius:10px;padding:8px 14px;font:800 16px DM">In 60 Sek. bewerben →</div></div>
+ </div>${marks?MK2(marks):''}</div>`;
+const REV2=(o)=>`
+  <div class="img" style="left:84px;top:170px;width:912px;height:470px;background:${o.m?'#fff':'#1e0a12'}">${o.m?`<img src="img/${o.m}" style="object-position:${o.pos||'50% 50%'}">`:`<div style="padding:60px;color:#fbf6ef"><div style="font:800 190px/0.8 Brico;color:var(--red);height:110px">„</div><div style="margin-top:40px">${stars(5,74)}</div><div style="font:800 54px Brico;margin-top:34px">5 von 5 Sternen</div><div style="font:400 28px DM;opacity:.75;margin-top:8px">${o.s.replace('Google, ','Google-Bewertung · ')}</div></div>`}</div>
+  <div class="chip abs" style="left:110px;top:196px;background:#1e0a12;color:#fff;${o.m?'':'left:auto;right:110px;background:#fbf6ef;color:#1e0a12'}">${o.c}</div>
+  <div class="abs" style="left:84px;top:680px;display:flex;align-items:center;gap:24px">
+   <div style="width:110px;height:110px;border-radius:50%;overflow:hidden;border:4px solid var(--red);background:${o.col};color:#fff;font:800 40px Brico;display:flex;align-items:center;justify-content:center">${o.ini}</div>
+   <div><div style="font:800 36px Brico">${o.n}</div><div style="font:400 25px DM;color:var(--mut);margin-top:2px">${o.r} · ${o.s}</div><div style="margin-top:8px">${stars(5,26)}</div></div></div>
+  <div class="qt abs" style="left:84px;top:840px;width:912px;font-size:${o.q.length>100?40:o.q.length>40?46:58}px">„${o.q}“</div>`;
+const STAT=(rows)=>`<div class="abs" style="left:84px;top:390px;width:912px">${rows.map(r=>`<div style="display:flex;gap:30px;padding:26px 0;border-top:1.5px solid var(--ln)"><div style="font:800 58px Brico;color:var(--red);letter-spacing:-.04em;min-width:280px">${r[0]}</div><div><div style="font:400 27px/1.4 DM">${r[1]}</div><div style="font:400 21px DM;opacity:.65;margin-top:8px">${r[2]}</div></div></div>`).join('')}</div>`;
+
+/* ---------- helpers for week 16.-22.11. ---------- */
+const COL=(kids,gap=28)=>`<div class="abs" style="left:84px;top:168px;width:912px;height:1030px;display:flex;flex-direction:column;justify-content:space-between;gap:${gap}px">${kids.join('')}</div>`;
+const HD=(lines,red=99,size=74)=>`<div style="font:800 ${size}px/1.03 Brico;letter-spacing:-.035em">${lines.map((l,i)=>`<div class="${i>=red?'red':''}">${l}</div>`).join('')}</div>`;
+const TX=(t,size=36)=>`<div style="font:400 ${size}px/1.4 DM;color:var(--mut)">${t}</div>`;
+const DOT=(n,x,y)=>`<div style="position:absolute;left:${x}%;top:${y}%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:#ff4242;color:#fff;font:800 28px Brico;display:flex;align-items:center;justify-content:center;border:4px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.4);z-index:5">${n}</div>`;
+const PIC=(src,h,o={})=>`<div style="position:relative;height:${h}px;flex:none;border-radius:22px;overflow:hidden;background:${o.bg||'#fff'};box-shadow:0 24px 60px -24px rgba(40,15,10,.5)"><img src="img/${src}" style="width:100%;height:100%;display:block;object-fit:${o.fit||'cover'};object-position:${o.pos||'50% 50%'}">${o.chip?`<div class="chip" style="position:absolute;left:22px;top:22px;background:#1e0a12;color:#fff">${o.chip}</div>`:''}${(o.dots||[]).map(d=>DOT(d[0],d[1],d[2])).join('')}</div>`;
+const CARD=(inner,o={})=>`<div style="background:${o.bg||'var(--cd)'};color:${o.col||'var(--cdt)'};border-radius:22px;padding:${o.pad||'28px 34px'};flex:none;${o.border?'border:2px solid var(--red);':''}${o.style||''}">${inner}</div>`;
+const LBL=(t,c='var(--red)')=>`<div style="font:700 19px DM;letter-spacing:.16em;color:${c}">${t}</div>`;
+const WIR=(t,l='SO BAUEN WIR DAS EIN')=>`<div style="background:var(--red);color:#fff;border-radius:22px;padding:24px 30px;flex:none"><div style="font:700 18px DM;letter-spacing:.16em;opacity:.85">${l}</div><div style="font:500 34px/1.38 DM;margin-top:8px">${t}</div></div>`;
+const AR=`<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex:none;opacity:.7"><path d="M4 12h15M13 6l6 6-6 6"/></svg>`;
+const FLOW=(steps,end)=>`<div style="display:flex;align-items:center;gap:10px;flex:none">${steps.map((s,i)=>`${i?AR:''}<div style="flex:1;min-height:160px;border-radius:20px;padding:16px 14px;display:flex;align-items:center;justify-content:center;text-align:center;font:700 30px/1.2 DM;background:${i===steps.length-1?(end==='bad'?'#ff4242':'#1f9d55'):'var(--cd)'};color:${i===steps.length-1?'#fff':'var(--cdt)'}">${s}</div>`).join('')}</div>`;
+const LIST=(arr,icon)=>`<div style="display:flex;flex-direction:column;gap:18px;flex:none">${arr.map(x=>`<div style="display:flex;gap:18px;align-items:flex-start"><div style="width:44px;height:44px;border-radius:50%;background:${icon==='x'?'#ff4242':'#1f9d55'};display:flex;align-items:center;justify-content:center;flex:none">${icon==='x'?CROSS:CHECK}</div><div style="font:400 35px/1.35 DM;padding-top:0">${x}</div></div>`).join('')}</div>`;
+const NUM=(n,label)=>`<div style="display:flex;align-items:center;gap:16px;flex:none"><div style="font:800 34px Brico;color:var(--red)">${n}</div>${label?`<div class="chip" style="background:var(--red);color:#fff">${label}</div>`:''}</div>`;
+const RVW=(name,role,quote,img)=>CARD(`<div style="display:flex;align-items:center;gap:18px">${img?`<div style="width:76px;height:76px;border-radius:50%;overflow:hidden;flex:none"><img src="img/${img}" style="width:100%;height:100%;object-fit:cover"></div>`:''}<div><div style="font:700 31px DM">${name}</div><div style="font:400 23px DM;opacity:.7">${role}</div></div><div style="margin-left:auto">${stars(5,28)}</div></div><div style="font:italic 400 37px/1.4 DM;margin-top:18px">„${quote}“</div>`,{bg:'#fbf6ef',col:'#1e0a12'});
+const BTN=(t)=>`<div style="height:76px;padding:0 34px;border-radius:38px;background:var(--red);color:#fff;font:700 28px DM;display:inline-flex;align-items:center;gap:14px;flex:none;align-self:flex-start">${t} ${ARR}</div>`;
+const SPACER=`<div style="flex:1"></div>`;
+const TABLE=(rows)=>`<div style="flex:none">${rows.map((x,i)=>`<div style="display:flex;align-items:center;gap:22px;padding:21px 0;border-top:1.5px solid var(--ln)"><div style="font:800 34px Brico;color:var(--red);width:46px">${i+1}</div><div style="flex:1;font:500 32px/1.3 DM">${x[0]}</div><div class="chip" style="background:var(--red);color:#fff;height:46px;font-size:19px;letter-spacing:.06em">${x[1].toUpperCase()}</div></div>`).join('')}<div style="border-top:1.5px solid var(--ln)"></div></div>`;
+const WIRE=(dots)=>`<div style="position:relative;background:#fbf6ef;border-radius:22px;padding:30px 36px;flex:none">
+   <div style="position:relative;height:44px;width:70%;border-radius:10px;background:#1e0a12">${dots?DOT(1,104,50):''}</div>
+   <div style="height:16px;width:55%;border-radius:8px;background:#d9c7b3;margin-top:16px"></div>
+   <div style="position:relative;height:56px;width:240px;border-radius:28px;background:#ff4242;margin-top:22px">${dots?DOT(2,112,50):''}</div>
+   <div style="position:relative;display:flex;gap:14px;margin-top:22px"><div style="flex:1;height:64px;border-radius:12px;background:#efe5d9;display:flex;align-items:center;padding:0 16px;gap:4px">${stars(5,20)}</div><div style="flex:1;height:64px;border-radius:12px;background:#efe5d9"></div>${dots?DOT(3,50,50):''}</div>
+   <div style="position:relative;display:flex;gap:14px;margin-top:14px">${[1,2,3].map(i=>`<div style="flex:1;height:60px;border-radius:12px;border:2px solid #e1d3c3;display:flex;align-items:center;padding:0 14px;font:800 22px Brico;color:#8a6a72">${i}</div>`).join('')}${dots?DOT(4,100,50):''}</div>
+   <div style="position:relative;margin-top:14px;display:flex;gap:14px"><div style="flex:1"><div style="height:30px;border-radius:8px;border:2px solid #e1d3c3"></div><div style="height:30px;border-radius:8px;border:2px solid #e1d3c3;margin-top:8px"></div></div><div style="flex:1"><div style="height:30px;border-radius:8px;background:#efe5d9"></div><div style="height:30px;border-radius:8px;background:#efe5d9;margin-top:8px"></div></div>${dots?DOT(5,24,50)+DOT(6,76,50):''}</div>
+  </div>`;
+
+/* Baustein slide (Mi) */
+const BS=(n,title,why,visual,tip)=>COL([NUM('BAUSTEIN '+n),HD(title,1,76),TX(why,35),visual,SPACER,WIR(tip,'SO PRÜFST DU ES')],24);
+/* Prinzip slide (Fr) */
+const PR=(n,name,place,rule,visual,wir)=>COL([NUM('PRINZIP '+n,place),HD([name],99,90),TX(rule,38),visual,SPACER,WIR(wir)],26);
+/* Schritt slide (Sa) */
+const ST=(n,title,text,visual,note)=>COL([NUM('SCHRITT '+n),HD(title,1,78),TX(text,36),visual,SPACER,note?WIR(note,'GUT ZU WISSEN'):''],26);
+/* Projekt slide (So) */
+const PJ=(img,branche,kunde,problem,loesung,leistung,o={})=>COL([PIC(img,430,{chip:branche,pos:o.pos,fit:o.fit,bg:o.bg}),`<div style="font:800 70px/1.02 Brico;letter-spacing:-.03em;flex:none">${kunde}</div>`,CARD(LBL('DAS PROBLEM','#8a6a72')+`<div style="font:400 33px/1.36 DM;margin-top:8px">${problem}</div>`,{bg:'#fbf6ef',col:'#1e0a12'}),CARD(LBL('UNSERE LÖSUNG')+`<div style="font:500 33px/1.36 DM;margin-top:8px">${loesung}</div>`,{bg:'#140509',col:'#fbf6ef',border:1}),`<div style="font:500 27px DM;color:var(--mut);flex:none">${leistung}</div>`],22);
+
+const FIELD=(t,filled)=>`<div style="height:54px;border-radius:12px;border:2px solid ${filled?'#ff4242':'#e1d3c3'};background:#fff;display:flex;align-items:center;padding:0 16px;font:400 22px DM;color:${filled?'#1e0a12':'#8a6a72'}">${t}</div>`;
+
+const P={
+/* ================= DI: Stark ins Neue ================= */
+di:{theme:'sand',kick:'PROJEKT DER WOCHE',slides:[
+ {cover:'image',html:`
+  <div class="img" id="cimg" style="left:84px;top:170px;width:912px;height:440px;background:#fff"><img src="img/projekt-stark-ins-neue.webp" style="object-position:50% 50%"></div>
+  <div class="chip abs" data-pop="1.0" style="left:110px;top:196px;background:#1e0a12;color:#fff">STARK INS NEUE · BILDUNG · 2025</div>
+  ${H(['Gute Kurse.','Leere Plätze.','Bis die Anzeige','woanders hinführte.'],2,650,'H','font-size:92px')}
+  <div class="sub" data-up="2.6" style="top:1060px">Was wir geändert haben, in 5 Bildern.</div>`},
+ {html:COL([HD(['Vorher:','viele Klicks, kein Ziel.'],1),TX('Die Kurse helfen Kindern und Familien. Aber wer auf die Anzeige klickte, landete auf einer allgemeinen Seite.'),FLOW(['Anzeige','Allgemeine Seite','Suchen','Abbruch'],'bad'),LIST(['Anzeigen führten nicht auf ein klares Angebot','Die Anmeldung hatte unnötige Zwischenschritte','Was eine Kampagne brachte, war kaum messbar'],'x')],34)},
+ {html:COL([HD(['Nachher:','eine Seite, ein Ziel.'],1),FLOW(['Anzeige','Landingpage','Anmeldung'],'good'),PIC('projekt-stark-ins-neue-2.webp',400),LIST(['Die Landingpage führt ohne Umwege zur Kursanmeldung','Meta Ads mit sauberem Tracking, DSGVO-konform'],'ok')],30)},
+ {html:COL([HD(['So sieht die Seite aus.'],99,70),PIC('sin-lp.png',640,{fit:'contain',bg:'#e9e9e9',dots:[[1,40,30],[2,31,72],[3,41,80],[4,62,91]]}),`<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 26px;flex:none">${[['1','Überschrift nennt das Ergebnis'],['2','Ein Button, eine Handlung'],['3','Beweis direkt darunter'],['4','Am Handy bleibt der Button sichtbar']].map(x=>`<div style="display:flex;gap:14px;align-items:center"><div style="width:42px;height:42px;border-radius:50%;background:var(--red);color:#fff;font:800 22px Brico;display:flex;align-items:center;justify-content:center;flex:none">${x[0]}</div><div style="font:500 29px/1.25 DM">${x[1]}</div></div>`).join('')}</div>`],26)},
+ {html:COL([PIC('projekt-stark-ins-neue-4.webp',430,{pos:'50% 40%'}),RVW('Margarete Wolf','Stark ins Neue gGmbH · Google, 2025','Atilla unterstützt uns bei einem klaren, zielgruppenspezifischen Onlineauftritt mit Funnel.','person-margarita-wolf.webp'),TX('Wörtlich aus ihrer Google-Bewertung.',24)],30)},
+ {html:COL([HD(['Die Regel:','Werbung nie auf','die Startseite.'],1,80),CARD(`<div style="display:flex;align-items:center;gap:18px"><div style="width:52px;height:52px;border-radius:50%;background:#ff4242;display:flex;align-items:center;justify-content:center;flex:none">${CROSS}</div><div style="font:700 30px DM">Anzeige</div>${AR}<div style="font:700 30px DM">Startseite</div>${AR}<div style="font:400 28px DM;opacity:.7">Besucher geht</div></div>`),CARD(`<div style="display:flex;align-items:center;gap:18px"><div style="width:52px;height:52px;border-radius:50%;background:#1f9d55;display:flex;align-items:center;justify-content:center;flex:none">${CHECK}</div><div style="font:700 30px DM">Anzeige</div>${AR}<div style="font:700 30px DM">Eigene Seite</div>${AR}<div style="font:400 30px DM;opacity:.7">Ein Ziel, ein Button</div></div>`,{border:1}),SPACER,WIR('Wohin führt deine letzte Anzeige oder dein Link in der Bio? Auf eine Seite mit genau einem Ziel?','PRÜF ES HEUTE')],30)},
+ {cta:1,html:CTA({h:['Mehr Anmeldungen','für dein Angebot?'],red:1,sub:'Im kostenlosen Erstgespräch schauen wir, wo<br>Interessenten bei dir abspringen.'})},
+]},
+
+/* ================= MI: Startseite 6 Bausteine ================= */
+mi:{theme:'dark',kick:'WEBSITE · BAUPLAN',slides:[
+ {cover:'wire',html:`
+  <div class="card" id="wf" style="left:84px;top:170px;width:912px;height:400px;padding:30px 36px;background:#fbf6ef;color:#1e0a12">
+   <div class="wb" data-n="1" style="height:44px;width:70%;border-radius:10px;background:#1e0a12"></div>
+   <div class="wb" style="height:16px;width:55%;border-radius:8px;background:#d9c7b3;margin-top:16px"></div>
+   <div class="wb" data-n="2" style="height:56px;width:240px;border-radius:28px;background:var(--red);margin-top:22px"></div>
+   <div style="display:flex;gap:14px;margin-top:22px"><div class="wb" data-n="3" style="flex:1;height:70px;border-radius:12px;background:#efe5d9"></div><div class="wb" data-n="4" style="flex:1;height:70px;border-radius:12px;background:#efe5d9"></div></div>
+   <div style="display:flex;gap:14px;margin-top:14px"><div class="wb" data-n="5" style="flex:1;height:64px;border-radius:12px;border:2px solid #e1d3c3"></div><div class="wb" data-n="6" style="flex:1;height:64px;border-radius:12px;border:2px solid #e1d3c3"></div></div>
+  </div>
+  ${H(['Deine Startseite','hat 5 Sekunden.','Das muss drauf.'],2,640,'H','font-size:108px')}
+  <div class="sub" data-up="2.8" style="top:1010px">6 Bausteine, an echten Seiten gezeigt.<br>Speichern und mit deiner Seite vergleichen.</div>`},
+ {html:BS(1,['Die Überschrift','nennt das Ergebnis.'],'Der Besucher will sofort wissen, was er bekommt. Nicht, seit wann es dich gibt.',PIC('sin-lp.png',470,{fit:'cover',pos:'0% 30%',bg:'#e9e9e9',dots:[[1,44,34]],chip:'ECHTE SEITE · STARK INS NEUE'}),'Lies deine erste Überschrift. Steht da ein Ergebnis für den Kunden oder dein Firmenname?')},
+ {html:BS(2,['Ein Button,','oben sichtbar.'],'Eine Handlung: buchen, anrufen oder anfragen. Wer fünf Wege anbietet, bekommt keinen Klick.',PIC('projekt-curlyann-1.webp',470,{pos:'50% 62%',dots:[[2,69,53]],chip:'ECHTE SEITE · CURLYANN'}),'Öffne deine Seite am Handy. Siehst du einen Button, ohne zu scrollen?')},
+ {html:BS(3,['Beweise neben','dem Button.'],'Die Entscheidung fällt am Button. Genau dort muss stehen, dass andere zufrieden waren.',`<div style="display:flex;flex-direction:column;gap:18px;flex:none">${RVW('Anna Milossi','CurlyAnn · Google, 2026','Die Seite sieht exakt so aus, wie ich sie mir im Kopf vorgestellt habe.','person-anna-milossi.webp')}${BTN('Termin anfragen')}</div>`,'Stehen deine Bewertungen auf einer Unterseite? Hol zwei davon neben den Button.')},
+ {html:BS(4,['Der Ablauf in','3 Schritten.'],'Wer weiß, was nach dem Klick passiert, meldet sich eher.',`<div style="display:flex;gap:16px;flex:none">${[['1','Anfrage','3 kurze Fragen'],['2','Gespräch','15 Minuten'],['3','Angebot','mit festem Preis']].map(x=>`<div style="flex:1;background:var(--cd);border-radius:22px;padding:28px 24px"><div style="width:64px;height:64px;border-radius:50%;background:var(--red);color:#fff;font:800 32px Brico;display:flex;align-items:center;justify-content:center">${x[0]}</div><div style="font:800 42px Brico;margin-top:22px">${x[1]}</div><div style="font:400 28px DM;opacity:.8;margin-top:8px">${x[2]}</div></div>`).join('')}</div>`,'Kann ein Fremder auf deiner Seite sehen, was nach seiner Anfrage passiert?')},
+ {html:BS(5,['Ein kurzes','Formular.'],'Jedes Pflichtfeld ist eine Hürde. Für den ersten Rückruf reichen drei Angaben.',`<div style="display:flex;gap:20px;flex:none"><div style="flex:1;background:#fbf6ef;border-radius:22px;padding:22px"><div class="chip" style="background:#efe5d9;color:#55283a;margin-bottom:12px">VORHER · 8 FELDER</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">${['Anrede','Vorname','Nachname','Firma','Straße','PLZ','E-Mail','Telefon'].map(x=>FIELD(x)).join('')}</div></div><div style="flex:1;background:#fbf6ef;border-radius:22px;padding:22px;border:3px solid #ff4242"><div class="chip" style="background:#ff4242;color:#fff;margin-bottom:12px">NACHHER · 3 FELDER</div><div style="display:flex;flex-direction:column;gap:8px">${['Name','Telefon','Worum geht es?'].map(x=>FIELD(x,1)).join('')}</div></div></div>`,'Zähl die Pflichtfelder in deinem Formular. Alles über drei muss einen Grund haben.')},
+ {html:BS(6,['Einwände','beantworten.'],'Was kostet es? Wie lange dauert es? Kommt ihr zu mir? Wer das nicht findet, fragt woanders.',`<div style="display:flex;flex-direction:column;gap:12px;flex:none">${[['Was kostet das ungefähr?',1],['Wie lange dauert es?',0],['Arbeitet ihr auch in meiner Region?',0]].map(x=>`<div style="background:#fbf6ef;color:#1e0a12;border-radius:18px;padding:22px 28px"><div style="display:flex;justify-content:space-between;align-items:center;font:700 32px DM"><span>${x[0]}</span><span style="color:#ff4242;font:800 34px Brico">${x[1]?'–':'+'}</span></div>${x[1]?'<div style="font:400 28px/1.4 DM;color:#55283a;margin-top:10px">Eine ehrliche Spanne mit Beispiel. Das filtert unpassende Anfragen und schafft Vertrauen.</div>':''}</div>`).join('')}</div>`,'Schreib die drei Fragen auf, die Kunden dir am Telefon immer stellen. Die gehören auf die Seite.')},
+ {html:COL([HD(['Alle 6 auf','einen Blick.'],1,70),WIRE(1),`<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px 30px;flex:none">${['Überschrift mit Ergebnis','Ein Button, oben sichtbar','Beweise neben dem Button','Ablauf in 3 Schritten','Kurzes Formular','Einwände beantworten'].map((x,i)=>`<div style="display:flex;gap:14px;align-items:center"><div style="width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;font:800 23px Brico;display:flex;align-items:center;justify-content:center;flex:none">${i+1}</div><div style="font:500 31px/1.25 DM">${x}</div></div>`).join('')}</div>`],30)},
+ {cta:1,html:CTA({h:['Besteht deine','Seite den Test?'],red:1,sub:'Im kostenlosen Erstgespräch gehen wir sie<br>Baustein für Baustein mit dir durch.'})},
+]},
+
+/* ================= FR: Cialdini ================= */
+fr:{theme:'dark',kick:'VERKAUFSPSYCHOLOGIE',slides:[
+ {cover:'none',html:`
+  <div class="abs" style="left:84px;top:170px;width:912px;display:flex;gap:22px">
+   <div class="card" data-up=".2" style="position:relative;flex:1;height:400px;padding:30px;background:#fbf6ef;color:#1e0a12;opacity:.0"><div class="chip" style="background:#efe5d9;color:#55283a">ANGEBOT A</div><div style="height:18px;border-radius:9px;background:#e1d3c3;margin-top:26px;width:80%"></div><div style="height:18px;border-radius:9px;background:#e1d3c3;margin-top:14px;width:60%"></div><div style="font:800 52px Brico;margin-top:40px;color:#8a6a72">4.800 €</div><div style="font:500 24px DM;color:#8a6a72;margin-top:14px">Dein Angebot</div></div>
+   <div class="card" data-up=".4" style="position:relative;flex:1;height:400px;padding:30px;background:#fbf6ef;color:#1e0a12;border:4px solid #ff4242"><div class="chip" style="background:#ff4242;color:#fff">ANGEBOT B</div><div style="display:flex;align-items:center;gap:10px;margin-top:22px">${stars(5,26)}<span style="font:700 22px DM">5,0</span></div><div style="height:18px;border-radius:9px;background:#e1d3c3;margin-top:16px;width:70%"></div><div style="font:800 52px Brico;margin-top:36px">5.200 €</div><div style="font:500 24px DM;margin-top:14px">Der andere</div>
+    <div data-pop="2.0" style="position:absolute;right:-18px;top:-18px;width:84px;height:84px;border-radius:50%;background:#1f9d55;display:flex;align-items:center;justify-content:center;border:5px solid #fff"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div></div>
+  </div>
+  ${H(['Warum Kunden bei dir','anfragen und beim','anderen kaufen.'],1,650,'H','font-size:88px')}
+  <div class="sub" data-up="2.8" style="top:960px">Oft liegt es nicht am Preis. 6 Prinzipien von Robert Cialdini,<br>und wo sie auf deiner Website hingehören.</div>`},
+ {html:PR(1,'Gegenseitigkeit','FREEBIE','Wer etwas Nützliches bekommt, gibt eher etwas zurück. Auch eine Anfrage.',`<div style="position:relative;height:360px;flex:none">${[['ks-5-05.png',150,-8],['ks-14-14.png',520,8],['ks-1-01.png',336,0]].map(x=>`<div style="position:absolute;left:${x[1]}px;top:${x[2]?24:0}px;width:240px;height:340px;border-radius:8px;overflow:hidden;box-shadow:0 26px 60px -16px rgba(0,0,0,.7);transform:rotate(${x[2]}deg)"><img src="img/${x[0]}" style="width:100%;height:100%;object-fit:cover"></div>`).join('')}</div>`,'Erst geben, dann fragen: ein kostenloser Leitfaden oder Check als erster Kontakt, so wie unser Leitfaden KI-Suche.')},
+ {html:PR(2,'Konsistenz','ERSTER SCHRITT','Wer einen kleinen Schritt gegangen ist, geht den nächsten leichter.',FLOW(['Website-Check<br>30 Sekunden','Ergebnis<br>ansehen','Erstgespräch<br>15 Minuten'],'good'),'Vor der großen Anfrage steht ein kleiner Schritt: ein Check, ein Kurzformular, ein Rückruf-Wunsch.')},
+ {html:PR(3,'Soziale Bewährtheit','BEWERTUNGEN','Menschen orientieren sich an dem, was andere vor ihnen entschieden haben.',`<div style="display:flex;flex-direction:column;gap:18px;flex:none">${RVW('Margarete Wolf','Stark ins Neue gGmbH · Google, 2025','Atilla unterstützt uns bei einem klaren, zielgruppenspezifischen Onlineauftritt mit Funnel.','person-margarita-wolf.webp')}${BTN('Jetzt anfragen')}</div>`,'Bewertungen stehen direkt neben dem Anfrage-Button. Nicht versteckt auf einer Unterseite.')},
+ {html:PR(4,'Sympathie','ECHTE BILDER','Wir kaufen lieber bei Menschen, die wir sehen und mögen.',`<div style="display:flex;gap:18px;flex:none"><div style="position:relative;flex:1;height:330px;border-radius:22px;background:linear-gradient(160deg,#6b7780,#3f4950);display:flex;flex-direction:column;align-items:center;justify-content:center"><svg width="110" height="130" viewBox="0 0 24 30" fill="rgba(255,255,255,.45)"><circle cx="12" cy="8" r="6"/><path d="M0 30a12 12 0 0 1 24 0z"/></svg><div style="font:700 20px DM;letter-spacing:.14em;color:#fff;opacity:.8;margin-top:10px">STOCKFOTO</div><div style="position:absolute;left:18px;top:18px;width:52px;height:52px;border-radius:50%;background:#ff4242;display:flex;align-items:center;justify-content:center">${CROSS}</div></div><div style="position:relative;flex:1;height:330px;border-radius:22px;overflow:hidden"><img src="img/gm-dachdecker-bewertung.webp" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%"><div style="position:absolute;left:18px;top:18px;width:52px;height:52px;border-radius:50%;background:#1f9d55;display:flex;align-items:center;justify-content:center">${CHECK}</div><div class="chip" style="position:absolute;left:18px;bottom:18px;background:#fbf6ef;color:#1e0a12">ECHT · GM-DACHDECKER</div></div></div>`,'Echte Fotos aus deinem Betrieb und Texte, die klingen wie du. Keine Bilder aus dem Katalog.')},
+ {html:PR(5,'Autorität','NACHWEISE','Wir vertrauen Menschen, die ihr Fach nachweislich beherrschen.',`<div style="display:flex;gap:16px;flex:none">${[['Meister-','betrieb'],['Seit','2009'],['Innungs-','mitglied']].map(x=>`<div style="flex:1;height:230px;border-radius:22px;background:var(--cd);display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px solid rgba(255,66,66,.5)"><svg width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="#ff4242" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-1.5 8 5-3 5 3-1.5-8"/></svg><div style="font:800 30px/1.1 Brico;text-align:center;margin-top:14px">${x[0]}<br>${x[1]}</div></div>`).join('')}</div>${TX('Beispiel für einen Handwerksbetrieb.',23)}`,'Meisterbrief, Erfahrung und Zahlen gehören auf den ersten Bildschirm, nicht ins Impressum.')},
+ {html:PR(6,'Knappheit','VERFÜGBARKEIT','Was begrenzt ist, wird eher entschieden. Aber nur, wenn es stimmt.',CARD(`<div style="display:flex;align-items:center;gap:28px"><div style="width:150px;height:150px;border-radius:22px;background:#fff;overflow:hidden;flex:none;text-align:center"><div style="height:44px;background:#ff4242;color:#fff;font:700 20px DM;letter-spacing:.14em;line-height:44px">KW</div><div style="font:800 80px/106px Brico;color:#1e0a12">48</div></div><div><div style="font:700 21px DM;letter-spacing:.14em;opacity:.7">NÄCHSTER FREIER TERMIN</div><div style="font:800 46px/1.1 Brico;margin-top:8px">Ende November</div><div style="font:400 26px DM;opacity:.8;margin-top:8px">Danach erst wieder im Januar</div></div></div>`,{pad:'34px 38px'}),'Ehrliche Verfügbarkeit statt künstlichem Druck: nächster freier Termin oder freie Plätze im Kurs.')},
+ {html:COL([HD(['Alle 6 auf','einen Blick.'],1,70),TABLE([['Gegenseitigkeit: erst geben','Freebie'],['Konsistenz: kleiner erster Schritt','Check'],['Soziale Bewährtheit: andere zeigen','Bewertungen'],['Sympathie: echte Gesichter','Fotos'],['Autorität: Können belegen','Nachweise'],['Knappheit: ehrlich begrenzen','Termine']]),SPACER,WIR('Welche der 6 fehlen auf deiner Startseite? Meist sind es zwei oder drei.','ZÄHL NACH')],28)},
+ {cta:1,html:CTA({h:['Wo verlierst du','den Auftrag?'],red:1,sub:'Im kostenlosen Erstgespräch gehen wir deine Seite<br>mit diesen 6 Prinzipien durch.'})},
+]},
+
+/* ================= SA: Ablauf ================= */
+sa:{theme:'sand',kick:'PIXEL56 · SO LÄUFT ES AB',slides:[
+ {cover:'dm',dm:{reply:'Danke dir! Drei kurze Fragen vorab, dann machen wir einen Termin aus. Atilla'},html:`
+  <div class="card" id="dmc" style="left:84px;top:170px;width:912px;height:400px;padding:26px 30px;background:#fbf6ef;color:#1e0a12">
+   <div style="display:flex;align-items:center;gap:14px;padding-bottom:18px;border-bottom:1.5px solid #eadfd2"><div style="width:52px;height:52px;border-radius:50%;background:#1e0a12;color:#fff;font:800 20px Brico;display:flex;align-items:center;justify-content:center">P56</div><div><div style="font:700 23px DM">pixel56.de</div><div style="font:400 18px DM;color:#8a6a72">Nachricht</div></div></div>
+   <div id="m1" style="margin:24px 0 0 auto;width:max-content;max-width:78%;background:var(--red);color:#fff;border-radius:24px 24px 6px 24px;padding:16px 24px;font:500 26px/1.35 DM;opacity:0">Hallo, unsere Website bringt keine Anfragen.</div>
+   <div id="m2" style="margin-top:16px;width:max-content;max-width:78%;background:#efe5d9;border-radius:24px 24px 24px 6px;padding:16px 24px;font:400 25px/1.4 DM;opacity:0"><span id="m2t"></span></div>
+  </div>
+  ${H(['Was passiert,','nachdem du uns','schreibst?'],1,640,'H','font-size:112px')}
+  <div class="sub" data-up="2.8" style="top:1020px">5 Schritte von der ersten Nachricht bis zum Ergebnis.<br>Ohne Überraschungen.</div>`},
+ {html:ST(1,['Du schreibst uns.','Drei Fragen genügen.'],'Kein langes Formular. Wir wollen nur wissen, worum es geht.',CARD(`<div style="font:800 32px Brico;color:#1e0a12">Deine Anfrage</div><div style="display:flex;flex-direction:column;gap:12px;margin-top:18px">${[['Worum geht es?','Website bringt keine Anfragen'],['Bis wann?','Bis Ende Januar'],['Was ist dir am wichtigsten?','Mehr Anrufe aus der Region']].map(x=>`<div><div style="font:700 23px DM;color:#8a6a72">${x[0]}</div><div style="height:66px;border-radius:12px;border:2px solid #ff4242;background:#fff;display:flex;align-items:center;padding:0 18px;font:400 29px DM;color:#1e0a12;margin-top:6px">${x[1]}</div></div>`).join('')}</div>`,{bg:'#fbf6ef',col:'#1e0a12'}),'Per DM, über pixel56.de oder per WhatsApp. Du bekommst eine Antwort von einem Menschen.')},
+ {html:ST(2,['Erstgespräch.','15 Minuten.'],'Du erzählst, wo es hakt. Wir hören zu und fragen nach. Kostenlos.',`<div style="display:flex;flex-direction:column;gap:14px;flex:none">${['Was stört dich im Moment am meisten?','Was hast du schon probiert?','Woran merkst du, dass es sich gelohnt hat?'].map((x,i)=>`<div style="display:flex;gap:18px;align-items:center;background:var(--cd);border-radius:20px;padding:22px 26px"><div style="width:52px;height:52px;border-radius:50%;background:var(--red);color:#fff;font:800 26px Brico;display:flex;align-items:center;justify-content:center;flex:none">${i+1}</div><div style="font:500 35px/1.3 DM">${x}</div></div>`).join('')}</div>`,'Wenn wir nicht die Richtigen für dich sind, sagen wir dir das im Gespräch.')},
+ {html:ST(3,['Plan und Angebot.','Im zweiten Termin.'],'Erst verstehen, dann rechnen. Deshalb gibt es den Preis nicht im ersten Gespräch.',CARD(`<div style="font:800 32px Brico;color:#1e0a12">Dein Plan</div>${[['Ziel','Was am Ende messbar besser sein soll'],['Maßnahmen','Was wir bauen und in welcher Reihenfolge'],['Zeitplan','Wann du was zu sehen bekommst'],['Preis','Klar, ohne versteckte Posten']].map(x=>`<div style="display:flex;gap:18px;padding:16px 0;border-top:1.5px solid #eadfd2;margin-top:${x[0]==='Ziel'?16:0}px"><div style="font:700 30px DM;color:#ff4242;width:200px">${x[0]}</div><div style="font:400 30px/1.35 DM;color:#1e0a12">${x[1]}</div></div>`).join('')}`,{bg:'#fbf6ef',col:'#1e0a12'}),'Du entscheidest in Ruhe. Kein Vertrag am Telefon.')},
+ {html:ST(4,['Umsetzung in','kurzen Schritten.'],'Du siehst Zwischenstände und gibst frei, bevor es weitergeht.',`<div style="display:flex;gap:18px;flex:none">${PIC('projekt-curlyann-2.webp',430,{chip:'PROJEKT CURLYANN'}).replace('flex:none','flex:1')}${PIC('projekt-curlyann-ipad.webp',430).replace('flex:none','flex:1')}</div>`,'Ein Ansprechpartner vom ersten Entwurf bis zur fertigen Seite.')},
+ {html:ST(5,['Danach bleiben','wir dran.'],'Eine Website oder Kampagne ist nach dem Start nicht fertig. Wir werten aus und verbessern.',CARD(`<div style="font:700 20px DM;letter-spacing:.14em;color:#8a6a72">ANFRAGEN PRO WOCHE · BEISPIELGRAFIK</div><svg viewBox="0 0 840 260" style="width:100%;margin-top:14px;display:block"><g stroke="#eadfd2" stroke-width="2"><path d="M0 60H840M0 130H840M0 200H840"/></g><path d="M20 215 L150 205 L280 180 L410 150 L540 120 L670 80 L820 45" fill="none" stroke="#ff4242" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>${[[20,215],[150,205],[280,180],[410,150],[540,120],[670,80],[820,45]].map(p=>`<circle cx="${p[0]}" cy="${p[1]}" r="11" fill="#fff" stroke="#ff4242" stroke-width="6"/>`).join('')}</svg><div style="display:flex;justify-content:space-between;font:500 20px DM;color:#8a6a72;margin-top:6px"><span>Start</span><span>Auswerten</span><span>Anpassen</span><span>Auswerten</span></div>`,{bg:'#fbf6ef',col:'#1e0a12'}),'Du bekommst regelmäßig Zahlen: was funktioniert, was nicht und was wir ändern.')},
+ {cta:1,html:CTA({h:['Schritt 1 dauert','eine Minute.'],red:1,sub:'Schreib uns, worum es geht. Den Rest<br>klären wir im kostenlosen Erstgespräch.'})},
+]},
+
+/* ================= SO: 5 Projekte ================= */
+so:{theme:'dark',kick:'PROJEKTE',slides:[
+ {cover:'none',html:`
+  <div class="abs" style="left:84px;top:170px;width:912px;display:grid;grid-template-columns:1fr 1fr;gap:14px">
+   <div data-pop=".3" style="grid-column:span 2;height:300px;border-radius:18px;overflow:hidden;background:#fff"><img src="img/projekt-bne-aufgeklappt.webp" style="width:100%;height:100%;object-fit:cover;object-position:50% 55%"></div>
+   <div data-pop=".6" style="height:230px;border-radius:18px;overflow:hidden;background:#fff"><img src="img/projekt-discounthaus.webp" style="width:100%;height:100%;object-fit:cover"></div>
+   <div data-pop=".9" style="height:230px;border-radius:18px;overflow:hidden;background:#fff"><img src="img/projekt-schluesselfertig-1.webp" style="width:100%;height:100%;object-fit:cover"></div>
+  </div>
+  ${H(['Drei Branchen.','Drei Probleme.','So haben wir','sie gelöst.'],2,750,'H','font-size:88px')}
+  <div class="sub" data-up="2.8" style="top:1125px">Finanzen, Modulbau, Immobilien. Je zwei Sätze.</div>`},
+ {html:PJ('projekt-bne-aufgeklappt.webp','FINANZEN · SCHWEIZ','BNE AG','Ein erklärungsbedürftiges Angebot, das im Gespräch übergeben wird und danach für sich allein stehen muss.','Eine dreiteilige Falzbroschüre in Dunkelblau und Gold, mit klarer Lesereihenfolge.','Konzept · Gestaltung · Druckdaten',{pos:'50% 55%'})},
+ {html:PJ('projekt-discounthaus.webp','CONTAINER- UND MODULBAU','DiscountHaus Holding','Eine komplexe Leistung ohne verständliche Erklärung. Interessenten blieben mit Fragen zurück.','Eine Website, die Modulbau Schritt für Schritt erklärt und gezielt zum Kontakt führt.','Webdesign')},
+ {html:PJ('projekt-schluesselfertig-1.webp','IMMOBILIEN','Schlüsselfertig-Immobilien','Käufer starten ihre Suche online. Ohne klare Objektübersicht gingen Interessenten zur Konkurrenz.','Eine ruhige, seriöse Website mit Objektübersicht, Detailseiten und eigenem Homestaging-Bereich.','Webdesign')},
+ {cta:1,html:CTA({h:['Was brauchst','du?'],red:1,sub:'Website, Broschüre oder Anzeigen:<br>Schreib uns, worum es geht. Erstgespräch kostenlos.'})},
+]},
+};
+
+/* ======================= BUILD ======================= */
+const q=new URLSearchParams(location.search);const PK=q.get('p')||'di';const SI=+(q.get('s')||1);
+const post=P[PK];const sd=post.slides[SI-1];const N=post.slides.length;
+const isCover=SI===1;
+document.body.insertAdjacentHTML('beforeend',`<section class="slide ${post.theme==='dark'?'dark':''}" id="S">
+ <div class="kick"><div class="ln"></div><span class="kt">${sd.cta?'PIXEL56 · DACH':post.kick}</span></div><div class="count">${String(SI).padStart(2,'0')} / ${String(N).padStart(2,'0')}</div>
+ ${sd.html}
+ <div class="foot" style="${sd.cta?'top:1228px':''}">PIXEL56.DE ${ARR}</div>${sd.cta?'':`<div class="swipe">Wischen ${ARR}</div>`}
+ ${sd.cta?'<div class="finger"></div>':''}<div class="prog"></div></section>`);
+const S=document.getElementById('S');
+const DUR=isCover?7:(sd.cta?8:4);const FOOT=isCover?3.0:1.2;
+const clamp=x=>Math.max(0,Math.min(1,x)),p=(t,a,d)=>clamp((t-a)/d);
+const eo=x=>1-Math.pow(1-x,4),eio=x=>x<.5?8*x**4:1-Math.pow(-2*x+2,4)/2;
+const back=x=>{const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const $=s=>S.querySelector(s),$$=s=>[...S.querySelectorAll(s)];
+const fadeUp=(el,t,a,d=.6,dy=24)=>{const k=eo(p(t,a,d));el.style.opacity=k;el.style.transform=`translateY(${(1-k)*dy}px)`};
+function tap(f,t,x,y,inAt,pressAt,outAt){const fin=eio(p(t,inAt,.9)),fo=p(t,outAt,.4);f.style.opacity=Math.min(fin*1.4,1)*(1-fo);f.style.left=(x+120*(1-fin))+'px';f.style.top=(y+170*(1-fin))+'px';const pr=Math.sin(p(t,pressAt,.35)*Math.PI);f.style.transform=`scale(${1-.18*pr})`;return pr}
+// cover builders
+if(sd.cover==='checklist'){const CI=sd.items||['Profil bestätigt','Genaueste Kategorie','Leistungen eingetragen','Öffnungszeiten + Feiertage','Echte Fotos','Beschreibung ohne Links','Bewertungen beantwortet'];const HH=Math.ceil(CI.length/2);$('#cl').innerHTML=CI.map((x,i)=>`<div class="cr" style="display:flex;align-items:center;gap:18px;height:${sd.items?56:42}px;${i>=HH?'position:absolute;left:480px;top:'+(30+(i-HH)*(sd.items?56:42))+'px':''}"><div class="bx" style="width:30px;height:30px;border-radius:8px;border:2.5px solid #8a6a72;display:flex;align-items:center;justify-content:center"></div><span style="font:500 ${sd.items?28:24}px DM">${x}</span></div>`).join('')}
+if(sd.cover==='check'){$('#res').innerHTML=['Verschlüsselung','Antwortzeit','Seitentitel','Beschreibung','Mobilansicht','Impressum','Kontakt','Vorschaubild'].map((x,i)=>`<div class="rs" style="display:flex;align-items:center;gap:14px;opacity:0"><div class="dot" style="width:28px;height:28px;border-radius:50%;background:${[3,7].includes(i)?'#ff4242':'#1f9d55'};display:flex;align-items:center;justify-content:center">${[3,7].includes(i)?CROSS.replace('22','16').replace('22','16'):CHECK.replace('24','18').replace('24','18')}</div><span style="font:500 24px DM">${x}</span></div>`).join('')}
+
+if(sd.cover==='bars'){$('#bc').innerHTML=`<div style="font:700 20px DM;letter-spacing:.14em;color:#8a6a72;margin-bottom:12px">MINDESTENS WÖCHENTLICH GENUTZT</div>`+[[40,'Instagram'],[28,'Facebook'],[18,'TikTok'],[13,'Snapchat'],[8,'LinkedIn']].map(r=>`<div style="display:flex;align-items:center;gap:20px;height:60px"><div style="width:150px;font:500 25px DM">${r[1]}</div><div style="flex:1;height:34px"><div class="bar" data-v="${r[0]}" style="height:100%;width:0;border-radius:0 10px 10px 0;background:${r[1]==='TikTok'?'#1e0a12':'#ff4242'}"></div></div><div class="bv" data-v="${r[0]}" style="width:90px;text-align:right;font:800 32px Brico">0 %</div></div>`).join('')}
+function coverW2(t,cv){
+  if(cv==='ads'){const cs=$$('.adc');const k=eio(p(t,.3,1.2));
+    [[-300,-8],[300,8],[0,0]].forEach((o,i)=>{const kk=eo(p(t,.2+i*.15,.6));cs[i].style.opacity=kk;cs[i].style.transform=`translateX(${o[0]*k}px) rotate(${o[1]*k}deg) translateY(${(1-kk)*40}px)`;cs[i].style.zIndex=i==2?3:1})}
+  if(cv==='wire'){const c=$('#wf'),k=eo(p(t,.2,.7));c.style.opacity=k;c.style.transform=`translateY(${(1-k)*40}px)`;
+    $$('.wb[data-n]').forEach(b=>{const n=+b.dataset.n;const a=.9+n*.28;let m=b.querySelector('.mk');if(!m){b.style.position='relative';b.insertAdjacentHTML('beforeend',`<div class="mk" style="position:absolute;right:-14px;top:-14px;width:40px;height:40px;border-radius:50%;background:#1e0a12;color:#fff;font:800 20px Brico;display:flex;align-items:center;justify-content:center;border:3px solid #ff4242">${n}</div>`);m=b.querySelector('.mk')}
+      const km=p(t,a,.4);m.style.transform=`scale(${Math.max(0,back(km))})`;b.style.outline=t>a?'3px solid rgba(255,66,66,.6)':'none';b.style.outlineOffset='3px'})}
+  if(cv==='bars'){const c=$('#bc'),k=eo(p(t,.2,.7));c.style.opacity=k;c.style.transform=`translateY(${(1-k)*40}px)`;
+    $$('.bar').forEach((b,i)=>{const kb=eo(p(t,.8+i*.2,1.0));b.style.width=(kb*100*b.dataset.v/40)+'%'});
+    $$('.bv').forEach((b,i)=>{const kb=eo(p(t,.8+i*.2,1.0));b.textContent=Math.round(kb*b.dataset.v)+' %'})}
+  if(cv==='ad3'){$$('.a3').forEach((a,i)=>{const at=.3+i*.9;const k=eo(p(t,at,.5));a.style.opacity=k;a.style.transform=`translateX(${(1-k)*60}px)`;
+    const tx=a.querySelector('.a3t');const f=tx.dataset.full;tx.textContent=f.slice(0,Math.floor(f.length*p(t,at+.3,.6)))})}
+  if(cv==='dm'){const c=$('#dmc'),k=eo(p(t,.2,.7));c.style.opacity=k;c.style.transform=`translateY(${(1-k)*40}px)`;
+    const m1=$('#m1'),k1=p(t,1.0,.45);m1.style.opacity=clamp(k1*3);m1.style.transform=`scale(${Math.max(0,.6+.4*back(k1))})`;m1.style.transformOrigin='right bottom';
+    const m2=$('#m2'),k2=p(t,1.8,.45);m2.style.opacity=clamp(k2*3);m2.style.transform=`scale(${Math.max(0,.6+.4*back(k2))})`;m2.style.transformOrigin='left bottom';
+    const full=sd.dm?sd.dm.reply:'Danke für deine Nachricht! Wann passt dir diese Woche ein kurzes Telefonat? Atilla';const tt=p(t,2.0,1.6);$('#m2t').textContent=t<2.0?'…':full.slice(0,Math.floor(full.length*tt))}
+}
+
+function coverW3(t,cv){
+  if(cv==='counter'){const c=$('#cc'),k=eo(p(t,.2,.7));c.style.opacity=k;c.style.transform=`translateY(${(1-k)*40}px)`;
+    const kn=eo(p(t,.6,2.0));$('#cnum').textContent=Math.round(97337*kn).toLocaleString('de-DE');
+    const kb=eo(p(t,1.2,1.6));$('#cbar').style.width=(46.5*kb)+'%';$('#cpct').textContent=(46.5*kb).toFixed(1).replace('.',',')+' % aller offenen Stellen im Handwerk'}
+  if(cv==='marked'){const m=$('#mimg'),k=eo(p(t,.2,.8));m.style.opacity=k;m.style.transform=`scale(${.92+.08*k})`;
+    $$('#mimg .mk3').forEach((x,i)=>{const km=p(t,1.0+i*.3,.45);x.style.transform=`scale(${Math.max(0,back(km))})`})}
+  if(cv==='bars2'){const c=$('#b2c'),k=eo(p(t,.2,.7));c.style.opacity=k;c.style.transform=`translateY(${(1-k)*40}px)`;
+    $$('.b2b').forEach((b,i)=>{const kb=eo(p(t,.8+i*.6,1.2));b.style.width=(kb*b.dataset.v*2)+'%'});
+    $$('.b2v').forEach((b,i)=>{const kb=eo(p(t,.8+i*.6,1.2));b.textContent=Math.round(kb*b.dataset.v)+' %'})}
+  if(cv==='rewrite'){const c=$('#rw'),k=eo(p(t,.2,.7));c.style.opacity=k;c.style.transform=`translateY(${(1-k)*40}px)`;
+    $('#rwst').style.width=(eio(p(t,1.0,.6))*100)+'%';const o=p(t,1.8,.4);$('#rwold').style.opacity=1-o;
+    const ch=$('#rwchip');if(t>1.9){ch.textContent='NACHHER';ch.style.background='#ff4242';ch.style.color='#fff'}
+    const full='Du bist Anlagenmechaniker und willst wissen, was du verdienst, bevor du dich bewirbst? Festanstellung, Firmenwagen, freitags früher Schluss.';
+    $('#rwnew').textContent=full.slice(0,Math.floor(full.length*p(t,2.1,2.0)))+(t>2.1&&t<4.2&&Math.floor(t*3)%2?'|':'')}
+}
+
+function coverNews(t,cv){
+  if(cv==='release'){const c=$('#rc'),k=eo(p(t,.2,.7));c.style.opacity=k;c.style.transform=`translateY(${(1-k)*40}px)`;
+    const m=$('#mname');if(t>1.1){m.textContent='Claude Fable 5.2';m.style.color='#ff4242'}m.style.opacity=t>.9&&t<1.1?0.2:1;
+    $$('.rst').forEach((r,i)=>{const kk=p(t,1.4+i*.3,.5);r.style.opacity=clamp(kk*2);r.style.transform=`translateY(${(1-eo(kk))*24}px)`})}
+  if(cv==='chat'){const c=$('#ch'),k=eo(p(t,.2,.7));c.style.opacity=k;c.style.transform=`translateY(${(1-k)*40}px)`;
+    const b1=$('#b1'),k1=p(t,.7,.4);b1.style.opacity=clamp(k1*3);
+    const full='Entferne das alte Logo aus allen 12 Kampagnen-Dateien.';$('#b1t').textContent=full.slice(0,Math.floor(full.length*p(t,.8,1.2)));
+    const b2=$('#b2');b2.style.opacity=clamp(p(t,2.1,.3)*3);$$('.app').forEach((a,i)=>{const ka=p(t,2.1+i*.15,.4);a.style.transform=`scale(${Math.max(0,back(ka))})`});
+    $('#b3').style.opacity=clamp(p(t,2.9,.4)*3)}
+}
+function coverHook(t,cv){ if(cv!=='hook')return; $$('.hks').forEach((x,i)=>{const k=eio(p(t,1.2+i*.5,.45));x.style.width=`calc(${k*100}% + 16px)`;x.style.opacity=k>0?1:0;x.parentNode.style.color=k>.5?"#a08f95":"#6b5560"}) }
+function render(t){
+  $('.kick .ln').style.width=34*eo(p(t,0,.5))+'px';
+  const kt=$('.kt'),k=eo(p(t,.1,.7));kt.style.opacity=k;kt.style.letterSpacing=(.42-.12*k)+'em';
+  fadeUp($('.count'),t,.2,.6,-12);fadeUp($('.foot'),t,FOOT);const sw=$('.swipe');if(sw)fadeUp(sw,t,FOOT+.15);
+  $$('.foot .arr,.swipe .arr').forEach(a=>{const on=t>FOOT+.8;a.style.transform=`translateX(${on?Math.max(0,Math.sin((t-FOOT-.8)*4))*8:0}px)`});
+  $('.prog').style.width=1080*clamp(t/DUR)+'px';
+  const mStart=isCover?(sd.cover?1.0:.35):(sd.cta?.8:.2);
+  $$('[data-m]').forEach(c=>c.querySelectorAll('.mask>span').forEach((s,i)=>{const k=eo(p(t,mStart+i*.13,.75));s.style.transform=`translateY(${(1-k)*108}%)`}));
+  $$('[data-up]').forEach(e=>fadeUp(e,t,+e.dataset.up*(isCover?1:.6),.6,20));
+  $$('[data-pop]').forEach(e=>{const k=p(t,+e.dataset.pop,.55);e.style.opacity=clamp(k*3);e.style.transform=`scale(${Math.max(0,.6+.4*back(k))})`});
+  if(sd.cta){const ph=$('.photo img'),k=eo(p(t,.25,.9));ph.style.opacity=k;ph.style.transform=`scale(${.82+.18*k})`;
+    const c=$('.photo circle'),L=2*Math.PI*185;c.style.strokeDasharray=L;c.style.strokeDashoffset=L*(1-eio(p(t,.35,1.2)));
+    const b=$('.btn'),kb=p(t,2.35,.7);b.style.opacity=clamp(kb*3);const pr=tap($('.finger'),t,560,1072,3.6,4.6,5.4);b.style.transform=`scale(${(.85+.15*back(kb))*(1-.04*pr)})`;
+    const rp=$('.ripple'),rk=p(t,4.7,.9);rp.style.left='488px';rp.style.top='25px';rp.style.opacity=rk>0&&rk<1?1-rk:0;rp.style.transform=`scale(${1+rk*28})`}
+  if(!isCover)return;
+  const cv=sd.cover;coverW2(t,cv);coverW3(t,cv);coverNews(t,cv);coverHook(t,cv);
+  if(cv==='google'){const g=$('#gcard'),kg=eo(p(t,.2,.7));g.style.opacity=kg;g.style.transform=`translateY(${(1-kg)*40}px)`;
+    const full='Dachdecker in der Nähe';$('#gq').textContent=full.slice(0,Math.floor(full.length*p(t,.7,1.0)))+(t>.7&&t<2&&Math.floor(t*3)%2?'|':'');
+    const ka=eio(p(t,2.0,.7));const ai=$('#ai');ai.style.height=(ka*130)+'px';ai.style.padding=`${18*ka}px 22px`;ai.style.opacity=clamp(ka*2);
+    ['.ai1','.ai2','.ai3'].forEach((s,i)=>$(s).style.width=(eo(p(t,2.5+i*.25,.6))*[95,80,60][i])+'%');
+    const lk=$('#lnk');lk.style.opacity=1-.6*eio(p(t,2.6,.8))}
+  if(cv==='image'){const im=$('#cimg'),k=eo(p(t,.2,1.0));im.style.opacity=k;im.style.transform=`scale(${1.06-.06*k})`;im.querySelector('img').style.transform=`scale(${1+.04*clamp(t/7)})`}
+  if(cv==='checklist'){const c=$('#cl'),k=eo(p(t,.2,.7));c.style.opacity=k;c.style.transform=`translateY(${(1-k)*40}px)`;
+    $$('.cr').forEach((r,i)=>{const a=1.0+i*.28;const on=t>a;const bx=r.querySelector('.bx');bx.style.background=on?'#ff4242':'transparent';bx.style.borderColor=on?'#ff4242':'#8a6a72';bx.innerHTML=on?CHECK.replace('24','20').replace('24','20'):'';bx.style.transform=`scale(${1+.25*Math.sin(p(t,a,.3)*Math.PI)})`})}
+  if(cv==='review'){const c=$('#rv'),k=eo(p(t,.2,.7));c.style.opacity=k;c.style.transform=`translateY(${(1-k)*40}px)`;
+    const full='Danke dir, Selcuk! Schön zu lesen, dass die Kampagnen für eure Mitarbeitersuche funktioniert haben. Atilla';const n=Math.floor(full.length*p(t,1.3,2.2));$('#rpt').textContent=full.slice(0,n)+(t>1.3&&t<3.6&&Math.floor(t*3)%2?'|':'')}
+  if(cv==='stars'){const c=$('#sc'),k=eo(p(t,.2,.7));c.style.opacity=k;c.style.transform=`translateY(${(1-k)*40}px)`;
+    const kr=eo(p(t,.6,1.6));$('#rate').textContent=(5*kr).toFixed(1).replace('.',',');$('#cnt').textContent=Math.round(27*kr);
+    $$('#bigstars svg').forEach((s,i)=>{const ks=p(t,.8+i*.18,.3);s.querySelector('path').setAttribute('fill',ks>0?'#ff4242':'#d9c7b3');s.style.transform=`scale(${1+.3*Math.sin(ks*Math.PI)})`})}
+  if(cv==='check'){const c=$('#wc'),k=eo(p(t,.2,.7));c.style.opacity=k;c.style.transform=`translateY(${(1-k)*40}px)`;
+    const full='deine-firma.de';$('#url').textContent=full.slice(0,Math.floor(full.length*p(t,.7,.9)))+(t>.7&&t<1.7&&Math.floor(t*3)%2?'|':'');
+    const g=$('#go');const pr=Math.sin(p(t,1.7,.3)*Math.PI);g.style.transform=`scale(${1-.08*pr})`;g.style.background=t>1.75?'#ff4242':'#1e0a12';
+    $$('.rs').forEach((r,i)=>{const kk=p(t,2.0+i*.16,.3);r.style.opacity=kk;r.style.transform=`translateX(${(1-eo(kk))*20}px)`})}
+}
+window.render=render;window.DURATION=DUR;window.NSLIDES=N;window.ISCOVER=isCover;render(0);
+</script></body></html>
