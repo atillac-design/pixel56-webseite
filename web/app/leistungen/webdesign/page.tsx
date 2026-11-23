@@ -445,6 +445,9 @@ export default function WebdesignPage() {
                 <li>Ein Ansprechpartner statt Agenturstruktur mit Übergaben.</li>
                 <li>Erfahrung mit Handwerk, Bildung, Logistik, Immobilien, Gastronomie und Coaching.</li>
                 <li>Webdesign und <Link href={serviceRoutes.seo}>Suchmaschinenoptimierung</Link> greifen ineinander.</li>
+                <li>
+                  Für Betriebe aus der Stadt: <Link href="/locations/koblenz">Webdesign in Koblenz</Link>, mit Projekt aus Koblenz und Antworten auf die Fragen vor dem ersten Gespräch.
+                </li>
               </ul>
               <Link className="body-link" href={routes.contact}>
                 Projekt besprechen <ArrowIcon />

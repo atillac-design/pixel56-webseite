@@ -194,10 +194,10 @@ export const ressourcen: Ressource[] = [
   {
     slug: "tagesplaner",
     eyebrow: "FREEBIE · TAGESPLANER",
-    titleStart: "Fokussierte Tage statt ",
-    titleEm: "Zettelwirtschaft.",
+    titleStart: "Tagesplaner-Vorlage für ",
+    titleEm: "fokussierte Tage.",
     heroSub:
-      "Die Planungs-Vorlage, mit der wir selbst arbeiten — ein Blatt pro Tag, klare Prioritäten, kein Tool-Overhead. Kostenlos als PDF.",
+      "Tagesplaner Vorlage kostenlos als PDF: ein Blatt pro Tag mit drei Prioritäten, Zeitblöcken und Aufgabenliste. Zum Ausdrucken oder digital ausfüllen.",
     heroPoints: [
       "Ein Blatt pro Tag — ausdrucken oder digital ausfüllen",
       "Prioritäten zuerst, statt To-do-Listen ohne Ende",
@@ -206,7 +206,7 @@ export const ressourcen: Ressource[] = [
     docTag: "Vorlage",
     docPages: "1 SEITE · PDF",
     mockupBild: "/bilder/freebie-tagesplaner.webp",
-    docTitle: "Tagesplaner",
+    docTitle: "Tagesplaner Vorlage",
     docRows: [
       { checked: true, text: "Top-3-Prioritäten des Tages" },
       { checked: true, text: "Zeitblöcke statt Dauer-Multitasking" },
@@ -237,6 +237,7 @@ export const ressourcen: Ressource[] = [
     faqs: [
       { q: "Was kostet der Tagesplaner?", a: "Nichts. Du bekommst ihn kostenlos per E-Mail — im Gegenzug landest du auf unserem Verteiler, von dem du dich jederzeit mit einem Klick abmelden kannst." },
       { q: "Digital oder ausdrucken?", a: "Beides. Das PDF ist zum Ausdrucken gedacht, funktioniert aber auch digital ausgefüllt — z. B. auf dem Tablet." },
+      { q: "Ist die Vorlage auch eine To-do-Liste?", a: "Der Tagesplaner enthält eine Aufgabenliste für den Tag plus drei Prioritäten und Zeitblöcke. Wer eine eigene, bearbeitbare To-do-Liste möchte, findet sie im Tagesplaner-Set als Canva-Vorlage unter Digitale Produkte." },
       { q: "Warum verschenkt ihr das?", a: "Weil es zeigt, wie wir arbeiten. Wenn dir die Vorlage hilft, ist das der beste erste Eindruck, den wir hinterlassen können." },
     ],
     ctaStart: "Hol dir den ",

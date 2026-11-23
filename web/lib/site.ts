@@ -75,6 +75,7 @@ export const footerNav = {
     { label: "Bewertungen", href: "/#bewertungen" },
     { label: "Blog", href: routes.blog },
     { label: "Standorte", href: routes.locations },
+    { label: "Webdesign Koblenz", href: "/locations/koblenz" },
     { label: "Karriere", href: routes.careers },
     { label: "Partner werden", href: "/partner" },
     { label: "Kontakt", href: routes.contact },

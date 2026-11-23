@@ -818,6 +818,9 @@ export default async function HomePage() {
                   <li>Vor-Ort-Dreh für Reels und Fotos in Koblenz, Neuwied, Montabaur und Umgebung</li>
                   <li>Betriebe aus der Region kennen wir aus eigener Arbeit, nicht aus Statistiken</li>
                   <li>
+                    <Link href="/locations/koblenz">Webdesign in Koblenz</Link>: für Praxen, Kanzleien, Handwerk und Dienstleister aus der Stadt
+                  </li>
+                  <li>
                     <Link href={routes.locations}>Webdesign, Ads und SEO in deiner Stadt</Link>
                   </li>
                 </ul>

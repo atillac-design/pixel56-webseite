@@ -368,14 +368,17 @@ Mobil 12.000 (Agentur-Begriffe werden am Rechner gesucht). Befund je Baustelle:
   4.387 auf 57. Die eigene Seite `/locations/koblenz` („Webdesign Koblenz:
   Websites, die anfragen lassen“) taucht im Export gar nicht auf, also 0
   Impressionen: Google bewertet sie nicht, sondern zeigt `/webdesign` und
-  die Startseite weit hinten. Mitursache gefunden: Startseite und
-  `/webdesign` verlinken die Koblenz-Seite nicht, nur die Standort-Übersicht
-  tut es. Bonn und Mainz haben dasselbe Muster, ranken aber, weil dort
-  weniger Wettbewerb ist. **Vorschlag für den Inhaber:** Koblenz-Seite von
-  Startseite (Region-Abschnitt), `/webdesign` und Fuß verlinken, Projekte
-  aus Koblenz (CurlyAnn) dort zeigen, live prüfen, ob die Seite im Index
-  ist (Search Console, URL-Prüfung). Erst danach entscheiden, ob
-  `/webdesign` selbst stärker auf Koblenz ausgerichtet wird.
+  die Startseite weit hinten. Zwei Ursachen: Drei Seiten konkurrieren um
+  denselben Begriff (Startseite „Digitalagentur Koblenz“, `/webdesign`
+  „Webdesign Agentur Koblenz“, `/locations/koblenz` „Webdesign Koblenz“),
+  und die Koblenz-Seite war nur über die Standort-Übersicht und die
+  15er-Liste unter `/webdesign` verlinkt. Am 23.11. (lokal) ergänzt: Link
+  im Region-Abschnitt der Startseite, im Koblenz-Abschnitt von `/webdesign`
+  und im Fuß („Webdesign Koblenz“). CurlyAnn ist auf der Koblenz-Seite
+  schon als Projekt hinterlegt. **Offen beim Inhaber:** in der Search Console
+  per URL-Prüfung nachsehen, ob `/locations/koblenz` im Index ist, und
+  Indexierung beantragen. Der größere Hebel für Koblenz liegt außerhalb
+  der Website (siehe „Was nur der Inhaber kann“ weiter unten).
 - Weitere Nachfrage ohne Seite: „webdesign bielefeld“ 513 Impressionen
   (Seite noindex, 1 Klick), „google ads agentur karlsruhe“ 273 (Seite
   noindex, 987 Impressionen auf 17,9). Bleibt bei der Regel: nur bei
@@ -383,6 +386,33 @@ Mobil 12.000 (Agentur-Begriffe werden am Rechner gesucht). Befund je Baustelle:
 - Google for Jobs: die Vertriebsprofi-Stelle erscheint als „Stellenangebot“
   (56 Impressionen, 2 Klicks, Position 8,8). Produkt-Snippets 2 Impressionen.
   Österreich 1.606 und Schweiz 1.121 Impressionen, je 1 Klick.
+**Vorher/nachher Livegang (23.10.), aus demselben Export:** acht Wochen vor
+dem Livegang 6,5 Klicks und 3.400 Impressionen pro Woche, vier Wochen danach
+12 Klicks (7 ohne die Testwoche 2.11.) und 5.100 Impressionen pro Woche.
+Reichweite plus 50 %, Klicks noch nicht; das ist nach vier Wochen normal,
+die eigenen Artikel nennen vier Monate bis ein Jahr. Inhaber fragte am
+23.11. „sind die Zahlen besser geworden?“ und will Seite eins. Antwort:
+Reichweite ja, Klicks noch nicht, Seite eins ist für Koblenz-Kernbegriffe
+kein Versprechen (Regel der Seite: keine Platz-1-Versprechen), aber das Ziel
+der nächsten Monate. Umgesetzt am 23.11. (lokal): Koblenz-Verlinkung
+(Startseite, `/webdesign`, Fuß), Tagesplaner-Seite auf „Tagesplaner Vorlage
+kostenlos als PDF“ (Titel, Beschreibung, H1, vierte Frage).
+
+**Was nur der Inhaber kann (größter Hebel für „webdesign koblenz“):**
+1. Google-Unternehmensprofil: Hauptkategorie „Webdesigner“ oder
+   „Werbeagentur“, Einzugsgebiet Koblenz und Umland, Website-Link auf
+   `/locations/koblenz` oder `/webdesign`, alle zwei Wochen ein Beitrag.
+2. Bewertungen: neue Kunden um Text bitten, in dem Leistung und Ort stehen
+   („Website für unsere Praxis in Koblenz“). Antworten auf jede Bewertung.
+3. Einträge mit identischen Daten (Name, Handynummer, Website): IHK
+   Koblenz, Gelbe Seiten, 11880, Das Örtliche, Branchenbuch Koblenz, Agentur-
+   Verzeichnisse (ProvenExpert, Sortlist). Keine Straße nötig, wo optional.
+4. Erwähnungen von außen: Kundenseiten verlinken „Website von Pixel56“,
+   Partner, lokale Presse, Vereine, Innungen. Fünf saubere Links aus der
+   Region wirken mehr als jede Textänderung.
+5. Search Console: `/locations/koblenz` und die acht Bonn/Mainz-Adressen
+   per URL-Prüfung zur Indexierung anmelden.
+
 Konsequenz für die Blog-Reihenfolge: nächste Woche alt = Meta-Ads-Zwillinge
 (`meta-ads-mehr-kunden-fur-handwerker-kmu` neu schreiben, Budget-Zwillinge
 `meta-ads-budget-realistisch` und `meta-ads-budget-handwerksbetrieb`
