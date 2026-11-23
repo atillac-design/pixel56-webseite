@@ -199,7 +199,72 @@ function AnfrageHebel() {
   );
 }
 
+function KanalWahl() {
+  // Eine Frage entscheidet den Kanal: Sucht der Kunde schon danach? Links Google (Nachfrage abholen), rechts Meta (Nachfrage wecken).
+  const google = ["Kunde tippt „Dachdecker Notdienst“ + Ort", "Anzeige steht über den Treffern", "Anruf noch heute"];
+  const meta = ["Kunde scrollt im Feed, sucht nichts", "Anzeige zeigt Betrieb, Team, Angebot", "Anfrage oder Bewerbung später"];
+  return (
+    <svg className="bg-kanal-wahl" viewBox="0 0 720 300" role="img" aria-label="Entscheidungsschema: Sucht der Kunde schon danach? Ja führt zu Google Ads, Nachfrage abholen. Nein führt zu Meta Ads, Nachfrage wecken.">
+      <rect x="210" y="14" width="300" height="52" rx="26" className="bgkw-frage" />
+      <text x="360" y="37" textAnchor="middle" className="bgka-t1">Sucht dein Kunde schon danach?</text>
+      <text x="360" y="56" textAnchor="middle" className="bgka-t2">mit Ort, mit konkretem Anliegen</text>
+      <path className="bgkw-pfeil" d="M300 66 C 300 100, 180 90, 180 118" />
+      <path className="bgkw-pfeil bgkw-pfeil-meta" d="M420 66 C 420 100, 540 90, 540 118" />
+      <text x="150" y="108" textAnchor="end" className="bgka-t3">ja</text>
+      <text x="568" y="108" className="bgka-t3">nein, noch nicht</text>
+      <g>
+        <rect x="20" y="120" width="320" height="160" rx="16" className="bgkw-box bgkw-google" />
+        <text x="40" y="150" className="bgka-t1">Google Ads: Nachfrage abholen</text>
+        {google.map((t, i) => (
+          <g key={t} className="bgkw-zeile" style={{ animationDelay: `${i * 0.5}s` }}>
+            <circle cx="48" cy={178 + i * 30} r="4" className="bgkw-punkt" />
+            <text x="62" y={182 + i * 30} className="bgka-t2">{t}</text>
+          </g>
+        ))}
+      </g>
+      <g>
+        <rect x="380" y="120" width="320" height="160" rx="16" className="bgkw-box bgkw-meta" />
+        <text x="400" y="150" className="bgka-t1">Meta Ads: Nachfrage wecken</text>
+        {meta.map((t, i) => (
+          <g key={t} className="bgkw-zeile" style={{ animationDelay: `${0.25 + i * 0.5}s` }}>
+            <circle cx="408" cy={178 + i * 30} r="4" className="bgkw-punkt bgkw-punkt-meta" />
+            <text x="422" y={182 + i * 30} className="bgka-t2">{t}</text>
+          </g>
+        ))}
+      </g>
+    </svg>
+  );
+}
+
+function KiFreigabe() {
+  // Das Muster hinter jeder sinnvollen KI-Aufgabe: Eingang, KI bereitet vor, Mensch gibt frei.
+  const schritte = [
+    { x: 10, t1: "Eingang", t2: "Mail, Formular, WhatsApp", t3: "oft unvollständig" },
+    { x: 262, t1: "KI sortiert und entwirft", t2: "Anliegen, Dringlichkeit, Lücken", t3: "Entwurf in deinem Ton" },
+    { x: 514, t1: "Du prüfst und schickst ab", t2: "lesen, ändern, senden", t3: "unter einer Minute" },
+  ];
+  return (
+    <svg className="bg-ki-freigabe" viewBox="0 0 720 230" role="img" aria-label="Drei Schritte: Eine Anfrage kommt an, die KI sortiert sie und schreibt einen Entwurf, du prüfst und schickst ab. Preis, Zusage und Absage bleiben beim Menschen.">
+      {schritte.map((s, i) => (
+        <g key={s.t1} className={i === 1 ? "bgkf-ki" : undefined}>
+          <rect x={s.x} y="44" width="196" height="92" rx="14" className={i === 2 ? "bgkf-box bgkf-ziel" : "bgkf-box"} />
+          <text x={s.x + 16} y="72" className="bgka-t1">{s.t1}</text>
+          <text x={s.x + 16} y="94" className="bgka-t2">{s.t2}</text>
+          <text x={s.x + 16} y="116" className="bgka-t3">{s.t3}</text>
+          {i < 2 && <path className="bgkf-pfeil" d={`M${s.x + 200} 90 L${s.x + 258} 90`} />}
+        </g>
+      ))}
+      <path className="bgkf-klammer" d="M262 156 L262 170 L710 170 L710 156" />
+      <text x="486" y="196" textAnchor="middle" className="bgka-t1">Entscheidung bleibt bei dir</text>
+      <text x="486" y="216" textAnchor="middle" className="bgka-t2">Preis, Zusage, Absage, schwierige Gespräche: schreibt der Mensch</text>
+      <text x="360" y="24" textAnchor="middle" className="bgka-t2">Nichts geht raus, bevor du es gesehen hast</text>
+    </svg>
+  );
+}
+
 const grafiken: Record<string, () => React.JSX.Element> = {
+  "kanal-wahl": KanalWahl,
+  "ki-freigabe": KiFreigabe,
   "ki-antwort": KiAntwort,
   "klick-verlauf": KlickVerlauf,
   "seo-zeitverlauf": SeoZeitverlauf,

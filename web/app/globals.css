@@ -3557,8 +3557,22 @@ body { overflow-x: clip; }
 .article-grafik .bgah-ziel { stroke: var(--accent); stroke-width: 1.6; }
 .article-grafik .bgah-pfeil { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 5; animation: bgkv-fluss 1.2s linear infinite; }
 .article-grafik .bgah-rest { fill: var(--accent); stroke: none; opacity: 0.75; }
+.article-grafik .bgkw-box { fill: rgba(255,255,255,0.02); }
+.article-grafik .bgkw-google { stroke: var(--accent); stroke-width: 1.6; }
+.article-grafik .bgkw-meta { stroke: #6a35ff; stroke-width: 1.6; }
+.article-grafik .bgkw-frage { fill: rgba(255,57,81,0.06); stroke: var(--accent); stroke-width: 1.4; }
+.article-grafik .bgkw-pfeil { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 5; animation: bgkv-fluss 1.2s linear infinite; }
+.article-grafik .bgkw-pfeil-meta { stroke: #6a35ff; }
+.article-grafik .bgkw-punkt { fill: var(--accent); stroke: none; }
+.article-grafik .bgkw-punkt-meta { fill: #6a35ff; }
+.article-grafik .bgkw-zeile { opacity: 0; animation: bgkr-ein 0.6s ease-out forwards; }
+.article-grafik .bgkf-box { fill: rgba(255,255,255,0.02); }
+.article-grafik .bgkf-ki rect { stroke: var(--accent); stroke-width: 1.6; animation: bgka-puls 2.4s ease-in-out infinite; }
+.article-grafik .bgkf-ziel { fill: rgba(255,57,81,0.06); stroke: var(--accent); stroke-width: 1.6; }
+.article-grafik .bgkf-pfeil { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 5; animation: bgkv-fluss 1.2s linear infinite; }
+.article-grafik .bgkf-klammer { fill: none; stroke: var(--ink-dim); stroke-width: 1.2; stroke-dasharray: 3 4; }
 @keyframes bgkr-ein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { .article-grafik .bgkr-teil { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .article-grafik .bgkr-teil, .article-grafik .bgkw-zeile { opacity: 1; } }
 @keyframes bgsz-zeichnen { to { stroke-dashoffset: 0; } }
 @media (prefers-reduced-motion: reduce) { .article-grafik .bgsz-kurve { stroke-dasharray: none; stroke-dashoffset: 0; } }
 @keyframes bgka-puls { 0%, 100% { stroke-opacity: 0.45; } 50% { stroke-opacity: 1; } }

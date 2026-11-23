@@ -1264,6 +1264,47 @@ woff2-Anfrage mehr, Überschrift mit und ohne gedrosselter Schrift gleich
 hoch, Build 748 Seiten, Hintergrund dunkel ab dem ersten Frame.
 Nicht gepusht, wartet auf „push“ des Inhabers.
 
+## 23.11.2026 (lokal): Blog-Woche 3, zwei Artikel, Next-Sicherheitsupdate
+
+- Neu: `google-ads-oder-meta-ads` (Kategorie Wachstum). Kernsatz: Google
+  holt Nachfrage ab, Meta weckt sie. Inhalt: Unterschied im Moment der
+  Anzeige, wann Google (akut, Umkreis, Nische, Saison, hochpreisig), wann
+  Meta (Bewerber, Kurse, Wunsch statt Not, Wiederansprache), fünf
+  Entscheidungsfragen, was beide brauchen (Zielseite, Messung, Konstanz,
+  Werbekonto gehört dem Betrieb), drei erfundene Beispielbetriebe als solche
+  gekennzeichnet, Einstieg ohne Budgetverbrennen. Grafik `kanal-wahl`
+  (Frage oben, zwei Zweige; Beschriftungen „ja“/„nein“ erst auf den Linien,
+  dann daneben). Foto `ads-fb-beispiele.webp` (Van-den-Berg-Motiv, wie in
+  Woche 1 gekennzeichnet; das 9:16-Mockup `ads-meta-beispiel.webp` war im
+  Artikel zu hoch). Links: Google Ads, Meta Ads, Mitarbeitergewinnung,
+  Landingpages, SEO, Webdesign, Website-Check (CTA), SEO-Checkliste.
+  Quellen: Google-Ads-Hilfe (Kampagnentyp), Meta-Business-Hilfe.
+- Alt neu geschrieben: `ki-agenten-fuer-selbststaendige` (Slug bleibt,
+  Search Console: „ki für selbstständige“ 15,6, „ki tools für
+  selbstständige“ 14, 3.760 Impressionen). Rohfassung von Mai 2025 war ein
+  Tool-Tutorial im Hype-Ton mit Städteliste. Neuer Titel „KI für
+  Selbstständige: Welche Aufgaben lohnen sich zuerst?“, seoTitel 45 Zeichen,
+  Inhalt nach KI-Seite und KI-Agenten-Checkliste: drei Begriffe
+  (Assistent, Automatisierung, Agent), acht Aufgaben, sechs „lohnt nicht“,
+  Werkzeugwahl ohne Produktnamen, Vier-Wochen-Einstieg, Datenschutz (kein
+  Rechtsrat), Messung. Grafik `ki-freigabe` (Eingang → KI → Freigabe, ohne
+  Laufpunkt, der die Texte überdeckte). Foto `ki-projekt-kmu-webseiten.webp`
+  als eigenes Projekt gekennzeichnet. Zahl: Bitkom 14.9.2026, 57 % der
+  Unternehmen ab 20 Beschäftigten nutzen KI (603 Befragte), mit dem Hinweis,
+  dass es für Einzelunternehmer solche Zahlen kaum gibt.
+- Next 16.4.2 → 16.4.6 plus `npm audit fix` (undici über @sanity/client):
+  `npm audit` meldete sieben Lücken in Next (moderat) und acht in undici
+  (hoch), danach 0. Anlass: Der erste `npm run build` brach nach der
+  Seitengenerierung mit `SecurityFatalError` ab („Your version of Next.js is
+  affected by a known security vulnerability“); Next 16.4 prüft beim Build
+  Sicherheitshinweise und lässt nur einen sofortigen zweiten Lauf durch.
+  Auf Netlify wäre jeder Build ein erster Lauf. Nach dem Update baut es
+  ohne Meldung.
+- Build 757 Seiten, `blog:check` beide 10/10 (1.730 und 1.630 Wörter),
+  `seo:check:strict` ohne Befund, Playwright Desktop 1280 und Handy 390
+  ohne Skriptfehler. Chromium in der Sandbox liegt jetzt unter
+  `/opt/pw-browsers/chromium-1243`, `chromium.launch()` ohne Pfad geht.
+
 ## 16.11.2026 (lokal): Blog-Woche 2, zwei Artikel
 
 - Neu: `karriereseite-die-bewerbungen-bringt` (Kategorie Website), Gegenstück

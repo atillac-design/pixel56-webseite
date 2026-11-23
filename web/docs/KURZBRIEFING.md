@@ -1,4 +1,4 @@
-# Kurzbriefing — Stand 17.11.2026
+# Kurzbriefing — Stand 23.11.2026
 
 Einstieg für jede neue Sitzung. Kurz halten (unter 150 Zeilen), nach jedem
 Arbeitsschritt aktualisieren. Details und Begründungen stehen im Protokoll
@@ -266,10 +266,20 @@ Artikel 10/10, SEO-Check). Push am 17.11. zunächst mit 403 abgelehnt
 („Claude doesn't have GitHub access … for your organization“), am 18.11.
 nach Freigabe des Inhabers erfolgreich (34cf10b). Falls das wieder
 passiert: Claude-GitHub-App auf dem Repo installieren oder GitHub in den
-claude.ai-Connectors neu verbinden. Nächste Woche: neu
-„Google Ads oder Meta Ads: was passt zu welchem Betrieb?“, alt
-`ki-agenten-fuer-selbststaendige` neu schreiben (Ziel „ki für
-selbstständige“, Position 15). Grafiken jetzt sechs. Screenshot-Hinweis:
+claude.ai-Connectors neu verbinden.
+**Blog-Woche 3 (23.11., lokal committet, Push offen):** neu
+`google-ads-oder-meta-ads` (10/10, Grafik `kanal-wahl`, Van-den-Berg-Motiv),
+alt `ki-agenten-fuer-selbststaendige` komplett neu geschrieben unter altem
+Slug (10/10, Grafik `ki-freigabe`, Bitkom-Zahl vom 14.9.2026 als Quelle,
+Foto kmu-webseiten.de). Grafiken jetzt acht. Im selben Commit: **Next von
+16.4.2 auf 16.4.6** (npm audit meldete sieben Sicherheitslücken in Next und
+eine in undici; `npm audit fix` → 0). Grund neben der Sicherheit: Next
+bricht seit 16.4.x den Build mit `SecurityFatalError` ab, wenn die
+installierte Version eine bekannte Lücke hat (erster Lauf scheitert, der
+sofortige zweite Lauf geht durch). Auf Netlify ist jeder Build ein erster
+Lauf, deshalb bei dieser Meldung immer zuerst Next aktualisieren. Nächste
+Woche: neu „Website-Relaunch ohne Rankingverlust: die Checkliste“, alt die
+Google-Rezensionen-Zwillinge zusammenlegen. Screenshot-Hinweis:
 Handy-Aufnahmen mit eigenem Kontext und weggeklicktem Cookie-Banner
 machen, sonst kommen leere Bilder. Vorher: Alle 36 Artikel im Build lagen im Schnitt bei 4,9/10; die 16
 alten (2024/25) und die Rohfassungen aus Webflow bei 4–5. Muster-Artikel
@@ -335,9 +345,10 @@ Nächster Vergleich Ende November.
   „Mehr Anfragen als Handwerksbetrieb: Welche 5 Hebel wirken zuerst?“,
   seoTitel ohne Abschneiden, 10/10, Grafik `anfrage-hebel` (vier Stationen,
   schrumpfender Balken), Foto GM-Dachdecker (Kundenprojekt), CTA SEO-Checkliste.
-- [ ] KI für Selbstständige: Rohfassung `ki-agenten-fuer-selbststaendige`
-  neu schreiben, Ziel „ki für selbstständige“, „ki tools für
-  selbstständige“, CTA KI-Agenten-Checkliste.
+- [x] KI für Selbstständige (23.11.): Rohfassung `ki-agenten-fuer-selbststaendige`
+  neu geschrieben, Titel „KI für Selbstständige: Welche Aufgaben lohnen sich
+  zuerst?“, H2 zu „KI-Tools für Selbstständige“ ohne Produktnamen, CTA
+  KI-Agenten-Checkliste, 10/10, 1.630 Wörter.
 - [ ] Tagesplaner-Seite: Titel und Beschreibung auf „Tagesplaner Vorlage
   kostenlos als PDF“ schärfen, kurzer Fragen-Block; Position 8 → 3 ist
   der schnellste Klick-Gewinn der Seite.
@@ -351,7 +362,9 @@ Nächster Vergleich Ende November.
   Anzeigenmotiv aus dem Van-den-Berg-Projekt als Bild, CTA Mitarbeitergewinnung)
 - [x] Karriereseite, die Bewerbungen bringt (16.11., `karriereseite-die-bewerbungen-bringt`,
   10/10, Grafik `karriereseite-aufbau`, Google for Jobs mit JobPosting-Quelle)
-- [ ] Google Ads oder Meta Ads: was passt zu welchem Betrieb?
+- [x] Google Ads oder Meta Ads: was passt zu welchem Betrieb? (23.11.,
+  `google-ads-oder-meta-ads`, 10/10, 1.730 Wörter, Grafik `kanal-wahl`,
+  drei erfundene Beispielbetriebe als solche gekennzeichnet, CTA Website-Check)
 - [ ] Website-Relaunch ohne Rankingverlust: die Checkliste
 - [ ] Landingpage oder Website: wann lohnt sich was?
 - [ ] Auf Google-Bewertungen antworten: Vorlagen für Betriebe
